@@ -337,20 +337,32 @@ const ExecutiveExperience: React.FC = () => {
           background: rgba(0, 212, 255, 0.15);
           border: 1px solid rgba(0, 212, 255, 0.3);
           color: #00d4ff;
-          padding: 0.3rem 0.8rem;
+          padding: 1rem 1.5rem;
           border-radius: 15px;
-          font-size: 0.7rem;
-          font-weight: 500;
-          margin-bottom: 0.5rem;
+          font-size: 1rem;
+          font-weight: 600;
+          margin: 1rem 0;
           cursor: pointer;
           transition: all 0.3s ease;
           text-align: center;
           width: 100%;
+          min-height: 50px;
+          user-select: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          touch-action: manipulation;
         }
 
         .mobile-achievement-toggle:hover {
           background: rgba(0, 212, 255, 0.25);
           transform: translateY(-1px);
+        }
+
+        .mobile-achievement-toggle:active {
+          background: rgba(0, 212, 255, 0.4);
+          transform: translateY(0);
+          box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
         }
 
         .mobile-achievement-toggle::after {
@@ -598,15 +610,8 @@ const ExecutiveExperience: React.FC = () => {
               <button 
                 className="mobile-achievement-toggle" 
                 onClick={() => toggleAchievement(0)}
-                style={{ 
-                  backgroundColor: 'red', 
-                  color: 'white', 
-                  padding: '10px',
-                  border: '2px solid yellow',
-                  fontSize: '16px'
-                }}
               >
-                {expandedAchievements.has(0) ? 'Hide Achievements' : 'View Achievements'} (DEBUG)
+                {expandedAchievements.has(0) ? 'Hide Achievements' : 'View Achievements'}
               </button>
               <div className={`mobile-achievement-content ${expandedAchievements.has(0) ? '' : 'collapsed'}`}>
               <div className="achievement-list">
