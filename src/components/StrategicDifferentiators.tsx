@@ -1,0 +1,250 @@
+'use client';
+
+import React, { useEffect } from 'react';
+
+const StrategicDifferentiators: React.FC = () => {
+  useEffect(() => {
+    // Mouse tracking for card glow effect
+    const cards = document.querySelectorAll('.diff-card');
+    cards.forEach(card => {
+      const handleMouseMove = (e: Event) => {
+        const mouseEvent = e as MouseEvent;
+        const rect = card.getBoundingClientRect();
+        const x = ((mouseEvent.clientX - rect.left) / rect.width) * 100;
+        const y = ((mouseEvent.clientY - rect.top) / rect.height) * 100;
+        (card as HTMLElement).style.setProperty('--mouse-x', x + '%');
+        (card as HTMLElement).style.setProperty('--mouse-y', y + '%');
+      };
+      
+      card.addEventListener('mousemove', handleMouseMove);
+      
+      return () => {
+        card.removeEventListener('mousemove', handleMouseMove);
+      };
+    });
+  }, []);
+
+  return (
+    <>
+      <style jsx>{`
+        .differentiators-container {
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 2rem;
+        }
+
+        .differentiators-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 1.5rem;
+          margin-bottom: 3rem;
+        }
+
+        .diff-card {
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border-radius: 16px;
+          padding: 2rem;
+          position: relative;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          opacity: 0;
+          transform: translateY(20px);
+          animation: cardFadeIn 0.8s ease forwards;
+          overflow: hidden;
+        }
+
+        .diff-card::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: 16px;
+          padding: 1.5px;
+          background: linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff);
+          background-size: 200% 200%;
+          -webkit-mask: 
+            linear-gradient(#fff 0 0) content-box, 
+            linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          opacity: 0.5;
+          animation: gradientRotate 3s linear infinite;
+          transition: opacity 0.3s ease;
+        }
+
+        @keyframes gradientRotate {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+
+        .diff-card:hover::before {
+          opacity: 1;
+        }
+
+        .diff-card::after {
+          content: '';
+          position: absolute;
+          inset: -2px;
+          border-radius: 16px;
+          background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                      rgba(0, 212, 255, 0.1), 
+                      transparent 40%);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          z-index: -1;
+        }
+
+        .diff-card:hover::after {
+          opacity: 1;
+        }
+
+        .diff-card:nth-child(1) { animation-delay: 0.1s; }
+        .diff-card:nth-child(2) { animation-delay: 0.2s; }
+        .diff-card:nth-child(3) { animation-delay: 0.3s; }
+        .diff-card:nth-child(4) { animation-delay: 0.4s; }
+        .diff-card:nth-child(5) { animation-delay: 0.5s; }
+        .diff-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .diff-card:hover {
+          transform: translateY(-8px) scale(1.02);
+          background: rgba(255, 255, 255, 0.08);
+          box-shadow: 
+            0 20px 40px rgba(0, 212, 255, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .diff-content {
+          position: relative;
+          z-index: 1;
+        }
+
+        .diff-icon {
+          width: 50px;
+          height: 50px;
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          margin-bottom: 1.5rem;
+          box-shadow: 0 8px 16px rgba(0, 212, 255, 0.3);
+          transition: all 0.3s ease;
+        }
+
+        .diff-card:hover .diff-icon {
+          transform: rotate(5deg) scale(1.1);
+          box-shadow: 0 12px 24px rgba(0, 212, 255, 0.4);
+        }
+
+        .diff-title {
+          font-size: 1.25rem;
+          font-weight: 700;
+          margin-bottom: 0.8rem;
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .diff-description {
+          font-size: 1rem;
+          color: rgba(255, 255, 255, 0.7);
+          line-height: 1.6;
+        }
+
+        @keyframes cardFadeIn {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+          .differentiators-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          }
+        }
+
+        @media (max-width: 768px) {
+          .differentiators-container {
+            padding: 0 1rem;
+          }
+          .differentiators-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+          }
+          .diff-card {
+            padding: 1.5rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .diff-title {
+            font-size: 1.1rem;
+          }
+          .diff-description {
+            font-size: 0.95rem;
+          }
+        }
+      `}</style>
+      
+      <div className="differentiators-container">
+        <div className="differentiators-grid">
+          <div className="diff-card">
+            <div className="diff-content">
+              <div className="diff-icon">📈</div>
+              <h4 className="diff-title">Scale Expertise</h4>
+              <p className="diff-description">Successfully deployed the largest LLM implementation in the payments industry (27,000+ users) and led global data science organizations of 50+ professionals with $45M+ technology portfolios.</p>
+            </div>
+          </div>
+
+          <div className="diff-card">
+            <div className="diff-content">
+              <div className="diff-icon">💰</div>
+              <h4 className="diff-title">Financial Impact</h4>
+              <p className="diff-description">Consistent track record of delivering massive ROI—from 250% returns on IoT initiatives to $30M in new annual revenue streams through Analytics-as-a-Service platforms.</p>
+            </div>
+          </div>
+
+          <div className="diff-card">
+            <div className="diff-content">
+              <div className="diff-icon">🌐</div>
+              <h4 className="diff-title">Cross-Industry Innovation</h4>
+              <p className="diff-description">Deep expertise spanning Financial Services, Insurance, Airlines, Energy, and Life Sciences with transferable solutions that adapt to unique business contexts.</p>
+            </div>
+          </div>
+
+          <div className="diff-card">
+            <div className="diff-content">
+              <div className="diff-icon">🎯</div>
+              <h4 className="diff-title">Technical + Strategic Leadership</h4>
+              <p className="diff-description">Rare combination of hands-on AI/ML architecture experience with C-suite strategic advisory capabilities—translating complex technology into business strategy.</p>
+            </div>
+          </div>
+
+          <div className="diff-card">
+            <div className="diff-content">
+              <div className="diff-icon">🚀</div>
+              <h4 className="diff-title">Transformation Catalyst</h4>
+              <p className="diff-description">Proven ability to modernize legacy systems while building evangelical communities that drive adoption at scale—like the world&apos;s largest Tableau community (30,000+ users).</p>
+            </div>
+          </div>
+
+          <div className="diff-card">
+            <div className="diff-content">
+              <div className="diff-icon">💡</div>
+              <h4 className="diff-title">Ambiguous Environment Expert</h4>
+              <p className="diff-description">Thrive in high-stakes environments where emerging technologies meet complex business challenges, creating clarity from chaos and actionable roadmaps from ambiguity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default StrategicDifferentiators;

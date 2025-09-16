@@ -1,0 +1,398 @@
+<style>
+/* Reset for Wix compatibility */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --hdr-h: 80px;
+}
+
+#wix-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: var(--hdr-h);
+    z-index: 2147483000 !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #fff;
+    background: rgba(10, 10, 10, 0.88);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+#wix-header.scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+#header-spacer {
+    height: var(--hdr-h);
+    width: 100%;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: translateY(-2px);
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    flex: 0 0 40px;
+    background: center/contain no-repeat url('https://static.wixstatic.com/media/0738c5_c16d2bed00984d14bd14008be4274f33~mv2.png');
+    transition: all 0.3s ease;
+}
+
+.logo:hover .logo-icon {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+}
+
+.logo-title {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-link,
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
+    color: rgba(255, 255, 255, 0.85);
+    transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #00d4ff20 0%, #1e90ff20 100%);
+    border-radius: 8px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.nav-link:hover::before {
+    opacity: 1;
+}
+
+.nav-link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-1px);
+}
+
+.nav-link.active {
+    color: #fff;
+    background: linear-gradient(135deg, #00d4ff30 0%, #1e90ff30 100%);
+    border: 1px solid rgba(0, 212, 255, 0.35);
+}
+
+/* Enhanced CTA Button */
+.cta-button {
+    background: linear-gradient(135deg, #36e0ff 0%, #1e90ff 40%, #5aa9ff 100%);
+    color: #fff !important;
+    border-radius: 999px;
+    padding: 0.85rem 1.25rem;
+    font-weight: 700;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.20), 0 10px 28px rgba(0, 212, 255, 0.35), 0 2px 10px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button .icon {
+    display: inline-block;
+    margin-left: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.cta-button:hover .icon {
+    transform: translateX(2px);
+}
+
+.cta-button:hover {
+    transform: translateY(-1.5px);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.30), 0 15px 35px rgba(0, 212, 255, 0.45), 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.mobile-toggle:hover {
+    transform: scale(1.1);
+}
+
+.toggle-line {
+    width: 24px;
+    height: 2px;
+    background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.mobile-toggle.active .toggle-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-toggle.active .toggle-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.mobile-toggle.active .toggle-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    :root {
+        --hdr-h: 72px;
+    }
+    .nav-container {
+        padding: 0 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-toggle {
+        display: inline-flex;
+    }
+    
+    .nav-menu {
+        position: absolute;
+        top: var(--hdr-h);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
+    }
+    
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .nav-link,
+    .cta-button {
+        width: 100%;
+        margin: 0;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        text-align: center;
+        justify-content: center;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .nav-link:hover {
+        background: rgba(0, 212, 255, 0.08);
+        border-left: 3px solid #00d4ff;
+    }
+    
+    .cta-button {
+        margin-top: 8px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .logo-text {
+        display: none;
+    }
+}
+
+/* Focus styles for accessibility */
+:where(a, button).nav-link:focus-visible,
+:where(a, button).cta-button:focus-visible,
+:where(button).mobile-toggle:focus-visible {
+    outline: 2px solid #00d4ff;
+    outline-offset: 2px;
+}
+
+/* Body padding to account for fixed header */
+body {
+    padding-top: var(--hdr-h) !important;
+}
+</style>
+
+<header id="wix-header" role="banner">
+    <nav class="nav-container" role="navigation" aria-label="Primary">
+        <a class="logo" href="/" target="_top" aria-label="Home">
+            <span class="logo-icon" aria-hidden="true"></span>
+            <span class="logo-text">
+                <span class="logo-name">Brandon Micci</span>
+                <span class="logo-title">AI &amp; Digital Transformation</span>
+            </span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+            <!-- Use data-target hashes; script will convert to absolute hrefs via document.referrer -->
+            <li><a class="nav-link" data-target="#strategicvalue">Strategic Value</a></li>
+            <li><a class="nav-link" data-target="#executiveleadership">Executive Leadership</a></li>
+            <li><a class="nav-link" data-target="#transformationleadership">Transformation Leadership</a></li>
+            <li><a class="nav-link" data-target="#profressionalimpact">Professional Impact</a></li>
+            <li><a class="cta-button" data-target="#connectwithme">Get in Touch <span class="icon" aria-hidden="true">→</span></a></li>
+        </ul>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-controls="navMenu" aria-expanded="false">
+            <span class="toggle-line"></span><span class="toggle-line"></span><span class="toggle-line"></span>
+        </button>
+    </nav>
+</header>
+
+<div id="header-spacer" aria-hidden="true"></div>
+
+<script>
+(function(){
+  const header = document.getElementById('wix-header');
+  const spacer = document.getElementById('header-spacer');
+  const nav = document.getElementById('navMenu');
+  const toggle = document.getElementById('mobileToggle');
+
+  // Match spacer to header height
+  function setSpacer(){ spacer.style.height = (header?.getBoundingClientRect().height || 80) + 'px'; }
+  setSpacer(); window.addEventListener('load', setSpacer); window.addEventListener('resize', setSpacer);
+
+  // Visual scrolled state (inside iframe only)
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  }, { passive:true });
+
+  // Mobile toggle
+  if (toggle && nav){
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('active');
+      toggle.classList.toggle('active'); // Add this line!
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  }
+
+  // ---------- IMPORTANT PART ----------
+  // Convert data-target to ABSOLUTE hrefs using the parent page URL from document.referrer.
+  // No preventDefault; clicks navigate naturally with target="_top".
+  function absoluteHrefFromHash(hash){
+    if (!hash) return '#';
+    try{
+      // Use the parent page as base (works on Wix)
+      const ref = new URL(document.referrer || '/', window.location.href);
+      // keep same path (multi-page sites supported)
+      return ref.origin + ref.pathname + (hash.startsWith('#') ? hash : '#' + hash);
+    }catch(e){
+      // Fallback: if referrer missing, just use the hash (still works when published)
+      return (hash.startsWith('#') ? hash : '#' + hash);
+    }
+  }
+
+  document.querySelectorAll('.nav-link, .cta-button').forEach(a=>{
+    const t = a.getAttribute('data-target') || '#';
+    // If a full URL is provided, use it as-is; else build absolute from referrer
+    const href = /^https?:\/\//i.test(t) ? t : absoluteHrefFromHash(t);
+    a.setAttribute('href', href);
+    a.setAttribute('target', '_top');     // ensure top-page navigation
+    a.setAttribute('rel', 'noopener');    // safety
+  });
+  // ------------------------------------
+})();
+</script>
