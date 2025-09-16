@@ -46,23 +46,33 @@ const HeroParagraph = () => {
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .hero-paragraph-wrapper {
-                padding: 8px 1rem; /* Tighter mobile spacing */
-                order: 3; /* Move paragraph to third position on mobile */
+                padding: 15px 1rem; /* Better mobile spacing */
+                order: 3; /* Keep paragraph in third position on mobile (after image) */
+            }
+
+            .hero-paragraph-container {
+                max-width: 100%; /* Full width on mobile for better readability */
             }
 
             .hero-intro {
                 font-size: 1.1rem; /* Larger mobile font */
-                line-height: 1.6;
+                line-height: 1.7; /* Better line spacing for mobile */
+                text-align: left; /* Left align for better mobile reading */
+                padding: 15px; /* Add padding for better visual separation */
+                background: rgba(255, 255, 255, 0.05); /* Subtle background */
+                border-radius: 12px; /* Rounded corners */
+                border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
             }
         }
 
         @media (max-width: 480px) {
             .hero-paragraph-wrapper {
-                padding: 5px 0.75rem;
+                padding: 10px 0.75rem;
             }
 
             .hero-intro {
                 font-size: 1.05rem; /* Still larger than before */
+                padding: 12px; /* Slightly less padding on very small screens */
             }
         }
       `}</style>

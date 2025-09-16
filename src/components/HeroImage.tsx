@@ -61,7 +61,7 @@ const HeroImage = () => {
         @media (max-width: 768px) {
             .image-section {
                 padding: 20px 1rem;
-                order: 1; /* Move image to first position on mobile */
+                order: 2; /* Move image to second position on mobile (after header) */
             }
 
             .professional-image {

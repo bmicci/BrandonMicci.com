@@ -108,7 +108,7 @@ const HeroTitle = () => {
         @media (max-width: 768px) {
             .title-section {
                 padding: 15px 1rem 10px; /* Better mobile spacing */
-                order: 2; /* Move title to second position on mobile */
+                order: 1; /* Keep title in first position on mobile */
             }
 
             .main-title {
