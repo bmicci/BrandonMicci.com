@@ -510,12 +510,6 @@ const ExecutiveExperience: React.FC = () => {
         .mobile-achievement-toggle {
           display: block;
         }
-        .mobile-achievement-content {
-          display: none;
-        }
-        .mobile-achievement-content.collapsed {
-          display: none;
-        }
         }
 
         /* Extra small mobile devices */
