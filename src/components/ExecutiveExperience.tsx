@@ -663,6 +663,8 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">IoT Solutions</span>
                 <span className="skill-pill">Product Management</span>
               </div>
+              <div className="mobile-achievement-toggle">View Achievements</div>
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -701,6 +703,7 @@ const ExecutiveExperience: React.FC = () => {
                   </div>
                 </div>
               </div>
+              </div>
             </div>
           </div>
 
@@ -719,6 +722,8 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Business Development</span>
                 <span className="skill-pill">Data Science</span>
               </div>
+              <div className="mobile-achievement-toggle">View Achievements</div>
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -757,6 +762,7 @@ const ExecutiveExperience: React.FC = () => {
                   </div>
                 </div>
               </div>
+              </div>
             </div>
           </div>
 
@@ -774,6 +780,8 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Cloud Migration</span>
                 <span className="skill-pill">Digital Transformation</span>
               </div>
+              <div className="mobile-achievement-toggle">View Achievements</div>
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -812,6 +820,7 @@ const ExecutiveExperience: React.FC = () => {
                   </div>
                 </div>
               </div>
+              </div>
             </div>
           </div>
 
@@ -829,6 +838,8 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">COE Leadership</span>
                 <span className="skill-pill">Platform Architecture</span>
               </div>
+              <div className="mobile-achievement-toggle">View Achievements</div>
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -867,6 +878,7 @@ const ExecutiveExperience: React.FC = () => {
                   </div>
                 </div>
               </div>
+              </div>
             </div>
           </div>
 
@@ -885,6 +897,8 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Global Programs</span>
                 <span className="skill-pill">CI/CD</span>
               </div>
+              <div className="mobile-achievement-toggle">View Achievements</div>
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -923,6 +937,7 @@ const ExecutiveExperience: React.FC = () => {
                   </div>
                 </div>
               </div>
+              </div>
             </div>
           </div>
 
@@ -940,6 +955,8 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Compliance Tech</span>
                 <span className="skill-pill">NLP/OCR</span>
               </div>
+              <div className="mobile-achievement-toggle">View Achievements</div>
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -978,6 +995,7 @@ const ExecutiveExperience: React.FC = () => {
                   </div>
                 </div>
               </div>
+              </div>
             </div>
           </div>
 
@@ -995,6 +1013,8 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Data Governance</span>
                 <span className="skill-pill">Tableau</span>
               </div>
+              <div className="mobile-achievement-toggle">View Achievements</div>
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -1033,6 +1053,7 @@ const ExecutiveExperience: React.FC = () => {
                   </div>
                 </div>
               </div>
+              </div>
             </div>
           </div>
 
@@ -1051,6 +1072,8 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Community Building</span>
                 <span className="skill-pill">Executive Dashboards</span>
               </div>
+              <div className="mobile-achievement-toggle">View Achievements</div>
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -1089,6 +1112,7 @@ const ExecutiveExperience: React.FC = () => {
                   </div>
                 </div>
               </div>
+              </div>
             </div>
           </div>
 
@@ -1106,6 +1130,8 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Fraud Detection</span>
                 <span className="skill-pill">Business Intelligence</span>
               </div>
+              <div className="mobile-achievement-toggle">View Achievements</div>
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -1132,6 +1158,7 @@ const ExecutiveExperience: React.FC = () => {
                   </div>
                 </div>
               </div>
+              </div>
             </div>
           </div>
 
@@ -1149,6 +1176,8 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Operations</span>
                 <span className="skill-pill">Executive Analytics</span>
               </div>
+              <div className="mobile-achievement-toggle">View Achievements</div>
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -1174,6 +1203,7 @@ const ExecutiveExperience: React.FC = () => {
                     First Tableau deployment at firm
                   </div>
                 </div>
+              </div>
               </div>
             </div>
           </div>
