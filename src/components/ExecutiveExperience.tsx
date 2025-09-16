@@ -223,9 +223,9 @@ const ExecutiveExperience: React.FC = () => {
         .timeline-node::before { content: ''; position: absolute; width: 60px; height: 60px; border: 2px solid rgba(0,212,255,0.3); border-radius: 50%; animation: ripple 2s ease-out infinite; }
         @keyframes pulse { 0%,100%{ transform: scale(1);} 50%{ transform: scale(1.1);} }
         @keyframes ripple { 0%{ width:40px; height:40px; opacity:1;} 100%{ width:80px; height:80px; opacity:0;} }
-
-        /* ========= Content Card ========= */
-        .timeline-content {
+          "Established enterprise Tableau COE driving adoption to 30,000+ users—the largest evangelical Tableau community worldwide.",
+        mobileText: "30K+ users—world's largest Tableau community.",
+          "Appointed to develop top-of-house mobile dashboards for Capital One's CEO, Rich Fairbanks.",
           background: rgba(255,255,255,0.025);           /* Option A: Tighter Glass */
           backdrop-filter: blur(14px);                    /* Option A */
           -webkit-backdrop-filter: blur(14px);            /* Option A */
@@ -296,51 +296,75 @@ const ExecutiveExperience: React.FC = () => {
           display: grid;
           grid-template-rows: 1fr;                 /* expanded */
           transition: grid-template-rows .35s ease, opacity .25s ease;
-          opacity: 1;
-        }
-        .mobile-achievement-content > * { overflow: hidden; }
-        .mobile-achievement-content.collapsed {
-          grid-template-rows: 0fr;                 /* collapsed */
-          opacity: 0;
-        }
+    <section
+      id="executive-experience"
+      className="relative overflow-hidden bg-slate-950 py-24 text-slate-100"
+    >
+      <div
+        className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-cyan-500/30 via-slate-950/0 to-transparent"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-blue-500/25 via-slate-950/0 to-transparent"
+        aria-hidden
+      />
+      <div className="absolute -left-20 top-1/3 h-64 w-64 rounded-full bg-cyan-500/15 blur-3xl" aria-hidden />
+      <div className="absolute -right-20 bottom-1/4 h-64 w-64 rounded-full bg-blue-500/15 blur-3xl" aria-hidden />
+      <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8">
+        <header className="mx-auto max-w-3xl text-center">
+          <p
+            className="text-sm font-semibold uppercase text-cyan-300/80"
+            style={{ letterSpacing: '0.35em' }}
+          >
+            Career Journey
+          </p>
+            <span className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-500 bg-clip-text text-transparent">
+              Executive Experience
+            </span>
+          <p className="mt-4 text-base leading-relaxed text-slate-300/80 sm:text-lg">
+            Strategic leadership roles spanning AI, analytics, and large-scale transformation across global enterprises.
+        <div className="relative mt-16">
+          <div
+            className="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-cyan-400/60 to-transparent sm:left-8"
+            aria-hidden
+          />
+          <ul className="space-y-12">
 
-        /* ========= Animations ========= */
-        @keyframes fadeInDown { from {opacity:0; transform: translateY(-30px);} to {opacity:1; transform: translateY(0);} }
-        @keyframes slideInLeft { to { opacity:1; transform: translateX(0);} }
-
-        /* ========= Background Glow (Option D) ========= */
-        .timeline-wrapper::before{
-          content:'';
-          position:absolute; inset:-10% -10% auto -10%;
-          height:60%;
-          background:
-            radial-gradient(600px circle at 20% 0%, rgba(0,212,255,0.12), transparent 60%),
-            radial-gradient(700px circle at 80% 10%, rgba(30,144,255,0.12), transparent 60%);
-          filter: blur(20px);
-          pointer-events:none;
-          z-index:0;
-        }
-
-        /* ========= Mobile ========= */
-        @media (max-width: 768px) {
-          /* keep desktop text visible on mobile; hide mobile variant entirely */
-          .desktop-text { display: block; }
-          .mobile-text  { display: none;  }
-
-          .timeline-header { padding: 1.5rem 1rem 1rem; }
-          .timeline-title { font-size: 1.8rem; margin-bottom: .5rem; }
-          .timeline-subtitle { font-size: .95rem; line-height:1.5; }
-          .timeline-container { padding: .5rem; }
-          .timeline-line { left: 15px; }
-          .timeline-node { left: -5px; width: 40px; height: 40px; }
-          .timeline-node::before { width: 60px; height: 60px; }
-          .timeline-item { padding-left: 45px; margin-bottom: 1.5rem; }
-          .timeline-role { font-size: 1.1rem; line-height: 1.2; margin-bottom: .3rem; }
-          .timeline-company { font-size: .9rem; margin-bottom: .5rem; }
-          .timeline-date { font-size: .7rem; padding: .2rem .6rem; margin-bottom: .5rem; }
-          .timeline-content { padding: 1rem; border-radius: 15px; }
-          .skill-pills { margin-bottom: .8rem; flex-wrap: nowrap; overflow-x: auto; padding-bottom: .2rem; -webkit-overflow-scrolling: touch; }
-          .skill-pills::-webkit-scrollbar { height: 3px; }
+                <li key={role.id} className="relative pl-12 sm:pl-16">
+                  <div className="absolute left-3 top-6 -translate-x-1/2 sm:left-5">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-cyan-400 via-sky-500 to-blue-500 text-xl text-white shadow-lg ring-2 ring-cyan-400/40">
+                  <article className="rounded-3xl border border-white/10 bg-slate-900/80 p-6 shadow-xl backdrop-blur lg:p-8">
+                    <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+                      <div className="space-y-4">
+                        <div
+                          className="text-xs font-semibold uppercase text-cyan-200/80"
+                          style={{ letterSpacing: '0.25em' }}
+                        >
+                          <h3 className="text-2xl font-semibold text-white lg:text-3xl">{role.title}</h3>
+                              className="rounded-full border border-cyan-300/30 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-cyan-100"
+                      <div className="hidden w-full max-w-xl gap-4 lg:grid lg:grid-cols-2">
+                        {role.achievements.map((achievement) => (
+                          <div
+                            key={achievement.title}
+                            className="rounded-2xl border border-white/10 bg-slate-950/70 p-4 transition hover:border-cyan-400/40"
+                          >
+                            <div className="flex items-center gap-2 text-sm font-semibold text-cyan-200">
+                              <span className="text-base text-cyan-300">→</span>
+                              {achievement.title}
+                            <p className="mt-2 text-sm leading-relaxed text-slate-200">
+                              {achievement.desktopText}
+                            </p>
+                          </div>
+                        ))}
+                    <div className="lg:hidden">
+                        className="mt-6 flex w-full items-center justify-between rounded-xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm font-semibold text-slate-100 transition hover:border-cyan-400/40 hover:text-white"
+                          className={`transform text-lg transition-transform ${
+                            isOpen ? 'rotate-90 text-cyan-300' : 'text-slate-300/80'
+                          }`}
+                        className="overflow-hidden transition-all duration-300"
+                        style={{ maxHeight: isOpen ? `${role.achievements.length * 160}px` : '0px' }}
+                                <span className="text-base text-cyan-300">→</span>
+                              <p className="mt-2 text-sm text-slate-200">{achievement.mobileText}</p>
           .skill-pills::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
           .skill-pills::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.5); border-radius: 3px; }
           .skill-pill { font-size: .65rem; padding: .2rem .5rem; white-space: nowrap; flex-shrink: 0; }
