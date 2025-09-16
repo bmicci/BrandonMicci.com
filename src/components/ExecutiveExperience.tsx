@@ -223,9 +223,9 @@ const ExecutiveExperience: React.FC = () => {
         .timeline-node::before { content: ''; position: absolute; width: 60px; height: 60px; border: 2px solid rgba(0,212,255,0.3); border-radius: 50%; animation: ripple 2s ease-out infinite; }
         @keyframes pulse { 0%,100%{ transform: scale(1);} 50%{ transform: scale(1.1);} }
         @keyframes ripple { 0%{ width:40px; height:40px; opacity:1;} 100%{ width:80px; height:80px; opacity:0;} }
-
-        /* ========= Content Card ========= */
-        .timeline-content {
+          "Established enterprise Tableau COE driving adoption to 30,000+ users—the largest evangelical Tableau community worldwide.",
+        mobileText: "30K+ users—world's largest Tableau community.",
+          "Appointed to develop top-of-house mobile dashboards for Capital One's CEO, Rich Fairbanks.",
           background: rgba(255,255,255,0.025);           /* Option A: Tighter Glass */
           backdrop-filter: blur(14px);                    /* Option A */
           -webkit-backdrop-filter: blur(14px);            /* Option A */
@@ -296,80 +296,368 @@ const ExecutiveExperience: React.FC = () => {
           display: grid;
           grid-template-rows: 1fr;                 /* expanded */
           transition: grid-template-rows .35s ease, opacity .25s ease;
-          opacity: 1;
+    <section id="executive-experience" className="experience-section">
+      <style jsx>{`
+        .experience-section {
+          position: relative;
+          padding: 6rem 0;
+          overflow: hidden;
+          color: #f8fafc;
+          background: radial-gradient(circle at 20% -10%, rgba(56, 189, 248, 0.2), transparent 55%),
+            radial-gradient(circle at 85% 120%, rgba(59, 130, 246, 0.18), transparent 60%), #050816;
         }
-        .mobile-achievement-content > * { overflow: hidden; }
-        .mobile-achievement-content.collapsed {
-          grid-template-rows: 0fr;                 /* collapsed */
-          opacity: 0;
+        .experience-section::before,
+        .experience-section::after {
+          content: '';
+          position: absolute;
+          width: 420px;
+          height: 420px;
+          border-radius: 50%;
+          filter: blur(140px);
+          opacity: 0.45;
+          pointer-events: none;
+          transform: translate3d(0, 0, 0);
         }
-
-        /* ========= Animations ========= */
-        @keyframes fadeInDown { from {opacity:0; transform: translateY(-30px);} to {opacity:1; transform: translateY(0);} }
-        @keyframes slideInLeft { to { opacity:1; transform: translateX(0);} }
-
-        /* ========= Background Glow (Option D) ========= */
-        .timeline-wrapper::before{
-          content:'';
-          position:absolute; inset:-10% -10% auto -10%;
-          height:60%;
-          background:
-            radial-gradient(600px circle at 20% 0%, rgba(0,212,255,0.12), transparent 60%),
-            radial-gradient(700px circle at 80% 10%, rgba(30,144,255,0.12), transparent 60%);
-          filter: blur(20px);
-          pointer-events:none;
-          z-index:0;
+        .experience-section::before {
+          top: -160px;
+          right: -80px;
+          background: radial-gradient(circle, rgba(14, 165, 233, 0.32), transparent 70%);
         }
-
-        /* ========= Mobile ========= */
-        @media (max-width: 768px) {
-          /* keep desktop text visible on mobile; hide mobile variant entirely */
-          .desktop-text { display: block; }
-          .mobile-text  { display: none;  }
-
-          .timeline-header { padding: 1.5rem 1rem 1rem; }
-          .timeline-title { font-size: 1.8rem; margin-bottom: .5rem; }
-          .timeline-subtitle { font-size: .95rem; line-height:1.5; }
-          .timeline-container { padding: .5rem; }
-          .timeline-line { left: 15px; }
-          .timeline-node { left: -5px; width: 40px; height: 40px; }
-          .timeline-node::before { width: 60px; height: 60px; }
-          .timeline-item { padding-left: 45px; margin-bottom: 1.5rem; }
-          .timeline-role { font-size: 1.1rem; line-height: 1.2; margin-bottom: .3rem; }
-          .timeline-company { font-size: .9rem; margin-bottom: .5rem; }
-          .timeline-date { font-size: .7rem; padding: .2rem .6rem; margin-bottom: .5rem; }
-          .timeline-content { padding: 1rem; border-radius: 15px; }
-          .skill-pills { margin-bottom: .8rem; flex-wrap: nowrap; overflow-x: auto; padding-bottom: .2rem; -webkit-overflow-scrolling: touch; }
-          .skill-pills::-webkit-scrollbar { height: 3px; }
-          .skill-pills::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 3px; }
-          .skill-pills::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.5); border-radius: 3px; }
-          .skill-pill { font-size: .65rem; padding: .2rem .5rem; white-space: nowrap; flex-shrink: 0; }
-          .achievement-list { gap: .6rem; }
-          .achievement-card { padding: .8rem; border-radius: 8px; }
-          .achievement-title { font-size: .95rem; margin-bottom: .3rem; }
-          .achievement-arrow { font-size: 1rem; }
-          .achievement-text { font-size: .9rem; line-height: 1.4; }
-
-          /* show the toggle on mobile */
-          .mobile-achievement-toggle { display: block; }
+        .experience-section::after {
+          bottom: -180px;
+          left: -120px;
+          background: radial-gradient(circle, rgba(59, 130, 246, 0.28), transparent 70%);
         }
-
-        /* ========= Extra Small ========= */
-        @media (max-width: 480px) {
-          .timeline-header { padding: 1rem .5rem .5rem; }
-          .timeline-title { font-size: 1.5rem; }
-          .timeline-subtitle { font-size: .9rem; }
-          .timeline-container { padding: .25rem; }
-          .timeline-item { padding-left: 40px; margin-bottom: 1.2rem; }
-          .timeline-node { width: 35px; height: 35px; left: -2px; }
-          .timeline-node::before { width: 50px; height: 50px; }
-          .timeline-content { padding: .8rem; }
-          .timeline-role { font-size: 1rem; }
-          .timeline-company { font-size: .85rem; }
-          .achievement-card { padding: .6rem; }
-          .achievement-title { font-size: .9rem; }
-          .achievement-text { font-size: .85rem; }
+        .section-content {
+          position: relative;
+          z-index: 1;
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 0 1.5rem;
         }
+        .section-header {
+          text-align: center;
+          margin-bottom: 3.5rem;
+        }
+        .section-subtitle {
+          text-transform: uppercase;
+          letter-spacing: 0.4em;
+          font-size: 0.75rem;
+          color: rgba(165, 243, 252, 0.8);
+          font-weight: 600;
+        }
+        .section-title {
+          margin-top: 1rem;
+          font-size: 2.75rem;
+          line-height: 1.1;
+          font-weight: 800;
+          color: #e0f2fe;
+          background: linear-gradient(120deg, #22d3ee 0%, #3b82f6 50%, #2563eb 90%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .section-description {
+          margin: 1.25rem auto 0;
+          max-width: 680px;
+          color: rgba(203, 213, 225, 0.85);
+          font-size: 1rem;
+          line-height: 1.7;
+        }
+        .timeline {
+          position: relative;
+          padding-left: 1rem;
+        }
+        .timeline-line {
+          position: absolute;
+          top: 0;
+          left: 1.4rem;
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(180deg, transparent 0%, rgba(34, 211, 238, 0.6) 35%, rgba(59, 130, 246, 0.55) 65%, transparent 100%);
+          box-shadow: 0 0 22px rgba(14, 165, 233, 0.35);
+          pointer-events: none;
+        }
+        .timeline-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+        }
+        .timeline-item {
+          position: relative;
+          padding-left: 3.5rem;
+        }
+        .timeline-icon {
+          position: absolute;
+          left: 0.1rem;
+          top: 0.75rem;
+          width: 3.25rem;
+          height: 3.25rem;
+          border-radius: 9999px;
+          background: linear-gradient(135deg, rgba(34, 211, 238, 0.9), rgba(59, 130, 246, 0.9));
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          box-shadow: 0 12px 32px rgba(14, 165, 233, 0.35);
+          border: 1px solid rgba(125, 211, 252, 0.5);
+        }
+        .role-card {
+          position: relative;
+          background: rgba(7, 18, 41, 0.78);
+          border: 1px solid rgba(148, 163, 184, 0.18);
+          border-radius: 28px;
+          padding: 2rem;
+          box-shadow: 0 25px 60px rgba(15, 23, 42, 0.45);
+          backdrop-filter: blur(26px);
+          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .role-card::after {
+          content: '';
+          position: absolute;
+          inset: 12px;
+          border-radius: 22px;
+          border: 1px solid rgba(14, 165, 233, 0.08);
+          pointer-events: none;
+        }
+        .role-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 32px 70px rgba(14, 165, 233, 0.18);
+          border-color: rgba(56, 189, 248, 0.35);
+        }
+        .role-meta {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .role-dates {
+          font-size: 0.75rem;
+          letter-spacing: 0.35em;
+          text-transform: uppercase;
+          font-weight: 700;
+          color: rgba(165, 243, 252, 0.7);
+        }
+        .role-title {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: #e2e8f0;
+          margin: 0;
+          line-height: 1.2;
+        }
+        .role-company {
+          margin: 0;
+          font-size: 1rem;
+          color: rgba(203, 213, 225, 0.75);
+        }
+        .role-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+        }
+        .role-tag {
+          padding: 0.4rem 0.85rem;
+          border-radius: 999px;
+          font-size: 0.75rem;
+          font-weight: 600;
+          letter-spacing: 0.02em;
+          background: rgba(14, 165, 233, 0.12);
+          border: 1px solid rgba(56, 189, 248, 0.35);
+          color: rgba(224, 242, 254, 0.85);
+          text-transform: uppercase;
+        }
+        .desktop-only {
+          display: none;
+        }
+        .achievement-card {
+          border-radius: 18px;
+          padding: 1rem;
+          background: rgba(8, 23, 45, 0.88);
+          border: 1px solid rgba(148, 163, 184, 0.15);
+          box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.05);
+        }
+        .achievement-title {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-weight: 600;
+          color: rgba(165, 243, 252, 0.92);
+          margin-bottom: 0.35rem;
+        }
+        .achievement-title span {
+          font-size: 1.2rem;
+          color: rgba(56, 189, 248, 0.85);
+        }
+        .achievement-text {
+          font-size: 0.95rem;
+          line-height: 1.6;
+          color: rgba(226, 232, 240, 0.85);
+        }
+        .mobile-only {
+          margin-top: 1.5rem;
+        }
+        .accordion-toggle {
+          width: 100%;
+          border-radius: 14px;
+          padding: 0.85rem 1rem;
+          border: 1px solid rgba(148, 163, 184, 0.22);
+          background: rgba(15, 23, 42, 0.7);
+          color: rgba(226, 232, 240, 0.9);
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 0.5rem;
+          transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+        }
+        .accordion-toggle:hover {
+          border-color: rgba(56, 189, 248, 0.45);
+          color: #f8fafc;
+          transform: translateY(-2px);
+        }
+        .accordion-toggle .chevron {
+          font-size: 1.3rem;
+          line-height: 1;
+          transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .accordion-toggle[aria-expanded='true'] .chevron {
+          transform: rotate(90deg);
+          color: rgba(56, 189, 248, 0.8);
+        }
+        .accordion-panel {
+          overflow: hidden;
+          transition: max-height 0.35s ease;
+        }
+        .accordion-panel.open {
+          margin-top: 1rem;
+        }
+        .mobile-achievements {
+          display: flex;
+          flex-direction: column;
+          gap: 0.85rem;
+        }
+        .mobile-achievements .achievement-text {
+          font-size: 0.9rem;
+        }
+        @media (min-width: 640px) {
+          .section-title {
+            font-size: 3.2rem;
+          }
+        }
+        @media (min-width: 768px) {
+          .experience-section {
+            padding: 7rem 0;
+          }
+          .timeline {
+            padding-left: 2rem;
+          }
+          .timeline-line {
+            left: 2.3rem;
+          }
+          .timeline-item {
+            padding-left: 5rem;
+          }
+          .timeline-icon {
+            width: 3.75rem;
+            height: 3.75rem;
+            top: 1.6rem;
+            left: 0.9rem;
+            font-size: 1.7rem;
+          }
+          .role-card {
+            padding: 2.25rem 2.5rem;
+          }
+          .role-title {
+            font-size: 2rem;
+          }
+          .role-achievements {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1.25rem;
+          }
+          .desktop-only {
+            display: grid;
+          }
+          .mobile-only {
+            display: none;
+          }
+        }
+        @media (min-width: 1024px) {
+          .section-title {
+            font-size: 3.4rem;
+          }
+          .section-description {
+            font-size: 1.05rem;
+          }
+          .role-card {
+            padding: 2.5rem 2.75rem;
+          }
+        }
+        @media (max-width: 600px) {
+          .experience-section {
+            padding: 5rem 0 4rem;
+          }
+          .timeline-item {
+            padding-left: 3rem;
+          }
+          .timeline-icon {
+            width: 2.9rem;
+            height: 2.9rem;
+            top: 0.9rem;
+          }
+          .role-card {
+            padding: 1.75rem 1.5rem;
+          }
+          .role-title {
+            font-size: 1.5rem;
+          }
+        }
+      `}</style>
+      <div className="section-content">
+        <header className="section-header">
+          <p className="section-subtitle">Career Journey</p>
+          <h2 className="section-title">Executive Experience</h2>
+          <p className="section-description">
+            Strategic leadership roles spanning AI, analytics, and large-scale transformation across global enterprises.
+        <div className="timeline">
+          <div className="timeline-line" aria-hidden="true" />
+          <ul className="timeline-list">
+                <li key={role.id} className="timeline-item">
+                  <div className="timeline-icon" aria-hidden="true">
+                    <span>{role.icon ?? '💼'}</span>
+                  <article className="role-card">
+                    <div className="role-meta">
+                      <span className="role-dates">{role.dates}</span>
+                      <h3 className="role-title">{role.title}</h3>
+                      <p className="role-company">{role.company}</p>
+                      <div className="role-tags">
+                        {role.skills.map((skill) => (
+                          <span key={skill} className="role-tag">
+                            {skill}
+                          </span>
+                        ))}
+                    </div>
+                    <div className="role-achievements desktop-only">
+                      {role.achievements.map((achievement) => (
+                        <div key={achievement.title} className="achievement-card">
+                          <div className="achievement-title">
+                            <span>→</span>
+                            {achievement.title}
+                          </div>
+                          <p className="achievement-text">{achievement.desktopText}</p>
+                      ))}
+                    <div className="mobile-only">
+                        className="accordion-toggle"
+                        <span className="chevron">›</span>
+                        className={`accordion-panel ${isOpen ? 'open' : ''}`}
+                        style={{ maxHeight: isOpen ? `${role.achievements.length * 160}px` : '0px' }}
+                        <div className="mobile-achievements">
+                            <div key={achievement.title} className="achievement-card">
+                              <div className="achievement-title">
+                                <span>→</span>
+                              <p className="achievement-text">{achievement.mobileText}</p>
 
         /* ========= Reduced Motion ========= */
         @media (prefers-reduced-motion: reduce) {
