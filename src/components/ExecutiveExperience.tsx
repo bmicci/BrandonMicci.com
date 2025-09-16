@@ -1,8 +1,41 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const ExecutiveExperience: React.FC = () => {
+  useEffect(() => {
+    // Add mobile achievement toggle functionality
+    const handleMobileToggle = () => {
+      const toggles = document.querySelectorAll('.mobile-achievement-toggle');
+      toggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling as HTMLElement;
+          if (content) {
+            const isCollapsed = content.classList.contains('collapsed');
+            if (isCollapsed) {
+              content.classList.remove('collapsed');
+              toggle.classList.add('expanded');
+            } else {
+              content.classList.add('collapsed');
+              toggle.classList.remove('expanded');
+            }
+          }
+        });
+      });
+    };
+
+    // Initialize on mount
+    handleMobileToggle();
+
+    // Cleanup
+    return () => {
+      const toggles = document.querySelectorAll('.mobile-achievement-toggle');
+      toggles.forEach(toggle => {
+        toggle.removeEventListener('click', () => {});
+      });
+    };
+  }, []);
+
   return (
     <>
       <style jsx>{`
@@ -309,6 +342,44 @@ const ExecutiveExperience: React.FC = () => {
           line-height: 1.5;
         }
 
+        /* Mobile collapsible achievements */
+        .mobile-achievement-toggle {
+          display: none;
+          background: rgba(0, 212, 255, 0.15);
+          border: 1px solid rgba(0, 212, 255, 0.3);
+          color: #00d4ff;
+          padding: 0.3rem 0.8rem;
+          border-radius: 15px;
+          font-size: 0.7rem;
+          font-weight: 500;
+          margin-bottom: 0.5rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-align: center;
+        }
+
+        .mobile-achievement-toggle:hover {
+          background: rgba(0, 212, 255, 0.25);
+          transform: translateY(-1px);
+        }
+
+        .mobile-achievement-toggle::after {
+          content: ' ▼';
+          transition: transform 0.3s ease;
+        }
+
+        .mobile-achievement-toggle.expanded::after {
+          transform: rotate(180deg);
+        }
+
+        .mobile-achievement-content {
+          display: block;
+        }
+
+        .mobile-achievement-content.collapsed {
+          display: none;
+        }
+
         /* Mobile text - hidden by default */
         .mobile-text {
           display: none;
@@ -348,48 +419,154 @@ const ExecutiveExperience: React.FC = () => {
             display: block;
           }
           .timeline-header {
-            padding: 2rem 1rem;
+            padding: 1.5rem 1rem 1rem;
           }
           .timeline-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
           }
           .timeline-subtitle {
-            font-size: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.4;
           }
           .timeline-container {
-            padding: 1rem;
+            padding: 0.5rem;
           }
           .timeline-line {
-            left: 20px;
+            left: 15px;
           }
           .timeline-node {
-            left: 0;
+            left: -5px;
+            width: 30px;
+            height: 30px;
+          }
+          .timeline-node::before {
+            width: 45px;
+            height: 45px;
+          }
+          .custom-icon {
+            width: 16px;
+            height: 16px;
+          }
+          .timeline-item {
+            padding-left: 45px;
+            margin-bottom: 1.5rem;
+          }
+          .timeline-role {
+            font-size: 1.1rem;
+            line-height: 1.2;
+            margin-bottom: 0.3rem;
+          }
+          .timeline-company {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+          }
+          .timeline-date {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            margin-bottom: 0.5rem;
+          }
+          .timeline-content {
+            padding: 1rem;
+            border-radius: 15px;
+          }
+          .skill-pills {
+            margin-bottom: 0.8rem;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding-bottom: 0.2rem;
+            -webkit-overflow-scrolling: touch;
+          }
+          .skill-pills::-webkit-scrollbar {
+            height: 3px;
+          }
+          .skill-pills::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+          }
+          .skill-pills::-webkit-scrollbar-thumb {
+            background: rgba(0, 212, 255, 0.5);
+            border-radius: 3px;
+          }
+          .skill-pill {
+            font-size: 0.65rem;
+            padding: 0.2rem 0.5rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+          }
+          .achievement-list {
+            gap: 0.6rem;
+          }
+          .achievement-card {
+            padding: 0.8rem;
+            border-radius: 8px;
+          }
+          .achievement-title {
+            font-size: 0.85rem;
+            margin-bottom: 0.3rem;
+          }
+          .achievement-arrow {
+            font-size: 1rem;
+          }
+          .achievement-text {
+            font-size: 0.8rem;
+            line-height: 1.3;
+          }
+          .mobile-achievement-toggle {
+            display: block;
+          }
+          .mobile-achievement-content {
+            display: block;
+          }
+          .mobile-achievement-content.collapsed {
+            display: none;
+          }
+        }
+
+        /* Extra small mobile devices */
+        @media (max-width: 480px) {
+          .timeline-header {
+            padding: 1rem 0.5rem 0.5rem;
+          }
+          .timeline-title {
+            font-size: 1.5rem;
+          }
+          .timeline-subtitle {
+            font-size: 0.8rem;
+          }
+          .timeline-container {
+            padding: 0.25rem;
+          }
+          .timeline-item {
+            padding-left: 40px;
+            margin-bottom: 1.2rem;
+          }
+          .timeline-node {
+            width: 25px;
+            height: 25px;
+            left: -2px;
+          }
+          .timeline-node::before {
             width: 35px;
             height: 35px;
           }
-          .custom-icon {
-            width: 20px;
-            height: 20px;
-          }
-          .timeline-item {
-            padding-left: 60px;
-            margin-bottom: 2.5rem;
+          .timeline-content {
+            padding: 0.8rem;
           }
           .timeline-role {
-            font-size: 1.3rem;
+            font-size: 1rem;
           }
-          .timeline-content {
-            padding: 1.5rem;
+          .timeline-company {
+            font-size: 0.8rem;
           }
           .achievement-card {
-            padding: 1rem;
+            padding: 0.6rem;
           }
-          .skill-pills {
-            margin-bottom: 1rem;
+          .achievement-title {
+            font-size: 0.8rem;
           }
-          .skill-pill {
-            font-size: 0.7rem;
-            padding: 0.25rem 0.6rem;
+          .achievement-text {
+            font-size: 0.75rem;
           }
         }
       `}</style>
@@ -428,6 +605,8 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Enterprise Architecture</span>
                 <span className="skill-pill">Team Leadership</span>
               </div>
+              <div className="mobile-achievement-toggle">View Achievements</div>
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -465,6 +644,7 @@ const ExecutiveExperience: React.FC = () => {
                     40% automated, 300% faster responses
                   </div>
                 </div>
+              </div>
               </div>
             </div>
           </div>
