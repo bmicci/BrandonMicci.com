@@ -14,6 +14,7 @@ import SuperpowerSection from '@/components/SuperpowerSection';
 import ExecutiveExperience from '@/components/ExecutiveExperience';
 import TransformationLeadership from '@/components/TransformationLeadership';
 import TechBackground from '@/components/TechBackground';
+import FuturisticBackground from '@/components/FuturisticBackground';
 
 export default function Home() {
   return (
@@ -52,7 +53,7 @@ export default function Home() {
       {/* Executive Experience Section */}
       <section id="executive-experience" className="min-h-screen relative">
         {/* Background */}
-        <StrategicVisionBackground />
+        <FuturisticBackground />
         
         {/* Content */}
         <ExecutiveExperience />
