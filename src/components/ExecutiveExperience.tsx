@@ -5,34 +5,29 @@ import React, { useEffect } from 'react';
 const ExecutiveExperience: React.FC = () => {
   useEffect(() => {
     // Add mobile achievement toggle functionality
-    const handleMobileToggle = () => {
-      const toggles = document.querySelectorAll('.mobile-achievement-toggle');
-      toggles.forEach(toggle => {
-        toggle.addEventListener('click', () => {
-          const content = toggle.nextElementSibling as HTMLElement;
-          if (content) {
-            const isCollapsed = content.classList.contains('collapsed');
-            if (isCollapsed) {
-              content.classList.remove('collapsed');
-              toggle.classList.add('expanded');
-            } else {
-              content.classList.add('collapsed');
-              toggle.classList.remove('expanded');
-            }
+    const handleMobileToggle = (event: Event) => {
+      const toggle = event.target as HTMLElement;
+      if (toggle.classList.contains('mobile-achievement-toggle')) {
+        const content = toggle.nextElementSibling as HTMLElement;
+        if (content) {
+          const isCollapsed = content.classList.contains('collapsed');
+          if (isCollapsed) {
+            content.classList.remove('collapsed');
+            toggle.classList.add('expanded');
+          } else {
+            content.classList.add('collapsed');
+            toggle.classList.remove('expanded');
           }
-        });
-      });
+        }
+      }
     };
 
-    // Initialize on mount
-    handleMobileToggle();
+    // Add event listener to document for delegation
+    document.addEventListener('click', handleMobileToggle);
 
     // Cleanup
     return () => {
-      const toggles = document.querySelectorAll('.mobile-achievement-toggle');
-      toggles.forEach(toggle => {
-        toggle.removeEventListener('click', () => {});
-      });
+      document.removeEventListener('click', handleMobileToggle);
     };
   }, []);
 
@@ -512,15 +507,15 @@ const ExecutiveExperience: React.FC = () => {
             font-size: 0.8rem;
             line-height: 1.3;
           }
-          .mobile-achievement-toggle {
-            display: block;
-          }
-          .mobile-achievement-content {
-            display: block;
-          }
-          .mobile-achievement-content.collapsed {
-            display: none;
-          }
+        .mobile-achievement-toggle {
+          display: block;
+        }
+        .mobile-achievement-content {
+          display: none;
+        }
+        .mobile-achievement-content.collapsed {
+          display: none;
+        }
         }
 
         /* Extra small mobile devices */
