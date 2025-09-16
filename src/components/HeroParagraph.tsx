@@ -58,10 +58,12 @@ const HeroParagraph = () => {
                 font-size: 1.1rem; /* Larger mobile font */
                 line-height: 1.7; /* Better line spacing for mobile */
                 text-align: left; /* Left align for better mobile reading */
-                padding: 15px; /* Add padding for better visual separation */
-                background: rgba(255, 255, 255, 0.05); /* Subtle background */
-                border-radius: 12px; /* Rounded corners */
-                border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+                padding: 20px 15px; /* Better padding for mobile readability */
+                background: rgba(0, 0, 0, 0.3); /* Subtle dark background for better contrast */
+                border-radius: 16px; /* More rounded corners */
+                border: none; /* Remove border for cleaner look */
+                backdrop-filter: blur(10px); /* Add blur effect for modern look */
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); /* Subtle shadow */
             }
         }
 
@@ -72,7 +74,7 @@ const HeroParagraph = () => {
 
             .hero-intro {
                 font-size: 1.05rem; /* Still larger than before */
-                padding: 12px; /* Slightly less padding on very small screens */
+                padding: 18px 12px; /* Slightly less padding on very small screens */
             }
         }
       `}</style>
