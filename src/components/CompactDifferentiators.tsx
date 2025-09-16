@@ -12,6 +12,7 @@ const CompactDifferentiators = () => {
             position: relative;
             background: transparent;
             z-index: 10;
+            order: 4; /* Default desktop order - differentiators before KPIs */
         }
 
         .compact-container {
@@ -162,6 +163,7 @@ const CompactDifferentiators = () => {
         @media (max-width: 768px) {
             .compact-differentiators {
                 padding: 10px 1rem 15px;
+                order: 4; /* Keep differentiators in position 4 on mobile */
             }
             
             .compact-box {

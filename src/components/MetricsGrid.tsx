@@ -72,6 +72,7 @@ const MetricsGrid = () => {
             position: relative;
             background: transparent;
             z-index: 10;
+            order: 5; /* Default desktop order - KPIs last */
         }
 
         .metrics-container {
@@ -276,6 +277,7 @@ const MetricsGrid = () => {
         @media (max-width: 768px) {
             .metrics-content-wrapper {
                 padding: 15px 1rem; /* Much tighter mobile spacing */
+                order: 5; /* Keep KPIs last on mobile */
             }
 
             .metrics-grid {
