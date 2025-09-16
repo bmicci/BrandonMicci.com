@@ -14,9 +14,11 @@ const ExecutiveExperience: React.FC = () => {
           if (isCollapsed) {
             content.classList.remove('collapsed');
             toggle.classList.add('expanded');
+            toggle.textContent = 'Hide Achievements';
           } else {
             content.classList.add('collapsed');
             toggle.classList.remove('expanded');
+            toggle.textContent = 'View Achievements';
           }
         }
       }
@@ -598,7 +600,7 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Team Leadership</span>
               </div>
               <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content">
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -656,7 +658,7 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Product Management</span>
               </div>
               <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content">
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -715,7 +717,7 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Data Science</span>
               </div>
               <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content">
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -773,7 +775,7 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Digital Transformation</span>
               </div>
               <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content">
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -831,7 +833,7 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Platform Architecture</span>
               </div>
               <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content">
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -890,7 +892,7 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">CI/CD</span>
               </div>
               <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content">
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -948,7 +950,7 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">NLP/OCR</span>
               </div>
               <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content">
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -1006,7 +1008,7 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Tableau</span>
               </div>
               <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content">
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -1065,7 +1067,7 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Executive Dashboards</span>
               </div>
               <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content">
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -1123,7 +1125,7 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Business Intelligence</span>
               </div>
               <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content">
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -1169,7 +1171,7 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Executive Analytics</span>
               </div>
               <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content">
+              <div className="mobile-achievement-content collapsed">
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">

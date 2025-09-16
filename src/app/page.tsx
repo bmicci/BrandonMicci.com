@@ -26,9 +26,20 @@ export default function Home() {
         
         {/* Hero Content */}
         <div className="relative z-10 w-full">
-          <HeroTitle />
-          <HeroParagraph />
-          <HeroImage />
+          {/* Desktop Layout: Title -> Paragraph -> Image */}
+          <div className="hidden md:block">
+            <HeroTitle />
+            <HeroParagraph />
+            <HeroImage />
+          </div>
+          
+          {/* Mobile Layout: Image -> Title -> Paragraph */}
+          <div className="block md:hidden">
+            <HeroImage />
+            <HeroTitle />
+            <HeroParagraph />
+          </div>
+          
           <MetricsGrid />
           <CompactDifferentiators />
         </div>
