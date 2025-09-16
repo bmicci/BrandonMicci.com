@@ -11,6 +11,8 @@ import StrategicAdvantageHeader from '@/components/StrategicAdvantageHeader';
 import StrategicIntroCard from '@/components/StrategicIntroCard';
 import StrategicDifferentiators from '@/components/StrategicDifferentiators';
 import SuperpowerSection from '@/components/SuperpowerSection';
+import ExecutiveExperience from '@/components/ExecutiveExperience';
+import TransformationLeadership from '@/components/TransformationLeadership';
 
 export default function Home() {
   return (
@@ -47,36 +49,21 @@ export default function Home() {
       </section>
 
       {/* Executive Experience Section */}
-      <section id="executive-experience" className="min-h-screen relative py-20">
+      <section id="executive-experience" className="min-h-screen relative">
         {/* Background */}
         <StrategicVisionBackground />
         
         {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12">Executive Experience</h2>
-          <div className="space-y-8">
-            <div className="border-l-4 border-cyan-400 pl-6 bg-black/20 backdrop-blur-sm rounded-r-lg p-6">
-              <h3 className="text-2xl font-semibold mb-2">AI & Digital Transformation Specialist</h3>
-              <p className="text-gray-400 mb-2">Current Role</p>
-              <p className="text-gray-300">Leading digital transformation initiatives and AI implementations</p>
-            </div>
-            {/* Add more experience items here */}
-          </div>
-        </div>
+        <ExecutiveExperience />
       </section>
 
       {/* Transformation Leadership Section */}
-      <section id="transformation-leadership" className="min-h-screen relative py-20">
+      <section id="transformation-leadership" className="min-h-screen relative">
         {/* Background */}
         <StarsBackground />
         
         {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-12">Transformation Leadership</h2>
-          <p className="text-center text-gray-300 text-lg">
-            Driving innovation through cutting-edge AI solutions and digital strategies
-          </p>
-        </div>
+        <TransformationLeadership />
       </section>
 
       {/* Professional Impact Section */}
