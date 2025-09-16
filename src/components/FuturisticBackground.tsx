@@ -1,11 +1,22 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const FuturisticBackground: React.FC = () => {
   const timelineRef = useRef<HTMLDivElement>(null);
   const hologramRef = useRef<HTMLDivElement>(null);
   const dataStreamRef = useRef<HTMLDivElement>(null);
+  const [particles, setParticles] = useState<Array<{left: string, animationDelay: string, animationDuration: string}>>([]);
+
+  useEffect(() => {
+    // Generate particles on client side to avoid hydration mismatch
+    const generatedParticles = Array.from({ length: 25 }, () => ({
+      left: Math.random() * 100 + '%',
+      animationDelay: Math.random() * 20 + 's',
+      animationDuration: (20 + Math.random() * 10) + 's'
+    }));
+    setParticles(generatedParticles);
+  }, []);
 
   useEffect(() => {
     // Create timeline nodes
@@ -361,14 +372,14 @@ const FuturisticBackground: React.FC = () => {
         
         {/* Floating tech particles */}
         <div className="tech-particles">
-          {Array.from({ length: 25 }, (_, i) => (
+          {particles.map((particle, i) => (
             <div
               key={i}
               className="tech-particle"
               style={{
-                left: Math.random() * 100 + '%',
-                animationDelay: Math.random() * 20 + 's',
-                animationDuration: (20 + Math.random() * 10) + 's'
+                left: particle.left,
+                animationDelay: particle.animationDelay,
+                animationDuration: particle.animationDuration
               }}
             />
           ))}
