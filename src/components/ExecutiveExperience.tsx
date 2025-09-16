@@ -1,43 +1,25 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ExecutiveExperience: React.FC = () => {
-  useEffect(() => {
-    // Add mobile achievement toggle functionality
-    const handleMobileToggle = (event: Event) => {
-      const toggle = event.target as HTMLElement;
-      console.log('Click detected on:', toggle.className); // Debug log
-      if (toggle.classList.contains('mobile-achievement-toggle')) {
-        console.log('Toggle button clicked!'); // Debug log
-        const content = toggle.nextElementSibling as HTMLElement;
-        if (content) {
-          console.log('Content found:', content.className); // Debug log
-          const isCollapsed = content.classList.contains('collapsed');
-          console.log('Is collapsed:', isCollapsed); // Debug log
-          if (isCollapsed) {
-            content.classList.remove('collapsed');
-            toggle.classList.add('expanded');
-            toggle.textContent = 'Hide Achievements';
-            console.log('Expanded content'); // Debug log
-          } else {
-            content.classList.add('collapsed');
-            toggle.classList.remove('expanded');
-            toggle.textContent = 'View Achievements';
-            console.log('Collapsed content'); // Debug log
-          }
-        }
+  // State to track which achievements are expanded
+  const [expandedAchievements, setExpandedAchievements] = useState<Set<number>>(new Set());
+
+  // Toggle function for achievements
+  const toggleAchievement = (index: number) => {
+    setExpandedAchievements(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
       }
-    };
+      return newSet;
+    });
+  };
 
-    // Add event listener to document for delegation
-    document.addEventListener('click', handleMobileToggle);
-
-    // Cleanup
-    return () => {
-      document.removeEventListener('click', handleMobileToggle);
-    };
-  }, []);
+  // No need for useEffect since we're using React state now
 
   return (
     <>
@@ -359,6 +341,7 @@ const ExecutiveExperience: React.FC = () => {
           cursor: pointer;
           transition: all 0.3s ease;
           text-align: center;
+          width: 100%;
         }
 
         .mobile-achievement-toggle:hover {
@@ -608,8 +591,13 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Enterprise Architecture</span>
                 <span className="skill-pill">Team Leadership</span>
               </div>
-              <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content collapsed">
+              <button 
+                className="mobile-achievement-toggle" 
+                onClick={() => toggleAchievement(0)}
+              >
+                {expandedAchievements.has(0) ? 'Hide Achievements' : 'View Achievements'}
+              </button>
+              <div className={`mobile-achievement-content ${expandedAchievements.has(0) ? '' : 'collapsed'}`}>
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
