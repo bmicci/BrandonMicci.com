@@ -439,12 +439,12 @@ const ExecutiveExperience: React.FC = () => {
           }
           .timeline-node {
             left: -5px;
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
           }
           .timeline-node::before {
-            width: 45px;
-            height: 45px;
+            width: 60px;
+            height: 60px;
           }
           .custom-icon {
             width: 16px;
@@ -544,13 +544,13 @@ const ExecutiveExperience: React.FC = () => {
             margin-bottom: 1.2rem;
           }
           .timeline-node {
-            width: 25px;
-            height: 25px;
+            width: 35px;
+            height: 35px;
             left: -2px;
           }
           .timeline-node::before {
-            width: 35px;
-            height: 35px;
+            width: 50px;
+            height: 50px;
           }
           .timeline-content {
             padding: 0.8rem;
@@ -670,8 +670,13 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">IoT Solutions</span>
                 <span className="skill-pill">Product Management</span>
               </div>
-              <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content collapsed">
+              <button 
+                className="mobile-achievement-toggle" 
+                onClick={() => toggleAchievement(1)}
+              >
+                {expandedAchievements.has(1) ? 'Hide Achievements' : 'View Achievements'}
+              </button>
+              <div className={`mobile-achievement-content ${expandedAchievements.has(1) ? '' : 'collapsed'}`}>
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -729,8 +734,13 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Business Development</span>
                 <span className="skill-pill">Data Science</span>
               </div>
-              <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content collapsed">
+              <button 
+                className="mobile-achievement-toggle" 
+                onClick={() => toggleAchievement(2)}
+              >
+                {expandedAchievements.has(2) ? 'Hide Achievements' : 'View Achievements'}
+              </button>
+              <div className={`mobile-achievement-content ${expandedAchievements.has(2) ? '' : 'collapsed'}`}>
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -787,8 +797,13 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Cloud Migration</span>
                 <span className="skill-pill">Digital Transformation</span>
               </div>
-              <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content collapsed">
+              <button 
+                className="mobile-achievement-toggle" 
+                onClick={() => toggleAchievement(10)}
+              >
+                {expandedAchievements.has(3) ? 'Hide Achievements' : 'View Achievements'}
+              </button>
+              <div className={`mobile-achievement-content ${expandedAchievements.has(3) ? '' : 'collapsed'}`}>
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -845,8 +860,13 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">COE Leadership</span>
                 <span className="skill-pill">Platform Architecture</span>
               </div>
-              <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content collapsed">
+              <button 
+                className="mobile-achievement-toggle" 
+                onClick={() => toggleAchievement(10)}
+              >
+                {expandedAchievements.has(3) ? 'Hide Achievements' : 'View Achievements'}
+              </button>
+              <div className={`mobile-achievement-content ${expandedAchievements.has(3) ? '' : 'collapsed'}`}>
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -904,8 +924,13 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Global Programs</span>
                 <span className="skill-pill">CI/CD</span>
               </div>
-              <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content collapsed">
+              <button 
+                className="mobile-achievement-toggle" 
+                onClick={() => toggleAchievement(10)}
+              >
+                {expandedAchievements.has(3) ? 'Hide Achievements' : 'View Achievements'}
+              </button>
+              <div className={`mobile-achievement-content ${expandedAchievements.has(3) ? '' : 'collapsed'}`}>
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -962,8 +987,13 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Compliance Tech</span>
                 <span className="skill-pill">NLP/OCR</span>
               </div>
-              <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content collapsed">
+              <button 
+                className="mobile-achievement-toggle" 
+                onClick={() => toggleAchievement(10)}
+              >
+                {expandedAchievements.has(3) ? 'Hide Achievements' : 'View Achievements'}
+              </button>
+              <div className={`mobile-achievement-content ${expandedAchievements.has(3) ? '' : 'collapsed'}`}>
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -1020,8 +1050,13 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Data Governance</span>
                 <span className="skill-pill">Tableau</span>
               </div>
-              <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content collapsed">
+              <button 
+                className="mobile-achievement-toggle" 
+                onClick={() => toggleAchievement(10)}
+              >
+                {expandedAchievements.has(3) ? 'Hide Achievements' : 'View Achievements'}
+              </button>
+              <div className={`mobile-achievement-content ${expandedAchievements.has(3) ? '' : 'collapsed'}`}>
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -1079,8 +1114,13 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Community Building</span>
                 <span className="skill-pill">Executive Dashboards</span>
               </div>
-              <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content collapsed">
+              <button 
+                className="mobile-achievement-toggle" 
+                onClick={() => toggleAchievement(10)}
+              >
+                {expandedAchievements.has(3) ? 'Hide Achievements' : 'View Achievements'}
+              </button>
+              <div className={`mobile-achievement-content ${expandedAchievements.has(3) ? '' : 'collapsed'}`}>
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -1137,8 +1177,13 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Fraud Detection</span>
                 <span className="skill-pill">Business Intelligence</span>
               </div>
-              <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content collapsed">
+              <button 
+                className="mobile-achievement-toggle" 
+                onClick={() => toggleAchievement(10)}
+              >
+                {expandedAchievements.has(3) ? 'Hide Achievements' : 'View Achievements'}
+              </button>
+              <div className={`mobile-achievement-content ${expandedAchievements.has(3) ? '' : 'collapsed'}`}>
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
@@ -1183,8 +1228,13 @@ const ExecutiveExperience: React.FC = () => {
                 <span className="skill-pill">Operations</span>
                 <span className="skill-pill">Executive Analytics</span>
               </div>
-              <div className="mobile-achievement-toggle">View Achievements</div>
-              <div className="mobile-achievement-content collapsed">
+              <button 
+                className="mobile-achievement-toggle" 
+                onClick={() => toggleAchievement(10)}
+              >
+                {expandedAchievements.has(3) ? 'Hide Achievements' : 'View Achievements'}
+              </button>
+              <div className={`mobile-achievement-content ${expandedAchievements.has(3) ? '' : 'collapsed'}`}>
               <div className="achievement-list">
                 <div className="achievement-card">
                   <div className="achievement-title">
