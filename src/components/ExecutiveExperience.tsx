@@ -99,6 +99,10 @@ const ExecutiveExperience: React.FC = () => {
         .timeline-item:nth-child(2) { animation-delay: 0.2s; }
         .timeline-item:nth-child(3) { animation-delay: 0.3s; }
         .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item:nth-child(7) { animation-delay: 0.7s; }
+        .timeline-item:nth-child(8) { animation-delay: 0.8s; }
 
         /* Timeline node/orb */
         .timeline-node {
@@ -621,6 +625,227 @@ const ExecutiveExperience: React.FC = () => {
                   </div>
                   <div className="achievement-text mobile-text">
                     IoT across 18 operational systems
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Position 5: Southwest Airlines Analytics */}
+          <div className="timeline-item">
+            <div className="timeline-node">
+              <span style={{fontSize: '1.2rem', color: 'white'}}>📈</span>
+            </div>
+            <div className="timeline-content">
+              <span className="timeline-date">2019</span>
+              <h3 className="timeline-role">Data Enablement & Analytics COE Lead</h3>
+              <div className="timeline-company">Southwest Airlines</div>
+              <div className="skill-pills">
+                <span className="skill-pill">Data Analytics</span>
+                <span className="skill-pill">COE Leadership</span>
+                <span className="skill-pill">Platform Architecture</span>
+              </div>
+              <div className="achievement-list">
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Cost Optimization
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Decommissioned hundreds of legacy dashboards across 5 platforms, reducing annual support costs by $5M
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    $5M cost reduction via platform consolidation
+                  </div>
+                </div>
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Community Building
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Built evangelical Data Analyst Community scaling to 2,500+ users with 40% adoption increase
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    2,500+ user community, 40% adoption
+                  </div>
+                </div>
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Operational Excellence
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Architected Tier 1 Production Data Environment achieving 100% availability for critical real-time operations
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    100% uptime for critical operations
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Position 6: Citigroup */}
+          <div className="timeline-item">
+            <div className="timeline-node">
+              <span style={{fontSize: '1.2rem', color: 'white'}}>🌐</span>
+            </div>
+            <div className="timeline-content">
+              <span className="timeline-date">2017 - 2019</span>
+              <h3 className="timeline-role">VP, Global Digital and Cloud Transformation Leader</h3>
+              <div className="timeline-company">Citigroup</div>
+              <div className="skill-pills">
+                <span className="skill-pill">Cloud Architecture</span>
+                <span className="skill-pill">DevOps</span>
+                <span className="skill-pill">Global Programs</span>
+                <span className="skill-pill">CI/CD</span>
+              </div>
+              <div className="achievement-list">
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Global Platform
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Architected global telemetry platform increasing environment stability to 98% across worldwide operations
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    98% global platform stability achieved
+                  </div>
+                </div>
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    DevOps Acceleration
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Evangelized DevOps transformation accelerating cloud enablement by 200% through CI/CD pipeline implementation
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    200% faster cloud deployment via DevOps
+                  </div>
+                </div>
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Legacy Modernization
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Drove modernization across legacy infrastructure stacks, establishing world-class performance standards
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    Modernized legacy infrastructure globally
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Position 7: Capital One Risk Analytics */}
+          <div className="timeline-item">
+            <div className="timeline-node">
+              <span style={{fontSize: '1.2rem', color: 'white'}}>⚡</span>
+            </div>
+            <div className="timeline-content">
+              <span className="timeline-date">2016 - 2017</span>
+              <h3 className="timeline-role">Risk Analytics Leader, Auto Finance & Home Loans</h3>
+              <div className="timeline-company">Capital One</div>
+              <div className="skill-pills">
+                <span className="skill-pill">Risk Analytics</span>
+                <span className="skill-pill">Compliance Tech</span>
+                <span className="skill-pill">NLP/OCR</span>
+              </div>
+              <div className="achievement-list">
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Team Building
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Built and led first Risk & Analytics Reporting Team (7 analysts/engineers) with dedicated Tableau environment
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    Built 7-person analytics team from scratch
+                  </div>
+                </div>
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Compliance Innovation
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Implemented automated compliance testing with advanced NLP and real-time OCR scanning for regulatory requirements
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    Automated compliance via NLP/OCR tech
+                  </div>
+                </div>
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Risk Management
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Created automated controls to detect emerging high-risk blind spots in real-time
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    Real-time risk detection system built
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Position 8: Capital One Enterprise Analytics */}
+          <div className="timeline-item">
+            <div className="timeline-node">
+              <span style={{fontSize: '1.2rem', color: 'white'}}>🎯</span>
+            </div>
+            <div className="timeline-content">
+              <span className="timeline-date">2016</span>
+              <h3 className="timeline-role">Enterprise Analytics Leader, Risk & Compliance</h3>
+              <div className="timeline-company">Capital One</div>
+              <div className="skill-pills">
+                <span className="skill-pill">Enterprise Analytics</span>
+                <span className="skill-pill">Data Governance</span>
+                <span className="skill-pill">Tableau</span>
+              </div>
+              <div className="achievement-list">
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Performance Optimization
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Achieved 200% team output increase with 10 Data Engineers/Analysts, delivering 15+ enterprise risk dashboards
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    200% productivity, 15+ dashboards delivered
+                  </div>
+                </div>
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Data Governance
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Established enterprise gold standard for Data Quality, enhancing organizational capability by 80%
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    80% capability increase via data standards
+                  </div>
+                </div>
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Cross-Functional Leadership
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Led large-scale Tableau Dashboard efforts as internal consultant across enterprise functions
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    Enterprise-wide dashboard consulting
                   </div>
                 </div>
               </div>
