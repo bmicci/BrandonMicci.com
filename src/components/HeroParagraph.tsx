@@ -13,6 +13,7 @@ const HeroParagraph = () => {
             position: relative;
             background: transparent;
             z-index: 10;
+            order: 2; /* Default order for desktop */
         }
 
         .hero-paragraph-container {
@@ -46,6 +47,7 @@ const HeroParagraph = () => {
         @media (max-width: 768px) {
             .hero-paragraph-wrapper {
                 padding: 8px 1rem; /* Tighter mobile spacing */
+                order: 3; /* Move paragraph to third position on mobile */
             }
 
             .hero-intro {

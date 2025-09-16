@@ -13,6 +13,7 @@ const HeroImage = () => {
             position: relative;
             background: transparent;
             z-index: 10;
+            order: 3; /* Default order for desktop */
         }
 
         .image-content {
@@ -60,6 +61,7 @@ const HeroImage = () => {
         @media (max-width: 768px) {
             .image-section {
                 padding: 20px 1rem;
+                order: 1; /* Move image to first position on mobile */
             }
 
             .professional-image {
