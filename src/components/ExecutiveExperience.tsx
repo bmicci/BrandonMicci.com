@@ -7,18 +7,24 @@ const ExecutiveExperience: React.FC = () => {
     // Add mobile achievement toggle functionality
     const handleMobileToggle = (event: Event) => {
       const toggle = event.target as HTMLElement;
+      console.log('Click detected on:', toggle.className); // Debug log
       if (toggle.classList.contains('mobile-achievement-toggle')) {
+        console.log('Toggle button clicked!'); // Debug log
         const content = toggle.nextElementSibling as HTMLElement;
         if (content) {
+          console.log('Content found:', content.className); // Debug log
           const isCollapsed = content.classList.contains('collapsed');
+          console.log('Is collapsed:', isCollapsed); // Debug log
           if (isCollapsed) {
             content.classList.remove('collapsed');
             toggle.classList.add('expanded');
             toggle.textContent = 'Hide Achievements';
+            console.log('Expanded content'); // Debug log
           } else {
             content.classList.add('collapsed');
             toggle.classList.remove('expanded');
             toggle.textContent = 'View Achievements';
+            console.log('Collapsed content'); // Debug log
           }
         }
       }
@@ -513,6 +519,9 @@ const ExecutiveExperience: React.FC = () => {
             display: block;
           }
           .mobile-achievement-content {
+            display: none;
+          }
+          .mobile-achievement-content.collapsed {
             display: none;
           }
         }
