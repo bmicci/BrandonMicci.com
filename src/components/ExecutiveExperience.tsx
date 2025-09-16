@@ -509,12 +509,12 @@ const ExecutiveExperience: React.FC = () => {
             font-size: 0.8rem;
             line-height: 1.3;
           }
-        .mobile-achievement-toggle {
-          display: block;
-        }
-        .mobile-achievement-content {
-          display: none;
-        }
+          .mobile-achievement-toggle {
+            display: block;
+          }
+          .mobile-achievement-content {
+            display: none;
+          }
         }
 
         /* Extra small mobile devices */
