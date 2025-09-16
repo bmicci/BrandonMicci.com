@@ -13,6 +13,7 @@ import StrategicDifferentiators from '@/components/StrategicDifferentiators';
 import SuperpowerSection from '@/components/SuperpowerSection';
 import ExecutiveExperience from '@/components/ExecutiveExperience';
 import TransformationLeadership from '@/components/TransformationLeadership';
+import TechBackground from '@/components/TechBackground';
 
 export default function Home() {
   return (
@@ -69,7 +70,7 @@ export default function Home() {
       {/* Professional Impact Section */}
       <section id="professional-impact" className="min-h-screen relative py-20">
         {/* Background */}
-        <HeroBackground />
+        <TechBackground />
         
         {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
