@@ -502,7 +502,7 @@ const ExecutiveExperience: React.FC = () => {
             display: block;
           }
           .mobile-achievement-content {
-            display: none;
+            display: block;
           }
           .mobile-achievement-content.collapsed {
             display: none;
