@@ -121,7 +121,7 @@ const ROLES: Role[] = [
     skills: ['Tableau COE', 'Big Data', 'Community Building', 'Executive Dashboards'],
     achievements: [
       { title: 'World Record Achievement', text: 'Established an enterprise Tableau COE driving adoption to 30,000+ users—one of the largest evangelical Tableau communities worldwide.' },
-      { title: 'Executive Engagement', text: 'Appointed to develop top-of-house mobile dashboards for Capital One's CEO, Rich Fairbanks.' },
+      { title: 'Executive Engagement', text: 'Appointed to develop top-of-house mobile dashboards for Capital One&apos;s CEO, Rich Fairbanks.' },
       { title: 'Platform Transformation', text: 'Led comprehensive big data platform transformation and legacy system modernization.' },
     ],
   },
@@ -132,7 +132,7 @@ const ROLES: Role[] = [
     icon: '🔍',
     skills: ['Data Analytics', 'Fraud Detection', 'Business Intelligence'],
     achievements: [
-      { title: 'Department Creation', text: 'Built and led the firm's first Tableau Enterprise Data & Analytics department dedicated to fraud and compliance.' },
+      { title: 'Department Creation', text: 'Built and led the firm&apos;s first Tableau Enterprise Data & Analytics department dedicated to fraud and compliance.' },
       { title: 'Solution Development', text: 'Led development of data analytics and BI solutions for government and commercial clients.' },
     ],
   },
@@ -144,7 +144,7 @@ const ROLES: Role[] = [
     skills: ['Strategy', 'Operations', 'Executive Analytics'],
     achievements: [
       { title: 'Executive Support', text: 'Served as Lead Analyst to the COO of Global Delivery, sole provider of performance metrics and dashboards.' },
-      { title: 'Innovation Pioneer', text: 'Spearheaded the firm's first Tableau deployment for optimized dashboard automation.' },
+      { title: 'Innovation Pioneer', text: 'Spearheaded the firm&apos;s first Tableau deployment for optimized dashboard automation.' },
     ],
   },
 ];
