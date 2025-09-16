@@ -8,13 +8,17 @@ const ExecutiveExperience: React.FC = () => {
 
   // Toggle function for achievements
   const toggleAchievement = (index: number) => {
+    console.log('Toggle clicked for index:', index); // Debug log
     setExpandedAchievements(prev => {
       const newSet = new Set(prev);
       if (newSet.has(index)) {
         newSet.delete(index);
+        console.log('Collapsing index:', index); // Debug log
       } else {
         newSet.add(index);
+        console.log('Expanding index:', index); // Debug log
       }
+      console.log('New expanded set:', Array.from(newSet)); // Debug log
       return newSet;
     });
   };
@@ -594,8 +598,15 @@ const ExecutiveExperience: React.FC = () => {
               <button 
                 className="mobile-achievement-toggle" 
                 onClick={() => toggleAchievement(0)}
+                style={{ 
+                  backgroundColor: 'red', 
+                  color: 'white', 
+                  padding: '10px',
+                  border: '2px solid yellow',
+                  fontSize: '16px'
+                }}
               >
-                {expandedAchievements.has(0) ? 'Hide Achievements' : 'View Achievements'}
+                {expandedAchievements.has(0) ? 'Hide Achievements' : 'View Achievements'} (DEBUG)
               </button>
               <div className={`mobile-achievement-content ${expandedAchievements.has(0) ? '' : 'collapsed'}`}>
               <div className="achievement-list">
