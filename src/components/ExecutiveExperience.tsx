@@ -56,13 +56,14 @@ const ExecutiveExperience: React.FC = () => {
           position: absolute;
           left: 50px;
           top: 0;
-          bottom: -50px; /* Extends beyond container for seamless connection */
+          bottom: 0; /* Ends at container bottom */
           width: 2px;
           background: linear-gradient(180deg, 
-            transparent 0%, 
-            #00d4ff 10%, 
-            #1e90ff 50%, 
-            #00d4ff 100%); /* No fade at bottom */
+              transparent 0%, 
+              #00d4ff 10%, 
+              #1e90ff 50%, 
+              #00d4ff 90%,
+              transparent 100%); /* Fades at bottom for final section */
           z-index: 0;
         }
 
@@ -103,6 +104,9 @@ const ExecutiveExperience: React.FC = () => {
         .timeline-item:nth-child(6) { animation-delay: 0.6s; }
         .timeline-item:nth-child(7) { animation-delay: 0.7s; }
         .timeline-item:nth-child(8) { animation-delay: 0.8s; }
+        .timeline-item:nth-child(9) { animation-delay: 0.9s; }
+        .timeline-item:nth-child(10) { animation-delay: 1.0s; }
+        .timeline-item:nth-child(11) { animation-delay: 1.1s; }
 
         /* Timeline node/orb */
         .timeline-node {
@@ -397,10 +401,10 @@ const ExecutiveExperience: React.FC = () => {
             <span className="gradient-text">Career Timeline</span>
           </h2>
           <p className="timeline-subtitle desktop-text">
-            16+ years of architecting enterprise AI solutions and driving digital transformation across Fortune 500 organizations
+            15+ years of architecting enterprise AI solutions and driving digital transformation across Fortune 500 organizations
           </p>
           <p className="timeline-subtitle mobile-text">
-            16+ years in enterprise AI & digital transformation
+            15+ years in enterprise AI & digital transformation
           </p>
         </div>
 
@@ -846,6 +850,148 @@ const ExecutiveExperience: React.FC = () => {
                   </div>
                   <div className="achievement-text mobile-text">
                     Enterprise-wide dashboard consulting
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Position 9: Capital One COE Leader */}
+          <div className="timeline-item">
+            <div className="timeline-node">
+              <span style={{fontSize: '1.2rem', color: 'white'}}>🚀</span>
+            </div>
+            <div className="timeline-content">
+              <span className="timeline-date">2015 - 2016</span>
+              <h3 className="timeline-role">Center of Excellence Leader, Tableau & Big Data</h3>
+              <div className="timeline-company">Capital One</div>
+              <div className="skill-pills">
+                <span className="skill-pill">Tableau COE</span>
+                <span className="skill-pill">Big Data</span>
+                <span className="skill-pill">Community Building</span>
+                <span className="skill-pill">Executive Dashboards</span>
+              </div>
+              <div className="achievement-list">
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    World Record Achievement
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Established enterprise Tableau COE driving adoption to 30,000+ users—largest evangelical Tableau community worldwide
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    30K+ users—world&apos;s largest Tableau community
+                  </div>
+                </div>
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Executive Engagement
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Appointed to develop top-of-house mobile dashboards for Capital One&apos;s CEO, Rich Fairbanks
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    Built CEO dashboards for Rich Fairbanks
+                  </div>
+                </div>
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Platform Transformation
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Led comprehensive big data platform transformation and legacy system modernization
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    Big data platform transformation lead
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Position 10: Booz Allen Hamilton */}
+          <div className="timeline-item">
+            <div className="timeline-node">
+              <span style={{fontSize: '1.2rem', color: 'white'}}>🔍</span>
+            </div>
+            <div className="timeline-content">
+              <span className="timeline-date">2013 - 2014</span>
+              <h3 className="timeline-role">Senior Consultant, Lead Data Analyst</h3>
+              <div className="timeline-company">Booz Allen Hamilton</div>
+              <div className="skill-pills">
+                <span className="skill-pill">Data Analytics</span>
+                <span className="skill-pill">Fraud Detection</span>
+                <span className="skill-pill">Business Intelligence</span>
+              </div>
+              <div className="achievement-list">
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Department Creation
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Built and led the firm&apos;s first Tableau Enterprise Data & Analytics department dedicated to fraud and compliance
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    Created first enterprise analytics department
+                  </div>
+                </div>
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Solution Development
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Led development of data analytics and BI solutions for government and commercial clients
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    Built analytics for gov/commercial clients
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Position 11: PricewaterhouseCoopers */}
+          <div className="timeline-item">
+            <div className="timeline-node">
+              <span style={{fontSize: '1.2rem', color: 'white'}}>📋</span>
+            </div>
+            <div className="timeline-content">
+              <span className="timeline-date">2009 - 2013</span>
+              <h3 className="timeline-role">Global Operations and Strategy Associate</h3>
+              <div className="timeline-company">PricewaterhouseCoopers</div>
+              <div className="skill-pills">
+                <span className="skill-pill">Strategy</span>
+                <span className="skill-pill">Operations</span>
+                <span className="skill-pill">Executive Analytics</span>
+              </div>
+              <div className="achievement-list">
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Executive Support
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Served as Lead Analyst to COO of Global Delivery, sole provider of performance metrics and dashboards
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    Lead analyst to COO, performance metrics
+                  </div>
+                </div>
+                <div className="achievement-card">
+                  <div className="achievement-title">
+                    <span className="achievement-arrow">→</span>
+                    Innovation Pioneer
+                  </div>
+                  <div className="achievement-text desktop-text">
+                    Spearheaded firm&apos;s first Tableau deployment for optimized dashboard automation
+                  </div>
+                  <div className="achievement-text mobile-text">
+                    First Tableau deployment at firm
                   </div>
                 </div>
               </div>
