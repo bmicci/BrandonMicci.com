@@ -155,7 +155,13 @@ const ExecutiveExperience: React.FC = () => {
   const toggle = (i: number) =>
     setExpanded(prev => {
       const next = new Set(prev);
-      next.has(i) ? next.delete(i) : next.add(i);
+
+      if (next.has(i)) {
+        next.delete(i);
+      } else {
+        next.add(i);
+      }
+
       return next;
     });
 
@@ -265,6 +271,9 @@ const ExecutiveExperience: React.FC = () => {
         .achievement-arrow { font-size:1.2rem; }
         .achievement-text { color: rgba(255,255,255,0.9); line-height:1.5; }
 
+        .desktop-achievements { margin-top: 1.5rem; }
+        .mobile-achievements { display: none; }
+
         /* ========= Mobile Toggle ========= */
         .mobile-achievement-toggle {
           display: none; /* shown on mobile via media query */
@@ -350,6 +359,9 @@ const ExecutiveExperience: React.FC = () => {
           .achievement-arrow { font-size: 1rem; }
           .achievement-text { font-size: .9rem; line-height: 1.4; }
 
+          .desktop-achievements { display: none; }
+          .mobile-achievements { display: block; }
+
           /* show the toggle on mobile */
           .mobile-achievement-toggle { display: block; }
         }
@@ -391,51 +403,61 @@ const ExecutiveExperience: React.FC = () => {
         {/* Body */}
         <div className="timeline-container">
           <div className="timeline-line" />
-          {ROLES.map((r, i) => (
-            <div className="timeline-item" key={i}>
-              <div className="timeline-node"><span style={{ fontSize: '1.2rem' }}>{r.icon}</span></div>
-              <div className="timeline-content">
-                <span className="timeline-date">{r.dates}</span>
-                <h3 className="timeline-role">{r.role}</h3>
-                <div className="timeline-company">{r.company}</div>
+          {ROLES.map((r, i) => {
+            const renderAchievementCards = () => (
+              <div className="achievement-list">
+                {r.achievements.map((a, j) => (
+                  <div className="achievement-card" key={j}>
+                    <div className="achievement-title">
+                      <span className="achievement-arrow">→</span>
+                      {a.title}
+                    </div>
+                    <div className="achievement-text">{a.text}</div>
+                  </div>
+                ))}
+              </div>
+            );
 
-                <div className="skill-pills">
-                  {r.skills.map((s, k) => (
-                    <span className="skill-pill" key={k}>{s}</span>
-                  ))}
-                </div>
+            const isExpanded = expanded.has(i);
 
-                {/* Mobile toggle */}
-                <button
-                  className="mobile-achievement-toggle"
-                  onClick={() => toggle(i)}
-                  aria-expanded={expanded.has(i)}
-                  aria-controls={`achievements-${i}`}
-                >
-                  {expanded.has(i) ? 'Hide Achievements' : 'View Achievements'}
-                </button>
+            return (
+              <div className="timeline-item" key={i}>
+                <div className="timeline-node"><span style={{ fontSize: '1.2rem' }}>{r.icon}</span></div>
+                <div className="timeline-content">
+                  <span className="timeline-date">{r.dates}</span>
+                  <h3 className="timeline-role">{r.role}</h3>
+                  <div className="timeline-company">{r.company}</div>
 
-                {/* Collapsible content */}
-                <div
-                  id={`achievements-${i}`}
-                  className={`mobile-achievement-content ${expanded.has(i) ? '' : 'collapsed'}`}
-                >
-                  <div className="achievement-list">
-                    {r.achievements.map((a, j) => (
-                      <div className="achievement-card" key={j}>
-                        <div className="achievement-title">
-                          <span className="achievement-arrow">→</span>
-                          {a.title}
-                        </div>
-                        <div className="achievement-text">{a.text}</div>
-                      </div>
+                  <div className="skill-pills">
+                    {r.skills.map((s, k) => (
+                      <span className="skill-pill" key={k}>{s}</span>
                     ))}
                   </div>
-                </div>
 
+                  <div className="desktop-achievements">{renderAchievementCards()}</div>
+
+                  <div className="mobile-achievements">
+                    <button
+                      type="button"
+                      className="mobile-achievement-toggle"
+                      onClick={() => toggle(i)}
+                      aria-expanded={isExpanded}
+                      aria-controls={`achievements-${i}`}
+                    >
+                      {isExpanded ? 'Hide Achievements' : 'View Achievements'}
+                    </button>
+
+                    <div
+                      id={`achievements-${i}`}
+                      className={`mobile-achievement-content ${isExpanded ? '' : 'collapsed'}`}
+                    >
+                      {renderAchievementCards()}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </>
