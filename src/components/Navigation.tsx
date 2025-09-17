@@ -78,9 +78,10 @@ const Navigation = () => {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0.5rem 2rem;
+            padding: 0.6rem 2rem;
             position: relative;
-            min-height: 50px;
+            min-height: 58px;
+            transition: padding 0.3s ease, min-height 0.3s ease;
         }
 
         .logo {
@@ -98,8 +99,8 @@ const Navigation = () => {
         }
 
         .logo-icon {
-            width: 32px;
-            height: 32px;
+            width: 52px;
+            height: 52px;
             background-image: url('/logo.png');
             background-size: contain;
             background-repeat: no-repeat;
@@ -121,19 +122,21 @@ const Navigation = () => {
         }
 
         .logo-name {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: #00d4ff;
             white-space: nowrap;
             text-decoration: none;
+            transition: font-size 0.3s ease;
         }
 
         .logo-title {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             color: rgba(255, 255, 255, 0.7);
             font-weight: 400;
             letter-spacing: 0.3px;
             white-space: nowrap;
+            transition: font-size 0.3s ease, opacity 0.3s ease;
         }
 
         .nav-menu {
@@ -141,6 +144,27 @@ const Navigation = () => {
             list-style: none;
             gap: 0;
             margin: 0;
+        }
+
+        @media (min-width: 769px) {
+            .wix-header.scrolled .nav-container {
+                padding: 0.35rem 2rem;
+                min-height: 50px;
+            }
+
+            .wix-header.scrolled .logo-icon {
+                width: 46px;
+                height: 46px;
+            }
+
+            .wix-header.scrolled .logo-name {
+                font-size: 0.88rem;
+            }
+
+            .wix-header.scrolled .logo-title {
+                font-size: 0.55rem;
+                opacity: 0.85;
+            }
         }
 
         .nav-item {
@@ -279,7 +303,7 @@ const Navigation = () => {
                 backdrop-filter: blur(20px);
                 -webkit-backdrop-filter: blur(20px);
                 flex-direction: column;
-                padding: 1rem 0;
+                padding: 0.4rem 0 1rem;
                 border-top: 1px solid rgba(255, 255, 255, 0.1);
                 transform: translateY(-10px);
                 opacity: 0;
@@ -298,32 +322,46 @@ const Navigation = () => {
             }
 
             .nav-link {
-                padding: 1rem 1.5rem;
+                padding: 0.75rem 1.4rem;
                 margin: 0;
                 border-radius: 8px;
             }
 
             .cta-button {
-                margin: 1rem;
+                margin: 0.6rem 1rem;
                 justify-content: center;
+            }
+
+            .logo-icon {
+                width: 48px;
+                height: 48px;
             }
 
             .logo-name {
                 font-size: 1.2rem;
             }
 
-            .logo-title {
-                font-size: 0.7rem;
-            }
-
             .nav-container {
-                padding: 1rem;
+                padding: 0.6rem 1rem;
+                min-height: 56px;
             }
         }
 
         @media (max-width: 640px) {
-            .logo-text {
+            .logo {
+                gap: 0.5rem;
+            }
+
+            .logo-name {
+                font-size: 1.05rem;
+            }
+
+            .logo-title {
                 display: none;
+            }
+
+            .logo-text {
+                display: flex;
             }
         }
       `}</style>

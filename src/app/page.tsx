@@ -1,9 +1,4 @@
-import HeroBackground from '@/components/HeroBackground';
-import HeroTitle from '@/components/HeroTitle';
-import HeroParagraph from '@/components/HeroParagraph';
-import HeroImage from '@/components/HeroImage';
-import CompactDifferentiators from '@/components/CompactDifferentiators';
-import MetricsGrid from '@/components/MetricsGrid';
+import HeroSection from '@/components/HeroSection';
 import StrategicVisionBackground from '@/components/StrategicVisionBackground';
 import StarsBackground from '@/components/StarsBackground';
 import CompanyExpertise from '@/components/CompanyExpertise';
@@ -20,19 +15,7 @@ export default function Home() {
   return (
     <div className="min-h-screen text-white relative">
       {/* Hero Section with Background */}
-      <section id="home" className="min-h-screen relative pt-12">
-        {/* Animated Background */}
-        <HeroBackground />
-        
-        {/* Hero Content */}
-        <div className="relative z-10 w-full flex flex-col">
-          <HeroTitle />
-          <HeroParagraph />
-          <HeroImage />
-          <MetricsGrid />
-          <CompactDifferentiators />
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Strategic Vision Section */}
       <section id="strategic-vision" className="min-h-screen relative">
