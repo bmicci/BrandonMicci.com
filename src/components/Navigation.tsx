@@ -100,7 +100,7 @@ const Navigation = () => {
         .logo-icon {
             width: 32px;
             height: 32px;
-            background-image: url('https://static.wixstatic.com/media/0738c5_c16d2bed00984d14bd14008be4274f33~mv2.png');
+            background-image: url('/logo.png');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;

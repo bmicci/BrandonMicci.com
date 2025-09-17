@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 const HeroImage = () => {
   return (
     <>
@@ -21,18 +23,13 @@ const HeroImage = () => {
             margin: 0 auto;
             width: 100%;
             position: relative;
+            height: 350px; /* Explicit height for the fill layout */
             animation: imageReveal 1s ease-out 0.5s both;
         }
 
         .professional-image {
-            width: 100%;
-            max-width: 300px; /* Reduced from 350px */
-            height: 350px; /* Reduced from 400px */
             border-radius: 16px;
             object-fit: cover;
-            margin: 0 auto;
-            display: block;
-            position: relative;
             
             /* Clean professional styling */
             border: 1px solid rgba(255, 255, 255, 0.15);
@@ -64,9 +61,12 @@ const HeroImage = () => {
                 order: 2; /* Move image to second position on mobile (after header) */
             }
 
-            .professional-image {
+            .image-content {
                 max-width: 280px;
                 height: 320px;
+            }
+
+            .professional-image {
                 animation: professionalPulse 4s ease-in-out infinite;
             }
         }
@@ -76,9 +76,12 @@ const HeroImage = () => {
                 padding: 15px 0.75rem;
             }
 
-            .professional-image {
+            .image-content {
                 max-width: 240px;
                 height: 280px;
+            }
+
+            .professional-image {
                 border-radius: 12px;
             }
         }
@@ -124,10 +127,13 @@ const HeroImage = () => {
 
       <div className="image-section">
         <div className="image-content">
-          <img 
-            src="https://static.wixstatic.com/media/0738c5_7a9c645162564209b7e7da8eb9f35ae9~mv2.jpeg" 
-            alt="Brandon Micci - AI & Digital Transformation Executive" 
+          <Image
+            src="/headshot.jpg"
+            alt="Brandon Micci - AI & Digital Transformation Executive"
             className="professional-image"
+            fill
+            sizes="(max-width: 480px) 240px, (max-width: 768px) 280px, 320px"
+            priority
           />
         </div>
       </div>
