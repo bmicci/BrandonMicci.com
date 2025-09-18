@@ -1100,7 +1100,7 @@ const HeroSection = () => {
         <div className="image-section">
           <div className="image-content">
             <Image
-              src="https://static.wixstatic.com/media/0738c5_7a9c645162564209b7e7da8eb9f35ae9~mv2.jpeg"
+              src="/headshot.jpg"
               alt="Brandon Micci - AI & Digital Transformation Executive"
               className="professional-image"
               fill
