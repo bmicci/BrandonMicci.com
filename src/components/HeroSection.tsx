@@ -1,9 +1,51 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const HeroSection: React.FC = () => {
+  const [counts, setCounts] = useState({
+    value: 0,
+    users: 0,
+    roi: 0,
+    years: 0
+  });
+
+  useEffect(() => {
+    const animateCounts = () => {
+      const duration = 2000; // 2 seconds
+      const steps = 60;
+      const stepDuration = duration / steps;
+
+      const targets = {
+        value: 400,
+        users: 27,
+        roi: 250,
+        years: 16
+      };
+
+      let currentStep = 0;
+      const interval = setInterval(() => {
+        currentStep++;
+        const progress = currentStep / steps;
+        
+        setCounts({
+          value: Math.floor(targets.value * progress),
+          users: Math.floor(targets.users * progress),
+          roi: Math.floor(targets.roi * progress),
+          years: Math.floor(targets.years * progress)
+        });
+
+        if (currentStep >= steps) {
+          clearInterval(interval);
+        }
+      }, stepDuration);
+    };
+
+    // Start animation after a short delay
+    const timer = setTimeout(animateCounts, 500);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
       <div className="hero-section">
@@ -67,9 +109,9 @@ const HeroSection: React.FC = () => {
               </p>
 
               <p className="hero-description">
-                With 16+ years of experience architecting enterprise-wide AI solutions, I&apos;ve transformed complex technological
-                challenges into over $400M in measurable business outcomes. From leading the largest LLM deployment in the payments
-                industry to building evangelical data communities of 30,000+ users, I bridge the gap between cutting-edge innovation and
+                With <span className="gradient-highlight">16+ years</span> of experience architecting enterprise-wide AI solutions, I&apos;ve transformed complex technological
+                challenges into over <span className="gradient-highlight">$400M in measurable business outcomes</span>. From leading the largest LLM deployment in the payments
+                industry to building evangelical data communities of <span className="gradient-highlight">30,000+ users</span>, I bridge the gap between cutting-edge innovation and
                 practical enterprise implementation.
               </p>
 
@@ -88,24 +130,28 @@ const HeroSection: React.FC = () => {
                     <span className="cta-icon">📄</span>
                     View Resume
                   </a>
+                  <a href="/executive-brief.pdf" target="_blank" rel="noopener noreferrer" className="cta-button outline">
+                    <span className="cta-icon">📋</span>
+                    Executive Brief
+                  </a>
                 </div>
                 
                 {/* Quick Stats */}
                 <div className="hero-stats">
                   <div className="stat-item">
-                    <span className="stat-number">$400M+</span>
+                    <span className="stat-number">${counts.value}M+</span>
                     <span className="stat-label">Value Delivered</span>
                   </div>
                   <div className="stat-item">
-                    <span className="stat-number">27K+</span>
+                    <span className="stat-number">{counts.users}K+</span>
                     <span className="stat-label">AI Users</span>
                   </div>
                   <div className="stat-item">
-                    <span className="stat-number">250%</span>
+                    <span className="stat-number">{counts.roi}%</span>
                     <span className="stat-label">Typical ROI</span>
                   </div>
                   <div className="stat-item">
-                    <span className="stat-number">16+</span>
+                    <span className="stat-number">{counts.years}+</span>
                     <span className="stat-label">Years Leading</span>
                   </div>
                 </div>
@@ -185,27 +231,6 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Metrics Section */}
-          <div className="metrics-section">
-            <div className="metrics-grid">
-              <div className="metric-glass">
-                <span className="metric-number">$400M+</span>
-                <div className="metric-label">Value Delivered</div>
-              </div>
-              <div className="metric-glass">
-                <span className="metric-number">27K+</span>
-                <div className="metric-label">AI Users</div>
-              </div>
-              <div className="metric-glass">
-                <span className="metric-number">250%</span>
-                <div className="metric-label">Typical ROI</div>
-              </div>
-              <div className="metric-glass">
-                <span className="metric-number">16+</span>
-                <div className="metric-label">Years Leading</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -657,6 +682,28 @@ const HeroSection: React.FC = () => {
           margin-bottom: 2rem;
         }
 
+        .gradient-highlight {
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 50%, #00d4ff 100%);
+          background-size: 200% 200%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          animation: gradientShift 3s ease-in-out infinite;
+          font-weight: 600;
+        }
+
+        @keyframes gradientShift {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
         /* Call-to-Action Section */
         .hero-cta-section {
           margin-top: 2rem;
@@ -1013,67 +1060,6 @@ const HeroSection: React.FC = () => {
           margin: 0;
         }
 
-        /* Metrics Glassmorphism */
-        .metrics-section {
-          margin: 4rem 0;
-          animation: fadeInUp 1s ease-out 0.8s both;
-        }
-
-        .metrics-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 1.5rem;
-        }
-
-        .metric-glass {
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(15px);
-          border: 1px solid rgba(0, 212, 255, 0.2);
-          border-radius: 16px;
-          padding: 2rem 1.5rem;
-          text-align: center;
-          transition: all 0.3s ease;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .metric-glass::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
-          transition: left 0.5s ease;
-        }
-
-        .metric-glass:hover::before {
-          left: 100%;
-        }
-
-        .metric-glass:hover {
-          transform: translateY(-5px);
-          border-color: rgba(0, 212, 255, 0.4);
-          box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
-        }
-
-        .metric-number {
-          font-size: 2.5rem;
-          font-weight: 700;
-          background: linear-gradient(135deg, #00d4ff, #1e90ff);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          display: block;
-          margin-bottom: 0.5rem;
-        }
-
-        .metric-label {
-          font-size: 0.8rem;
-          color: rgba(255, 255, 255, 0.7);
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
 
         @keyframes slideInLeft {
           from {
@@ -1125,9 +1111,6 @@ const HeroSection: React.FC = () => {
             gap: 1.5rem;
           }
 
-          .metrics-grid {
-            grid-template-columns: repeat(2, 1fr);
-          }
         }
 
         @media (max-width: 768px) {
@@ -1178,10 +1161,6 @@ const HeroSection: React.FC = () => {
             padding: 1.5rem;
           }
 
-          .metrics-grid {
-            grid-template-columns: 1fr;
-            gap: 1rem;
-          }
         }
       `}</style>
     </>
