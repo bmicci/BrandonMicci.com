@@ -72,6 +72,44 @@ const HeroSection: React.FC = () => {
                 industry to building evangelical data communities of 30,000+ users, I bridge the gap between cutting-edge innovation and
                 practical enterprise implementation.
               </p>
+
+              {/* Call-to-Action Section */}
+              <div className="hero-cta-section">
+                <div className="cta-buttons">
+                  <a href="https://linkedin.com/in/brandonmicci" target="_blank" rel="noopener noreferrer" className="cta-button primary">
+                    <span className="cta-icon">💼</span>
+                    Connect on LinkedIn
+                  </a>
+                  <a href="mailto:contact@brandonmicci.com" className="cta-button secondary">
+                    <span className="cta-icon">📧</span>
+                    Let&apos;s Connect
+                  </a>
+                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="cta-button outline">
+                    <span className="cta-icon">📄</span>
+                    View Resume
+                  </a>
+                </div>
+                
+                {/* Quick Stats */}
+                <div className="hero-stats">
+                  <div className="stat-item">
+                    <span className="stat-number">$400M+</span>
+                    <span className="stat-label">Value Delivered</span>
+                  </div>
+                  <div className="stat-item">
+                    <span className="stat-number">27K+</span>
+                    <span className="stat-label">AI Users</span>
+                  </div>
+                  <div className="stat-item">
+                    <span className="stat-number">250%</span>
+                    <span className="stat-label">Typical ROI</span>
+                  </div>
+                  <div className="stat-item">
+                    <span className="stat-number">16+</span>
+                    <span className="stat-label">Years Leading</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Photo Side */}
@@ -619,6 +657,142 @@ const HeroSection: React.FC = () => {
           margin-bottom: 2rem;
         }
 
+        /* Call-to-Action Section */
+        .hero-cta-section {
+          margin-top: 2rem;
+          animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .cta-buttons {
+          display: flex;
+          gap: 1rem;
+          margin-bottom: 2rem;
+          flex-wrap: wrap;
+        }
+
+        .cta-button {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.75rem 1.5rem;
+          border-radius: 12px;
+          font-weight: 600;
+          font-size: 0.95rem;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          border: 2px solid transparent;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .cta-button::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+          transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+          left: 100%;
+        }
+
+        .cta-button.primary {
+          background: linear-gradient(135deg, #00d4ff, #1e90ff);
+          color: white;
+          box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .cta-button.primary:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+        }
+
+        .cta-button.secondary {
+          background: rgba(255, 255, 255, 0.1);
+          color: white;
+          border-color: rgba(0, 212, 255, 0.3);
+          backdrop-filter: blur(10px);
+        }
+
+        .cta-button.secondary:hover {
+          background: rgba(0, 212, 255, 0.2);
+          border-color: rgba(0, 212, 255, 0.5);
+          transform: translateY(-2px);
+        }
+
+        .cta-button.outline {
+          background: transparent;
+          color: #00d4ff;
+          border-color: rgba(0, 212, 255, 0.5);
+        }
+
+        .cta-button.outline:hover {
+          background: rgba(0, 212, 255, 0.1);
+          border-color: #00d4ff;
+          transform: translateY(-2px);
+        }
+
+        .cta-icon {
+          font-size: 1.1rem;
+          animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+          0%, 100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.1);
+          }
+        }
+
+        /* Hero Stats */
+        .hero-stats {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1rem;
+          margin-top: 1rem;
+        }
+
+        .stat-item {
+          text-align: center;
+          padding: 1rem;
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 12px;
+          border: 1px solid rgba(0, 212, 255, 0.2);
+          transition: all 0.3s ease;
+          backdrop-filter: blur(10px);
+        }
+
+        .stat-item:hover {
+          transform: translateY(-3px);
+          background: rgba(0, 212, 255, 0.1);
+          border-color: rgba(0, 212, 255, 0.4);
+          box-shadow: 0 8px 20px rgba(0, 212, 255, 0.2);
+        }
+
+        .stat-number {
+          display: block;
+          font-size: 1.5rem;
+          font-weight: 700;
+          background: linear-gradient(135deg, #00d4ff, #1e90ff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+          font-size: 0.8rem;
+          color: rgba(255, 255, 255, 0.7);
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
         /* Photo Side - Glassmorphism */
         .photo-container {
           position: relative;
@@ -971,6 +1145,29 @@ const HeroSection: React.FC = () => {
 
           .photo-glassmorphism {
             padding: 1.5rem;
+          }
+
+          .cta-buttons {
+            flex-direction: column;
+            gap: 0.75rem;
+          }
+
+          .cta-button {
+            justify-content: center;
+            padding: 0.875rem 1.25rem;
+          }
+
+          .hero-stats {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+          }
+
+          .stat-item {
+            padding: 0.75rem;
+          }
+
+          .stat-number {
+            font-size: 1.25rem;
           }
 
           .differentiators-glass {
