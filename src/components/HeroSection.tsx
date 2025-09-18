@@ -95,11 +95,11 @@ const HeroSection: React.FC = () => {
           <div className="particle"></div>
         </div>
 
-        <div className="hero-container">
-          {/* Top Section - Photo and Title */}
-          <div className="hero-top">
-            {/* Content Side */}
-            <div className="hero-content">
+      <div className="hero-container">
+        {/* Top Section */}
+        <div className="hero-top">
+          <div className="hero-column">
+            <div className="hero-intro">
               <h1 className="hero-title">
                 Senior <span className="gradient-text">AI & Digital Transformation</span> Executive
               </h1>
@@ -107,77 +107,78 @@ const HeroSection: React.FC = () => {
               <p className="hero-subtitle">
                 Driving Fortune 500 digital transformation through AI, Data Strategy, and client-centric products
               </p>
+            </div>
 
+            <div className="hero-summary">
               <p className="hero-description">
                 With <span className="gradient-highlight">16+ years of experience</span> <span className="gradient-highlight">architecting enterprise-wide AI solutions</span>, I&apos;ve transformed complex technological
                 challenges into over <span className="gradient-highlight">$400M in measurable business outcomes</span>. From leading one of our organization&apos;s largest LLM deployments in the payments
                 space to building <span className="gradient-highlight">evangelical data communities of 30K+ users</span>, I bridge the gap between cutting-edge innovation and
                 practical enterprise implementation.
               </p>
+            </div>
 
-              {/* Call-to-Action Section */}
-              <div className="hero-cta-section">
-                <div className="cta-buttons">
-                  <a href="https://linkedin.com/in/brandonmicci" target="_blank" rel="noopener noreferrer" className="cta-button primary">
-                    <span className="cta-icon">💼</span>
-                    Connect on LinkedIn
-                  </a>
-                  <a href="mailto:contact@brandonmicci.com" className="cta-button secondary">
-                    <span className="cta-icon">📧</span>
-                    Let&apos;s Connect
-                  </a>
-                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="cta-button outline">
-                    <span className="cta-icon">📄</span>
-                    View Resume
-                  </a>
-                  <a href="/executive-brief.pdf" target="_blank" rel="noopener noreferrer" className="cta-button outline">
-                    <span className="cta-icon">📋</span>
-                    Executive Brief
-                  </a>
-                </div>
-                
-                {/* Quick Stats */}
-                <div className="hero-stats">
-                  <div className="stat-item">
-                    <span className="stat-number">${counts.value}M+</span>
-                    <span className="stat-label">Value Delivered</span>
-                  </div>
-                  <div className="stat-item">
-                    <span className="stat-number">{counts.users}K+</span>
-                    <span className="stat-label">AI Users</span>
-                  </div>
-                  <div className="stat-item">
-                    <span className="stat-number">{counts.roi}%</span>
-                    <span className="stat-label">Typical ROI</span>
-                  </div>
-                  <div className="stat-item">
-                    <span className="stat-number">{counts.years}+</span>
-                    <span className="stat-label">Years Leading</span>
-                  </div>
-                </div>
+            <div className="hero-cta-section">
+              <div className="cta-buttons">
+                <a href="https://linkedin.com/in/brandonmicci" target="_blank" rel="noopener noreferrer" className="cta-button primary">
+                  <span className="cta-icon">💼</span>
+                  Connect on LinkedIn
+                </a>
+                <a href="mailto:contact@brandonmicci.com" className="cta-button secondary">
+                  <span className="cta-icon">📧</span>
+                  Let&apos;s Connect
+                </a>
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="cta-button outline">
+                  <span className="cta-icon">📄</span>
+                  View Resume
+                </a>
+                <a href="/executive-brief.pdf" target="_blank" rel="noopener noreferrer" className="cta-button outline">
+                  <span className="cta-icon">📋</span>
+                  Executive Brief
+                </a>
               </div>
             </div>
 
-            {/* Photo Side */}
-            <div className="photo-container">
-              <div className="photo-glassmorphism">
-                <div className="photo-frame">
-                  <Image
-                    src="/headshot.jpg"
-                    alt="Brandon Micci - AI & Digital Transformation Executive"
-                    className="professional-photo"
-                    fill
-                    sizes="(max-width: 480px) 240px, (max-width: 768px) 280px, 320px"
-                    priority
-                  />
-                  <div className="photo-overlay">
-                    <div className="photo-title">Brandon Micci</div>
-                    <div className="photo-role">VP, Head of NextGen AI/ML Solutions</div>
-                  </div>
+            <div className="hero-stats">
+              <div className="stat-item">
+                <span className="stat-number">${counts.value}M+</span>
+                <span className="stat-label">Value Delivered</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">{counts.users}K+</span>
+                <span className="stat-label">AI Users</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">{counts.roi}%</span>
+                <span className="stat-label">Typical ROI</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">{counts.years}+</span>
+                <span className="stat-label">Years Leading</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Photo Side */}
+          <div className="photo-container">
+            <div className="photo-glassmorphism">
+              <div className="photo-frame">
+                <Image
+                  src="/headshot.jpg"
+                  alt="Brandon Micci - AI & Digital Transformation Executive"
+                  className="professional-photo"
+                  fill
+                  sizes="(max-width: 480px) 240px, (max-width: 768px) 280px, 320px"
+                  priority
+                />
+                <div className="photo-overlay">
+                  <div className="photo-title">Brandon Micci</div>
+                  <div className="photo-role">VP, Head of NextGen AI/ML Solutions</div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
           {/* What Makes Me Different Section */}
           <div className="differentiators-section">
@@ -595,14 +596,28 @@ const HeroSection: React.FC = () => {
         .hero-top {
           display: grid;
           grid-template-columns: minmax(0, 1fr) 420px;
-          gap: 4rem;
-          align-items: center;
-          margin-bottom: 4rem;
+          column-gap: 4rem;
+          align-items: stretch;
+          grid-auto-rows: auto;
+          margin-bottom: 3rem;
         }
 
-        /* Content Side */
-        .hero-content {
+        .hero-column {
+          grid-column: 1;
+          grid-row: 1 / span 4;
+          max-width: 640px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .hero-intro {
           animation: slideInLeft 1s ease-out;
+        }
+
+        .hero-summary {
+          animation: fadeInUp 1s ease-out 0.15s both;
         }
 
         .executive-badge {
@@ -707,15 +722,14 @@ const HeroSection: React.FC = () => {
 
         /* Call-to-Action Section */
         .hero-cta-section {
-          margin-top: 2rem;
+          width: 100%;
           animation: fadeInUp 1s ease-out 0.3s both;
         }
 
         .cta-buttons {
-          display: flex;
-          gap: 1rem;
-          margin-bottom: 2rem;
-          flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: repeat(4, minmax(160px, 1fr));
+          gap: 0.75rem;
         }
 
         .cta-button {
@@ -800,10 +814,11 @@ const HeroSection: React.FC = () => {
 
         /* Hero Stats */
         .hero-stats {
+          width: 100%;
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(4, minmax(140px, 1fr));
           gap: 1rem;
-          margin-top: 1rem;
+          margin: 1.5rem 0 0;
         }
 
         .stat-item {
@@ -845,6 +860,10 @@ const HeroSection: React.FC = () => {
         .photo-container {
           position: relative;
           animation: slideInRight 1s ease-out;
+          grid-column: 2;
+          grid-row: 1 / span 4;
+          align-self: stretch;
+          justify-self: end;
         }
 
         .photo-glassmorphism::before {
@@ -917,6 +936,7 @@ const HeroSection: React.FC = () => {
           position: relative;
           overflow: hidden;
           transition: all 0.4s ease;
+          height: 100%;
         }
 
         /* What Makes Me Different Section - Glassmorphism */
@@ -1097,7 +1117,16 @@ const HeroSection: React.FC = () => {
 
         /* Responsive */
         @media (max-width: 1024px) {
+          .hero-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+          }
+
           .hero-top {
+            order: 1;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1105,24 +1134,59 @@ const HeroSection: React.FC = () => {
             text-align: center;
           }
 
-          .hero-content {
-            max-width: 640px;
+          .hero-column {
             order: 1;
+            width: 100%;
+            max-width: 640px;
+            display: contents;
+          }
+
+          .hero-intro {
+            order: 1;
+            max-width: 640px;
+            width: 100%;
+            margin: 0 auto;
           }
 
           .photo-container {
+            order: 2;
             width: 100%;
             max-width: 360px;
-            order: 2;
           }
 
           .photo-glassmorphism {
             margin: 0 auto;
           }
 
-          .hero-cta-section {
+          .hero-summary {
             order: 3;
+            max-width: 640px;
+            text-align: left;
             width: 100%;
+            margin: 0 auto;
+          }
+
+          .hero-cta-section {
+            order: 4;
+            width: 100%;
+            max-width: 640px;
+            align-items: stretch;
+            margin: 0 auto;
+          }
+
+          .cta-buttons {
+            grid-template-columns: repeat(2, minmax(160px, 1fr));
+          }
+
+          .differentiators-section {
+            order: 5;
+          }
+
+          .hero-stats {
+            order: 6;
+            max-width: 640px;
+            grid-template-columns: repeat(2, minmax(140px, 1fr));
+            margin: 0 auto;
           }
 
           .hero-title {
@@ -1146,27 +1210,20 @@ const HeroSection: React.FC = () => {
 
           .hero-container {
             padding: 0 1rem;
+            gap: 2rem;
           }
 
           .hero-title {
             font-size: 2.5rem;
           }
 
-          .hero-top {
-            gap: 2rem;
-          }
-
-          .photo-glassmorphism {
-            padding: 1.5rem;
-          }
-
           .photo-container {
             max-width: 280px;
-            order: 2;
+            margin: 0 auto;
           }
 
           .cta-buttons {
-            flex-direction: column;
+            grid-template-columns: 1fr;
             gap: 0.75rem;
           }
 
@@ -1176,7 +1233,7 @@ const HeroSection: React.FC = () => {
           }
 
           .hero-stats {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, minmax(140px, 1fr));
             gap: 0.75rem;
           }
 
@@ -1201,14 +1258,6 @@ const HeroSection: React.FC = () => {
             gap: 1rem;
           }
 
-          .hero-content {
-            order: 1;
-          }
-
-          .hero-cta-section {
-            order: 3;
-            width: 100%;
-          }
         }
       `}</style>
     </>
