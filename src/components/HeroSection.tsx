@@ -251,7 +251,8 @@ const HeroSection: React.FC = () => {
         .hero-section {
           min-height: 100vh;
           position: relative;
-          padding: 2rem 0;
+          padding: 7rem 0 2.5rem;
+          scroll-margin-top: 6rem;
         }
 
         /* Animated Background */
@@ -1097,9 +1098,24 @@ const HeroSection: React.FC = () => {
         /* Responsive */
         @media (max-width: 1024px) {
           .hero-top {
-            grid-template-columns: 1fr;
-            gap: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
             text-align: center;
+          }
+
+          .hero-content {
+            max-width: 640px;
+          }
+
+          .photo-container {
+            width: 100%;
+            max-width: 360px;
+          }
+
+          .photo-glassmorphism {
+            margin: 0 auto;
           }
 
           .hero-title {
@@ -1111,11 +1127,14 @@ const HeroSection: React.FC = () => {
             gap: 1.5rem;
           }
 
+          .metrics-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
         }
 
         @media (max-width: 768px) {
           .hero-section {
-            padding: 1rem 0;
+            padding: 6.5rem 0 2.5rem;
           }
 
           .hero-container {
@@ -1126,8 +1145,16 @@ const HeroSection: React.FC = () => {
             font-size: 2.5rem;
           }
 
+          .hero-top {
+            gap: 2rem;
+          }
+
           .photo-glassmorphism {
             padding: 1.5rem;
+          }
+
+          .photo-container {
+            max-width: 280px;
           }
 
           .cta-buttons {
@@ -1161,6 +1188,10 @@ const HeroSection: React.FC = () => {
             padding: 1.5rem;
           }
 
+          .metrics-grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+          }
         }
       `}</style>
     </>
