@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-export const HeroSection: React.FC = () => {
+const HeroSection: React.FC = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-black">
       {/* Animated Background */}
@@ -224,3 +224,5 @@ export const HeroSection: React.FC = () => {
     </section>
   );
 };
+
+export default HeroSection;
