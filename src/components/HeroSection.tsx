@@ -109,9 +109,9 @@ const HeroSection: React.FC = () => {
               </p>
 
               <p className="hero-description">
-                With <span className="gradient-highlight">16+ years</span> of experience architecting enterprise-wide AI solutions, I&apos;ve transformed complex technological
-                challenges into over <span className="gradient-highlight">$400M in measurable business outcomes</span>. From leading the largest LLM deployment in the payments
-                industry to building evangelical data communities of <span className="gradient-highlight">30,000+ users</span>, I bridge the gap between cutting-edge innovation and
+                With <span className="gradient-highlight">16+ years of experience</span> <span className="gradient-highlight">architecting enterprise-wide AI solutions</span>, I&apos;ve transformed complex technological
+                challenges into over <span className="gradient-highlight">$400M in measurable business outcomes</span>. From leading one of our organization&apos;s largest LLM deployments in the payments
+                space to building <span className="gradient-highlight">evangelical data communities of 30K+ users</span>, I bridge the gap between cutting-edge innovation and
                 practical enterprise implementation.
               </p>
 
@@ -594,7 +594,7 @@ const HeroSection: React.FC = () => {
         /* Top Section - Photo and Title */
         .hero-top {
           display: grid;
-          grid-template-columns: 1fr 400px;
+          grid-template-columns: minmax(0, 1fr) 420px;
           gap: 4rem;
           align-items: center;
           margin-bottom: 4rem;
@@ -913,7 +913,7 @@ const HeroSection: React.FC = () => {
           backdrop-filter: blur(25px);
           border: 1px solid rgba(255, 255, 255, 0.1);
           border-radius: 24px;
-          padding: 2rem;
+          padding: 1.75rem;
           position: relative;
           overflow: hidden;
           transition: all 0.4s ease;
@@ -1107,15 +1107,22 @@ const HeroSection: React.FC = () => {
 
           .hero-content {
             max-width: 640px;
+            order: 1;
           }
 
           .photo-container {
             width: 100%;
             max-width: 360px;
+            order: 2;
           }
 
           .photo-glassmorphism {
             margin: 0 auto;
+          }
+
+          .hero-cta-section {
+            order: 3;
+            width: 100%;
           }
 
           .hero-title {
@@ -1155,6 +1162,7 @@ const HeroSection: React.FC = () => {
 
           .photo-container {
             max-width: 280px;
+            order: 2;
           }
 
           .cta-buttons {
@@ -1191,6 +1199,15 @@ const HeroSection: React.FC = () => {
           .metrics-grid {
             grid-template-columns: 1fr;
             gap: 1rem;
+          }
+
+          .hero-content {
+            order: 1;
+          }
+
+          .hero-cta-section {
+            order: 3;
+            width: 100%;
           }
         }
       `}</style>
