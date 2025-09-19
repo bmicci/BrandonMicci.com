@@ -12,63 +12,29 @@ const CompanyExpertise: React.FC = () => {
           color: white;
           padding: 60px 2rem;
           position: relative;
-          background: linear-gradient(135deg, rgba(0, 212, 255, 0.03) 0%, rgba(30, 144, 255, 0.05) 100%);
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
           z-index: 10;
           text-align: center;
-          margin: 2rem 0;
+          margin: 2rem auto;
+          max-width: 1200px;
           border-radius: 20px;
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
-          overflow: hidden;
-          border: 2px solid transparent;
-          background-clip: padding-box;
+          border: 1px solid rgba(255, 255, 255, 0.1);
           transition: all 0.3s ease;
         }
 
         .expertise-section:hover {
           transform: translateY(-2px);
-          box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+          box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(0, 212, 255, 0.3);
         }
 
-        .expertise-section::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          border-radius: 20px;
-          background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(30, 144, 255, 0.2), rgba(0, 212, 255, 0.3));
-          background-size: 200% 200%;
-          animation: borderGlow 4s ease-in-out infinite;
-          z-index: -1;
-        }
-
-        .expertise-section::after {
-          content: '';
-          position: absolute;
-          top: 2px;
-          left: 2px;
-          right: 2px;
-          bottom: 2px;
-          border-radius: 18px;
-          background: linear-gradient(135deg, rgba(0, 212, 255, 0.03) 0%, rgba(30, 144, 255, 0.05) 100%);
-          z-index: -1;
-        }
-
-        @keyframes borderGlow {
-          0% { 
-            background-position: 0% 50%;
-            opacity: 0.4;
-          }
-          50% { 
-            background-position: 100% 50%;
-            opacity: 0.8;
-          }
-          100% { 
-            background-position: 0% 50%;
-            opacity: 0.4;
-          }
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
 
         .expertise-container {
@@ -84,7 +50,7 @@ const CompanyExpertise: React.FC = () => {
 
         .expertise-title {
           font-size: 1.1rem;
-          color: rgba(255, 255, 255, 0.7);
+          color: rgba(255, 255, 255, 0.9);
           text-transform: uppercase;
           letter-spacing: 3px;
           font-weight: 600;
@@ -93,37 +59,7 @@ const CompanyExpertise: React.FC = () => {
           position: relative;
         }
 
-        .expertise-title::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: -3rem;
-          width: 2rem;
-          height: 2px;
-          background: linear-gradient(90deg, transparent, #00d4ff, transparent);
-          transform: translateY(-50%);
-          opacity: 0.6;
-        }
-
-        .expertise-title::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          right: -3rem;
-          width: 2rem;
-          height: 2px;
-          background: linear-gradient(90deg, transparent, #00d4ff, transparent);
-          transform: translateY(-50%);
-          opacity: 0.6;
-        }
-
-        /* Hide decorative lines on mobile */
-        @media (max-width: 768px) {
-          .expertise-title::before,
-          .expertise-title::after {
-            display: none;
-          }
-        }
+        /* Removed decorative elements that were causing stuck dots */
 
         .expertise-subtitle {
           font-size: 2.2rem;
@@ -150,11 +86,11 @@ const CompanyExpertise: React.FC = () => {
           border-radius: 12px;
           padding: 1.25rem 1rem;
           text-align: center;
-          transition: all 0.4s ease;
+          transition: all 0.3s ease;
           position: relative;
           overflow: hidden;
           cursor: pointer;
-          border: 2px solid transparent;
+          border: 1px solid rgba(255, 255, 255, 0.2);
           animation: cardFloat 0.8s ease-out;
         }
 
@@ -183,11 +119,10 @@ const CompanyExpertise: React.FC = () => {
         }
 
         .company-card:hover {
-          transform: translateY(-8px) scale(1.05);
-          box-shadow: 
-            0 15px 35px rgba(0, 212, 255, 0.4),
-            0 0 0 3px rgba(255, 255, 255, 0.1);
-          border-color: rgba(255, 255, 255, 0.2);
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(0, 212, 255, 0.2);
+          background: rgba(255, 255, 255, 0.15);
+          border-color: rgba(0, 212, 255, 0.4);
         }
 
         .company-name {

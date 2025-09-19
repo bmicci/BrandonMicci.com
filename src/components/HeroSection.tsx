@@ -43,7 +43,7 @@ const HeroSection = () => {
       <style jsx global>{`
         body {
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+          background: #0a0e27;
           color: white;
           margin: 0;
           padding: 0;
@@ -52,9 +52,10 @@ const HeroSection = () => {
 
         .hero-section {
           min-height: 100vh;
-            position: relative;
+          position: relative;
           padding: 5rem 0 2rem 0; /* Add top padding to account for fixed navigation */
           overflow: hidden;
+          background: #0a0e27; /* Explicitly set the same dark background */
         }
 
         /* Enhanced futuristic sparkle particles */
@@ -319,6 +320,9 @@ const HeroSection = () => {
 
         /* Hide mobile layout by default (this was the bug) */
         .mobile-layout { display: none; }
+        
+        /* Hide mobile KPI grid on desktop */
+        .mobile-kpi-grid { display: none; }
 
         /* Mobile tweaks */
         .mobile-description { text-align: center; }
@@ -339,7 +343,7 @@ const HeroSection = () => {
           .mobile-photo { max-width: 300px; margin: 0 auto 2rem; }
           .mobile-photo .professional-photo { height: 350px; }
 
-          .kpi-grid { grid-template-columns: repeat(2,1fr); gap:1rem; }
+          .mobile-kpi-grid { display: grid; grid-template-columns: repeat(2,1fr); gap:1rem; }
           .cta-buttons { grid-template-columns: 1fr; }
           .stat-number { font-size: 2rem; }
           .differentiators-grid { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -537,7 +541,7 @@ const HeroSection = () => {
         </div>
 
           {/* Mobile KPI Grid */}
-          <div className="kpi-grid">
+          <div className="mobile-kpi-grid">
             <div className="kpi-box">
               <span className="stat-number">${counts.value}M+</span>
               <span className="stat-label">Value Delivered</span>

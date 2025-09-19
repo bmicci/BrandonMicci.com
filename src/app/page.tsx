@@ -5,11 +5,12 @@ import CompanyExpertise from '@/components/CompanyExpertise';
 import StrategicAdvantageHeader from '@/components/StrategicAdvantageHeader';
 import StrategicIntroCard from '@/components/StrategicIntroCard';
 import StrategicDifferentiators from '@/components/StrategicDifferentiators';
-import SuperpowerSection from '@/components/SuperpowerSection';
 import ExecutiveExperience from '@/components/ExecutiveExperience';
 import TransformationLeadership from '@/components/TransformationLeadership';
 import TechBackground from '@/components/TechBackground';
 import FuturisticBackground from '@/components/FuturisticBackground';
+import IndustryCollaboration from '@/components/IndustryCollaboration';
+import TestimonialsSection from '@/components/TestimonialsSection';
 
 export default function Home() {
   return (
@@ -29,7 +30,6 @@ export default function Home() {
           <StrategicIntroCard />
           <CompanyExpertise />
           <StrategicDifferentiators />
-          <SuperpowerSection />
         </div>
       </section>
 
@@ -51,39 +51,14 @@ export default function Home() {
         <TransformationLeadership />
       </section>
 
-      {/* Professional Impact Section */}
-      <section id="professional-impact" className="min-h-screen relative py-20">
-        {/* Background */}
-        <TechBackground />
-        
-        {/* Content */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-8">Professional Impact</h2>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            Passionate about leveraging AI and digital technologies to solve complex business challenges 
-            and drive meaningful transformation.
-          </p>
-        </div>
+      {/* Testimonials Section */}
+      <section id="professional-impact" className="min-h-screen relative">
+        <TestimonialsSection />
       </section>
 
-      {/* Connect With Me Section */}
-      <section id="connect-with-me" className="min-h-screen relative py-20">
-        {/* Background */}
-        <StrategicVisionBackground />
-        
-        {/* Content */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-8">Connect With Me</h2>
-          <p className="text-lg text-gray-300 mb-8">
-            Ready to explore executive opportunities in AI and digital transformation?
-          </p>
-          <a 
-            href="mailto:contact@brandonmicci.com"
-            className="inline-block bg-gradient-to-r from-cyan-400 to-blue-500 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
-          >
-            Let&apos;s Connect
-          </a>
-        </div>
+      {/* Industry Collaboration & Speaking Section */}
+      <section id="connectwithme" className="min-h-screen relative">
+        <IndustryCollaboration />
       </section>
 
     </div>

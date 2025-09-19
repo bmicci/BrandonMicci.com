@@ -9,14 +9,14 @@ const StrategicIntroCard: React.FC = () => {
         .intro-card {
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
           max-width: 1000px;
-          margin: 2rem auto 3rem;
+          margin: 2rem auto 2rem;
           padding: 2.5rem;
           background: rgba(255, 255, 255, 0.05);
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
           border-radius: 20px;
           position: relative;
-          animation: fadeInUp 1s ease-out 0.5s both;
+          animation: fadeInUp 1s ease-out 0.3s both;
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
@@ -47,7 +47,7 @@ const StrategicIntroCard: React.FC = () => {
         }
 
         .intro-text {
-          font-size: 1.15rem;
+          font-size: 1.1rem;
           color: rgba(255, 255, 255, 0.9);
           line-height: 1.7;
           text-align: center;
@@ -56,12 +56,20 @@ const StrategicIntroCard: React.FC = () => {
         }
 
         .intro-text strong {
-          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 50%, #00d4ff 100%);
+          background-size: 200% 200%;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
           font-weight: 700;
           filter: drop-shadow(0 2px 4px rgba(0, 212, 255, 0.3));
+          animation: gradientShift 3s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
 
         @keyframes fadeInUp {
@@ -90,11 +98,11 @@ const StrategicIntroCard: React.FC = () => {
         }
       `}</style>
       
-      <div className="intro-card">
-        <p className="intro-text">
-          I&apos;m a proven AI and data strategy leader who transforms complex technological challenges into measurable business outcomes. My unique ability to bridge the gap between cutting-edge AI innovation and practical enterprise implementation has delivered over <strong>$400M in revenue generation and cost savings</strong> across Fortune 500 organizations.
-        </p>
-      </div>
+          <div className="intro-card">
+            <p className="intro-text">
+              While many executives can talk about AI strategy, few can deliver the <strong>scale, impact, and cross-industry expertise</strong> that I&apos;ve consistently achieved. Here are the key differentiators that make this possible:
+            </p>
+          </div>
     </>
   );
 };
