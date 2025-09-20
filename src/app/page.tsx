@@ -1,6 +1,6 @@
 'use client';
 
-import AccessibleNav from '@/components/AccessibleNav';
+// import AccessibleNav from '@/components/AccessibleNav'; // Removed - using Navigation from layout
 import HeroSection from '@/components/HeroSection';
 import dynamic from 'next/dynamic';
 
@@ -30,7 +30,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 export default function Home() {
   return (
     <div className="min-h-screen text-white relative">
-      <AccessibleNav />
+      {/* <AccessibleNav /> */} {/* Removed - using Navigation from layout */}
       {/* Hero Section with Background */}
       <HeroSection />
 
