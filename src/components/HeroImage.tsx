@@ -25,27 +25,29 @@ const HeroImage = () => {
         }
 
         .image-content {
-          max-width: 320px; /* Smaller container for better proportions */
+          max-width: 280px; /* Better proportions */
           margin: 0 auto;
           width: 100%;
-          height: 350px; /* Set explicit height for fill prop */
+          height: 320px; /* Better aspect ratio */
           position: relative;
           animation: imageReveal 1s ease-out 0.5s both;
         }
 
         .professional-image {
-          border-radius: 16px;
+          border-radius: 20px; /* More modern rounded corners */
           object-fit: cover;
           position: absolute;
           top: 0;
           left: 0;
+          width: 100%;
+          height: 100%;
 
           /* Clean professional styling */
-          border: 1px solid rgba(255, 255, 255, 0.15);
+          border: 2px solid rgba(255, 255, 255, 0.2);
           box-shadow:
-            0 0 0 1px rgba(0, 212, 255, 0.2),
-            0 0 20px rgba(0, 212, 255, 0.15),
-            0 8px 32px rgba(0, 0, 0, 0.4);
+            0 0 0 1px rgba(0, 212, 255, 0.3),
+            0 0 25px rgba(0, 212, 255, 0.2),
+            0 10px 40px rgba(0, 0, 0, 0.3);
 
           transition: all 0.4s ease;
           animation: professionalPulse 3s ease-in-out infinite;
@@ -82,10 +84,13 @@ const HeroImage = () => {
             padding: 15px 0.75rem;
           }
 
-          .professional-image {
+          .image-content {
             max-width: 240px;
             height: 280px;
-            border-radius: 12px;
+          }
+
+          .professional-image {
+            border-radius: 16px;
           }
         }
 
