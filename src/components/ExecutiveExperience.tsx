@@ -435,7 +435,7 @@ const ExecutiveExperience = memo(() => {
                   ref={(el) => {
                     itemRefs.current[index] = el;
                   }}
-                  className="relative mb-6 pl-14 md:mb-12 md:pl-28"
+                  className="relative mb-4 pl-12 md:mb-12 md:pl-28"
                 >
                   <div
                     className={`absolute top-5 left-2 flex h-12 w-12 items-center justify-center rounded-full transition-all duration-500 md:left-8 ${
@@ -453,7 +453,7 @@ const ExecutiveExperience = memo(() => {
                   </div>
 
                   <div
-                    className={`timeline-item-visible relative overflow-hidden rounded-2xl p-6 md:p-8 transition-all duration-700 ${
+                    className={`timeline-item-visible relative overflow-hidden rounded-2xl p-4 md:p-8 transition-all duration-700 ${
                       isVisible
                         ? 'translate-x-2 scale-[1.02] opacity-100'
                         : 'translate-x-0 scale-100 opacity-90'
@@ -485,29 +485,29 @@ const ExecutiveExperience = memo(() => {
                     />
 
                     <div className="relative z-10">
-                      <span className="mb-4 inline-block rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white">
+                      <span className="mb-3 inline-block rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-white">
                         {role.dates}
                       </span>
 
-                      <h3 className="text-xl font-bold leading-tight text-white md:text-2xl">
+                      <h3 className="text-lg font-bold leading-tight text-white md:text-2xl">
                         {role.role}
                       </h3>
-                      <div className="mb-4 text-lg font-medium text-cyan-400 stroke-2">
+                      <div className="mb-3 text-base font-medium text-cyan-400">
                         {role.company}
-                        <span className="ml-2 text-base text-slate-400">
+                        <span className="ml-2 text-sm text-slate-400">
                           | {role.location}
                         </span>
                       </div>
 
-                      <p className="mb-6 text-base leading-relaxed text-slate-300">
+                      <p className="mb-4 text-sm leading-relaxed text-slate-300 md:text-base">
                         {role.description}
                       </p>
 
-                      <div className="mb-6 flex flex-wrap gap-2 overflow-x-auto pb-2">
+                      <div className="mb-4 flex flex-wrap gap-1.5 overflow-x-auto pb-2">
                         {role.skills.map((skill) => (
                           <span
                             key={skill}
-                            className="whitespace-nowrap rounded-xl border border-blue-500/40 bg-blue-500/20 px-3 py-1 text-sm font-medium text-slate-200 transition-colors hover:bg-blue-500/30"
+                            className="whitespace-nowrap rounded-lg border border-blue-500/40 bg-blue-500/20 px-2 py-1 text-xs font-medium text-slate-200 transition-colors hover:bg-blue-500/30 md:text-sm md:px-3"
                           >
                             {skill}
                           </span>
@@ -518,7 +518,7 @@ const ExecutiveExperience = memo(() => {
                         type="button"
                         onClick={() => toggle(index)}
                         aria-expanded={isExpanded}
-                        className="mb-4 block w-full rounded-xl border border-cyan-500/40 bg-cyan-500/20 py-3 px-4 text-sm font-semibold text-cyan-400 stroke-2 transition-all duration-300 hover:bg-cyan-500/30 md:hidden"
+                        className="mb-3 block w-full rounded-lg border border-cyan-500/40 bg-cyan-500/20 py-2 px-3 text-xs font-semibold text-cyan-400 transition-all duration-300 hover:bg-cyan-500/30 md:hidden"
                       >
                         {isExpanded ? 'Hide Achievements' : 'View Achievements'}
                         <span
