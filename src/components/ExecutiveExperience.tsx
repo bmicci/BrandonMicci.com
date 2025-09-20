@@ -409,19 +409,19 @@ const ExecutiveExperience = memo(() => {
       `}</style>
 
       <div className="relative z-10 font-sans">
-        <div className="px-8 py-12 text-center">
-          <h2 className="text-4xl font-bold md:text-5xl">
+        <div className="px-4 py-8 md:px-8 md:py-12 text-center">
+          <h2 className="text-3xl font-bold md:text-5xl">
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               Career Timeline
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-4xl text-xl leading-relaxed text-slate-300">
+          <p className="mx-auto mt-4 max-w-4xl text-lg md:text-xl leading-relaxed text-slate-300 px-4">
             16+ years of architecting enterprise AI solutions and driving
             digital transformation
           </p>
         </div>
 
-        <div className="mx-auto max-w-6xl px-4 pb-16 md:px-8">
+        <div className="mx-auto max-w-6xl px-2 pb-12 md:px-8 md:pb-16">
           <div className="relative">
             <div className="absolute bottom-0 top-0 left-4 w-0.5 bg-gradient-to-b from-cyan-400 via-cyan-400 to-transparent md:left-12" />
 
@@ -435,10 +435,10 @@ const ExecutiveExperience = memo(() => {
                   ref={(el) => {
                     itemRefs.current[index] = el;
                   }}
-                  className="relative mb-8 pl-16 md:mb-12 md:pl-28"
+                  className="relative mb-6 pl-14 md:mb-12 md:pl-28"
                 >
                   <div
-                    className={`absolute top-5 flex h-12 w-12 items-center justify-center rounded-full transition-all duration-500 md:left-8 ${
+                    className={`absolute top-5 left-2 flex h-12 w-12 items-center justify-center rounded-full transition-all duration-500 md:left-8 ${
                       isVisible
                         ? 'scale-110 shadow-lg shadow-white/20'
                         : 'scale-100 shadow-md shadow-white/10'
@@ -453,7 +453,7 @@ const ExecutiveExperience = memo(() => {
                   </div>
 
                   <div
-                    className={`timeline-item-visible relative overflow-hidden rounded-2xl p-8 transition-all duration-700 ${
+                    className={`timeline-item-visible relative overflow-hidden rounded-2xl p-6 md:p-8 transition-all duration-700 ${
                       isVisible
                         ? 'translate-x-2 scale-[1.02] opacity-100'
                         : 'translate-x-0 scale-100 opacity-90'
