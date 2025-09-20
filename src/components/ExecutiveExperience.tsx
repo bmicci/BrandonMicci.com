@@ -421,7 +421,7 @@ const ExecutiveExperience = memo(() => {
           </p>
         </div>
 
-        <div className="mx-auto max-w-3xl px-1 pb-8 md:max-w-6xl md:px-8 md:pb-16">
+        <div className="mx-auto max-w-2xl px-1 pb-8 md:max-w-6xl md:px-8 md:pb-16">
           <div className="relative">
             <div className="absolute bottom-0 top-0 left-4 w-0.5 bg-gradient-to-b from-cyan-400 via-cyan-400 to-transparent md:left-12" />
 
@@ -453,7 +453,7 @@ const ExecutiveExperience = memo(() => {
                   </div>
 
                   <div
-                    className={`timeline-item-visible relative overflow-hidden rounded-lg p-1 md:p-8 transition-all duration-700 ${
+                    className={`timeline-item-visible relative overflow-hidden rounded-lg p-0.5 md:p-8 transition-all duration-700 ${
                       isVisible
                         ? 'translate-x-2 scale-[1.02] opacity-100'
                         : 'translate-x-0 scale-100 opacity-90'
@@ -507,7 +507,7 @@ const ExecutiveExperience = memo(() => {
                         {role.skills.map((skill) => (
                           <span
                             key={skill}
-                            className="whitespace-nowrap rounded-sm border border-blue-500/40 bg-blue-500/20 px-1 py-0.5 text-xs font-medium text-slate-200 transition-colors hover:bg-blue-500/30 md:text-sm md:px-3 md:py-1"
+                            className="whitespace-nowrap rounded-full border border-blue-500/40 bg-blue-500/20 px-1.5 py-0.5 text-xs font-medium text-slate-200 transition-colors hover:bg-blue-500/30 md:text-sm md:px-3 md:py-1"
                           >
                             {skill}
                           </span>
