@@ -364,8 +364,7 @@ const ExecutiveExperience = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-cyan-500/5" />
+    <div className="relative min-h-screen overflow-hidden text-white">
 
       <style jsx>{`
         @keyframes gradientShift {

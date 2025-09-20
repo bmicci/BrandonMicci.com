@@ -18,9 +18,9 @@ const UnifiedBackground: React.FC = () => {
           height: 100vh;
           background: linear-gradient(
             135deg,
-            #0a0a0a 0%,
-            #1a1a2e 50%,
-            #16213e 100%
+            #05050a 0%,
+            #0f0f1a 50%,
+            #0a0e1a 100%
           );
           z-index: -10;
           overflow: hidden;
