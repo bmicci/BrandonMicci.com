@@ -71,8 +71,7 @@ const IndustryCollaboration: React.FC = () => {
           color: white;
           padding: 80px 0;
           background: transparent;
-          border-top: 1px solid rgba(0, 212, 255, 0.2);
-          border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+          /* Border lines removed for clean Universal Background */
           overflow: hidden;
           min-height: 100vh;
         }
