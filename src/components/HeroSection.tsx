@@ -43,32 +43,7 @@ const HeroSection = () => {
 
   return (
     <>
-      <style jsx global>{`
-        body {
-          font-family:
-            'Inter',
-            -apple-system,
-            BlinkMacSystemFont,
-            'Segoe UI',
-            Roboto,
-            sans-serif;
-          background: linear-gradient(
-            135deg,
-            #0a0a0a 0%,
-            #1a1a2e 50%,
-            #16213e 100%
-          );
-          color: white;
-          margin: 0;
-          padding: 0;
-          overflow-x: hidden;
-        }
-
-        /* Ensure seamless section transitions */
-        section {
-          margin: 0;
-          padding: 0;
-        }
+      <style jsx>{`
 
         .hero-section {
           min-height: 100vh;

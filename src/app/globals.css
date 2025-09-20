@@ -4,7 +4,21 @@
 @tailwind utilities;
 
 body {
-  background: #0a0a0a;
+  background: linear-gradient(
+    135deg,
+    #0a0a0a 0%,
+    #1a1a2e 50%,
+    #16213e 100%
+  );
   color: #ededed;
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Ensure seamless section transitions */
+section {
+  margin: 0;
+  padding: 0;
 }
