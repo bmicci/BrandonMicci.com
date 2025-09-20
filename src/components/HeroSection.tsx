@@ -12,9 +12,12 @@ const HeroSection = () => {
   });
 
   useEffect(() => {
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
     const animateCounts = () => {
-      const duration = 2000;
-      const steps = 60;
+      const duration = prefersReducedMotion ? 0 : 2000;
+      const steps = prefersReducedMotion ? 1 : 60;
       const stepDuration = duration / steps;
 
       const targets = { value: 400, users: 27, roi: 250, years: 16 };
@@ -437,6 +440,28 @@ const HeroSection = () => {
           }
           100% {
             background-position: 0% 50%;
+          }
+        }
+
+        /* Respect reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+          .floating-particles {
+            animation: none !important;
+          }
+          .particle {
+            animation: none !important;
+          }
+          .kpi-stat {
+            animation: none !important;
+          }
+          .differentiator-item {
+            animation: none !important;
+          }
+          .cta-button {
+            animation: none !important;
+          }
+          .gradient-text {
+            animation: none !important;
           }
         }
 
