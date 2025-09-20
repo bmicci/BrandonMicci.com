@@ -1,0 +1,52 @@
+From 1a2b3c4d5e6f7890 Mon Sep 17 00:00:00 2001
+From: Repo Hygiene Bot <hygiene@example.com>
+Date: Fri, 19 Sep 2025 18:35:00 -0500
+Subject: [PATCH] Repo hygiene & best-practices pass: CI, a11y pages, headers,
+ UI tokens
+
+---
+ .github/workflows/ci.yml        | 35 +++++++++++++++++++++++++++++++
+ .prettierrc                     |  5 +++++
+ src/app/error.tsx               | 19 +++++++++++++++++
+ src/app/loading.tsx             |  7 +++++++
+ src/app/not-found.tsx           | 16 ++++++++++++++
+ src/app/robots.ts               | 14 ++++++++++++
+ src/app/sitemap.ts              | 15 +++++++++++++
+ src/lib/format.ts               | 11 ++++++++++
+ src/middleware.ts               | 20 ++++++++++++++++++
+ src/styles/components.css       | 23 +++++++++++++++++++++
+ 10 files changed, 165 insertions(+)
+ create mode 100644 .github/workflows/ci.yml
+ create mode 100644 .prettierrc
+ create mode 100644 src/app/error.tsx
+ create mode 100644 src/app/loading.tsx
+ create mode 100644 src/app/not-found.tsx
+ create mode 100644 src/app/robots.ts
+ create mode 100644 src/app/sitemap.ts
+ create mode 100644 src/lib/format.ts
+ create mode 100644 src/middleware.ts
+ create mode 100644 src/styles/components.css
+
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..1111111
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,35 @@
++name: CI
++on: [push, pull_request]
++jobs:
++  build:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++      - uses: actions/setup-node@v4
++        with:
++          node-version: '20'
++          cache: 'npm'
++      - run: npm ci
++      - run: npm run typecheck --if-present
++      - run: npm run lint --if-present
++      - run: npm run format:check --if-present
++      - run: npm run build
++

@@ -1,0 +1,214 @@
+From 1a2b3c4d5e6f7890 Mon Sep 17 00:00:00 2001
+From: Repo Hygiene Bot <hygiene@example.com>
+Date: Fri, 19 Sep 2025 18:35:00 -0500
+Subject: [PATCH] Repo hygiene & best-practices pass: CI, a11y pages, headers,
+ UI tokens
+
+---
+ .github/workflows/ci.yml        | 35 +++++++++++++++++++++++++++++++
+ .prettierrc                     |  5 +++++
+ src/app/error.tsx               | 19 +++++++++++++++++
+ src/app/loading.tsx             |  7 +++++++
+ src/app/not-found.tsx           | 16 ++++++++++++++
+ src/app/robots.ts               | 14 ++++++++++++
+ src/app/sitemap.ts              | 15 +++++++++++++
+ src/lib/format.ts               | 11 ++++++++++
+ src/middleware.ts               | 20 ++++++++++++++++++
+ src/styles/components.css       | 23 +++++++++++++++++++++
+ 10 files changed, 165 insertions(+)
+ create mode 100644 .github/workflows/ci.yml
+ create mode 100644 .prettierrc
+ create mode 100644 src/app/error.tsx
+ create mode 100644 src/app/loading.tsx
+ create mode 100644 src/app/not-found.tsx
+ create mode 100644 src/app/robots.ts
+ create mode 100644 src/app/sitemap.ts
+ create mode 100644 src/lib/format.ts
+ create mode 100644 src/middleware.ts
+ create mode 100644 src/styles/components.css
+
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..1111111
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@ -0,0 +1,35 @@
++name: CI
++on: [push, pull_request]
++jobs:
++  build:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v4
++      - uses: actions/setup-node@v4
++        with:
++          node-version: '20'
++          cache: 'npm'
++      - run: npm ci
++      - run: npm run typecheck --if-present
++      - run: npm run lint --if-present
++      - run: npm run format:check --if-present
++      - run: npm run build
++
+diff --git a/.prettierrc b/.prettierrc
+new file mode 100644
+index 0000000..2222222
+--- /dev/null
++++ b/.prettierrc
+@@ -0,0 +1,5 @@
++{
++  "semi": true,
++  "singleQuote": false,
++  "trailingComma": "all"
++}
+diff --git a/src/app/error.tsx b/src/app/error.tsx
+new file mode 100644
+index 0000000..3333333
+--- /dev/null
++++ b/src/app/error.tsx
+@@ -0,0 +1,19 @@
++'use client';
++
++export default function Error({ reset }: { reset: () => void }) {
++  return (
++    <div className="section">
++      <h1 className="h1">Something went wrong</h1>
++      <p className="mt-4 text-white/70">Please try again.</p>
++      <button className="btn-primary mt-6" onClick={() => reset()}>
++        Retry
++      </button>
++    </div>
++  );
++}
++
+diff --git a/src/app/loading.tsx b/src/app/loading.tsx
+new file mode 100644
+index 0000000..4444444
+--- /dev/null
++++ b/src/app/loading.tsx
+@@ -0,0 +1,7 @@
++export default function Loading() {
++  return (
++    <div className="section">
++      Loading…
++    </div>
++  );
++}
+diff --git a/src/app/not-found.tsx b/src/app/not-found.tsx
+new file mode 100644
+index 0000000..5555555
+--- /dev/null
++++ b/src/app/not-found.tsx
+@@ -0,0 +1,16 @@
++export default function NotFound() {
++  return (
++    <div className="section">
++      <h1 className="h1">Page not found</h1>
++      <p className="mt-4 text-white/70">Check the URL or go back home.</p>
++      <a href="/" className="btn-ghost mt-6">
++        Go Home
++      </a>
++    </div>
++  );
++}
+diff --git a/src/app/robots.ts b/src/app/robots.ts
+new file mode 100644
+index 0000000..6666666
+--- /dev/null
++++ b/src/app/robots.ts
+@@ -0,0 +1,14 @@
++import type { MetadataRoute } from 'next';
++
++export default function robots(): MetadataRoute.Robots {
++  return {
++    rules: [
++      { userAgent: '*', allow: '/' }
++    ],
++    sitemap: 'https://www.brandonmicci.com/sitemap.xml'
++  };
++}
++
+diff --git a/src/app/sitemap.ts b/src/app/sitemap.ts
+new file mode 100644
+index 0000000..7777777
+--- /dev/null
++++ b/src/app/sitemap.ts
+@@ -0,0 +1,15 @@
++import type { MetadataRoute } from 'next';
++
++export default function sitemap(): MetadataRoute.Sitemap {
++  const now = new Date();
++  return [
++    {
++      url: 'https://www.brandonmicci.com',
++      lastModified: now,
++      changeFrequency: 'weekly',
++      priority: 1
++    }
++  ];
++}
++
+diff --git a/src/lib/format.ts b/src/lib/format.ts
+new file mode 100644
+index 0000000..8888888
+--- /dev/null
++++ b/src/lib/format.ts
+@@ -0,0 +1,11 @@
++export const formatInt = (n: number) => new Intl.NumberFormat('en-US').format(n);
++export const formatPercent = (n: number) => `${(n * 100).toFixed(0)}%`;
++export const formatCurrency = (n: number) =>
++  new Intl.NumberFormat('en-US', {
++    style: 'currency',
++    currency: 'USD',
++    maximumFractionDigits: 0
++  }).format(n);
++
+diff --git a/src/middleware.ts b/src/middleware.ts
+new file mode 100644
+index 0000000..9999999
+--- /dev/null
++++ b/src/middleware.ts
+@@ -0,0 +1,20 @@
++import { NextResponse } from 'next/server';
++import type { NextRequest } from 'next/server';
++
++export function middleware(_: NextRequest) {
++  const res = NextResponse.next();
++  res.headers.set('X-Frame-Options', 'SAMEORIGIN');
++  res.headers.set('X-Content-Type-Options', 'nosniff');
++  res.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
++  res.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
++  return res;
++}
++
+diff --git a/src/styles/components.css b/src/styles/components.css
+new file mode 100644
+index 0000000..aaaaaaa
+--- /dev/null
++++ b/src/styles/components.css
+@@ -0,0 +1,23 @@
++@tailwind base;
++@tailwind components;
++@tailwind utilities;
++
++.btn-primary {
++  @apply inline-flex items-center justify-center rounded-md px-4 py-2 font-medium bg-gradient-to-r from-brand-500 to-brand-600 text-white shadow hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-500;
++}
++.btn-ghost {
++  @apply inline-flex items-center justify-center rounded-md px-4 py-2 font-medium border border-white/15 text-white/90 hover:bg-white/5;
++}
++.section {
++  @apply container mx-auto py-12 md:py-16;
++}
++.h1 {
++  @apply text-4xl md:text-5xl font-semibold tracking-tight;
++}
++.h2 {
++  @apply text-3xl md:text-4xl font-semibold tracking-tight;
++}
++.h3 {
++  @apply text-2xl md:text-3xl font-semibold;
++}
++
+-- 
+2.43.0
