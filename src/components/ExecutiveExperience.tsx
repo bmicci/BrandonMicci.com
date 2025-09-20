@@ -421,7 +421,7 @@ const ExecutiveExperience = memo(() => {
           </p>
         </div>
 
-        <div className="mx-auto max-w-4xl px-1 pb-8 md:max-w-6xl md:px-8 md:pb-16">
+        <div className="mx-auto max-w-3xl px-1 pb-8 md:max-w-6xl md:px-8 md:pb-16">
           <div className="relative">
             <div className="absolute bottom-0 top-0 left-4 w-0.5 bg-gradient-to-b from-cyan-400 via-cyan-400 to-transparent md:left-12" />
 
@@ -435,7 +435,7 @@ const ExecutiveExperience = memo(() => {
                   ref={(el) => {
                     itemRefs.current[index] = el;
                   }}
-                  className="relative mb-3 pl-10 md:mb-12 md:pl-28"
+                  className="relative mb-4 pl-10 md:mb-12 md:pl-28"
                 >
                   <div
                     className={`absolute top-4 left-1 flex h-8 w-8 items-center justify-center rounded-full transition-all duration-500 md:left-8 md:h-12 md:w-12 ${
@@ -453,7 +453,7 @@ const ExecutiveExperience = memo(() => {
                   </div>
 
                   <div
-                    className={`timeline-item-visible relative overflow-hidden rounded-xl p-1.5 md:p-8 transition-all duration-700 ${
+                    className={`timeline-item-visible relative overflow-hidden rounded-lg p-1 md:p-8 transition-all duration-700 ${
                       isVisible
                         ? 'translate-x-2 scale-[1.02] opacity-100'
                         : 'translate-x-0 scale-100 opacity-90'
@@ -489,7 +489,7 @@ const ExecutiveExperience = memo(() => {
                         {role.dates}
                       </span>
 
-                      <h3 className="text-sm font-bold leading-tight text-white md:text-2xl">
+                      <h3 className="text-xs font-bold leading-tight text-white break-words md:text-2xl">
                         {role.role}
                       </h3>
                       <div className="mb-2 text-xs font-medium text-cyan-400 md:text-base">
@@ -503,11 +503,11 @@ const ExecutiveExperience = memo(() => {
                         {role.description}
                       </p>
 
-                      <div className="mb-2 flex flex-wrap gap-1 overflow-x-auto pb-2">
+                      <div className="mb-2 flex flex-wrap gap-0.5 pb-2">
                         {role.skills.map((skill) => (
                           <span
                             key={skill}
-                            className="whitespace-nowrap rounded-md border border-blue-500/40 bg-blue-500/20 px-1.5 py-0.5 text-xs font-medium text-slate-200 transition-colors hover:bg-blue-500/30 md:text-sm md:px-3 md:py-1"
+                            className="whitespace-nowrap rounded-sm border border-blue-500/40 bg-blue-500/20 px-1 py-0.5 text-xs font-medium text-slate-200 transition-colors hover:bg-blue-500/30 md:text-sm md:px-3 md:py-1"
                           >
                             {skill}
                           </span>
