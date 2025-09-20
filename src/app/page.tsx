@@ -2,23 +2,7 @@
 
 import AccessibleNav from '@/components/AccessibleNav';
 import HeroSection from '@/components/HeroSection';
-import dynamic from 'next/dynamic';
-
-// Dynamic imports for heavy background components
-const StrategicVisionBackground = dynamic(() => import('@/components/StrategicVisionBackground'), {
-  ssr: false,
-  loading: () => null,
-});
-
-const StarsBackground = dynamic(() => import('@/components/StarsBackground'), {
-  ssr: false,
-  loading: () => null,
-});
-
-const FuturisticBackground = dynamic(() => import('@/components/FuturisticBackground'), {
-  ssr: false,
-  loading: () => null,
-});
+import UnifiedBackground from '@/components/UnifiedBackground';
 
 // Regular imports for lighter components
 import CompanyExpertise from '@/components/CompanyExpertise';
@@ -33,17 +17,16 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 export default function Home() {
   return (
     <div className="min-h-screen text-white relative">
+      {/* Unified Background for entire page */}
+      <UnifiedBackground />
+      
       <AccessibleNav />
-      {/* Hero Section with Background */}
+      
+      {/* Hero Section */}
       <HeroSection />
 
       {/* Strategic Vision Section */}
       <section id="strategic-vision" className="min-h-screen relative">
-        {/* Animated Backgrounds */}
-        <StrategicVisionBackground />
-        <StarsBackground />
-
-        {/* Strategic Vision Content */}
         <div className="relative z-10 w-full">
           <StrategicAdvantageHeader />
           <StrategicIntroCard />
@@ -54,19 +37,11 @@ export default function Home() {
 
       {/* Executive Experience Section */}
       <section id="executive-experience" className="min-h-screen relative">
-        {/* Background */}
-        <FuturisticBackground />
-
-        {/* Content */}
         <ExecutiveExperience />
       </section>
 
       {/* Transformation Leadership Section */}
       <section id="transformation-leadership" className="min-h-screen relative">
-        {/* Background */}
-        <StarsBackground />
-
-        {/* Content */}
         <TransformationLeadership />
       </section>
 

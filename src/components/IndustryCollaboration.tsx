@@ -70,12 +70,6 @@ const IndustryCollaboration: React.FC = () => {
           position: relative;
           color: white;
           padding: 80px 0;
-          background: linear-gradient(
-            135deg,
-            #0a0a0a 0%,
-            #1a1a2e 50%,
-            #16213e 100%
-          );
           border-top: 1px solid rgba(0, 212, 255, 0.2);
           border-bottom: 1px solid rgba(0, 212, 255, 0.2);
           overflow: hidden;
