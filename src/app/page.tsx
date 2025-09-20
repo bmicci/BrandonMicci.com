@@ -2,11 +2,23 @@
 
 import AccessibleNav from '@/components/AccessibleNav';
 import HeroSection from '@/components/HeroSection';
+import dynamic from 'next/dynamic';
 
-// Import background components directly
-import StrategicVisionBackground from '@/components/StrategicVisionBackground';
-import StarsBackground from '@/components/StarsBackground';
-import FuturisticBackground from '@/components/FuturisticBackground';
+// Dynamic imports for heavy background components
+const StrategicVisionBackground = dynamic(() => import('@/components/StrategicVisionBackground'), {
+  ssr: false,
+  loading: () => null,
+});
+
+const StarsBackground = dynamic(() => import('@/components/StarsBackground'), {
+  ssr: false,
+  loading: () => null,
+});
+
+const FuturisticBackground = dynamic(() => import('@/components/FuturisticBackground'), {
+  ssr: false,
+  loading: () => null,
+});
 
 // Regular imports for lighter components
 import CompanyExpertise from '@/components/CompanyExpertise';
