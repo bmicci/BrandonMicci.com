@@ -1,8 +1,13 @@
 'use client';
 
 import React from 'react';
+import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
 
 const StrategicVisionBackground: React.FC = () => {
+  const reduced = usePrefersReducedMotion();
+
+  if (reduced) return null; // Respect reduced-motion users
+
   return (
     <>
       <style jsx>{`

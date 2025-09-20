@@ -1,21 +1,36 @@
 'use client';
 
+import AccessibleNav from '@/components/AccessibleNav';
 import HeroSection from '@/components/HeroSection';
-import StrategicVisionBackground from '@/components/StrategicVisionBackground';
-import StarsBackground from '@/components/StarsBackground';
+import dynamic from 'next/dynamic';
+
+// Dynamic imports for heavy components
+const StrategicVisionBackground = dynamic(
+  () => import('@/components/StrategicVisionBackground'),
+  { ssr: false }
+);
+const StarsBackground = dynamic(() => import('@/components/StarsBackground'), {
+  ssr: false,
+});
+const FuturisticBackground = dynamic(
+  () => import('@/components/FuturisticBackground'),
+  { ssr: false }
+);
+
+// Regular imports for lighter components
 import CompanyExpertise from '@/components/CompanyExpertise';
 import StrategicAdvantageHeader from '@/components/StrategicAdvantageHeader';
 import StrategicIntroCard from '@/components/StrategicIntroCard';
 import StrategicDifferentiators from '@/components/StrategicDifferentiators';
 import ExecutiveExperience from '@/components/ExecutiveExperience';
 import TransformationLeadership from '@/components/TransformationLeadership';
-import FuturisticBackground from '@/components/FuturisticBackground';
 import IndustryCollaboration from '@/components/IndustryCollaboration';
 import TestimonialsSection from '@/components/TestimonialsSection';
 
 export default function Home() {
   return (
     <div className="min-h-screen text-white relative">
+      <AccessibleNav />
       {/* Hero Section with Background */}
       <HeroSection />
 
