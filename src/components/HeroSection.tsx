@@ -416,6 +416,14 @@ const HeroSection = () => {
           line-height: 1.1;
           margin-bottom: 1rem;
           letter-spacing: -0.02em;
+          position: relative;
+          z-index: 15;
+          /* Add subtle background to improve readability */
+          padding: 0.5rem 1rem;
+          border-radius: 12px;
+          background-color: rgba(0, 0, 0, 0.15);
+          backdrop-filter: blur(3px);
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         .gradient-text {
           background: linear-gradient(
@@ -470,11 +478,27 @@ const HeroSection = () => {
           line-height: 1.4;
           font-weight: 500;
           white-space: nowrap;
+          position: relative;
+          z-index: 15;
+          /* Add subtle background to improve readability */
+          padding: 0.3rem 0.8rem;
+          border-radius: 8px;
+          background-color: rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(2px);
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         .hero-description {
           font-size: 1.1rem;
           color: rgba(255, 255, 255, 0.9);
           line-height: 1.7;
+          position: relative;
+          z-index: 15;
+          /* Add subtle background to improve readability */
+          padding: 0.8rem 1rem;
+          border-radius: 10px;
+          background-color: rgba(0, 0, 0, 0.12);
+          backdrop-filter: blur(2px);
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         .gradient-highlight {
           background: linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff);
