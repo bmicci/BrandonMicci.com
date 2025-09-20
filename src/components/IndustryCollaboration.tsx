@@ -662,27 +662,7 @@ const IndustryCollaboration: React.FC = () => {
       `}</style>
 
       <section id="industry-collab">
-        {/* Neural Grid Background */}
-        <div className="neural-grid-contact"></div>
-
-        {/* Floating Particles */}
-        <div className="contact-particles">
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-        </div>
+        {/* Background elements removed - using Universal Background */}
 
         <div className="bm-wrap">
           <header className="bm-head">
