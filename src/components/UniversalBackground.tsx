@@ -20,9 +20,9 @@ const UniversalBackground: React.FC = () => {
           height: 100vh;
           background: linear-gradient(
             135deg,
-            #0a0a0a 0%,
-            #1a1a2e 50%,
-            #16213e 100%
+            #050505 0%,
+            #0a0a0a 50%,
+            #0f0f0f 100%
           );
           overflow: hidden;
           z-index: -10; /* Behind all content */
@@ -37,8 +37,8 @@ const UniversalBackground: React.FC = () => {
           width: 100%;
           height: 100%;
           background-image:
-            linear-gradient(rgba(0, 212, 255, 0.15) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 212, 255, 0.15) 1px, transparent 1px);
+            linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
           background-size: 60px 60px;
           animation: universalGridSlide 20s linear infinite;
           pointer-events: none;
@@ -71,24 +71,24 @@ const UniversalBackground: React.FC = () => {
           border-radius: 50%;
           pointer-events: none;
           box-shadow:
-            0 0 6px #00d4ff,
-            0 0 12px rgba(0, 212, 255, 0.5);
-          opacity: 0.6;
+            0 0 3px #00d4ff,
+            0 0 6px rgba(0, 212, 255, 0.2);
+          opacity: 0.3;
         }
 
         .universal-particle.small {
           width: 2px;
           height: 2px;
-          opacity: 0.4;
+          opacity: 0.2;
         }
 
         .universal-particle.large {
           width: 6px;
           height: 6px;
-          opacity: 0.5;
+          opacity: 0.25;
           box-shadow:
-            0 0 10px #00d4ff,
-            0 0 20px rgba(0, 212, 255, 0.4);
+            0 0 5px #00d4ff,
+            0 0 10px rgba(0, 212, 255, 0.15);
         }
 
         /* Floating elements for visual interest */
@@ -104,7 +104,7 @@ const UniversalBackground: React.FC = () => {
         .universal-circle {
           position: absolute;
           border-radius: 50%;
-          background: linear-gradient(135deg, #00d4ff20 0%, #1e90ff20 100%);
+          background: linear-gradient(135deg, #00d4ff08 0%, #1e90ff08 100%);
           animation: universalFloat 6s ease-in-out infinite;
         }
 
@@ -138,7 +138,7 @@ const UniversalBackground: React.FC = () => {
           top: 45%;
           right: 8%;
           animation-delay: 1s;
-          background: linear-gradient(135deg, #00d4ff15 0%, #1e90ff15 100%);
+          background: linear-gradient(135deg, #00d4ff06 0%, #1e90ff06 100%);
         }
 
         .universal-circle-5 {
@@ -147,7 +147,7 @@ const UniversalBackground: React.FC = () => {
           top: 65%;
           left: 12%;
           animation-delay: 3s;
-          background: linear-gradient(135deg, #00d4ff18 0%, #1e90ff18 100%);
+          background: linear-gradient(135deg, #00d4ff08 0%, #1e90ff08 100%);
         }
 
         /* Subtle gradient overlays for depth */
@@ -189,12 +189,12 @@ const UniversalBackground: React.FC = () => {
           background:
             radial-gradient(
               circle at 20% 30%,
-              rgba(0, 212, 255, 0.05) 0%,
+              rgba(0, 212, 255, 0.02) 0%,
               transparent 40%
             ),
             radial-gradient(
               circle at 80% 70%,
-              rgba(30, 144, 255, 0.05) 0%,
+              rgba(30, 144, 255, 0.02) 0%,
               transparent 40%
             );
           pointer-events: none;
@@ -205,21 +205,21 @@ const UniversalBackground: React.FC = () => {
           0%,
           100% {
             transform: translateY(0px) rotate(0deg);
-            opacity: 0.4;
+            opacity: 0.15;
           }
           50% {
             transform: translateY(-30px) rotate(180deg);
-            opacity: 0.7;
+            opacity: 0.25;
           }
         }
 
         @keyframes universalShimmer {
           0%,
           100% {
-            opacity: 0.3;
+            opacity: 0.1;
           }
           50% {
-            opacity: 0.6;
+            opacity: 0.2;
           }
         }
 
