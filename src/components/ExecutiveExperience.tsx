@@ -4,7 +4,7 @@ import { useEffect, useRef, useState, memo } from 'react';
 import { Brain, Target, Search, Wifi, Database, Cloud, Shield, ShieldCheck, BarChart, TrendingUp, Globe } from 'lucide-react';
 
 const IconCircle: React.FC<{ children: React.ReactNode }> = memo(({ children }) => (
-  <div className="relative flex items-center justify-center w-12 h-12 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm shadow-inner shadow-[inset_0_0_20px_rgba(0,212,255,0.1)] ring-1 ring-white/5 before:content-[''] before:absolute before:inset-0 before:rounded-full before:shadow-[0_0_25px_rgba(0,212,255,0.25)]">
+  <div className="relative flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm shadow-inner shadow-[inset_0_0_20px_rgba(0,212,255,0.1)] ring-1 ring-white/5 before:content-[''] before:absolute before:inset-0 before:rounded-full before:shadow-[0_0_25px_rgba(0,212,255,0.25)]">
     <div className="relative z-10">
       {children}
     </div>
@@ -34,7 +34,7 @@ const ROLES: Role[] = [
     role: 'VP, Head of NextGen AI/ML Solutions',
     company: 'JPMorgan Chase',
     location: 'Plano, TX',
-    icon: <Brain className="w-6 h-6 text-cyan-400 stroke-2 stroke-2" />,
+    icon: <Brain className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Drive enterprise AI strategy and implementation across payments operations, leading organization-wide transformation initiatives that enhance operational efficiency and customer experience at scale.',
     skills: [
@@ -63,7 +63,7 @@ const ROLES: Role[] = [
     role: 'Senior Director, Intelligent Industry GTM & Solution Leader',
     company: 'Capgemini',
     location: 'Dallas, TX',
-    icon: <Target className="w-6 h-6 text-cyan-400 stroke-2" />,
+    icon: <Target className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Directed go-to-market strategy and solution development for emerging AI technologies, leading cross-functional teams of product managers, solution architects, and sales professionals.',
     skills: ['Go-to-Market Strategy', 'IoT Solutions', 'Product Management'],
@@ -87,7 +87,7 @@ const ROLES: Role[] = [
     role: 'Senior Manager, Forensic Analytics & Data Science',
     company: 'Ernst & Young',
     location: 'Dallas, TX',
-    icon: <Search className="w-6 h-6 text-cyan-400 stroke-2" />,
+    icon: <Search className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       "Spearheaded AI/ML strategy and capability development within EY's Forensics Practice, serving as Regional Leader for complex analytics engagements across Financial Services, Life Sciences, and Energy sectors.",
     skills: [
@@ -116,7 +116,7 @@ const ROLES: Role[] = [
     role: 'IoT & Digital Innovation Leader',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: <Wifi className="w-6 h-6 text-cyan-400 stroke-2" />,
+    icon: <Wifi className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Led digital transformation initiatives focused on IoT implementation and cloud migration, driving operational efficiency improvements across airline infrastructure and customer-facing systems.',
     skills: ['IoT Architecture', 'Cloud Migration', 'Digital Transformation'],
@@ -140,7 +140,7 @@ const ROLES: Role[] = [
     role: 'Data Enablement & Analytics COE Lead',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: <Database className="w-6 h-6 text-cyan-400 stroke-2" />,
+    icon: <Database className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Established and led the enterprise-wide Center of Excellence for data analytics, driving adoption of modern BI platforms and building analytical capabilities across all business units.',
     skills: ['Data Analytics', 'COE Leadership', 'Platform Architecture'],
@@ -164,7 +164,7 @@ const ROLES: Role[] = [
     role: 'VP, Global Digital and Cloud Transformation Leader',
     company: 'Citigroup',
     location: 'Irving, TX',
-    icon: <Cloud className="w-6 h-6 text-cyan-400 stroke-2" />,
+    icon: <Cloud className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Spearheaded global cloud transformation initiatives and DevOps adoption across multiple business units, establishing enterprise-wide standards for cloud-native architecture and deployment practices.',
     skills: ['Cloud Architecture', 'DevOps', 'Global Programs', 'CI/CD'],
@@ -188,7 +188,7 @@ const ROLES: Role[] = [
     role: 'Risk Analytics Leader, Auto Finance & Home Loans',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: <Shield className="w-6 h-6 text-cyan-400 stroke-2" />,
+    icon: <Shield className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Led risk analytics transformation for consumer lending portfolios, implementing advanced ML models and automated compliance systems to enhance risk assessment and regulatory reporting capabilities.',
     skills: ['Risk Analytics', 'Compliance Tech', 'NLP/OCR'],
@@ -212,7 +212,7 @@ const ROLES: Role[] = [
     role: 'Enterprise Analytics Leader, Risk & Compliance',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: <ShieldCheck className="w-6 h-6 text-cyan-400 stroke-2" />,
+    icon: <ShieldCheck className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Drove enterprise-wide analytics strategy and governance, establishing data quality standards and building scalable analytics infrastructure to support risk management and regulatory compliance initiatives.',
     skills: ['Enterprise Analytics', 'Data Governance', 'Tableau'],
@@ -236,7 +236,7 @@ const ROLES: Role[] = [
     role: 'Center of Excellence Leader, Tableau & Big Data',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: <BarChart className="w-6 h-6 text-cyan-400 stroke-2" />,
+    icon: <BarChart className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       "Pioneered enterprise-wide business intelligence transformation, establishing one of the world's largest Tableau communities and driving company-wide adoption of self-service analytics capabilities.",
     skills: [
@@ -265,7 +265,7 @@ const ROLES: Role[] = [
     role: 'Senior Consultant, Lead Data Analyst',
     company: 'Booz Allen Hamilton',
     location: 'McLean, VA',
-    icon: <TrendingUp className="w-6 h-6 text-cyan-400 stroke-2" />,
+    icon: <TrendingUp className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       "Established and led the firm's first dedicated data analytics practice, developing advanced analytics solutions for government and commercial clients across defense, healthcare, and financial services sectors.",
     skills: ['Data Analytics', 'Fraud Detection', 'Business Intelligence'],
@@ -285,7 +285,7 @@ const ROLES: Role[] = [
     role: 'Global Operations and Strategy Associate',
     company: 'PricewaterhouseCoopers',
     location: 'Tampa, FL',
-    icon: <Globe className="w-6 h-6 text-cyan-400 stroke-2" />,
+    icon: <Globe className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       "Served as strategic analyst and performance metrics lead for global delivery operations, pioneering the firm's first business intelligence implementations and executive dashboard automation initiatives.",
     skills: ['Strategy', 'Operations', 'Executive Analytics'],
@@ -409,19 +409,19 @@ const ExecutiveExperience = memo(() => {
       `}</style>
 
       <div className="relative z-10 font-sans">
-        <div className="px-4 py-8 md:px-8 md:py-12 text-center">
-          <h2 className="text-3xl font-bold md:text-5xl">
+        <div className="px-2 py-6 md:px-8 md:py-12 text-center">
+          <h2 className="text-2xl font-bold md:text-5xl">
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               Executive Experience
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-4xl text-lg md:text-xl leading-relaxed text-slate-300 px-4">
+          <p className="mx-auto mt-3 max-w-4xl text-sm md:text-xl leading-relaxed text-slate-300 px-2">
             16+ years of architecting enterprise AI solutions and driving
             digital transformation
           </p>
         </div>
 
-        <div className="mx-auto max-w-6xl px-2 pb-12 md:px-8 md:pb-16">
+        <div className="mx-auto max-w-6xl px-1 pb-8 md:px-8 md:pb-16">
           <div className="relative">
             <div className="absolute bottom-0 top-0 left-4 w-0.5 bg-gradient-to-b from-cyan-400 via-cyan-400 to-transparent md:left-12" />
 
@@ -435,10 +435,10 @@ const ExecutiveExperience = memo(() => {
                   ref={(el) => {
                     itemRefs.current[index] = el;
                   }}
-                  className="relative mb-4 pl-12 md:mb-12 md:pl-28"
+                  className="relative mb-3 pl-10 md:mb-12 md:pl-28"
                 >
                   <div
-                    className={`absolute top-5 left-2 flex h-12 w-12 items-center justify-center rounded-full transition-all duration-500 md:left-8 ${
+                    className={`absolute top-4 left-1 flex h-8 w-8 items-center justify-center rounded-full transition-all duration-500 md:left-8 md:h-12 md:w-12 ${
                       isVisible
                         ? 'scale-110 shadow-lg shadow-white/20'
                         : 'scale-100 shadow-md shadow-white/10'
@@ -453,7 +453,7 @@ const ExecutiveExperience = memo(() => {
                   </div>
 
                   <div
-                    className={`timeline-item-visible relative overflow-hidden rounded-2xl p-4 md:p-8 transition-all duration-700 ${
+                    className={`timeline-item-visible relative overflow-hidden rounded-xl p-3 md:p-8 transition-all duration-700 ${
                       isVisible
                         ? 'translate-x-2 scale-[1.02] opacity-100'
                         : 'translate-x-0 scale-100 opacity-90'
@@ -485,29 +485,29 @@ const ExecutiveExperience = memo(() => {
                     />
 
                     <div className="relative z-10">
-                      <span className="mb-3 inline-block rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-white">
+                      <span className="mb-2 inline-block rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white">
                         {role.dates}
                       </span>
 
-                      <h3 className="text-lg font-bold leading-tight text-white md:text-2xl">
+                      <h3 className="text-base font-bold leading-tight text-white md:text-2xl">
                         {role.role}
                       </h3>
-                      <div className="mb-3 text-base font-medium text-cyan-400">
+                      <div className="mb-2 text-sm font-medium text-cyan-400 md:text-base">
                         {role.company}
-                        <span className="ml-2 text-sm text-slate-400">
+                        <span className="ml-2 text-xs text-slate-400 md:text-sm">
                           | {role.location}
                         </span>
                       </div>
 
-                      <p className="mb-4 text-sm leading-relaxed text-slate-300 md:text-base">
+                      <p className="mb-3 text-xs leading-relaxed text-slate-300 md:text-base">
                         {role.description}
                       </p>
 
-                      <div className="mb-4 flex flex-wrap gap-1.5 overflow-x-auto pb-2">
+                      <div className="mb-3 flex flex-wrap gap-1 overflow-x-auto pb-2">
                         {role.skills.map((skill) => (
                           <span
                             key={skill}
-                            className="whitespace-nowrap rounded-lg border border-blue-500/40 bg-blue-500/20 px-2 py-1 text-xs font-medium text-slate-200 transition-colors hover:bg-blue-500/30 md:text-sm md:px-3"
+                            className="whitespace-nowrap rounded-md border border-blue-500/40 bg-blue-500/20 px-1.5 py-0.5 text-xs font-medium text-slate-200 transition-colors hover:bg-blue-500/30 md:text-sm md:px-3 md:py-1"
                           >
                             {skill}
                           </span>
@@ -518,7 +518,7 @@ const ExecutiveExperience = memo(() => {
                         type="button"
                         onClick={() => toggle(index)}
                         aria-expanded={isExpanded}
-                        className="mb-3 block w-full rounded-lg border border-cyan-500/40 bg-cyan-500/20 py-2 px-3 text-xs font-semibold text-cyan-400 transition-all duration-300 hover:bg-cyan-500/30 md:hidden"
+                        className="mb-2 block w-full rounded-md border border-cyan-500/40 bg-cyan-500/20 py-1.5 px-2 text-xs font-semibold text-cyan-400 transition-all duration-300 hover:bg-cyan-500/30 md:hidden"
                       >
                         {isExpanded ? 'Hide Achievements' : 'View Achievements'}
                         <span
@@ -538,17 +538,17 @@ const ExecutiveExperience = memo(() => {
                         {role.achievements.map((achievement) => (
                           <div
                             key={achievement.title}
-                            className="rounded-lg border-l-4 border-cyan-400 bg-cyan-500/10 p-4 transition-all duration-300 hover:translate-x-1 hover:bg-cyan-500/15"
+                            className="rounded-md border-l-4 border-cyan-400 bg-cyan-500/10 p-3 transition-all duration-300 hover:translate-x-1 hover:bg-cyan-500/15"
                           >
                             <div className="flex items-start gap-3">
                               <span className="mt-0.5 text-lg text-cyan-400 stroke-2">
                                 →
                               </span>
                               <div>
-                                <h4 className="mb-2 font-semibold text-cyan-400 stroke-2">
+                                <h4 className="mb-1 text-sm font-semibold text-cyan-400 stroke-2 md:text-base md:mb-2">
                                   {achievement.title}
                                 </h4>
-                                <p className="leading-relaxed text-slate-300">
+                                <p className="text-xs leading-relaxed text-slate-300 md:text-sm">
                                   {achievement.text}
                                 </p>
                               </div>
