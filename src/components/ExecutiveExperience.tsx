@@ -1,13 +1,14 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, memo } from 'react';
 import { Brain, Lightbulb, BarChart3, Network, LineChart, Gauge, ShieldCheck, Layers, Search, ClipboardList } from 'lucide-react';
 
-const IconCircle: React.FC<{children: React.ReactNode}> = ({ children }) => (
-  <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-sm shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ring-1 ring-black/10">
+const IconCircle: React.FC<{children: React.ReactNode}> = memo(({ children }) => (
+  <div className="relative flex items-center justify-center w-10 h-10 rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-sm shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ring-1 ring-black/10 before:content-[''] before:absolute before:inset-0 before:rounded-full before:shadow-[inset_0_0_20px_rgba(0,212,255,0.08)]">
     {children}
   </div>
-);
+));
+IconCircle.displayName = 'IconCircle';
 
 type Achievement = {
   title: string;
@@ -301,7 +302,7 @@ const ROLES: Role[] = [
 
 const DESKTOP_EXPANDED = new Set(ROLES.map((_, index) => index));
 
-const ExecutiveExperience = () => {
+const ExecutiveExperience = memo(() => {
   const [expanded, setExpanded] = useState<Set<number>>(() => new Set());
   const [visibleItems, setVisibleItems] = useState<Set<number>>(
     () => new Set()
@@ -563,6 +564,7 @@ const ExecutiveExperience = () => {
       </div>
     </div>
   );
-};
+});
+ExecutiveExperience.displayName = 'ExecutiveExperience';
 
 export default ExecutiveExperience;
