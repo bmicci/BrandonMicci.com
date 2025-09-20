@@ -28,19 +28,17 @@ const HeroImage = () => {
           max-width: 320px; /* Smaller container for better proportions */
           margin: 0 auto;
           width: 100%;
+          height: 350px; /* Set explicit height for fill prop */
           position: relative;
           animation: imageReveal 1s ease-out 0.5s both;
         }
 
         .professional-image {
-          width: 100%;
-          max-width: 300px; /* Reduced from 350px */
-          height: 350px; /* Reduced from 400px */
           border-radius: 16px;
           object-fit: cover;
-          margin: 0 auto;
-          display: block;
-          position: relative;
+          position: absolute;
+          top: 0;
+          left: 0;
 
           /* Clean professional styling */
           border: 1px solid rgba(255, 255, 255, 0.15);
