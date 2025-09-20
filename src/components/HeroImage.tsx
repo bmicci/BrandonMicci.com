@@ -25,29 +25,30 @@ const HeroImage = () => {
         }
 
         .image-content {
-          max-width: 320px; /* Smaller container for better proportions */
+          max-width: 280px; /* Better proportions */
           margin: 0 auto;
           width: 100%;
+          height: 320px; /* Better aspect ratio */
           position: relative;
           animation: imageReveal 1s ease-out 0.5s both;
         }
 
         .professional-image {
+          border-radius: 20px; /* More modern rounded corners */
+          object-fit: contain;
+          object-position: center;
+          position: absolute;
+          top: 0;
+          left: 0;
           width: 100%;
-          max-width: 300px; /* Reduced from 350px */
-          height: 350px; /* Reduced from 400px */
-          border-radius: 16px;
-          object-fit: cover;
-          margin: 0 auto;
-          display: block;
-          position: relative;
+          height: 100%;
 
           /* Clean professional styling */
-          border: 1px solid rgba(255, 255, 255, 0.15);
+          border: 2px solid rgba(255, 255, 255, 0.2);
           box-shadow:
-            0 0 0 1px rgba(0, 212, 255, 0.2),
-            0 0 20px rgba(0, 212, 255, 0.15),
-            0 8px 32px rgba(0, 0, 0, 0.4);
+            0 0 0 1px rgba(0, 212, 255, 0.3),
+            0 0 25px rgba(0, 212, 255, 0.2),
+            0 10px 40px rgba(0, 0, 0, 0.3);
 
           transition: all 0.4s ease;
           animation: professionalPulse 3s ease-in-out infinite;
@@ -79,15 +80,25 @@ const HeroImage = () => {
           }
         }
 
+        @media (max-width: 768px) {
+          .image-content {
+            max-width: 250px;
+            height: 300px;
+          }
+        }
+
         @media (max-width: 480px) {
           .image-section {
             padding: 15px 0.75rem;
           }
 
+          .image-content {
+            max-width: 220px;
+            height: 260px;
+          }
+
           .professional-image {
-            max-width: 240px;
-            height: 280px;
-            border-radius: 12px;
+            border-radius: 16px;
           }
         }
 

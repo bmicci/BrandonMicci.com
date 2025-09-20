@@ -1,0 +1,572 @@
+globalThis.__RSC_MANIFEST = globalThis.__RSC_MANIFEST || {};
+globalThis.__RSC_MANIFEST['/page'] = {
+  moduleLoading: { prefix: '/_next/' },
+  ssrModuleMapping: {
+    '(app-pages-browser)/./node_modules/@vercel/analytics/dist/next/index.mjs':
+      {
+        '*': {
+          id: '(ssr)/./node_modules/@vercel/analytics/dist/next/index.mjs',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/@vercel/speed-insights/dist/next/index.mjs':
+      {
+        '*': {
+          id: '(ssr)/./node_modules/@vercel/speed-insights/dist/next/index.mjs',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/client/script.js': {
+      '*': {
+        id: '(ssr)/./node_modules/next/dist/client/script.js',
+        name: '*',
+        chunks: [],
+        async: false,
+      },
+    },
+    '(app-pages-browser)/./src/components/GlobalBackground.tsx': {
+      '*': {
+        id: '(ssr)/./src/components/GlobalBackground.tsx',
+        name: '*',
+        chunks: [],
+        async: false,
+      },
+    },
+    '(app-pages-browser)/./src/components/Navigation.tsx': {
+      '*': {
+        id: '(ssr)/./src/components/Navigation.tsx',
+        name: '*',
+        chunks: [],
+        async: false,
+      },
+    },
+    '(app-pages-browser)/./src/app/error.tsx': {
+      '*': {
+        id: '(ssr)/./src/app/error.tsx',
+        name: '*',
+        chunks: [],
+        async: false,
+      },
+    },
+    '(app-pages-browser)/./node_modules/next/dist/client/app-dir/link.js': {
+      '*': {
+        id: '(ssr)/./node_modules/next/dist/client/app-dir/link.js',
+        name: '*',
+        chunks: [],
+        async: false,
+      },
+    },
+    '(app-pages-browser)/./src/app/page.tsx': {
+      '*': {
+        id: '(ssr)/./src/app/page.tsx',
+        name: '*',
+        chunks: [],
+        async: false,
+      },
+    },
+    '(app-pages-browser)/./node_modules/next/dist/client/components/builtin/global-error.js':
+      {
+        '*': {
+          id: '(ssr)/./node_modules/next/dist/client/components/builtin/global-error.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js':
+      {
+        '*': {
+          id: '(ssr)/./node_modules/next/dist/client/components/client-page.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/client/components/client-segment.js':
+      {
+        '*': {
+          id: '(ssr)/./node_modules/next/dist/client/components/client-segment.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/client/components/http-access-fallback/error-boundary.js':
+      {
+        '*': {
+          id: '(ssr)/./node_modules/next/dist/client/components/http-access-fallback/error-boundary.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js':
+      {
+        '*': {
+          id: '(ssr)/./node_modules/next/dist/client/components/layout-router.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/client/components/metadata/async-metadata.js':
+      {
+        '*': {
+          id: '(ssr)/./node_modules/next/dist/client/components/metadata/async-metadata.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js':
+      {
+        '*': {
+          id: '(ssr)/./node_modules/next/dist/client/components/render-from-template-context.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/lib/framework/boundary-components.js':
+      {
+        '*': {
+          id: '(ssr)/./node_modules/next/dist/lib/framework/boundary-components.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/lib/metadata/generate/icon-mark.js':
+      {
+        '*': {
+          id: '(ssr)/./node_modules/next/dist/lib/metadata/generate/icon-mark.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/segment-explorer-node.js':
+      {
+        '*': {
+          id: '(ssr)/./node_modules/next/dist/next-devtools/userspace/app/segment-explorer-node.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+  },
+  edgeSSRModuleMapping: {},
+  clientModules: {
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/@vercel/analytics/dist/next/index.mjs':
+      {
+        id: '(app-pages-browser)/./node_modules/@vercel/analytics/dist/next/index.mjs',
+        name: '*',
+        chunks: ['app/layout', 'static/chunks/app/layout.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/@vercel/speed-insights/dist/next/index.mjs':
+      {
+        id: '(app-pages-browser)/./node_modules/@vercel/speed-insights/dist/next/index.mjs',
+        name: '*',
+        chunks: ['app/layout', 'static/chunks/app/layout.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/client/script.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/script.js',
+        name: '*',
+        chunks: ['app/layout', 'static/chunks/app/layout.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/esm/client/script.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/script.js',
+        name: '*',
+        chunks: ['app/layout', 'static/chunks/app/layout.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/font/google/target.css?{"path":"src/app/layout.tsx","import":"Geist","arguments":[{"variable":"--font-geist-sans","subsets":["latin"]}],"variableName":"geistSans"}':
+      {
+        id: '(app-pages-browser)/./node_modules/next/font/google/target.css?{"path":"src/app/layout.tsx","import":"Geist","arguments":[{"variable":"--font-geist-sans","subsets":["latin"]}],"variableName":"geistSans"}',
+        name: '*',
+        chunks: ['app/layout', 'static/chunks/app/layout.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/font/google/target.css?{"path":"src/app/layout.tsx","import":"Geist_Mono","arguments":[{"variable":"--font-geist-mono","subsets":["latin"]}],"variableName":"geistMono"}':
+      {
+        id: '(app-pages-browser)/./node_modules/next/font/google/target.css?{"path":"src/app/layout.tsx","import":"Geist_Mono","arguments":[{"variable":"--font-geist-mono","subsets":["latin"]}],"variableName":"geistMono"}',
+        name: '*',
+        chunks: ['app/layout', 'static/chunks/app/layout.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/src/app/globals.css':
+      {
+        id: '(app-pages-browser)/./src/app/globals.css',
+        name: '*',
+        chunks: ['app/layout', 'static/chunks/app/layout.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/src/components/GlobalBackground.tsx':
+      {
+        id: '(app-pages-browser)/./src/components/GlobalBackground.tsx',
+        name: '*',
+        chunks: ['app/layout', 'static/chunks/app/layout.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/src/components/Navigation.tsx':
+      {
+        id: '(app-pages-browser)/./src/components/Navigation.tsx',
+        name: '*',
+        chunks: ['app/layout', 'static/chunks/app/layout.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/src/app/error.tsx': {
+      id: '(app-pages-browser)/./src/app/error.tsx',
+      name: '*',
+      chunks: ['app/error', 'static/chunks/app/error.js'],
+      async: false,
+    },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/client/app-dir/link.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/app-dir/link.js',
+        name: '*',
+        chunks: ['app/not-found', 'static/chunks/app/not-found.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/esm/client/app-dir/link.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/app-dir/link.js',
+        name: '*',
+        chunks: ['app/not-found', 'static/chunks/app/not-found.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/src/app/page.tsx': {
+      id: '(app-pages-browser)/./src/app/page.tsx',
+      name: '*',
+      chunks: ['app/page', 'static/chunks/app/page.js'],
+      async: false,
+    },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/client/components/builtin/global-error.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/components/builtin/global-error.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/esm/client/components/builtin/global-error.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/components/builtin/global-error.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/client/components/client-page.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/esm/client/components/client-page.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/client/components/client-segment.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/components/client-segment.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/esm/client/components/client-segment.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/components/client-segment.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/client/components/http-access-fallback/error-boundary.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/components/http-access-fallback/error-boundary.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/esm/client/components/http-access-fallback/error-boundary.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/components/http-access-fallback/error-boundary.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/client/components/layout-router.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/esm/client/components/layout-router.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/client/components/metadata/async-metadata.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/components/metadata/async-metadata.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/esm/client/components/metadata/async-metadata.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/components/metadata/async-metadata.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/client/components/render-from-template-context.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/esm/client/components/render-from-template-context.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/lib/framework/boundary-components.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/lib/framework/boundary-components.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/esm/lib/framework/boundary-components.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/lib/framework/boundary-components.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/lib/metadata/generate/icon-mark.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/lib/metadata/generate/icon-mark.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/esm/lib/metadata/generate/icon-mark.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/lib/metadata/generate/icon-mark.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/next-devtools/userspace/app/segment-explorer-node.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/segment-explorer-node.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/node_modules/next/dist/esm/next-devtools/userspace/app/segment-explorer-node.js':
+      {
+        id: '(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/segment-explorer-node.js',
+        name: '*',
+        chunks: ['app-pages-internals', 'static/chunks/app-pages-internals.js'],
+        async: false,
+      },
+  },
+  entryCSSFiles: {
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/src/': [],
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/src/app/layout': [
+      { inlined: false, path: 'static/css/app/layout.css' },
+    ],
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/src/app/error': [],
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/src/app/loading': [],
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/src/app/not-found':
+      [],
+    '/Users/brandonmicci/Documents/GitHub/BrandonMicci.com/src/app/page': [],
+  },
+  rscModuleMapping: {
+    '(app-pages-browser)/./node_modules/@vercel/analytics/dist/next/index.mjs':
+      {
+        '*': {
+          id: '(rsc)/./node_modules/@vercel/analytics/dist/next/index.mjs',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/@vercel/speed-insights/dist/next/index.mjs':
+      {
+        '*': {
+          id: '(rsc)/./node_modules/@vercel/speed-insights/dist/next/index.mjs',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/client/script.js': {
+      '*': {
+        id: '(rsc)/./node_modules/next/dist/client/script.js',
+        name: '*',
+        chunks: [],
+        async: false,
+      },
+    },
+    '(app-pages-browser)/./src/app/globals.css': {
+      '*': {
+        id: '(rsc)/./src/app/globals.css',
+        name: '*',
+        chunks: [],
+        async: false,
+      },
+    },
+    '(app-pages-browser)/./src/components/GlobalBackground.tsx': {
+      '*': {
+        id: '(rsc)/./src/components/GlobalBackground.tsx',
+        name: '*',
+        chunks: [],
+        async: false,
+      },
+    },
+    '(app-pages-browser)/./src/components/Navigation.tsx': {
+      '*': {
+        id: '(rsc)/./src/components/Navigation.tsx',
+        name: '*',
+        chunks: [],
+        async: false,
+      },
+    },
+    '(app-pages-browser)/./src/app/error.tsx': {
+      '*': {
+        id: '(rsc)/./src/app/error.tsx',
+        name: '*',
+        chunks: [],
+        async: false,
+      },
+    },
+    '(app-pages-browser)/./node_modules/next/dist/client/app-dir/link.js': {
+      '*': {
+        id: '(rsc)/./node_modules/next/dist/client/app-dir/link.js',
+        name: '*',
+        chunks: [],
+        async: false,
+      },
+    },
+    '(app-pages-browser)/./src/app/page.tsx': {
+      '*': {
+        id: '(rsc)/./src/app/page.tsx',
+        name: '*',
+        chunks: [],
+        async: false,
+      },
+    },
+    '(app-pages-browser)/./node_modules/next/dist/client/components/builtin/global-error.js':
+      {
+        '*': {
+          id: '(rsc)/./node_modules/next/dist/client/components/builtin/global-error.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/client/components/client-page.js':
+      {
+        '*': {
+          id: '(rsc)/./node_modules/next/dist/client/components/client-page.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/client/components/client-segment.js':
+      {
+        '*': {
+          id: '(rsc)/./node_modules/next/dist/client/components/client-segment.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/client/components/http-access-fallback/error-boundary.js':
+      {
+        '*': {
+          id: '(rsc)/./node_modules/next/dist/client/components/http-access-fallback/error-boundary.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/client/components/layout-router.js':
+      {
+        '*': {
+          id: '(rsc)/./node_modules/next/dist/client/components/layout-router.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/client/components/metadata/async-metadata.js':
+      {
+        '*': {
+          id: '(rsc)/./node_modules/next/dist/client/components/metadata/async-metadata.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/client/components/render-from-template-context.js':
+      {
+        '*': {
+          id: '(rsc)/./node_modules/next/dist/client/components/render-from-template-context.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/lib/framework/boundary-components.js':
+      {
+        '*': {
+          id: '(rsc)/./node_modules/next/dist/lib/framework/boundary-components.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/lib/metadata/generate/icon-mark.js':
+      {
+        '*': {
+          id: '(rsc)/./node_modules/next/dist/lib/metadata/generate/icon-mark.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+    '(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/segment-explorer-node.js':
+      {
+        '*': {
+          id: '(rsc)/./node_modules/next/dist/next-devtools/userspace/app/segment-explorer-node.js',
+          name: '*',
+          chunks: [],
+          async: false,
+        },
+      },
+  },
+  edgeRscModuleMapping: {},
+};

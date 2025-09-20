@@ -62,12 +62,25 @@ export default function GlobalBackground() {
         n.x += n.vx * n.speed;
         n.y += n.vy * n.speed;
         // bounce on edges
-        if (n.x < 0) { n.x = 0; n.vx *= -1; }
-        if (n.x > window.innerWidth) { n.x = window.innerWidth; n.vx *= -1; }
-        if (n.y < 0) { n.y = 0; n.vy *= -1; }
-        if (n.y > window.innerHeight) { n.y = window.innerHeight; n.vy *= -1; }
+        if (n.x < 0) {
+          n.x = 0;
+          n.vx *= -1;
+        }
+        if (n.x > window.innerWidth) {
+          n.x = window.innerWidth;
+          n.vx *= -1;
+        }
+        if (n.y < 0) {
+          n.y = 0;
+          n.vy *= -1;
+        }
+        if (n.y > window.innerHeight) {
+          n.y = window.innerHeight;
+          n.vy *= -1;
+        }
 
-        const twinkle = 0.25 + 0.35 * Math.abs(Math.sin(n.phase + frame * 0.005));
+        const twinkle =
+          0.25 + 0.35 * Math.abs(Math.sin(n.phase + frame * 0.005));
         ctx.globalAlpha = twinkle;
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
@@ -89,7 +102,7 @@ export default function GlobalBackground() {
     const onResize = () => {
       // Recalculate nodes for new viewport height
       const newViewportHeight = window.innerHeight;
-      nodes.forEach(n => {
+      nodes.forEach((n) => {
         n.y = Math.random() * newViewportHeight;
         n.x = Math.min(n.x, window.innerWidth);
       });
@@ -109,7 +122,11 @@ export default function GlobalBackground() {
   }, []);
 
   return (
-    <div aria-hidden className="fixed inset-0 z-0 pointer-events-none" style={{ background: '#0b0f1a' }}>
+    <div
+      aria-hidden
+      className="fixed inset-0 z-0 pointer-events-none"
+      style={{ background: '#0b0f1a' }}
+    >
       <style jsx>{`
         .animated-grid {
           position: absolute;
@@ -119,12 +136,16 @@ export default function GlobalBackground() {
             linear-gradient(90deg, rgba(0, 212, 255, 0.06) 1px, transparent 1px);
           background-size: 60px 60px;
           animation: gridSlide 90s linear infinite;
-          opacity: 0.10;
+          opacity: 0.1;
           mix-blend-mode: screen;
         }
         @keyframes gridSlide {
-          0% { transform: translate(0, 0); }
-          100% { transform: translate(30px, 30px); }
+          0% {
+            transform: translate(0, 0);
+          }
+          100% {
+            transform: translate(30px, 30px);
+          }
         }
       `}</style>
       <canvas ref={canvasRef} className="block w-full h-full" />
