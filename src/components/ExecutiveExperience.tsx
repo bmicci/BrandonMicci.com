@@ -412,7 +412,7 @@ const ExecutiveExperience = memo(() => {
         <div className="px-4 py-8 md:px-8 md:py-12 text-center">
           <h2 className="text-3xl font-bold md:text-5xl">
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Career Timeline
+              Executive Experience
             </span>
           </h2>
           <p className="mx-auto mt-4 max-w-4xl text-lg md:text-xl leading-relaxed text-slate-300 px-4">
