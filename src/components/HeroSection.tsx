@@ -575,10 +575,12 @@ const HeroSection = () => {
           position: relative;
           border-radius: 16px;
           overflow: hidden;
+          width: 100%;
+          height: 500px;
         }
         .professional-photo {
           width: 100%;
-          height: 500px;
+          height: 100%;
           object-fit: cover;
           border-radius: 16px;
         }
@@ -788,7 +790,7 @@ const HeroSection = () => {
             max-width: 300px;
             margin: 0 auto 2rem;
           }
-          .mobile-photo .professional-photo {
+          .mobile-photo .photo-frame {
             height: 350px;
           }
 
