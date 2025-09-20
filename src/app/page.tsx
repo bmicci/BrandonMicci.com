@@ -1,3 +1,5 @@
+'use client';
+
 import HeroSection from '@/components/HeroSection';
 import StrategicVisionBackground from '@/components/StrategicVisionBackground';
 import StarsBackground from '@/components/StarsBackground';
