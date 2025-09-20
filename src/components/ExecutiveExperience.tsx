@@ -430,11 +430,11 @@ const ExecutiveExperience = () => {
                   <div
                     className={`absolute top-5 flex h-10 w-10 items-center justify-center rounded-full transition-all duration-500 md:left-8 ${
                       isVisible
-                        ? 'scale-110 shadow-lg shadow-cyan-400/40'
-                        : 'scale-100 shadow-md shadow-cyan-400/20'
+                        ? 'scale-110 shadow-lg shadow-white/20'
+                        : 'scale-100 shadow-md shadow-white/10'
                     }`}
                     style={{
-                      background: 'linear-gradient(135deg, #00d4ff, #1e90ff)',
+                      background: 'rgba(255, 255, 255, 0.1)',
                     }}
                   >
                     <span className="text-lg font-semibold text-white">
@@ -457,27 +457,11 @@ const ExecutiveExperience = () => {
                         ? 'blur(25px)'
                         : 'blur(15px)',
                       boxShadow: isVisible
-                        ? '0 25px 50px rgba(0, 212, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
+                        ? '0 25px 50px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
                         : '0 8px 16px rgba(0, 0, 0, 0.1)',
                     }}
                   >
-                    <div
-                      className="pointer-events-none absolute inset-0 opacity-30"
-                      style={{
-                        borderRadius: 'inherit',
-                        padding: '1px',
-                        background:
-                          'linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff)',
-                        backgroundSize: '200% 200%',
-                        WebkitMask:
-                          'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                        WebkitMaskComposite: 'xor',
-                        maskComposite: 'exclude',
-                        animation: isVisible
-                          ? 'gradientShift 3s ease infinite'
-                          : 'none',
-                      }}
-                    />
+                    {/* Gradient border removed - using universal background */}
 
                     <div
                       className={`pointer-events-none absolute -inset-4 transition-opacity duration-500 ${
