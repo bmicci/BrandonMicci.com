@@ -290,7 +290,7 @@ const StarsBackground: React.FC = () => {
         ></div>
         <div className="particle" style={{ top: '75%', left: '50%' }}></div>
       </div>
-      
+
       {/* Text-safe zone to reduce star interference with text */}
       <div className="text-safe-zone"></div>
     </>

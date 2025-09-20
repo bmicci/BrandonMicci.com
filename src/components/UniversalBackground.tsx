@@ -293,24 +293,24 @@ const UniversalBackground: React.FC = () => {
             const isSmall = i % 3 === 0;
             const isLarge = i % 5 === 0;
             const isMedium = i % 2 === 0 && !isLarge;
-            
+
             let className = 'universal-particle';
             if (isSmall) className += ' small';
             if (isLarge) className += ' large';
-            
+
             // Random positioning
             const top = Math.random() * 100;
             const left = Math.random() * 100;
-            
+
             return (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className={className}
-                style={{ 
-                  top: `${top}%`, 
+                style={{
+                  top: `${top}%`,
                   left: `${left}%`,
                   animationDelay: `${Math.random() * 15}s`,
-                  animationDuration: `${6 + Math.random() * 6}s`
+                  animationDuration: `${6 + Math.random() * 6}s`,
                 }}
               />
             );
