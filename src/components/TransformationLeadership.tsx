@@ -301,7 +301,6 @@ const TransformationLeadership = () => {
           text-align: center;
           padding: 3rem 2rem;
           animation: fadeInDown 1s ease-out;
-          background: transparent;
         }
 
         .portfolio-title {

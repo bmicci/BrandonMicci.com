@@ -35,6 +35,9 @@ const TestimonialsSection: React.FC = () => {
         .professional-impact-header {
           margin-bottom: 4rem;
           animation: fadeInDown 1s ease-out;
+          padding: 3rem 2rem;
+          max-width: 1000px;
+          margin: 2rem auto 4rem;
         }
 
         .professional-impact-eyebrow {

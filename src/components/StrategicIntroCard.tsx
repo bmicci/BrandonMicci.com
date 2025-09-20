@@ -17,10 +17,6 @@ const StrategicIntroCard: React.FC = () => {
           max-width: 1000px;
           margin: 2rem auto 2rem;
           padding: 2.5rem;
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          border-radius: 20px;
           position: relative;
           animation: fadeInUp 1s ease-out 0.3s both;
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -48,8 +44,6 @@ const StrategicIntroCard: React.FC = () => {
 
         .intro-card:hover {
           transform: translateY(-5px) scale(1.01);
-          background: rgba(255, 255, 255, 0.08);
-          box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
         }
 
         .intro-text {

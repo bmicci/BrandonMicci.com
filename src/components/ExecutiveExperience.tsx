@@ -389,24 +389,35 @@ const ExecutiveExperience = () => {
           }
         }
 
+        .career-header-container {
+          text-align: center;
+          padding: 3rem 2rem;
+        }
+
         @media (max-width: 768px) {
           .timeline-item-visible {
             animation: mobileSlideIn 0.6s ease-out;
+          }
+          
+          .career-header-container {
+            padding: 2rem 1.5rem;
           }
         }
       `}</style>
 
       <div className="relative z-10 font-sans">
         <div className="px-8 py-12 text-center">
-          <h2 className="text-4xl font-bold md:text-5xl">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Career Timeline
-            </span>
-          </h2>
-          <p className="mx-auto mt-4 max-w-4xl text-xl leading-relaxed text-slate-300">
-            16+ years of architecting enterprise AI solutions and driving
-            digital transformation
-          </p>
+          <div className="career-header-container">
+            <h2 className="text-4xl font-bold md:text-5xl">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Career Timeline
+              </span>
+            </h2>
+            <p className="mx-auto mt-4 text-xl leading-relaxed text-slate-300">
+              16+ years of architecting enterprise AI solutions and driving
+              digital transformation
+            </p>
+          </div>
         </div>
 
         <div className="mx-auto max-w-6xl px-4 pb-16 md:px-8">

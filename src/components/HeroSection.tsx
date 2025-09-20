@@ -566,7 +566,8 @@ const HeroSection = () => {
         .professional-photo {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: contain;
+          object-position: center;
           border-radius: 16px;
         }
         .photo-overlay {

@@ -3,18 +3,116 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background: linear-gradient(135deg, #05050a 0%, #0f0f1a 50%, #0a0e1a 100%);
-  color: #ededed;
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  min-height: 100vh;
+/* Base theme */
+:root, html, body {
+  background: #0b0f1a;     /* deep navy, better than pure black */
+  color-scheme: dark;
 }
 
-/* Ensure seamless section transitions */
+body {
+  color: #e7edf5;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  /* Reduce banding in large gradients/filters */
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-attachment: fixed;   /* helps prevent "cuts" on iOS/desktop when scrolling */
+}
+
+/* Make all top-level sections transparent so the single global bg shows through */
 section {
-  margin: 0;
-  padding: 0;
+  background: transparent !important;
+}
+
+/* Avoid accidental clipping that "cuts" pseudo-element gradients */
+section,
+#__next,
+#__app,
+body > div {
+  overflow: visible !important;
+}
+
+/* Utility if a child needs its own stacking context without clipping */
+.bg-layer {
+  isolation: isolate;
+}
+
+/* Defensive: any component-specific solid backgrounds get neutralized */
+[class*="Background"],
+[class*="background"],
+[class*="bg-"] {
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+}
+
+/* Ensure sections don't hide under sticky header */
+[id] { 
+  scroll-margin-top: 90px;   /* adjust to your header height */
+}
+
+/* Shared background surfaces for each full-width section */
+.section-shell {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  --section-before: linear-gradient(180deg, rgba(9, 13, 25, 0.95) 0%, rgba(5, 9, 18, 0.98) 100%);
+  --section-border: rgba(0, 212, 255, 0.08);
+  --section-after: radial-gradient(90% 50% at 50% 0%, rgba(0, 212, 255, 0.16), transparent 70%),
+    radial-gradient(80% 45% at 15% 10%, rgba(30, 144, 255, 0.12), transparent 65%),
+    radial-gradient(80% 45% at 85% 10%, rgba(0, 212, 255, 0.1), transparent 65%);
+  --section-after-opacity: 0.55;
+}
+
+.section-shell::before,
+.section-shell::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+.section-shell::before {
+  background: var(--section-before);
+  border-top: 1px solid var(--section-border);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.06);
+  box-shadow:
+    inset 0 0 120px rgba(0, 212, 255, 0.05),
+    inset 0 -80px 160px rgba(0, 0, 0, 0.35);
+  z-index: -2;
+}
+
+.section-shell::after {
+  background: var(--section-after);
+  mix-blend-mode: screen;
+  opacity: var(--section-after-opacity);
+  z-index: -1;
+}
+
+.section-shell[data-surface='hero'] {
+  --section-before: linear-gradient(180deg, rgba(8, 12, 22, 0.92) 0%, rgba(5, 9, 18, 0.97) 100%);
+  --section-after: radial-gradient(120% 70% at 50% -15%, rgba(0, 212, 255, 0.32), transparent 75%),
+    radial-gradient(80% 40% at 80% 10%, rgba(30, 144, 255, 0.14), transparent 70%),
+    radial-gradient(80% 40% at 20% 15%, rgba(0, 212, 255, 0.12), transparent 70%);
+  --section-after-opacity: 0.6;
+}
+
+.section-shell[data-surface='primary'] {
+  --section-border: rgba(0, 212, 255, 0.08);
+}
+
+.section-shell[data-surface='accent'] {
+  --section-after: radial-gradient(115% 65% at 50% 100%, rgba(0, 212, 255, 0.12), transparent 75%),
+    radial-gradient(70% 40% at 25% 80%, rgba(30, 144, 255, 0.12), transparent 70%),
+    radial-gradient(70% 40% at 75% 75%, rgba(0, 212, 255, 0.08), transparent 70%);
+}
+
+.section-shell[data-surface='calm'] {
+  --section-border: rgba(0, 212, 255, 0.05);
+  --section-after-opacity: 0.35;
+}
+
+.section-shell-content {
+  position: relative;
+  z-index: 1;
 }
