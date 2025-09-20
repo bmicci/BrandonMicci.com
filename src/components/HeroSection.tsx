@@ -67,63 +67,7 @@ const HeroSection = () => {
           background: transparent; /* Let universal background show through */
         }
 
-        /* Enhanced futuristic sparkle particles */
-        .floating-particles {
-          position: absolute;
-          inset: 0;
-          z-index: 2;
-          pointer-events: none;
-        }
-
-        /* Base sparkle - larger and more visible */
-        .particle {
-          position: absolute;
-          width: 3px;
-          height: 3px;
-          background: #00d4ff;
-          border-radius: 50%;
-          opacity: 0.9;
-          animation: sparkleFloat 6s infinite ease-in-out;
-          box-shadow:
-            0 0 12px rgba(0, 212, 255, 1),
-            0 0 24px rgba(0, 212, 255, 0.6);
-        }
-
-        /* Medium sparkles - even larger */
-        .particle:nth-child(odd) {
-          width: 4px;
-          height: 4px;
-          background: #1e90ff;
-          box-shadow:
-            0 0 16px rgba(30, 144, 255, 1),
-            0 0 32px rgba(30, 144, 255, 0.7),
-            0 0 48px rgba(30, 144, 255, 0.3);
-          animation: sparkleFloat 8s infinite ease-in-out;
-        }
-
-        /* Large sparkles - very prominent */
-        .particle:nth-child(3n) {
-          width: 5px;
-          height: 5px;
-          background: #00ffff;
-          box-shadow:
-            0 0 20px rgba(0, 255, 255, 1),
-            0 0 40px rgba(0, 255, 255, 0.8),
-            0 0 60px rgba(0, 255, 255, 0.4);
-          animation: sparkleFloat 10s infinite ease-in-out;
-        }
-
-        /* Mega sparkles - brightest */
-        .particle:nth-child(5n) {
-          width: 6px;
-          height: 6px;
-          background: #ffffff;
-          box-shadow:
-            0 0 24px rgba(255, 255, 255, 1),
-            0 0 48px rgba(0, 212, 255, 0.9),
-            0 0 72px rgba(0, 212, 255, 0.5);
-          animation: sparkleFloat 12s infinite ease-in-out;
-        }
+        /* Floating particles removed - using universal background */
 
         /* Random positioning for more natural feel */
         .particle:nth-child(1) {
@@ -356,17 +300,7 @@ const HeroSection = () => {
           }
         }
 
-        .neural-grid {
-          position: absolute;
-          inset: 0;
-          background-image:
-            linear-gradient(rgba(0, 212, 255, 0.12) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 212, 255, 0.12) 1px, transparent 1px);
-          background-size: 60px 60px;
-          animation: gridFlow 20s linear infinite;
-          z-index: 1;
-          opacity: 0.7;
-        }
+        /* Neural grid removed - using universal background */
         @keyframes gridFlow {
           0% {
             transform: translate(0, 0);
@@ -853,12 +787,7 @@ const HeroSection = () => {
           </defs>
         </svg>
 
-        <div className="neural-grid"></div>
-        <div className="floating-particles">
-          {Array.from({ length: 30 }, (_, i) => (
-            <div key={i} className="particle"></div>
-          ))}
-        </div>
+        {/* Background elements removed - using universal background */}
 
         <div className="hero-container">
           {/* Desktop Layout */}

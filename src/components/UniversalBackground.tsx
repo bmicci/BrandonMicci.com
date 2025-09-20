@@ -37,11 +37,12 @@ const UniversalBackground: React.FC = () => {
           width: 100%;
           height: 100%;
           background-image:
-            linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
+            linear-gradient(rgba(0, 212, 255, 0.12) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 212, 255, 0.12) 1px, transparent 1px);
           background-size: 60px 60px;
           animation: universalGridSlide 20s linear infinite;
           pointer-events: none;
+          opacity: 0.7;
         }
 
         @keyframes universalGridSlide {
@@ -65,30 +66,32 @@ const UniversalBackground: React.FC = () => {
 
         .universal-particle {
           position: absolute;
-          width: 4px;
-          height: 4px;
+          width: 3px;
+          height: 3px;
           background: #00d4ff;
           border-radius: 50%;
           pointer-events: none;
           box-shadow:
-            0 0 3px #00d4ff,
-            0 0 6px rgba(0, 212, 255, 0.2);
-          opacity: 0.3;
+            0 0 12px rgba(0, 212, 255, 1),
+            0 0 24px rgba(0, 212, 255, 0.6);
+          opacity: 0.9;
+          animation: universalParticleFloat 6s infinite ease-in-out;
         }
 
         .universal-particle.small {
           width: 2px;
           height: 2px;
-          opacity: 0.2;
+          opacity: 0.7;
         }
 
         .universal-particle.large {
-          width: 6px;
-          height: 6px;
-          opacity: 0.25;
+          width: 5px;
+          height: 5px;
+          opacity: 0.8;
           box-shadow:
-            0 0 5px #00d4ff,
-            0 0 10px rgba(0, 212, 255, 0.15);
+            0 0 20px rgba(0, 255, 255, 1),
+            0 0 40px rgba(0, 255, 255, 0.8),
+            0 0 60px rgba(0, 255, 255, 0.4);
         }
 
         /* Floating elements for visual interest */
@@ -213,6 +216,26 @@ const UniversalBackground: React.FC = () => {
           }
         }
 
+        @keyframes universalParticleFloat {
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1) rotate(0deg);
+            opacity: 0.7;
+          }
+          25% {
+            transform: translate(-15px, -25px) scale(1.3) rotate(90deg);
+            opacity: 1;
+          }
+          50% {
+            transform: translate(25px, -50px) scale(0.7) rotate(180deg);
+            opacity: 0.5;
+          }
+          75% {
+            transform: translate(-10px, -35px) scale(1.1) rotate(270deg);
+            opacity: 0.8;
+          }
+        }
+
         @keyframes universalShimmer {
           0%,
           100% {
@@ -264,23 +287,34 @@ const UniversalBackground: React.FC = () => {
           <div className="universal-circle universal-circle-5"></div>
         </div>
 
-        {/* Particle system */}
+        {/* Particle system - enhanced like hero section */}
         <div className="universal-particles">
-          <div className="universal-particle" style={{ top: '10%', left: '15%' }}></div>
-          <div className="universal-particle small" style={{ top: '20%', left: '75%' }}></div>
-          <div className="universal-particle large" style={{ top: '35%', left: '45%' }}></div>
-          <div className="universal-particle" style={{ top: '50%', left: '20%' }}></div>
-          <div className="universal-particle small" style={{ top: '65%', left: '65%' }}></div>
-          <div className="universal-particle large" style={{ top: '80%', left: '35%' }}></div>
-          <div className="universal-particle" style={{ top: '15%', left: '50%' }}></div>
-          <div className="universal-particle small" style={{ top: '70%', left: '85%' }}></div>
-          <div className="universal-particle large" style={{ top: '45%', left: '80%' }}></div>
-          <div className="universal-particle" style={{ top: '85%', left: '10%' }}></div>
-          <div className="universal-particle small" style={{ top: '25%', left: '30%' }}></div>
-          <div className="universal-particle" style={{ top: '55%', left: '70%' }}></div>
-          <div className="universal-particle large" style={{ top: '75%', left: '25%' }}></div>
-          <div className="universal-particle small" style={{ top: '40%', left: '5%' }}></div>
-          <div className="universal-particle" style={{ top: '75%', left: '50%' }}></div>
+          {Array.from({ length: 30 }, (_, i) => {
+            const isSmall = i % 3 === 0;
+            const isLarge = i % 5 === 0;
+            const isMedium = i % 2 === 0 && !isLarge;
+            
+            let className = 'universal-particle';
+            if (isSmall) className += ' small';
+            if (isLarge) className += ' large';
+            
+            // Random positioning
+            const top = Math.random() * 100;
+            const left = Math.random() * 100;
+            
+            return (
+              <div 
+                key={i} 
+                className={className}
+                style={{ 
+                  top: `${top}%`, 
+                  left: `${left}%`,
+                  animationDelay: `${Math.random() * 15}s`,
+                  animationDuration: `${6 + Math.random() * 6}s`
+                }}
+              />
+            );
+          })}
         </div>
 
         {/* Gradient overlays */}
