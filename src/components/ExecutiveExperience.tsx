@@ -421,7 +421,7 @@ const ExecutiveExperience = memo(() => {
           </p>
         </div>
 
-        <div className="mx-auto max-w-6xl px-1 pb-8 md:px-8 md:pb-16">
+        <div className="mx-auto max-w-6xl px-0.5 pb-8 md:px-8 md:pb-16">
           <div className="relative">
             <div className="absolute bottom-0 top-0 left-4 w-0.5 bg-gradient-to-b from-cyan-400 via-cyan-400 to-transparent md:left-12" />
 
@@ -435,7 +435,7 @@ const ExecutiveExperience = memo(() => {
                   ref={(el) => {
                     itemRefs.current[index] = el;
                   }}
-                  className="relative mb-3 pl-10 md:mb-12 md:pl-28"
+                  className="relative mb-3 pl-9 md:mb-12 md:pl-28"
                 >
                   <div
                     className={`absolute top-4 left-1 flex h-8 w-8 items-center justify-center rounded-full transition-all duration-500 md:left-8 md:h-12 md:w-12 ${
@@ -453,7 +453,7 @@ const ExecutiveExperience = memo(() => {
                   </div>
 
                   <div
-                    className={`timeline-item-visible relative overflow-hidden rounded-xl p-3 md:p-8 transition-all duration-700 ${
+                    className={`timeline-item-visible relative overflow-hidden rounded-xl p-2.5 md:p-8 transition-all duration-700 ${
                       isVisible
                         ? 'translate-x-2 scale-[1.02] opacity-100'
                         : 'translate-x-0 scale-100 opacity-90'
@@ -518,7 +518,7 @@ const ExecutiveExperience = memo(() => {
                         type="button"
                         onClick={() => toggle(index)}
                         aria-expanded={isExpanded}
-                        className="mb-2 block w-full rounded-md border border-cyan-500/40 bg-cyan-500/20 py-1.5 px-2 text-xs font-semibold text-cyan-400 transition-all duration-300 hover:bg-cyan-500/30 md:hidden"
+                        className="mb-2 block w-3/4 mx-auto rounded-md border border-cyan-500/40 bg-cyan-500/20 py-1.5 px-2 text-xs font-semibold text-cyan-400 transition-all duration-300 hover:bg-cyan-500/30 md:hidden"
                       >
                         {isExpanded ? 'Hide Achievements' : 'View Achievements'}
                         <span
