@@ -64,7 +64,7 @@ const HeroSection = () => {
           position: relative;
           padding: 5rem 0 2rem 0; /* Add top padding to account for fixed navigation */
           overflow: hidden;
-          background: #0a0e27; /* Explicitly set the same dark background */
+          background: transparent; /* Let universal background show through */
         }
 
         /* Enhanced futuristic sparkle particles */
