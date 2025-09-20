@@ -35,7 +35,8 @@ const HeroImage = () => {
 
         .professional-image {
           border-radius: 20px; /* More modern rounded corners */
-          object-fit: cover;
+          object-fit: contain;
+          object-position: center;
           position: absolute;
           top: 0;
           left: 0;
@@ -79,14 +80,21 @@ const HeroImage = () => {
           }
         }
 
+        @media (max-width: 768px) {
+          .image-content {
+            max-width: 250px;
+            height: 300px;
+          }
+        }
+
         @media (max-width: 480px) {
           .image-section {
             padding: 15px 0.75rem;
           }
 
           .image-content {
-            max-width: 240px;
-            height: 280px;
+            max-width: 220px;
+            height: 260px;
           }
 
           .professional-image {
