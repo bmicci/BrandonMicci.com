@@ -70,7 +70,7 @@ const IndustryCollaboration: React.FC = () => {
           position: relative;
           color: white;
           padding: 80px 0;
-          background: #0a0a0a;
+          background: transparent;
           border-top: 1px solid rgba(0, 212, 255, 0.2);
           border-bottom: 1px solid rgba(0, 212, 255, 0.2);
           overflow: hidden;

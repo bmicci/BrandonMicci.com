@@ -469,8 +469,7 @@ const ExecutiveExperience = () => {
                       }`}
                       style={{
                         borderRadius: 'inherit',
-                        background:
-                          'radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, rgba(30, 144, 255, 0.1) 50%, transparent 70%)',
+                        background: 'transparent',
                         filter: 'blur(8px)',
                       }}
                     />

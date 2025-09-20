@@ -338,7 +338,7 @@ const TransformationLeadership = () => {
           margin: 0 auto;
           padding: 0 2rem 4rem;
           position: relative;
-          background: #0a0e27;
+          background: transparent;
           border-radius: 24px;
           overflow: hidden;
         }
