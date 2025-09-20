@@ -52,19 +52,35 @@ const HeroSection = () => {
             'Segoe UI',
             Roboto,
             sans-serif;
-          background: #0a0e27;
+          background: linear-gradient(
+            135deg,
+            #0a0a0a 0%,
+            #1a1a2e 50%,
+            #16213e 100%
+          );
           color: white;
           margin: 0;
           padding: 0;
           overflow-x: hidden;
         }
 
+        /* Ensure seamless section transitions */
+        section {
+          margin: 0;
+          padding: 0;
+        }
+
         .hero-section {
           min-height: 100vh;
           position: relative;
-          padding: 5rem 0 2rem 0; /* Add top padding to account for fixed navigation */
+          padding: 5rem 0 0 0; /* Remove bottom padding for seamless transition */
           overflow: hidden;
-          background: #0a0e27; /* Explicitly set the same dark background */
+          background: linear-gradient(
+            135deg,
+            #0a0a0a 0%,
+            #1a1a2e 50%,
+            #16213e 100%
+          );
         }
 
         /* Enhanced futuristic sparkle particles */

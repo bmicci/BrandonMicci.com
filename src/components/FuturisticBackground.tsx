@@ -84,9 +84,9 @@ const FuturisticBackground: React.FC = () => {
           overflow: hidden;
           background: linear-gradient(
             135deg,
-            #0a0e27 0%,
-            #1a1f3a 50%,
-            #0f1419 100%
+            #0a0a0a 0%,
+            #1a1a2e 50%,
+            #16213e 100%
           );
         }
 
