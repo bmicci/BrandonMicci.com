@@ -365,7 +365,7 @@ const ExecutiveExperience = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden text-white">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-cyan-500/5" />
+      {/* Gradient overlay removed to show Universal Background */}
 
       <style jsx>{`
         @keyframes gradientShift {
