@@ -1,11 +1,13 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
 
 const FuturisticBackground: React.FC = () => {
   const timelineRef = useRef<HTMLDivElement>(null);
   const hologramRef = useRef<HTMLDivElement>(null);
   const dataStreamRef = useRef<HTMLDivElement>(null);
+  const reduced = usePrefersReducedMotion();
   const [particles, setParticles] = useState<
     Array<{ left: string; animationDelay: string; animationDuration: string }>
   >([]);
@@ -65,6 +67,8 @@ const FuturisticBackground: React.FC = () => {
       dataStreamContainer.appendChild(stream);
     }
   }, []);
+
+  if (reduced) return null; // Respect reduced-motion users
 
   return (
     <>

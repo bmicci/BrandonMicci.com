@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
 
 const HeroSection = () => {
   const [counts, setCounts] = useState({
@@ -10,14 +11,12 @@ const HeroSection = () => {
     roi: 0,
     years: 0,
   });
+  const reduced = usePrefersReducedMotion();
 
   useEffect(() => {
-    // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
     const animateCounts = () => {
-      const duration = prefersReducedMotion ? 0 : 2000;
-      const steps = prefersReducedMotion ? 1 : 60;
+      const duration = reduced ? 0 : 2000;
+      const steps = reduced ? 1 : 60;
       const stepDuration = duration / steps;
 
       const targets = { value: 400, users: 27, roi: 250, years: 16 };
@@ -40,7 +39,7 @@ const HeroSection = () => {
 
     const timer = setTimeout(animateCounts, 500);
     return () => clearTimeout(timer);
-  }, []);
+  }, [reduced]);
 
   return (
     <>
