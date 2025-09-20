@@ -77,31 +77,7 @@ const IndustryCollaboration: React.FC = () => {
           min-height: 100vh;
         }
 
-        /* Neural Background with Particles */
-        #industry-collab::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background:
-            radial-gradient(
-              circle at 20% 50%,
-              rgba(0, 212, 255, 0.15) 0%,
-              transparent 50%
-            ),
-            radial-gradient(
-              circle at 80% 20%,
-              rgba(30, 144, 255, 0.12) 0%,
-              transparent 50%
-            ),
-            radial-gradient(
-              circle at 40% 80%,
-              rgba(0, 212, 255, 0.1) 0%,
-              transparent 50%
-            );
-          animation: backgroundPulse 8s ease-in-out infinite;
-          pointer-events: none;
-          z-index: 1;
-        }
+        /* Neural Background with Particles - removed to use universal background */
 
         @keyframes backgroundPulse {
           0%,
