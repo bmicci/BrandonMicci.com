@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, memo } from 'react';
-import { Brain, Lightbulb, BarChart3, Network, LineChart, Gauge, ShieldCheck, Layers, Search, ClipboardList } from 'lucide-react';
+import { Brain, Target, Search, Wifi, Database, Cloud, Shield, ShieldCheck, BarChart, TrendingUp, Globe } from 'lucide-react';
 
 const IconCircle: React.FC<{children: React.ReactNode}> = memo(({ children }) => (
   <div className="relative flex items-center justify-center w-10 h-10 rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-sm shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ring-1 ring-black/10 before:content-[''] before:absolute before:inset-0 before:rounded-full before:shadow-[inset_0_0_20px_rgba(0,212,255,0.08)]">
@@ -61,7 +61,7 @@ const ROLES: Role[] = [
     role: 'Senior Director, Intelligent Industry GTM & Solution Leader',
     company: 'Capgemini',
     location: 'Dallas, TX',
-    icon: <Lightbulb className="w-6 h-6 text-blue-300" />,
+    icon: <Target className="w-6 h-6 text-blue-300" />,
     description:
       'Directed go-to-market strategy and solution development for emerging AI technologies, leading cross-functional teams of product managers, solution architects, and sales professionals.',
     skills: ['Go-to-Market Strategy', 'IoT Solutions', 'Product Management'],
@@ -85,7 +85,7 @@ const ROLES: Role[] = [
     role: 'Senior Manager, Forensic Analytics & Data Science',
     company: 'Ernst & Young',
     location: 'Dallas, TX',
-    icon: <BarChart3 className="w-6 h-6 text-blue-300" />,
+    icon: <Search className="w-6 h-6 text-blue-300" />,
     description:
       "Spearheaded AI/ML strategy and capability development within EY's Forensics Practice, serving as Regional Leader for complex analytics engagements across Financial Services, Life Sciences, and Energy sectors.",
     skills: [
@@ -114,7 +114,7 @@ const ROLES: Role[] = [
     role: 'IoT & Digital Innovation Leader',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: <Network className="w-6 h-6 text-blue-300" />,
+    icon: <Wifi className="w-6 h-6 text-blue-300" />,
     description:
       'Led digital transformation initiatives focused on IoT implementation and cloud migration, driving operational efficiency improvements across airline infrastructure and customer-facing systems.',
     skills: ['IoT Architecture', 'Cloud Migration', 'Digital Transformation'],
@@ -138,7 +138,7 @@ const ROLES: Role[] = [
     role: 'Data Enablement & Analytics COE Lead',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: <LineChart className="w-6 h-6 text-blue-300" />,
+    icon: <Database className="w-6 h-6 text-blue-300" />,
     description:
       'Established and led the enterprise-wide Center of Excellence for data analytics, driving adoption of modern BI platforms and building analytical capabilities across all business units.',
     skills: ['Data Analytics', 'COE Leadership', 'Platform Architecture'],
@@ -162,7 +162,7 @@ const ROLES: Role[] = [
     role: 'VP, Global Digital and Cloud Transformation Leader',
     company: 'Citigroup',
     location: 'Irving, TX',
-    icon: <Network className="w-6 h-6 text-blue-300" />,
+    icon: <Cloud className="w-6 h-6 text-blue-300" />,
     description:
       'Spearheaded global cloud transformation initiatives and DevOps adoption across multiple business units, establishing enterprise-wide standards for cloud-native architecture and deployment practices.',
     skills: ['Cloud Architecture', 'DevOps', 'Global Programs', 'CI/CD'],
@@ -186,7 +186,7 @@ const ROLES: Role[] = [
     role: 'Risk Analytics Leader, Auto Finance & Home Loans',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: <Gauge className="w-6 h-6 text-blue-300" />,
+    icon: <Shield className="w-6 h-6 text-blue-300" />,
     description:
       'Led risk analytics transformation for consumer lending portfolios, implementing advanced ML models and automated compliance systems to enhance risk assessment and regulatory reporting capabilities.',
     skills: ['Risk Analytics', 'Compliance Tech', 'NLP/OCR'],
@@ -234,7 +234,7 @@ const ROLES: Role[] = [
     role: 'Center of Excellence Leader, Tableau & Big Data',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: <Layers className="w-6 h-6 text-blue-300" />,
+    icon: <BarChart className="w-6 h-6 text-blue-300" />,
     description:
       "Pioneered enterprise-wide business intelligence transformation, establishing one of the world's largest Tableau communities and driving company-wide adoption of self-service analytics capabilities.",
     skills: [
@@ -263,7 +263,7 @@ const ROLES: Role[] = [
     role: 'Senior Consultant, Lead Data Analyst',
     company: 'Booz Allen Hamilton',
     location: 'McLean, VA',
-    icon: <Search className="w-6 h-6 text-blue-300" />,
+    icon: <TrendingUp className="w-6 h-6 text-blue-300" />,
     description:
       "Established and led the firm's first dedicated data analytics practice, developing advanced analytics solutions for government and commercial clients across defense, healthcare, and financial services sectors.",
     skills: ['Data Analytics', 'Fraud Detection', 'Business Intelligence'],
@@ -283,7 +283,7 @@ const ROLES: Role[] = [
     role: 'Global Operations and Strategy Associate',
     company: 'PricewaterhouseCoopers',
     location: 'Tampa, FL',
-    icon: <ClipboardList className="w-6 h-6 text-blue-300" />,
+    icon: <Globe className="w-6 h-6 text-blue-300" />,
     description:
       "Served as strategic analyst and performance metrics lead for global delivery operations, pioneering the firm's first business intelligence implementations and executive dashboard automation initiatives.",
     skills: ['Strategy', 'Operations', 'Executive Analytics'],
@@ -421,7 +421,7 @@ const ExecutiveExperience = memo(() => {
 
         <div className="mx-auto max-w-6xl px-4 pb-16 md:px-8">
           <div className="relative">
-            <div className="absolute bottom-0 top-0 left-4 w-0.5 bg-gradient-to-b from-transparent via-cyan-400 to-transparent md:left-12" />
+            <div className="absolute bottom-0 top-0 left-4 w-0.5 bg-gradient-to-b from-cyan-400 via-cyan-400 to-transparent md:left-12" />
 
             {ROLES.map((role, index) => {
               const isVisible = visibleItems.has(index);
