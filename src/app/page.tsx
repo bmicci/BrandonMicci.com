@@ -7,7 +7,6 @@ import StrategicIntroCard from '@/components/StrategicIntroCard';
 import StrategicDifferentiators from '@/components/StrategicDifferentiators';
 import ExecutiveExperience from '@/components/ExecutiveExperience';
 import TransformationLeadership from '@/components/TransformationLeadership';
-import TechBackground from '@/components/TechBackground';
 import FuturisticBackground from '@/components/FuturisticBackground';
 import IndustryCollaboration from '@/components/IndustryCollaboration';
 import TestimonialsSection from '@/components/TestimonialsSection';
@@ -23,7 +22,7 @@ export default function Home() {
         {/* Animated Backgrounds */}
         <StrategicVisionBackground />
         <StarsBackground />
-        
+
         {/* Strategic Vision Content */}
         <div className="relative z-10 w-full">
           <StrategicAdvantageHeader />
@@ -37,7 +36,7 @@ export default function Home() {
       <section id="executive-experience" className="min-h-screen relative">
         {/* Background */}
         <FuturisticBackground />
-        
+
         {/* Content */}
         <ExecutiveExperience />
       </section>
@@ -46,7 +45,7 @@ export default function Home() {
       <section id="transformation-leadership" className="min-h-screen relative">
         {/* Background */}
         <StarsBackground />
-        
+
         {/* Content */}
         <TransformationLeadership />
       </section>
@@ -60,7 +59,6 @@ export default function Home() {
       <section id="connectwithme" className="min-h-screen relative">
         <IndustryCollaboration />
       </section>
-
     </div>
   );
 }

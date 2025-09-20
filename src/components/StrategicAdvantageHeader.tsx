@@ -7,7 +7,13 @@ const StrategicAdvantageHeader: React.FC = () => {
     <>
       <style jsx>{`
         .strategic-header {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          font-family:
+            'Inter',
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            sans-serif;
           padding: 3rem 2rem 2rem;
           text-align: center;
           position: relative;
@@ -97,23 +103,25 @@ const StrategicAdvantageHeader: React.FC = () => {
         }
 
         @keyframes sparkleEffect {
-          0%, 100% { 
-            opacity: 0.3; 
-            transform: scale(0.8); 
+          0%,
+          100% {
+            opacity: 0.3;
+            transform: scale(0.8);
           }
-          50% { 
-            opacity: 1; 
-            transform: scale(1.1); 
+          50% {
+            opacity: 1;
+            transform: scale(1.1);
           }
         }
       `}</style>
-      
+
       <div className="strategic-header">
         <h2 className="strategic-title">
           <span className="gradient-text">Strategic Advantage</span>
         </h2>
         <p className="strategic-subtitle">
-          What sets me apart in the rapidly evolving AI and data strategy landscape
+          What sets me apart in the rapidly evolving AI and data strategy
+          landscape
         </p>
       </div>
     </>

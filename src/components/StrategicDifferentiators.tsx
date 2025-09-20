@@ -6,7 +6,7 @@ const StrategicDifferentiators: React.FC = () => {
   useEffect(() => {
     // Mouse tracking for card glow effect
     const cards = document.querySelectorAll('.diff-card');
-    cards.forEach(card => {
+    cards.forEach((card) => {
       const handleMouseMove = (e: Event) => {
         const mouseEvent = e as MouseEvent;
         const rect = card.getBoundingClientRect();
@@ -15,9 +15,9 @@ const StrategicDifferentiators: React.FC = () => {
         (card as HTMLElement).style.setProperty('--mouse-x', x + '%');
         (card as HTMLElement).style.setProperty('--mouse-y', y + '%');
       };
-      
+
       card.addEventListener('mousemove', handleMouseMove);
-      
+
       return () => {
         card.removeEventListener('mousemove', handleMouseMove);
       };
@@ -28,7 +28,13 @@ const StrategicDifferentiators: React.FC = () => {
     <>
       <style jsx>{`
         .differentiators-container {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          font-family:
+            'Inter',
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            sans-serif;
           max-width: 1200px;
           margin: 0 auto;
           padding: 0 2rem;
@@ -63,8 +69,8 @@ const StrategicDifferentiators: React.FC = () => {
           padding: 1.5px;
           background: linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff);
           background-size: 200% 200%;
-          -webkit-mask: 
-            linear-gradient(#fff 0 0) content-box, 
+          -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
             linear-gradient(#fff 0 0);
           -webkit-mask-composite: xor;
           mask-composite: exclude;
@@ -74,9 +80,15 @@ const StrategicDifferentiators: React.FC = () => {
         }
 
         @keyframes gradientRotate {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
         }
 
         .diff-card:hover::before {
@@ -88,9 +100,11 @@ const StrategicDifferentiators: React.FC = () => {
           position: absolute;
           inset: -2px;
           border-radius: 16px;
-          background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
-                      rgba(0, 212, 255, 0.1), 
-                      transparent 40%);
+          background: radial-gradient(
+            600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            rgba(0, 212, 255, 0.1),
+            transparent 40%
+          );
           opacity: 0;
           transition: opacity 0.3s ease;
           z-index: -1;
@@ -100,17 +114,29 @@ const StrategicDifferentiators: React.FC = () => {
           opacity: 1;
         }
 
-        .diff-card:nth-child(1) { animation-delay: 0.1s; }
-        .diff-card:nth-child(2) { animation-delay: 0.2s; }
-        .diff-card:nth-child(3) { animation-delay: 0.3s; }
-        .diff-card:nth-child(4) { animation-delay: 0.4s; }
-        .diff-card:nth-child(5) { animation-delay: 0.5s; }
-        .diff-card:nth-child(6) { animation-delay: 0.6s; }
+        .diff-card:nth-child(1) {
+          animation-delay: 0.1s;
+        }
+        .diff-card:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        .diff-card:nth-child(3) {
+          animation-delay: 0.3s;
+        }
+        .diff-card:nth-child(4) {
+          animation-delay: 0.4s;
+        }
+        .diff-card:nth-child(5) {
+          animation-delay: 0.5s;
+        }
+        .diff-card:nth-child(6) {
+          animation-delay: 0.6s;
+        }
 
         .diff-card:hover {
           transform: translateY(-8px) scale(1.02);
           background: rgba(255, 255, 255, 0.08);
-          box-shadow: 
+          box-shadow:
             0 20px 40px rgba(0, 212, 255, 0.2),
             inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
@@ -191,14 +217,19 @@ const StrategicDifferentiators: React.FC = () => {
           }
         }
       `}</style>
-      
+
       <div className="differentiators-container">
         <div className="differentiators-grid">
           <div className="diff-card">
             <div className="diff-content">
               <div className="diff-icon">📈</div>
               <h4 className="diff-title">Scale Expertise</h4>
-              <p className="diff-description">Successfully deployed the largest LLM implementation in the payments industry (27,000+ users) and led global data science organizations of 50+ professionals with $45M+ technology portfolios.</p>
+              <p className="diff-description">
+                Successfully deployed the largest LLM implementation in the
+                payments industry (27,000+ users) and led global data science
+                organizations of 50+ professionals with $45M+ technology
+                portfolios.
+              </p>
             </div>
           </div>
 
@@ -206,7 +237,11 @@ const StrategicDifferentiators: React.FC = () => {
             <div className="diff-content">
               <div className="diff-icon">💰</div>
               <h4 className="diff-title">Financial Impact</h4>
-              <p className="diff-description">Consistent track record of delivering massive ROI—from 250% returns on IoT initiatives to $30M in new annual revenue streams through Analytics-as-a-Service platforms.</p>
+              <p className="diff-description">
+                Consistent track record of delivering massive ROI—from 250%
+                returns on IoT initiatives to $30M in new annual revenue streams
+                through Analytics-as-a-Service platforms.
+              </p>
             </div>
           </div>
 
@@ -214,7 +249,11 @@ const StrategicDifferentiators: React.FC = () => {
             <div className="diff-content">
               <div className="diff-icon">🌐</div>
               <h4 className="diff-title">Cross-Industry Innovation</h4>
-              <p className="diff-description">Deep expertise spanning Financial Services, Insurance, Airlines, Energy, and Life Sciences with transferable solutions that adapt to unique business contexts.</p>
+              <p className="diff-description">
+                Deep expertise spanning Financial Services, Insurance, Airlines,
+                Energy, and Life Sciences with transferable solutions that adapt
+                to unique business contexts.
+              </p>
             </div>
           </div>
 
@@ -222,7 +261,11 @@ const StrategicDifferentiators: React.FC = () => {
             <div className="diff-content">
               <div className="diff-icon">🎯</div>
               <h4 className="diff-title">Technical + Strategic Leadership</h4>
-              <p className="diff-description">Rare combination of hands-on AI/ML architecture experience with C-suite strategic advisory capabilities—translating complex technology into business strategy.</p>
+              <p className="diff-description">
+                Rare combination of hands-on AI/ML architecture experience with
+                C-suite strategic advisory capabilities—translating complex
+                technology into business strategy.
+              </p>
             </div>
           </div>
 
@@ -230,7 +273,11 @@ const StrategicDifferentiators: React.FC = () => {
             <div className="diff-content">
               <div className="diff-icon">🚀</div>
               <h4 className="diff-title">Transformation Catalyst</h4>
-              <p className="diff-description">Proven ability to modernize legacy systems while building evangelical communities that drive adoption at scale—like the world&apos;s largest Tableau community (30,000+ users).</p>
+              <p className="diff-description">
+                Proven ability to modernize legacy systems while building
+                evangelical communities that drive adoption at scale—like the
+                world&apos;s largest Tableau community (30,000+ users).
+              </p>
             </div>
           </div>
 
@@ -238,7 +285,11 @@ const StrategicDifferentiators: React.FC = () => {
             <div className="diff-content">
               <div className="diff-icon">💡</div>
               <h4 className="diff-title">Ambiguous Environment Expert</h4>
-              <p className="diff-description">Thrive in high-stakes environments where emerging technologies meet complex business challenges, creating clarity from chaos and actionable roadmaps from ambiguity.</p>
+              <p className="diff-description">
+                Thrive in high-stakes environments where emerging technologies
+                meet complex business challenges, creating clarity from chaos
+                and actionable roadmaps from ambiguity.
+              </p>
             </div>
           </div>
         </div>

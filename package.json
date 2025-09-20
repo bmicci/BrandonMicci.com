@@ -6,10 +6,11 @@
     "dev": "next dev",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint",
     "typecheck": "tsc --noEmit",
+    "lint": "next lint",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "audit": "npm run typecheck && npm run lint && npm run format:check"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",

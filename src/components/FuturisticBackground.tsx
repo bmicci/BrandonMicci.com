@@ -6,14 +6,16 @@ const FuturisticBackground: React.FC = () => {
   const timelineRef = useRef<HTMLDivElement>(null);
   const hologramRef = useRef<HTMLDivElement>(null);
   const dataStreamRef = useRef<HTMLDivElement>(null);
-  const [particles, setParticles] = useState<Array<{left: string, animationDelay: string, animationDuration: string}>>([]);
+  const [particles, setParticles] = useState<
+    Array<{ left: string; animationDelay: string; animationDuration: string }>
+  >([]);
 
   useEffect(() => {
     // Generate particles on client side to avoid hydration mismatch
     const generatedParticles = Array.from({ length: 25 }, () => ({
       left: Math.random() * 100 + '%',
       animationDelay: Math.random() * 20 + 's',
-      animationDuration: (20 + Math.random() * 10) + 's'
+      animationDuration: 20 + Math.random() * 10 + 's',
     }));
     setParticles(generatedParticles);
   }, []);
@@ -23,17 +25,18 @@ const FuturisticBackground: React.FC = () => {
     const timelineContainer = timelineRef.current;
     const hologramContainer = hologramRef.current;
     const dataStreamContainer = dataStreamRef.current;
-    
-    if (!timelineContainer || !hologramContainer || !dataStreamContainer) return;
+
+    if (!timelineContainer || !hologramContainer || !dataStreamContainer)
+      return;
 
     // Create timeline nodes with years
     const years = [2012, 2014, 2016, 2018, 2020, 2022, 2023];
     years.forEach((year, index) => {
       const node = document.createElement('div');
       node.className = 'timeline-node';
-      node.style.left = (index * 15 + 10) + '%';
-      node.style.top = (30 + Math.random() * 40) + '%';
-      node.style.animationDelay = (index * 0.5) + 's';
+      node.style.left = index * 15 + 10 + '%';
+      node.style.top = 30 + Math.random() * 40 + '%';
+      node.style.animationDelay = index * 0.5 + 's';
       node.innerHTML = `<span class="year-label">${year}</span>`;
       timelineContainer.appendChild(node);
     });
@@ -46,7 +49,7 @@ const FuturisticBackground: React.FC = () => {
       hologram.style.left = Math.random() * 100 + '%';
       hologram.style.top = Math.random() * 100 + '%';
       hologram.style.animationDelay = Math.random() * 3 + 's';
-      hologram.style.animationDuration = (4 + Math.random() * 2) + 's';
+      hologram.style.animationDuration = 4 + Math.random() * 2 + 's';
       hologramContainer.appendChild(hologram);
     }
 
@@ -58,7 +61,7 @@ const FuturisticBackground: React.FC = () => {
       stream.style.left = Math.random() * 100 + '%';
       stream.style.top = Math.random() * 100 + '%';
       stream.style.animationDelay = Math.random() * 2 + 's';
-      stream.style.animationDuration = (3 + Math.random() * 2) + 's';
+      stream.style.animationDuration = 3 + Math.random() * 2 + 's';
       dataStreamContainer.appendChild(stream);
     }
   }, []);
@@ -75,7 +78,12 @@ const FuturisticBackground: React.FC = () => {
           height: 100%;
           z-index: -1;
           overflow: hidden;
-          background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1419 100%);
+          background: linear-gradient(
+            135deg,
+            #0a0e27 0%,
+            #1a1f3a 50%,
+            #0f1419 100%
+          );
         }
 
         /* Grid pattern with futuristic styling */
@@ -83,19 +91,24 @@ const FuturisticBackground: React.FC = () => {
           position: absolute;
           width: 100%;
           height: 100%;
-          background-image: 
-            linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+          background-image:
+            linear-gradient(
+              90deg,
+              rgba(0, 212, 255, 0.03) 1px,
+              transparent 1px
+            ),
             linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px);
           background-size: 80px 80px;
           animation: gridPulse 15s ease-in-out infinite;
         }
 
         @keyframes gridPulse {
-          0%, 100% { 
+          0%,
+          100% {
             opacity: 0.3;
             transform: scale(1);
           }
-          50% { 
+          50% {
             opacity: 0.6;
             transform: scale(1.02);
           }
@@ -114,7 +127,7 @@ const FuturisticBackground: React.FC = () => {
           height: 8px;
           background: #00d4ff;
           border-radius: 50%;
-          box-shadow: 
+          box-shadow:
             0 0 20px rgba(0, 212, 255, 0.8),
             0 0 40px rgba(0, 212, 255, 0.4),
             inset 0 0 10px rgba(255, 255, 255, 0.2);
@@ -146,11 +159,12 @@ const FuturisticBackground: React.FC = () => {
         }
 
         @keyframes nodePulse {
-          0%, 100% { 
+          0%,
+          100% {
             transform: scale(1);
             opacity: 0.8;
           }
-          50% { 
+          50% {
             transform: scale(1.3);
             opacity: 1;
           }
@@ -180,10 +194,12 @@ const FuturisticBackground: React.FC = () => {
           height: 60px;
           border: 1px solid rgba(0, 212, 255, 0.4);
           border-radius: 8px;
-          background: linear-gradient(45deg, 
-            rgba(0, 212, 255, 0.1) 0%, 
-            transparent 50%, 
-            rgba(30, 144, 255, 0.1) 100%);
+          background: linear-gradient(
+            45deg,
+            rgba(0, 212, 255, 0.1) 0%,
+            transparent 50%,
+            rgba(30, 144, 255, 0.1) 100%
+          );
           animation: hologramFlicker 4s ease-in-out infinite;
         }
 
@@ -200,27 +216,33 @@ const FuturisticBackground: React.FC = () => {
         }
 
         @keyframes hologramFlicker {
-          0%, 100% { 
+          0%,
+          100% {
             opacity: 0.3;
             transform: rotate(0deg) scale(1);
           }
-          25% { 
+          25% {
             opacity: 0.8;
             transform: rotate(90deg) scale(1.1);
           }
-          50% { 
+          50% {
             opacity: 0.4;
             transform: rotate(180deg) scale(0.9);
           }
-          75% { 
+          75% {
             opacity: 0.7;
             transform: rotate(270deg) scale(1.05);
           }
         }
 
         @keyframes hologramInner {
-          0%, 100% { opacity: 0.2; }
-          50% { opacity: 0.6; }
+          0%,
+          100% {
+            opacity: 0.2;
+          }
+          50% {
+            opacity: 0.6;
+          }
         }
 
         /* Data streams */
@@ -234,10 +256,12 @@ const FuturisticBackground: React.FC = () => {
           position: absolute;
           width: 2px;
           height: 40px;
-          background: linear-gradient(to bottom, 
-            transparent 0%, 
-            rgba(0, 212, 255, 0.8) 50%, 
-            transparent 100%);
+          background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            rgba(0, 212, 255, 0.8) 50%,
+            transparent 100%
+          );
           animation: dataFlow 3s linear infinite;
         }
 
@@ -324,10 +348,22 @@ const FuturisticBackground: React.FC = () => {
           position: absolute;
           width: 100%;
           height: 100%;
-          background: 
-            radial-gradient(circle at 30% 20%, rgba(0, 212, 255, 0.08) 0%, transparent 60%),
-            radial-gradient(circle at 70% 80%, rgba(30, 144, 255, 0.06) 0%, transparent 60%),
-            radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.04) 0%, transparent 70%);
+          background:
+            radial-gradient(
+              circle at 30% 20%,
+              rgba(0, 212, 255, 0.08) 0%,
+              transparent 60%
+            ),
+            radial-gradient(
+              circle at 70% 80%,
+              rgba(30, 144, 255, 0.06) 0%,
+              transparent 60%
+            ),
+            radial-gradient(
+              circle at 50% 50%,
+              rgba(0, 212, 255, 0.04) 0%,
+              transparent 70%
+            );
           pointer-events: none;
         }
 
@@ -337,39 +373,39 @@ const FuturisticBackground: React.FC = () => {
             width: 6px;
             height: 6px;
           }
-          
+
           .year-label {
             font-size: 10px;
             top: -25px;
           }
-          
+
           .hologram-projection {
             width: 40px;
             height: 40px;
           }
-          
+
           .data-stream {
             height: 30px;
           }
         }
       `}</style>
-      
+
       <div className="futuristic-background">
         {/* Grid pattern */}
         <div className="futuristic-grid"></div>
-        
+
         {/* Depth overlay */}
         <div className="depth-overlay"></div>
-        
+
         {/* Timeline nodes with years */}
         <div className="timeline-container" ref={timelineRef}></div>
-        
+
         {/* Holographic projections */}
         <div className="hologram-container" ref={hologramRef}></div>
-        
+
         {/* Data streams */}
         <div className="data-stream-container" ref={dataStreamRef}></div>
-        
+
         {/* Floating tech particles */}
         <div className="tech-particles">
           {particles.map((particle, i) => (
@@ -379,7 +415,7 @@ const FuturisticBackground: React.FC = () => {
               style={{
                 left: particle.left,
                 animationDelay: particle.animationDelay,
-                animationDuration: particle.animationDuration
+                animationDuration: particle.animationDuration,
               }}
             />
           ))}

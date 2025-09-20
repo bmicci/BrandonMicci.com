@@ -8,7 +8,13 @@ const CompanyExpertise: React.FC = () => {
       <style jsx>{`
         /* Company Expertise Section */
         .expertise-section {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          font-family:
+            'Inter',
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            sans-serif;
           color: white;
           padding: 60px 2rem;
           position: relative;
@@ -32,9 +38,15 @@ const CompanyExpertise: React.FC = () => {
         }
 
         @keyframes gradientShift {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
         }
 
         .expertise-container {
@@ -94,14 +106,30 @@ const CompanyExpertise: React.FC = () => {
           animation: cardFloat 0.8s ease-out;
         }
 
-        .company-card:nth-child(1) { animation-delay: 0.1s; }
-        .company-card:nth-child(2) { animation-delay: 0.2s; }
-        .company-card:nth-child(3) { animation-delay: 0.3s; }
-        .company-card:nth-child(4) { animation-delay: 0.4s; }
-        .company-card:nth-child(5) { animation-delay: 0.5s; }
-        .company-card:nth-child(6) { animation-delay: 0.6s; }
-        .company-card:nth-child(7) { animation-delay: 0.7s; }
-        .company-card:nth-child(8) { animation-delay: 0.8s; }
+        .company-card:nth-child(1) {
+          animation-delay: 0.1s;
+        }
+        .company-card:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        .company-card:nth-child(3) {
+          animation-delay: 0.3s;
+        }
+        .company-card:nth-child(4) {
+          animation-delay: 0.4s;
+        }
+        .company-card:nth-child(5) {
+          animation-delay: 0.5s;
+        }
+        .company-card:nth-child(6) {
+          animation-delay: 0.6s;
+        }
+        .company-card:nth-child(7) {
+          animation-delay: 0.7s;
+        }
+        .company-card:nth-child(8) {
+          animation-delay: 0.8s;
+        }
 
         .company-card::before {
           content: '';
@@ -110,7 +138,12 @@ const CompanyExpertise: React.FC = () => {
           left: -100%;
           width: 100%;
           height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+          );
           transition: left 0.6s ease;
         }
 
@@ -161,10 +194,11 @@ const CompanyExpertise: React.FC = () => {
         }
 
         @keyframes titleGlow {
-          0%, 100% { 
+          0%,
+          100% {
             text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
           }
-          50% { 
+          50% {
             text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
           }
         }
@@ -197,7 +231,7 @@ const CompanyExpertise: React.FC = () => {
             grid-template-columns: repeat(3, 1fr);
             gap: 1.25rem;
           }
-          
+
           .expertise-subtitle {
             font-size: 1.9rem;
           }
@@ -207,29 +241,29 @@ const CompanyExpertise: React.FC = () => {
           .expertise-section {
             padding: 40px 1rem;
           }
-          
+
           .expertise-header {
             margin-bottom: 2rem;
           }
-          
+
           .expertise-title {
             font-size: 0.95rem;
             letter-spacing: 2px;
           }
-          
+
           .expertise-subtitle {
             font-size: 1.6rem;
           }
-          
+
           .companies-grid {
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
           }
-          
+
           .company-card {
             padding: 1rem 0.75rem;
           }
-          
+
           .company-name {
             font-size: 0.9rem;
           }
@@ -239,40 +273,42 @@ const CompanyExpertise: React.FC = () => {
           .expertise-section {
             padding: 30px 0.75rem;
           }
-          
+
           .expertise-title {
             font-size: 0.85rem;
             letter-spacing: 1.5px;
           }
-          
+
           .expertise-subtitle {
             font-size: 1.4rem;
             line-height: 1.3;
           }
-          
+
           .companies-grid {
             grid-template-columns: 1fr;
             gap: 0.875rem;
             max-width: 300px;
           }
-          
+
           .company-card {
             padding: 1.125rem 1rem;
           }
-          
+
           .company-name {
             font-size: 1rem;
           }
         }
       `}</style>
-      
+
       <div className="expertise-section">
         <div className="expertise-container">
           <div className="expertise-header">
             <h2 className="expertise-title">Proven Track Record Across</h2>
-            <h3 className="expertise-subtitle">Big Four & Fortune 500 Organizations</h3>
+            <h3 className="expertise-subtitle">
+              Big Four & Fortune 500 Organizations
+            </h3>
           </div>
-          
+
           <div className="companies-grid">
             <div className="company-card">
               <h4 className="company-name">JPMorgan Chase</h4>

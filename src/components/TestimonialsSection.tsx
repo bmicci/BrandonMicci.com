@@ -7,11 +7,22 @@ const TestimonialsSection: React.FC = () => {
     <>
       <style jsx>{`
         .professional-impact-section {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          font-family:
+            'Inter',
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            sans-serif;
           position: relative;
           color: white;
           padding: 80px 0;
-          background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+          background: linear-gradient(
+            135deg,
+            #0a0a0a 0%,
+            #1a1a2e 50%,
+            #16213e 100%
+          );
           overflow: hidden;
           min-height: 100vh;
           display: flex;
@@ -47,7 +58,12 @@ const TestimonialsSection: React.FC = () => {
           line-height: 1.15;
           margin: 0 0 20px;
           font-size: clamp(32px, 4vw, 48px);
-          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 50%, #00d4ff 100%);
+          background: linear-gradient(
+            135deg,
+            #00d4ff 0%,
+            #1e90ff 50%,
+            #00d4ff 100%
+          );
           background-size: 200% 200%;
           -webkit-background-clip: text;
           background-clip: text;
@@ -56,9 +72,15 @@ const TestimonialsSection: React.FC = () => {
         }
 
         @keyframes gradientShift {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
         }
 
         .professional-impact-subtitle {
@@ -91,14 +113,25 @@ const TestimonialsSection: React.FC = () => {
           left: -100%;
           width: 100%;
           height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.05), transparent);
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 212, 255, 0.05),
+            transparent
+          );
           animation: shimmer 4s ease-in-out infinite;
         }
 
         @keyframes shimmer {
-          0% { left: -100%; }
-          50% { left: 100%; }
-          100% { left: 100%; }
+          0% {
+            left: -100%;
+          }
+          50% {
+            left: 100%;
+          }
+          100% {
+            left: 100%;
+          }
         }
 
         .placeholder-content:hover {
@@ -118,13 +151,25 @@ const TestimonialsSection: React.FC = () => {
 
         /* Animations */
         @keyframes fadeInDown {
-          from { opacity: 0; transform: translateY(-30px); }
-          to { opacity: 1; transform: translateY(0); }
+          from {
+            opacity: 0;
+            transform: translateY(-30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
 
         @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
 
         /* Mobile Responsive */
@@ -132,11 +177,11 @@ const TestimonialsSection: React.FC = () => {
           .professional-impact-section {
             padding: 60px 0;
           }
-          
+
           .professional-impact-container {
             padding: 0 1rem;
           }
-          
+
           .placeholder-content {
             padding: 2rem;
           }
@@ -146,16 +191,20 @@ const TestimonialsSection: React.FC = () => {
       <section className="professional-impact-section">
         <div className="professional-impact-container">
           <header className="professional-impact-header">
-            <span className="professional-impact-eyebrow">Professional Impact</span>
+            <span className="professional-impact-eyebrow">
+              Professional Impact
+            </span>
             <h2 className="professional-impact-title">What Leaders Say</h2>
             <p className="professional-impact-subtitle">
-              Insights from executives and colleagues who&apos;ve worked with me on transformative AI initiatives
+              Insights from executives and colleagues who&apos;ve worked with me
+              on transformative AI initiatives
             </p>
           </header>
 
           <div className="placeholder-content">
             <p className="placeholder-text">
-              Testimonials section placeholder - Ready for your LinkedIn testimonials content
+              Testimonials section placeholder - Ready for your LinkedIn
+              testimonials content
             </p>
           </div>
         </div>

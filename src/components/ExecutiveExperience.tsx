@@ -27,7 +27,12 @@ const ROLES: Role[] = [
     icon: '🤖',
     description:
       'Drive enterprise AI strategy and implementation across payments operations, leading organization-wide transformation initiatives that enhance operational efficiency and customer experience at scale.',
-    skills: ['AI Strategy', 'LLM Deployment', 'Enterprise Architecture', 'Team Leadership'],
+    skills: [
+      'AI Strategy',
+      'LLM Deployment',
+      'Enterprise Architecture',
+      'Team Leadership',
+    ],
     achievements: [
       {
         title: 'Industry-Leading AI Deployment',
@@ -75,7 +80,12 @@ const ROLES: Role[] = [
     icon: '📊',
     description:
       "Spearheaded AI/ML strategy and capability development within EY's Forensics Practice, serving as Regional Leader for complex analytics engagements across Financial Services, Life Sciences, and Energy sectors.",
-    skills: ['Fraud Analytics', 'AI/ML', 'Business Development', 'Data Science'],
+    skills: [
+      'Fraud Analytics',
+      'AI/ML',
+      'Business Development',
+      'Data Science',
+    ],
     achievements: [
       {
         title: 'Mega-Deal Success',
@@ -219,11 +229,16 @@ const ROLES: Role[] = [
     icon: '🚀',
     description:
       "Pioneered enterprise-wide business intelligence transformation, establishing one of the world's largest Tableau communities and driving company-wide adoption of self-service analytics capabilities.",
-    skills: ['Tableau COE', 'Big Data', 'Community Building', 'Executive Dashboards'],
+    skills: [
+      'Tableau COE',
+      'Big Data',
+      'Community Building',
+      'Executive Dashboards',
+    ],
     achievements: [
       {
         title: 'World Record Achievement',
-        text: "Established an enterprise Tableau COE driving adoption to 30,000+ users—one of the largest evangelical Tableau communities worldwide.",
+        text: 'Established an enterprise Tableau COE driving adoption to 30,000+ users—one of the largest evangelical Tableau communities worldwide.',
       },
       {
         title: 'Executive Engagement',
@@ -281,7 +296,9 @@ const DESKTOP_EXPANDED = new Set(ROLES.map((_, index) => index));
 
 const ExecutiveExperience = () => {
   const [expanded, setExpanded] = useState<Set<number>>(() => new Set());
-  const [visibleItems, setVisibleItems] = useState<Set<number>>(() => new Set());
+  const [visibleItems, setVisibleItems] = useState<Set<number>>(
+    () => new Set()
+  );
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   // Set initial expanded state and handle resize
@@ -322,7 +339,7 @@ const ExecutiveExperience = () => {
         {
           threshold: 0.3,
           rootMargin: '-50px 0px -50px 0px',
-        },
+        }
       );
 
       observer.observe(ref);
@@ -389,7 +406,8 @@ const ExecutiveExperience = () => {
             </span>
           </h2>
           <p className="mx-auto mt-4 max-w-4xl text-xl leading-relaxed text-slate-300">
-            16+ years of architecting enterprise AI solutions and driving digital transformation
+            16+ years of architecting enterprise AI solutions and driving
+            digital transformation
           </p>
         </div>
 
@@ -411,23 +429,33 @@ const ExecutiveExperience = () => {
                 >
                   <div
                     className={`absolute top-5 flex h-10 w-10 items-center justify-center rounded-full transition-all duration-500 md:left-8 ${
-                      isVisible ? 'scale-110 shadow-lg shadow-cyan-400/40' : 'scale-100 shadow-md shadow-cyan-400/20'
+                      isVisible
+                        ? 'scale-110 shadow-lg shadow-cyan-400/40'
+                        : 'scale-100 shadow-md shadow-cyan-400/20'
                     }`}
                     style={{
                       background: 'linear-gradient(135deg, #00d4ff, #1e90ff)',
                     }}
                   >
-                    <span className="text-lg font-semibold text-white">{role.icon}</span>
+                    <span className="text-lg font-semibold text-white">
+                      {role.icon}
+                    </span>
                   </div>
 
                   <div
                     className={`timeline-item-visible relative overflow-hidden rounded-2xl p-8 transition-all duration-700 ${
-                      isVisible ? 'translate-x-2 scale-[1.02] opacity-100' : 'translate-x-0 scale-100 opacity-90'
+                      isVisible
+                        ? 'translate-x-2 scale-[1.02] opacity-100'
+                        : 'translate-x-0 scale-100 opacity-90'
                     }`}
                     style={{
-                      background: isVisible ? 'rgba(255, 255, 255, 0.08)' : 'rgba(255, 255, 255, 0.03)',
+                      background: isVisible
+                        ? 'rgba(255, 255, 255, 0.08)'
+                        : 'rgba(255, 255, 255, 0.03)',
                       backdropFilter: isVisible ? 'blur(25px)' : 'blur(15px)',
-                      WebkitBackdropFilter: isVisible ? 'blur(25px)' : 'blur(15px)',
+                      WebkitBackdropFilter: isVisible
+                        ? 'blur(25px)'
+                        : 'blur(15px)',
                       boxShadow: isVisible
                         ? '0 25px 50px rgba(0, 212, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
                         : '0 8px 16px rgba(0, 0, 0, 0.1)',
@@ -438,12 +466,16 @@ const ExecutiveExperience = () => {
                       style={{
                         borderRadius: 'inherit',
                         padding: '1px',
-                        background: 'linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff)',
+                        background:
+                          'linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff)',
                         backgroundSize: '200% 200%',
-                        WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                        WebkitMask:
+                          'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
                         WebkitMaskComposite: 'xor',
                         maskComposite: 'exclude',
-                        animation: isVisible ? 'gradientShift 3s ease infinite' : 'none',
+                        animation: isVisible
+                          ? 'gradientShift 3s ease infinite'
+                          : 'none',
                       }}
                     />
 
@@ -464,13 +496,19 @@ const ExecutiveExperience = () => {
                         {role.dates}
                       </span>
 
-                      <h3 className="text-xl font-bold leading-tight text-white md:text-2xl">{role.role}</h3>
+                      <h3 className="text-xl font-bold leading-tight text-white md:text-2xl">
+                        {role.role}
+                      </h3>
                       <div className="mb-4 text-lg font-medium text-cyan-400">
                         {role.company}
-                        <span className="ml-2 text-base text-slate-400">| {role.location}</span>
+                        <span className="ml-2 text-base text-slate-400">
+                          | {role.location}
+                        </span>
                       </div>
 
-                      <p className="mb-6 text-base leading-relaxed text-slate-300">{role.description}</p>
+                      <p className="mb-6 text-base leading-relaxed text-slate-300">
+                        {role.description}
+                      </p>
 
                       <div className="mb-6 flex flex-wrap gap-2 overflow-x-auto pb-2">
                         {role.skills.map((skill) => (
@@ -490,14 +528,18 @@ const ExecutiveExperience = () => {
                         className="mb-4 block w-full rounded-xl border border-cyan-500/40 bg-cyan-500/20 py-3 px-4 text-sm font-semibold text-cyan-400 transition-all duration-300 hover:bg-cyan-500/30 md:hidden"
                       >
                         {isExpanded ? 'Hide Achievements' : 'View Achievements'}
-                        <span className={`ml-2 inline-block transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
+                        <span
+                          className={`ml-2 inline-block transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+                        >
                           ▼
                         </span>
                       </button>
 
                       <div
                         className={`space-y-4 overflow-hidden transition-all duration-300 md:max-h-screen md:opacity-100 ${
-                          isExpanded ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 md:max-h-screen md:opacity-100'
+                          isExpanded
+                            ? 'max-h-screen opacity-100'
+                            : 'max-h-0 opacity-0 md:max-h-screen md:opacity-100'
                         }`}
                       >
                         {role.achievements.map((achievement) => (
@@ -506,10 +548,16 @@ const ExecutiveExperience = () => {
                             className="rounded-lg border-l-4 border-cyan-400 bg-cyan-500/10 p-4 transition-all duration-300 hover:translate-x-1 hover:bg-cyan-500/15"
                           >
                             <div className="flex items-start gap-3">
-                              <span className="mt-0.5 text-lg text-cyan-400">→</span>
+                              <span className="mt-0.5 text-lg text-cyan-400">
+                                →
+                              </span>
                               <div>
-                                <h4 className="mb-2 font-semibold text-cyan-400">{achievement.title}</h4>
-                                <p className="leading-relaxed text-slate-300">{achievement.text}</p>
+                                <h4 className="mb-2 font-semibold text-cyan-400">
+                                  {achievement.title}
+                                </h4>
+                                <p className="leading-relaxed text-slate-300">
+                                  {achievement.text}
+                                </p>
                               </div>
                             </div>
                           </div>

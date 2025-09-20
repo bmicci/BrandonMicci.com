@@ -7,7 +7,13 @@ const StrategicIntroCard: React.FC = () => {
     <>
       <style jsx>{`
         .intro-card {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          font-family:
+            'Inter',
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            sans-serif;
           max-width: 1000px;
           margin: 2rem auto 2rem;
           padding: 2.5rem;
@@ -27,8 +33,8 @@ const StrategicIntroCard: React.FC = () => {
           border-radius: 20px;
           padding: 2px;
           background: linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff);
-          -webkit-mask: 
-            linear-gradient(#fff 0 0) content-box, 
+          -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
             linear-gradient(#fff 0 0);
           -webkit-mask-composite: xor;
           mask-composite: exclude;
@@ -56,7 +62,12 @@ const StrategicIntroCard: React.FC = () => {
         }
 
         .intro-text strong {
-          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 50%, #00d4ff 100%);
+          background: linear-gradient(
+            135deg,
+            #00d4ff 0%,
+            #1e90ff 50%,
+            #00d4ff 100%
+          );
           background-size: 200% 200%;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -65,11 +76,17 @@ const StrategicIntroCard: React.FC = () => {
           filter: drop-shadow(0 2px 4px rgba(0, 212, 255, 0.3));
           animation: gradientShift 3s ease-in-out infinite;
         }
-        
+
         @keyframes gradientShift {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
         }
 
         @keyframes fadeInUp {
@@ -97,12 +114,15 @@ const StrategicIntroCard: React.FC = () => {
           }
         }
       `}</style>
-      
-          <div className="intro-card">
-            <p className="intro-text">
-              While many executives can talk about AI strategy, few can deliver the <strong>scale, impact, and cross-industry expertise</strong> that I&apos;ve consistently achieved. Here are the key differentiators that make this possible:
-            </p>
-          </div>
+
+      <div className="intro-card">
+        <p className="intro-text">
+          While many executives can talk about AI strategy, few can deliver the{' '}
+          <strong>scale, impact, and cross-industry expertise</strong> that
+          I&apos;ve consistently achieved. Here are the key differentiators that
+          make this possible:
+        </p>
+      </div>
     </>
   );
 };

@@ -1,8 +1,7 @@
+@import '../styles/components.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import '../styles/components.css';
 
 body {
   background: #0a0a0a;
