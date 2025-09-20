@@ -82,7 +82,8 @@ const UnifiedBackground: React.FC = () => {
 
         /* Floating animation paths */
         @keyframes float1 {
-          0%, 100% {
+          0%,
+          100% {
             transform: translate(0, 0);
             opacity: 0.3;
           }
@@ -101,7 +102,8 @@ const UnifiedBackground: React.FC = () => {
         }
 
         @keyframes float2 {
-          0%, 100% {
+          0%,
+          100% {
             transform: translate(0, 0);
             opacity: 0.2;
           }
@@ -116,7 +118,8 @@ const UnifiedBackground: React.FC = () => {
         }
 
         @keyframes float3 {
-          0%, 100% {
+          0%,
+          100% {
             transform: translate(0, 0);
             opacity: 0.4;
           }
@@ -227,22 +230,43 @@ const UnifiedBackground: React.FC = () => {
           }
         }
       `}</style>
-      
+
       <div className="unified-background">
         <div className="animated-grid"></div>
-        
+
         {/* Floating particles */}
-        <div className="particle small" style={{ top: '10%', left: '10%' }}></div>
+        <div
+          className="particle small"
+          style={{ top: '10%', left: '10%' }}
+        ></div>
         <div className="particle" style={{ top: '20%', right: '15%' }}></div>
-        <div className="particle large" style={{ top: '30%', left: '20%' }}></div>
-        <div className="particle small" style={{ top: '40%', right: '25%' }}></div>
+        <div
+          className="particle large"
+          style={{ top: '30%', left: '20%' }}
+        ></div>
+        <div
+          className="particle small"
+          style={{ top: '40%', right: '25%' }}
+        ></div>
         <div className="particle" style={{ top: '50%', left: '30%' }}></div>
-        <div className="particle large" style={{ top: '60%', right: '20%' }}></div>
-        <div className="particle small" style={{ top: '70%', left: '15%' }}></div>
+        <div
+          className="particle large"
+          style={{ top: '60%', right: '20%' }}
+        ></div>
+        <div
+          className="particle small"
+          style={{ top: '70%', left: '15%' }}
+        ></div>
         <div className="particle" style={{ top: '80%', right: '30%' }}></div>
-        <div className="particle large" style={{ top: '90%', left: '25%' }}></div>
-        <div className="particle small" style={{ top: '15%', right: '40%' }}></div>
-        
+        <div
+          className="particle large"
+          style={{ top: '90%', left: '25%' }}
+        ></div>
+        <div
+          className="particle small"
+          style={{ top: '15%', right: '40%' }}
+        ></div>
+
         {/* Gradient overlays */}
         <div className="gradient-overlay-1"></div>
         <div className="gradient-overlay-2"></div>

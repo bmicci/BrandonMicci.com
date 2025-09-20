@@ -4,12 +4,7 @@
 @tailwind utilities;
 
 body {
-  background: linear-gradient(
-    135deg,
-    #05050a 0%,
-    #0f0f1a 50%,
-    #0a0e1a 100%
-  );
+  background: linear-gradient(135deg, #05050a 0%, #0f0f1a 50%, #0a0e1a 100%);
   color: #ededed;
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   margin: 0;

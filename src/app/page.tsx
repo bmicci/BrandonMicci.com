@@ -19,9 +19,9 @@ export default function Home() {
     <div className="min-h-screen text-white relative">
       {/* Unified Background for entire page */}
       <UnifiedBackground />
-      
+
       <AccessibleNav />
-      
+
       {/* Hero Section */}
       <HeroSection />
 

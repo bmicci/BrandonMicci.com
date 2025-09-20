@@ -44,7 +44,6 @@ const HeroSection = () => {
   return (
     <>
       <style jsx>{`
-
         .hero-section {
           min-height: 100vh;
           position: relative;

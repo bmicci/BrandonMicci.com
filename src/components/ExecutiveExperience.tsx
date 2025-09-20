@@ -365,7 +365,6 @@ const ExecutiveExperience = () => {
 
   return (
     <div className="relative min-h-screen overflow-hidden text-white">
-
       <style jsx>{`
         @keyframes gradientShift {
           0% {

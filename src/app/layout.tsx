@@ -40,10 +40,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://static.wixstatic.com" crossOrigin="" />
+        <link
+          rel="preconnect"
+          href="https://static.wixstatic.com"
+          crossOrigin=""
+        />
         <link rel="dns-prefetch" href="//static.wixstatic.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -58,12 +66,17 @@ export default function RootLayout({
               name: 'Brandon Micci',
               jobTitle: 'VP, Head of NextGen AI/ML Solutions',
               url: 'https://www.brandonmicci.com',
-              sameAs: [
-                'https://www.linkedin.com/in/brandonmicci'
+              sameAs: ['https://www.linkedin.com/in/brandonmicci'],
+              description:
+                'AI & Digital Transformation Executive driving Fortune 500 digital transformation through AI, Data Strategy, and client-centric products',
+              knowsAbout: [
+                'Artificial Intelligence',
+                'Digital Transformation',
+                'Data Strategy',
+                'Machine Learning',
+                'Product Management',
               ],
-              description: 'AI & Digital Transformation Executive driving Fortune 500 digital transformation through AI, Data Strategy, and client-centric products',
-              knowsAbout: ['Artificial Intelligence', 'Digital Transformation', 'Data Strategy', 'Machine Learning', 'Product Management']
-            })
+            }),
           }}
         />
         <Navigation />
