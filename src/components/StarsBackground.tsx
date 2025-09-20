@@ -58,22 +58,23 @@ const StarsBackground: React.FC = () => {
           box-shadow:
             0 0 6px #00d4ff,
             0 0 12px rgba(0, 212, 255, 0.5);
+          opacity: 0.6; /* Reduced opacity to be less intrusive */
         }
 
         /* Different particle sizes and speeds */
         .particle.small {
           width: 2px;
           height: 2px;
-          opacity: 0.6;
+          opacity: 0.4; /* Further reduced for small particles */
         }
 
         .particle.large {
           width: 6px;
           height: 6px;
-          opacity: 0.8;
+          opacity: 0.5; /* Reduced opacity for large particles */
           box-shadow:
             0 0 10px #00d4ff,
-            0 0 20px rgba(0, 212, 255, 0.6);
+            0 0 20px rgba(0, 212, 255, 0.4); /* Reduced glow intensity */
         }
 
         /* Floating animation paths */
@@ -203,6 +204,23 @@ const StarsBackground: React.FC = () => {
           pointer-events: none;
         }
 
+        /* Text-safe zone - reduces star visibility in center text area */
+        .text-safe-zone {
+          position: absolute;
+          top: 20%;
+          left: 10%;
+          right: 10%;
+          height: 60%;
+          background: radial-gradient(
+            ellipse at center,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0.1) 50%,
+            transparent 100%
+          );
+          pointer-events: none;
+          z-index: 5;
+        }
+
         /* Mobile optimizations */
         @media (max-width: 768px) {
           .animated-grid {
@@ -272,6 +290,9 @@ const StarsBackground: React.FC = () => {
         ></div>
         <div className="particle" style={{ top: '75%', left: '50%' }}></div>
       </div>
+      
+      {/* Text-safe zone to reduce star interference with text */}
+      <div className="text-safe-zone"></div>
     </>
   );
 };

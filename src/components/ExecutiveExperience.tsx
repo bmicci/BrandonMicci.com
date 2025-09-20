@@ -364,8 +364,8 @@ const ExecutiveExperience = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-cyan-500/5" />
+    <div className="relative min-h-screen overflow-hidden text-white">
+      {/* Gradient overlay removed to show Universal Background */}
 
       <style jsx>{`
         @keyframes gradientShift {
@@ -430,11 +430,11 @@ const ExecutiveExperience = () => {
                   <div
                     className={`absolute top-5 flex h-10 w-10 items-center justify-center rounded-full transition-all duration-500 md:left-8 ${
                       isVisible
-                        ? 'scale-110 shadow-lg shadow-cyan-400/40'
-                        : 'scale-100 shadow-md shadow-cyan-400/20'
+                        ? 'scale-110 shadow-lg shadow-white/20'
+                        : 'scale-100 shadow-md shadow-white/10'
                     }`}
                     style={{
-                      background: 'linear-gradient(135deg, #00d4ff, #1e90ff)',
+                      background: 'rgba(255, 255, 255, 0.1)',
                     }}
                   >
                     <span className="text-lg font-semibold text-white">
@@ -457,27 +457,11 @@ const ExecutiveExperience = () => {
                         ? 'blur(25px)'
                         : 'blur(15px)',
                       boxShadow: isVisible
-                        ? '0 25px 50px rgba(0, 212, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
+                        ? '0 25px 50px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
                         : '0 8px 16px rgba(0, 0, 0, 0.1)',
                     }}
                   >
-                    <div
-                      className="pointer-events-none absolute inset-0 opacity-30"
-                      style={{
-                        borderRadius: 'inherit',
-                        padding: '1px',
-                        background:
-                          'linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff)',
-                        backgroundSize: '200% 200%',
-                        WebkitMask:
-                          'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                        WebkitMaskComposite: 'xor',
-                        maskComposite: 'exclude',
-                        animation: isVisible
-                          ? 'gradientShift 3s ease infinite'
-                          : 'none',
-                      }}
-                    />
+                    {/* Gradient border removed - using universal background */}
 
                     <div
                       className={`pointer-events-none absolute -inset-4 transition-opacity duration-500 ${
@@ -485,8 +469,7 @@ const ExecutiveExperience = () => {
                       }`}
                       style={{
                         borderRadius: 'inherit',
-                        background:
-                          'radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, rgba(30, 144, 255, 0.1) 50%, transparent 70%)',
+                        background: 'transparent',
                         filter: 'blur(8px)',
                       }}
                     />

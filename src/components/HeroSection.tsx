@@ -64,66 +64,10 @@ const HeroSection = () => {
           position: relative;
           padding: 5rem 0 2rem 0; /* Add top padding to account for fixed navigation */
           overflow: hidden;
-          background: #0a0e27; /* Explicitly set the same dark background */
+          background: transparent; /* Let universal background show through */
         }
 
-        /* Enhanced futuristic sparkle particles */
-        .floating-particles {
-          position: absolute;
-          inset: 0;
-          z-index: 2;
-          pointer-events: none;
-        }
-
-        /* Base sparkle - larger and more visible */
-        .particle {
-          position: absolute;
-          width: 3px;
-          height: 3px;
-          background: #00d4ff;
-          border-radius: 50%;
-          opacity: 0.9;
-          animation: sparkleFloat 6s infinite ease-in-out;
-          box-shadow:
-            0 0 12px rgba(0, 212, 255, 1),
-            0 0 24px rgba(0, 212, 255, 0.6);
-        }
-
-        /* Medium sparkles - even larger */
-        .particle:nth-child(odd) {
-          width: 4px;
-          height: 4px;
-          background: #1e90ff;
-          box-shadow:
-            0 0 16px rgba(30, 144, 255, 1),
-            0 0 32px rgba(30, 144, 255, 0.7),
-            0 0 48px rgba(30, 144, 255, 0.3);
-          animation: sparkleFloat 8s infinite ease-in-out;
-        }
-
-        /* Large sparkles - very prominent */
-        .particle:nth-child(3n) {
-          width: 5px;
-          height: 5px;
-          background: #00ffff;
-          box-shadow:
-            0 0 20px rgba(0, 255, 255, 1),
-            0 0 40px rgba(0, 255, 255, 0.8),
-            0 0 60px rgba(0, 255, 255, 0.4);
-          animation: sparkleFloat 10s infinite ease-in-out;
-        }
-
-        /* Mega sparkles - brightest */
-        .particle:nth-child(5n) {
-          width: 6px;
-          height: 6px;
-          background: #ffffff;
-          box-shadow:
-            0 0 24px rgba(255, 255, 255, 1),
-            0 0 48px rgba(0, 212, 255, 0.9),
-            0 0 72px rgba(0, 212, 255, 0.5);
-          animation: sparkleFloat 12s infinite ease-in-out;
-        }
+        /* Floating particles removed - using universal background */
 
         /* Random positioning for more natural feel */
         .particle:nth-child(1) {
@@ -356,17 +300,7 @@ const HeroSection = () => {
           }
         }
 
-        .neural-grid {
-          position: absolute;
-          inset: 0;
-          background-image:
-            linear-gradient(rgba(0, 212, 255, 0.12) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 212, 255, 0.12) 1px, transparent 1px);
-          background-size: 60px 60px;
-          animation: gridFlow 20s linear infinite;
-          z-index: 1;
-          opacity: 0.7;
-        }
+        /* Neural grid removed - using universal background */
         @keyframes gridFlow {
           0% {
             transform: translate(0, 0);
@@ -416,6 +350,14 @@ const HeroSection = () => {
           line-height: 1.1;
           margin-bottom: 1rem;
           letter-spacing: -0.02em;
+          position: relative;
+          z-index: 15;
+          /* Add subtle background to improve readability */
+          padding: 0.5rem 1rem;
+          border-radius: 12px;
+          background-color: rgba(0, 0, 0, 0.15);
+          backdrop-filter: blur(3px);
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         .gradient-text {
           background: linear-gradient(
@@ -470,11 +412,27 @@ const HeroSection = () => {
           line-height: 1.4;
           font-weight: 500;
           white-space: nowrap;
+          position: relative;
+          z-index: 15;
+          /* Add subtle background to improve readability */
+          padding: 0.3rem 0.8rem;
+          border-radius: 8px;
+          background-color: rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(2px);
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         .hero-description {
           font-size: 1.1rem;
           color: rgba(255, 255, 255, 0.9);
           line-height: 1.7;
+          position: relative;
+          z-index: 15;
+          /* Add subtle background to improve readability */
+          padding: 0.8rem 1rem;
+          border-radius: 10px;
+          background-color: rgba(0, 0, 0, 0.12);
+          backdrop-filter: blur(2px);
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
         .gradient-highlight {
           background: linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff);
@@ -575,10 +533,10 @@ const HeroSection = () => {
           position: relative;
           border-radius: 16px;
           overflow: hidden;
+          width: 320px;
+          height: 500px;
         }
         .professional-photo {
-          width: 100%;
-          height: 500px;
           object-fit: cover;
           border-radius: 16px;
         }
@@ -788,7 +746,8 @@ const HeroSection = () => {
             max-width: 300px;
             margin: 0 auto 2rem;
           }
-          .mobile-photo .professional-photo {
+          .mobile-photo .photo-frame {
+            width: 280px;
             height: 350px;
           }
 
@@ -828,12 +787,7 @@ const HeroSection = () => {
           </defs>
         </svg>
 
-        <div className="neural-grid"></div>
-        <div className="floating-particles">
-          {Array.from({ length: 30 }, (_, i) => (
-            <div key={i} className="particle"></div>
-          ))}
-        </div>
+        {/* Background elements removed - using universal background */}
 
         <div className="hero-container">
           {/* Desktop Layout */}
@@ -1043,7 +997,7 @@ const HeroSection = () => {
                 <div className="differentiator-item">
                   <h3 className="item-title">
                     <svg className="item-icon" viewBox="0 0 24 24">
-                      <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" />
+                      <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
                     </svg>
                     Scale Expertise
                   </h3>
@@ -1055,7 +1009,7 @@ const HeroSection = () => {
                 <div className="differentiator-item">
                   <h3 className="item-title">
                     <svg className="item-icon" viewBox="0 0 24 24">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                      <path d="M7 15h2c0 1.08 1.37 2 3 2s3-.92 3-2c0-1.1-1.04-1.5-3.24-2.03C9.64 12.44 7 11.78 7 9c0-1.79 1.47-3.31 3.5-3.82V3h3v2.18C15.53 5.69 17 7.21 17 9h-2c0-1.08-1.37-2-3-2s-3 .92-3 2c0 1.1 1.04 1.5 3.24 2.03C14.36 11.56 17 12.22 17 15c0 1.79-1.47 3.31-3.5 3.82V21h-3v-2.18C8.47 18.31 7 16.79 7 15z"/>
                     </svg>
                     Financial Impact
                   </h3>

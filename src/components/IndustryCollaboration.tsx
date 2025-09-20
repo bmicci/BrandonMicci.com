@@ -70,38 +70,13 @@ const IndustryCollaboration: React.FC = () => {
           position: relative;
           color: white;
           padding: 80px 0;
-          background: #0a0a0a;
-          border-top: 1px solid rgba(0, 212, 255, 0.2);
-          border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+          background: transparent;
+          /* Border lines removed for clean Universal Background */
           overflow: hidden;
           min-height: 100vh;
         }
 
-        /* Neural Background with Particles */
-        #industry-collab::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background:
-            radial-gradient(
-              circle at 20% 50%,
-              rgba(0, 212, 255, 0.15) 0%,
-              transparent 50%
-            ),
-            radial-gradient(
-              circle at 80% 20%,
-              rgba(30, 144, 255, 0.12) 0%,
-              transparent 50%
-            ),
-            radial-gradient(
-              circle at 40% 80%,
-              rgba(0, 212, 255, 0.1) 0%,
-              transparent 50%
-            );
-          animation: backgroundPulse 8s ease-in-out infinite;
-          pointer-events: none;
-          z-index: 1;
-        }
+        /* Neural Background with Particles - removed to use universal background */
 
         @keyframes backgroundPulse {
           0%,
@@ -686,27 +661,7 @@ const IndustryCollaboration: React.FC = () => {
       `}</style>
 
       <section id="industry-collab">
-        {/* Neural Grid Background */}
-        <div className="neural-grid-contact"></div>
-
-        {/* Floating Particles */}
-        <div className="contact-particles">
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-          <div className="contact-particle"></div>
-        </div>
+        {/* Background elements removed - using Universal Background */}
 
         <div className="bm-wrap">
           <header className="bm-head">
