@@ -50,12 +50,7 @@ const HeroSection = () => {
           position: relative;
           padding: 5rem 0 0 0; /* Remove bottom padding for seamless transition */
           overflow: hidden;
-          background: linear-gradient(
-            135deg,
-            #0a0a0a 0%,
-            #1a1a2e 50%,
-            #16213e 100%
-          );
+          /* background removed - using unified background */
         }
 
         /* Enhanced futuristic sparkle particles */
