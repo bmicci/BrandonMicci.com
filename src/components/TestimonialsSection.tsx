@@ -17,12 +17,6 @@ const TestimonialsSection: React.FC = () => {
           position: relative;
           color: white;
           padding: 80px 0;
-          background: linear-gradient(
-            135deg,
-            #0a0a0a 0%,
-            #1a1a2e 50%,
-            #16213e 100%
-          );
           overflow: hidden;
           min-height: 100vh;
           display: flex;
@@ -41,6 +35,9 @@ const TestimonialsSection: React.FC = () => {
         .professional-impact-header {
           margin-bottom: 4rem;
           animation: fadeInDown 1s ease-out;
+          padding: 3rem 2rem;
+          max-width: 1000px;
+          margin: 2rem auto 4rem;
         }
 
         .professional-impact-eyebrow {

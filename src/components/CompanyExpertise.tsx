@@ -18,9 +18,7 @@ const CompanyExpertise: React.FC = () => {
           color: white;
           padding: 60px 2rem;
           position: relative;
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
+          /* background removed - using unified background */
           z-index: 10;
           text-align: center;
           margin: 2rem auto;
@@ -33,7 +31,7 @@ const CompanyExpertise: React.FC = () => {
         .expertise-section:hover {
           transform: translateY(-2px);
           box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
-          background: rgba(255, 255, 255, 0.08);
+          /* background removed - using unified background */
           border-color: rgba(0, 212, 255, 0.3);
         }
 

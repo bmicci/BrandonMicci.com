@@ -70,48 +70,13 @@ const IndustryCollaboration: React.FC = () => {
           position: relative;
           color: white;
           padding: 80px 0;
-          background: #0a0a0a;
           border-top: 1px solid rgba(0, 212, 255, 0.2);
           border-bottom: 1px solid rgba(0, 212, 255, 0.2);
           overflow: hidden;
           min-height: 100vh;
         }
 
-        /* Neural Background with Particles */
-        #industry-collab::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background:
-            radial-gradient(
-              circle at 20% 50%,
-              rgba(0, 212, 255, 0.15) 0%,
-              transparent 50%
-            ),
-            radial-gradient(
-              circle at 80% 20%,
-              rgba(30, 144, 255, 0.12) 0%,
-              transparent 50%
-            ),
-            radial-gradient(
-              circle at 40% 80%,
-              rgba(0, 212, 255, 0.1) 0%,
-              transparent 50%
-            );
-          animation: backgroundPulse 8s ease-in-out infinite;
-          pointer-events: none;
-          z-index: 1;
-        }
-
-        @keyframes backgroundPulse {
-          0%,
-          100% {
-            opacity: 0.8;
-          }
-          50% {
-            opacity: 1;
-          }
-        }
+        /* Background removed - using global background */
 
         /* Neural Grid */
         .neural-grid-contact {
@@ -287,6 +252,9 @@ const IndustryCollaboration: React.FC = () => {
           position: relative;
           z-index: 10;
           animation: fadeInDown 1s ease-out;
+          padding: 3rem 2rem;
+          max-width: 1000px;
+          margin: 2rem auto 50px;
         }
 
         .bm-eyebrow {

@@ -1,21 +1,6 @@
 'use client';
 
-import AccessibleNav from '@/components/AccessibleNav';
 import HeroSection from '@/components/HeroSection';
-import dynamic from 'next/dynamic';
-
-// Dynamic imports for heavy components
-const StrategicVisionBackground = dynamic(
-  () => import('@/components/StrategicVisionBackground'),
-  { ssr: false }
-);
-const StarsBackground = dynamic(() => import('@/components/StarsBackground'), {
-  ssr: false,
-});
-const FuturisticBackground = dynamic(
-  () => import('@/components/FuturisticBackground'),
-  { ssr: false }
-);
 
 // Regular imports for lighter components
 import CompanyExpertise from '@/components/CompanyExpertise';
@@ -30,18 +15,20 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 export default function Home() {
   return (
     <div className="min-h-screen text-white relative">
-      <AccessibleNav />
-      {/* Hero Section with Background */}
-      <HeroSection />
+      {/* Hero Section */}
+      <div id="home" className="section-shell min-h-screen" data-surface="hero">
+        <div className="section-shell-content">
+          <HeroSection />
+        </div>
+      </div>
 
       {/* Strategic Vision Section */}
-      <section id="strategic-vision" className="min-h-screen relative">
-        {/* Animated Backgrounds */}
-        <StrategicVisionBackground />
-        <StarsBackground />
-
-        {/* Strategic Vision Content */}
-        <div className="relative z-10 w-full">
+      <section
+        id="strategic-vision"
+        className="relative min-h-screen section-shell"
+        data-surface="primary"
+      >
+        <div className="section-shell-content w-full">
           <StrategicAdvantageHeader />
           <StrategicIntroCard />
           <CompanyExpertise />
@@ -50,31 +37,47 @@ export default function Home() {
       </section>
 
       {/* Executive Experience Section */}
-      <section id="executive-experience" className="min-h-screen relative">
-        {/* Background */}
-        <FuturisticBackground />
-
-        {/* Content */}
-        <ExecutiveExperience />
+      <section
+        id="executive-experience"
+        className="relative min-h-screen section-shell"
+        data-surface="accent"
+      >
+        <div className="section-shell-content">
+          <ExecutiveExperience />
+        </div>
       </section>
 
       {/* Transformation Leadership Section */}
-      <section id="transformation-leadership" className="min-h-screen relative">
-        {/* Background */}
-        <StarsBackground />
-
-        {/* Content */}
-        <TransformationLeadership />
+      <section
+        id="transformation-leadership"
+        className="relative min-h-screen section-shell"
+        data-surface="accent"
+      >
+        <div className="section-shell-content">
+          <TransformationLeadership />
+        </div>
       </section>
 
       {/* Testimonials Section */}
-      <section id="professional-impact" className="min-h-screen relative">
-        <TestimonialsSection />
+      <section
+        id="professional-impact"
+        className="relative min-h-screen section-shell"
+        data-surface="calm"
+      >
+        <div className="section-shell-content">
+          <TestimonialsSection />
+        </div>
       </section>
 
       {/* Industry Collaboration & Speaking Section */}
-      <section id="connectwithme" className="min-h-screen relative">
-        <IndustryCollaboration />
+      <section
+        id="connect-with-me"
+        className="relative min-h-screen section-shell"
+        data-surface="accent"
+      >
+        <div className="section-shell-content">
+          <IndustryCollaboration />
+        </div>
       </section>
     </div>
   );

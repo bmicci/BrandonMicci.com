@@ -43,28 +43,13 @@ const HeroSection = () => {
 
   return (
     <>
-      <style jsx global>{`
-        body {
-          font-family:
-            'Inter',
-            -apple-system,
-            BlinkMacSystemFont,
-            'Segoe UI',
-            Roboto,
-            sans-serif;
-          background: #0a0e27;
-          color: white;
-          margin: 0;
-          padding: 0;
-          overflow-x: hidden;
-        }
-
+      <style jsx>{`
         .hero-section {
           min-height: 100vh;
           position: relative;
-          padding: 5rem 0 2rem 0; /* Add top padding to account for fixed navigation */
+          padding: 5rem 0 0 0; /* Remove bottom padding for seamless transition */
           overflow: hidden;
-          background: #0a0e27; /* Explicitly set the same dark background */
+          /* background removed - using unified background */
         }
 
         /* Enhanced futuristic sparkle particles */
@@ -575,11 +560,14 @@ const HeroSection = () => {
           position: relative;
           border-radius: 16px;
           overflow: hidden;
+          width: 100%;
+          height: 500px;
         }
         .professional-photo {
           width: 100%;
-          height: 500px;
-          object-fit: cover;
+          height: 100%;
+          object-fit: contain;
+          object-position: center;
           border-radius: 16px;
         }
         .photo-overlay {
@@ -788,7 +776,7 @@ const HeroSection = () => {
             max-width: 300px;
             margin: 0 auto 2rem;
           }
-          .mobile-photo .professional-photo {
+          .mobile-photo .photo-frame {
             height: 350px;
           }
 
