@@ -34,7 +34,7 @@ const ROLES: Role[] = [
     role: 'VP, Head of NextGen AI/ML Solutions',
     company: 'JPMorgan Chase',
     location: 'Plano, TX',
-    icon: <Brain className="w-6 h-6 text-cyan-400" />,
+    icon: <Brain className="w-6 h-6 text-cyan-400 stroke-2 stroke-2" />,
     description:
       'Drive enterprise AI strategy and implementation across payments operations, leading organization-wide transformation initiatives that enhance operational efficiency and customer experience at scale.',
     skills: [
@@ -63,7 +63,7 @@ const ROLES: Role[] = [
     role: 'Senior Director, Intelligent Industry GTM & Solution Leader',
     company: 'Capgemini',
     location: 'Dallas, TX',
-    icon: <Target className="w-6 h-6 text-cyan-400" />,
+    icon: <Target className="w-6 h-6 text-cyan-400 stroke-2" />,
     description:
       'Directed go-to-market strategy and solution development for emerging AI technologies, leading cross-functional teams of product managers, solution architects, and sales professionals.',
     skills: ['Go-to-Market Strategy', 'IoT Solutions', 'Product Management'],
@@ -87,7 +87,7 @@ const ROLES: Role[] = [
     role: 'Senior Manager, Forensic Analytics & Data Science',
     company: 'Ernst & Young',
     location: 'Dallas, TX',
-    icon: <Search className="w-6 h-6 text-cyan-400" />,
+    icon: <Search className="w-6 h-6 text-cyan-400 stroke-2" />,
     description:
       "Spearheaded AI/ML strategy and capability development within EY's Forensics Practice, serving as Regional Leader for complex analytics engagements across Financial Services, Life Sciences, and Energy sectors.",
     skills: [
@@ -116,7 +116,7 @@ const ROLES: Role[] = [
     role: 'IoT & Digital Innovation Leader',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: <Wifi className="w-6 h-6 text-cyan-400" />,
+    icon: <Wifi className="w-6 h-6 text-cyan-400 stroke-2" />,
     description:
       'Led digital transformation initiatives focused on IoT implementation and cloud migration, driving operational efficiency improvements across airline infrastructure and customer-facing systems.',
     skills: ['IoT Architecture', 'Cloud Migration', 'Digital Transformation'],
@@ -140,7 +140,7 @@ const ROLES: Role[] = [
     role: 'Data Enablement & Analytics COE Lead',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: <Database className="w-6 h-6 text-cyan-400" />,
+    icon: <Database className="w-6 h-6 text-cyan-400 stroke-2" />,
     description:
       'Established and led the enterprise-wide Center of Excellence for data analytics, driving adoption of modern BI platforms and building analytical capabilities across all business units.',
     skills: ['Data Analytics', 'COE Leadership', 'Platform Architecture'],
@@ -164,7 +164,7 @@ const ROLES: Role[] = [
     role: 'VP, Global Digital and Cloud Transformation Leader',
     company: 'Citigroup',
     location: 'Irving, TX',
-    icon: <Cloud className="w-6 h-6 text-cyan-400" />,
+    icon: <Cloud className="w-6 h-6 text-cyan-400 stroke-2" />,
     description:
       'Spearheaded global cloud transformation initiatives and DevOps adoption across multiple business units, establishing enterprise-wide standards for cloud-native architecture and deployment practices.',
     skills: ['Cloud Architecture', 'DevOps', 'Global Programs', 'CI/CD'],
@@ -188,7 +188,7 @@ const ROLES: Role[] = [
     role: 'Risk Analytics Leader, Auto Finance & Home Loans',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: <Shield className="w-6 h-6 text-cyan-400" />,
+    icon: <Shield className="w-6 h-6 text-cyan-400 stroke-2" />,
     description:
       'Led risk analytics transformation for consumer lending portfolios, implementing advanced ML models and automated compliance systems to enhance risk assessment and regulatory reporting capabilities.',
     skills: ['Risk Analytics', 'Compliance Tech', 'NLP/OCR'],
@@ -212,7 +212,7 @@ const ROLES: Role[] = [
     role: 'Enterprise Analytics Leader, Risk & Compliance',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: <ShieldCheck className="w-6 h-6 text-cyan-400" />,
+    icon: <ShieldCheck className="w-6 h-6 text-cyan-400 stroke-2" />,
     description:
       'Drove enterprise-wide analytics strategy and governance, establishing data quality standards and building scalable analytics infrastructure to support risk management and regulatory compliance initiatives.',
     skills: ['Enterprise Analytics', 'Data Governance', 'Tableau'],
@@ -236,7 +236,7 @@ const ROLES: Role[] = [
     role: 'Center of Excellence Leader, Tableau & Big Data',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: <BarChart className="w-6 h-6 text-cyan-400" />,
+    icon: <BarChart className="w-6 h-6 text-cyan-400 stroke-2" />,
     description:
       "Pioneered enterprise-wide business intelligence transformation, establishing one of the world's largest Tableau communities and driving company-wide adoption of self-service analytics capabilities.",
     skills: [
@@ -265,7 +265,7 @@ const ROLES: Role[] = [
     role: 'Senior Consultant, Lead Data Analyst',
     company: 'Booz Allen Hamilton',
     location: 'McLean, VA',
-    icon: <TrendingUp className="w-6 h-6 text-cyan-400" />,
+    icon: <TrendingUp className="w-6 h-6 text-cyan-400 stroke-2" />,
     description:
       "Established and led the firm's first dedicated data analytics practice, developing advanced analytics solutions for government and commercial clients across defense, healthcare, and financial services sectors.",
     skills: ['Data Analytics', 'Fraud Detection', 'Business Intelligence'],
@@ -285,7 +285,7 @@ const ROLES: Role[] = [
     role: 'Global Operations and Strategy Associate',
     company: 'PricewaterhouseCoopers',
     location: 'Tampa, FL',
-    icon: <Globe className="w-6 h-6 text-cyan-400" />,
+    icon: <Globe className="w-6 h-6 text-cyan-400 stroke-2" />,
     description:
       "Served as strategic analyst and performance metrics lead for global delivery operations, pioneering the firm's first business intelligence implementations and executive dashboard automation initiatives.",
     skills: ['Strategy', 'Operations', 'Executive Analytics'],
@@ -492,7 +492,7 @@ const ExecutiveExperience = memo(() => {
                       <h3 className="text-xl font-bold leading-tight text-white md:text-2xl">
                         {role.role}
                       </h3>
-                      <div className="mb-4 text-lg font-medium text-cyan-400">
+                      <div className="mb-4 text-lg font-medium text-cyan-400 stroke-2">
                         {role.company}
                         <span className="ml-2 text-base text-slate-400">
                           | {role.location}
@@ -518,7 +518,7 @@ const ExecutiveExperience = memo(() => {
                         type="button"
                         onClick={() => toggle(index)}
                         aria-expanded={isExpanded}
-                        className="mb-4 block w-full rounded-xl border border-cyan-500/40 bg-cyan-500/20 py-3 px-4 text-sm font-semibold text-cyan-400 transition-all duration-300 hover:bg-cyan-500/30 md:hidden"
+                        className="mb-4 block w-full rounded-xl border border-cyan-500/40 bg-cyan-500/20 py-3 px-4 text-sm font-semibold text-cyan-400 stroke-2 transition-all duration-300 hover:bg-cyan-500/30 md:hidden"
                       >
                         {isExpanded ? 'Hide Achievements' : 'View Achievements'}
                         <span
@@ -541,11 +541,11 @@ const ExecutiveExperience = memo(() => {
                             className="rounded-lg border-l-4 border-cyan-400 bg-cyan-500/10 p-4 transition-all duration-300 hover:translate-x-1 hover:bg-cyan-500/15"
                           >
                             <div className="flex items-start gap-3">
-                              <span className="mt-0.5 text-lg text-cyan-400">
+                              <span className="mt-0.5 text-lg text-cyan-400 stroke-2">
                                 →
                               </span>
                               <div>
-                                <h4 className="mb-2 font-semibold text-cyan-400">
+                                <h4 className="mb-2 font-semibold text-cyan-400 stroke-2">
                                   {achievement.title}
                                 </h4>
                                 <p className="leading-relaxed text-slate-300">
