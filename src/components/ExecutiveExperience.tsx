@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Brain, Cpu, Lightbulb, BarChart3, Network, LineChart, Cloud, Gauge, Activity, ShieldCheck, Layers, Search, ClipboardList, Globe } from 'lucide-react';
+import { Brain, Lightbulb, BarChart3, Network, LineChart, Gauge, ShieldCheck, Layers, Search, ClipboardList } from 'lucide-react';
 
 const IconCircle: React.FC<{children: React.ReactNode}> = ({ children }) => (
   <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-sm shadow-[0_0_0_1px_rgba(255,255,255,0.04)] ring-1 ring-black/10">
