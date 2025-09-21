@@ -217,7 +217,7 @@ const StrategicDifferentiators: React.FC = () => {
         <div className="differentiators-grid">
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none">
             <div className="diff-content flex items-start gap-3">
-              <Icon name="linechart" size="lg" className="text-cyan-400" />
+              <Icon name="linechart" size="lg" className="text-cyan-400 w-8 h-8" />
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Scale Expertise</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -232,7 +232,7 @@ const StrategicDifferentiators: React.FC = () => {
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none">
             <div className="diff-content flex items-start gap-3">
-              <Icon name="barchart" size="lg" className="text-cyan-400" />
+              <Icon name="barchart" size="lg" className="text-cyan-400 w-8 h-8" />
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Financial Impact</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -246,7 +246,7 @@ const StrategicDifferentiators: React.FC = () => {
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none">
             <div className="diff-content flex items-start gap-3">
-              <Icon name="globe" size="lg" className="text-cyan-400" />
+              <Icon name="globe" size="lg" className="text-cyan-400 w-8 h-8" />
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Cross-Industry Innovation</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -260,7 +260,7 @@ const StrategicDifferentiators: React.FC = () => {
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none">
             <div className="diff-content flex items-start gap-3">
-              <Icon name="target" size="lg" className="text-cyan-400" />
+              <Icon name="target" size="lg" className="text-cyan-400 w-8 h-8" />
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Technical + Strategic Leadership</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -274,7 +274,7 @@ const StrategicDifferentiators: React.FC = () => {
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none">
             <div className="diff-content flex items-start gap-3">
-              <Icon name="sparkle" size="lg" className="text-cyan-400" />
+              <Icon name="sparkle" size="lg" className="text-cyan-400 w-8 h-8" />
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Transformation Catalyst</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -288,7 +288,7 @@ const StrategicDifferentiators: React.FC = () => {
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none">
             <div className="diff-content flex items-start gap-3">
-              <Icon name="brain" size="lg" className="text-cyan-400" />
+              <Icon name="brain" size="lg" className="text-cyan-400 w-8 h-8" />
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Ambiguous Environment Expert</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
