@@ -7,7 +7,7 @@ const HeroImage = () => {
     <>
       <style jsx>{`
         .hi-card {
-          width: clamp(220px, 42vw, 360px);
+          width: clamp(280px, 34vw, 460px);
           margin: 0 auto;
           border-radius: 22px;
           background: rgba(255,255,255,0.04);
@@ -69,7 +69,7 @@ const HeroImage = () => {
             alt="Brandon Micci — AI & Digital Transformation Executive"
             className="hi-img"
             fill
-            sizes="(min-width:1280px) 460px, (min-width:1024px) 32vw, 92vw"
+            sizes="(min-width:1280px) 460px, (min-width:1024px) 34vw, 88vw"
             priority
             quality={92}
           />
