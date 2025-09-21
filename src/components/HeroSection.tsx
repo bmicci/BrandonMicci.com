@@ -777,7 +777,19 @@ const HeroSection = () => {
                   Executive
                 </h1>
                 <p className="mt-1 text-lg md:text-2xl font-semibold text-white/95">
-                  Enterprise AI and digital transformation leader delivering $400M+ in measurable impact, scaling LLMs to 27K users, and pioneering IoT pilots with proven ROI.
+                  Enterprise AI and digital transformation leader delivering{' '}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                    $400M+ in measurable impact
+                  </span>
+                  , scaling LLMs to{' '}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                    27K users
+                  </span>
+                  , and pioneering IoT pilots with{' '}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                    proven ROI
+                  </span>
+                  .
                 </p>
 
                 <p className="mt-3 text-base md:text-xl font-normal leading-relaxed text-slate-100">
@@ -864,7 +876,19 @@ const HeroSection = () => {
                 Executive
               </h1>
               <p className="mt-1 text-lg font-semibold text-white/95">
-                Enterprise AI and digital transformation leader delivering $400M+ in measurable impact, scaling LLMs to 27K users, and pioneering IoT pilots with proven ROI.
+                Enterprise AI and digital transformation leader delivering{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                  $400M+ in measurable impact
+                </span>
+                , scaling LLMs to{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                  27K users
+                </span>
+                , and pioneering IoT pilots with{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                  proven ROI
+                </span>
+                .
               </p>
             </div>
 
