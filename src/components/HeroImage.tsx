@@ -11,8 +11,8 @@ const HeroImage = () => {
           margin: 0 auto;
           border-radius: 22px;
           background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.10);
-          box-shadow: 0 24px 48px rgba(0,0,0,0.35);
+          border: 1px solid rgba(0, 212, 255, 0.4);
+          box-shadow: 0 24px 48px rgba(0,0,0,0.35), 0 0 30px rgba(0, 212, 255, 0.25), 0 0 60px rgba(0, 212, 255, 0.1);
           overflow: hidden;              /* ensures corners/overflow stay perfect */
           position: relative;            /* required for ::before and containment */
           isolation: isolate;            /* prevents glow bleed */
@@ -23,7 +23,7 @@ const HeroImage = () => {
           inset: 0;
           border-radius: inherit;
           pointer-events: none;
-          box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.14) inset;
+          box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.5) inset;
         }
 
         /* UNTOUCHABLE IMAGE WRAPPER - no text inside this div */
