@@ -641,6 +641,18 @@ const HeroSection = () => {
           animation: rocketFloat 3s ease-in-out infinite;
           display: inline-block;
         }
+
+        @media (max-width: 360px) {
+          .differentiator-item {
+            padding: 0.75rem;
+          }
+          .differentiator-item h4 {
+            font-size: 0.9rem;
+          }
+          .differentiator-item p {
+            font-size: 0.8rem;
+          }
+        }
         .differentiators-header {
           display: flex;
           align-items: center;
@@ -1002,15 +1014,15 @@ const HeroSection = () => {
           <div className="differentiators-section">
             <div className="differentiators-glass">
               <div className="mx-auto flex items-center justify-center gap-3 text-center">
-                <span aria-hidden className="text-2xl md:text-4xl">🚀</span>
+                <Icon name="sparkle" size="lg" className="text-2xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500" />
                 <span className="text-2xl md:text-4xl font-bold tracking-wide text-white">
                   What makes me different
                 </span>
               </div>
               <div className="differentiators-grid">
-                <div className="differentiator-item">
+                <div className="differentiator-item rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
                   <div className="flex items-start gap-3">
-                    <Icon name="linechart" size="lg" className="text-cyan-400" />
+                    <Icon name="linechart" size="lg" className="mt-1 text-cyan-400 transition drop-shadow-none hover:drop-shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
                     <div>
                       <div className="text-base md:text-lg font-semibold text-white">
                         Scale Expertise
@@ -1022,9 +1034,9 @@ const HeroSection = () => {
                     </div>
                   </div>
                 </div>
-                <div className="differentiator-item">
+                <div className="differentiator-item rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
                   <div className="flex items-start gap-3">
-                    <Icon name="barchart" size="lg" className="text-cyan-400" />
+                    <Icon name="barchart" size="lg" className="mt-1 text-cyan-400 transition drop-shadow-none hover:drop-shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
                     <div>
                       <div className="text-base md:text-lg font-semibold text-white">
                         Financial Impact
@@ -1036,9 +1048,9 @@ const HeroSection = () => {
                     </div>
                   </div>
                 </div>
-                <div className="differentiator-item">
+                <div className="differentiator-item rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
                   <div className="flex items-start gap-3">
-                    <Icon name="globe" size="lg" className="text-cyan-400" />
+                    <Icon name="globe" size="lg" className="mt-1 text-cyan-400 transition drop-shadow-none hover:drop-shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
                     <div>
                       <div className="text-base md:text-lg font-semibold text-white">
                         Cross-Industry Innovation
@@ -1050,9 +1062,9 @@ const HeroSection = () => {
                     </div>
                   </div>
                 </div>
-                <div className="differentiator-item">
+                <div className="differentiator-item rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
                   <div className="flex items-start gap-3">
-                    <Icon name="sparkle" size="lg" className="text-cyan-400" />
+                    <Icon name="sparkle" size="lg" className="mt-1 text-cyan-400 transition drop-shadow-none hover:drop-shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
                     <div>
                       <div className="text-base md:text-lg font-semibold text-white">
                         Transformation Catalyst
