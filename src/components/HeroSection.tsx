@@ -718,10 +718,11 @@ const HeroSection = () => {
 
           .mobile-intro h1 {
             text-align: center !important;
-            font-size: 1.8rem !important;
-            line-height: 1.2 !important;
+            font-size: 1.4rem !important;
+            line-height: 1.1 !important;
             margin-bottom: 1rem !important;
-            padding: 0 0.5rem;
+            padding: 0 0.25rem;
+            font-weight: 700 !important;
           }
 
           .mobile-intro p {
@@ -768,9 +769,9 @@ const HeroSection = () => {
         /* Extra small screens (iPhone SE) */
         @media (max-width: 375px) {
           .mobile-intro h1 {
-            font-size: 1.6rem !important;
-            line-height: 1.1 !important;
-            padding: 0 0.25rem;
+            font-size: 1.2rem !important;
+            line-height: 1.0 !important;
+            padding: 0 0.1rem;
           }
 
           .mobile-intro p {
@@ -903,11 +904,11 @@ const HeroSection = () => {
                 Senior{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                   AI & Digital
-                </span>{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Transformation
                 </span>
                 <br />
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  Transformation
+                </span>{' '}
                 Executive
               </h1>
               <p className="mt-3 text-lg font-normal leading-relaxed text-slate-100 text-center">
