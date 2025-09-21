@@ -228,8 +228,8 @@ const StrategicDifferentiators: React.FC = () => {
       <div className="differentiators-container mx-auto max-w-6xl px-4 md:px-8 overflow-x-clip">
         <div className="differentiators-grid">
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
-            <div className="diff-content flex items-start gap-3">
-              <Icon name="linechart" size="lg" className="text-cyan-400 w-16 h-16 transition drop-shadow-none hover:drop-shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
+            <div className="diff-content flex items-start gap-4">
+              <Icon name="linechart" size="lg" className="text-cyan-400 w-20 h-20 transition drop-shadow-none hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.8)] flex-shrink-0" />
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Scale Expertise</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -243,8 +243,8 @@ const StrategicDifferentiators: React.FC = () => {
           </div>
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
-            <div className="diff-content flex items-start gap-3">
-              <Icon name="barchart" size="lg" className="text-cyan-400 w-16 h-16 transition drop-shadow-none hover:drop-shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
+            <div className="diff-content flex items-start gap-4">
+              <Icon name="barchart" size="lg" className="text-cyan-400 w-20 h-20 transition drop-shadow-none hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.8)] flex-shrink-0" />
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Financial Impact</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -257,8 +257,8 @@ const StrategicDifferentiators: React.FC = () => {
           </div>
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
-            <div className="diff-content flex items-start gap-3">
-              <Icon name="globe" size="lg" className="text-cyan-400 w-16 h-16 transition drop-shadow-none hover:drop-shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
+            <div className="diff-content flex items-start gap-4">
+              <Icon name="globe" size="lg" className="text-cyan-400 w-20 h-20 transition drop-shadow-none hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.8)] flex-shrink-0" />
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Cross-Industry Innovation</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -271,8 +271,8 @@ const StrategicDifferentiators: React.FC = () => {
           </div>
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
-            <div className="diff-content flex items-start gap-3">
-              <Icon name="target" size="lg" className="text-cyan-400 w-16 h-16 transition drop-shadow-none hover:drop-shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
+            <div className="diff-content flex items-start gap-4">
+              <Icon name="target" size="lg" className="text-cyan-400 w-20 h-20 transition drop-shadow-none hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.8)] flex-shrink-0" />
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Technical + Strategic Leadership</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -285,8 +285,8 @@ const StrategicDifferentiators: React.FC = () => {
           </div>
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
-            <div className="diff-content flex items-start gap-3">
-              <Icon name="sparkle" size="lg" className="text-cyan-400 w-16 h-16 transition drop-shadow-none hover:drop-shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
+            <div className="diff-content flex items-start gap-4">
+              <Icon name="sparkle" size="lg" className="text-cyan-400 w-20 h-20 transition drop-shadow-none hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.8)] flex-shrink-0" />
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Transformation Catalyst</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -299,8 +299,8 @@ const StrategicDifferentiators: React.FC = () => {
           </div>
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
-            <div className="diff-content flex items-start gap-3">
-              <Icon name="brain" size="lg" className="text-cyan-400 w-16 h-16 transition drop-shadow-none hover:drop-shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
+            <div className="diff-content flex items-start gap-4">
+              <Icon name="brain" size="lg" className="text-cyan-400 w-20 h-20 transition drop-shadow-none hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.8)] flex-shrink-0" />
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Ambiguous Environment Expert</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
