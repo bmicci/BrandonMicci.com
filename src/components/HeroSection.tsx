@@ -812,12 +812,22 @@ const HeroSection = () => {
             margin-bottom: 2rem;
           }
           .mobile-photo {
-            max-width: 300px;
-            margin: 0 auto 2rem;
+            max-width: 250px;
+            margin: 0 auto 1.5rem;
           }
           .mobile-photo .photo-frame {
-            width: 280px;
-            height: 350px;
+            width: 240px;
+            height: 300px;
+          }
+          .mobile-photo .photo-glassmorphism {
+            padding: 1rem;
+          }
+          .mobile-photo .photo-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+          }
+          .mobile-photo .photo-role {
+            font-size: 0.85rem;
           }
 
           .mobile-kpi-grid {
