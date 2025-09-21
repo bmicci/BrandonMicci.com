@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
 import { Icon } from '@/components/ui/Icon';
+import HeroImage from './HeroImage';
 
 const HeroSection = () => {
   const [counts, setCounts] = useState({
@@ -495,10 +495,6 @@ const HeroSection = () => {
           transform: translateY(-2px);
         }
 
-        .photo-container {
-          position: relative;
-          animation: slideInRight 1s ease-out;
-        }
         @keyframes slideInRight {
           from {
             opacity: 0;
@@ -508,89 +504,6 @@ const HeroSection = () => {
             opacity: 1;
             transform: translateX(0);
           }
-        }
-
-        .photo-glassmorphism {
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-          border-radius: 20px;
-          padding: 1.5rem;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .photo-frame {
-          width: 320px;
-          height: 500px;
-          position: relative;
-          margin: 0 auto;
-          border-radius: 16px;
-          overflow: hidden;
-        }
-
-        .professional-photo {
-          object-fit: cover;
-          border-radius: 16px;
-        }
-
-        .photo-overlay {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-          padding: 2rem 1.5rem 1.5rem;
-          color: #fff;
-        }
-
-        .photo-title {
-          font-size: 1.5rem;
-          font-weight: 700;
-          margin-bottom: 0.5rem;
-          color: #fff;
-        }
-
-        .photo-role {
-          font-size: 1rem;
-          color: #00d4ff;
-          font-weight: 600;
-        }
-        .photo-glassmorphism {
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-          border-radius: 20px;
-          padding: 1.5rem;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .photo-frame {
-          position: relative;
-          border-radius: 16px;
-          overflow: hidden;
-          width: 320px;
-          height: 500px;
-        }
-        .professional-photo {
-          object-fit: cover;
-          border-radius: 16px;
-        }
-        .photo-overlay {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-          padding: 2rem 1.5rem 1.5rem;
-          color: #fff;
-        }
-        .photo-title {
-          font-size: 1.5rem;
-          font-weight: 700;
-          margin-bottom: 0.5rem;
-          color: #fff;
-        }
-        .photo-role {
-          font-size: 1rem;
-          color: #00d4ff;
-          font-weight: 600;
         }
 
         /* ===== Individual KPI Glass Boxes ===== */
@@ -811,24 +724,6 @@ const HeroSection = () => {
             text-align: center;
             margin-bottom: 2rem;
           }
-          .mobile-photo {
-            max-width: 250px;
-            margin: 0 auto 1.5rem;
-          }
-          .mobile-photo .photo-frame {
-            width: 240px;
-            height: 300px;
-          }
-          .mobile-photo .photo-glassmorphism {
-            padding: 1rem;
-          }
-          .mobile-photo .photo-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.25rem;
-          }
-          .mobile-photo .photo-role {
-            font-size: 0.85rem;
-          }
 
           .mobile-kpi-grid {
             display: grid;
@@ -956,26 +851,7 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="photo-container">
-              <div className="photo-glassmorphism">
-                <div className="photo-frame">
-                  <Image
-                    src="/headshot.jpg"
-                    alt="Brandon Micci - AI & Digital Transformation Executive"
-                    className="professional-photo"
-                    fill
-                    sizes="(max-width: 480px) 240px, (max-width: 768px) 280px, 320px"
-                    priority
-                  />
-                  <div className="photo-overlay">
-                    <div className="photo-title">Brandon Micci</div>
-                    <div className="photo-role">
-                      VP, Head of NextGen AI/ML Solutions
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <HeroImage />
           </div>
 
           {/* Mobile Layout */}
@@ -994,26 +870,7 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <div className="photo-container mobile-photo">
-              <div className="photo-glassmorphism">
-                <div className="photo-frame">
-                  <Image
-                    src="/headshot.jpg"
-                    alt="Brandon Micci - AI & Digital Transformation Executive"
-                    className="professional-photo"
-                    fill
-                    sizes="(max-width: 480px) 240px, (max-width: 768px) 280px, 320px"
-                    priority
-                  />
-                  <div className="photo-overlay">
-                    <div className="photo-title">Brandon Micci</div>
-                    <div className="photo-role">
-                      VP, Head of NextGen AI/ML Solutions
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <HeroImage />
 
             <div className="hero-summary">
               <p className="hero-description mobile-description">
