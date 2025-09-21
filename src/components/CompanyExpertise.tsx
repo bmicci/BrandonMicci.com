@@ -298,9 +298,17 @@ const CompanyExpertise: React.FC = () => {
             font-size: 1rem;
           }
         }
+
+        /* iPhone SE micro-tune for extra safety */
+        @media (max-width: 360px) {
+          .card-shell {
+            width: calc(100vw - 1.5rem);
+            padding: 0.75rem;
+          }
+        }
       `}</style>
 
-      <div className="expertise-section">
+      <div className="expertise-section mx-auto w-full max-w-6xl px-4 md:px-8 overflow-x-clip">
         <div className="expertise-container">
           <div className="expertise-header">
             <h2 className="expertise-title">
@@ -311,29 +319,29 @@ const CompanyExpertise: React.FC = () => {
             </h3>
           </div>
 
-          <div className="companies-grid">
-            <div className="company-card">
+          <div className="companies-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 max-w-full">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-full sm:w-auto">
               <h4 className="company-name">JPMorgan Chase</h4>
             </div>
-            <div className="company-card">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-full sm:w-auto">
               <h4 className="company-name">Capital One</h4>
             </div>
-            <div className="company-card">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-full sm:w-auto">
               <h4 className="company-name">Citi</h4>
             </div>
-            <div className="company-card">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-full sm:w-auto">
               <h4 className="company-name">Southwest Airlines</h4>
             </div>
-            <div className="company-card">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-full sm:w-auto">
               <h4 className="company-name">PwC</h4>
             </div>
-            <div className="company-card">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-full sm:w-auto">
               <h4 className="company-name">Booz Allen Hamilton</h4>
             </div>
-            <div className="company-card">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-full sm:w-auto">
               <h4 className="company-name">EY</h4>
             </div>
-            <div className="company-card">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-full sm:w-auto">
               <h4 className="company-name">Capgemini</h4>
             </div>
           </div>
