@@ -261,7 +261,7 @@ const HeroSection = () => {
             line-height: 1.5;
             font-size: clamp(0.95rem, 4.2vw, 1.05rem);
             color: rgba(255,255,255,0.9);
-            font-weight: 600;
+            font-weight: 700;
           }
           .cta-row { grid-template-columns: 1fr; gap: 0.7rem; margin-top: 1.4rem; }
           .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
