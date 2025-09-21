@@ -711,14 +711,24 @@ const HeroSection = () => {
           /* Mobile intro text alignment */
           .mobile-intro {
             text-align: center;
+            padding: 0 1rem;
+            margin: 0 auto;
+            max-width: 90%;
           }
 
           .mobile-intro h1 {
             text-align: center !important;
+            font-size: 1.8rem !important;
+            line-height: 1.2 !important;
+            margin-bottom: 1rem !important;
+            padding: 0 0.5rem;
           }
 
           .mobile-intro p {
             text-align: center !important;
+            font-size: 1rem !important;
+            line-height: 1.4 !important;
+            padding: 0 0.5rem;
           }
 
           .mobile-title {
@@ -752,6 +762,26 @@ const HeroSection = () => {
           .differentiators-grid {
             grid-template-columns: 1fr;
             gap: 1.5rem;
+          }
+        }
+
+        /* Extra small screens (iPhone SE) */
+        @media (max-width: 375px) {
+          .mobile-intro h1 {
+            font-size: 1.6rem !important;
+            line-height: 1.1 !important;
+            padding: 0 0.25rem;
+          }
+
+          .mobile-intro p {
+            font-size: 0.9rem !important;
+            line-height: 1.3 !important;
+            padding: 0 0.25rem;
+          }
+
+          .mobile-intro {
+            padding: 0 0.5rem;
+            max-width: 95%;
           }
         }
       `}</style>
