@@ -361,7 +361,7 @@ const HeroSection = () => {
             <div className="diff-glass">
               <div className="diff-header">
                 <Icon name="sparkle" size="lg" className="text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 animate-pulse" />
-                <span className="diff-title">What makes me different</span>
+                <span className="diff-title">What Makes Me Different</span>
               </div>
 
               <div className="diff-grid">
