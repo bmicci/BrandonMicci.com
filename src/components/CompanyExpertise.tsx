@@ -28,6 +28,8 @@ const CompanyExpertise: React.FC = () => {
           border-radius: 20px;
           border: 1px solid rgba(255, 255, 255, 0.1);
           transition: all 0.3s ease;
+          width: calc(100vw - 2rem);
+          max-width: calc(100vw - 2rem);
         }
 
         .expertise-section:hover {
@@ -232,6 +234,9 @@ const CompanyExpertise: React.FC = () => {
         @media (max-width: 768px) {
           .expertise-section {
             padding: 40px 1rem;
+            width: calc(100vw - 1rem);
+            max-width: calc(100vw - 1rem);
+            margin: 1rem auto;
           }
 
           .expertise-header {
@@ -255,6 +260,9 @@ const CompanyExpertise: React.FC = () => {
         @media (max-width: 480px) {
           .expertise-section {
             padding: 30px 0.75rem;
+            width: calc(100vw - 0.75rem);
+            max-width: calc(100vw - 0.75rem);
+            margin: 0.75rem auto;
           }
 
           .expertise-title {
@@ -274,6 +282,13 @@ const CompanyExpertise: React.FC = () => {
 
         /* iPhone SE micro-tune for extra safety */
         @media (max-width: 360px) {
+          .expertise-section {
+            width: calc(100vw - 0.5rem);
+            max-width: calc(100vw - 0.5rem);
+            margin: 0.5rem auto;
+            padding: 20px 0.5rem;
+          }
+          
           .card-shell {
             width: calc(100vw - 1.5rem);
             padding: 0.75rem;
