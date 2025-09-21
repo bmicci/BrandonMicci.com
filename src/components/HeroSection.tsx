@@ -772,7 +772,10 @@ const HeroSection = () => {
                 <h1 className="text-3xl md:text-6xl font-extrabold leading-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">
                   Senior{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                    AI & Digital Transformation
+                    AI & Digital
+                  </span>{' '}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    Transformation
                   </span>{' '}
                   Executive
                 </h1>
@@ -871,7 +874,10 @@ const HeroSection = () => {
               <h1 className="text-3xl font-extrabold leading-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">
                 Senior{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  AI & Digital Transformation
+                  AI & Digital
+                </span>{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  Transformation
                 </span>{' '}
                 Executive
               </h1>
