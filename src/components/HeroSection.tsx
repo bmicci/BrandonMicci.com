@@ -218,28 +218,49 @@ const HeroSection = () => {
           overflow: hidden;                     /* belt & suspenders */
         }
 
-        /* Numbers: scale by CARD width, centered, with breathing room */
+        /* Center the numeric core perfectly */
         .stat-number {
-          display: block;
+          /* 3-column inline grid: [prefix] [value] [suffix] */
+          display: inline-grid;
+          grid-auto-flow: column;
+          grid-template-columns: 0.55em auto 0.40em; /* balanced lanes for $ and suffix */
+          align-items: baseline;
+          justify-items: center;
+
+          margin-inline: auto;         /* center the whole block */
+          line-height: 1;
+          white-space: nowrap;
           font-weight: 800;
           color: #00d4ff;
-          line-height: 1;
-          letter-spacing: 0;                    /* avoid crowding the $ glyph */
-          white-space: nowrap;
-          text-align: center;
-          padding-inline: 0.18em;               /* em-based side padding */
-          max-width: 100%;
+          padding-inline: 0.12em;      /* side breathing room inside rounded box */
+
+          /* scale with the card (container units) */
           font-size: clamp(1.6rem, 16cqw, 2.2rem);
         }
 
-        /* 4-up wide desktop: tiny nudge smaller so it never kisses the border */
+        /* Wide desktop: a hair smaller in 4-up so it never kisses edges */
         @media (min-width: 1280px) {
           .stat-number { font-size: clamp(1.55rem, 15cqw, 2.05rem); }
         }
-
-        /* Ultra-wide: allow a bit more size again */
         @media (min-width: 1440px) {
           .stat-number { font-size: clamp(1.7rem, 16cqw, 2.35rem); }
+        }
+
+        /* Numeric core: fixed-digit width + no jiggle while counting */
+        .stat-number .value {
+          font-feature-settings: "tnum" 1, "lnum" 1;  /* tabular lining */
+          min-width: 3ch;                              /* space for 3 digits (e.g., 400) */
+          text-align: center;
+        }
+
+        /* Subtle optical nudges */
+        .stat-number .prefix { justify-self: end;  margin-right: 0.06em; }
+        .stat-number .suffix { justify-self: start; margin-left: 0.04em; }
+
+        /* Optional: the currency card can take a tiny extra nudge if your font's $ is heavy */
+        .stat-number.currency { transform: translateX(0.04em); }
+        @media (min-width: 1280px) {
+          .stat-number.currency { transform: translateX(0.06em); }
         }
 
         /* Labels: reserve EXACTLY two line-heights so all cards align */
@@ -266,29 +287,6 @@ const HeroSection = () => {
           box-shadow: 0 10px 28px -12px rgba(0,212,255,0.35);
         }
 
-        /* Better centering for currency values */
-        .stat-number {
-          display: inline-block;          /* allows transform/margins */
-          margin-inline: auto;            /* centers the inline-block itself */
-          font-feature-settings: "tnum" 1, "lnum" 1; /* tabular lining nums for steadier width */
-        }
-
-        /* Optical centering for the "$" glyph */
-        .stat-number.currency {
-          transform: translateX(0.06em);
-        }
-
-        /* At wide desktop, nudge a touch more (cards are slightly tighter) */
-        @media (min-width: 1280px) {
-          .stat-number.currency {
-            transform: translateX(0.08em);
-          }
-        }
-
-        /* Optional: add a hair of space after the $ only */
-        .stat-number.currency::first-letter {
-          padding-right: 0.06em;
-        }
 
         /* Differentiators block */
         .diff-wrap { 
@@ -691,10 +689,35 @@ const HeroSection = () => {
               </div>
 
               <div className="kpi-grid">
-                <div className="kpi-box"><span className="stat-number currency">${counts.value}M+</span><span className="stat-label">Value Delivered</span></div>
-                <div className="kpi-box"><span className="stat-number">{counts.users}K+</span><span className="stat-label">AI Users</span></div>
-                <div className="kpi-box"><span className="stat-number">{counts.roi}%</span><span className="stat-label">Typical ROI</span></div>
-                <div className="kpi-box"><span className="stat-number">{counts.years}+</span><span className="stat-label">Years Leading</span></div>
+                <div className="kpi-box">
+                  <span className="stat-number currency">
+                    <span className="prefix">$</span>
+                    <span className="value">{counts.value}</span>
+                    <span className="suffix">M+</span>
+                  </span>
+                  <span className="stat-label">Value Delivered</span>
+                </div>
+                <div className="kpi-box">
+                  <span className="stat-number">
+                    <span className="value">{counts.users}</span>
+                    <span className="suffix">K+</span>
+                  </span>
+                  <span className="stat-label">AI Users</span>
+                </div>
+                <div className="kpi-box">
+                  <span className="stat-number">
+                    <span className="value">{counts.roi}</span>
+                    <span className="suffix">%</span>
+                  </span>
+                  <span className="stat-label">Typical ROI</span>
+                </div>
+                <div className="kpi-box">
+                  <span className="stat-number">
+                    <span className="value">{counts.years}</span>
+                    <span className="suffix">+</span>
+                  </span>
+                  <span className="stat-label">Years Leading</span>
+                </div>
               </div>
             </div>
 
@@ -807,10 +830,35 @@ const HeroSection = () => {
 
           {/* Mobile KPI Grid (mobile-only) */}
           <div className="kpi-grid kpi-mobile-only" style={{ marginTop: '1.25rem' }}>
-            <div className="kpi-box"><span className="stat-number currency">${counts.value}M+</span><span className="stat-label">Value Delivered</span></div>
-            <div className="kpi-box"><span className="stat-number">{counts.users}K+</span><span className="stat-label">AI Users</span></div>
-            <div className="kpi-box"><span className="stat-number">{counts.roi}%</span><span className="stat-label">Typical ROI</span></div>
-            <div className="kpi-box"><span className="stat-number">{counts.years}+</span><span className="stat-label">Years Leading</span></div>
+            <div className="kpi-box">
+              <span className="stat-number currency">
+                <span className="prefix">$</span>
+                <span className="value">{counts.value}</span>
+                <span className="suffix">M+</span>
+              </span>
+              <span className="stat-label">Value Delivered</span>
+            </div>
+            <div className="kpi-box">
+              <span className="stat-number">
+                <span className="value">{counts.users}</span>
+                <span className="suffix">K+</span>
+              </span>
+              <span className="stat-label">AI Users</span>
+            </div>
+            <div className="kpi-box">
+              <span className="stat-number">
+                <span className="value">{counts.roi}</span>
+                <span className="suffix">%</span>
+              </span>
+              <span className="stat-label">Typical ROI</span>
+            </div>
+            <div className="kpi-box">
+              <span className="stat-number">
+                <span className="value">{counts.years}</span>
+                <span className="suffix">+</span>
+              </span>
+              <span className="stat-label">Years Leading</span>
+            </div>
           </div>
         </div>
       </div>
