@@ -27,7 +27,9 @@ export default function Home() {
       <UniversalBackground />
 
       {/* Hero Section */}
-      <HeroSection />
+      <section id="home" className="min-h-screen relative">
+        <HeroSection />
+      </section>
 
       {/* Strategic Vision Section */}
       <section id="strategic-vision" className="min-h-screen relative">
