@@ -189,12 +189,14 @@ const HeroSection = () => {
           align-items: center;
           justify-content: center;         /* centers number + label */
           min-height: clamp(120px, 12.5vw, 150px);  /* forces equal card heights */
-          padding: clamp(1rem, 1.6vw, 1.25rem);
+          padding: clamp(0.75rem, 1.2vw, 1rem);
           border-radius: 16px;
           background: rgba(255,255,255,0.05);
           backdrop-filter: blur(12px);
           border: 1px solid rgba(0,212,255,0.22);
           transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+          box-sizing: border-box;
+          overflow: hidden;                /* prevent text overflow */
         }
 
         /* Replace hover with glow to avoid vertical shift */
@@ -217,10 +219,15 @@ const HeroSection = () => {
         }
         .stat-label {
           display: block;
-          font-size: clamp(0.78rem, 1.6vw, 0.9rem);
+          font-size: clamp(0.7rem, 1.4vw, 0.85rem);
           color: rgba(255,255,255,0.72);
           text-transform: uppercase;
           letter-spacing: 0.06em;
+          line-height: 1.2;
+          text-align: center;
+          word-wrap: break-word;
+          hyphens: auto;
+          max-width: 100%;
         }
 
         /* Mid desktop (when the left column isn't wide enough for 4 comfy cards) → go 3-up */
@@ -478,7 +485,7 @@ const HeroSection = () => {
 
           /* KPI row: stay snug in the left column */
           .kpi-grid {
-            grid-template-columns: repeat(4, minmax(140px, 1fr)) !important;
+            grid-template-columns: repeat(4, minmax(160px, 1fr)) !important;
             width: 100% !important;
             max-width: 100% !important;                 /* prevent overflow */
             align-self: stretch !important;             /* uses the left column width exactly */
