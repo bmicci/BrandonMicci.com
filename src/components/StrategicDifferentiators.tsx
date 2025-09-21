@@ -223,8 +223,10 @@ const StrategicDifferentiators: React.FC = () => {
       <div className="differentiators-container mx-auto max-w-6xl px-4 md:px-8 overflow-x-clip">
         <div className="differentiators-grid">
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] md:w-auto md:max-w-none">
-            <div className="diff-content flex items-start gap-3">
-              <IconCircle><Icon name="linechart" /></IconCircle>
+            <div className="diff-content flex items-start gap-4">
+              <div className="shrink-0">
+                <IconCircle><Icon name="linechart" size="lg" /></IconCircle>
+              </div>
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Scale Expertise</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -238,8 +240,10 @@ const StrategicDifferentiators: React.FC = () => {
           </div>
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] md:w-auto md:max-w-none">
-            <div className="diff-content flex items-start gap-3">
-              <IconCircle><Icon name="barchart" /></IconCircle>
+            <div className="diff-content flex items-start gap-4">
+              <div className="shrink-0">
+                <IconCircle><Icon name="barchart" size="lg" /></IconCircle>
+              </div>
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Financial Impact</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -252,8 +256,10 @@ const StrategicDifferentiators: React.FC = () => {
           </div>
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] md:w-auto md:max-w-none">
-            <div className="diff-content flex items-start gap-3">
-              <IconCircle><Icon name="globe" /></IconCircle>
+            <div className="diff-content flex items-start gap-4">
+              <div className="shrink-0">
+                <IconCircle><Icon name="globe" size="lg" /></IconCircle>
+              </div>
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Cross-Industry Innovation</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -266,8 +272,10 @@ const StrategicDifferentiators: React.FC = () => {
           </div>
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] md:w-auto md:max-w-none">
-            <div className="diff-content flex items-start gap-3">
-              <IconCircle><Icon name="target" /></IconCircle>
+            <div className="diff-content flex items-start gap-4">
+              <div className="shrink-0">
+                <IconCircle><Icon name="target" size="lg" /></IconCircle>
+              </div>
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Technical + Strategic Leadership</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -280,8 +288,10 @@ const StrategicDifferentiators: React.FC = () => {
           </div>
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] md:w-auto md:max-w-none">
-            <div className="diff-content flex items-start gap-3">
-              <IconCircle><Icon name="sparkle" /></IconCircle>
+            <div className="diff-content flex items-start gap-4">
+              <div className="shrink-0">
+                <IconCircle><Icon name="sparkle" size="lg" /></IconCircle>
+              </div>
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Transformation Catalyst</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -294,8 +304,10 @@ const StrategicDifferentiators: React.FC = () => {
           </div>
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] md:w-auto md:max-w-none">
-            <div className="diff-content flex items-start gap-3">
-              <IconCircle><Icon name="brain" /></IconCircle>
+            <div className="diff-content flex items-start gap-4">
+              <div className="shrink-0">
+                <IconCircle><Icon name="brain" size="lg" /></IconCircle>
+              </div>
               <div>
                 <h4 className="diff-title text-base md:text-lg font-semibold text-white">Ambiguous Environment Expert</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
