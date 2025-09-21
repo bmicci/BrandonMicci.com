@@ -173,13 +173,15 @@ const HeroSection = () => {
           }
         }
 
-        /* === Equal-size, adaptive KPI grid === */
+        /* === Equal-size, adaptive KPI grid (no overflow) === */
         .kpi-grid {
           display: grid;
-          /* Desktop default: try for 4-up, but let each be at least 200px wide */
-          grid-template-columns: repeat(4, minmax(200px, 1fr));
+          /* auto-fit = 4-up when there's room, 3-up on mid desktop, 2-up on mobile */
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
           gap: clamp(0.8rem, 1.6vw, 1rem);
-          align-items: stretch;            /* cards stretch to same row height */
+          width: 100%;                 /* keep inside left column */
+          align-items: stretch;        /* row-equal heights */
+          box-sizing: border-box;
           margin-top: 0.25rem;
         }
 
@@ -187,19 +189,34 @@ const HeroSection = () => {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;         /* centers number + label */
-          min-height: clamp(120px, 12.5vw, 150px);  /* forces equal card heights */
-          padding: clamp(0.75rem, 1.2vw, 1rem);
+          justify-content: center;     /* centers number + label */
+          min-height: clamp(120px, 12.5vw, 150px);  /* equal heights */
+          padding: clamp(1rem, 1.6vw, 1.25rem);
           border-radius: 16px;
           background: rgba(255,255,255,0.05);
           backdrop-filter: blur(12px);
           border: 1px solid rgba(0,212,255,0.22);
           transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
           box-sizing: border-box;
-          overflow: hidden;                /* prevent text overflow */
         }
 
-        /* Replace hover with glow to avoid vertical shift */
+        .stat-number {
+          display: block;
+          font-size: clamp(1.6rem, 3.8vw, 2.35rem);
+          font-weight: 800;
+          color: #00d4ff;
+          line-height: 1; margin-bottom: 0.35rem;
+          letter-spacing: -0.01em;
+        }
+        .stat-label {
+          display: block;
+          font-size: clamp(0.78rem, 1.6vw, 0.9rem);
+          color: rgba(255,255,255,0.72);
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+        }
+
+        /* Optional: keep row baseline stable on hover (no lift) */
         .kpi-box:hover {
           transform: none; /* was: translateY(-3px) */
           background: rgba(255,255,255,0.075);
@@ -207,35 +224,7 @@ const HeroSection = () => {
           box-shadow: 0 10px 28px -12px rgba(0,212,255,0.35);
         }
 
-        /* Micro-typography for uniform vertical rhythm */
-        .stat-number {
-          display: block;
-          font-size: clamp(1.6rem, 3.8vw, 2.35rem);
-          font-weight: 800;
-          color: #00d4ff;
-          line-height: 1;                  /* keeps big numbers compact */
-          margin-bottom: 0.35rem;
-          letter-spacing: -0.01em;
-        }
-        .stat-label {
-          display: block;
-          font-size: clamp(0.7rem, 1.4vw, 0.85rem);
-          color: rgba(255,255,255,0.72);
-          text-transform: uppercase;
-          letter-spacing: 0.06em;
-          line-height: 1.2;
-          text-align: center;
-          word-wrap: break-word;
-          hyphens: auto;
-          max-width: 100%;
-        }
-
-        /* Mid desktop (when the left column isn't wide enough for 4 comfy cards) → go 3-up */
-        @media (min-width: 1024px) and (max-width: 1279px) {
-          .kpi-grid { grid-template-columns: repeat(3, minmax(200px, 1fr)); }
-        }
-
-        /* Mobile already had 2-up; keep it explicit and equal */
+        /* Mobile keeps 2-up (auto-fit already does this, but we can be explicit) */
         @media (max-width: 768px) {
           .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
@@ -467,6 +456,7 @@ const HeroSection = () => {
             align-items: flex-start !important;
             text-align: left !important;
             overflow: hidden !important;                /* prevent content from spilling out */
+            position: relative; z-index: 1;             /* ensure left column stays above image */
           }
 
           /* Reorder: KPI grid ABOVE the CTAs (H1 → dek → KPI → CTAs) */
@@ -483,13 +473,11 @@ const HeroSection = () => {
           }
           .cta-row .btn { white-space: nowrap; }
 
-          /* KPI row: stay snug in the left column */
+          /* KPI row: stay snug in the left column (auto-fit handles responsive columns) */
           .kpi-grid {
-            grid-template-columns: repeat(4, minmax(160px, 1fr)) !important;
             width: 100% !important;
             max-width: 100% !important;                 /* prevent overflow */
             align-self: stretch !important;             /* uses the left column width exactly */
-            box-sizing: border-box !important;         /* include padding in width calculation */
           }
 
           /* Image column: right-locked and vertically centered with whitespace above/below */
