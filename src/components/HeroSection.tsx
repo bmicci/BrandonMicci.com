@@ -824,7 +824,7 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              <div className="hero-cta-section" style={{ marginBottom: '2rem' }}>
+              <div className="hero-cta-section" style={{ marginTop: '1.5rem', marginBottom: '2rem' }}>
                 <div className="cta-buttons">
                   <a
                     href="mailto:contact@brandonmicci.com"
@@ -894,7 +894,7 @@ const HeroSection = () => {
             <HeroImage />
 
 
-            <div className="hero-cta-section" style={{ marginTop: '2rem', marginBottom: '2rem' }}>
+            <div className="hero-cta-section" style={{ marginTop: '2.5rem', marginBottom: '2rem' }}>
               <div className="cta-buttons">
                 <a
                   href="mailto:contact@brandonmicci.com"
