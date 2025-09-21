@@ -767,7 +767,8 @@ const HeroSection = () => {
           {/* Desktop Layout */}
           <div className="hero-top">
             <div className="hero-content">
-              <div className="hero-intro">
+              {/* HERO TEXT STACK — safe, isolated from image */}
+              <div className="min-w-0">
                 <h1 className="hero-title">
                   Senior{' '}
                   <span className="gradient-text">
@@ -779,9 +780,7 @@ const HeroSection = () => {
                   Driving Fortune 500 digital transformation through AI, Data
                   Strategy, and client-centric products
                 </p>
-              </div>
 
-              <div className="hero-summary">
                 <p className="hero-description">
                   With{' '}
                   <span className="gradient-highlight">
