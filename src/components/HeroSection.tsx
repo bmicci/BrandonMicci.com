@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
+import { Icon } from '@/components/ui/Icon';
+import { IconCircle } from '@/components/ui/IconCircle';
 
 const HeroSection = () => {
   const [counts, setCounts] = useState({
@@ -384,25 +386,11 @@ const HeroSection = () => {
           }
         }
 
-        /* Respect reduced motion preferences */
+        /* Global reduce-motion guard */
         @media (prefers-reduced-motion: reduce) {
-          .floating-particles {
-            animation: none !important;
-          }
-          .particle {
-            animation: none !important;
-          }
-          .kpi-stat {
-            animation: none !important;
-          }
-          .differentiator-item {
-            animation: none !important;
-          }
-          .cta-button {
-            animation: none !important;
-          }
-          .gradient-text {
-            animation: none !important;
+          * { 
+            animation: none !important; 
+            transition: none !important; 
           }
         }
 
@@ -789,21 +777,16 @@ const HeroSection = () => {
 
         {/* Background elements removed - using universal background */}
 
-        <div className="hero-container">
+        <div className="hero-container mx-auto w-full max-w-6xl px-4 md:px-8 overflow-x-clip">
           {/* Desktop Layout */}
           <div className="hero-top">
             <div className="hero-content">
               <div className="hero-intro">
-                <h1 className="hero-title">
-                  Senior{' '}
-                  <span className="gradient-text">
-                    AI & Digital Transformation
-                  </span>{' '}
-                  Executive
+                <h1 className="text-3xl md:text-6xl font-extrabold leading-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">
+                  Brandon Micci
                 </h1>
-                <p className="hero-subtitle">
-                  Driving Fortune 500 digital transformation through AI, Data
-                  Strategy, and client-centric products
+                <p className="mt-1 text-lg md:text-2xl font-semibold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  VP, Head of NextGen AI/ML Solutions
                 </p>
               </div>
 
@@ -852,26 +835,18 @@ const HeroSection = () => {
               </div>
 
               <div className="hero-cta-section">
-                <div className="cta-buttons">
+                <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
                   <a
-                    href="mailto:contact@brandonmicci.com"
-                    className="cta-button primary"
+                    href="#executive-experience"
+                    className="group inline-flex items-center gap-2 rounded-md border border-cyan-500/40 bg-cyan-500/20 px-4 py-2 font-semibold text-cyan-300 transition-all hover:bg-cyan-500/30 motion-safe:hover:scale-[1.02]"
                   >
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                    </svg>
-                    Let&apos;s Connect
+                    View Executive Experience
                   </a>
                   <a
-                    href="/resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cta-button outline"
+                    href="#connectwithme"
+                    className="group inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/10 px-4 py-2 font-semibold text-white/90 transition-all hover:bg-white/15 motion-safe:hover:scale-[1.02]"
                   >
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-                    </svg>
-                    View Portfolio
+                    Get in Touch
                   </a>
                 </div>
               </div>
@@ -902,16 +877,11 @@ const HeroSection = () => {
           {/* Mobile Layout */}
           <div className="mobile-layout">
             <div className="mobile-intro">
-              <h1 className="mobile-title">
-                Senior{' '}
-                <span className="gradient-text">
-                  AI & Digital Transformation
-                </span>{' '}
-                Executive
+              <h1 className="text-3xl md:text-6xl font-extrabold leading-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">
+                Brandon Micci
               </h1>
-              <p className="mobile-subtitle">
-                Driving Fortune 500 digital transformation through AI, Data
-                Strategy, and client-centric products
+              <p className="mt-1 text-lg md:text-2xl font-semibold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                VP, Head of NextGen AI/ML Solutions
               </p>
             </div>
 
@@ -961,26 +931,18 @@ const HeroSection = () => {
             </div>
 
             <div className="hero-cta-section" style={{ marginTop: '2rem' }}>
-              <div className="cta-buttons">
+              <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
                 <a
-                  href="mailto:contact@brandonmicci.com"
-                  className="cta-button primary"
+                  href="#executive-experience"
+                  className="group inline-flex items-center gap-2 rounded-md border border-cyan-500/40 bg-cyan-500/20 px-4 py-2 font-semibold text-cyan-300 transition-all hover:bg-cyan-500/30 motion-safe:hover:scale-[1.02]"
                 >
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                  </svg>
-                  Let&apos;s Connect
+                  View Executive Experience
                 </a>
                 <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-button outline"
+                  href="#connectwithme"
+                  className="group inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/10 px-4 py-2 font-semibold text-white/90 transition-all hover:bg-white/15 motion-safe:hover:scale-[1.02]"
                 >
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-                  </svg>
-                  View Portfolio
+                  Get in Touch
                 </a>
               </div>
             </div>
@@ -989,16 +951,16 @@ const HeroSection = () => {
           {/* What Makes Me Different */}
           <div className="differentiators-section">
             <div className="differentiators-glass">
-              <div className="differentiators-header">
-                <span className="rocket-icon">🚀</span>
-                <h2 className="header-text">What Makes Me Different</h2>
+              <div className="mx-auto flex items-center justify-center gap-2 text-center">
+                <span aria-hidden className="text-xl md:text-2xl">🚀</span>
+                <span className="text-sm md:text-base tracking-wide text-slate-300">
+                  What makes me different
+                </span>
               </div>
               <div className="differentiators-grid">
-                <div className="differentiator-item">
+                <div className="differentiator-item w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none">
                   <h3 className="item-title">
-                    <svg className="item-icon" viewBox="0 0 24 24">
-                      <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" />
-                    </svg>
+                    <IconCircle><Icon name="linechart" /></IconCircle>
                     Scale Expertise
                   </h3>
                   <p className="item-text">
@@ -1006,11 +968,9 @@ const HeroSection = () => {
                     and built global teams of 50+ professionals.
                   </p>
                 </div>
-                <div className="differentiator-item">
+                <div className="differentiator-item w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none">
                   <h3 className="item-title">
-                    <svg className="item-icon" viewBox="0 0 24 24">
-                      <path d="M7 15h2c0 1.08 1.37 2 3 2s3-.92 3-2c0-1.1-1.04-1.5-3.24-2.03C9.64 12.44 7 11.78 7 9c0-1.79 1.47-3.31 3.5-3.82V3h3v2.18C15.53 5.69 17 7.21 17 9h-2c0-1.08-1.37-2-3-2s-3 .92-3 2c0 1.1 1.04 1.5 3.24 2.03C14.36 11.56 17 12.22 17 15c0 1.79-1.47 3.31-3.5 3.82V21h-3v-2.18C8.47 18.31 7 16.79 7 15z" />
-                    </svg>
+                    <IconCircle><Icon name="barchart" /></IconCircle>
                     Financial Impact
                   </h3>
                   <p className="item-text">
@@ -1018,11 +978,9 @@ const HeroSection = () => {
                     new revenue streams.
                   </p>
                 </div>
-                <div className="differentiator-item">
+                <div className="differentiator-item w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none">
                   <h3 className="item-title">
-                    <svg className="item-icon" viewBox="0 0 24 24">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
+                    <IconCircle><Icon name="globe" /></IconCircle>
                     Cross-Industry Innovation
                   </h3>
                   <p className="item-text">
@@ -1030,11 +988,9 @@ const HeroSection = () => {
                     Airlines, Energy, and Life Sciences.
                   </p>
                 </div>
-                <div className="differentiator-item">
+                <div className="differentiator-item w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none">
                   <h3 className="item-title">
-                    <svg className="item-icon" viewBox="0 0 24 24">
-                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                    </svg>
+                    <IconCircle><Icon name="sparkle" /></IconCircle>
                     Transformation Catalyst
                   </h3>
                   <p className="item-text">
