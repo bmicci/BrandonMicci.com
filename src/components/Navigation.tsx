@@ -102,6 +102,8 @@ const Navigation = () => {
           color: white;
           transition: transform 0.3s ease;
           cursor: pointer;
+          position: relative;
+          z-index: 10;
         }
 
         .logo:hover {
@@ -111,6 +113,7 @@ const Navigation = () => {
         .logo-bm {
           font-size: 2.2rem;
           font-weight: 800;
+          color: #00d4ff; /* Fallback color for browsers that don't support gradient text */
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -119,6 +122,8 @@ const Navigation = () => {
           transition: all 0.3s ease;
           letter-spacing: -0.5px;
           text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+          display: block;
+          line-height: 1;
         }
 
         .logo:hover .logo-bm {
