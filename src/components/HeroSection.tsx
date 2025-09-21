@@ -186,13 +186,22 @@ const HeroSection = () => {
         }
 
         /* Differentiators block */
-        .diff-wrap { margin: 3rem 0 1.5rem; }
+        .diff-wrap { 
+          margin: 3rem 0 1.5rem; 
+          display: flex; 
+          flex-direction: column; 
+          align-items: center; 
+          width: 100%; 
+        }
         .diff-glass {
           background: rgba(255,255,255,0.05);
           border: 1px solid rgba(0,212,255,0.22);
           border-radius: 20px;
           padding: clamp(1.25rem, 3vw, 2.25rem);
           backdrop-filter: blur(10px);
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
         }
         .diff-header {
           display: flex; 
@@ -268,6 +277,8 @@ const HeroSection = () => {
           .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
           .stat-number { font-size: clamp(1.4rem, 8vw, 2rem); }
           .diff-grid { grid-template-columns: 1fr; }
+          .diff-wrap { padding: 0 1rem; }
+          .diff-glass { margin: 0 auto; }
         }
 
         /* Very small phones (SE) */
