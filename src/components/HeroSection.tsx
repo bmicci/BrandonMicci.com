@@ -173,28 +173,45 @@ const HeroSection = () => {
           }
         }
 
-        /* KPI boxes */
+        /* === Equal-size, adaptive KPI grid === */
         .kpi-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 0.9rem;
+          /* Desktop default: try for 4-up, but let each be at least 200px wide */
+          grid-template-columns: repeat(4, minmax(200px, 1fr));
+          gap: clamp(0.8rem, 1.6vw, 1rem);
+          align-items: stretch;            /* cards stretch to same row height */
           margin-top: 0.25rem;
         }
+
         .kpi-box {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;         /* centers number + label */
+          min-height: clamp(120px, 12.5vw, 150px);  /* forces equal card heights */
+          padding: clamp(1rem, 1.6vw, 1.25rem);
+          border-radius: 16px;
           background: rgba(255,255,255,0.05);
           backdrop-filter: blur(12px);
           border: 1px solid rgba(0,212,255,0.22);
-          border-radius: 16px;
-          padding: 1.25rem 0.9rem;
-          text-align: center;
           transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
         }
-        .kpi-box:hover { transform: translateY(-3px); background: rgba(255,255,255,0.075); border-color: rgba(0,212,255,0.38); }
+
+        /* Replace hover with glow to avoid vertical shift */
+        .kpi-box:hover {
+          transform: none; /* was: translateY(-3px) */
+          background: rgba(255,255,255,0.075);
+          border-color: rgba(0,212,255,0.38);
+          box-shadow: 0 10px 28px -12px rgba(0,212,255,0.35);
+        }
+
+        /* Micro-typography for uniform vertical rhythm */
         .stat-number {
           display: block;
           font-size: clamp(1.6rem, 3.8vw, 2.35rem);
           font-weight: 800;
           color: #00d4ff;
+          line-height: 1;                  /* keeps big numbers compact */
           margin-bottom: 0.35rem;
           letter-spacing: -0.01em;
         }
@@ -204,6 +221,16 @@ const HeroSection = () => {
           color: rgba(255,255,255,0.72);
           text-transform: uppercase;
           letter-spacing: 0.06em;
+        }
+
+        /* Mid desktop (when the left column isn't wide enough for 4 comfy cards) → go 3-up */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .kpi-grid { grid-template-columns: repeat(3, minmax(200px, 1fr)); }
+        }
+
+        /* Mobile already had 2-up; keep it explicit and equal */
+        @media (max-width: 768px) {
+          .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
 
         /* Differentiators block */
@@ -313,7 +340,6 @@ const HeroSection = () => {
           }
 
           .cta-row { grid-template-columns: 1fr; gap: 0.7rem; margin-top: 1.4rem; }
-          .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
           .stat-number { font-size: clamp(1.4rem, 8vw, 2rem); }
           .diff-grid { grid-template-columns: 1fr; justify-items: center; }
           .diff-wrap { padding: 0 1rem; }
@@ -451,7 +477,7 @@ const HeroSection = () => {
 
           /* KPI row: stay snug in the left column */
           .kpi-grid {
-            grid-template-columns: repeat(4, 1fr) !important;
+            grid-template-columns: repeat(4, minmax(200px, 1fr)) !important;
             width: 100% !important;
             align-self: stretch !important;             /* uses the left column width exactly */
           }
@@ -600,7 +626,7 @@ const HeroSection = () => {
                 </a>
                 {/* Wide-desktop only: appears at ≥1280px via .show-xl */}
                 <a href="/executive-brief.pdf" target="_blank" rel="noopener noreferrer" className="btn outline show-xl">
-                  <Icon name="file-text" size="md" className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]" />
+                  <Icon name="briefcase" size="md" className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]" />
                   Executive Brief
                 </a>
               </div>
