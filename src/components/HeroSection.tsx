@@ -708,6 +708,19 @@ const HeroSection = () => {
             display: block;
           }
 
+          /* Mobile intro text alignment */
+          .mobile-intro {
+            text-align: center;
+          }
+
+          .mobile-intro h1 {
+            text-align: center !important;
+          }
+
+          .mobile-intro p {
+            text-align: center !important;
+          }
+
           .mobile-title {
             font-size: 2rem;
             font-weight: 800;
