@@ -213,6 +213,7 @@ const HeroSection = () => {
           text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
           letter-spacing: -0.02em;
           position: relative;
+          text-align: center;
         }
         .diff-grid {
           display: grid;
