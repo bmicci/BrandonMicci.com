@@ -509,6 +509,51 @@ const HeroSection = () => {
             transform: translateX(0);
           }
         }
+
+        .photo-glassmorphism {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border-radius: 20px;
+          padding: 1.5rem;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .photo-frame {
+          width: 320px;
+          height: 500px;
+          position: relative;
+          margin: 0 auto;
+          border-radius: 16px;
+          overflow: hidden;
+        }
+
+        .professional-photo {
+          object-fit: cover;
+          border-radius: 16px;
+        }
+
+        .photo-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+          padding: 2rem 1.5rem 1.5rem;
+          color: #fff;
+        }
+
+        .photo-title {
+          font-size: 1.5rem;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+          color: #fff;
+        }
+
+        .photo-role {
+          font-size: 1rem;
+          color: #00d4ff;
+          font-weight: 600;
+        }
         .photo-glassmorphism {
           background: rgba(255, 255, 255, 0.1);
           backdrop-filter: blur(10px);
