@@ -479,6 +479,18 @@ const HeroSection = () => {
             gap: clamp(3rem, 4vw, 5rem) !important;
           }
         }
+
+        /* Desktop: cap photo width a bit so it stays crisp on retina */
+        @media (min-width: 1024px) {
+          .hero-top {
+            grid-template-columns: minmax(560px, 1fr) min(460px, 32vw) !important;
+          }
+          .hero-top > *:last-child {
+            width: min(460px, 32vw) !important;
+            justify-self: end !important;
+            align-self: center !important;
+          }
+        }
       `}</style>
 
       <div className="hero-section">

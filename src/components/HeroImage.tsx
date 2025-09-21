@@ -69,8 +69,9 @@ const HeroImage = () => {
             alt="Brandon Micci — AI & Digital Transformation Executive"
             className="hi-img"
             fill
-            sizes="(max-width: 360px) 300px, (max-width: 768px) 320px, 360px"
+            sizes="(min-width:1280px) 460px, (min-width:1024px) 32vw, 92vw"
             priority
+            quality={92}
           />
         </div>
 
