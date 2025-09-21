@@ -769,38 +769,38 @@ const HeroSection = () => {
             <div className="hero-content">
               {/* HERO TEXT STACK — safe, isolated from image */}
               <div className="min-w-0">
-                <h1 className="hero-title">
+                <h1 className="text-3xl md:text-6xl font-extrabold leading-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">
                   Senior{' '}
-                  <span className="gradient-text">
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                     AI & Digital Transformation
                   </span>{' '}
                   Executive
                 </h1>
-                <p className="hero-subtitle">
-                  Driving Fortune 500 digital transformation through AI, Data
-                  Strategy, and client-centric products
+                <p className="mt-1 text-lg md:text-2xl font-semibold text-white/95">
+                  Enterprise AI and digital transformation leader delivering $400M+ in measurable impact, scaling LLMs to 27K users, and pioneering IoT pilots with proven ROI.
                 </p>
 
-                <p className="hero-description">
+                <p className="mt-3 text-base md:text-xl font-medium leading-relaxed text-slate-100">
                   With{' '}
-                  <span className="gradient-highlight">
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     16+ years of experience
                   </span>{' '}
-                  <span className="gradient-highlight">
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     architecting enterprise-wide AI solutions
                   </span>
-                  , I&apos;ve transformed complex technological challenges into
-                  over{' '}
-                  <span className="gradient-highlight">
+                  , I&apos;ve transformed complex technological challenges into more than{' '}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     $400M in measurable business outcomes
                   </span>
-                  . From leading one of our organization&apos;s largest LLM
-                  deployments in the payments space to building{' '}
-                  <span className="gradient-highlight">
-                    evangelical data communities of 30K+ users
+                  . I led one of the industry&apos;s largest LLM deployments in payments, scaling to{' '}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                    27,000 users across operations
                   </span>
-                  , I bridge the gap between cutting-edge innovation and
-                  practical enterprise implementation.
+                  , and I piloted an IoT program at a major airline that achieved{' '}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                    250% ROI within six months
+                  </span>
+                  . My focus is on blending innovation with proven, enterprise-grade execution.
                 </p>
               </div>
 
@@ -856,42 +856,42 @@ const HeroSection = () => {
           {/* Mobile Layout */}
           <div className="mobile-layout">
             <div className="mobile-intro">
-              <h1 className="mobile-title">
+              <h1 className="text-3xl font-extrabold leading-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">
                 Senior{' '}
-                <span className="gradient-text">
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                   AI & Digital Transformation
                 </span>{' '}
                 Executive
               </h1>
-              <p className="mobile-subtitle">
-                Driving Fortune 500 digital transformation through AI, Data
-                Strategy, and client-centric products
+              <p className="mt-1 text-lg font-semibold text-white/95">
+                Enterprise AI and digital transformation leader delivering $400M+ in measurable impact, scaling LLMs to 27K users, and pioneering IoT pilots with proven ROI.
               </p>
             </div>
 
             <HeroImage />
 
             <div className="hero-summary">
-              <p className="hero-description mobile-description">
+              <p className="mt-3 text-base font-medium leading-relaxed text-slate-100">
                 With{' '}
-                <span className="gradient-highlight">
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   16+ years of experience
                 </span>{' '}
-                <span className="gradient-highlight">
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   architecting enterprise-wide AI solutions
                 </span>
-                , I&apos;ve transformed complex technological challenges into
-                over{' '}
-                <span className="gradient-highlight">
+                , I&apos;ve transformed complex technological challenges into more than{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   $400M in measurable business outcomes
                 </span>
-                . From leading one of our organization&apos;s largest LLM
-                deployments in the payments space to building{' '}
-                <span className="gradient-highlight">
-                  evangelical data communities of 30K+ users
+                . I led one of the industry&apos;s largest LLM deployments in payments, scaling to{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                  27,000 users across operations
                 </span>
-                , I bridge the gap between cutting-edge innovation and practical
-                enterprise implementation.
+                , and I piloted an IoT program at a major airline that achieved{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                  250% ROI within six months
+                </span>
+                . My focus is on blending innovation with proven, enterprise-grade execution.
               </p>
             </div>
 
