@@ -863,7 +863,8 @@ const HeroSection = () => {
                 </span>{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                   Transformation
-                </span>{' '}
+                </span>
+                <br />
                 Executive
               </h1>
               <p className="mt-3 text-lg font-normal leading-relaxed text-slate-100 text-center">
