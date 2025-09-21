@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
 import { Icon } from '@/components/ui/Icon';
-import { IconCircle } from '@/components/ui/IconCircle';
 
 const HeroSection = () => {
   const [counts, setCounts] = useState({
@@ -1010,44 +1009,60 @@ const HeroSection = () => {
               </div>
               <div className="differentiators-grid">
                 <div className="differentiator-item">
-                  <h3 className="item-title">
-                    <IconCircle><Icon name="linechart" /></IconCircle>
-                    Scale Expertise
-                  </h3>
-                  <p className="item-text">
-                    Led the largest LLM deployment in payments (27,000+ users)
-                    and built global teams of 50+ professionals.
-                  </p>
+                  <div className="flex items-start gap-3">
+                    <Icon name="linechart" size="lg" className="text-cyan-400" />
+                    <div>
+                      <div className="text-base md:text-lg font-semibold text-white">
+                        Scale Expertise
+                      </div>
+                      <p className="mt-1 text-sm text-slate-300">
+                        Led the largest LLM deployment in payments (27,000+ users)
+                        and built global teams of 50+ professionals.
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <div className="differentiator-item">
-                  <h3 className="item-title">
-                    <IconCircle><Icon name="barchart" /></IconCircle>
-                    Financial Impact
-                  </h3>
-                  <p className="item-text">
-                    Consistent, outsized ROI—250%+ returns delivering $30M in
-                    new revenue streams.
-                  </p>
+                  <div className="flex items-start gap-3">
+                    <Icon name="barchart" size="lg" className="text-cyan-400" />
+                    <div>
+                      <div className="text-base md:text-lg font-semibold text-white">
+                        Financial Impact
+                      </div>
+                      <p className="mt-1 text-sm text-slate-300">
+                        Consistent, outsized ROI—250%+ returns delivering $30M in
+                        new revenue streams.
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <div className="differentiator-item">
-                  <h3 className="item-title">
-                    <IconCircle><Icon name="globe" /></IconCircle>
-                    Cross-Industry Innovation
-                  </h3>
-                  <p className="item-text">
-                    Deep expertise across Financial Services, Insurance,
-                    Airlines, Energy, and Life Sciences.
-                  </p>
+                  <div className="flex items-start gap-3">
+                    <Icon name="globe" size="lg" className="text-cyan-400" />
+                    <div>
+                      <div className="text-base md:text-lg font-semibold text-white">
+                        Cross-Industry Innovation
+                      </div>
+                      <p className="mt-1 text-sm text-slate-300">
+                        Deep expertise across Financial Services, Insurance,
+                        Airlines, Energy, and Life Sciences.
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <div className="differentiator-item">
-                  <h3 className="item-title">
-                    <IconCircle><Icon name="sparkle" /></IconCircle>
-                    Transformation Catalyst
-                  </h3>
-                  <p className="item-text">
-                    AI evangelist who builds adoption communities that drive
-                    organizational change at scale.
-                  </p>
+                  <div className="flex items-start gap-3">
+                    <Icon name="sparkle" size="lg" className="text-cyan-400" />
+                    <div>
+                      <div className="text-base md:text-lg font-semibold text-white">
+                        Transformation Catalyst
+                      </div>
+                      <p className="mt-1 text-sm text-slate-300">
+                        AI evangelist who builds adoption communities that drive
+                        organizational change at scale.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
