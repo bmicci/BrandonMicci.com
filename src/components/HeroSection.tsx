@@ -770,33 +770,30 @@ const HeroSection = () => {
               {/* HERO TEXT STACK — safe, isolated from image */}
               <div className="min-w-0">
                 <h1 className="text-3xl md:text-6xl font-extrabold leading-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">
-                  Strategic{' '}
+                  Transformational{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                    AI & Digital
-                  </span>{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                    Transformation
+                    AI & Data Strategy
                   </span>{' '}
                   Executive
                 </h1>
                 <p className="mt-3 text-lg md:text-2xl font-normal leading-relaxed text-slate-100">
-                  Strategic AI & Digital Transformation Executive with{' '}
+                  Transformational AI & Data Strategy Executive with{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    16+ years of proven enterprise leadership
+                    16+ years architecting enterprise-wide digital transformation
                   </span>
-                  . I architect breakthrough solutions that deliver{' '}
+                  {' '}across Fortune 500 organizations. I&apos;ve delivered{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    $400M+ in measurable business impact
+                    $400M+ in new revenue
                   </span>
-                  , scale innovation to{' '}
+                  {' '}through strategic AI initiatives, scaled the largest LLM deployment in the payments industry to{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     27K+ users
                   </span>
-                  , and consistently achieve{' '}
+                  , and pioneered breakthrough innovations like achieving{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    250% ROI
+                    250% ROI on IoT initiatives
                   </span>
-                  . When Fortune 500 companies need transformational results, they turn to my expertise.
+                  {' '}at a major airline. From global investment banks to leading financial institutions, I translate complex AI strategies into measurable business outcomes for C-suite stakeholders.
                 </p>
               </div>
 
@@ -853,33 +850,30 @@ const HeroSection = () => {
           <div className="mobile-layout">
             <div className="mobile-intro">
               <h1 className="text-3xl font-extrabold leading-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">
-                Strategic{' '}
+                Transformational{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  AI & Digital
-                </span>{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Transformation
+                  AI & Data Strategy
                 </span>{' '}
                 Executive
               </h1>
               <p className="mt-3 text-lg font-normal leading-relaxed text-slate-100">
-                Strategic AI & Digital Transformation Executive with{' '}
+                Transformational AI & Data Strategy Executive with{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  16+ years of proven enterprise leadership
+                  16+ years architecting enterprise-wide digital transformation
                 </span>
-                . I architect breakthrough solutions that deliver{' '}
+                {' '}across Fortune 500 organizations. I&apos;ve delivered{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  $400M+ in measurable business impact
+                  $400M+ in new revenue
                 </span>
-                , scale innovation to{' '}
+                {' '}through strategic AI initiatives, scaled the largest LLM deployment in the payments industry to{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   27K+ users
                 </span>
-                , and consistently achieve{' '}
+                , and pioneered breakthrough innovations like achieving{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  250% ROI
+                  250% ROI on IoT initiatives
                 </span>
-                . When Fortune 500 companies need transformational results, they turn to my expertise.
+                {' '}at a major airline. From global investment banks to leading financial institutions, I translate complex AI strategies into measurable business outcomes for C-suite stakeholders.
               </p>
             </div>
 
