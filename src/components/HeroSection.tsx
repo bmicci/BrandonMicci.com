@@ -780,27 +780,23 @@ const HeroSection = () => {
                   Executive
                 </h1>
                 <p className="mt-3 text-lg md:text-xl font-normal leading-relaxed text-slate-100">
-                  Enterprise AI and digital transformation leader delivering{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    $400M+ in measurable impact
-                  </span>
-                  , scaling LLMs to{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    27K+ users
-                  </span>
-                  , and pioneering IoT pilots with{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    proven ROI
-                  </span>
-                  . With{' '}
+                  Over{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     16+ years
                   </span>
-                  {' '}architecting enterprise-wide digital transformation across{' '}
+                  {' '}as a proven leader delivering{' '}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                    $400M+ in enterprise value
+                  </span>
+                  , scaling solutions to{' '}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                    27K+ users
+                  </span>
+                  , and achieving breakthrough ROI through strategic innovation across{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     Fortune 500 organizations
                   </span>
-                  , I translate complex AI strategies into measurable business outcomes for C-suite stakeholders.
+                  .
                 </p>
               </div>
 
@@ -867,27 +863,23 @@ const HeroSection = () => {
                 Executive
               </h1>
               <p className="mt-3 text-lg font-normal leading-relaxed text-slate-100">
-                Enterprise AI and digital transformation leader delivering{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  $400M+ in measurable impact
-                </span>
-                , scaling LLMs to{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  27K+ users
-                </span>
-                , and pioneering IoT pilots with{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  proven ROI
-                </span>
-                . With{' '}
+                Over{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   16+ years
                 </span>
-                {' '}architecting enterprise-wide digital transformation across{' '}
+                {' '}as a proven leader delivering{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                  $400M+ in enterprise value
+                </span>
+                , scaling solutions to{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                  27K+ users
+                </span>
+                , and achieving breakthrough ROI through strategic innovation across{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   Fortune 500 organizations
                 </span>
-                , I translate complex AI strategies into measurable business outcomes for C-suite stakeholders.
+                .
               </p>
             </div>
 
