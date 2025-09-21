@@ -779,7 +779,7 @@ const HeroSection = () => {
                   </span>{' '}
                   Executive
                 </h1>
-                <p className="mt-1 text-lg md:text-2xl font-semibold text-white/95">
+                <p className="mt-3 text-lg md:text-xl font-normal leading-relaxed text-slate-100">
                   Enterprise AI and digital transformation leader delivering{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     $400M+ in measurable impact
@@ -792,10 +792,7 @@ const HeroSection = () => {
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     proven ROI
                   </span>
-                  .
-                </p>
-                <p className="mt-3 text-base md:text-xl font-normal leading-relaxed text-slate-100">
-                  With{' '}
+                  . With{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     16+ years
                   </span>
@@ -869,7 +866,7 @@ const HeroSection = () => {
                 </span>{' '}
                 Executive
               </h1>
-              <p className="mt-1 text-lg font-semibold text-white/95">
+              <p className="mt-3 text-lg font-normal leading-relaxed text-slate-100">
                 Enterprise AI and digital transformation leader delivering{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   $400M+ in measurable impact
@@ -882,10 +879,7 @@ const HeroSection = () => {
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   proven ROI
                 </span>
-                .
-              </p>
-              <p className="mt-3 text-base font-normal leading-relaxed text-slate-100">
-                With{' '}
+                . With{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   16+ years
                 </span>
