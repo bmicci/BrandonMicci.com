@@ -779,9 +779,13 @@ const HeroSection = () => {
                 <p className="mt-3 text-lg md:text-2xl font-normal leading-relaxed text-slate-100">
                   Transformational AI & Data Strategy Executive with{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    16+ years architecting enterprise-wide digital transformation
+                    16+ years
                   </span>
-                  {' '}across Fortune 500 organizations. I&apos;ve delivered{' '}
+                  {' '}architecting enterprise-wide digital transformation across{' '}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                    Fortune 500 organizations
+                  </span>
+                  . I&apos;ve delivered{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     $400M+ in new revenue
                   </span>
@@ -859,9 +863,13 @@ const HeroSection = () => {
               <p className="mt-3 text-lg font-normal leading-relaxed text-slate-100">
                 Transformational AI & Data Strategy Executive with{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  16+ years architecting enterprise-wide digital transformation
+                  16+ years
                 </span>
-                {' '}across Fortune 500 organizations. I&apos;ve delivered{' '}
+                {' '}architecting enterprise-wide digital transformation across{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                  Fortune 500 organizations
+                </span>
+                . I&apos;ve delivered{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   $400M+ in new revenue
                 </span>
