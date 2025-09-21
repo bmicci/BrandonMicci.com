@@ -173,24 +173,42 @@ const HeroSection = () => {
           }
         }
 
-        /* === Equal-size, adaptive KPI grid (no overflow) === */
+        /* === KPI grid: fixed columns per breakpoint, equal heights, no overflow === */
         .kpi-grid {
           display: grid;
-          /* auto-fit = 4-up when there's room, 3-up on mid desktop, 2-up on mobile */
-          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
           gap: clamp(0.8rem, 1.6vw, 1rem);
-          width: 100%;                 /* keep inside left column */
-          align-items: stretch;        /* row-equal heights */
+          width: 100%;
+          align-items: stretch;
           box-sizing: border-box;
           margin-top: 0.25rem;
+        }
+
+        /* Force 4 across on wide desktop — never wraps */
+        @media (min-width: 1280px) {
+          .kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        }
+
+        /* Mid desktop (keeps cards readable) */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .kpi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+
+        /* Tablet */
+        @media (min-width: 769px) and (max-width: 1023px) {
+          .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        /* Mobile (explicit, though tablet rule already handles it) */
+        @media (max-width: 768px) {
+          .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
 
         .kpi-box {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;     /* centers number + label */
-          min-height: clamp(120px, 12.5vw, 150px);  /* equal heights */
+          justify-content: center;                     /* centers number + label */
+          min-height: clamp(120px, 12vw, 150px);      /* equal heights per row */
           padding: clamp(1rem, 1.6vw, 1.25rem);
           border-radius: 16px;
           background: rgba(255,255,255,0.05);
@@ -200,6 +218,7 @@ const HeroSection = () => {
           box-sizing: border-box;
         }
 
+        /* Micro-typography keeps vertical rhythm tight */
         .stat-number {
           display: block;
           font-size: clamp(1.6rem, 3.8vw, 2.35rem);
@@ -216,17 +235,12 @@ const HeroSection = () => {
           letter-spacing: 0.06em;
         }
 
-        /* Optional: keep row baseline stable on hover (no lift) */
+        /* Optional: avoid "jump" on hover so row baseline stays flat */
         .kpi-box:hover {
-          transform: none; /* was: translateY(-3px) */
+          transform: none; /* was translateY(-3px) */
           background: rgba(255,255,255,0.075);
           border-color: rgba(0,212,255,0.38);
           box-shadow: 0 10px 28px -12px rgba(0,212,255,0.35);
-        }
-
-        /* Mobile keeps 2-up (auto-fit already does this, but we can be explicit) */
-        @media (max-width: 768px) {
-          .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
 
         /* Differentiators block */
