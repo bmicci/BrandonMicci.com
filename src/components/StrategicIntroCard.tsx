@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { Icon } from '@/components/ui/Icon';
 
 const StrategicIntroCard: React.FC = () => {
   return (
@@ -116,12 +117,22 @@ const StrategicIntroCard: React.FC = () => {
       `}</style>
 
       <div className="intro-card">
-        <p className="intro-text">
-          While many executives can talk about AI strategy, few can deliver the{' '}
-          <strong>scale, impact, and cross-industry expertise</strong> that
-          I&apos;ve consistently achieved. Here are the key differentiators that
-          make this possible:
-        </p>
+        <div className="flex items-start gap-3">
+          <div className="shrink-0 mt-0.5">
+            <Icon name="target" />
+          </div>
+          <div>
+            <h3 className="text-lg md:text-2xl font-semibold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-3">
+              How I Execute Strategic Vision
+            </h3>
+            <p className="intro-text">
+              While many executives can talk about AI strategy, few can deliver the{' '}
+              <strong>scale, impact, and cross-industry expertise</strong> that
+              I&apos;ve consistently achieved. Here are the key differentiators that
+              make this possible:
+            </p>
+          </div>
+        </div>
       </div>
     </>
   );

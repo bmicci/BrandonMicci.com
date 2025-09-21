@@ -116,7 +116,8 @@ const StrategicAdvantageHeader: React.FC = () => {
       `}</style>
 
       <div className="strategic-header">
-        <h2 className="strategic-title">
+        <h2 className="strategic-title flex items-center justify-center gap-2">
+          <span aria-hidden className="text-xl md:text-3xl">🚀</span>
           <span className="gradient-text">Strategic Advantage</span>
         </h2>
         <p className="strategic-subtitle">

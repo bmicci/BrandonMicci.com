@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import { Icon } from '@/components/ui/Icon';
+import { IconCircle } from '@/components/ui/IconCircle';
 
 const CompanyExpertise: React.FC = () => {
   return (
@@ -303,7 +305,12 @@ const CompanyExpertise: React.FC = () => {
       <div className="expertise-section">
         <div className="expertise-container">
           <div className="expertise-header">
-            <h2 className="expertise-title">Proven Track Record Across</h2>
+            <h2 className="expertise-title flex items-center justify-center gap-2">
+              <Icon name="badge" />
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Proven Track Record Across
+              </span>
+            </h2>
             <h3 className="expertise-subtitle">
               Big Four & Fortune 500 Organizations
             </h3>
@@ -311,28 +318,52 @@ const CompanyExpertise: React.FC = () => {
 
           <div className="companies-grid">
             <div className="company-card">
-              <h4 className="company-name">JPMorgan Chase</h4>
+              <div className="flex items-center gap-3 mb-2">
+                <IconCircle><Icon name="barchart" /></IconCircle>
+                <h4 className="company-name">JPMorgan Chase</h4>
+              </div>
             </div>
             <div className="company-card">
-              <h4 className="company-name">Capital One</h4>
+              <div className="flex items-center gap-3 mb-2">
+                <IconCircle><Icon name="barchart" /></IconCircle>
+                <h4 className="company-name">Capital One</h4>
+              </div>
             </div>
             <div className="company-card">
-              <h4 className="company-name">Citi</h4>
+              <div className="flex items-center gap-3 mb-2">
+                <IconCircle><Icon name="barchart" /></IconCircle>
+                <h4 className="company-name">Citi</h4>
+              </div>
             </div>
             <div className="company-card">
-              <h4 className="company-name">Southwest Airlines</h4>
+              <div className="flex items-center gap-3 mb-2">
+                <IconCircle><Icon name="globe" /></IconCircle>
+                <h4 className="company-name">Southwest Airlines</h4>
+              </div>
             </div>
             <div className="company-card">
-              <h4 className="company-name">PwC</h4>
+              <div className="flex items-center gap-3 mb-2">
+                <IconCircle><Icon name="badge" /></IconCircle>
+                <h4 className="company-name">PwC</h4>
+              </div>
             </div>
             <div className="company-card">
-              <h4 className="company-name">Booz Allen Hamilton</h4>
+              <div className="flex items-center gap-3 mb-2">
+                <IconCircle><Icon name="badge" /></IconCircle>
+                <h4 className="company-name">Booz Allen Hamilton</h4>
+              </div>
             </div>
             <div className="company-card">
-              <h4 className="company-name">EY</h4>
+              <div className="flex items-center gap-3 mb-2">
+                <IconCircle><Icon name="badge" /></IconCircle>
+                <h4 className="company-name">EY</h4>
+              </div>
             </div>
             <div className="company-card">
-              <h4 className="company-name">Capgemini</h4>
+              <div className="flex items-center gap-3 mb-2">
+                <IconCircle><Icon name="badge" /></IconCircle>
+                <h4 className="company-name">Capgemini</h4>
+              </div>
             </div>
           </div>
         </div>
