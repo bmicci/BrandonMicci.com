@@ -770,7 +770,7 @@ const HeroSection = () => {
               {/* HERO TEXT STACK — safe, isolated from image */}
               <div className="min-w-0">
                 <h1 className="text-3xl md:text-6xl font-extrabold leading-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">
-                  Senior{' '}
+                  Strategic{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                     AI & Digital
                   </span>{' '}
@@ -780,19 +780,23 @@ const HeroSection = () => {
                   Executive
                 </h1>
                 <p className="mt-3 text-lg md:text-2xl font-normal leading-relaxed text-slate-100">
-                  Transforming enterprise challenges into breakthrough solutions. I&apos;ve architected AI systems that deliver{' '}
+                  Strategic AI & Digital Transformation Executive with{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    $400M+ in measurable impact
+                    16+ years of proven enterprise leadership
                   </span>
-                  , scaled platforms to{' '}
+                  . I architect breakthrough solutions that deliver{' '}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                    $400M+ in measurable business impact
+                  </span>
+                  , scale innovation to{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     27K+ users
                   </span>
-                  , and achieved{' '}
+                  , and consistently achieve{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     250% ROI
                   </span>
-                  {' '}on innovation initiatives across Fortune 500 companies.
+                  . When Fortune 500 companies need transformational results, they turn to my expertise.
                 </p>
               </div>
 
@@ -849,7 +853,7 @@ const HeroSection = () => {
           <div className="mobile-layout">
             <div className="mobile-intro">
               <h1 className="text-3xl font-extrabold leading-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">
-                Senior{' '}
+                Strategic{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                   AI & Digital
                 </span>{' '}
@@ -859,19 +863,23 @@ const HeroSection = () => {
                 Executive
               </h1>
               <p className="mt-3 text-lg font-normal leading-relaxed text-slate-100">
-                Transforming enterprise challenges into breakthrough solutions. I&apos;ve architected AI systems that deliver{' '}
+                Strategic AI & Digital Transformation Executive with{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  $400M+ in measurable impact
+                  16+ years of proven enterprise leadership
                 </span>
-                , scaled platforms to{' '}
+                . I architect breakthrough solutions that deliver{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                  $400M+ in measurable business impact
+                </span>
+                , scale innovation to{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   27K+ users
                 </span>
-                , and achieved{' '}
+                , and consistently achieve{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   250% ROI
                 </span>
-                {' '}on innovation initiatives across Fortune 500 companies.
+                . When Fortune 500 companies need transformational results, they turn to my expertise.
               </p>
             </div>
 
