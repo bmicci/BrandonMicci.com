@@ -40,6 +40,8 @@ const StrategicDifferentiators: React.FC = () => {
           max-width: 1200px;
           margin: 0 auto;
           padding: 0 2rem;
+          width: calc(100vw - 2rem);
+          max-width: calc(100vw - 2rem);
         }
 
         .differentiators-grid {
@@ -200,6 +202,8 @@ const StrategicDifferentiators: React.FC = () => {
         @media (max-width: 768px) {
           .differentiators-container {
             padding: 0 1rem;
+            width: calc(100vw - 1rem);
+            max-width: calc(100vw - 1rem);
           }
           .differentiators-grid {
             grid-template-columns: 1fr;
@@ -211,11 +215,26 @@ const StrategicDifferentiators: React.FC = () => {
         }
 
         @media (max-width: 480px) {
+          .differentiators-container {
+            width: calc(100vw - 0.75rem);
+            max-width: calc(100vw - 0.75rem);
+            padding: 0 0.75rem;
+          }
+          
           .diff-title {
             font-size: 1.1rem;
           }
           .diff-description {
             font-size: 0.95rem;
+          }
+        }
+
+        /* iPhone SE micro-tune for extra safety */
+        @media (max-width: 360px) {
+          .differentiators-container {
+            width: calc(100vw - 0.5rem);
+            max-width: calc(100vw - 0.5rem);
+            padding: 0 0.5rem;
           }
         }
       `}</style>
