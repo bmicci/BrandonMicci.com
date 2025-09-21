@@ -195,11 +195,24 @@ const HeroSection = () => {
           backdrop-filter: blur(10px);
         }
         .diff-header {
-          display: flex; align-items: center; justify-content: center; gap: 0.65rem; margin-bottom: 1.25rem;
+          display: flex; 
+          align-items: center; 
+          justify-content: center; 
+          gap: 0.8rem; 
+          margin-bottom: 1.5rem;
+          padding: 1rem 0;
+          position: relative;
         }
         .diff-title {
-          font-size: clamp(1.3rem, 3.8vw, 2rem);
-          font-weight: 800;
+          font-size: clamp(1.5rem, 4.2vw, 2.4rem);
+          font-weight: 900;
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 50%, #00d4ff 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+          letter-spacing: -0.02em;
+          position: relative;
         }
         .diff-grid {
           display: grid;
@@ -347,7 +360,7 @@ const HeroSection = () => {
           <div className="diff-wrap">
             <div className="diff-glass">
               <div className="diff-header">
-                <Icon name="sparkle" size="lg" className="text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500" />
+                <Icon name="sparkle" size="lg" className="text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 animate-pulse" />
                 <span className="diff-title">What makes me different</span>
               </div>
 
