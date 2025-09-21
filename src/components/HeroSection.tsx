@@ -794,6 +794,17 @@ const HeroSection = () => {
                   </span>
                   .
                 </p>
+                <p className="mt-3 text-base md:text-xl font-normal leading-relaxed text-slate-100">
+                  With{' '}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                    16+ years
+                  </span>
+                  {' '}architecting enterprise-wide digital transformation across{' '}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                    Fortune 500 organizations
+                  </span>
+                  , I translate complex AI strategies into measurable business outcomes for C-suite stakeholders.
+                </p>
               </div>
 
               {/* Desktop KPI Grid */}
@@ -872,6 +883,17 @@ const HeroSection = () => {
                   proven ROI
                 </span>
                 .
+              </p>
+              <p className="mt-3 text-base font-normal leading-relaxed text-slate-100">
+                With{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                  16+ years
+                </span>
+                {' '}architecting enterprise-wide digital transformation across{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                  Fortune 500 organizations
+                </span>
+                , I translate complex AI strategies into measurable business outcomes for C-suite stakeholders.
               </p>
             </div>
 
