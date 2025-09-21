@@ -152,6 +152,27 @@ const HeroSection = () => {
           box-shadow: 0 10px 30px -12px rgba(30,144,255,0.55);
         }
 
+        /* ===== CTA LAYOUTS ===== */
+        /* default: 2 buttons, left-aligned, compact */
+        @media (min-width: 1024px) {
+          .cta-row {
+            grid-template-columns: repeat(2, max-content) !important;
+            justify-content: start !important;
+            gap: 1rem 1.25rem !important;
+          }
+        }
+
+        /* 3rd button shows ONLY on wide desktop (soaks up whitespace nicely) */
+        .show-xl { display: none; }
+        @media (min-width: 1280px) {
+          .show-xl { display: inline-flex; } /* makes the 3rd button appear */
+          .cta-row.cta-3up-xl {
+            grid-template-columns: repeat(3, max-content) !important;
+            justify-content: start !important;
+            gap: 1rem 1.25rem !important;
+          }
+        }
+
         /* KPI boxes */
         .kpi-grid {
           display: grid;
@@ -395,6 +416,69 @@ const HeroSection = () => {
           .hero-section { padding-top: max(env(safe-area-inset-top), 4.1rem); }
           .mobile-intro p { line-height: 1.42; }
         }
+
+        /* === DESKTOP HERO ALIGNMENT v2 (non-destructive) === */
+        @media (min-width: 1024px) {
+          /* Solid two-column split that prevents the left stack from ever crossing the image */
+          .hero-top {
+            grid-template-columns: minmax(560px, 1fr) min(520px, 34vw) !important;
+            gap: clamp(2.75rem, 3.5vw, 4rem) !important;
+            align-items: center !important;             /* centers the image vertically vs the text stack */
+          }
+
+          /* Keep the copy column readable and aligned */
+          .hero-content {
+            display: flex !important;
+            flex-direction: column !important;
+            max-width: 62ch !important;                 /* keeps paragraph and CTAs inside the column */
+            align-items: flex-start !important;
+            text-align: left !important;
+          }
+
+          /* Reorder: KPI grid ABOVE the CTAs (H1 → dek → KPI → CTAs) */
+          .dek { order: 10 !important; }
+          .kpi-grid { order: 20 !important; margin-top: 1rem !important; margin-bottom: 1.1rem !important; }
+          .cta-row { order: 30 !important; margin-top: 0.4rem !important; }
+
+          /* CTAs: intrinsic width, left-aligned; they won't stretch past the image */
+          .cta-row {
+            grid-template-columns: repeat(2, max-content) !important;
+            justify-content: start !important;
+            gap: 1rem 1.25rem !important;
+            max-width: 100% !important;
+          }
+          .cta-row .btn { white-space: nowrap; }
+
+          /* KPI row: stay snug in the left column */
+          .kpi-grid {
+            grid-template-columns: repeat(4, 1fr) !important;
+            width: 100% !important;
+            align-self: stretch !important;             /* uses the left column width exactly */
+          }
+
+          /* Image column: right-locked and vertically centered with whitespace above/below */
+          .hero-top > *:last-child {
+            width: min(520px, 34vw) !important;
+            justify-self: end !important;               /* aligns to container's right edge */
+            align-self: center !important;              /* sits midline vs the text stack */
+          }
+          .hero-top > *:last-child img,
+          .hero-top > *:last-child svg,
+          .hero-top > *:last-child canvas,
+          .hero-top > *:last-child video {
+            display: block !important;
+            width: 100% !important;
+            height: auto !important;
+          }
+        }
+
+        /* Very wide desktops: keep proportions steady */
+        @media (min-width: 1440px) {
+          .hero-top {
+            grid-template-columns: minmax(620px, 1fr) min(560px, 32vw) !important;
+            gap: clamp(3rem, 4vw, 5rem) !important;
+          }
+        }
       `}</style>
 
       <div className="hero-section">
@@ -426,14 +510,19 @@ const HeroSection = () => {
                 <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> C-suite stakeholders</span>.
               </p>
 
-              <div className="cta-row">
-                <a href="mailto:contact@brandonmicci.com" className="btn primary">
+              <div className="cta-row cta-3up-xl">
+                <a href="#connectwithme" className="btn primary">
                   <Icon name="mail" size="md" className="icon text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
                   Let&apos;s Connect
                 </a>
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn outline">
+                <a href="/BrandonMicciSeniorAIExecutive.pdf" target="_blank" rel="noopener noreferrer" className="btn outline">
                   <Icon name="file" size="md" className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]" />
                   Download Resume
+                </a>
+                {/* Wide-desktop only: appears at ≥1280px via .show-xl */}
+                <a href="/executive-brief.pdf" target="_blank" rel="noopener noreferrer" className="btn outline show-xl">
+                  <Icon name="briefcase" size="md" className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]" />
+                  Executive Brief
                 </a>
               </div>
 
@@ -470,11 +559,11 @@ const HeroSection = () => {
             </div>
 
             <div className="cta-row">
-              <a href="mailto:contact@brandonmicci.com" className="btn primary">
+              <a href="#connectwithme" className="btn primary">
                 <Icon name="mail" size="md" className="icon text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
                 Let&apos;s Connect
               </a>
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn outline">
+              <a href="/BrandonMicciSeniorAIExecutive.pdf" target="_blank" rel="noopener noreferrer" className="btn outline">
                 <Icon name="file" size="md" className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]" />
                 Download Resume
               </a>
