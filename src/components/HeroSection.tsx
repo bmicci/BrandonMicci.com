@@ -796,6 +796,10 @@ const HeroSection = () => {
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     Fortune 500 organizations
                   </span>
+                  . From global investment banks to leading financial institutions, I translate complex AI strategies into measurable business outcomes for{' '}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                    C-suite stakeholders
+                  </span>
                   .
                 </p>
               </div>
@@ -820,7 +824,7 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              <div className="hero-cta-section">
+              <div className="hero-cta-section" style={{ marginBottom: '2rem' }}>
                 <div className="cta-buttons">
                   <a
                     href="mailto:contact@brandonmicci.com"
@@ -879,6 +883,10 @@ const HeroSection = () => {
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   Fortune 500 organizations
                 </span>
+                . From global investment banks to leading financial institutions, I translate complex AI strategies into measurable business outcomes for{' '}
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
+                  C-suite stakeholders
+                </span>
                 .
               </p>
             </div>
@@ -886,7 +894,7 @@ const HeroSection = () => {
             <HeroImage />
 
 
-            <div className="hero-cta-section" style={{ marginTop: '2rem' }}>
+            <div className="hero-cta-section" style={{ marginTop: '2rem', marginBottom: '2rem' }}>
               <div className="cta-buttons">
                 <a
                   href="mailto:contact@brandonmicci.com"
