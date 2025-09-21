@@ -3,7 +3,8 @@ import * as L from "lucide-react";
 
 type Name =
   | "sparkle" | "brain" | "layers" | "target" | "badge"
-  | "globe" | "barchart" | "linechart" | "network" | "cloud";
+  | "globe" | "barchart" | "linechart" | "network" | "cloud"
+  | "mail" | "file" | "download" | "external-link";
 
 const MAP: Record<Name, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
   sparkle: L.Sparkles,
@@ -16,6 +17,10 @@ const MAP: Record<Name, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
   linechart: L.LineChart,
   network: L.Network,
   cloud: L.Cloud,
+  mail: L.Mail,
+  file: L.FileText,
+  download: L.Download,
+  "external-link": L.ExternalLink,
 };
 
 export type IconProps = {
