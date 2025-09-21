@@ -197,15 +197,17 @@ const HeroSection = () => {
         }
 
         .kpi-box {
-          /* enable container-query units so the number scales with the CARD width */
+          /* container units let the number scale with CARD width */
           container-type: inline-size;
 
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
+          justify-content: center;             /* centers the whole stack */
+          gap: clamp(0.35rem, 1vw, 0.6rem);    /* consistent gap between number/label */
+
           min-height: clamp(120px, 12vw, 150px);
-          padding: clamp(1rem, 1.6vw, 1.25rem) clamp(1.2rem, 2.2vw, 1.5rem); /* a bit more side padding */
+          padding: clamp(1rem, 1.6vw, 1.25rem) clamp(1.2rem, 2.2vw, 1.5rem);
           border-radius: 16px;
 
           background: rgba(255,255,255,0.05);
@@ -213,43 +215,47 @@ const HeroSection = () => {
           border: 1px solid rgba(0,212,255,0.22);
           transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
           box-sizing: border-box;
-          overflow: hidden; /* hard stop for any stray glyph overflow */
+          overflow: hidden;                     /* belt & suspenders */
         }
 
-        /* Numbers: scale by CARD width, never touch edges */
+        /* Numbers: scale by CARD width, centered, with breathing room */
         .stat-number {
           display: block;
           font-weight: 800;
           color: #00d4ff;
           line-height: 1;
-          margin-bottom: 0.35rem;
-          letter-spacing: 0;              /* remove negative tracking that was crowding the $ */
+          letter-spacing: 0;                    /* avoid crowding the $ glyph */
           white-space: nowrap;
           text-align: center;
-          padding-inline: 0.18em;         /* em-based side breathing room for wide glyphs like $ */
+          padding-inline: 0.18em;               /* em-based side padding */
           max-width: 100%;
-          /* container-based sizing: 1cqw = 1% of the card width */
           font-size: clamp(1.6rem, 16cqw, 2.2rem);
         }
 
-        /* 4-up wide desktop: a hair tighter so it never kisses the border */
+        /* 4-up wide desktop: tiny nudge smaller so it never kisses the border */
         @media (min-width: 1280px) {
           .stat-number { font-size: clamp(1.55rem, 15cqw, 2.05rem); }
         }
 
-        /* ultra-wide can grow a bit again */
+        /* Ultra-wide: allow a bit more size again */
         @media (min-width: 1440px) {
           .stat-number { font-size: clamp(1.7rem, 16cqw, 2.35rem); }
         }
 
-        /* Labels stay tidy and wrap nicely */
+        /* Labels: reserve EXACTLY two line-heights so all cards align */
         .stat-label {
-          display: block;
+          display: flex;                        /* center the label text in its block */
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+
           font-size: clamp(0.78rem, 1.6vw, 0.9rem);
           color: rgba(255,255,255,0.72);
           text-transform: uppercase;
           letter-spacing: 0.06em;
-          text-wrap: balance;
+          line-height: 1.3;
+          min-height: calc(2 * 1.3em);          /* <= key: fixes vertical alignment */
+          text-wrap: balance;                   /* prettier breaks */
         }
 
         /* Optional: avoid hover "jump" so row baseline stays flat */
