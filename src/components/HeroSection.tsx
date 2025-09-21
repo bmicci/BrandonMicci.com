@@ -266,6 +266,30 @@ const HeroSection = () => {
           box-shadow: 0 10px 28px -12px rgba(0,212,255,0.35);
         }
 
+        /* Better centering for currency values */
+        .stat-number {
+          display: inline-block;          /* allows transform/margins */
+          margin-inline: auto;            /* centers the inline-block itself */
+          font-feature-settings: "tnum" 1, "lnum" 1; /* tabular lining nums for steadier width */
+        }
+
+        /* Optical centering for the "$" glyph */
+        .stat-number.currency {
+          transform: translateX(0.06em);
+        }
+
+        /* At wide desktop, nudge a touch more (cards are slightly tighter) */
+        @media (min-width: 1280px) {
+          .stat-number.currency {
+            transform: translateX(0.08em);
+          }
+        }
+
+        /* Optional: add a hair of space after the $ only */
+        .stat-number.currency::first-letter {
+          padding-right: 0.06em;
+        }
+
         /* Differentiators block */
         .diff-wrap { 
           margin: 2rem 0 1.5rem; 
@@ -667,7 +691,7 @@ const HeroSection = () => {
               </div>
 
               <div className="kpi-grid">
-                <div className="kpi-box"><span className="stat-number">${counts.value}M+</span><span className="stat-label">Value Delivered</span></div>
+                <div className="kpi-box"><span className="stat-number currency">${counts.value}M+</span><span className="stat-label">Value Delivered</span></div>
                 <div className="kpi-box"><span className="stat-number">{counts.users}K+</span><span className="stat-label">AI Users</span></div>
                 <div className="kpi-box"><span className="stat-number">{counts.roi}%</span><span className="stat-label">Typical ROI</span></div>
                 <div className="kpi-box"><span className="stat-number">{counts.years}+</span><span className="stat-label">Years Leading</span></div>
@@ -783,7 +807,7 @@ const HeroSection = () => {
 
           {/* Mobile KPI Grid (mobile-only) */}
           <div className="kpi-grid kpi-mobile-only" style={{ marginTop: '1.25rem' }}>
-            <div className="kpi-box"><span className="stat-number">${counts.value}M+</span><span className="stat-label">Value Delivered</span></div>
+            <div className="kpi-box"><span className="stat-number currency">${counts.value}M+</span><span className="stat-label">Value Delivered</span></div>
             <div className="kpi-box"><span className="stat-number">{counts.users}K+</span><span className="stat-label">AI Users</span></div>
             <div className="kpi-box"><span className="stat-number">{counts.roi}%</span><span className="stat-label">Typical ROI</span></div>
             <div className="kpi-box"><span className="stat-number">{counts.years}+</span><span className="stat-label">Years Leading</span></div>
