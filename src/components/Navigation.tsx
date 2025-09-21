@@ -98,7 +98,6 @@ const Navigation = () => {
         .logo {
           display: flex;
           align-items: center;
-          gap: 0.75rem;
           text-decoration: none;
           color: white;
           transition: transform 0.3s ease;
@@ -109,47 +108,22 @@ const Navigation = () => {
           transform: translateY(-2px);
         }
 
-        .logo-icon {
-          width: 52px;
-          height: 52px;
-          background-image: url('/logo.png');
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-          border-radius: 6px;
-          position: relative;
-          overflow: hidden;
-          transition: all 0.3s ease;
-        }
-
-        .logo:hover .logo-icon {
-          transform: scale(1.05);
-        }
-
-        .logo-text {
-          display: flex;
-          flex-direction: column;
-          line-height: 1.2;
-        }
-
-        .logo-name {
-          font-size: 0.95rem;
-          font-weight: 700;
-          color: #00d4ff;
-          white-space: nowrap;
+        .logo-bm {
+          font-size: 2.2rem;
+          font-weight: 800;
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
           text-decoration: none;
-          transition: font-size 0.3s ease;
+          transition: all 0.3s ease;
+          letter-spacing: -0.5px;
+          text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
         }
 
-        .logo-title {
-          font-size: 0.6rem;
-          color: rgba(255, 255, 255, 0.7);
-          font-weight: 400;
-          letter-spacing: 0.3px;
-          white-space: nowrap;
-          transition:
-            font-size 0.3s ease,
-            opacity 0.3s ease;
+        .logo:hover .logo-bm {
+          transform: scale(1.05);
+          text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
         }
 
         .nav-menu {
@@ -165,18 +139,8 @@ const Navigation = () => {
             min-height: 50px;
           }
 
-          .wix-header.scrolled .logo-icon {
-            width: 46px;
-            height: 46px;
-          }
-
-          .wix-header.scrolled .logo-name {
-            font-size: 0.88rem;
-          }
-
-          .wix-header.scrolled .logo-title {
-            font-size: 0.55rem;
-            opacity: 0.85;
+          .wix-header.scrolled .logo-bm {
+            font-size: 1.9rem;
           }
         }
 
@@ -350,13 +314,8 @@ const Navigation = () => {
             justify-content: center;
           }
 
-          .logo-icon {
-            width: 48px;
-            height: 48px;
-          }
-
-          .logo-name {
-            font-size: 1.2rem;
+          .logo-bm {
+            font-size: 2rem;
           }
 
           .nav-container {
@@ -370,16 +329,8 @@ const Navigation = () => {
             gap: 0.5rem;
           }
 
-          .logo-name {
-            font-size: 1.05rem;
-          }
-
-          .logo-title {
-            display: none;
-          }
-
-          .logo-text {
-            display: flex;
+          .logo-bm {
+            font-size: 1.8rem;
           }
         }
       `}</style>
@@ -387,11 +338,7 @@ const Navigation = () => {
       <header className={`wix-header ${isScrolled ? 'scrolled' : ''}`}>
         <nav className="nav-container">
           <div className="logo" onClick={() => handleLinkClick('home')}>
-            <div className="logo-icon"></div>
-            <div className="logo-text">
-              <div className="logo-name">Brandon Micci</div>
-              <div className="logo-title">AI & Digital Transformation</div>
-            </div>
+            <div className="logo-bm">BM</div>
           </div>
 
           <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
