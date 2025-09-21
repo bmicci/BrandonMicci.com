@@ -4,7 +4,17 @@ import { useEffect, useRef, useState, memo } from 'react';
 import { Brain, Target, Search, Wifi, Database, Cloud, Shield, ShieldCheck, BarChart, TrendingUp, Globe } from 'lucide-react';
 
 const IconCircle: React.FC<{ children: React.ReactNode }> = memo(({ children }) => (
-  <div className="relative flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm shadow-inner shadow-[inset_0_0_20px_rgba(0,212,255,0.1)] ring-1 ring-white/5 before:content-[''] before:absolute before:inset-0 before:rounded-full before:shadow-[0_0_25px_rgba(0,212,255,0.25)]">
+  <div className="
+    relative flex items-center justify-center
+    w-8 h-8 md:w-12 md:h-12
+    rounded-full border border-white/10
+    bg-white/[0.03] backdrop-blur-sm
+    shadow-inner
+    before:content-[''] before:absolute before:inset-0 before:rounded-full
+    before:shadow-[0_0_14px_rgba(0,212,255,0.18)]
+    md:before:shadow-[0_0_25px_rgba(0,212,255,0.25)]
+    ring-1 ring-white/5
+  ">
     <div className="relative z-10">
       {children}
     </div>
@@ -374,7 +384,7 @@ const ExecutiveExperience = memo(() => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden text-white">
+      <div className="relative min-h-screen overflow-x-hidden text-white">
       {/* Gradient overlay removed to show Universal Background */}
 
       <style jsx>{`
@@ -423,7 +433,7 @@ const ExecutiveExperience = memo(() => {
 
         <div className="mx-auto max-w-2xl px-1 pb-8 md:max-w-6xl md:px-8 md:pb-16">
           <div className="relative">
-            <div className="absolute bottom-0 top-0 left-4 w-0.5 bg-gradient-to-b from-cyan-400 via-cyan-400 to-transparent md:left-12" />
+            <div className="absolute bottom-0 top-0 left-6 w-px bg-gradient-to-b from-cyan-400 via-cyan-400 to-transparent md:left-12" />
 
             {ROLES.map((role, index) => {
               const isVisible = visibleItems.has(index);
@@ -435,10 +445,10 @@ const ExecutiveExperience = memo(() => {
                   ref={(el) => {
                     itemRefs.current[index] = el;
                   }}
-                  className="relative mb-4 pl-10 md:mb-12 md:pl-28"
+                  className="relative mb-6 pl-16 md:mb-12 md:pl-28"
                 >
                   <div
-                    className={`absolute top-4 left-1 flex h-8 w-8 items-center justify-center rounded-full transition-all duration-500 md:left-8 md:h-12 md:w-12 ${
+                    className={`absolute top-3 left-3 flex h-8 w-8 items-center justify-center rounded-full transition-all duration-500 md:left-8 md:h-12 md:w-12 ${
                       isVisible
                         ? 'scale-110 shadow-lg shadow-white/20'
                         : 'scale-100 shadow-md shadow-white/10'
@@ -453,7 +463,7 @@ const ExecutiveExperience = memo(() => {
                   </div>
 
                   <div
-                    className={`timeline-item-visible relative overflow-hidden rounded-lg p-0.5 md:p-8 transition-all duration-700 ${
+                    className={`timeline-item-visible relative overflow-hidden rounded-lg p-4 md:p-8 max-w-[88vw] md:max-w-none transition-all duration-700 ${
                       isVisible
                         ? 'translate-x-2 scale-[1.02] opacity-100'
                         : 'translate-x-0 scale-100 opacity-90'
@@ -489,7 +499,7 @@ const ExecutiveExperience = memo(() => {
                         {role.dates}
                       </span>
 
-                      <h3 className="text-xs font-bold leading-tight text-white break-words md:text-2xl">
+                        <h3 className="text-[13px] font-bold leading-tight text-white break-words md:text-2xl">
                         {role.role}
                       </h3>
                       <div className="mb-2 text-xs font-medium text-cyan-400 md:text-base">
@@ -499,7 +509,7 @@ const ExecutiveExperience = memo(() => {
                         </span>
                       </div>
 
-                      <p className="mb-2 text-xs leading-relaxed text-slate-300 md:text-base">
+                      <p className="mb-2 text-[13px] leading-relaxed text-slate-300 md:text-base">
                         {role.description}
                       </p>
 
@@ -548,7 +558,7 @@ const ExecutiveExperience = memo(() => {
                                 <h4 className="mb-1 text-sm font-semibold text-cyan-400 stroke-2 md:text-base md:mb-2">
                                   {achievement.title}
                                 </h4>
-                                <p className="text-xs leading-relaxed text-slate-300 md:text-sm">
+                                <p className="text-[13px] leading-relaxed text-slate-300 md:text-sm">
                                   {achievement.text}
                                 </p>
                               </div>
