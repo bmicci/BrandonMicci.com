@@ -444,9 +444,9 @@ const Navigation = () => {
             </li>
             <li className="nav-item">
               <a
-                href="#connect-with-me"
+                href="#connectwithme"
                 className="cta-button"
-                onClick={(e) => handleSmoothScroll(e, 'connect-with-me')}
+                onClick={(e) => handleSmoothScroll(e, 'connectwithme')}
               >
                 <span>Connect With Me</span>
                 <span style={{ fontSize: '0.8rem' }}>→</span>
