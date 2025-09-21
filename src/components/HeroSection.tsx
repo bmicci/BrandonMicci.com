@@ -368,7 +368,7 @@ const HeroSection = () => {
               <div className="diff-grid">
                 <div className="diff-item">
                   <div className="flex items-start gap-4">
-                    <Icon name="linechart" size="lg" className="w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500" />
+                    <Icon name="linechart" size="lg" className="w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0 text-cyan-400" />
                     <div>
                       <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Scale Expertise</h4>
                       <p>Led the largest LLM deployment in payments (27,000+ users) and built global teams of 50+.</p>
@@ -378,7 +378,7 @@ const HeroSection = () => {
 
                 <div className="diff-item">
                   <div className="flex items-start gap-4">
-                    <Icon name="barchart" size="lg" className="w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500" />
+                    <Icon name="barchart" size="lg" className="w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0 text-cyan-400" />
                     <div>
                       <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Financial Impact</h4>
                       <p>Consistent 250%+ ROI, delivering $30M in new continuous revenue streams.</p>
@@ -388,7 +388,7 @@ const HeroSection = () => {
 
                 <div className="diff-item">
                   <div className="flex items-start gap-4">
-                    <Icon name="globe" size="lg" className="w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500" />
+                    <Icon name="globe" size="lg" className="w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0 text-cyan-400" />
                     <div>
                       <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Cross-Industry Innovation</h4>
                       <p>Depth across Financial Services, Insurance, Airlines, Energy, and Life Sciences.</p>
@@ -398,7 +398,7 @@ const HeroSection = () => {
 
                 <div className="diff-item">
                   <div className="flex items-start gap-4">
-                    <Icon name="sparkle" size="lg" className="w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500" />
+                    <Icon name="sparkle" size="lg" className="w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0 text-cyan-400" />
                     <div>
                       <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Transformation Catalyst</h4>
                       <p>Builds adoption communities that drive organizational change at scale.</p>
