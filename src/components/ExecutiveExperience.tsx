@@ -384,7 +384,7 @@ const ExecutiveExperience = memo(() => {
   };
 
   return (
-      <div className="relative min-h-screen overflow-x-hidden text-white">
+      <div className="relative min-h-screen overflow-x-clip text-white se-tight">
       {/* Gradient overlay removed to show Universal Background */}
 
       <style jsx>{`
@@ -416,6 +416,14 @@ const ExecutiveExperience = memo(() => {
             animation: mobileSlideIn 0.6s ease-out;
           }
         }
+
+        @media (max-width: 360px) {
+          .se-tight .card-shell {
+            width: calc(100vw - 5.75rem); /* a hair narrower for iPhone SE */
+          }
+          .se-tight .title-tight { font-size: 13px; }
+          .se-tight .desc-tight  { font-size: 13px; }
+        }
       `}</style>
 
       <div className="relative z-10 font-sans">
@@ -431,7 +439,7 @@ const ExecutiveExperience = memo(() => {
           </p>
         </div>
 
-        <div className="mx-auto max-w-2xl px-1 pb-8 md:max-w-6xl md:px-8 md:pb-16">
+        <div className="mx-auto max-w-full overflow-x-clip px-1 pb-8 md:max-w-6xl md:px-8 md:pb-16">
           <div className="relative">
             <div className="absolute bottom-0 top-0 left-6 w-px bg-gradient-to-b from-cyan-400 via-cyan-400 to-transparent md:left-12" />
 
@@ -463,11 +471,13 @@ const ExecutiveExperience = memo(() => {
                   </div>
 
                   <div
-                    className={`timeline-item-visible relative overflow-hidden rounded-lg p-4 md:p-8 max-w-[88vw] md:max-w-none transition-all duration-700 ${
-                      isVisible
-                        ? 'translate-x-2 scale-[1.02] opacity-100'
-                        : 'translate-x-0 scale-100 opacity-90'
-                    }`}
+                    className={`timeline-item-visible relative overflow-hidden rounded-lg
+                                p-4 md:p-8
+                                w-[calc(100vw-5.5rem)] max-w-[92vw] md:w-auto md:max-w-none
+                                transition-all duration-700
+                                md:translate-x-2 md:scale-[1.02] md:opacity-100
+                                card-shell
+                                ${isVisible ? 'opacity-100' : 'opacity-95'}`}
                     style={{
                       background: isVisible
                         ? 'rgba(255, 255, 255, 0.08)'
@@ -484,7 +494,7 @@ const ExecutiveExperience = memo(() => {
                     {/* Gradient border removed - using universal background */}
 
                     <div
-                      className={`pointer-events-none absolute -inset-4 transition-opacity duration-500 ${
+                      className={`pointer-events-none absolute inset-0 md:-inset-4 transition-opacity duration-500 ${
                         isVisible ? 'opacity-60' : 'opacity-0'
                       }`}
                       style={{
@@ -499,7 +509,7 @@ const ExecutiveExperience = memo(() => {
                         {role.dates}
                       </span>
 
-                        <h3 className="text-[13px] font-bold leading-tight text-white break-words md:text-2xl">
+                        <h3 className="text-[13px] font-bold leading-tight text-white break-words md:text-2xl title-tight">
                         {role.role}
                       </h3>
                       <div className="mb-2 text-xs font-medium text-cyan-400 md:text-base">
@@ -509,7 +519,7 @@ const ExecutiveExperience = memo(() => {
                         </span>
                       </div>
 
-                      <p className="mb-2 text-[13px] leading-relaxed text-slate-300 md:text-base">
+                      <p className="mb-2 text-[13px] leading-relaxed text-slate-300 md:text-base desc-tight">
                         {role.description}
                       </p>
 
