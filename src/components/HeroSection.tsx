@@ -623,11 +623,12 @@ const HeroSection = () => {
         }
 
         .differentiators-glass .mx-auto span:last-child {
-          background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+          background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+          font-weight: 700;
         }
 
         @keyframes rocketFloat {
@@ -1001,9 +1002,9 @@ const HeroSection = () => {
           {/* What Makes Me Different */}
           <div className="differentiators-section">
             <div className="differentiators-glass">
-              <div className="mx-auto flex items-center justify-center gap-2 text-center">
-                <span aria-hidden className="text-xl md:text-2xl">🚀</span>
-                <span className="text-sm md:text-base tracking-wide text-slate-300 font-medium">
+              <div className="mx-auto flex items-center justify-center gap-3 text-center">
+                <span aria-hidden className="text-2xl md:text-4xl">🚀</span>
+                <span className="text-2xl md:text-4xl font-bold tracking-wide text-white">
                   What makes me different
                 </span>
               </div>
