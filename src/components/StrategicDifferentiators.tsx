@@ -37,11 +37,6 @@ const StrategicDifferentiators: React.FC = () => {
             'Segoe UI',
             Roboto,
             sans-serif;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 2rem;
-          width: calc(100vw - 2rem);
-          max-width: calc(100vw - 2rem);
         }
 
         .differentiators-grid {
@@ -200,11 +195,6 @@ const StrategicDifferentiators: React.FC = () => {
         }
 
         @media (max-width: 768px) {
-          .differentiators-container {
-            padding: 0 1rem;
-            width: calc(100vw - 1rem);
-            max-width: calc(100vw - 1rem);
-          }
           .differentiators-grid {
             grid-template-columns: 1fr;
             gap: 1rem;
@@ -215,12 +205,6 @@ const StrategicDifferentiators: React.FC = () => {
         }
 
         @media (max-width: 480px) {
-          .differentiators-container {
-            width: calc(100vw - 0.75rem);
-            max-width: calc(100vw - 0.75rem);
-            padding: 0 0.75rem;
-          }
-          
           .diff-title {
             font-size: 1.1rem;
           }
@@ -228,20 +212,11 @@ const StrategicDifferentiators: React.FC = () => {
             font-size: 0.95rem;
           }
         }
-
-        /* iPhone SE micro-tune for extra safety */
-        @media (max-width: 360px) {
-          .differentiators-container {
-            width: calc(100vw - 0.5rem);
-            max-width: calc(100vw - 0.5rem);
-            padding: 0 0.5rem;
-          }
-        }
       `}</style>
 
       <div className="differentiators-container mx-auto max-w-6xl px-4 md:px-8 overflow-x-clip">
         <div className="differentiators-grid">
-          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] md:w-auto md:max-w-none">
+          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none">
             <div className="diff-content flex items-start gap-4">
               <div className="shrink-0">
                 <IconCircle><Icon name="linechart" size="lg" /></IconCircle>
@@ -258,7 +233,7 @@ const StrategicDifferentiators: React.FC = () => {
             </div>
           </div>
 
-          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] md:w-auto md:max-w-none">
+          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none">
             <div className="diff-content flex items-start gap-4">
               <div className="shrink-0">
                 <IconCircle><Icon name="barchart" size="lg" /></IconCircle>
@@ -274,7 +249,7 @@ const StrategicDifferentiators: React.FC = () => {
             </div>
           </div>
 
-          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] md:w-auto md:max-w-none">
+          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none">
             <div className="diff-content flex items-start gap-4">
               <div className="shrink-0">
                 <IconCircle><Icon name="globe" size="lg" /></IconCircle>
@@ -290,7 +265,7 @@ const StrategicDifferentiators: React.FC = () => {
             </div>
           </div>
 
-          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] md:w-auto md:max-w-none">
+          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none">
             <div className="diff-content flex items-start gap-4">
               <div className="shrink-0">
                 <IconCircle><Icon name="target" size="lg" /></IconCircle>
@@ -306,7 +281,7 @@ const StrategicDifferentiators: React.FC = () => {
             </div>
           </div>
 
-          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] md:w-auto md:max-w-none">
+          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none">
             <div className="diff-content flex items-start gap-4">
               <div className="shrink-0">
                 <IconCircle><Icon name="sparkle" size="lg" /></IconCircle>
@@ -322,7 +297,7 @@ const StrategicDifferentiators: React.FC = () => {
             </div>
           </div>
 
-          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] md:w-auto md:max-w-none">
+          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none">
             <div className="diff-content flex items-start gap-4">
               <div className="shrink-0">
                 <IconCircle><Icon name="brain" size="lg" /></IconCircle>
