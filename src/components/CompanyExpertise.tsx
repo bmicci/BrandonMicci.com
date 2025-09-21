@@ -1,8 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Icon } from '@/components/ui/Icon';
-import { IconCircle } from '@/components/ui/IconCircle';
 
 const CompanyExpertise: React.FC = () => {
   return (
@@ -305,11 +303,8 @@ const CompanyExpertise: React.FC = () => {
       <div className="expertise-section">
         <div className="expertise-container">
           <div className="expertise-header">
-            <h2 className="expertise-title flex items-center justify-center gap-2">
-              <Icon name="badge" />
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Proven Track Record Across
-              </span>
+            <h2 className="expertise-title">
+              Proven Track Record Across
             </h2>
             <h3 className="expertise-subtitle">
               Big Four & Fortune 500 Organizations
