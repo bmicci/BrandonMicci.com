@@ -16,7 +16,7 @@ import StrategicAdvantageHeader from '@/components/StrategicAdvantageHeader';
 import StrategicIntroCard from '@/components/StrategicIntroCard';
 import StrategicDifferentiators from '@/components/StrategicDifferentiators';
 import ExecutiveExperience from '@/components/ExecutiveExperience';
-import TransformationLeadership from '@/components/TransformationLeadership';
+import ProfessionalImpact from '@/components/TransformationLeadership';
 import IndustryCollaboration from '@/components/IndustryCollaboration';
 import TestimonialsSection from '@/components/TestimonialsSection';
 
@@ -48,15 +48,10 @@ export default function Home() {
         <ExecutiveExperience />
       </section>
 
-      {/* Transformation Leadership Section */}
-      <section id="transformation-leadership" className="min-h-screen relative">
-        {/* Content */}
-        <TransformationLeadership />
-      </section>
-
-      {/* Testimonials Section */}
+      {/* Professional Impact Section */}
       <section id="professional-impact" className="min-h-screen relative">
-        <TestimonialsSection />
+        {/* Content */}
+        <ProfessionalImpact />
       </section>
 
       {/* Industry Collaboration & Speaking Section */}
