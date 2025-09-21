@@ -617,6 +617,30 @@ const HeroSection = () => {
           padding: 2.5rem;
           border: 1px solid rgba(0, 212, 255, 0.2);
         }
+
+        .differentiators-glass .mx-auto {
+          margin-bottom: 2rem;
+        }
+
+        .differentiators-glass .mx-auto span:last-child {
+          background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes rocketFloat {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          25% { transform: translateY(-3px) rotate(2deg); }
+          50% { transform: translateY(-6px) rotate(0deg); }
+          75% { transform: translateY(-3px) rotate(-2deg); }
+        }
+
+        .differentiators-glass .mx-auto span:first-child {
+          animation: rocketFloat 3s ease-in-out infinite;
+          display: inline-block;
+        }
         .differentiators-header {
           display: flex;
           align-items: center;
@@ -979,7 +1003,7 @@ const HeroSection = () => {
             <div className="differentiators-glass">
               <div className="mx-auto flex items-center justify-center gap-2 text-center">
                 <span aria-hidden className="text-xl md:text-2xl">🚀</span>
-                <span className="text-sm md:text-base tracking-wide text-slate-300">
+                <span className="text-sm md:text-base tracking-wide text-slate-300 font-medium">
                   What makes me different
                 </span>
               </div>
