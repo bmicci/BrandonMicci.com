@@ -856,7 +856,7 @@ const HeroSection = () => {
           {/* Mobile Layout */}
           <div className="mobile-layout">
             <div className="mobile-intro">
-              <h1 className="text-3xl font-extrabold leading-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">
+              <h1 className="text-3xl font-extrabold leading-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)] text-center">
                 Senior{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                   AI & Digital
@@ -866,7 +866,7 @@ const HeroSection = () => {
                 </span>{' '}
                 Executive
               </h1>
-              <p className="mt-3 text-lg font-normal leading-relaxed text-slate-100">
+              <p className="mt-3 text-lg font-normal leading-relaxed text-slate-100 text-center">
                 Over{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   16+ years
