@@ -779,43 +779,20 @@ const HeroSection = () => {
                   </span>{' '}
                   Executive
                 </h1>
-                <p className="mt-1 text-lg md:text-2xl font-semibold text-white/95">
-                  Enterprise AI and digital transformation leader delivering{' '}
+                <p className="mt-3 text-lg md:text-2xl font-normal leading-relaxed text-slate-100">
+                  Transforming enterprise challenges into breakthrough solutions. I&apos;ve architected AI systems that deliver{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     $400M+ in measurable impact
                   </span>
-                  , scaling LLMs to{' '}
+                  , scaled platforms to{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    27K users
+                    27K+ users
                   </span>
-                  , and pioneering IoT pilots with{' '}
+                  , and achieved{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    proven ROI
+                    250% ROI
                   </span>
-                  .
-                </p>
-
-                <p className="mt-3 text-base md:text-xl font-normal leading-relaxed text-slate-100">
-                  With{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    16+ years of experience
-                  </span>{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    architecting enterprise-wide AI solutions
-                  </span>
-                  , I&apos;ve transformed complex technological challenges into more than{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    $400M in measurable business outcomes
-                  </span>
-                  . I led one of the industry&apos;s largest LLM deployments in payments, scaling to{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    27,000 users across operations
-                  </span>
-                  , and I piloted an IoT program at a major airline that achieved{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    250% ROI within six months
-                  </span>
-                  . My focus is on blending innovation with proven, enterprise-grade execution.
+                  {' '}on innovation initiatives across Fortune 500 companies.
                 </p>
               </div>
 
@@ -881,49 +858,25 @@ const HeroSection = () => {
                 </span>{' '}
                 Executive
               </h1>
-              <p className="mt-1 text-lg font-semibold text-white/95">
-                Enterprise AI and digital transformation leader delivering{' '}
+              <p className="mt-3 text-lg font-normal leading-relaxed text-slate-100">
+                Transforming enterprise challenges into breakthrough solutions. I&apos;ve architected AI systems that deliver{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   $400M+ in measurable impact
                 </span>
-                , scaling LLMs to{' '}
+                , scaled platforms to{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  27K users
+                  27K+ users
                 </span>
-                , and pioneering IoT pilots with{' '}
+                , and achieved{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  proven ROI
+                  250% ROI
                 </span>
-                .
+                {' '}on innovation initiatives across Fortune 500 companies.
               </p>
             </div>
 
             <HeroImage />
 
-            <div className="hero-summary">
-              <p className="mt-3 text-base font-normal leading-relaxed text-slate-100">
-                With{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  16+ years of experience
-                </span>{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  architecting enterprise-wide AI solutions
-                </span>
-                , I&apos;ve transformed complex technological challenges into more than{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  $400M in measurable business outcomes
-                </span>
-                . I led one of the industry&apos;s largest LLM deployments in payments, scaling to{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  27,000 users across operations
-                </span>
-                , and I piloted an IoT program at a major airline that achieved{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  250% ROI within six months
-                </span>
-                . My focus is on blending innovation with proven, enterprise-grade execution.
-              </p>
-            </div>
 
             <div className="hero-cta-section" style={{ marginTop: '2rem' }}>
               <div className="cta-buttons">
