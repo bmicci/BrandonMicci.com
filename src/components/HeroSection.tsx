@@ -6,798 +6,267 @@ import { Icon } from '@/components/ui/Icon';
 import HeroImage from './HeroImage';
 
 const HeroSection = () => {
-  const [counts, setCounts] = useState({
-    value: 0,
-    users: 0,
-    roi: 0,
-    years: 0,
-  });
+  const [counts, setCounts] = useState({ value: 0, users: 0, roi: 0, years: 0 });
   const reduced = usePrefersReducedMotion();
 
   useEffect(() => {
-    const animateCounts = () => {
-      const duration = reduced ? 0 : 2000;
-      const steps = reduced ? 1 : 60;
-      const stepDuration = duration / steps;
+    const duration = reduced ? 0 : 1800;
+    const steps = reduced ? 1 : 60;
+    const stepDuration = duration / steps;
+    const targets = { value: 400, users: 27, roi: 250, years: 16 };
+    let currentStep = 0;
 
-      const targets = { value: 400, users: 27, roi: 250, years: 16 };
+    const interval = setInterval(() => {
+      currentStep++;
+      const p = currentStep / steps;
+      setCounts({
+        value: Math.floor(targets.value * p),
+        users: Math.floor(targets.users * p),
+        roi: Math.floor(targets.roi * p),
+        years: Math.floor(targets.years * p),
+      });
+      if (currentStep >= steps) clearInterval(interval);
+    }, stepDuration);
 
-      let currentStep = 0;
-      const interval = setInterval(() => {
-        currentStep++;
-        const progress = currentStep / steps;
-
-        setCounts({
-          value: Math.floor(targets.value * progress),
-          users: Math.floor(targets.users * progress),
-          roi: Math.floor(targets.roi * progress),
-          years: Math.floor(targets.years * progress),
-        });
-
-        if (currentStep >= steps) clearInterval(interval);
-      }, stepDuration);
-    };
-
-    const timer = setTimeout(animateCounts, 500);
-    return () => clearTimeout(timer);
+    return () => clearInterval(interval);
   }, [reduced]);
 
   return (
     <>
+      {/* ——— GLOBAL (light-touch) ——— */}
       <style jsx global>{`
+        /* Keep global light to avoid bleeding into other sections */
         body {
-          font-family:
-            'Inter',
-            -apple-system,
-            BlinkMacSystemFont,
-            'Segoe UI',
-            Roboto,
-            sans-serif;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
           background: #0a0e27;
           color: white;
           margin: 0;
-          padding: 0;
-          overflow-x: hidden;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
+        @media (prefers-reduced-motion: reduce) {
+          * { animation: none !important; transition: none !important; }
+        }
+      `}</style>
 
+      {/* ——— HERO ——— */}
+      <style jsx>{`
         .hero-section {
-          min-height: 100vh;
           position: relative;
-          padding: 5rem 0 2rem 0; /* Add top padding to account for fixed navigation */
+          min-height: 100dvh; /* modern mobile safe height */
+          padding: max(env(safe-area-inset-top), 4.5rem) 0 2rem 0; /* clear fixed header */
           overflow: hidden;
-          background: transparent; /* Let universal background show through */
+          background: transparent;
         }
-
-        /* Floating particles removed - using universal background */
-
-        /* Random positioning for more natural feel */
-        .particle:nth-child(1) {
-          top: 12%;
-          left: 8%;
-          animation-delay: 0s;
-          animation-duration: 6s;
-        }
-        .particle:nth-child(2) {
-          top: 28%;
-          left: 18%;
-          animation-delay: 0.5s;
-          animation-duration: 8s;
-        }
-        .particle:nth-child(3) {
-          top: 45%;
-          left: 32%;
-          animation-delay: 1s;
-          animation-duration: 10s;
-        }
-        .particle:nth-child(4) {
-          top: 62%;
-          left: 48%;
-          animation-delay: 1.5s;
-          animation-duration: 7s;
-        }
-        .particle:nth-child(5) {
-          top: 78%;
-          left: 65%;
-          animation-delay: 2s;
-          animation-duration: 9s;
-        }
-        .particle:nth-child(6) {
-          top: 88%;
-          left: 82%;
-          animation-delay: 2.5s;
-          animation-duration: 11s;
-        }
-        .particle:nth-child(7) {
-          top: 22%;
-          left: 92%;
-          animation-delay: 3s;
-          animation-duration: 6s;
-        }
-        .particle:nth-child(8) {
-          top: 38%;
-          left: 78%;
-          animation-delay: 3.5s;
-          animation-duration: 8s;
-        }
-        .particle:nth-child(9) {
-          top: 55%;
-          left: 62%;
-          animation-delay: 4s;
-          animation-duration: 10s;
-        }
-        .particle:nth-child(10) {
-          top: 72%;
-          left: 42%;
-          animation-delay: 4.5s;
-          animation-duration: 7s;
-        }
-        .particle:nth-child(11) {
-          top: 85%;
-          left: 22%;
-          animation-delay: 5s;
-          animation-duration: 9s;
-        }
-        .particle:nth-child(12) {
-          top: 95%;
-          left: 5%;
-          animation-delay: 5.5s;
-          animation-duration: 11s;
-        }
-        .particle:nth-child(13) {
-          top: 8%;
-          left: 25%;
-          animation-delay: 6s;
-          animation-duration: 6s;
-        }
-        .particle:nth-child(14) {
-          top: 18%;
-          left: 45%;
-          animation-delay: 6.5s;
-          animation-duration: 8s;
-        }
-        .particle:nth-child(15) {
-          top: 35%;
-          left: 58%;
-          animation-delay: 7s;
-          animation-duration: 10s;
-        }
-        .particle:nth-child(16) {
-          top: 52%;
-          left: 72%;
-          animation-delay: 7.5s;
-          animation-duration: 7s;
-        }
-        .particle:nth-child(17) {
-          top: 68%;
-          left: 88%;
-          animation-delay: 8s;
-          animation-duration: 9s;
-        }
-        .particle:nth-child(18) {
-          top: 82%;
-          left: 95%;
-          animation-delay: 8.5s;
-          animation-duration: 11s;
-        }
-        .particle:nth-child(19) {
-          top: 5%;
-          left: 68%;
-          animation-delay: 9s;
-          animation-duration: 6s;
-        }
-        .particle:nth-child(20) {
-          top: 15%;
-          left: 85%;
-          animation-delay: 9.5s;
-          animation-duration: 8s;
-        }
-        .particle:nth-child(21) {
-          top: 42%;
-          left: 12%;
-          animation-delay: 10s;
-          animation-duration: 10s;
-        }
-        .particle:nth-child(22) {
-          top: 58%;
-          left: 28%;
-          animation-delay: 10.5s;
-          animation-duration: 7s;
-        }
-        .particle:nth-child(23) {
-          top: 75%;
-          left: 38%;
-          animation-delay: 11s;
-          animation-duration: 9s;
-        }
-        .particle:nth-child(24) {
-          top: 92%;
-          left: 52%;
-          animation-delay: 11.5s;
-          animation-duration: 11s;
-        }
-        .particle:nth-child(25) {
-          top: 25%;
-          left: 35%;
-          animation-delay: 12s;
-          animation-duration: 6s;
-        }
-        .particle:nth-child(26) {
-          top: 48%;
-          left: 55%;
-          animation-delay: 12.5s;
-          animation-duration: 8s;
-        }
-        .particle:nth-child(27) {
-          top: 65%;
-          left: 75%;
-          animation-delay: 13s;
-          animation-duration: 10s;
-        }
-        .particle:nth-child(28) {
-          top: 82%;
-          left: 88%;
-          animation-delay: 13.5s;
-          animation-duration: 7s;
-        }
-        .particle:nth-child(29) {
-          top: 95%;
-          left: 15%;
-          animation-delay: 14s;
-          animation-duration: 9s;
-        }
-        .particle:nth-child(30) {
-          top: 8%;
-          left: 38%;
-          animation-delay: 14.5s;
-          animation-duration: 11s;
-        }
-
-        @keyframes sparkleFloat {
-          0%,
-          100% {
-            transform: translate(0, 0) scale(1) rotate(0deg);
-            opacity: 0.7;
-          }
-          25% {
-            transform: translate(-15px, -25px) scale(1.3) rotate(90deg);
-            opacity: 1;
-          }
-          50% {
-            transform: translate(20px, -40px) scale(0.8) rotate(180deg);
-            opacity: 0.8;
-          }
-          75% {
-            transform: translate(8px, -20px) scale(1.1) rotate(270deg);
-            opacity: 0.9;
-          }
-        }
-
-        /* Enhanced twinkling effect */
-        .particle::before {
-          content: '';
-          position: absolute;
-          top: -4px;
-          left: -4px;
-          right: -4px;
-          bottom: -4px;
-          border-radius: 50%;
-          background: radial-gradient(
-            circle,
-            rgba(0, 212, 255, 0.4) 0%,
-            transparent 60%
-          );
-          animation: twinkle 1.5s infinite ease-in-out;
-        }
-
-        @keyframes twinkle {
-          0%,
-          100% {
-            opacity: 0;
-            transform: scale(0.3);
-          }
-          50% {
-            opacity: 1;
-            transform: scale(1.5);
-          }
-        }
-
-        /* Neural grid removed - using universal background */
-        @keyframes gridFlow {
-          0% {
-            transform: translate(0, 0);
-          }
-          100% {
-            transform: translate(60px, 60px);
-          }
-        }
-
         .hero-container {
-          max-width: 1400px;
+          max-width: 1200px;
           margin: 0 auto;
-          padding: 0 2rem;
+          padding: 0 1rem;
           position: relative;
           z-index: 10;
         }
 
-        /* Desktop Layout */
+        /* Desktop top grid */
         .hero-top {
           display: grid;
-          grid-template-columns: 1fr 400px;
-          gap: 4rem;
+          grid-template-columns: 1fr 420px;
+          gap: 3.5rem;
           align-items: start;
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
         }
-
         .hero-content {
           display: flex;
           flex-direction: column;
-          gap: 1.2rem;
-          animation: slideInLeft 1s ease-out;
-        }
-        @keyframes slideInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
+          gap: 1rem;
         }
 
-        .hero-title {
-          font-size: 3.5rem;
+        /* Headline & copy (desktop base) */
+        .headline {
           font-weight: 800;
-          line-height: 1.1;
-          margin-bottom: 1rem;
           letter-spacing: -0.02em;
-          position: relative;
-          z-index: 15;
-          /* Add subtle background to improve readability */
-          padding: 0.5rem 1rem;
-          border-radius: 12px;
-          background-color: rgba(0, 0, 0, 0.15);
-          backdrop-filter: blur(3px);
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+          line-height: 1.1;
+          margin: 0 0 0.25rem 0;
+          font-size: clamp(2rem, 4.6vw, 3.5rem);
+          text-shadow: 0 1px 6px rgba(0,0,0,0.25);
         }
-        .gradient-text {
-          background: linear-gradient(
-            135deg,
-            #00d4ff 0%,
-            #1e90ff 50%,
-            #00d4ff 100%
-          );
+        .gradient {
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 55%, #00d4ff 100%);
           background-size: 200% 200%;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
-          animation: gradientShift 3s ease-in-out infinite;
+          animation: gradientShift 6s ease-in-out infinite;
         }
         @keyframes gradientShift {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
+          0%,100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
         }
 
-        /* Global reduce-motion guard */
-        @media (prefers-reduced-motion: reduce) {
-          * { 
-            animation: none !important; 
-            transition: none !important; 
-          }
+        .dek {
+          margin-top: 0.5rem;
+          color: rgba(255,255,255,0.92);
+          line-height: 1.6;
+          font-weight: 450;
+          font-size: clamp(1rem, 1.8vw, 1.25rem);
+          text-shadow: 0 1px 3px rgba(0,0,0,0.25);
         }
 
-        .hero-subtitle {
-          font-size: 1.2rem;
-          color: rgba(255, 255, 255, 0.8);
-          line-height: 1.4;
-          font-weight: 500;
-          white-space: nowrap;
-          position: relative;
-          z-index: 15;
-          /* Add subtle background to improve readability */
-          padding: 0.3rem 0.8rem;
-          border-radius: 8px;
-          background-color: rgba(0, 0, 0, 0.1);
-          backdrop-filter: blur(2px);
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        /* CTA group */
+        .cta-row {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.9rem;
+          margin: 1.25rem 0 1.75rem;
         }
-        .hero-description {
-          font-size: 1.1rem;
-          color: rgba(255, 255, 255, 0.9);
-          line-height: 1.7;
-          position: relative;
-          z-index: 15;
-          /* Add subtle background to improve readability */
-          padding: 0.8rem 1rem;
-          border-radius: 10px;
-          background-color: rgba(0, 0, 0, 0.12);
-          backdrop-filter: blur(2px);
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        }
-        .gradient-highlight {
-          background: linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff);
-          background-size: 200% 200%;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          animation: gradientShift 3s ease-in-out infinite;
-          font-weight: 600;
-        }
-
-        .cta-buttons {
-          display: flex;
-          gap: 1.5rem;
-        }
-        .cta-button {
+        .btn {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          gap: 0.75rem;
-          padding: 1rem 2rem;
+          gap: 0.6rem;
           border-radius: 12px;
+          padding: 0.9rem 1.1rem;
           font-weight: 600;
-          font-size: 1rem;
           text-decoration: none;
-          transition: 0.3s;
-          border: 2px solid transparent;
-          position: relative;
-          overflow: hidden;
-          flex: 1;
+          border: 1.5px solid transparent;
+          font-size: clamp(0.95rem, 2.4vw, 1rem);
+          transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+          will-change: transform;
         }
-        .cta-button svg {
-          width: 16px;
-          height: 16px;
-          opacity: 0.9;
-          flex-shrink: 0;
-        }
-        .cta-button::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.1),
-            transparent
-          );
-          transition: left 0.5s;
-        }
-        .cta-button:hover::before {
-          left: 100%;
-        }
-        .cta-button.primary {
+        .btn svg { width: 18px; height: 18px; opacity: 0.95; }
+        .btn.primary {
           background: linear-gradient(135deg, #00d4ff, #1e90ff);
-          color: #fff;
-          box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+          color: #07101d;
+          box-shadow: 0 10px 30px -10px rgba(30,144,255,0.55);
         }
-        .cta-button.primary:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+        .btn.primary:hover { transform: translateY(-1px); }
+        .btn.outline {
+          background: rgba(255,255,255,0.06);
+          color: #d7f7ff;
+          border-color: rgba(0,212,255,0.35);
+          backdrop-filter: blur(6px);
         }
-        .cta-button.outline {
-          background: transparent;
-          color: #00d4ff;
-          border-color: rgba(0, 212, 255, 0.5);
-        }
-        .cta-button.outline:hover {
-          background: rgba(0, 212, 255, 0.1);
+        .btn.outline:hover {
+          background: rgba(255,255,255,0.09);
           border-color: #00d4ff;
-          transform: translateY(-2px);
+          transform: translateY(-1px);
         }
 
-        @keyframes slideInRight {
-          from {
-            opacity: 0;
-            transform: translateX(50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        /* ===== Individual KPI Glass Boxes ===== */
+        /* KPI boxes */
         .kpi-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 1rem;
-          margin-top: 0.5rem;
+          gap: 0.9rem;
+          margin-top: 0.25rem;
         }
         .kpi-box {
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(15px);
-          border: 1px solid rgba(0, 212, 255, 0.2);
+          background: rgba(255,255,255,0.05);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(0,212,255,0.22);
           border-radius: 16px;
-          padding: 1.5rem 1rem;
+          padding: 1.25rem 0.9rem;
           text-align: center;
-          transition: all 0.3s ease;
-          position: relative;
-          overflow: hidden;
+          transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
         }
-        .kpi-box::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(0, 212, 255, 0.1),
-            transparent
-          );
-          transition: left 0.5s ease;
-        }
-        .kpi-box:hover::before {
-          left: 100%;
-        }
-        .kpi-box:hover {
-          transform: translateY(-5px);
-          border-color: rgba(0, 212, 255, 0.4);
-          box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
-          background: rgba(255, 255, 255, 0.08);
-        }
+        .kpi-box:hover { transform: translateY(-3px); background: rgba(255,255,255,0.075); border-color: rgba(0,212,255,0.38); }
         .stat-number {
           display: block;
-          font-size: 2.5rem;
+          font-size: clamp(1.6rem, 3.8vw, 2.35rem);
           font-weight: 800;
           color: #00d4ff;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.35rem;
+          letter-spacing: -0.01em;
         }
         .stat-label {
           display: block;
-          font-size: 0.9rem;
-          color: rgba(255, 255, 255, 0.7);
+          font-size: clamp(0.78rem, 1.6vw, 0.9rem);
+          color: rgba(255,255,255,0.72);
           text-transform: uppercase;
-          letter-spacing: 0.05em;
+          letter-spacing: 0.06em;
         }
 
-        /* Differentiators */
-        .differentiators-section {
-          margin: 4rem 0;
-        }
-        .differentiators-glass {
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(10px);
+        /* Differentiators block */
+        .diff-wrap { margin: 3rem 0 1.5rem; }
+        .diff-glass {
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(0,212,255,0.22);
           border-radius: 20px;
-          padding: 2.5rem;
-          border: 1px solid rgba(0, 212, 255, 0.2);
+          padding: clamp(1.25rem, 3vw, 2.25rem);
+          backdrop-filter: blur(10px);
         }
-
-        .differentiators-glass .mx-auto {
-          margin-bottom: 2rem;
+        .diff-header {
+          display: flex; align-items: center; justify-content: center; gap: 0.65rem; margin-bottom: 1.25rem;
         }
-
-        .differentiators-glass .mx-auto span:last-child {
-          background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-          font-weight: 700;
+        .diff-title {
+          font-size: clamp(1.3rem, 3.8vw, 2rem);
+          font-weight: 800;
         }
-
-        @keyframes rocketFloat {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          25% { transform: translateY(-3px) rotate(2deg); }
-          50% { transform: translateY(-6px) rotate(0deg); }
-          75% { transform: translateY(-3px) rotate(-2deg); }
-        }
-
-        .differentiators-glass .mx-auto span:first-child {
-          animation: rocketFloat 3s ease-in-out infinite;
-          display: inline-block;
-        }
-
-        @media (max-width: 360px) {
-          .differentiator-item {
-            padding: 0.75rem;
-          }
-          .differentiator-item h4 {
-            font-size: 0.9rem;
-          }
-          .differentiator-item p {
-            font-size: 0.8rem;
-          }
-        }
-        .differentiators-header {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 1rem;
-          margin-bottom: 2rem;
-        }
-        .rocket-icon {
-          font-size: 2rem;
-          animation: rocketTakeoff 3s ease-in-out infinite;
-        }
-        @keyframes rocketTakeoff {
-          0%,
-          100% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          25% {
-            transform: translateY(-8px) rotate(-5deg);
-          }
-          50% {
-            transform: translateY(-15px) rotate(0deg);
-          }
-          75% {
-            transform: translateY(-8px) rotate(5deg);
-          }
-        }
-        .header-text {
-          font-size: 2rem;
-          font-weight: 700;
-          color: #fff;
-          margin: 0;
-        }
-        .differentiators-grid {
+        .diff-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
+          gap: clamp(0.9rem, 2.5vw, 1.5rem);
         }
-        .differentiator-item {
-          background: rgba(255, 255, 255, 0.05);
+        .diff-item {
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.12);
           border-radius: 16px;
-          padding: 2rem;
-          border: 1px solid rgba(0, 212, 255, 0.1);
-          transition: 0.3s;
+          padding: clamp(0.9rem, 2.8vw, 1.25rem);
+          transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
         }
-        .differentiator-item:hover {
-          background: rgba(255, 255, 255, 0.08);
-          border-color: rgba(0, 212, 255, 0.3);
-          transform: translateY(-4px);
+        .diff-item:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); border-color: rgba(0,212,255,0.35); }
+        .diff-item h4 {
+          margin: 0; font-weight: 700; font-size: clamp(1rem, 2.4vw, 1.15rem);
         }
-        .item-title {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          font-size: 1.3rem;
-          font-weight: 700;
-          color: #fff;
-          margin-bottom: 1rem;
-        }
-        .item-icon {
-          width: 24px;
-          height: 24px;
-          fill: url(#blueGradient);
-        }
-        .item-text {
-          color: rgba(255, 255, 255, 0.8);
-          line-height: 1.6;
-          margin: 0;
+        .diff-item p {
+          margin: 0.4rem 0 0; color: #cbd5e1; line-height: 1.55; font-size: clamp(0.9rem, 2.2vw, 1rem);
         }
 
-        /* Hide mobile layout by default (this was the bug) */
-        .mobile-layout {
-          display: none;
-        }
-
-        /* Hide mobile KPI grid on desktop */
-        .mobile-kpi-grid {
-          display: none;
-        }
-
-        /* Mobile tweaks */
-        .mobile-description {
-          text-align: center;
-        }
+        /* Mobile overrides */
+        .mobile-layout { display: none; }
 
         @media (max-width: 768px) {
-          .hero-container {
-            padding: 0 1rem;
-          }
-          /* Hide desktop on mobile */
-          .hero-top {
-            display: none;
-          }
-          /* Show mobile layout */
-          .mobile-layout {
-            display: block;
-          }
-
-          /* Mobile intro text alignment */
+          .hero-container { padding: 0 0.9rem; }
+          .hero-top { display: none; }         /* hide desktop grid on mobile */
+          .mobile-layout { display: block; }
           .mobile-intro {
-            text-align: center;
-            padding: 0 1rem;
+            max-width: 680px;
             margin: 0 auto;
-            max-width: 90%;
-          }
-
-          .mobile-intro h1 {
-            text-align: center !important;
-            font-size: 1.4rem !important;
-            line-height: 1.1 !important;
-            margin-bottom: 1rem !important;
+            text-align: center;
             padding: 0 0.25rem;
-            font-weight: 700 !important;
           }
-
-          .mobile-intro p {
-            text-align: center !important;
-            font-size: 1rem !important;
-            line-height: 1.4 !important;
-            padding: 0 0.5rem;
-          }
-
-          .mobile-title {
-            font-size: 2rem;
+          .mobile-intro h1 {
+            margin: 0;
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1rem;
+            line-height: 1.12;
             letter-spacing: -0.02em;
-            text-align: center;
+            /* Fluid headline specifically for small screens */
+            font-size: clamp(1.45rem, 7.6vw, 2rem);
+            text-shadow: 0 1px 6px rgba(0,0,0,0.25);
           }
-          .mobile-subtitle {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
+          .mobile-intro p {
+            margin-top: 0.65rem;
             line-height: 1.5;
-            font-weight: 500;
-            text-align: center;
-            margin-bottom: 2rem;
+            font-size: clamp(0.95rem, 4.2vw, 1.05rem);
+            color: rgba(255,255,255,0.9);
           }
-
-          .mobile-kpi-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-          }
-          .cta-buttons {
-            grid-template-columns: 1fr;
-          }
-          .stat-number {
-            font-size: 2rem;
-          }
-          .differentiators-grid {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-          }
+          .cta-row { grid-template-columns: 1fr; gap: 0.7rem; margin-top: 1.4rem; }
+          .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+          .stat-number { font-size: clamp(1.4rem, 8vw, 2rem); }
+          .diff-grid { grid-template-columns: 1fr; }
         }
 
-        /* Extra small screens (iPhone SE) */
-        @media (max-width: 375px) {
-          .mobile-intro h1 {
-            font-size: 1.2rem !important;
-            line-height: 1.0 !important;
-            padding: 0 0.1rem;
-          }
-
-          .mobile-intro p {
-            font-size: 0.9rem !important;
-            line-height: 1.3 !important;
-            padding: 0 0.25rem;
-          }
-
-          .mobile-intro {
-            padding: 0 0.5rem;
-            max-width: 95%;
-          }
+        /* Very small phones (SE) */
+        @media (max-width: 360px) {
+          .hero-section { padding-top: max(env(safe-area-inset-top), 4.1rem); }
+          .mobile-intro p { line-height: 1.42; }
         }
       `}</style>
 
       <div className="hero-section">
-        {/* SVG Gradient Definition */}
+        {/* SVG for gradient fills (icons) */}
         <svg width="0" height="0" style={{ position: 'absolute' }}>
           <defs>
-            <linearGradient
-              id="blueGradient"
-              x1="0%"
-              y1="0%"
-              x2="100%"
-              y2="100%"
-            >
+            <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#00d4ff" />
               <stop offset="50%" stopColor="#1e90ff" />
               <stop offset="100%" stopColor="#00d4ff" />
@@ -805,253 +274,131 @@ const HeroSection = () => {
           </defs>
         </svg>
 
-        {/* Background elements removed - using universal background */}
-
-        <div className="hero-container mx-auto w-full max-w-6xl px-4 md:px-8 overflow-x-clip">
-          {/* Desktop Layout */}
+        <div className="hero-container">
+          {/* ——— DESKTOP ——— */}
           <div className="hero-top">
             <div className="hero-content">
-              {/* HERO TEXT STACK — safe, isolated from image */}
-              <div className="min-w-0">
-                <h1 className="text-3xl md:text-6xl font-extrabold leading-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)]">
-                  Senior{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                    AI & Digital
-                  </span>{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                    Transformation
-                  </span>{' '}
-                  Executive
-                </h1>
-                <p className="mt-3 text-lg md:text-xl font-normal leading-relaxed text-slate-100">
-                  Over{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    16+ years
-                  </span>
-                  {' '}as a proven leader delivering{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    $400M+ in enterprise value
-                  </span>
-                  , scaling solutions to{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    27K+ users
-                  </span>
-                  , and achieving breakthrough ROI through strategic innovation across{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    Fortune 500 organizations
-                  </span>
-                  . From global investment banks to leading financial institutions, I translate complex AI strategies into measurable business outcomes for{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    C-suite stakeholders
-                  </span>
-                  .
-                </p>
+              <h1 className="headline">
+                Senior <span className="gradient">AI & Digital</span>{' '}
+                <span className="gradient">Transformation</span> Executive
+              </h1>
+
+              <p className="dek">
+                Over <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>16+ years</span> as a proven
+                leader delivering <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>$400M+ in enterprise value</span>,
+                scaling solutions to <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>27K+ users</span>, and achieving breakthrough ROI across
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> Fortune 500 organizations</span>. I translate complex AI strategies into measurable outcomes for
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> C-suite stakeholders</span>.
+              </p>
+
+              <div className="cta-row">
+                <a href="mailto:contact@brandonmicci.com" className="btn primary">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                  Let&apos;s Connect
+                </a>
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn outline">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/></svg>
+                  Download Resume
+                </a>
               </div>
 
-              {/* Desktop KPI Grid */}
               <div className="kpi-grid">
-                <div className="kpi-box">
-                  <span className="stat-number">${counts.value}M+</span>
-                  <span className="stat-label">Value Delivered</span>
-                </div>
-                <div className="kpi-box">
-                  <span className="stat-number">{counts.users}K+</span>
-                  <span className="stat-label">AI Users</span>
-                </div>
-                <div className="kpi-box">
-                  <span className="stat-number">{counts.roi}%</span>
-                  <span className="stat-label">Typical ROI</span>
-                </div>
-                <div className="kpi-box">
-                  <span className="stat-number">{counts.years}+</span>
-                  <span className="stat-label">Years Leading</span>
-                </div>
-              </div>
-
-              <div className="hero-cta-section" style={{ marginTop: '1.5rem', marginBottom: '2rem' }}>
-                <div className="cta-buttons">
-                  <a
-                    href="mailto:contact@brandonmicci.com"
-                    className="cta-button primary"
-                  >
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                    </svg>
-                    Let&apos;s Connect
-                  </a>
-                  <a
-                    href="/resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cta-button outline"
-                  >
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-                    </svg>
-                    Download Resume
-                  </a>
-                </div>
+                <div className="kpi-box"><span className="stat-number">${counts.value}M+</span><span className="stat-label">Value Delivered</span></div>
+                <div className="kpi-box"><span className="stat-number">{counts.users}K+</span><span className="stat-label">AI Users</span></div>
+                <div className="kpi-box"><span className="stat-number">{counts.roi}%</span><span className="stat-label">Typical ROI</span></div>
+                <div className="kpi-box"><span className="stat-number">{counts.years}+</span><span className="stat-label">Years Leading</span></div>
               </div>
             </div>
 
             <HeroImage />
           </div>
 
-          {/* Mobile Layout */}
+          {/* ——— MOBILE ——— */}
           <div className="mobile-layout">
             <div className="mobile-intro">
-              <h1 className="text-3xl font-extrabold leading-tight text-white drop-shadow-[0_1px_10px_rgba(0,0,0,0.35)] text-center">
-                Senior{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  AI & Digital
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Transformation
-                </span>{' '}
-                Executive
+              <h1>
+                Senior <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>AI & Digital</span><br />
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>Transformation</span> Executive
               </h1>
-              <p className="mt-3 text-lg font-normal leading-relaxed text-slate-100 text-center">
-                Over{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  16+ years
-                </span>
-                {' '}as a proven leader delivering{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  $400M+ in enterprise value
-                </span>
-                , scaling solutions to{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  27K+ users
-                </span>
-                , and achieving breakthrough ROI through strategic innovation across{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  Fortune 500 organizations
-                </span>
-                . From global investment banks to leading financial institutions, I translate complex AI strategies into measurable business outcomes for{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  C-suite stakeholders
-                </span>
-                .
+              <p>
+                Over <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>16+ years</span> delivering
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> $400M+ value</span>, scaling to
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> 27K+ users</span>, driving ROI across
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> Fortune 500</span>.
               </p>
             </div>
 
             <HeroImage />
 
-
-            <div className="hero-cta-section" style={{ marginTop: '2.5rem', marginBottom: '2rem' }}>
-              <div className="cta-buttons">
-                <a
-                  href="mailto:contact@brandonmicci.com"
-                  className="cta-button primary"
-                >
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                  </svg>
-                  Let&apos;s Connect
-                </a>
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-button outline"
-                >
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-                  </svg>
-                  View Portfolio
-                </a>
-              </div>
+            <div className="cta-row">
+              <a href="mailto:contact@brandonmicci.com" className="btn primary">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                Let&apos;s Connect
+              </a>
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn outline">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/></svg>
+                View Portfolio
+              </a>
             </div>
           </div>
 
-          {/* What Makes Me Different */}
-          <div className="differentiators-section">
-            <div className="differentiators-glass">
-              <div className="mx-auto flex items-center justify-center gap-3 text-center">
-                <Icon name="sparkle" size="lg" className="text-2xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500" />
-                <span className="text-2xl md:text-4xl font-bold tracking-wide text-white">
-                  What makes me different
-                </span>
+          {/* ——— DIFFERENTIATORS ——— */}
+          <div className="diff-wrap">
+            <div className="diff-glass">
+              <div className="diff-header">
+                <Icon name="sparkle" size="lg" className="text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500" />
+                <span className="diff-title">What makes me different</span>
               </div>
-              <div className="differentiators-grid">
-                <div className="differentiator-item rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
-                  <div className="flex items-start gap-3">
-                    <Icon name="linechart" size="lg" className="mt-1 text-cyan-400 transition drop-shadow-none hover:drop-shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
-                    <div>
-                      <div className="text-base md:text-lg font-semibold text-white">
-                        Scale Expertise
-                      </div>
-                      <p className="mt-1 text-sm text-slate-300">
-                        Led the largest LLM deployment in payments (27,000+ users)
-                        and built global teams of 50+ professionals.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="differentiator-item rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
-                  <div className="flex items-start gap-3">
-                    <Icon name="barchart" size="lg" className="mt-1 text-cyan-400 transition drop-shadow-none hover:drop-shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
-                    <div>
-                      <div className="text-base md:text-lg font-semibold text-white">
-                        Financial Impact
-                      </div>
-                      <p className="mt-1 text-sm text-slate-300">
-                        Consistent, outsized ROI—250%+ returns delivering $30M in
-                        new revenue streams.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="differentiator-item rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
-                  <div className="flex items-start gap-3">
-                    <Icon name="globe" size="lg" className="mt-1 text-cyan-400 transition drop-shadow-none hover:drop-shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
-                    <div>
-                      <div className="text-base md:text-lg font-semibold text-white">
-                        Cross-Industry Innovation
-                      </div>
-                      <p className="mt-1 text-sm text-slate-300">
-                        Deep expertise across Financial Services, Insurance,
-                        Airlines, Energy, and Life Sciences.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="differentiator-item rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
-                  <div className="flex items-start gap-3">
-                    <Icon name="sparkle" size="lg" className="mt-1 text-cyan-400 transition drop-shadow-none hover:drop-shadow-[0_0_6px_rgba(0,212,255,0.6)]" />
-                    <div>
-                      <div className="text-base md:text-lg font-semibold text-white">
-                        Transformation Catalyst
-                      </div>
-                      <p className="mt-1 text-sm text-slate-300">
-                        AI evangelist who builds adoption communities that drive
-                        organizational change at scale.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          {/* Mobile KPI Grid */}
-          <div className="mobile-kpi-grid">
-            <div className="kpi-box">
-              <span className="stat-number">${counts.value}M+</span>
-              <span className="stat-label">Value Delivered</span>
+              <div className="diff-grid">
+                <div className="diff-item">
+                  <div className="flex items-start gap-3">
+                    <Icon name="linechart" size="lg" className="mt-0.5 text-cyan-400" />
+                    <div>
+                      <h4>Scale Expertise</h4>
+                      <p>Led the largest LLM deployment in payments (27,000+ users) and built global teams of 50+.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="diff-item">
+                  <div className="flex items-start gap-3">
+                    <Icon name="barchart" size="lg" className="mt-0.5 text-cyan-400" />
+                    <div>
+                      <h4>Financial Impact</h4>
+                      <p>Consistent 250%+ ROI, delivering $30M in new continuous revenue streams.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="diff-item">
+                  <div className="flex items-start gap-3">
+                    <Icon name="globe" size="lg" className="mt-0.5 text-cyan-400" />
+                    <div>
+                      <h4>Cross-Industry Innovation</h4>
+                      <p>Depth across Financial Services, Insurance, Airlines, Energy, and Life Sciences.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="diff-item">
+                  <div className="flex items-start gap-3">
+                    <Icon name="sparkle" size="lg" className="mt-0.5 text-cyan-400" />
+                    <div>
+                      <h4>Transformation Catalyst</h4>
+                      <p>Builds adoption communities that drive organizational change at scale.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="kpi-box">
-              <span className="stat-number">{counts.users}K+</span>
-              <span className="stat-label">AI Users</span>
-            </div>
-            <div className="kpi-box">
-              <span className="stat-number">{counts.roi}%</span>
-              <span className="stat-label">Typical ROI</span>
-            </div>
-            <div className="kpi-box">
-              <span className="stat-number">{counts.years}+</span>
-              <span className="stat-label">Years Leading</span>
+
+            {/* Mobile KPI Grid (kept after differentiators for short-scroll punch) */}
+            <div className="kpi-grid" style={{ marginTop: '1.25rem' }}>
+              <div className="kpi-box"><span className="stat-number">${counts.value}M+</span><span className="stat-label">Value Delivered</span></div>
+              <div className="kpi-box"><span className="stat-number">{counts.users}K+</span><span className="stat-label">AI Users</span></div>
+              <div className="kpi-box"><span className="stat-number">{counts.roi}%</span><span className="stat-label">Typical ROI</span></div>
+              <div className="kpi-box"><span className="stat-number">{counts.years}+</span><span className="stat-label">Years Leading</span></div>
             </div>
           </div>
         </div>
