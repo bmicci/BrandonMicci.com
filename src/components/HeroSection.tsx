@@ -777,7 +777,7 @@ const HeroSection = () => {
                   Executive
                 </h1>
                 <p className="mt-3 text-lg md:text-2xl font-normal leading-relaxed text-slate-100">
-                  Transformational AI & Data Strategy Executive with{' '}
+                  With{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     16+ years
                   </span>
@@ -785,7 +785,7 @@ const HeroSection = () => {
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     Fortune 500 organizations
                   </span>
-                  . I&apos;ve delivered{' '}
+                  , I&apos;ve delivered{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     $400M+ in new revenue
                   </span>
@@ -861,7 +861,7 @@ const HeroSection = () => {
                 Executive
               </h1>
               <p className="mt-3 text-lg font-normal leading-relaxed text-slate-100">
-                Transformational AI & Data Strategy Executive with{' '}
+                With{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   16+ years
                 </span>
@@ -869,7 +869,7 @@ const HeroSection = () => {
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   Fortune 500 organizations
                 </span>
-                . I&apos;ve delivered{' '}
+                , I&apos;ve delivered{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   $400M+ in new revenue
                 </span>
