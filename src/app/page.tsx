@@ -13,7 +13,6 @@ const UniversalBackground = dynamic(
 // Regular imports for lighter components
 import CompanyExpertise from '@/components/CompanyExpertise';
 import StrategicAdvantageHeader from '@/components/StrategicAdvantageHeader';
-import StrategicIntroCard from '@/components/StrategicIntroCard';
 import StrategicDifferentiators from '@/components/StrategicDifferentiators';
 import ExecutiveExperience from '@/components/ExecutiveExperience';
 import TransformationLeadership from '@/components/TransformationLeadership';
@@ -34,7 +33,6 @@ export default function Home() {
         {/* Strategic Vision Content */}
         <div className="relative z-10 w-full">
           <StrategicAdvantageHeader />
-          <StrategicIntroCard />
           <CompanyExpertise />
           <StrategicDifferentiators />
         </div>
