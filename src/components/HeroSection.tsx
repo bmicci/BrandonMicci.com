@@ -779,28 +779,20 @@ const HeroSection = () => {
                   </span>{' '}
                   Executive
                 </h1>
-                <p className="mt-3 text-lg md:text-2xl font-normal leading-relaxed text-slate-100">
-                  With{' '}
+                <p className="mt-1 text-lg md:text-2xl font-semibold text-white/95">
+                  Enterprise AI and digital transformation leader delivering{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    16+ years
+                    $400M+ in measurable impact
                   </span>
-                  {' '}architecting enterprise-wide digital transformation across{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    Fortune 500 organizations
-                  </span>
-                  , I&apos;ve delivered{' '}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    $400M+ in new revenue
-                  </span>
-                  {' '}through strategic AI initiatives, scaled the largest LLM deployment in the payments industry to{' '}
+                  , scaling LLMs to{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                     27K+ users
                   </span>
-                  , and pioneered breakthrough innovations like achieving{' '}
+                  , and pioneering IoT pilots with{' '}
                   <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                    250% ROI on IoT initiatives
+                    proven ROI
                   </span>
-                  {' '}at a major airline. From global investment banks to leading financial institutions, I translate complex AI strategies into measurable business outcomes for C-suite stakeholders.
+                  .
                 </p>
               </div>
 
@@ -866,28 +858,20 @@ const HeroSection = () => {
                 </span>{' '}
                 Executive
               </h1>
-              <p className="mt-3 text-lg font-normal leading-relaxed text-slate-100">
-                With{' '}
+              <p className="mt-1 text-lg font-semibold text-white/95">
+                Enterprise AI and digital transformation leader delivering{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  16+ years
+                  $400M+ in measurable impact
                 </span>
-                {' '}architecting enterprise-wide digital transformation across{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  Fortune 500 organizations
-                </span>
-                , I&apos;ve delivered{' '}
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  $400M+ in new revenue
-                </span>
-                {' '}through strategic AI initiatives, scaled the largest LLM deployment in the payments industry to{' '}
+                , scaling LLMs to{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
                   27K+ users
                 </span>
-                , and pioneered breakthrough innovations like achieving{' '}
+                , and pioneering IoT pilots with{' '}
                 <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-semibold">
-                  250% ROI on IoT initiatives
+                  proven ROI
                 </span>
-                {' '}at a major airline. From global investment banks to leading financial institutions, I translate complex AI strategies into measurable business outcomes for C-suite stakeholders.
+                .
               </p>
             </div>
 
