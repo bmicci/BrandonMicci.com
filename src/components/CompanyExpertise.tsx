@@ -86,9 +86,7 @@ const CompanyExpertise: React.FC = () => {
 
         .companies-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
           gap: 1.5rem;
-          max-width: 1000px;
           margin: 0 auto;
           animation: gridFadeIn 1s ease-out 0.8s both;
         }
@@ -96,7 +94,6 @@ const CompanyExpertise: React.FC = () => {
         .company-card {
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
           border-radius: 12px;
-          padding: 1.25rem 1rem;
           text-align: center;
           transition: all 0.3s ease;
           position: relative;
@@ -227,11 +224,6 @@ const CompanyExpertise: React.FC = () => {
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-          .companies-grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
-          }
-
           .expertise-subtitle {
             font-size: 1.9rem;
           }
@@ -255,15 +247,6 @@ const CompanyExpertise: React.FC = () => {
             font-size: 1.6rem;
           }
 
-          .companies-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-          }
-
-          .company-card {
-            padding: 1rem 0.75rem;
-          }
-
           .company-name {
             font-size: 0.9rem;
           }
@@ -282,16 +265,6 @@ const CompanyExpertise: React.FC = () => {
           .expertise-subtitle {
             font-size: 1.4rem;
             line-height: 1.3;
-          }
-
-          .companies-grid {
-            grid-template-columns: 1fr;
-            gap: 0.875rem;
-            max-width: 300px;
-          }
-
-          .company-card {
-            padding: 1.125rem 1rem;
           }
 
           .company-name {
