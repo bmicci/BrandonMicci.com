@@ -183,61 +183,63 @@ const HeroSection = () => {
           margin-top: 0.25rem;
         }
 
-        /* Wide desktop: 4-up, numbers slightly smaller to avoid edge crowding */
+        /* Wide desktop: 4-up */
         @media (min-width: 1280px) {
           .kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
         }
-
         /* Mid desktop: 3-up */
         @media (min-width: 1024px) and (max-width: 1279px) {
           .kpi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
-
         /* Tablet/Mobile: 2-up */
         @media (max-width: 1023px) {
           .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
 
         .kpi-box {
+          /* enable container-query units so the number scales with the CARD width */
+          container-type: inline-size;
+
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           min-height: clamp(120px, 12vw, 150px);
-          /* add a touch more side padding so big glyphs ($) never touch the border */
-          padding: clamp(1rem, 1.6vw, 1.25rem) clamp(1.1rem, 2vw, 1.4rem);
+          padding: clamp(1rem, 1.6vw, 1.25rem) clamp(1.2rem, 2.2vw, 1.5rem); /* a bit more side padding */
           border-radius: 16px;
+
           background: rgba(255,255,255,0.05);
           backdrop-filter: blur(12px);
           border: 1px solid rgba(0,212,255,0.22);
           transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
           box-sizing: border-box;
+          overflow: hidden; /* hard stop for any stray glyph overflow */
         }
 
-        /* Numbers: never spill, always centered */
+        /* Numbers: scale by CARD width, never touch edges */
         .stat-number {
           display: block;
           font-weight: 800;
           color: #00d4ff;
           line-height: 1;
           margin-bottom: 0.35rem;
-          letter-spacing: -0.01em;
+          letter-spacing: 0;              /* remove negative tracking that was crowding the $ */
           white-space: nowrap;
           text-align: center;
-          max-width: 92%;   /* guarantees breathing room on both sides */
+          padding-inline: 0.18em;         /* em-based side breathing room for wide glyphs like $ */
+          max-width: 100%;
+          /* container-based sizing: 1cqw = 1% of the card width */
+          font-size: clamp(1.6rem, 16cqw, 2.2rem);
         }
 
-        /* Default desktop/tablet/mobile scaling */
-        .stat-number { font-size: clamp(1.7rem, 3vw, 2.25rem); }
-
-        /* 4-up wide desktop: nudge a bit smaller to prevent edge collision */
+        /* 4-up wide desktop: a hair tighter so it never kisses the border */
         @media (min-width: 1280px) {
-          .stat-number { font-size: clamp(1.6rem, 2.1vw, 2.05rem); }
+          .stat-number { font-size: clamp(1.55rem, 15cqw, 2.05rem); }
         }
 
-        /* Ultra-wide: let it grow again */
+        /* ultra-wide can grow a bit again */
         @media (min-width: 1440px) {
-          .stat-number { font-size: clamp(1.8rem, 2.2vw, 2.35rem); }
+          .stat-number { font-size: clamp(1.7rem, 16cqw, 2.35rem); }
         }
 
         /* Labels stay tidy and wrap nicely */
@@ -247,10 +249,10 @@ const HeroSection = () => {
           color: rgba(255,255,255,0.72);
           text-transform: uppercase;
           letter-spacing: 0.06em;
-          text-wrap: balance;   /* prettier breaks for two-word labels */
+          text-wrap: balance;
         }
 
-        /* Optional: avoid hover "jump" */
+        /* Optional: avoid hover "jump" so row baseline stays flat */
         .kpi-box:hover {
           transform: none;
           background: rgba(255,255,255,0.075);
