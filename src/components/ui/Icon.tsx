@@ -31,7 +31,7 @@ const sizeCN = { sm: "w-4 h-4", md: "w-6 h-6", lg: "w-8 h-8" };
 export const Icon = memo(({ name, size="md", className="", gradient=true, stroke=2 }: IconProps) => {
   const Cmp = MAP[name];
   const paint = gradient
-    ? "text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500"
+    ? "text-cyan-400"
     : "text-cyan-400";
   return <Cmp className={`${sizeCN[size]} ${paint} ${className}`} strokeWidth={stroke} />;
 });
