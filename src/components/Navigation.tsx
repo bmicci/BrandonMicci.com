@@ -98,6 +98,7 @@ const Navigation = () => {
         .logo {
           display: flex;
           align-items: center;
+          gap: 0.75rem;
           text-decoration: none;
           color: white;
           transition: transform 0.3s ease;
@@ -131,6 +132,32 @@ const Navigation = () => {
           text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
         }
 
+        .logo-text {
+          display: flex;
+          flex-direction: column;
+          line-height: 1.2;
+        }
+
+        .logo-name {
+          font-size: 0.95rem;
+          font-weight: 700;
+          color: white;
+          white-space: nowrap;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          margin: 0;
+        }
+
+        .logo-title {
+          font-size: 0.6rem;
+          color: rgba(255, 255, 255, 0.7);
+          font-weight: 400;
+          letter-spacing: 0.3px;
+          white-space: nowrap;
+          transition: all 0.3s ease;
+          margin: 0;
+        }
+
         .nav-menu {
           display: flex;
           list-style: none;
@@ -146,6 +173,15 @@ const Navigation = () => {
 
           .wix-header.scrolled .logo-bm {
             font-size: 1.9rem;
+          }
+
+          .wix-header.scrolled .logo-name {
+            font-size: 0.88rem;
+          }
+
+          .wix-header.scrolled .logo-title {
+            font-size: 0.55rem;
+            opacity: 0.85;
           }
         }
 
@@ -323,6 +359,14 @@ const Navigation = () => {
             font-size: 2rem;
           }
 
+          .logo-name {
+            font-size: 1.2rem;
+          }
+
+          .logo-title {
+            font-size: 0.7rem;
+          }
+
           .nav-container {
             padding: 0.6rem 1rem;
             min-height: 56px;
@@ -337,6 +381,14 @@ const Navigation = () => {
           .logo-bm {
             font-size: 1.8rem;
           }
+
+          .logo-name {
+            font-size: 1.05rem;
+          }
+
+          .logo-title {
+            display: none;
+          }
         }
       `}</style>
 
@@ -344,6 +396,10 @@ const Navigation = () => {
         <nav className="nav-container">
           <div className="logo" onClick={() => handleLinkClick('home')}>
             <div className="logo-bm">BM</div>
+            <div className="logo-text">
+              <div className="logo-name">Brandon Micci</div>
+              <div className="logo-title">AI & Digital Transformation</div>
+            </div>
           </div>
 
           <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
