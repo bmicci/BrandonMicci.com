@@ -548,6 +548,16 @@ const HeroSection = () => {
           }
         }
         /* === END Desktop Hero Patch === */
+
+        /* === START Wide-Desktop 3rd CTA === */
+        .show-xl { display: none; }
+        @media (min-width: 1280px) {
+          .show-xl { display: inline-flex; }
+          .cta-row.cta-3up-xl {
+            grid-template-columns: repeat(3, max-content) !important;
+          }
+        }
+        /* === END Wide-Desktop 3rd CTA === */
       `}</style>
 
       <div className="hero-section">
@@ -590,7 +600,7 @@ const HeroSection = () => {
                 </a>
                 {/* Wide-desktop only: appears at ≥1280px via .show-xl */}
                 <a href="/executive-brief.pdf" target="_blank" rel="noopener noreferrer" className="btn outline show-xl">
-                  <Icon name="briefcase" size="md" className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]" />
+                  <Icon name="file-text" size="md" className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]" />
                   Executive Brief
                 </a>
               </div>
