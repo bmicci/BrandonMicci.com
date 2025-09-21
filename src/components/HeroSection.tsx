@@ -459,6 +459,7 @@ const HeroSection = () => {
             max-width: 62ch !important;                 /* keeps paragraph and CTAs inside the column */
             align-items: flex-start !important;
             text-align: left !important;
+            overflow: hidden !important;                /* prevent content from spilling out */
           }
 
           /* Reorder: KPI grid ABOVE the CTAs (H1 → dek → KPI → CTAs) */
@@ -477,9 +478,11 @@ const HeroSection = () => {
 
           /* KPI row: stay snug in the left column */
           .kpi-grid {
-            grid-template-columns: repeat(4, minmax(200px, 1fr)) !important;
+            grid-template-columns: repeat(4, minmax(140px, 1fr)) !important;
             width: 100% !important;
+            max-width: 100% !important;                 /* prevent overflow */
             align-self: stretch !important;             /* uses the left column width exactly */
+            box-sizing: border-box !important;         /* include padding in width calculation */
           }
 
           /* Image column: right-locked and vertically centered with whitespace above/below */
