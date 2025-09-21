@@ -491,6 +491,63 @@ const HeroSection = () => {
             align-self: center !important;
           }
         }
+
+        /* === START Desktop Hero Patch === */
+        @media (min-width: 1024px) {
+          /* 2-col layout: left copy gets room, right column (image) is capped */
+          .hero-top {
+            grid-template-columns: minmax(560px, 1fr) min(460px, 32vw) !important;
+            gap: clamp(2.75rem, 3.5vw, 4rem) !important;
+            align-items: center !important; /* centers image vertically vs text stack */
+          }
+
+          /* Keep the text stack strictly inside the left column */
+          .hero-content {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            max-width: 62ch !important;     /* readable measure */
+            text-align: left !important;
+          }
+
+          /* Order: H1 → paragraph (.dek) → KPI grid → CTA row */
+          .dek { order: 10 !important; }
+          .kpi-grid { order: 20 !important; margin-top: 1rem !important; margin-bottom: 1.1rem !important; }
+          .cta-row { order: 30 !important; margin-top: 0.4rem !important; }
+
+          /* CTAs: intrinsic width, don't stretch past image column */
+          .cta-row {
+            grid-template-columns: repeat(2, max-content) !important;
+            justify-content: start !important;
+            gap: 1rem 1.25rem !important;
+            max-width: 100% !important;
+          }
+          .cta-row .btn { white-space: nowrap; }
+
+          /* Image column: fixed cap + right aligned + vertically centered */
+          .hero-top > *:last-child {
+            width: min(460px, 32vw) !important;
+            justify-self: end !important;
+            align-self: center !important;
+          }
+          .hero-top > *:last-child img,
+          .hero-top > *:last-child svg,
+          .hero-top > *:last-child canvas,
+          .hero-top > *:last-child video {
+            display: block !important;
+            width: 100% !important;
+            height: auto !important;
+          }
+        }
+
+        /* XL screens: keep proportions steady */
+        @media (min-width: 1440px) {
+          .hero-top {
+            grid-template-columns: minmax(620px, 1fr) min(560px, 32vw) !important;
+            gap: clamp(3rem, 4vw, 5rem) !important;
+          }
+        }
+        /* === END Desktop Hero Patch === */
       `}</style>
 
       <div className="hero-section">
