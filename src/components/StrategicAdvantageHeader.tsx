@@ -14,7 +14,7 @@ const StrategicAdvantageHeader: React.FC = () => {
             'Segoe UI',
             Roboto,
             sans-serif;
-          padding: 1.5rem 2rem 2rem;
+          padding: 0.5rem 2rem 2rem;
           text-align: center;
           position: relative;
           z-index: 10;
@@ -23,7 +23,7 @@ const StrategicAdvantageHeader: React.FC = () => {
 
         /* iPad Pro spacing tighten */
         @media (min-width:1024px) and (max-width:1279px){
-          .strategic-header{ padding: 1rem 1.5rem 1.25rem; }
+          .strategic-header{ padding: 0.25rem 1.5rem 1.25rem; }
           .strategic-title{ font-size: 2.4rem; }
           .strategic-subtitle{ max-width: 850px; }
         }
