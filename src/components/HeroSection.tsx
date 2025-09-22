@@ -590,6 +590,7 @@ const HeroSection = () => {
                 {/* AI Users */}
                 <div className="kpi-box">
                   <span className="stat">
+                    <span className="stat__prefix" aria-hidden="true"></span>
                     <span className="stat__value" aria-live="polite">{counts.users}</span>
                     <span className="stat__suffix">K+</span>
                   </span>
@@ -599,6 +600,7 @@ const HeroSection = () => {
                 {/* Typical ROI */}
                 <div className="kpi-box">
                   <span className="stat">
+                    <span className="stat__prefix" aria-hidden="true"></span>
                     <span className="stat__value" aria-live="polite">{counts.roi}</span>
                     <span className="stat__suffix">%</span>
                   </span>
@@ -608,6 +610,7 @@ const HeroSection = () => {
                 {/* Years Leading */}
                 <div className="kpi-box">
                   <span className="stat">
+                    <span className="stat__prefix" aria-hidden="true"></span>
                     <span className="stat__value" aria-live="polite">{counts.years}</span>
                     <span className="stat__suffix">+</span>
                   </span>
@@ -738,6 +741,7 @@ const HeroSection = () => {
             {/* AI Users */}
             <div className="kpi-box">
               <span className="stat">
+                <span className="stat__prefix" aria-hidden="true"></span>
                 <span className="stat__value" aria-live="polite">{counts.users}</span>
                 <span className="stat__suffix">K+</span>
               </span>
@@ -747,6 +751,7 @@ const HeroSection = () => {
             {/* Typical ROI */}
             <div className="kpi-box">
               <span className="stat">
+                <span className="stat__prefix" aria-hidden="true"></span>
                 <span className="stat__value" aria-live="polite">{counts.roi}</span>
                 <span className="stat__suffix">%</span>
               </span>
@@ -756,6 +761,7 @@ const HeroSection = () => {
             {/* Years Leading */}
             <div className="kpi-box">
               <span className="stat">
+                <span className="stat__prefix" aria-hidden="true"></span>
                 <span className="stat__value" aria-live="polite">{counts.years}</span>
                 <span className="stat__suffix">+</span>
               </span>
