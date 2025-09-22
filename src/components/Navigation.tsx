@@ -195,12 +195,12 @@ const Navigation = () => {
         }
         /* iPad Pro / small desktop */
         @media (min-width: 1024px) and (max-width: 1279px) {
-          .nav-container { padding: 0.45rem 1.5rem; min-height: 56px; }
-          .logo-bm { font-size: 2.1rem; }
-          .logo-name { font-size: 0.95rem; }
-          .logo-title { font-size: 0.6rem; }
-          .nav-link { padding: 0.35rem 0.75rem; font-size: 0.85rem; }
-          .cta-button { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+          .nav-container { padding: 0.4rem 1.5rem; min-height: 50px; }
+          .logo-bm { font-size: 1.9rem; }
+          .logo-name { font-size: 0.88rem; }
+          .logo-title { font-size: 0.55rem; }
+          .nav-link { padding: 0.3rem 0.65rem; font-size: 0.8rem; }
+          .cta-button { padding: 0.35rem 0.7rem; font-size: 0.75rem; }
         }
 
         .nav-item {
