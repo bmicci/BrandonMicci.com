@@ -74,6 +74,18 @@ const HeroSection = () => {
           align-items: start;
           margin-bottom: 1.5rem;
         }
+        /* Tablet (iPad) layout tuning */
+        @media (min-width: 769px) and (max-width: 1023px) {
+          .hero-top {
+            grid-template-columns: minmax(420px, 1fr) min(340px, 36vw);
+            gap: 2rem;
+            align-items: center;
+          }
+          .headline { font-size: clamp(1.9rem, 3.4vw, 2.6rem); }
+          .dek { font-size: clamp(0.95rem, 1.4vw, 1.05rem); }
+          .cta-row { grid-template-columns: repeat(2, max-content); justify-content: start; gap: 0.85rem 1rem; }
+          .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; }
+        }
         .hero-content {
           display: flex;
           flex-direction: column;
