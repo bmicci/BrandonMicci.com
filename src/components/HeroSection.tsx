@@ -134,8 +134,7 @@ const HeroSection = () => {
         .btn :global(svg), .btn :global(.icon) { width: 18px; height: 18px; opacity: 0.95; }
         .btn.primary{
           background: linear-gradient(135deg, #00d4ff, #1e90ff);
-          color:#07101d;                       /* always dark text on bright cyan */
-          box-shadow: 0 10px 30px -10px rgba(30,144,255,0.55);
+          color:#07101d; /* dark text on bright cyan */
         }
         .btn.primary:hover{ transform: translateY(-1px); }
 
