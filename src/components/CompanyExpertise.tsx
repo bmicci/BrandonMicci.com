@@ -27,8 +27,8 @@ const CompanyExpertise: React.FC = () => {
           border-radius: 20px;
           border: 1px solid rgba(255, 255, 255, 0.1);
           transition: all 0.3s ease;
-          width: clamp(320px, calc(100vw - 2rem), 1000px);
-          max-width: 1000px;
+          width: clamp(320px, calc(100vw - 2rem), 1200px);
+          max-width: 1200px;
         }
 
         .expertise-section:hover {
@@ -250,8 +250,8 @@ const CompanyExpertise: React.FC = () => {
         /* Responsive Design */
         @media (min-width: 1440px) {
           .expertise-section {
-            max-width: 1000px;
-            width: clamp(800px, 70vw, 1000px);
+            max-width: 1200px;
+            width: clamp(900px, 75vw, 1200px);
           }
         }
 
@@ -264,7 +264,7 @@ const CompanyExpertise: React.FC = () => {
         @media (max-width: 768px) {
           .expertise-section {
             padding: 40px 1rem;
-            width: clamp(300px, calc(100vw - 1rem), 1000px);
+            width: clamp(300px, calc(100vw - 1rem), 1200px);
             margin: 1rem auto;
           }
 
@@ -289,7 +289,7 @@ const CompanyExpertise: React.FC = () => {
         @media (max-width: 480px) {
           .expertise-section {
             padding: 30px 0.75rem;
-            width: clamp(280px, calc(100vw - 0.75rem), 1000px);
+            width: clamp(280px, calc(100vw - 0.75rem), 1200px);
             margin: 0.75rem auto;
           }
 
@@ -311,13 +311,13 @@ const CompanyExpertise: React.FC = () => {
         /* iPhone SE micro-tune for extra safety */
         @media (max-width: 360px) {
           .expertise-section {
-            width: clamp(260px, calc(100vw - 0.5rem), 1000px);
+            width: clamp(260px, calc(100vw - 0.5rem), 1200px);
             margin: 0.5rem auto;
             padding: 20px 0.5rem;
           }
           
           .card-shell {
-            width: clamp(250px, calc(100vw - 1.5rem), 1000px);
+            width: clamp(250px, calc(100vw - 1.5rem), 1200px);
             padding: 0.75rem;
           }
         }
