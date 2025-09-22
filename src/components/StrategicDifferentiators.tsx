@@ -231,11 +231,11 @@ const StrategicDifferentiators: React.FC = () => {
             <div className="diff-content flex items-start gap-4">
               <Icon name="trending-up" size="lg" className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0" />
               <div>
-                <h4 className="diff-title text-base md:text-lg font-semibold text-white">Scale & Impact</h4>
+                <h4 className="diff-title text-base md:text-lg font-semibold text-white">Enterprise-Scale Architecture</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
-                  27,000+ users, $400M+ in enterprise value delivered. Successfully 
-                  deployed the largest LLM implementation in payments and led global 
-                  data science organizations with $45M+ technology portfolios.
+                  Designing and deploying AI/ML systems at massive scale—from 27,000+ 
+                  user LLM platforms to distributed analytics architectures handling 
+                  petabyte-scale data workloads across global infrastructure.
                 </p>
               </div>
             </div>
@@ -245,11 +245,11 @@ const StrategicDifferentiators: React.FC = () => {
             <div className="diff-content flex items-start gap-4">
               <Icon name="globe" size="lg" className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0" />
               <div>
-                <h4 className="diff-title text-base md:text-lg font-semibold text-white">Cross-Industry Expertise</h4>
+                <h4 className="diff-title text-base md:text-lg font-semibold text-white">Business-Technology Bridge</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
-                  Deep expertise spanning Financial Services, Insurance, Airlines, 
-                  Energy, and Life Sciences. Proven ability to adapt solutions across 
-                  unique business contexts and regulatory environments.
+                  Unique ability to translate between technical complexity and business 
+                  value—turning AI capabilities into strategic competitive advantages 
+                  across regulated industries and complex enterprise environments.
                 </p>
               </div>
             </div>
