@@ -24,12 +24,11 @@ const CompanyExpertise: React.FC = () => {
           z-index: 10;
           text-align: center;
           margin: 2rem auto;
-          max-width: 1200px;
           border-radius: 20px;
           border: 1px solid rgba(255, 255, 255, 0.1);
           transition: all 0.3s ease;
-          width: calc(100vw - 2rem);
-          max-width: calc(100vw - 2rem);
+          width: clamp(320px, calc(100vw - 2rem), 1000px);
+          max-width: 1000px;
         }
 
         .expertise-section:hover {
@@ -249,6 +248,13 @@ const CompanyExpertise: React.FC = () => {
         }
 
         /* Responsive Design */
+        @media (min-width: 1440px) {
+          .expertise-section {
+            max-width: 1000px;
+            width: clamp(800px, 70vw, 1000px);
+          }
+        }
+
         @media (max-width: 1024px) {
           .expertise-subtitle {
             font-size: 1.9rem;
@@ -258,8 +264,7 @@ const CompanyExpertise: React.FC = () => {
         @media (max-width: 768px) {
           .expertise-section {
             padding: 40px 1rem;
-            width: calc(100vw - 1rem);
-            max-width: calc(100vw - 1rem);
+            width: clamp(300px, calc(100vw - 1rem), 1000px);
             margin: 1rem auto;
           }
 
@@ -284,8 +289,7 @@ const CompanyExpertise: React.FC = () => {
         @media (max-width: 480px) {
           .expertise-section {
             padding: 30px 0.75rem;
-            width: calc(100vw - 0.75rem);
-            max-width: calc(100vw - 0.75rem);
+            width: clamp(280px, calc(100vw - 0.75rem), 1000px);
             margin: 0.75rem auto;
           }
 
@@ -307,14 +311,13 @@ const CompanyExpertise: React.FC = () => {
         /* iPhone SE micro-tune for extra safety */
         @media (max-width: 360px) {
           .expertise-section {
-            width: calc(100vw - 0.5rem);
-            max-width: calc(100vw - 0.5rem);
+            width: clamp(260px, calc(100vw - 0.5rem), 1000px);
             margin: 0.5rem auto;
             padding: 20px 0.5rem;
           }
           
           .card-shell {
-            width: calc(100vw - 1.5rem);
+            width: clamp(250px, calc(100vw - 1.5rem), 1000px);
             padding: 0.75rem;
           }
         }
