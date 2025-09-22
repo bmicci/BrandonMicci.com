@@ -485,139 +485,38 @@ const HeroSection = () => {
           .mobile-intro p { line-height: 1.42; }
         }
 
-        /* === DESKTOP HERO ALIGNMENT v2 (non-destructive) === */
-        @media (min-width: 1024px) {
-          /* Solid two-column split that prevents the left stack from ever crossing the image */
-          .hero-top {
-            grid-template-columns: minmax(560px, 1fr) min(520px, 34vw) !important;
+        /* Desktop hero split and image sizing */
+        @media (min-width:1024px){
+          .hero-top{
+            grid-template-columns: minmax(560px, 1fr) min(420px, 28vw) !important; /* shrink photo */
             gap: clamp(2.75rem, 3.5vw, 4rem) !important;
-            align-items: center !important;             /* centers the image vertically vs the text stack */
+            align-items: center !important;
+          }
+          .hero-top > *:last-child{
+            width: min(420px, 28vw) !important;
+            justify-self: end !important;
+            align-self: center !important;
+
+            /* center whatever is inside the photo column */
+            display:flex; flex-direction:column; align-items:center;
           }
 
-          /* Keep the copy column readable and aligned */
-          .hero-content {
-            display: flex !important;
-            flex-direction: column !important;
-            max-width: 62ch !important;                 /* keeps paragraph and CTAs inside the column */
-            align-items: flex-start !important;
-            text-align: left !important;
-            overflow: hidden !important;                /* prevent content from spilling out */
-            position: relative; z-index: 1;             /* ensure left column stays above image */
-          }
-
-          /* Reorder: KPI grid ABOVE the CTAs (H1 → dek → KPI → CTAs) */
-          .dek { order: 10 !important; }
-          .kpi-grid { order: 20 !important; margin-top: 1rem !important; margin-bottom: 1.1rem !important; }
-          .cta-row { order: 30 !important; margin-top: 0.4rem !important; }
-
-          /* CTAs: intrinsic width, left-aligned; they won't stretch past the image */
-          .cta-row {
-            grid-template-columns: repeat(2, max-content) !important;
-            justify-content: start !important;
-            gap: 1rem 1.25rem !important;
-            max-width: 100% !important;
-          }
-          .cta-row .btn { white-space: nowrap; }
-
-          /* KPI row: stay snug in the left column (auto-fit handles responsive columns) */
-          .kpi-grid {
-            width: 100% !important;
-            max-width: 100% !important;                 /* prevent overflow */
-            align-self: stretch !important;             /* uses the left column width exactly */
-          }
-
-          /* Image column: right-locked and vertically centered with whitespace above/below */
-          .hero-top > *:last-child {
-            width: min(520px, 34vw) !important;
-            justify-self: end !important;               /* aligns to container's right edge */
-            align-self: center !important;              /* sits midline vs the text stack */
-          }
-          .hero-top > *:last-child img,
-          .hero-top > *:last-child svg,
-          .hero-top > *:last-child canvas,
-          .hero-top > *:last-child video {
-            display: block !important;
-            width: 100% !important;
-            height: auto !important;
+          /* Common caption/overlay selectors used by HeroImage — center & fit */
+          .hero-top > *:last-child figcaption,
+          .hero-top > *:last-child .caption,
+          .hero-top > *:last-child .overlay,
+          .hero-top > *:last-child .overlay-card{
+            width:100%; max-width:100%;
+            margin: 0.5rem auto 0;
+            text-align:center;
           }
         }
-
-        /* Very wide desktops: keep proportions steady */
-        @media (min-width: 1440px) {
-          .hero-top {
-            grid-template-columns: minmax(620px, 1fr) min(560px, 32vw) !important;
+        @media (min-width:1440px){
+          .hero-top{
+            grid-template-columns: minmax(620px,1fr) min(460px, 26vw) !important; /* scale nicely on very wide */
             gap: clamp(3rem, 4vw, 5rem) !important;
           }
         }
-
-        /* Desktop: cap photo width a bit so it stays crisp on retina */
-        @media (min-width: 1024px) {
-          .hero-top {
-            grid-template-columns: minmax(560px, 1fr) min(460px, 32vw) !important;
-          }
-          .hero-top > *:last-child {
-            width: min(460px, 32vw) !important;
-            justify-self: end !important;
-            align-self: center !important;
-          }
-        }
-
-        /* === START Desktop Hero Patch === */
-        @media (min-width: 1024px) {
-          /* 2-col layout: left copy gets room, right column (image) is capped */
-          .hero-top {
-            grid-template-columns: minmax(560px, 1fr) min(460px, 32vw) !important;
-            gap: clamp(2.75rem, 3.5vw, 4rem) !important;
-            align-items: center !important; /* centers image vertically vs text stack */
-          }
-
-          /* Keep the text stack strictly inside the left column */
-          .hero-content {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: flex-start !important;
-            max-width: 62ch !important;     /* readable measure */
-            text-align: left !important;
-          }
-
-          /* Order: H1 → paragraph (.dek) → KPI grid → CTA row */
-          .dek { order: 10 !important; }
-          .kpi-grid { order: 20 !important; margin-top: 1rem !important; margin-bottom: 1.1rem !important; }
-          .cta-row { order: 30 !important; margin-top: 0.4rem !important; }
-
-          /* CTAs: intrinsic width, don't stretch past image column */
-          .cta-row {
-            grid-template-columns: repeat(2, max-content) !important;
-            justify-content: start !important;
-            gap: 1rem 1.25rem !important;
-            max-width: 100% !important;
-          }
-          .cta-row .btn { white-space: nowrap; }
-
-          /* Image column: fixed cap + right aligned + vertically centered */
-          .hero-top > *:last-child {
-            width: min(460px, 32vw) !important;
-            justify-self: end !important;
-            align-self: center !important;
-          }
-          .hero-top > *:last-child img,
-          .hero-top > *:last-child svg,
-          .hero-top > *:last-child canvas,
-          .hero-top > *:last-child video {
-            display: block !important;
-            width: 100% !important;
-            height: auto !important;
-          }
-        }
-
-        /* XL screens: keep proportions steady */
-        @media (min-width: 1440px) {
-          .hero-top {
-            grid-template-columns: minmax(620px, 1fr) min(560px, 32vw) !important;
-            gap: clamp(3rem, 4vw, 5rem) !important;
-          }
-        }
-        /* === END Desktop Hero Patch === */
 
         /* === START Wide-Desktop 3rd CTA === */
         .show-xl { display: none; }
@@ -630,22 +529,6 @@ const HeroSection = () => {
         /* === END Wide-Desktop 3rd CTA === */
 
 
-        /* === Desktop: center the headshot caption/overlay === */
-        @media (min-width:1024px){
-          .hero-top > *:last-child{
-            display:flex;
-            flex-direction:column;
-            align-items:center;         /* centers caption + any overlay */
-          }
-          .hero-top > *:last-child figcaption,
-          .hero-top > *:last-child .caption,
-          .hero-top > *:last-child .overlay,
-          .hero-top > *:last-child .overlay-card{
-            width:100%;
-            margin:0 auto;
-            text-align:center;
-          }
-        }
       `}</style>
 
       <div className="hero-section">
