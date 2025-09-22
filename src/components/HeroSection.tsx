@@ -679,13 +679,13 @@ const HeroSection = () => {
               <div className="diff-item">
                 <div className="diff-item-content grid place-items-center text-center gap-3 md:flex md:flex-row md:items-start md:text-left md:gap-4">
                   <Icon
-                    name="linechart"
+                    name="rocket"
                     size="lg"
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Scale Expertise</h4>
-                    <p>Led the largest LLM deployment in payments (27,000+ users) and built global teams of 50+.</p>
+                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Visionary Leadership</h4>
+                    <p>Leading cutting-edge AI initiatives that reshape industries—from pioneering LLM deployments to building next-gen analytics platforms.</p>
                   </div>
                 </div>
               </div>
@@ -694,13 +694,13 @@ const HeroSection = () => {
               <div className="diff-item">
                 <div className="diff-item-content grid place-items-center text-center gap-3 md:flex md:flex-row md:items-start md:text-left md:gap-4">
                   <Icon
-                    name="barchart"
+                    name="zap"
                     size="lg"
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Financial Impact</h4>
-                    <p>Consistent 250%+ ROI, delivering $30M in new continuous revenue streams.</p>
+                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Execution Excellence</h4>
+                    <p>Proven track record of turning ambitious visions into measurable results—consistently delivering on time, on budget, at scale.</p>
                   </div>
                 </div>
               </div>
@@ -709,13 +709,13 @@ const HeroSection = () => {
               <div className="diff-item">
                 <div className="diff-item-content grid place-items-center text-center gap-3 md:flex md:flex-row md:items-start md:text-left md:gap-4">
                   <Icon
-                    name="globe"
+                    name="target"
                     size="lg"
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Cross-Industry Innovation</h4>
-                    <p>Depth across Financial Services, Insurance, Airlines, Energy, and Life Sciences.</p>
+                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Strategic Thinking</h4>
+                    <p>C-suite advisory capabilities that translate complex AI strategies into clear business roadmaps and competitive advantages.</p>
                   </div>
                 </div>
               </div>
@@ -729,8 +729,8 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Transformation Catalyst</h4>
-                    <p>Builds adoption communities that drive organizational change at scale.</p>
+                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Innovation Catalyst</h4>
+                    <p>Building transformative solutions that don&apos;t just solve today&apos;s problems—they anticipate tomorrow&apos;s opportunities.</p>
                   </div>
                 </div>
               </div>
