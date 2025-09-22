@@ -5,7 +5,8 @@ type Name =
   | "sparkle" | "brain" | "layers" | "target" | "badge"
   | "globe" | "barchart" | "linechart" | "network" | "cloud"
   | "mail" | "file" | "download" | "external-link"
-  | "file-text" | "briefcase" | "presentation" | "clipboard-list";
+  | "file-text" | "briefcase" | "presentation" | "clipboard-list"
+  | "trending-up" | "settings" | "construction" | "rocket" | "zap";
 
 const MAP: Record<Name, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
   sparkle: L.Sparkles,
@@ -26,6 +27,11 @@ const MAP: Record<Name, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
   briefcase: L.Briefcase,
   presentation: L.Presentation,
   "clipboard-list": L.ClipboardList,
+  "trending-up": L.TrendingUp,
+  settings: L.Settings,
+  construction: L.Construction,
+  rocket: L.Rocket,
+  zap: L.Zap,
 };
 
 export type IconProps = {

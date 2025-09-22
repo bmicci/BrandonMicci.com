@@ -229,28 +229,13 @@ const StrategicDifferentiators: React.FC = () => {
         <div className="differentiators-grid">
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
             <div className="diff-content flex items-start gap-4">
-              <Icon name="linechart" size="lg" className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0" />
+              <Icon name="trending-up" size="lg" className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0" />
               <div>
-                <h4 className="diff-title text-base md:text-lg font-semibold text-white">Scale Expertise</h4>
+                <h4 className="diff-title text-base md:text-lg font-semibold text-white">Scale & Impact</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
-                  Successfully deployed the largest LLM implementation in the
-                  payments industry (27,000+ users) and led global data science
-                  organizations of 50+ professionals with $45M+ technology
-                  portfolios.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
-            <div className="diff-content flex items-start gap-4">
-              <Icon name="barchart" size="lg" className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0" />
-              <div>
-                <h4 className="diff-title text-base md:text-lg font-semibold text-white">Financial Impact</h4>
-                <p className="diff-description mt-1 text-sm text-slate-300">
-                  Consistent track record of delivering massive ROI—from 250%
-                  returns on IoT initiatives to $30M in new annual revenue streams
-                  through Analytics-as-a-Service platforms.
+                  27,000+ users, $400M+ in enterprise value delivered. Successfully 
+                  deployed the largest LLM implementation in payments and led global 
+                  data science organizations with $45M+ technology portfolios.
                 </p>
               </div>
             </div>
@@ -260,11 +245,11 @@ const StrategicDifferentiators: React.FC = () => {
             <div className="diff-content flex items-start gap-4">
               <Icon name="globe" size="lg" className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0" />
               <div>
-                <h4 className="diff-title text-base md:text-lg font-semibold text-white">Cross-Industry Innovation</h4>
+                <h4 className="diff-title text-base md:text-lg font-semibold text-white">Cross-Industry Expertise</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
-                  Deep expertise spanning Financial Services, Insurance, Airlines,
-                  Energy, and Life Sciences with transferable solutions that adapt
-                  to unique business contexts.
+                  Deep expertise spanning Financial Services, Insurance, Airlines, 
+                  Energy, and Life Sciences. Proven ability to adapt solutions across 
+                  unique business contexts and regulatory environments.
                 </p>
               </div>
             </div>
@@ -272,13 +257,13 @@ const StrategicDifferentiators: React.FC = () => {
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
             <div className="diff-content flex items-start gap-4">
-              <Icon name="target" size="lg" className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0" />
+              <Icon name="settings" size="lg" className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0" />
               <div>
-                <h4 className="diff-title text-base md:text-lg font-semibold text-white">Technical + Strategic Leadership</h4>
+                <h4 className="diff-title text-base md:text-lg font-semibold text-white">Technical Architecture</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
-                  Rare combination of hands-on AI/ML architecture experience with
-                  C-suite strategic advisory capabilities—translating complex
-                  technology into business strategy.
+                  Hands-on AI/ML architecture experience combined with enterprise-scale 
+                  system design. Building robust, scalable solutions that perform under 
+                  real-world conditions and regulatory scrutiny.
                 </p>
               </div>
             </div>
@@ -286,27 +271,13 @@ const StrategicDifferentiators: React.FC = () => {
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
             <div className="diff-content flex items-start gap-4">
-              <Icon name="sparkle" size="lg" className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0" />
+              <Icon name="construction" size="lg" className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0" />
               <div>
-                <h4 className="diff-title text-base md:text-lg font-semibold text-white">Transformation Catalyst</h4>
+                <h4 className="diff-title text-base md:text-lg font-semibold text-white">Transformation Leadership</h4>
                 <p className="diff-description mt-1 text-sm text-slate-300">
-                  Proven ability to modernize legacy systems while building
-                  evangelical communities that drive adoption at scale—like the
-                  world&apos;s largest Tableau community (30,000+ users).
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
-            <div className="diff-content flex items-start gap-4">
-              <Icon name="brain" size="lg" className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0" />
-              <div>
-                <h4 className="diff-title text-base md:text-lg font-semibold text-white">Ambiguous Environment Expert</h4>
-                <p className="diff-description mt-1 text-sm text-slate-300">
-                  Thrive in high-stakes environments where emerging technologies
-                  meet complex business challenges, creating clarity from chaos
-                  and actionable roadmaps from ambiguity.
+                  Expert at modernizing legacy systems while building evangelical 
+                  communities that drive adoption at scale—like the world&apos;s largest 
+                  Tableau community (30,000+ users). Change management at enterprise scale.
                 </p>
               </div>
             </div>
