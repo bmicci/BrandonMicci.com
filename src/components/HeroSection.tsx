@@ -218,55 +218,53 @@ const HeroSection = () => {
           overflow: hidden;                     /* belt & suspenders */
         }
 
-        /* Number: full-width block, perfectly centered, scales with card */
-        .stat-number {
-          display: block;                 /* instead of inline-block */
-          width: 100%;                    /* center relative to the card, not its own width */
-          margin: 0;                      /* no auto margins needed */
-          text-align: center;
+        /* === KPI number: balanced 3-cell grid, centered as a group ===
+           Works for currency, K+, %, +; no transforms; no overflow; stable count-up */
+        .stat {
+          display: grid;
+          grid-auto-flow: column;
+          grid-template-columns: auto minmax(3ch, auto) auto; /* side lanes auto; center has room for 3 digits */
+          justify-content: center;     /* center the whole triplet */
+          align-items: baseline;
+          gap: 0.06em;
 
-          padding-inline: 0.28em;         /* comfy, symmetric inner gutter */
+          padding-inline: 0.26em;      /* symmetric inner gutter so suffix never kisses edges */
           line-height: 1;
           white-space: nowrap;
 
           font-weight: 800;
           color: #00d4ff;
+          font-feature-settings: "tnum" 1, "lnum" 1; /* tabular lining digits */
           letter-spacing: 0;
-          font-feature-settings: "tnum" 1, "lnum" 1;
-
-          /* size still follows the card via container query units */
           font-size: clamp(1.6rem, 16cqw, 2.2rem);
         }
 
-        /* Slightly smaller in 4-up */
+        /* 4-up desktop: keep just a touch smaller for safe edges */
         @media (min-width: 1280px) {
-          .stat-number { font-size: clamp(1.55rem, 15cqw, 2.05rem); }
+          .stat { font-size: clamp(1.55rem, 15cqw, 2.05rem); }
         }
         @media (min-width: 1440px) {
-          .stat-number { font-size: clamp(1.7rem, 16cqw, 2.35rem); }
+          .stat { font-size: clamp(1.7rem, 16cqw, 2.35rem); }
         }
 
-        /* Currency: optical gutter on the LEFT only (no transform) */
-        .stat-number.currency { padding-inline-start: 0.42em; }
-        @media (min-width: 1280px) {
-          .stat-number.currency { padding-inline-start: 0.48em; }
-        }
+        /* Center value stays stable while counting 1→3 digits */
+        .stat__value { min-width: 3ch; text-align: center; }
 
-        /* Labels: reserve EXACTLY two line-heights so all cards align */
-        .stat-label {
-          display: flex;                        /* center the label text in its block */
-          align-items: center;
-          justify-content: center;
-          text-align: center;
+        /* micro optical balance */
+        .stat__prefix { padding-right: 0.03em; }
+        .stat__suffix { padding-left:  0.03em; }
 
+        /* Label keeps all cards perfectly aligned in height */
+        .stat-label{
+          display:flex; align-items:center; justify-content:center; text-align:center;
           font-size: clamp(0.78rem, 1.6vw, 0.9rem);
           color: rgba(255,255,255,0.72);
-          text-transform: uppercase;
-          letter-spacing: 0.06em;
-          line-height: 1.3;
-          min-height: calc(2 * 1.3em);          /* <= key: fixes vertical alignment */
-          text-wrap: balance;                   /* prettier breaks */
+          text-transform: uppercase; letter-spacing: 0.06em;
+          line-height: 1.3; min-height: calc(2 * 1.3em);
         }
+
+        /* Safety: padding counts toward width to avoid any spill at round corners */
+        .kpi-box, .kpi-box * { box-sizing: border-box; }
 
         /* Optional: avoid hover "jump" so row baseline stays flat */
         .kpi-box:hover {
@@ -631,29 +629,6 @@ const HeroSection = () => {
         }
         /* === END Wide-Desktop 3rd CTA === */
 
-        /* === Quick KPI hardening (desktop+mobile) === */
-        .stat-number{
-          display:block;          /* center relative to card */
-          width:100%;
-          margin:0;
-          text-align:center;
-          padding-inline:0.36em;  /* safe inner gutter so %/+ never kiss edges */
-          line-height:1;
-          white-space:nowrap;
-          font-weight:800;
-          color:#00d4ff;
-          font-feature-settings:"tnum" 1, "lnum" 1;
-          letter-spacing:0;
-          font-size:clamp(1.6rem,16cqw,2.2rem);
-        }
-        @media (min-width:1280px){ .stat-number{ font-size:clamp(1.55rem,15cqw,2.05rem); } }
-        @media (min-width:1440px){ .stat-number{ font-size:clamp(1.7rem,16cqw,2.35rem); } }
-
-        /* currency optical gutter (no transforms) */
-        .stat-number.currency{ padding-inline-start:0.48em; }
-
-        /* ensure padding never causes overflow */
-        .kpi-box, .kpi-box *{ box-sizing:border-box; }
 
         /* === Desktop: center the headshot caption/overlay === */
         @media (min-width:1024px){
