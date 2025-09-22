@@ -57,10 +57,12 @@ const HeroImage = () => {
         .hi-title { margin: 0; color: rgb(34 211 238); font-weight: 600; font-size: 0.9rem; line-height: 1.25; }
 
         @media (max-width: 768px) {
-          .hi-card { width: clamp(180px, 58vw, 280px); border-radius: 18px; }
+          .hi-card { width: clamp(190px, 62vw, 300px); border-radius: 18px; }
+          .hi-imgwrap { aspect-ratio: 4 / 4.5; }
         }
         @media (max-width: 360px) {
-          .hi-card { width: clamp(170px, 75vw, 250px); border-radius: 16px; }
+          .hi-card { width: clamp(170px, 78vw, 250px); border-radius: 16px; }
+          .hi-imgwrap { aspect-ratio: 4 / 4.3; }
           .hi-name { font-size: 0.95rem; }
           .hi-title { font-size: 0.85rem; }
         }
