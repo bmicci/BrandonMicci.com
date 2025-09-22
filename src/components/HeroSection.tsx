@@ -475,36 +475,44 @@ const HeroSection = () => {
           .mobile-intro p { line-height: 1.42; }
         }
 
-        /* Desktop hero split and image sizing */
+        /* Desktop photo column: smaller, and caption centered */
         @media (min-width:1024px){
           .hero-top{
-            grid-template-columns: minmax(560px, 1fr) min(420px, 28vw) !important; /* shrink photo */
+            grid-template-columns: minmax(560px, 1fr) min(400px, 28vw) !important; /* shrink image column */
             gap: clamp(2.75rem, 3.5vw, 4rem) !important;
             align-items: center !important;
           }
           .hero-top > *:last-child{
-            width: min(420px, 28vw) !important;
+            width: min(400px, 28vw) !important;
             justify-self: end !important;
             align-self: center !important;
 
-            /* center whatever is inside the photo column */
-            display:flex; flex-direction:column; align-items:center;
+            display:flex;
+            flex-direction:column;
+            align-items:center;        /* centers inner content (including caption) */
           }
 
-          /* Common caption/overlay selectors used by HeroImage — center & fit */
+          /* Center common caption/overlay elements inside the image card */
           .hero-top > *:last-child figcaption,
           .hero-top > *:last-child .caption,
           .hero-top > *:last-child .overlay,
           .hero-top > *:last-child .overlay-card{
-            width:100%; max-width:100%;
-            margin: 0.5rem auto 0;
+            width:100%;
+            max-width:100%;
+            margin:0.5rem auto 0;
             text-align:center;
+          }
+
+          /* If the caption/overlay is absolutely positioned, force true center */
+          .hero-top > *:last-child .overlay,
+          .hero-top > *:last-child .overlay-card{
+            left:50% !important;
+            transform:translateX(-50%) !important;
           }
         }
         @media (min-width:1440px){
           .hero-top{
-            grid-template-columns: minmax(620px,1fr) min(460px, 26vw) !important; /* scale nicely on very wide */
-            gap: clamp(3rem, 4vw, 5rem) !important;
+            grid-template-columns: minmax(620px,1fr) min(440px, 26vw) !important; /* scales nicely on big screens */
           }
         }
 
