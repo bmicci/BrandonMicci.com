@@ -26,6 +26,11 @@ const StrategicIntroCard: React.FC = () => {
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
+        /* iPad Pro spacing tighten */
+        @media (min-width:1024px) and (max-width:1279px){
+          .intro-card{ margin: 1.25rem auto 1.75rem; padding: 2.25rem; }
+        }
+
         .intro-card::before {
           content: '';
           position: absolute;

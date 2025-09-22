@@ -21,6 +21,13 @@ const StrategicAdvantageHeader: React.FC = () => {
           animation: titleSlideUp 1s ease-out;
         }
 
+        /* iPad Pro spacing tighten */
+        @media (min-width:1024px) and (max-width:1279px){
+          .strategic-header{ padding: 2rem 1.5rem 1.25rem; }
+          .strategic-title{ font-size: 2.4rem; }
+          .strategic-subtitle{ max-width: 850px; }
+        }
+
         .strategic-title {
           font-size: 2.8rem;
           font-weight: 800;
