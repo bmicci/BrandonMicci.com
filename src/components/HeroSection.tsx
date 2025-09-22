@@ -47,6 +47,10 @@ const HeroSection = () => {
         @media (prefers-reduced-motion: reduce) {
           * { animation: none !important; transition: none !important; }
         }
+        /* iPad Pro: avoid oversized blank space on the next section */
+        @media (min-width:1024px) and (max-width:1279px){
+          section#strategic-vision{ min-height:auto !important; }
+        }
       `}</style>
 
       {/* ——— HERO ——— */}
@@ -284,6 +288,11 @@ const HeroSection = () => {
           flex-direction: column; 
           align-items: center; 
           width: 100%; 
+        }
+        /* iPad Pro: add safe side padding so the glass box doesn't hug edges */
+        @media (min-width:1024px) and (max-width:1279px){
+          .diff-wrap{ padding-inline: clamp(1rem, 3vw, 1.5rem); }
+          .diff-glass{ margin-inline:auto; }
         }
         .diff-glass {
           background: rgba(255,255,255,0.05);
