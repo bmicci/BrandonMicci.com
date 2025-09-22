@@ -263,9 +263,12 @@ const HeroSection = () => {
         /* Keep a tiny invisible placeholder when prefix is empty so the left lane doesn't collapse */
         .stat__prefix:empty{ 
           display:inline-block; 
-          width:0.6em; 
+          width:0.62em;            /* reserve a lane close to '$' glyph width */
           padding:0; 
           opacity:0; 
+        }
+        @media (min-width:1280px){
+          .stat__prefix:empty{ width:0.72em; }
         }
 
         /* Label centering and equal height */
