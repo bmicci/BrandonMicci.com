@@ -245,14 +245,28 @@ const HeroSection = () => {
         /* Center cell holds space for 3 digits but keeps the suffix snug */
         .stat__value{
           min-width:3ch;               /* space for 400 */
-          text-align:right;            /* <<< critical: keeps suffix tight to the number */
+          text-align:right;            /* keeps suffix tight to the number */
           justify-self:end;
+          grid-column:2;               /* enforce fixed 3-column placement */
         }
-        .stat__prefix{ justify-self:end; padding-right:0.03em; }
-        .stat__suffix{ justify-self:start; padding-left:0.03em; }
+        .stat__prefix{ 
+          justify-self:end; 
+          padding-right:0.03em; 
+          grid-column:1;               /* left lane */
+        }
+        .stat__suffix{ 
+          justify-self:start; 
+          padding-left:0.03em; 
+          grid-column:3;               /* right lane */
+        }
 
-        /* If you ever render an EMPTY prefix, hide it so it doesn't consume space */
-        .stat__prefix:empty{ display:none; }
+        /* Keep a tiny invisible placeholder when prefix is empty so the left lane doesn't collapse */
+        .stat__prefix:empty{ 
+          display:inline-block; 
+          width:0.6em; 
+          padding:0; 
+          opacity:0; 
+        }
 
         /* Label centering and equal height */
         .stat-label{
