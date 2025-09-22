@@ -218,27 +218,27 @@ const HeroSection = () => {
           overflow: hidden;                     /* belt & suspenders */
         }
 
-        /* Center the numeric core perfectly */
+        /* Number: full-width block, perfectly centered, scales with card */
         .stat-number {
-          /* 3-column inline grid: [prefix] [value] [suffix] */
-          display: inline-grid;
-          grid-auto-flow: column;
-          grid-template-columns: 0.55em auto 0.40em; /* balanced lanes for $ and suffix */
-          align-items: baseline;
-          justify-items: center;
+          display: block;                 /* instead of inline-block */
+          width: 100%;                    /* center relative to the card, not its own width */
+          margin: 0;                      /* no auto margins needed */
+          text-align: center;
 
-          margin-inline: auto;         /* center the whole block */
+          padding-inline: 0.28em;         /* comfy, symmetric inner gutter */
           line-height: 1;
           white-space: nowrap;
+
           font-weight: 800;
           color: #00d4ff;
-          padding-inline: 0.12em;      /* side breathing room inside rounded box */
+          letter-spacing: 0;
+          font-feature-settings: "tnum" 1, "lnum" 1;
 
-          /* scale with the card (container units) */
+          /* size still follows the card via container query units */
           font-size: clamp(1.6rem, 16cqw, 2.2rem);
         }
 
-        /* Wide desktop: a hair smaller in 4-up so it never kisses edges */
+        /* Slightly smaller in 4-up */
         @media (min-width: 1280px) {
           .stat-number { font-size: clamp(1.55rem, 15cqw, 2.05rem); }
         }
@@ -246,21 +246,10 @@ const HeroSection = () => {
           .stat-number { font-size: clamp(1.7rem, 16cqw, 2.35rem); }
         }
 
-        /* Numeric core: fixed-digit width + no jiggle while counting */
-        .stat-number .value {
-          font-feature-settings: "tnum" 1, "lnum" 1;  /* tabular lining */
-          min-width: 3ch;                              /* space for 3 digits (e.g., 400) */
-          text-align: center;
-        }
-
-        /* Subtle optical nudges */
-        .stat-number .prefix { justify-self: end;  margin-right: 0.06em; }
-        .stat-number .suffix { justify-self: start; margin-left: 0.04em; }
-
-        /* Optional: the currency card can take a tiny extra nudge if your font's $ is heavy */
-        .stat-number.currency { transform: translateX(0.04em); }
+        /* Currency: optical gutter on the LEFT only (no transform) */
+        .stat-number.currency { padding-inline-start: 0.42em; }
         @media (min-width: 1280px) {
-          .stat-number.currency { transform: translateX(0.06em); }
+          .stat-number.currency { padding-inline-start: 0.48em; }
         }
 
         /* Labels: reserve EXACTLY two line-heights so all cards align */
@@ -641,6 +630,47 @@ const HeroSection = () => {
           }
         }
         /* === END Wide-Desktop 3rd CTA === */
+
+        /* === Quick KPI hardening (desktop+mobile) === */
+        .stat-number{
+          display:block;          /* center relative to card */
+          width:100%;
+          margin:0;
+          text-align:center;
+          padding-inline:0.36em;  /* safe inner gutter so %/+ never kiss edges */
+          line-height:1;
+          white-space:nowrap;
+          font-weight:800;
+          color:#00d4ff;
+          font-feature-settings:"tnum" 1, "lnum" 1;
+          letter-spacing:0;
+          font-size:clamp(1.6rem,16cqw,2.2rem);
+        }
+        @media (min-width:1280px){ .stat-number{ font-size:clamp(1.55rem,15cqw,2.05rem); } }
+        @media (min-width:1440px){ .stat-number{ font-size:clamp(1.7rem,16cqw,2.35rem); } }
+
+        /* currency optical gutter (no transforms) */
+        .stat-number.currency{ padding-inline-start:0.48em; }
+
+        /* ensure padding never causes overflow */
+        .kpi-box, .kpi-box *{ box-sizing:border-box; }
+
+        /* === Desktop: center the headshot caption/overlay === */
+        @media (min-width:1024px){
+          .hero-top > *:last-child{
+            display:flex;
+            flex-direction:column;
+            align-items:center;         /* centers caption + any overlay */
+          }
+          .hero-top > *:last-child figcaption,
+          .hero-top > *:last-child .caption,
+          .hero-top > *:last-child .overlay,
+          .hero-top > *:last-child .overlay-card{
+            width:100%;
+            margin:0 auto;
+            text-align:center;
+          }
+        }
       `}</style>
 
       <div className="hero-section">
@@ -689,32 +719,39 @@ const HeroSection = () => {
               </div>
 
               <div className="kpi-grid">
+                {/* Value Delivered */}
                 <div className="kpi-box">
-                  <span className="stat-number currency">
-                    <span className="prefix">$</span>
-                    <span className="value">{counts.value}</span>
-                    <span className="suffix">M+</span>
+                  <span className="stat">
+                    <span className="stat__prefix">$</span>
+                    <span className="stat__value" aria-live="polite">{counts.value}</span>
+                    <span className="stat__suffix">M+</span>
                   </span>
                   <span className="stat-label">Value Delivered</span>
                 </div>
+
+                {/* AI Users */}
                 <div className="kpi-box">
-                  <span className="stat-number">
-                    <span className="value">{counts.users}</span>
-                    <span className="suffix">K+</span>
+                  <span className="stat">
+                    <span className="stat__value" aria-live="polite">{counts.users}</span>
+                    <span className="stat__suffix">K+</span>
                   </span>
                   <span className="stat-label">AI Users</span>
                 </div>
+
+                {/* Typical ROI */}
                 <div className="kpi-box">
-                  <span className="stat-number">
-                    <span className="value">{counts.roi}</span>
-                    <span className="suffix">%</span>
+                  <span className="stat">
+                    <span className="stat__value" aria-live="polite">{counts.roi}</span>
+                    <span className="stat__suffix">%</span>
                   </span>
                   <span className="stat-label">Typical ROI</span>
                 </div>
+
+                {/* Years Leading */}
                 <div className="kpi-box">
-                  <span className="stat-number">
-                    <span className="value">{counts.years}</span>
-                    <span className="suffix">+</span>
+                  <span className="stat">
+                    <span className="stat__value" aria-live="polite">{counts.years}</span>
+                    <span className="stat__suffix">+</span>
                   </span>
                   <span className="stat-label">Years Leading</span>
                 </div>
@@ -830,32 +867,39 @@ const HeroSection = () => {
 
           {/* Mobile KPI Grid (mobile-only) */}
           <div className="kpi-grid kpi-mobile-only" style={{ marginTop: '1.25rem' }}>
+            {/* Value Delivered */}
             <div className="kpi-box">
-              <span className="stat-number currency">
-                <span className="prefix">$</span>
-                <span className="value">{counts.value}</span>
-                <span className="suffix">M+</span>
+              <span className="stat">
+                <span className="stat__prefix">$</span>
+                <span className="stat__value" aria-live="polite">{counts.value}</span>
+                <span className="stat__suffix">M+</span>
               </span>
               <span className="stat-label">Value Delivered</span>
             </div>
+
+            {/* AI Users */}
             <div className="kpi-box">
-              <span className="stat-number">
-                <span className="value">{counts.users}</span>
-                <span className="suffix">K+</span>
+              <span className="stat">
+                <span className="stat__value" aria-live="polite">{counts.users}</span>
+                <span className="stat__suffix">K+</span>
               </span>
               <span className="stat-label">AI Users</span>
             </div>
+
+            {/* Typical ROI */}
             <div className="kpi-box">
-              <span className="stat-number">
-                <span className="value">{counts.roi}</span>
-                <span className="suffix">%</span>
+              <span className="stat">
+                <span className="stat__value" aria-live="polite">{counts.roi}</span>
+                <span className="stat__suffix">%</span>
               </span>
               <span className="stat-label">Typical ROI</span>
             </div>
+
+            {/* Years Leading */}
             <div className="kpi-box">
-              <span className="stat-number">
-                <span className="value">{counts.years}</span>
-                <span className="suffix">+</span>
+              <span className="stat">
+                <span className="stat__value" aria-live="polite">{counts.years}</span>
+                <span className="stat__suffix">+</span>
               </span>
               <span className="stat-label">Years Leading</span>
             </div>
