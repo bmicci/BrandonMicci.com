@@ -219,53 +219,43 @@ const HeroSection = () => {
           overflow: hidden;                     /* belt & suspenders */
         }
 
-        /* === KPI number: balanced 3-cell grid, centered as a group ===
-           Works for currency, K+, %, +; no transforms; no overflow; stable count-up */
-        .stat {
-          display: grid;
-          grid-auto-flow: column;
-          grid-template-columns: auto minmax(3ch, auto) auto; /* side lanes auto; center has room for 3 digits */
-          justify-content: center;     /* center the whole triplet */
-          align-items: baseline;
-          gap: 0.06em;
+        /* === KPI number: balanced 3-cell grid; no transforms; no odd gaps === */
+        .stat{
+          display:grid;
+          grid-auto-flow:column;
+          grid-template-columns:auto minmax(3ch, max-content) auto; /* [prefix] [value] [suffix] */
+          justify-content:center;       /* center the whole triplet as a group */
+          align-items:baseline;
+          column-gap:0.02em;
 
-          padding-inline: 0.26em;      /* symmetric inner gutter so suffix never kisses edges */
-          line-height: 1;
-          white-space: nowrap;
+          padding-inline:0.26em;        /* inner gutter so glyphs never kiss corners */
+          line-height:1;
+          white-space:nowrap;
 
-          font-weight: 800;
-          color: #00d4ff;
-          font-feature-settings: "tnum" 1, "lnum" 1; /* tabular lining digits */
-          letter-spacing: 0;
-          font-size: clamp(1.6rem, 16cqw, 2.2rem);
+          font-weight:800;
+          color:#00d4ff;
+          font-feature-settings:"tnum" 1, "lnum" 1; /* tabular lining digits */
+          letter-spacing:0;
+          font-size:clamp(1.6rem, 16cqw, 2.2rem);
         }
+        /* 4-up desktop sizing */
+        @media (min-width:1280px){ .stat{ font-size:clamp(1.55rem, 15cqw, 2.05rem); } }
+        @media (min-width:1440px){ .stat{ font-size:clamp(1.7rem, 16cqw, 2.35rem); } }
 
-        /* 4-up desktop: keep just a touch smaller for safe edges */
-        @media (min-width: 1280px) {
-          .stat { font-size: clamp(1.55rem, 15cqw, 2.05rem); }
+        /* Center cell holds space for 3 digits but keeps the suffix snug */
+        .stat__value{
+          min-width:3ch;               /* space for 400 */
+          text-align:right;            /* <<< critical: keeps suffix tight to the number */
+          justify-self:end;
         }
-        @media (min-width: 1440px) {
-          .stat { font-size: clamp(1.7rem, 16cqw, 2.35rem); }
-        }
+        .stat__prefix{ justify-self:end; padding-right:0.03em; }
+        .stat__suffix{ justify-self:start; padding-left:0.03em; }
 
-        /* Center value stays stable while counting 1→3 digits */
-        .stat__value { min-width: 3ch; text-align: center; }
+        /* If you ever render an EMPTY prefix, hide it so it doesn't consume space */
+        .stat__prefix:empty{ display:none; }
 
-        /* micro optical balance */
-        .stat__prefix { padding-right: 0.03em; }
-        .stat__suffix { padding-left:  0.03em; }
-
-        /* Label keeps all cards perfectly aligned in height */
-        .stat-label{
-          display:flex; align-items:center; justify-content:center; text-align:center;
-          font-size: clamp(0.78rem, 1.6vw, 0.9rem);
-          color: rgba(255,255,255,0.72);
-          text-transform: uppercase; letter-spacing: 0.06em;
-          line-height: 1.3; min-height: calc(2 * 1.3em);
-        }
-
-        /* Safety: padding counts toward width to avoid any spill at round corners */
-        .kpi-box, .kpi-box * { box-sizing: border-box; }
+        /* Safety: padding counts toward width everywhere */
+        .kpi-box, .kpi-box *{ box-sizing:border-box; }
 
         /* Optional: avoid hover "jump" so row baseline stays flat */
         .kpi-box:hover {
