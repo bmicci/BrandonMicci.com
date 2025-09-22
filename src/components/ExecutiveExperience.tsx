@@ -41,7 +41,7 @@ type Role = {
 const ROLES: Role[] = [
   {
     dates: '2024 - PRESENT',
-    role: 'VP, Head of NextGen AI/ML Solutions',
+    role: 'VP, Head of AI Products',
     company: 'JPMorgan Chase',
     location: 'Plano, TX',
     icon: <Brain className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
