@@ -72,7 +72,7 @@ const HeroImage = () => {
         {/* Do not place any text inside hi-imgwrap. Only the Image. */}
         <div className="hi-imgwrap">
           <Image
-            src="/headshot.jpg"
+            src="/headshot.webp"
             alt="Brandon Micci — AI & Digital Transformation Executive"
             className="hi-img"
             fill
