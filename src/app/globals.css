@@ -8,3 +8,11 @@ body {
   color: #ededed;
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
+
+/* iPad Pro: Fix large gap between hero and strategic sections */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  section#home,
+  section#strategic-vision {
+    min-height: auto !important;
+  }
+}

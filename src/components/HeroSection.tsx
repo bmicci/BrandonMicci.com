@@ -52,9 +52,6 @@ const HeroSection = () => {
           .hero-section{ min-height:auto; padding-bottom: 1.25rem; }
         }
         /* iPad Pro: avoid oversized blank space on the next section */
-        @media (min-width:1024px) and (max-width:1279px){
-          section#strategic-vision{ min-height:auto !important; }
-        }
       `}</style>
 
       {/* ——— HERO ——— */}
