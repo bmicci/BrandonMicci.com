@@ -288,11 +288,16 @@ const HeroSection = () => {
           flex-direction: column; 
           align-items: center; 
           width: 100%; 
+          padding-inline: 1rem;               /* align with hero side gutters on desktop */
         }
         /* iPad Pro: add safe side padding so the glass box doesn't hug edges */
         @media (min-width:1024px) and (max-width:1279px){
           .diff-wrap{ padding-inline: clamp(1rem, 3vw, 1.5rem); }
           .diff-glass{ margin-inline:auto; }
+        }
+        /* Desktop: keep glass slightly narrower than hero container so it never feels too wide */
+        @media (min-width:1280px){
+          .diff-glass{ max-width: 1100px; }
         }
         .diff-glass {
           background: rgba(255,255,255,0.05);
