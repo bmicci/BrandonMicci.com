@@ -7,7 +7,7 @@ const HeroImage = () => {
     <>
       <style jsx>{`
         .hi-card {
-          width: clamp(280px, 34vw, 460px);
+          width: clamp(260px, 28vw, 400px);
           margin: 0 auto;
           border-radius: 22px;
           background: rgba(255,255,255,0.04);
@@ -47,6 +47,7 @@ const HeroImage = () => {
         .hi-caption {
           padding: 12px 14px 14px;
           background: linear-gradient(180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.14) 100%);
+          text-align: center;            /* center caption text on desktop */
         }
         .hi-name  { margin: 0 0 4px 0; font-weight: 700; color: #fff; font-size: 1rem; line-height: 1.2; }
         .hi-title { margin: 0; color: rgb(34 211 238); font-weight: 600; font-size: 0.9rem; line-height: 1.25; }
