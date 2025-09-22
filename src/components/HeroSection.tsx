@@ -47,6 +47,10 @@ const HeroSection = () => {
         @media (prefers-reduced-motion: reduce) {
           * { animation: none !important; transition: none !important; }
         }
+        /* iPad Pro: ensure hero section doesn't enforce screen-height causing gap */
+        @media (min-width:1024px) and (max-width:1279px){
+          .hero-section{ min-height:auto; padding-bottom: 1.25rem; }
+        }
         /* iPad Pro: avoid oversized blank space on the next section */
         @media (min-width:1024px) and (max-width:1279px){
           section#strategic-vision{ min-height:auto !important; }
