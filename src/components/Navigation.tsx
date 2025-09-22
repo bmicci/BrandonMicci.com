@@ -185,6 +185,15 @@ const Navigation = () => {
           }
         }
 
+        @media (min-width: 769px) and (max-width: 1023px) {
+          .nav-container { padding: 0.5rem 1.25rem; min-height: 54px; }
+          .logo-bm { font-size: 2rem; }
+          .logo-name { font-size: 0.9rem; }
+          .logo-title { font-size: 0.55rem; }
+          .nav-link { padding: 0.35rem 0.7rem; font-size: 0.82rem; }
+          .cta-button { padding: 0.38rem 0.7rem; font-size: 0.78rem; }
+        }
+
         .nav-item {
           position: relative;
         }
