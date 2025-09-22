@@ -174,10 +174,10 @@ const HeroSection = () => {
           }
         }
 
-        /* 3rd button shows ONLY on wide desktop (soaks up whitespace nicely) */
+        /* 3rd CTA visibility: show for iPad Pro and up */
         .show-xl { display: none; }
-        @media (min-width: 1280px) {
-          .show-xl { display: inline-flex; } /* makes the 3rd button appear */
+        @media (min-width: 1024px) {
+          .show-xl { display: inline-flex; }
           .cta-row.cta-3up-xl {
             grid-template-columns: repeat(3, max-content) !important;
             justify-content: start !important;
@@ -199,9 +199,9 @@ const HeroSection = () => {
         @media (min-width: 1280px) {
           .kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
         }
-        /* Mid desktop: 3-up */
+        /* iPad Pro / small desktop: keep KPIs 4-up so they stay on one line */
         @media (min-width: 1024px) and (max-width: 1279px) {
-          .kpi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+          .kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
         }
         /* Tablet/Mobile: 2-up */
         @media (max-width: 1023px) {
