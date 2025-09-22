@@ -58,10 +58,15 @@ const HeroSection = () => {
       <style jsx>{`
         .hero-section {
           position: relative;
-          min-height: 100dvh;
+          /* Stable viewport height avoids URL bar reflow jump */
+          min-height: 100svh;
           padding: max(env(safe-area-inset-top), 4.5rem) 0 2rem 0;
           overflow: hidden;
           background: transparent;
+          /* Prevent descendant layout/paint from bubbling reflow up to sections */
+          contain: layout paint;
+          /* Disable scroll anchoring in case the browser tries to “help” mid-paint */
+          overflow-anchor: none;
         }
         .hero-container {
           max-width: 1200px;
@@ -284,7 +289,7 @@ const HeroSection = () => {
 
         /* Differentiators block */
         .diff-wrap { 
-          margin: 2rem 0 1.5rem; 
+          margin: 2rem 0 0.75rem;  /* slightly tighter to reduce the fold gap on desktop */
           display: flex; 
           flex-direction: column; 
           align-items: center; 
@@ -294,8 +299,8 @@ const HeroSection = () => {
         /* iPad Pro: add safe side padding so the glass box doesn't hug edges */
         @media (min-width:1024px) and (max-width:1279px){
           .diff-wrap{ 
-            padding-inline: clamp(1rem, 3vw, 1.5rem); 
-            margin: 1rem 0 1.5rem; 
+            padding-inline: clamp(1rem, 3vw, 1.5rem);
+            margin: 1rem 0 0.75rem;
           }
           .diff-glass{ margin-inline:auto; }
         }
@@ -318,7 +323,7 @@ const HeroSection = () => {
           align-items: center; 
           justify-content: center; 
           gap: 0.8rem; 
-          margin-bottom: 1.5rem;
+          margin-bottom: 0.75rem; /* tighter: helps peek without changing hero visuals */
           padding: 1rem 0;
           position: relative;
         }

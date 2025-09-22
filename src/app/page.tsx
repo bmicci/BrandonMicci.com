@@ -3,6 +3,7 @@
 // import AccessibleNav from '@/components/AccessibleNav'; // Removed - using Navigation from layout
 import HeroSection from '@/components/HeroSection';
 import dynamic from 'next/dynamic';
+import { useEffect } from 'react';
 
 // Universal background for entire page
 const UniversalBackground = dynamic(
@@ -21,18 +22,42 @@ import IndustryCollaboration from '@/components/IndustryCollaboration';
 import TestimonialsSection from '@/components/TestimonialsSection';
 
 export default function Home() {
+  // Prevent first-load jump and manage hash anchors after first paint
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if ('scrollRestoration' in history) (history as History & { scrollRestoration?: string }).scrollRestoration = 'manual';
+    const { hash } = window.location;
+    if (!hash) window.scrollTo(0, 0);
+    requestAnimationFrame(() => {
+      if (hash) {
+        const el = document.getElementById(hash.slice(1));
+        if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
+    });
+  }, []);
+
   return (
-    <div className="min-h-screen text-white relative">
+    <div className="text-white relative">
       {/* Universal Background - covers entire page */}
       <UniversalBackground />
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen relative">
+      <section
+        id="home"
+        className="relative scroll-mt-[var(--header-h,4.5rem)]"
+      >
         <HeroSection />
       </section>
 
       {/* Strategic Vision Section */}
-      <section id="strategic-vision" className="min-h-screen relative">
+      <section
+        id="strategic-vision"
+        className="
+          relative
+          scroll-mt-[var(--header-h,4.5rem)]
+          lg:-mt-12 xl:-mt-16
+        "
+      >
         {/* Strategic Vision Content */}
         <div className="relative z-10 w-full">
           <StrategicAdvantageHeader />
@@ -43,21 +68,31 @@ export default function Home() {
       </section>
 
       {/* Executive Experience Section */}
-      <section id="executive-experience" className="min-h-screen relative">
+      <section
+        id="executive-experience"
+        className="relative scroll-mt-[var(--header-h,4.5rem)]"
+      >
         {/* Content */}
         <ExecutiveExperience />
       </section>
 
       {/* Professional Impact Section */}
-      <section id="professional-impact" className="min-h-screen relative">
+      <section
+        id="professional-impact"
+        className="relative scroll-mt-[var(--header-h,4.5rem)]"
+      >
         {/* Content */}
         <ProfessionalImpact />
       </section>
 
       {/* Industry Collaboration & Speaking Section */}
-      <section id="connectwithme" className="min-h-screen relative">
+      <section
+        id="connectwithme"
+        className="relative scroll-mt-[var(--header-h,4.5rem)]"
+      >
         <IndustryCollaboration />
       </section>
+      {false && <TestimonialsSection />}
     </div>
   );
 }

@@ -73,7 +73,7 @@ const IndustryCollaboration: React.FC = () => {
           background: transparent;
           /* Border lines removed for clean Universal Background */
           overflow: hidden;
-          min-height: 100vh;
+          min-height: auto;
         }
 
         /* Neural Background with Particles - removed to use universal background */

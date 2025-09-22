@@ -384,7 +384,7 @@ const ExecutiveExperience = memo(() => {
   };
 
   return (
-      <div className="relative min-h-screen overflow-x-clip text-white se-tight">
+      <div className="relative overflow-x-clip text-white se-tight">
       {/* Gradient overlay removed to show Universal Background */}
 
       <style jsx>{`
