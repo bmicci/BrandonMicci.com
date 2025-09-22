@@ -91,6 +91,24 @@ const CompanyExpertise: React.FC = () => {
           gap: 1.5rem;
           margin: 0 auto;
           animation: gridFadeIn 1s ease-out 0.8s both;
+          max-width: 100%;
+          width: 100%;
+        }
+
+        /* Ensure consistent grid layouts across breakpoints */
+        @media (min-width: 640px) and (max-width: 1023px) {
+          .companies-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1.2rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .companies-grid {
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 1.5rem;
+            max-width: 1000px;
+          }
         }
 
         .company-card {
@@ -103,6 +121,12 @@ const CompanyExpertise: React.FC = () => {
           cursor: pointer;
           border: 1px solid rgba(255, 255, 255, 0.2);
           animation: cardFloat 0.8s ease-out;
+          min-height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          max-width: 100%;
         }
 
         .company-card:nth-child(1) {
@@ -307,29 +331,29 @@ const CompanyExpertise: React.FC = () => {
             </h3>
           </div>
 
-          <div className="companies-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 max-w-full">
-            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-full sm:w-auto">
+          <div className="companies-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 max-w-full">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
               <h4 className="company-name">JPMorgan Chase</h4>
             </div>
-            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-full sm:w-auto">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
               <h4 className="company-name">Capital One</h4>
             </div>
-            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-full sm:w-auto">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
               <h4 className="company-name">Citi</h4>
             </div>
-            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-full sm:w-auto">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
               <h4 className="company-name">Southwest Airlines</h4>
             </div>
-            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-full sm:w-auto">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
               <h4 className="company-name">PwC</h4>
             </div>
-            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-full sm:w-auto">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
               <h4 className="company-name">Booz Allen Hamilton</h4>
             </div>
-            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-full sm:w-auto">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
               <h4 className="company-name">EY</h4>
             </div>
-            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-full sm:w-auto">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
               <h4 className="company-name">Capgemini</h4>
             </div>
           </div>
