@@ -17,6 +17,10 @@ const HeroImage = () => {
           position: relative;            /* required for ::before and containment */
           isolation: isolate;            /* prevents glow bleed */
         }
+        /* Tablet sizing */
+        @media (min-width: 769px) and (max-width: 1023px) {
+          .hi-card { width: clamp(240px, 32vw, 360px); }
+        }
         .hi-card::before {
           content: '';
           position: absolute;
@@ -70,7 +74,7 @@ const HeroImage = () => {
             alt="Brandon Micci — AI & Digital Transformation Executive"
             className="hi-img"
             fill
-            sizes="(min-width:1280px) 460px, (min-width:1024px) 34vw, 88vw"
+            sizes="(min-width:1280px) 460px, (min-width:1024px) 34vw, (min-width:769px) 32vw, 88vw"
             priority
             quality={92}
           />
