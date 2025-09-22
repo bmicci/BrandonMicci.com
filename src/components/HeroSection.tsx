@@ -254,6 +254,20 @@ const HeroSection = () => {
         /* If you ever render an EMPTY prefix, hide it so it doesn't consume space */
         .stat__prefix:empty{ display:none; }
 
+        /* Label centering and equal height */
+        .stat-label{
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          text-align:center;
+          font-size:clamp(0.78rem, 1.6vw, 0.9rem);
+          color:rgba(255,255,255,0.72);
+          text-transform:uppercase;
+          letter-spacing:0.06em;
+          line-height:1.3;
+          min-height:calc(2 * 1.3em);
+        }
+
         /* Safety: padding counts toward width everywhere */
         .kpi-box, .kpi-box *{ box-sizing:border-box; }
 
