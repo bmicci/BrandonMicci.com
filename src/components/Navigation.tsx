@@ -193,15 +193,6 @@ const Navigation = () => {
           .nav-link { padding: 0.35rem 0.7rem; font-size: 0.82rem; }
           .cta-button { padding: 0.38rem 0.7rem; font-size: 0.78rem; }
         }
-        /* iPad Pro / small desktop */
-        @media (min-width: 1024px) and (max-width: 1279px) {
-          .nav-container { padding: 0.5rem 1.5rem; min-height: 54px; }
-          .logo-bm { font-size: 2rem; }
-          .logo-name { font-size: 0.92rem; }
-          .logo-title { font-size: 0.58rem; }
-          .nav-link { padding: 0.4rem 0.75rem; font-size: 0.83rem; }
-          .cta-button { padding: 0.42rem 0.75rem; font-size: 0.8rem; }
-        }
 
         .nav-item {
           position: relative;
@@ -329,8 +320,8 @@ const Navigation = () => {
           box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
+        /* Mobile Responsiveness - Extended to include all iPads */
+        @media (max-width: 1279px) {
           .mobile-toggle {
             display: flex;
           }
