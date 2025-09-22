@@ -57,11 +57,11 @@ const HeroImage = () => {
         .hi-title { margin: 0; color: rgb(34 211 238); font-weight: 600; font-size: 0.9rem; line-height: 1.25; }
 
         @media (max-width: 768px) {
-          .hi-card { width: clamp(190px, 62vw, 300px); border-radius: 18px; }
+          .hi-card { width: clamp(190px, 68vw, 320px); border-radius: 18px; }
           .hi-imgwrap { aspect-ratio: 4 / 4.5; }
         }
         @media (max-width: 360px) {
-          .hi-card { width: clamp(170px, 78vw, 250px); border-radius: 16px; }
+          .hi-card { width: clamp(170px, 82vw, 260px); border-radius: 16px; }
           .hi-imgwrap { aspect-ratio: 4 / 4.3; }
           .hi-name { font-size: 0.95rem; }
           .hi-title { font-size: 0.85rem; }
@@ -76,7 +76,7 @@ const HeroImage = () => {
             alt="Brandon Micci — AI & Digital Transformation Executive"
             className="hi-img"
             fill
-            sizes="(min-width:1280px) 460px, (min-width:1024px) 34vw, (min-width:769px) 32vw, 64vw"
+            sizes="(min-width:1280px) 460px, (min-width:1024px) 34vw, (min-width:769px) 32vw, 70vw"
             priority
             quality={92}
           />

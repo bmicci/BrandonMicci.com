@@ -74,6 +74,10 @@ const HeroSection = () => {
           align-items: start;
           margin-bottom: 1.5rem;
         }
+        /* Reduce excessive bottom whitespace on iPad Pro by relaxing section height */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .hero-section { min-height: auto; }
+        }
         /* Tablet (iPad) layout tuning */
         @media (min-width: 769px) and (max-width: 1023px) {
           .hero-top {
@@ -523,15 +527,15 @@ const HeroSection = () => {
           }
         }
 
-        /* === START Wide-Desktop 3rd CTA === */
+        /* === START iPad Pro + Desktop 3rd CTA === */
         .show-xl { display: none; }
-        @media (min-width: 1280px) {
+        @media (min-width: 1024px) {
           .show-xl { display: inline-flex; }
           .cta-row.cta-3up-xl {
             grid-template-columns: repeat(3, max-content) !important;
           }
         }
-        /* === END Wide-Desktop 3rd CTA === */
+        /* === END iPad Pro + Desktop 3rd CTA === */
 
 
       `}</style>
