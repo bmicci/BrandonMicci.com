@@ -224,6 +224,7 @@ const HeroSection = () => {
           grid-auto-flow:column;
           grid-template-columns:auto minmax(3ch, max-content) auto; /* [prefix] [value] [suffix] */
           justify-content:center;       /* center the whole triplet as a group */
+          width:100%;                   /* center relative to the KPI card width */
           align-items:baseline;
           column-gap:0.02em;
 
