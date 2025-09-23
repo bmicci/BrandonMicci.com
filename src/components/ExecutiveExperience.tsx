@@ -679,6 +679,10 @@ const ExecutiveExperience = memo(() => {
               {
                 title: "Cross-Functional Excellence",
                 skills: ["Product Strategy", "Vendor Management", "Budget Planning", "Risk Management", "Compliance", "M&A Integration", "Executive Reporting", "Board Presentations"]
+              },
+              {
+                title: "Financial & Business Acumen",
+                skills: ["Revenue Growth", "Cost Optimization", "ROI Analysis", "Business Case Development", "Market Analysis", "Competitive Intelligence", "KPI Development", "Performance Metrics"]
               }
             ].map((competency, index) => (
               <div
