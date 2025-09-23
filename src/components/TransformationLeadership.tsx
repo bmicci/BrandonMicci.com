@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { Bot, Zap, ShieldAlert, Users, Factory, Network, Target, LineChart } from 'lucide-react';
 
 type ProjectMetric = {
   value: string;
@@ -9,7 +10,7 @@ type ProjectMetric = {
 
 type Project = {
   title: string;
-  emoji: string;
+  icon: React.ComponentType<{ size?: number; className?: string }>;
   description: string;
   mobileDescription: string;
   metrics: ProjectMetric[];
@@ -19,7 +20,7 @@ type Project = {
 const primaryProjects: Project[] = [
   {
     title: 'Enterprise LLM Deployment',
-    emoji: '🤖',
+    icon: Bot,
     description:
       'Industry-first Large Language Model implementation across JPMorgan Chase Payments operations, representing the largest enterprise LLM deployment in financial services.',
     mobileDescription: 'Largest LLM deployment in financial services at JPMorgan.',
@@ -31,7 +32,7 @@ const primaryProjects: Project[] = [
   },
   {
     title: 'IoT Innovation Platform',
-    emoji: '✈️',
+    icon: Zap,
     description:
       'Breakthrough IoT ecosystem at Southwest Airlines implementing edge computing and AI analytics across fuel, baggage, and de-icing operations.',
     mobileDescription: 'IoT platform delivering massive operational savings.',
@@ -43,7 +44,7 @@ const primaryProjects: Project[] = [
   },
   {
     title: 'AI Fraud Detection Engine',
-    emoji: '🔍',
+    icon: ShieldAlert,
     description:
       'Real-time fraud analytics platform for global insurance leader processing millions of transactions with advanced ML algorithms.',
     mobileDescription: 'Real-time ML fraud detection at massive scale.',
@@ -55,7 +56,7 @@ const primaryProjects: Project[] = [
   },
   {
     title: "World's Largest Analytics Community",
-    emoji: '📊',
+    icon: Users,
     description:
       "Established Capital One's enterprise Tableau platform—the largest evangelical analytics community worldwide.",
     mobileDescription: "30,000+ user platform—world's largest analytics community.",
@@ -70,7 +71,7 @@ const primaryProjects: Project[] = [
 const secondaryProjects: Project[] = [
   {
     title: 'Industry 4.0 IoT Ecosystem',
-    emoji: '🏢',
+    icon: Factory,
     description:
       'Comprehensive platform integrating 1000+ IoT devices across telematics, smart buildings, and wearables with unified AI analytics.',
     mobileDescription: 'Connected 1000+ IoT devices for Fortune 50 insurers.',
@@ -82,7 +83,7 @@ const secondaryProjects: Project[] = [
   },
   {
     title: 'Global Infrastructure Transformation',
-    emoji: '🌐',
+    icon: Network,
     description:
       'Worldwide infrastructure modernization at Citigroup, architecting telemetry platforms that eliminated weekly Sev1 outages.',
     mobileDescription: 'Achieved 98% uptime from weekly outages at Citi.',
@@ -94,7 +95,7 @@ const secondaryProjects: Project[] = [
   },
   {
     title: 'Event-Based Marketing Engine',
-    emoji: '📱',
+    icon: Target,
     description:
       'Real-time Hadoop-powered engine at Citigroup reaching millions with personalized campaigns and 300% conversion improvement.',
     mobileDescription: 'Reached 10M+ customers with 300% better conversion.',
@@ -106,7 +107,7 @@ const secondaryProjects: Project[] = [
   },
   {
     title: 'Analytics-as-a-Service Platform',
-    emoji: '💼',
+    icon: LineChart,
     description:
       'Self-service analytics platform at EY automating Risk, Compliance, and Fraud detection, generating continuous revenue stream.',
     mobileDescription: 'SaaS platform generating $30M annual revenue at EY.',
@@ -343,7 +344,6 @@ const TransformationLeadership = () => {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3.5rem;
             position: relative;
             overflow: hidden;
         }
@@ -357,6 +357,17 @@ const TransformationLeadership = () => {
             height: 200%;
             background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             animation: shimmer 3s infinite;
+        }
+
+        .project-icon {
+            color: white;
+            z-index: 1;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover .project-icon {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .project-content {
@@ -521,7 +532,6 @@ const TransformationLeadership = () => {
 
             .project-image {
                 height: 140px;
-                font-size: 3rem;
             }
 
             .project-content {
@@ -591,81 +601,87 @@ const TransformationLeadership = () => {
 
       <div className="projects-container">
         <div className="projects-grid">
-          {primaryProjects.map((project, index) => (
-            <div
-              key={project.title}
-              className="project-card"
-              ref={(el) => {
-                cardRefs.current[index] = el;
-              }}
-            >
-              <div className="project-image">
-                <span>{project.emoji}</span>
-              </div>
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description desktop-text">{project.description}</p>
-                <p className="project-description mobile-text">{project.mobileDescription}</p>
-
-                <div className="project-metrics">
-                  {project.metrics.map((metric) => (
-                    <div key={`${project.title}-${metric.label}`} className="project-metric">
-                      <span className="project-metric-number">{metric.value}</span>
-                      <div className="project-metric-label">{metric.label}</div>
-                    </div>
-                  ))}
+          {primaryProjects.map((project, index) => {
+            const IconComponent = project.icon;
+            return (
+              <div
+                key={project.title}
+                className="project-card"
+                ref={(el) => {
+                  cardRefs.current[index] = el;
+                }}
+              >
+                <div className="project-image">
+                  <IconComponent size={56} className="project-icon" />
                 </div>
+                <div className="project-content">
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-description desktop-text">{project.description}</p>
+                  <p className="project-description mobile-text">{project.mobileDescription}</p>
 
-                <div className="tech-tags">
-                  {project.tags.map((tag) => (
-                    <span key={`${project.title}-${tag}`} className="tech-tag">
-                      {tag}
-                    </span>
-                  ))}
+                  <div className="project-metrics">
+                    {project.metrics.map((metric) => (
+                      <div key={`${project.title}-${metric.label}`} className="project-metric">
+                        <span className="project-metric-number">{metric.value}</span>
+                        <div className="project-metric-label">{metric.label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="tech-tags">
+                    {project.tags.map((tag) => (
+                      <span key={`${project.title}-${tag}`} className="tech-tag">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
       <div className="projects-container-secondary">
         <div className="projects-grid">
-          {secondaryProjects.map((project, index) => (
-            <div
-              key={project.title}
-              className="project-card"
-              ref={(el) => {
-                cardRefs.current[primaryProjects.length + index] = el;
-              }}
-            >
-              <div className="project-image">
-                <span>{project.emoji}</span>
-              </div>
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description desktop-text">{project.description}</p>
-                <p className="project-description mobile-text">{project.mobileDescription}</p>
-
-                <div className="project-metrics">
-                  {project.metrics.map((metric) => (
-                    <div key={`${project.title}-${metric.label}`} className="project-metric">
-                      <span className="project-metric-number">{metric.value}</span>
-                      <div className="project-metric-label">{metric.label}</div>
-                    </div>
-                  ))}
+          {secondaryProjects.map((project, index) => {
+            const IconComponent = project.icon;
+            return (
+              <div
+                key={project.title}
+                className="project-card"
+                ref={(el) => {
+                  cardRefs.current[primaryProjects.length + index] = el;
+                }}
+              >
+                <div className="project-image">
+                  <IconComponent size={56} className="project-icon" />
                 </div>
+                <div className="project-content">
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-description desktop-text">{project.description}</p>
+                  <p className="project-description mobile-text">{project.mobileDescription}</p>
 
-                <div className="tech-tags">
-                  {project.tags.map((tag) => (
-                    <span key={`${project.title}-${tag}`} className="tech-tag">
-                      {tag}
-                    </span>
-                  ))}
+                  <div className="project-metrics">
+                    {project.metrics.map((metric) => (
+                      <div key={`${project.title}-${metric.label}`} className="project-metric">
+                        <span className="project-metric-number">{metric.value}</span>
+                        <div className="project-metric-label">{metric.label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="tech-tags">
+                    {project.tags.map((tag) => (
+                      <span key={`${project.title}-${tag}`} className="tech-tag">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
