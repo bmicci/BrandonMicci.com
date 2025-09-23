@@ -123,6 +123,11 @@ const TransformationLeadership = () => {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
+    // Skip mouse tracking on mobile devices for better performance
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      return;
+    }
+
     const cards = cardRefs.current.filter(Boolean) as HTMLDivElement[];
 
     if (!cards.length) {
@@ -133,14 +138,26 @@ const TransformationLeadership = () => {
     const cleanups: Array<() => void> = [];
 
     cards.forEach((card) => {
+      let rafId: number;
+      
       const handleMouseMove = (event: MouseEvent) => {
-        const rect = card.getBoundingClientRect();
-        const x = ((event.clientX - rect.left) / rect.width) * 100;
-        const y = ((event.clientY - rect.top) / rect.height) * 100;
-        card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(0, 212, 255, 0.1), ${baseBackground})`;
+        // Use requestAnimationFrame to throttle updates for better performance
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+        }
+        
+        rafId = requestAnimationFrame(() => {
+          const rect = card.getBoundingClientRect();
+          const x = ((event.clientX - rect.left) / rect.width) * 100;
+          const y = ((event.clientY - rect.top) / rect.height) * 100;
+          card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(0, 212, 255, 0.1), ${baseBackground})`;
+        });
       };
 
       const handleMouseLeave = () => {
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+        }
         card.style.background = baseBackground;
       };
 
@@ -149,6 +166,9 @@ const TransformationLeadership = () => {
       card.addEventListener('mouseleave', handleMouseLeave);
 
       cleanups.push(() => {
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+        }
         card.removeEventListener('mousemove', handleMouseMove);
         card.removeEventListener('mouseleave', handleMouseLeave);
         card.style.background = baseBackground;
@@ -187,7 +207,7 @@ const TransformationLeadership = () => {
             width: 200%;
             height: 300%;
             background-repeat: repeat;
-            opacity: 0.4;
+            opacity: 0.15;
             animation: starDrift var(--duration) linear infinite;
         }
 
@@ -239,10 +259,16 @@ const TransformationLeadership = () => {
         }
 
         .portfolio-title .gradient-text {
+            color: #00d4ff; /* Fallback solid color */
             background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            /* Improve gradient text rendering */
+            -webkit-text-stroke: 0.5px transparent;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .portfolio-subtitle {
@@ -280,13 +306,13 @@ const TransformationLeadership = () => {
 
         .project-card {
             background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-radius: 16px;
-            border: 0.5px solid rgba(0, 255, 255, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.22);
             overflow: hidden;
             position: relative;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.3s ease;
             opacity: 0;
             transform: translateY(30px);
             animation: cardReveal 0.8s ease forwards;
@@ -314,11 +340,10 @@ const TransformationLeadership = () => {
         }
 
         .project-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow:
-            0 20px 40px rgba(0, 212, 255, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            border-color: rgba(0, 255, 255, 0.5);
+            transform: translateY(-5px) scale(1.01);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.15);
         }
 
         .project-card:hover::before {
@@ -327,10 +352,10 @@ const TransformationLeadership = () => {
 
         .project-image {
             height: 140px;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 0.5px solid rgba(0, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -385,12 +410,18 @@ const TransformationLeadership = () => {
         .project-title {
             font-size: 1.25rem;
             font-weight: 700;
+            color: #00d4ff; /* Fallback solid color */
             background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 0.8rem;
             line-height: 1.3;
+            /* Improve gradient text rendering */
+            -webkit-text-stroke: 0.5px transparent;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .project-description {
@@ -408,18 +439,18 @@ const TransformationLeadership = () => {
         }
 
         .project-metric {
-            background: rgba(0, 212, 255, 0.1);
-            border: 0.5px solid rgba(0, 255, 255, 0.4);
-            border-radius: 10px;
+            background: rgba(0, 212, 255, 0.08);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 12px;
             padding: 0.8rem;
             text-align: center;
             transition: all 0.3s ease;
         }
 
         .project-metric:hover {
-            background: rgba(0, 212, 255, 0.15);
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.2);
+            background: rgba(0, 212, 255, 0.12);
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateY(-2px);
         }
 
         .project-metric-number {
@@ -447,11 +478,11 @@ const TransformationLeadership = () => {
         }
 
         .tech-tag {
-            background: rgba(30, 144, 255, 0.15);
-            border: 1px solid rgba(30, 144, 255, 0.4);
+            background: rgba(30, 144, 255, 0.1);
+            border: 1px solid rgba(30, 144, 255, 0.25);
             color: rgba(255, 255, 255, 0.9);
             padding: 0.25rem 0.6rem;
-            border-radius: 15px;
+            border-radius: 12px;
             font-size: 0.7rem;
             font-weight: 500;
             text-transform: uppercase;
@@ -460,10 +491,9 @@ const TransformationLeadership = () => {
         }
 
         .tech-tag:hover {
-            background: rgba(30, 144, 255, 0.25);
-            border-color: #1e90ff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(30, 144, 255, 0.3);
+            background: rgba(30, 144, 255, 0.18);
+            border-color: rgba(30, 144, 255, 0.4);
+            transform: translateY(-1px);
         }
 
         .desktop-text {
@@ -472,6 +502,17 @@ const TransformationLeadership = () => {
 
         .mobile-text {
             display: none;
+        }
+
+        /* Fallback for browsers that don't support gradient text properly */
+        @supports not (background-clip: text) or not (-webkit-background-clip: text) {
+            .portfolio-title .gradient-text,
+            .project-title,
+            .project-metric-number {
+                color: #00d4ff;
+                background: none;
+                -webkit-text-fill-color: initial;
+            }
         }
 
         @keyframes fadeInDown {
@@ -518,6 +559,38 @@ const TransformationLeadership = () => {
         }
 
         @media (max-width: 768px) {
+            /* Use solid colors on mobile for better performance and rendering */
+            .portfolio-title .gradient-text,
+            .project-title {
+                color: #00d4ff !important;
+                background: none !important;
+                -webkit-text-fill-color: initial !important;
+                -webkit-background-clip: initial !important;
+                background-clip: initial !important;
+            }
+            
+            .project-metric-number {
+                color: #00d4ff !important;
+                background: none !important;
+                -webkit-text-fill-color: initial !important;
+                -webkit-background-clip: initial !important;
+                background-clip: initial !important;
+            }
+            
+            /* Disable performance-heavy animations on mobile */
+            .star-field {
+                animation: none !important;
+                opacity: 0.2;
+            }
+            
+            .project-card::before {
+                animation: none !important;
+            }
+            
+            .project-image::after {
+                animation: none !important;
+            }
+
             .portfolio-header-section {
                 padding: 2rem 1rem;
             }
@@ -588,6 +661,21 @@ const TransformationLeadership = () => {
 
             .portfolio-header-section {
                 padding: 1.5rem 1rem;
+            }
+        }
+
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            .star-field,
+            .project-card::before,
+            .project-image::after {
+                animation: none !important;
+            }
+            
+            .project-card {
+                animation: none !important;
+                opacity: 1;
+                transform: none;
             }
         }
       `}</style>

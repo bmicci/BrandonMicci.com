@@ -52,10 +52,13 @@ export default function StructuredData() {
     "serviceType": [
       "AI Strategy Consulting",
       "Digital Transformation Leadership",
-      "Enterprise AI Implementation",
+      "Enterprise AI Implementation", 
       "LLM Deployment Strategy",
       "Innovation Leadership",
-      "Technology Executive Advisory"
+      "Technology Executive Advisory",
+      "Fortune 500 AI Executive Search",
+      "VP Head of AI Products Recruitment",
+      "Enterprise AI Transformation Consulting"
     ]
   };
 
