@@ -467,7 +467,7 @@ const ExecutiveExperience = memo(() => {
 
         <div className="mx-auto max-w-full overflow-x-clip px-1 pb-8 md:max-w-6xl md:px-8 md:pb-16">
           <div className="relative">
-            <div className="absolute -bottom-8 -top-8 left-6 w-px bg-gradient-to-b from-transparent via-cyan-400 via-cyan-400 to-transparent md:left-12" />
+            <div className="absolute -bottom-8 -top-12 left-6 w-px bg-gradient-to-b from-transparent via-cyan-400 via-cyan-400 to-transparent md:left-12" />
 
             {ROLES.map((role, index) => {
               const isVisible = visibleItems.has(index);
