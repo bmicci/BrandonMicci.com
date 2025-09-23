@@ -72,7 +72,7 @@ const TestimonialsSection: React.FC = () => {
           z-index: 1;
           display: flex;
           align-items: center;
-          height: 300px;
+          height: 330px;
           width: 100%;
           overflow: hidden;
         }
@@ -104,7 +104,7 @@ const TestimonialsSection: React.FC = () => {
           position: relative;
           min-width: 450px;
           max-width: 450px;
-          height: 250px;
+          height: 280px;
           overflow: hidden;
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
           flex-shrink: 0;
@@ -280,12 +280,12 @@ const TestimonialsSection: React.FC = () => {
             font-size: 1rem;
           }
           .testimonials-banner {
-            height: 440px;
+            height: 460px;
           }
           .testimonial-card {
             min-width: 320px;
             max-width: 320px;
-            height: 400px;
+            height: 420px;
             padding: 1.5rem 1.5rem 2.5rem 1.5rem;
           }
           .testimonials-track {
