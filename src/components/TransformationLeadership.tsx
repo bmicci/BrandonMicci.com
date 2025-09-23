@@ -266,6 +266,7 @@ const TransformationLeadership = () => {
             position: relative;
             background: transparent;
             border-radius: 16px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
             overflow: hidden;
         }
 
@@ -301,6 +302,7 @@ const TransformationLeadership = () => {
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-radius: 16px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
             overflow: hidden;
             position: relative;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -319,6 +321,7 @@ const TransformationLeadership = () => {
             position: absolute;
             inset: 0;
             border-radius: 16px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
             padding: 2px;
             background: linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff);
             background-size: 200% 200%;
@@ -331,7 +334,10 @@ const TransformationLeadership = () => {
 
         .project-card:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 30px 60px rgba(0, 212, 255, 0.3);
+            box-shadow:
+            0 20px 40px rgba(0, 212, 255, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.4);
         }
 
         .project-card:hover::before {
