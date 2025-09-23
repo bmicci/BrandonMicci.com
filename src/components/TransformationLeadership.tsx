@@ -382,33 +382,25 @@ const TransformationLeadership = () => {
         }
 
         .project-icon {
-            background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 50%, #00d4ff 100%);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.4));
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 16px rgba(0, 212, 255, 0.3);
+            transition: all 0.3s ease;
+            color: white;
             z-index: 1;
             position: relative;
-            transition: all 0.4s ease;
-            animation: iconGradientShift 3s ease-in-out infinite;
-        }
-
-        @keyframes iconGradientShift {
-            0%, 100% {
-                background-position: 0% 50%;
-                filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.4));
-            }
-            50% {
-                background-position: 100% 50%;
-                filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.6));
-            }
         }
 
         .project-card:hover .project-icon {
-            transform: scale(1.15) rotate(8deg);
-            filter: drop-shadow(0 0 16px rgba(0, 212, 255, 0.8));
-            animation-duration: 1.5s;
+            transform: rotate(5deg) scale(1.1);
+            box-shadow: 0 12px 24px rgba(0, 212, 255, 0.4);
         }
 
         .project-content {
@@ -656,9 +648,12 @@ const TransformationLeadership = () => {
                 }}
               >
                 <div className="project-image">
-                  <IconComponent size={56} className="project-icon" />
+                  
                 </div>
                 <div className="project-content">
+                  <div className="project-icon">
+                    <IconComponent size={24} />
+                  </div>
                   <h3 className="project-title">{project.title}</h3>
                   <p className="project-description desktop-text">{project.description}</p>
                   <p className="project-description mobile-text">{project.mobileDescription}</p>
@@ -699,9 +694,12 @@ const TransformationLeadership = () => {
                 }}
               >
                 <div className="project-image">
-                  <IconComponent size={56} className="project-icon" />
+                  
                 </div>
                 <div className="project-content">
+                  <div className="project-icon">
+                    <IconComponent size={24} />
+                  </div>
                   <h3 className="project-title">{project.title}</h3>
                   <p className="project-description desktop-text">{project.description}</p>
                   <p className="project-description mobile-text">{project.mobileDescription}</p>
