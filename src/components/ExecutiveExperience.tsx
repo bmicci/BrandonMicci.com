@@ -650,7 +650,7 @@ const ExecutiveExperience = memo(() => {
             {[
               {
                 title: "AI/ML Strategy & Innovation",
-                skills: ["Generative AI", "LLM Deployment", "Machine Learning", "AI Ethics", "Predictive Analytics", "NLP"]
+                skills: ["Generative AI", "LLM Deployment", "OpenAI", "ChatGPT", "Machine Learning", "TensorFlow", "PyTorch", "AI Ethics", "Predictive Analytics", "NLP", "Computer Vision"]
               },
               {
                 title: "Digital Transformation",
@@ -658,7 +658,7 @@ const ExecutiveExperience = memo(() => {
               },
               {
                 title: "Cloud & Data Architecture",
-                skills: ["AWS", "Azure", "Snowflake", "Databricks", "Data Governance", "Big Data"]
+                skills: ["AWS", "Azure", "GCP", "Snowflake", "Databricks", "Spark", "Kafka", "Data Lakes", "Data Governance", "Big Data", "ETL/ELT", "Data Mesh"]
               },
               {
                 title: "Leadership & Strategy",
@@ -666,11 +666,19 @@ const ExecutiveExperience = memo(() => {
               },
               {
                 title: "Analytics & BI Platforms",
-                skills: ["Tableau", "Alteryx", "PowerBI", "Python", "R", "SQL"]
+                skills: ["Tableau", "Alteryx", "PowerBI", "Looker", "Qlik", "Python", "R", "SQL", "Pandas", "NumPy", "Jupyter", "Apache Airflow"]
               },
               {
                 title: "Emerging Technologies",
                 skills: ["Blockchain", "AR/VR", "Robotics", "Geospatial", "Web 3.0", "Telematics"]
+              },
+              {
+                title: "Enterprise Technology Stack",
+                skills: ["Kubernetes", "Docker", "Microservices", "API Gateway", "Jenkins", "Git", "Terraform", "MongoDB", "PostgreSQL", "Redis"]
+              },
+              {
+                title: "Cross-Functional Excellence",
+                skills: ["Product Strategy", "Vendor Management", "Budget Planning", "Risk Management", "Compliance", "M&A Integration", "Executive Reporting", "Board Presentations"]
               }
             ].map((competency, index) => (
               <div
