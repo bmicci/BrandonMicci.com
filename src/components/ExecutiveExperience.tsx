@@ -731,6 +731,88 @@ const ExecutiveExperience = memo(() => {
             ))}
           </div>
         </div>
+
+        {/* Education Section */}
+        <div className="mx-auto max-w-full px-1 pb-16 md:max-w-6xl md:px-8 md:pb-20">
+          <div className="text-center mb-8 md:mb-12">
+            <h3 className="text-xl font-bold md:text-3xl mb-3">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Education & Leadership Development
+              </span>
+            </h3>
+            <p className="text-sm md:text-lg text-slate-300 max-w-3xl mx-auto">
+              Academic foundation and continuous professional development
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* Primary Education */}
+            <div
+              className="relative overflow-hidden rounded-lg p-6 text-center transition-all duration-700 hover:scale-105"
+              style={{
+                background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(30, 144, 255, 0.08))',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                border: '1px solid rgba(0, 212, 255, 0.3)',
+                boxShadow: '0 8px 32px rgba(0, 212, 255, 0.1)',
+              }}
+            >
+              <div className="relative z-10">
+                <div className="text-3xl mb-4">🎓</div>
+                <h4 className="text-lg font-bold text-white mb-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  Bachelor of Arts, Business Administration
+                </h4>
+                <p className="text-cyan-400 font-semibold mb-2">The George Washington University</p>
+                <p className="text-slate-300 text-sm mb-3">School of Business • Washington, D.C.</p>
+                <div className="text-xs text-slate-400">
+                  <span className="bg-cyan-500/20 border border-cyan-500/30 rounded-full px-3 py-1">
+                    Study Abroad: Florence, Italy
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Leadership Development */}
+            <div
+              className="relative overflow-hidden rounded-lg p-6 text-center transition-all duration-700 hover:scale-105"
+              style={{
+                background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(30, 144, 255, 0.08))',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                border: '1px solid rgba(0, 212, 255, 0.3)',
+                boxShadow: '0 8px 32px rgba(0, 212, 255, 0.1)',
+              }}
+            >
+              <div className="relative z-10">
+                <div className="text-3xl mb-4">💪</div>
+                <h4 className="text-lg font-bold text-white mb-3 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  Clifton Strengths Profile
+                </h4>
+                <div className="space-y-2">
+                  {[
+                    "1. Significance",
+                    "2. Woo", 
+                    "3. Futuristic",
+                    "4. Communication",
+                    "5. Strategic"
+                  ].map((strength, index) => (
+                    <div
+                      key={strength}
+                      className="text-xs font-medium rounded-full border transition-all duration-300 hover:scale-105 py-1 px-3 inline-block mx-1"
+                      style={{
+                        background: 'rgba(0, 212, 255, 0.1)',
+                        border: '1px solid rgba(0, 212, 255, 0.3)',
+                        color: '#9be8ff',
+                      }}
+                    >
+                      {strength}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
