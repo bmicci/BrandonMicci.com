@@ -437,6 +437,17 @@ const ExecutiveExperience = memo(() => {
           }
         }
 
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
         @media (max-width: 768px) {
           .timeline-item-visible {
             animation: mobileSlideIn 0.6s ease-out;
@@ -619,6 +630,93 @@ const ExecutiveExperience = memo(() => {
                 </div>
               );
             })}
+          </div>
+        </div>
+
+        {/* Core Competencies Section */}
+        <div className="mx-auto max-w-full px-1 pb-8 md:max-w-6xl md:px-8 md:pb-16">
+          <div className="text-center mb-8 md:mb-12">
+            <h3 className="text-xl font-bold md:text-3xl mb-3">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Core Competencies
+              </span>
+            </h3>
+            <p className="text-sm md:text-lg text-slate-300 max-w-3xl mx-auto">
+              Strategic expertise across AI/ML, digital transformation, and enterprise leadership
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "AI/ML Strategy & Innovation",
+                skills: ["Generative AI", "LLM Deployment", "Machine Learning", "AI Ethics", "Predictive Analytics", "NLP"]
+              },
+              {
+                title: "Digital Transformation",
+                skills: ["Industry 4.0", "IoT Platforms", "Digital Twins", "DevOps", "Agile", "Change Management"]
+              },
+              {
+                title: "Cloud & Data Architecture",
+                skills: ["AWS", "Azure", "Snowflake", "Databricks", "Data Governance", "Big Data"]
+              },
+              {
+                title: "Leadership & Strategy",
+                skills: ["Executive Leadership", "P&L Management", "Strategic Planning", "C-Suite Engagement", "Team Building", "Innovation"]
+              },
+              {
+                title: "Analytics & BI Platforms",
+                skills: ["Tableau", "Alteryx", "PowerBI", "Python", "R", "SQL"]
+              },
+              {
+                title: "Emerging Technologies",
+                skills: ["Blockchain", "AR/VR", "Robotics", "Geospatial", "Web 3.0", "Telematics"]
+              }
+            ].map((competency, index) => (
+              <div
+                key={competency.title}
+                className="relative overflow-hidden rounded-lg p-6 transition-all duration-700 hover:scale-105"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  border: '1px solid rgba(0, 212, 255, 0.2)',
+                  animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
+                }}
+              >
+                {/* Gradient border effect */}
+                <div
+                  className="pointer-events-none absolute inset-0 transition-opacity duration-500 rounded-lg opacity-0 hover:opacity-40"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(30, 144, 255, 0.1))',
+                    backgroundSize: '200% 200%',
+                    animation: 'gradientShift 4s ease-in-out infinite',
+                  }}
+                />
+
+                <div className="relative z-10">
+                  <h4 className="text-lg font-bold text-white mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    {competency.title}
+                  </h4>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {competency.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 text-xs font-medium rounded-full border transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                        style={{
+                          background: 'rgba(0, 212, 255, 0.1)',
+                          border: '1px solid rgba(0, 212, 255, 0.3)',
+                          color: '#9be8ff',
+                        }}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
