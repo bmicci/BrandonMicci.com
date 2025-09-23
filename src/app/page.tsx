@@ -85,6 +85,14 @@ export default function Home() {
         <ProfessionalImpact />
       </section>
 
+      {/* Professional Impact Section */}
+      <section
+        id="professional-impact"
+        className="relative scroll-mt-[var(--header-h,4.5rem)]"
+      >
+        <TestimonialsSection />
+      </section>
+
       {/* Industry Collaboration & Speaking Section */}
       <section
         id="connectwithme"
@@ -92,7 +100,6 @@ export default function Home() {
       >
         <IndustryCollaboration />
       </section>
-      {false && <TestimonialsSection />}
     </div>
   );
 }

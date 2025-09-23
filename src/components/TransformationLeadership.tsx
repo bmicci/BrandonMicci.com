@@ -600,10 +600,10 @@ const TransformationLeadership = () => {
 
       <div className="portfolio-header-section">
         <h2 className="portfolio-title">
-          <span className="gradient-text">INNOVATION PORTFOLIO</span>
+          <span className="gradient-text">TRANSFORMATION LEADERSHIP</span>
         </h2>
         <p className="portfolio-subtitle desktop-text">
-          Strategic AI implementations delivering quantifiable business transformation across Fortune 500 technology ecosystems
+          Revolutionary innovations that don&apos;t just solve today&apos;s challenges—they redefine how entire industries operate tomorrow
         </p>
         <p className="portfolio-subtitle mobile-text">AI solutions driving Fortune 500 transformation</p>
       </div>

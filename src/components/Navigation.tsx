@@ -452,6 +452,15 @@ const Navigation = () => {
             </li>
             <li className="nav-item">
               <a
+                href="#professional-impact"
+                className={`nav-link ${activeLink === 'professional-impact' ? 'active' : ''}`}
+                onClick={(e) => handleSmoothScroll(e, 'professional-impact')}
+              >
+                Professional Impact
+              </a>
+            </li>
+            <li className="nav-item">
+              <a
                 href="#connectwithme"
                 className="cta-button"
                 onClick={(e) => handleSmoothScroll(e, 'connectwithme')}
