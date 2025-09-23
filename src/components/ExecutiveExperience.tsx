@@ -471,7 +471,7 @@ const ExecutiveExperience = memo(() => {
               className="absolute -bottom-8 -top-20 left-6 md:left-12" 
               style={{
                 width: '2px',
-                background: 'linear-gradient(to bottom, transparent 0%, #00d4ff 5%, #00d4ff 95%, transparent 100%)',
+                background: '#00d4ff',
                 boxShadow: '0 0 8px rgba(0, 212, 255, 0.6), 0 0 4px rgba(0, 212, 255, 0.8)',
                 transform: 'translateX(-50%)',
               }}
