@@ -283,7 +283,7 @@ const TransformationLeadership = () => {
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-radius: 16px;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 0.5px solid rgba(0, 255, 255, 0.3);
             overflow: hidden;
             position: relative;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -302,9 +302,9 @@ const TransformationLeadership = () => {
             position: absolute;
             inset: 0;
             border-radius: 16px;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 0.5px solid rgba(0, 255, 255, 0.3);
             padding: 2px;
-            background: linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff);
+            background: linear-gradient(135deg, #00ffff, #00d4ff, #00ffff);
             background-size: 200% 200%;
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
@@ -318,7 +318,7 @@ const TransformationLeadership = () => {
             box-shadow:
             0 20px 40px rgba(0, 212, 255, 0.2),
             inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            border-color: rgba(0, 212, 255, 0.4);
+            border-color: rgba(0, 255, 255, 0.5);
         }
 
         .project-card:hover::before {
@@ -330,7 +330,7 @@ const TransformationLeadership = () => {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            border: 0.5px solid rgba(0, 255, 255, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -409,7 +409,7 @@ const TransformationLeadership = () => {
 
         .project-metric {
             background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            border: 0.5px solid rgba(0, 255, 255, 0.4);
             border-radius: 10px;
             padding: 0.8rem;
             text-align: center;
