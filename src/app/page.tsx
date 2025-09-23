@@ -78,7 +78,7 @@ export default function Home() {
 
       {/* Professional Impact Section */}
       <section
-        id="professional-impact"
+        id="transformation-leadership"
         className="relative scroll-mt-[var(--header-h,4.5rem)]"
       >
         {/* Content */}

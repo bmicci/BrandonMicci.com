@@ -24,11 +24,6 @@ const NAV_ITEMS: NavItem[] = [
     href: '#transformation-leadership',
     scrollId: 'transformation-leadership',
   },
-  {
-    label: 'Professional Impact',
-    href: '#professional-impact',
-    scrollId: 'professional-impact',
-  },
   { label: 'Connect', href: '#connectwithme', scrollId: 'connectwithme' },
 ];
 
