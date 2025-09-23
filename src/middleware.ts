@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function middleware(_: NextRequest) {
+export function middleware(_request: NextRequest) {
   // Add security headers
   const response = NextResponse.next();
 

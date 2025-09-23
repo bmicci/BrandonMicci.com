@@ -8,7 +8,6 @@ const nextConfig: NextConfig = {
         hostname: 'static.wixstatic.com',
       },
     ],
-    // @ts-expect-error: `qualities` is introduced in Next.js 16; keep forward-compatible
     qualities: [60, 75, 85, 92],
   },
 };
