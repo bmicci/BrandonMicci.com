@@ -650,7 +650,7 @@ const ExecutiveExperience = memo(() => {
             {[
               {
                 title: "AI/ML Strategy & Innovation",
-                skills: ["Generative AI", "LLM Deployment", "OpenAI", "ChatGPT", "Machine Learning", "TensorFlow", "PyTorch", "AI Ethics", "Predictive Analytics", "NLP", "Computer Vision"]
+                skills: ["Generative AI", "LLM Deployment", "MLOps", "LLMOps", "Machine Learning", "Model Governance", "AI Ethics", "Predictive Analytics", "NLP", "Computer Vision", "Deep Learning"]
               },
               {
                 title: "Digital Transformation",
@@ -666,7 +666,7 @@ const ExecutiveExperience = memo(() => {
               },
               {
                 title: "Analytics & BI Platforms",
-                skills: ["Tableau", "Alteryx", "PowerBI", "Looker", "Qlik", "Python", "R", "SQL", "Pandas", "NumPy", "Jupyter", "Apache Airflow"]
+                skills: ["Tableau", "Alteryx", "PowerBI", "Looker", "Python", "R", "SQL", "Data Science", "Statistical Analysis", "Apache Airflow"]
               },
               {
                 title: "Emerging Technologies",
@@ -674,7 +674,7 @@ const ExecutiveExperience = memo(() => {
               },
               {
                 title: "Enterprise Technology Stack",
-                skills: ["Kubernetes", "Docker", "Microservices", "API Gateway", "Jenkins", "Git", "Terraform", "MongoDB", "PostgreSQL", "Redis"]
+                skills: ["Kubernetes", "Docker", "Microservices", "API Gateway", "CI/CD", "Infrastructure as Code", "Terraform", "Container Orchestration", "Distributed Systems"]
               },
               {
                 title: "Cross-Functional Excellence",
