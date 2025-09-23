@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, memo } from 'react';
-import { Brain, Target, Search, Wifi, Database, Cloud, Shield, ShieldCheck, BarChart, TrendingUp, Globe } from 'lucide-react';
+import { Brain, Rocket, Search, Plane, Database, Cloud, Shield, Building2, BarChart, TrendingUp, Globe } from 'lucide-react';
 
 const IconCircle: React.FC<{ children: React.ReactNode }> = memo(({ children }) => (
   <div className="
@@ -73,7 +73,7 @@ const ROLES: Role[] = [
     role: 'Senior Director, Intelligent Industry GTM & Solution Leader',
     company: 'Capgemini',
     location: 'Dallas, TX',
-    icon: <Target className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
+    icon: <Rocket className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Directed go-to-market strategy and solution development for emerging AI technologies, leading cross-functional teams of product managers, solution architects, and sales professionals.',
     skills: ['Go-to-Market Strategy', 'IoT Solutions', 'Product Management'],
@@ -126,7 +126,7 @@ const ROLES: Role[] = [
     role: 'IoT & Digital Innovation Leader',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: <Wifi className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
+    icon: <Plane className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Led digital transformation initiatives focused on IoT implementation and cloud migration, driving operational efficiency improvements across airline infrastructure and customer-facing systems.',
     skills: ['IoT Architecture', 'Cloud Migration', 'Digital Transformation'],
@@ -222,7 +222,7 @@ const ROLES: Role[] = [
     role: 'Enterprise Analytics Leader, Risk & Compliance',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: <ShieldCheck className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
+    icon: <Building2 className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Drove enterprise-wide analytics strategy and governance, establishing data quality standards and building scalable analytics infrastructure to support risk management and regulatory compliance initiatives.',
     skills: ['Enterprise Analytics', 'Data Governance', 'Tableau'],
@@ -411,6 +411,32 @@ const ExecutiveExperience = memo(() => {
           }
         }
 
+        @keyframes glowPulse {
+          0%, 100% {
+            box-shadow: 
+              0 25px 50px rgba(0, 0, 0, 0.3), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.15),
+              0 0 20px rgba(0, 212, 255, 0.15);
+          }
+          50% {
+            box-shadow: 
+              0 35px 70px rgba(0, 0, 0, 0.4), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2),
+              0 0 30px rgba(0, 212, 255, 0.25);
+          }
+        }
+
+        @keyframes iconPulse {
+          0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+          }
+          50% {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+          }
+        }
+
         @media (max-width: 768px) {
           .timeline-item-visible {
             animation: mobileSlideIn 0.6s ease-out;
@@ -456,13 +482,17 @@ const ExecutiveExperience = memo(() => {
                   className="relative mb-6 pl-16 md:mb-12 md:pl-28"
                 >
                   <div
-                    className={`absolute top-3 left-3 flex h-8 w-8 items-center justify-center rounded-full transition-all duration-500 md:left-8 md:h-12 md:w-12 ${
+                    className={`absolute top-2 left-2 md:top-4 md:left-8 flex h-8 w-8 md:h-12 md:w-12 items-center justify-center rounded-full transition-all duration-500 ${
                       isVisible
                         ? 'scale-110 shadow-lg shadow-white/20'
                         : 'scale-100 shadow-md shadow-white/10'
                     }`}
                     style={{
-                      background: 'rgba(255, 255, 255, 0.1)',
+                      background: isVisible 
+                        ? 'linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(30, 144, 255, 0.15))'
+                        : 'rgba(255, 255, 255, 0.1)',
+                      border: isVisible ? '1px solid rgba(0, 212, 255, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
+                      animation: isVisible ? 'iconPulse 2s ease-in-out infinite' : 'none',
                     }}
                   >
                     <IconCircle>
@@ -486,20 +516,22 @@ const ExecutiveExperience = memo(() => {
                       WebkitBackdropFilter: isVisible
                         ? 'blur(25px)'
                         : 'blur(15px)',
-                      boxShadow: isVisible
-                        ? '0 25px 50px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
-                        : '0 8px 16px rgba(0, 0, 0, 0.1)',
+                      border: isVisible 
+                        ? '1px solid rgba(0, 212, 255, 0.2)' 
+                        : '1px solid rgba(255, 255, 255, 0.05)',
+                      animation: isVisible ? 'glowPulse 3s ease-in-out infinite' : 'none',
                     }}
                   >
                     {/* Gradient border removed - using universal background */}
 
                     <div
-                      className={`pointer-events-none absolute inset-0 md:-inset-4 transition-opacity duration-500 ${
-                        isVisible ? 'opacity-60' : 'opacity-0'
+                      className={`pointer-events-none absolute inset-0 md:-inset-2 transition-opacity duration-500 rounded-lg ${
+                        isVisible ? 'opacity-40' : 'opacity-0'
                       }`}
                       style={{
-                        borderRadius: 'inherit',
-                        background: 'transparent',
+                        background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(30, 144, 255, 0.05), rgba(0, 212, 255, 0.05))',
+                        backgroundSize: '200% 200%',
+                        animation: isVisible ? 'gradientShift 4s ease-in-out infinite' : 'none',
                         filter: 'blur(8px)',
                       }}
                     />
@@ -558,7 +590,7 @@ const ExecutiveExperience = memo(() => {
                         {role.achievements.map((achievement) => (
                           <div
                             key={achievement.title}
-                            className="rounded-md border-l-4 border-cyan-400 bg-cyan-500/10 p-3 transition-all duration-300 hover:translate-x-1 hover:bg-cyan-500/15"
+                            className="rounded-md border-l-4 border-cyan-400 bg-cyan-500/10 p-3 transition-all duration-300 hover:translate-x-1 hover:bg-cyan-500/15 hover:shadow-lg hover:shadow-cyan-500/20"
                           >
                             <div className="flex items-start gap-3">
                               <span className="mt-0.5 text-lg text-cyan-400 stroke-2">
