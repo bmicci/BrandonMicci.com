@@ -580,15 +580,15 @@ const HeroSection = () => {
           <div className="hero-top">
             <div className="hero-content">
               <h1 className="headline">
-                Senior <span className="gradient">AI & Digital</span>{' '}
-                <span className="gradient">Transformation</span> Executive
+                <span className="gradient">VP Head of AI Products</span> &{' '}
+                <span className="gradient">Enterprise AI Transformation</span> Leader
               </h1>
 
               <p className="dek">
                 Over <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>16+ years</span> as a proven
-                leader delivering <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>$400M+ in enterprise value</span>,
-                scaling solutions to <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>27K+ users</span>, and achieving breakthrough ROI across
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> Fortune 500 organizations</span>. I translate complex AI strategies into measurable outcomes for
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>AI strategy executive</span> delivering <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>$400M+ in enterprise value</span>,
+                scaling <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>LLM deployments</span> to <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>27K+ users</span>, and achieving breakthrough ROI across
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> Fortune 500 organizations</span>. I translate complex <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>enterprise AI strategies</span> into measurable outcomes for
                 <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> C-suite stakeholders</span>.
               </p>
 
@@ -642,8 +642,8 @@ const HeroSection = () => {
           <div className="mobile-layout">
             <div className="mobile-intro">
               <h1>
-                Senior <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>AI & Digital</span><br />
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>Transformation</span> Executive
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>VP Head of AI Products</span><br />
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>Enterprise AI Transformation</span> Leader
               </h1>
 
               {/* Wrap to ensure spacing hooks apply */}
@@ -676,7 +676,7 @@ const HeroSection = () => {
         <div className="diff-wrap">
           <div className="diff-glass">
             <div className="diff-header">
-              <span className="diff-title">What Makes Me Different</span>
+              <span className="diff-title">AI Executive Leadership Differentiators</span>
             </div>
 
             <div className="diff-grid">
