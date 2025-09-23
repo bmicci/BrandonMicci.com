@@ -129,7 +129,7 @@ const TransformationLeadership = () => {
       return;
     }
 
-    const baseBackground = 'rgba(255, 255, 255, 0.03)';
+    const baseBackground = 'rgba(255, 255, 255, 0.05)';
     const cleanups: Array<() => void> = [];
 
     cards.forEach((card) => {
@@ -264,7 +264,7 @@ const TransformationLeadership = () => {
             margin: 0 auto;
             padding: 0 2rem 4rem;
             position: relative;
-            background: #0a0e27;
+            background: transparent;
             border-radius: 16px;
             overflow: hidden;
         }
@@ -297,7 +297,7 @@ const TransformationLeadership = () => {
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-radius: 16px;
@@ -414,7 +414,10 @@ const TransformationLeadership = () => {
         .project-title {
             font-size: 1.4rem;
             font-weight: 700;
-            color: #ffffff;
+            background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 0.8rem;
             line-height: 1.3;
         }
