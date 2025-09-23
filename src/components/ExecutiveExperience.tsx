@@ -482,19 +482,14 @@ const ExecutiveExperience = memo(() => {
                   className="relative mb-6 pl-16 md:mb-12 md:pl-28"
                 >
                   <div
-                    className={`absolute top-2 left-6 md:top-4 md:left-12 flex h-8 w-8 md:h-12 md:w-12 items-center justify-center rounded-full transition-all duration-500 ${
-                      isVisible
-                        ? 'scale-110 shadow-lg shadow-white/20'
-                        : 'scale-100 shadow-md shadow-white/10'
-                    }`}
+                    className="absolute top-2 left-6 md:top-4 md:left-12 flex h-8 w-8 md:h-12 md:w-12 items-center justify-center rounded-full"
                     style={{
                       background: isVisible 
                         ? 'linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(30, 144, 255, 0.15))'
                         : 'rgba(255, 255, 255, 0.1)',
                       border: isVisible ? '1px solid rgba(0, 212, 255, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
-                      animation: isVisible ? 'iconPulse 2s ease-in-out infinite' : 'none',
-                      transform: isVisible ? 'translateX(-50%) scale(1.1)' : 'translateX(-50%) scale(1)',
-                      willChange: 'transform',
+                      transform: 'translateX(-50%)',
+                      transition: 'background 0.3s ease, border 0.3s ease',
                     }}
                   >
                     <IconCircle>
@@ -508,7 +503,7 @@ const ExecutiveExperience = memo(() => {
                                 w-[calc(100vw-5.5rem)] max-w-[92vw] md:w-auto md:max-w-none
                                 transition-all duration-700
                                 card-shell
-                                ${isVisible ? 'opacity-100' : 'opacity-95'}`}
+                                ${isVisible ? 'opacity-100 md:translate-x-2 md:scale-[1.02]' : 'opacity-95'}`}
                     style={{
                       background: isVisible
                         ? 'rgba(255, 255, 255, 0.08)'
