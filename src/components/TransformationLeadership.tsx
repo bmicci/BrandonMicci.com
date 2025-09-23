@@ -382,33 +382,15 @@ const TransformationLeadership = () => {
         }
 
         .project-icon {
-            background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 50%, #00d4ff 100%);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.6)) drop-shadow(0 0 8px rgba(0, 212, 255, 0.8));
+            color: #00d4ff;
             z-index: 1;
             position: relative;
-            transition: all 0.4s ease;
-            animation: iconGradientShift 3s ease-in-out infinite;
-        }
-
-        @keyframes iconGradientShift {
-            0%, 100% {
-                background-position: 0% 50%;
-                filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.6)) drop-shadow(0 0 8px rgba(0, 212, 255, 0.8));
-            }
-            50% {
-                background-position: 100% 50%;
-                filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.9)) drop-shadow(0 0 12px rgba(0, 212, 255, 1));
-            }
+            transition: all 0.3s ease;
         }
 
         .project-card:hover .project-icon {
-            transform: scale(1.15) rotate(8deg);
-            filter: drop-shadow(0 0 24px rgba(0, 212, 255, 1)) drop-shadow(0 0 16px rgba(0, 212, 255, 1));
-            animation-duration: 1.5s;
+            color: #1e90ff;
+            transform: scale(1.1);
         }
 
         .project-content {
