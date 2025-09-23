@@ -254,13 +254,13 @@ const TransformationLeadership = () => {
         }
 
         .projects-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem 2rem;
         }
 
         .projects-container-secondary {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem 4rem;
             position: relative;
@@ -293,7 +293,7 @@ const TransformationLeadership = () => {
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .project-card {
@@ -339,7 +339,7 @@ const TransformationLeadership = () => {
         }
 
         .project-image {
-            height: 160px;
+            height: 140px;
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
@@ -406,13 +406,13 @@ const TransformationLeadership = () => {
         }
 
         .project-content {
-            padding: 1.8rem;
+            padding: 2rem;
             position: relative;
             z-index: 1;
         }
 
         .project-title {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-weight: 700;
             background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
             -webkit-background-clip: text;
