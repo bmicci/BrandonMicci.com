@@ -265,31 +265,12 @@ const TransformationLeadership = () => {
             padding: 0 2rem 4rem;
             position: relative;
             background: transparent;
-            border-radius: 16px;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            
+            
             overflow: hidden;
         }
 
-        .projects-container-secondary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px);
-            background-size: 100px 100px;
-            animation: circuitMove 20s linear infinite;
-            z-index: 0;
-            pointer-events: none;
-        }
 
-        .projects-container-secondary .projects-grid {
-            position: relative;
-            z-index: 1;
-        }
 
         .projects-grid {
             display: grid;
@@ -386,11 +367,13 @@ const TransformationLeadership = () => {
             z-index: 1;
             position: relative;
             transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(0, 212, 255, 0.3));
         }
 
         .project-card:hover .project-icon {
-            color: #1e90ff;
-            transform: scale(1.1);
+            color: #ffffff;
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 8px rgba(0, 212, 255, 0.5));
         }
 
         .project-content {
