@@ -467,7 +467,7 @@ const ExecutiveExperience = memo(() => {
 
         <div className="mx-auto max-w-full overflow-x-clip px-1 pb-8 md:max-w-6xl md:px-8 md:pb-16">
           <div className="relative">
-            <div className="absolute -bottom-16 -top-16 w-px bg-gradient-to-b from-transparent via-cyan-400 via-cyan-400 to-transparent" style={{ left: '24px' }} />
+            <div className="absolute -bottom-8 -top-8 left-6 w-px bg-gradient-to-b from-transparent via-cyan-400 via-cyan-400 to-transparent md:left-12" />
 
             {ROLES.map((role, index) => {
               const isVisible = visibleItems.has(index);
@@ -482,7 +482,7 @@ const ExecutiveExperience = memo(() => {
                   className="relative mb-6 pl-16 md:mb-12 md:pl-28"
                 >
                   <div
-                    className={`absolute top-2 md:top-4 flex h-8 w-8 md:h-12 md:w-12 items-center justify-center rounded-full transition-all duration-500 ${
+                    className={`absolute top-2 left-6 md:top-4 md:left-12 flex h-8 w-8 md:h-12 md:w-12 items-center justify-center rounded-full transition-all duration-500 ${
                       isVisible
                         ? 'scale-110 shadow-lg shadow-white/20'
                         : 'scale-100 shadow-md shadow-white/10'
@@ -493,7 +493,6 @@ const ExecutiveExperience = memo(() => {
                         : 'rgba(255, 255, 255, 0.1)',
                       border: isVisible ? '1px solid rgba(0, 212, 255, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
                       animation: isVisible ? 'iconPulse 2s ease-in-out infinite' : 'none',
-                      left: '24px',
                       transform: 'translateX(-50%)',
                     }}
                   >
