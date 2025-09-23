@@ -265,7 +265,7 @@ const TransformationLeadership = () => {
             padding: 0 2rem 4rem;
             position: relative;
             background: #0a0e27;
-            border-radius: 24px;
+            border-radius: 16px;
             overflow: hidden;
         }
 
@@ -300,7 +300,7 @@ const TransformationLeadership = () => {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-radius: 24px;
+            border-radius: 16px;
             overflow: hidden;
             position: relative;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -318,7 +318,7 @@ const TransformationLeadership = () => {
             content: '';
             position: absolute;
             inset: 0;
-            border-radius: 24px;
+            border-radius: 16px;
             padding: 2px;
             background: linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff);
             background-size: 200% 200%;
@@ -340,12 +340,28 @@ const TransformationLeadership = () => {
 
         .project-image {
             height: 160px;
-            background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(30, 144, 255, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-image::before {
+            opacity: 1;
         }
 
         .project-image::after {
@@ -360,14 +376,33 @@ const TransformationLeadership = () => {
         }
 
         .project-icon {
-            color: white;
+            background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 50%, #00d4ff 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.4));
             z-index: 1;
             position: relative;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            animation: iconGradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes iconGradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+                filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.4));
+            }
+            50% {
+                background-position: 100% 50%;
+                filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.6));
+            }
         }
 
         .project-card:hover .project-icon {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.15) rotate(8deg);
+            filter: drop-shadow(0 0 16px rgba(0, 212, 255, 0.8));
+            animation-duration: 1.5s;
         }
 
         .project-content {
