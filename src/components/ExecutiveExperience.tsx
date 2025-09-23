@@ -695,7 +695,7 @@ const ExecutiveExperience = memo(() => {
                 />
 
                 <div className="relative z-10">
-                  <h4 className="text-lg font-bold text-white mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  <h4 className="text-lg font-bold text-white mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
                     {competency.title}
                   </h4>
                   
