@@ -60,10 +60,10 @@ export const metadata: Metadata = {
       'VP Head of AI Products at JPMorgan Chase. 27K+ LLM users deployed, $400M+ revenue generated. Expert in enterprise AI strategy, digital transformation, and Fortune 500 innovation leadership.',
     images: [
       {
-        url: '/headshot.webp',
+        url: '/og.png',
         width: 1200,
         height: 630,
-        alt: 'Brandon Micci - VP Head of AI Products',
+        alt: 'Brandon Micci - VP Head of AI Products | Enterprise AI Transformation Leader',
       },
     ],
   },
@@ -72,17 +72,17 @@ export const metadata: Metadata = {
     title: 'Brandon Micci - VP Head of AI Products | Enterprise AI Transformation Leader',
     description:
       'VP Head of AI Products at JPMorgan Chase. 27K+ LLM users deployed, $400M+ revenue generated. Expert in enterprise AI strategy, digital transformation.',
-    images: ['/headshot.webp'],
+    images: ['/og.png'],
     creator: '@brandonmicci',
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon_16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon_32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico?v=3', sizes: 'any' },
+      { url: '/favicon_16x16.png?v=3', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon_32x32.png?v=3', sizes: '32x32', type: 'image/png' },
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/apple-touch-icon.png?v=3', sizes: '180x180', type: 'image/png' },
     ],
   },
 };
