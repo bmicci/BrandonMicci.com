@@ -493,7 +493,8 @@ const ExecutiveExperience = memo(() => {
                         : 'rgba(255, 255, 255, 0.1)',
                       border: isVisible ? '1px solid rgba(0, 212, 255, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
                       animation: isVisible ? 'iconPulse 2s ease-in-out infinite' : 'none',
-                      transform: 'translateX(-50%)',
+                      transform: isVisible ? 'translateX(-50%) scale(1.1)' : 'translateX(-50%) scale(1)',
+                      willChange: 'transform',
                     }}
                   >
                     <IconCircle>
@@ -506,7 +507,6 @@ const ExecutiveExperience = memo(() => {
                                 p-4 md:p-8
                                 w-[calc(100vw-5.5rem)] max-w-[92vw] md:w-auto md:max-w-none
                                 transition-all duration-700
-                                md:translate-x-2 md:scale-[1.02] md:opacity-100
                                 card-shell
                                 ${isVisible ? 'opacity-100' : 'opacity-95'}`}
                     style={{
@@ -521,6 +521,8 @@ const ExecutiveExperience = memo(() => {
                         ? '1px solid rgba(0, 212, 255, 0.2)' 
                         : '1px solid rgba(255, 255, 255, 0.05)',
                       animation: isVisible ? 'glowPulse 3s ease-in-out infinite' : 'none',
+                      willChange: 'transform, opacity',
+                      transform: 'translateZ(0)', // Force hardware acceleration
                     }}
                   >
                     {/* Gradient border removed - using universal background */}
