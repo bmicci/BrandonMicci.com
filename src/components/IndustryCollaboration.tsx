@@ -698,7 +698,7 @@ const IndustryCollaboration: React.FC = () => {
                   <a
                     className="bm-btn bm-btn-secondary bm-btn-compact"
                     id="bm-resume"
-                    data-resume-url="https://YOUR-DOMAIN/path/Brandon_Micci_Resume.pdf"
+                    data-resume-url="/BrandonMicciSeniorAIExecutive.pdf"
                     href="#"
                   >
                     <svg
@@ -714,7 +714,7 @@ const IndustryCollaboration: React.FC = () => {
                   <a
                     className="bm-btn bm-btn-secondary bm-btn-compact"
                     id="bm-brief"
-                    data-brief-url="https://YOUR-DOMAIN/path/Brandon_Micci_Executive_Brief.pdf"
+                    data-brief-url="/BrandonMicciSeniorAIExecutive.pdf"
                     href="#"
                   >
                     <svg
@@ -747,8 +747,8 @@ const IndustryCollaboration: React.FC = () => {
 
                 <span className="bm-cta-small">
                   or email directly:
-                  <a href="mailto:brandon@brandonmicci.com">
-                    brandon@brandonmicci.com
+                  <a href="mailto:brandon.micci@gmail.com">
+                    brandon.micci@gmail.com
                   </a>
                 </span>
               </div>
