@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 
 const IndustryCollaboration: React.FC = () => {
   useEffect(() => {
-    // Smooth scroll to contact section with fixed-header offset
+    // Note: Primary contact button now uses mailto, but keeping scroll functionality for any remaining internal links
     const jumpers = document.querySelectorAll('a[href^="#connectwithme"]');
     jumpers.forEach((a) =>
       a.addEventListener('click', function (e: Event) {
@@ -683,10 +683,10 @@ const IndustryCollaboration: React.FC = () => {
             {/* LEFT: CTA + topics */}
             <div className="bm-card bm-card-pad">
               <div className="bm-inline-cta">
-                {/* Primary: scroll to your contact section */}
+                {/* Primary: email for collaboration discussion */}
                 <a
                   className="bm-btn bm-btn-primary"
-                  href="#connectwithme"
+                  href="mailto:brandonmicci@brandonmicci.com?subject=Collaboration Discussion&body=Hi Brandon,%0D%0A%0D%0AI'm interested in discussing potential collaboration opportunities.%0D%0A%0D%0ABest regards,"
                   id="bm-open-form"
                 >
                   <span>Discuss Collaboration</span>
@@ -747,8 +747,8 @@ const IndustryCollaboration: React.FC = () => {
 
                 <span className="bm-cta-small">
                   or email directly:
-                  <a href="mailto:brandon.micci@gmail.com">
-                    brandon.micci@gmail.com
+                  <a href="mailto:brandonmicci@brandonmicci.com">
+                    brandonmicci@brandonmicci.com
                   </a>
                 </span>
               </div>
