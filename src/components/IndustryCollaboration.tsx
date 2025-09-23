@@ -714,7 +714,7 @@ const IndustryCollaboration: React.FC = () => {
                   <a
                     className="bm-btn bm-btn-secondary bm-btn-compact"
                     id="bm-brief"
-                    data-brief-url="/BrandonMicciSeniorAIExecutive.pdf"
+                    data-brief-url="/Brandon_Micci_AI_Executive_Brief_2025.pdf"
                     href="#"
                   >
                     <svg
