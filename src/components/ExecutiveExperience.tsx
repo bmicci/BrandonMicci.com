@@ -467,7 +467,7 @@ const ExecutiveExperience = memo(() => {
 
         <div className="mx-auto max-w-full overflow-x-clip px-1 pb-8 md:max-w-6xl md:px-8 md:pb-16">
           <div className="relative">
-            <div className="absolute bottom-0 top-0 left-6 w-px bg-gradient-to-b from-transparent via-cyan-400 via-cyan-400 to-transparent md:left-12" />
+            <div className="absolute -bottom-8 -top-8 left-6 w-px bg-gradient-to-b from-transparent via-cyan-400 via-cyan-400 to-transparent md:left-12" />
 
             {ROLES.map((role, index) => {
               const isVisible = visibleItems.has(index);
@@ -494,6 +494,7 @@ const ExecutiveExperience = memo(() => {
                       border: isVisible ? '1px solid rgba(0, 212, 255, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
                       animation: isVisible ? 'iconPulse 2s ease-in-out infinite' : 'none',
                       transform: 'translateX(-50%)',
+                      marginLeft: '0.5px',
                     }}
                   >
                     <IconCircle>
