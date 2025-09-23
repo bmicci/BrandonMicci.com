@@ -772,7 +772,7 @@ const ExecutiveExperience = memo(() => {
               </div>
             </div>
 
-            {/* Leadership Development */}
+            {/* Leadership Approach */}
             <div
               className="relative overflow-hidden rounded-lg p-6 text-center transition-all duration-700 hover:scale-105"
               style={{
@@ -784,20 +784,21 @@ const ExecutiveExperience = memo(() => {
               }}
             >
               <div className="relative z-10">
-                <div className="text-3xl mb-4">💪</div>
+                <div className="text-3xl mb-4">🎯</div>
                 <h4 className="text-lg font-bold text-white mb-3 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Clifton Strengths Profile
+                  Leadership Approach
                 </h4>
                 <div className="space-y-2">
                   {[
-                    "1. Significance",
-                    "2. Woo", 
-                    "3. Futuristic",
-                    "4. Communication",
-                    "5. Strategic"
-                  ].map((strength, index) => (
+                    "Transformational Leadership",
+                    "Innovation-Driven", 
+                    "Data-Driven Decisions",
+                    "People-First Culture",
+                    "Continuous Learning",
+                    "Results-Oriented"
+                  ].map((approach) => (
                     <div
-                      key={strength}
+                      key={approach}
                       className="text-xs font-medium rounded-full border transition-all duration-300 hover:scale-105 py-1 px-3 inline-block mx-1"
                       style={{
                         background: 'rgba(0, 212, 255, 0.1)',
@@ -805,7 +806,7 @@ const ExecutiveExperience = memo(() => {
                         color: '#9be8ff',
                       }}
                     >
-                      {strength}
+                      {approach}
                     </div>
                   ))}
                 </div>
