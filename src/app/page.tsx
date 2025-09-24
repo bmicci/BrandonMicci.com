@@ -1,7 +1,7 @@
 'use client';
 
-// import AccessibleNav from '@/components/AccessibleNav'; // Removed - using Navigation from layout
-import HeroSection from '@/components/HeroSection';
+import NewHero from '@/components/NewHero';
+import CaseStudyCards from '@/components/CaseStudyCards';
 import dynamic from 'next/dynamic';
 import { useEffect } from 'react';
 
@@ -12,10 +12,6 @@ const UniversalBackground = dynamic(
 );
 
 // Regular imports for lighter components
-import CompanyExpertise from '@/components/CompanyExpertise';
-import StrategicAdvantageHeader from '@/components/StrategicAdvantageHeader';
-import StrategicIntroCard from '@/components/StrategicIntroCard';
-import StrategicDifferentiators from '@/components/StrategicDifferentiators';
 import ExecutiveExperience from '@/components/ExecutiveExperience';
 import ProfessionalImpact from '@/components/TransformationLeadership';
 import IndustryCollaboration from '@/components/IndustryCollaboration';
@@ -46,7 +42,7 @@ export default function Home() {
         id="home"
         className="relative scroll-mt-[var(--header-h,4.5rem)]"
       >
-        <HeroSection />
+        <NewHero />
       </section>
 
       {/* Strategic Vision Section */}
@@ -60,10 +56,10 @@ export default function Home() {
       >
         {/* Strategic Vision Content */}
         <div className="relative z-10 w-full">
-          <StrategicAdvantageHeader />
-          <StrategicIntroCard />
-          <CompanyExpertise />
-          <StrategicDifferentiators />
+          <div className="container mx-auto px-4 py-12">
+            <h2 className="text-3xl font-bold mb-8 text-center">Strategic Advantage</h2>
+            <CaseStudyCards />
+          </div>
         </div>
       </section>
 

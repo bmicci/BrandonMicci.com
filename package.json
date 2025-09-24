@@ -6,6 +6,7 @@
     "dev": "NEXT_NO_TURBOPACK=1 next dev",
     "dev:turbo": "next dev --turbo",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "lint": "next lint",
