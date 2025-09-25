@@ -103,27 +103,33 @@ const Navigation = () => {
           color: white;
           transition: transform 0.3s ease;
           cursor: pointer;
+          position: relative;
+          z-index: 10;
         }
 
         .logo:hover {
           transform: translateY(-2px);
         }
 
-        .logo-icon {
-          width: 52px;
-          height: 52px;
-          background-image: url('/logo.png');
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-          border-radius: 6px;
-          position: relative;
-          overflow: hidden;
+        .logo-bm {
+          font-size: 2.2rem;
+          font-weight: 800;
+          color: #00d4ff; /* Fallback color for browsers that don't support gradient text */
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-decoration: none;
           transition: all 0.3s ease;
+          letter-spacing: -0.5px;
+          text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+          display: block;
+          line-height: 1;
         }
 
-        .logo:hover .logo-icon {
+        .logo:hover .logo-bm {
           transform: scale(1.05);
+          text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
         }
 
         .logo-text {
@@ -135,10 +141,11 @@ const Navigation = () => {
         .logo-name {
           font-size: 0.95rem;
           font-weight: 700;
-          color: #00d4ff;
+          color: white;
           white-space: nowrap;
           text-decoration: none;
-          transition: font-size 0.3s ease;
+          transition: all 0.3s ease;
+          margin: 0;
         }
 
         .logo-title {
@@ -147,9 +154,8 @@ const Navigation = () => {
           font-weight: 400;
           letter-spacing: 0.3px;
           white-space: nowrap;
-          transition:
-            font-size 0.3s ease,
-            opacity 0.3s ease;
+          transition: all 0.3s ease;
+          margin: 0;
         }
 
         .nav-menu {
@@ -165,9 +171,8 @@ const Navigation = () => {
             min-height: 50px;
           }
 
-          .wix-header.scrolled .logo-icon {
-            width: 46px;
-            height: 46px;
+          .wix-header.scrolled .logo-bm {
+            font-size: 1.9rem;
           }
 
           .wix-header.scrolled .logo-name {
@@ -178,6 +183,15 @@ const Navigation = () => {
             font-size: 0.55rem;
             opacity: 0.85;
           }
+        }
+
+        @media (min-width: 769px) and (max-width: 1023px) {
+          .nav-container { padding: 0.5rem 1.25rem; min-height: 54px; }
+          .logo-bm { font-size: 2rem; }
+          .logo-name { font-size: 0.9rem; }
+          .logo-title { font-size: 0.55rem; }
+          .nav-link { padding: 0.35rem 0.7rem; font-size: 0.82rem; }
+          .cta-button { padding: 0.38rem 0.7rem; font-size: 0.78rem; }
         }
 
         .nav-item {
@@ -306,8 +320,8 @@ const Navigation = () => {
           box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
+        /* Mobile Responsiveness - Extended to include all iPads */
+        @media (max-width: 1279px) {
           .mobile-toggle {
             display: flex;
           }
@@ -350,13 +364,16 @@ const Navigation = () => {
             justify-content: center;
           }
 
-          .logo-icon {
-            width: 48px;
-            height: 48px;
+          .logo-bm {
+            font-size: 2rem;
           }
 
           .logo-name {
             font-size: 1.2rem;
+          }
+
+          .logo-title {
+            font-size: 0.7rem;
           }
 
           .nav-container {
@@ -370,6 +387,10 @@ const Navigation = () => {
             gap: 0.5rem;
           }
 
+          .logo-bm {
+            font-size: 1.8rem;
+          }
+
           .logo-name {
             font-size: 1.05rem;
           }
@@ -377,17 +398,13 @@ const Navigation = () => {
           .logo-title {
             display: none;
           }
-
-          .logo-text {
-            display: flex;
-          }
         }
       `}</style>
 
       <header className={`wix-header ${isScrolled ? 'scrolled' : ''}`}>
         <nav className="nav-container">
           <div className="logo" onClick={() => handleLinkClick('home')}>
-            <div className="logo-icon"></div>
+            <div className="logo-bm">BM</div>
             <div className="logo-text">
               <div className="logo-name">Brandon Micci</div>
               <div className="logo-title">AI & Digital Transformation</div>
@@ -444,9 +461,9 @@ const Navigation = () => {
             </li>
             <li className="nav-item">
               <a
-                href="#connect-with-me"
+                href="#connectwithme"
                 className="cta-button"
-                onClick={(e) => handleSmoothScroll(e, 'connect-with-me')}
+                onClick={(e) => handleSmoothScroll(e, 'connectwithme')}
               >
                 <span>Connect With Me</span>
                 <span style={{ fontSize: '0.8rem' }}>→</span>

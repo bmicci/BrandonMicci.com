@@ -14,11 +14,18 @@ const StrategicAdvantageHeader: React.FC = () => {
             'Segoe UI',
             Roboto,
             sans-serif;
-          padding: 3rem 2rem 2rem;
+          padding: 0.5rem 2rem 2rem;
           text-align: center;
           position: relative;
           z-index: 10;
           animation: titleSlideUp 1s ease-out;
+        }
+
+        /* iPad Pro spacing tighten */
+        @media (min-width:1024px) and (max-width:1279px){
+          .strategic-header{ padding: 0.25rem 1.5rem 1.25rem; }
+          .strategic-title{ font-size: 2.4rem; }
+          .strategic-subtitle{ max-width: 850px; }
         }
 
         .strategic-title {
@@ -117,11 +124,10 @@ const StrategicAdvantageHeader: React.FC = () => {
 
       <div className="strategic-header">
         <h2 className="strategic-title">
-          <span className="gradient-text">Strategic Advantage</span>
+          <span className="gradient-text">Enterprise AI Strategic Advantage</span>
         </h2>
         <p className="strategic-subtitle">
-          What sets me apart in the rapidly evolving AI and data strategy
-          landscape
+          What sets me apart in the rapidly evolving <a href="#transformation-leadership" className="text-cyan-400 hover:text-cyan-300 transition-colors">enterprise AI strategy</a> and <a href="#executive-experience" className="text-cyan-400 hover:text-cyan-300 transition-colors">Fortune 500 digital transformation</a> landscape
         </p>
       </div>
     </>

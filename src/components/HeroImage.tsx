@@ -6,153 +6,85 @@ const HeroImage = () => {
   return (
     <>
       <style jsx>{`
-        /* Professional Image Component */
-        .image-section {
-          font-family:
-            'Inter',
-            -apple-system,
-            BlinkMacSystemFont,
-            'Segoe UI',
-            Roboto,
-            sans-serif;
-          color: white;
-          padding: 15px 2rem; /* Reduced spacing */
-          text-align: center;
-          position: relative;
-          background: transparent;
-          z-index: 10;
-          order: 3; /* Default order for desktop */
-        }
-
-        .image-content {
-          max-width: 280px; /* Better proportions */
+        .hi-card {
+          width: clamp(260px, 28vw, 400px);
           margin: 0 auto;
-          width: 100%;
-          height: 320px; /* Better aspect ratio */
-          position: relative;
-          animation: imageReveal 1s ease-out 0.5s both;
+          border-radius: 22px;
+          background: rgba(255,255,255,0.04);
+          border: 1px solid rgba(0, 212, 255, 0.4);
+          box-shadow: 0 24px 48px rgba(0,0,0,0.35), 0 0 30px rgba(0, 212, 255, 0.25), 0 0 60px rgba(0, 212, 255, 0.1);
+          overflow: hidden;              /* ensures corners/overflow stay perfect */
+          position: relative;            /* required for ::before and containment */
+          isolation: isolate;            /* prevents glow bleed */
+        }
+        /* Tablet sizing */
+        @media (min-width: 769px) and (max-width: 1023px) {
+          .hi-card { width: clamp(240px, 32vw, 360px); }
+        }
+        .hi-card::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          pointer-events: none;
+          box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.5) inset;
         }
 
-        .professional-image {
-          border-radius: 20px; /* More modern rounded corners */
-          object-fit: contain;
-          object-position: center;
+        /* UNTOUCHABLE IMAGE WRAPPER - no text inside this div */
+        .hi-imgwrap {
+          aspect-ratio: 4 / 5;           /* gives the fill image real space */
+          position: relative;            /* required by next image fill */
+          display: block;
+        }
+        .hi-img {
           position: absolute;
-          top: 0;
-          left: 0;
+          inset: 0;
           width: 100%;
           height: 100%;
-
-          /* Clean professional styling */
-          border: 2px solid rgba(255, 255, 255, 0.2);
-          box-shadow:
-            0 0 0 1px rgba(0, 212, 255, 0.3),
-            0 0 25px rgba(0, 212, 255, 0.2),
-            0 10px 40px rgba(0, 0, 0, 0.3);
-
-          transition: all 0.4s ease;
-          animation: professionalPulse 3s ease-in-out infinite;
+          object-fit: cover;
+          object-position: 50% 40%;
+          border-radius: 0;              /* corners come from the card */
+          transform: translateZ(0);
         }
 
-        /* Desktop hover effect - clean and professional */
-        @media (min-width: 769px) {
-          .professional-image:hover {
-            transform: translateY(-8px);
-            box-shadow:
-              0 0 0 2px rgba(0, 212, 255, 0.4),
-              0 0 30px rgba(0, 212, 255, 0.25),
-              0 12px 40px rgba(0, 0, 0, 0.5);
-            animation: professionalHeartbeat 1.5s ease-in-out infinite;
-          }
+        /* Caption lives OUTSIDE the image wrapper */
+        .hi-caption {
+          padding: 12px 14px 14px;
+          background: linear-gradient(180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.14) 100%);
+          text-align: center;            /* center caption text on desktop */
         }
-
-        /* Mobile optimizations */
-        @media (max-width: 768px) {
-          .image-section {
-            padding: 20px 1rem;
-            order: 2; /* Move image to second position on mobile (after header) */
-          }
-
-          .professional-image {
-            max-width: 280px;
-            height: 320px;
-            animation: professionalPulse 4s ease-in-out infinite;
-          }
-        }
+        .hi-name  { margin: 0 0 4px 0; font-weight: 700; color: #fff; font-size: 1rem; line-height: 1.2; }
+        .hi-title { margin: 0; color: rgb(34 211 238); font-weight: 600; font-size: 0.9rem; line-height: 1.25; }
 
         @media (max-width: 768px) {
-          .image-content {
-            max-width: 250px;
-            height: 300px;
-          }
+          .hi-card { width: clamp(190px, 68vw, 320px); border-radius: 18px; }
+          .hi-imgwrap { aspect-ratio: 4 / 4.5; }
         }
-
-        @media (max-width: 480px) {
-          .image-section {
-            padding: 15px 0.75rem;
-          }
-
-          .image-content {
-            max-width: 220px;
-            height: 260px;
-          }
-
-          .professional-image {
-            border-radius: 16px;
-          }
-        }
-
-        /* Professional Animations */
-        @keyframes imageReveal {
-          from {
-            opacity: 0;
-            transform: translateY(30px) scale(0.95);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-          }
-        }
-
-        @keyframes professionalPulse {
-          0%,
-          100% {
-            transform: scale(1);
-            box-shadow:
-              0 0 0 1px rgba(0, 212, 255, 0.2),
-              0 0 20px rgba(0, 212, 255, 0.15),
-              0 8px 32px rgba(0, 0, 0, 0.4);
-          }
-          50% {
-            transform: scale(1.015);
-            box-shadow:
-              0 0 0 2px rgba(0, 212, 255, 0.3),
-              0 0 25px rgba(0, 212, 255, 0.2),
-              0 10px 35px rgba(0, 0, 0, 0.45);
-          }
-        }
-
-        @keyframes professionalHeartbeat {
-          0%,
-          100% {
-            transform: translateY(-8px) scale(1);
-          }
-          50% {
-            transform: translateY(-8px) scale(1.02);
-          }
+        @media (max-width: 360px) {
+          .hi-card { width: clamp(170px, 82vw, 260px); border-radius: 16px; }
+          .hi-imgwrap { aspect-ratio: 4 / 4.3; }
+          .hi-name { font-size: 0.95rem; }
+          .hi-title { font-size: 0.85rem; }
         }
       `}</style>
 
-      <div className="image-section">
-        <div className="image-content">
+      <div className="hi-card">
+        {/* Do not place any text inside hi-imgwrap. Only the Image. */}
+        <div className="hi-imgwrap">
           <Image
-            src="/headshot.jpg"
-            alt="Brandon Micci - AI & Digital Transformation Executive"
-            className="professional-image"
+            src="/headshot.webp"
+            alt="Brandon Micci VP Head of AI Products - Enterprise AI Transformation Leader at JPMorgan Chase"
+            className="hi-img"
             fill
-            sizes="(max-width: 480px) 240px, (max-width: 768px) 280px, 320px"
+            sizes="(min-width:1280px) 460px, (min-width:1024px) 34vw, (min-width:769px) 32vw, 70vw"
             priority
+            quality={92}
           />
+        </div>
+
+        <div className="hi-caption">
+          <p className="hi-name">Brandon Micci</p>
+          <p className="hi-title">VP, Head of AI Products</p>
         </div>
       </div>
     </>

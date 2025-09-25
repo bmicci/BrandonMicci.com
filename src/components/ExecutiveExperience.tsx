@@ -1,6 +1,26 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, memo } from 'react';
+import { Brain, Rocket, Search, Plane, Database, Cloud, Shield, Building2, BarChart, TrendingUp, Globe } from 'lucide-react';
+
+const IconCircle: React.FC<{ children: React.ReactNode }> = memo(({ children }) => (
+  <div className="
+    relative flex items-center justify-center
+    w-8 h-8 md:w-12 md:h-12
+    rounded-full border border-white/10
+    bg-white/[0.03] backdrop-blur-sm
+    shadow-inner
+    before:content-[''] before:absolute before:inset-0 before:rounded-full
+    before:shadow-[0_0_14px_rgba(0,212,255,0.18)]
+    md:before:shadow-[0_0_25px_rgba(0,212,255,0.25)]
+    ring-1 ring-white/5
+  ">
+    <div className="relative z-10">
+      {children}
+    </div>
+  </div>
+));
+IconCircle.displayName = 'IconCircle';
 
 type Achievement = {
   title: string;
@@ -12,7 +32,7 @@ type Role = {
   role: string;
   company: string;
   location: string;
-  icon: string;
+  icon: React.ReactNode;
   description: string;
   skills: string[];
   achievements: Achievement[];
@@ -21,10 +41,10 @@ type Role = {
 const ROLES: Role[] = [
   {
     dates: '2024 - PRESENT',
-    role: 'VP, Head of NextGen AI/ML Solutions',
+    role: 'VP, Head of AI Products',
     company: 'JPMorgan Chase',
     location: 'Plano, TX',
-    icon: '🤖',
+    icon: <Brain className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Drive enterprise AI strategy and implementation across payments operations, leading organization-wide transformation initiatives that enhance operational efficiency and customer experience at scale.',
     skills: [
@@ -53,7 +73,7 @@ const ROLES: Role[] = [
     role: 'Senior Director, Intelligent Industry GTM & Solution Leader',
     company: 'Capgemini',
     location: 'Dallas, TX',
-    icon: '💡',
+    icon: <Rocket className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Directed go-to-market strategy and solution development for emerging AI technologies, leading cross-functional teams of product managers, solution architects, and sales professionals.',
     skills: ['Go-to-Market Strategy', 'IoT Solutions', 'Product Management'],
@@ -77,7 +97,7 @@ const ROLES: Role[] = [
     role: 'Senior Manager, Forensic Analytics & Data Science',
     company: 'Ernst & Young',
     location: 'Dallas, TX',
-    icon: '📊',
+    icon: <Search className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       "Spearheaded AI/ML strategy and capability development within EY's Forensics Practice, serving as Regional Leader for complex analytics engagements across Financial Services, Life Sciences, and Energy sectors.",
     skills: [
@@ -106,7 +126,7 @@ const ROLES: Role[] = [
     role: 'IoT & Digital Innovation Leader',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: '🔌',
+    icon: <Plane className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Led digital transformation initiatives focused on IoT implementation and cloud migration, driving operational efficiency improvements across airline infrastructure and customer-facing systems.',
     skills: ['IoT Architecture', 'Cloud Migration', 'Digital Transformation'],
@@ -130,7 +150,7 @@ const ROLES: Role[] = [
     role: 'Data Enablement & Analytics COE Lead',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: '📈',
+    icon: <Database className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Established and led the enterprise-wide Center of Excellence for data analytics, driving adoption of modern BI platforms and building analytical capabilities across all business units.',
     skills: ['Data Analytics', 'COE Leadership', 'Platform Architecture'],
@@ -154,7 +174,7 @@ const ROLES: Role[] = [
     role: 'VP, Global Digital and Cloud Transformation Leader',
     company: 'Citigroup',
     location: 'Irving, TX',
-    icon: '🌐',
+    icon: <Cloud className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Spearheaded global cloud transformation initiatives and DevOps adoption across multiple business units, establishing enterprise-wide standards for cloud-native architecture and deployment practices.',
     skills: ['Cloud Architecture', 'DevOps', 'Global Programs', 'CI/CD'],
@@ -178,7 +198,7 @@ const ROLES: Role[] = [
     role: 'Risk Analytics Leader, Auto Finance & Home Loans',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: '⚡',
+    icon: <Shield className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Led risk analytics transformation for consumer lending portfolios, implementing advanced ML models and automated compliance systems to enhance risk assessment and regulatory reporting capabilities.',
     skills: ['Risk Analytics', 'Compliance Tech', 'NLP/OCR'],
@@ -202,7 +222,7 @@ const ROLES: Role[] = [
     role: 'Enterprise Analytics Leader, Risk & Compliance',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: '🎯',
+    icon: <Building2 className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       'Drove enterprise-wide analytics strategy and governance, establishing data quality standards and building scalable analytics infrastructure to support risk management and regulatory compliance initiatives.',
     skills: ['Enterprise Analytics', 'Data Governance', 'Tableau'],
@@ -226,7 +246,7 @@ const ROLES: Role[] = [
     role: 'Center of Excellence Leader, Tableau & Big Data',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: '🚀',
+    icon: <BarChart className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       "Pioneered enterprise-wide business intelligence transformation, establishing one of the world's largest Tableau communities and driving company-wide adoption of self-service analytics capabilities.",
     skills: [
@@ -255,7 +275,7 @@ const ROLES: Role[] = [
     role: 'Senior Consultant, Lead Data Analyst',
     company: 'Booz Allen Hamilton',
     location: 'McLean, VA',
-    icon: '🔍',
+    icon: <TrendingUp className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       "Established and led the firm's first dedicated data analytics practice, developing advanced analytics solutions for government and commercial clients across defense, healthcare, and financial services sectors.",
     skills: ['Data Analytics', 'Fraud Detection', 'Business Intelligence'],
@@ -275,7 +295,7 @@ const ROLES: Role[] = [
     role: 'Global Operations and Strategy Associate',
     company: 'PricewaterhouseCoopers',
     location: 'Tampa, FL',
-    icon: '📋',
+    icon: <Globe className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
     description:
       "Served as strategic analyst and performance metrics lead for global delivery operations, pioneering the firm's first business intelligence implementations and executive dashboard automation initiatives.",
     skills: ['Strategy', 'Operations', 'Executive Analytics'],
@@ -294,7 +314,7 @@ const ROLES: Role[] = [
 
 const DESKTOP_EXPANDED = new Set(ROLES.map((_, index) => index));
 
-const ExecutiveExperience = () => {
+const ExecutiveExperience = memo(() => {
   const [expanded, setExpanded] = useState<Set<number>>(() => new Set());
   const [visibleItems, setVisibleItems] = useState<Set<number>>(
     () => new Set()
@@ -364,7 +384,7 @@ const ExecutiveExperience = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden text-white">
+      <div className="relative overflow-x-clip text-white se-tight">
       {/* Gradient overlay removed to show Universal Background */}
 
       <style jsx>{`
@@ -391,29 +411,81 @@ const ExecutiveExperience = () => {
           }
         }
 
+        @keyframes glowPulse {
+          0%, 100% {
+            box-shadow: 
+              0 25px 50px rgba(0, 0, 0, 0.3), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.15),
+              0 0 20px rgba(0, 212, 255, 0.15);
+          }
+          50% {
+            box-shadow: 
+              0 35px 70px rgba(0, 0, 0, 0.4), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2),
+              0 0 30px rgba(0, 212, 255, 0.25);
+          }
+        }
+
+        @keyframes iconPulse {
+          0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+          }
+          50% {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+          }
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
         @media (max-width: 768px) {
           .timeline-item-visible {
             animation: mobileSlideIn 0.6s ease-out;
           }
         }
+
+        @media (max-width: 360px) {
+          .se-tight .card-shell {
+            width: calc(100vw - 5.75rem); /* a hair narrower for iPhone SE */
+          }
+          .se-tight .title-tight { font-size: 13px; }
+          .se-tight .desc-tight  { font-size: 13px; }
+        }
       `}</style>
 
       <div className="relative z-10 font-sans">
-        <div className="px-8 py-12 text-center">
-          <h2 className="text-4xl font-bold md:text-5xl">
+        <div className="px-2 py-6 md:px-8 md:py-12 text-center">
+          <h2 className="text-2xl font-bold md:text-5xl">
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Career Timeline
+              AI Executive Leadership Experience
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-4xl text-xl leading-relaxed text-slate-300">
-            16+ years of architecting enterprise AI solutions and driving
-            digital transformation
+          <p className="mx-auto mt-3 max-w-4xl text-sm md:text-xl leading-relaxed text-slate-300 px-2">
+            16+ years of architecting enterprise AI solutions, leading Fortune 500 digital transformation initiatives, and scaling LLM deployments
           </p>
         </div>
 
-        <div className="mx-auto max-w-6xl px-4 pb-16 md:px-8">
+        <div className="mx-auto max-w-full overflow-x-clip px-1 pb-8 md:max-w-6xl md:px-8 md:pb-16">
           <div className="relative">
-            <div className="absolute bottom-0 top-0 left-4 w-0.5 bg-gradient-to-b from-transparent via-cyan-400 to-transparent md:left-12" />
+            <div 
+              className="absolute -bottom-8 -top-20 left-6 md:left-12" 
+              style={{
+                width: '2px',
+                background: '#00d4ff',
+                boxShadow: '0 0 8px rgba(0, 212, 255, 0.6), 0 0 4px rgba(0, 212, 255, 0.8)',
+                transform: 'translateX(-50%)',
+              }}
+            />
 
             {ROLES.map((role, index) => {
               const isVisible = visibleItems.has(index);
@@ -425,29 +497,31 @@ const ExecutiveExperience = () => {
                   ref={(el) => {
                     itemRefs.current[index] = el;
                   }}
-                  className="relative mb-8 pl-12 md:mb-12 md:pl-24"
+                  className="relative mb-6 pl-16 md:mb-12 md:pl-28"
                 >
                   <div
-                    className={`absolute top-5 flex h-10 w-10 items-center justify-center rounded-full transition-all duration-500 md:left-8 ${
-                      isVisible
-                        ? 'scale-110 shadow-lg shadow-white/20'
-                        : 'scale-100 shadow-md shadow-white/10'
-                    }`}
+                    className="absolute top-2 left-6 md:top-4 md:left-12 flex h-8 w-8 md:h-12 md:w-12 items-center justify-center rounded-full"
                     style={{
-                      background: 'rgba(255, 255, 255, 0.1)',
+                      background: isVisible 
+                        ? 'linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(30, 144, 255, 0.15))'
+                        : 'rgba(255, 255, 255, 0.1)',
+                      border: isVisible ? '1px solid rgba(0, 212, 255, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
+                      transform: 'translateX(-50%)',
+                      transition: 'background 0.3s ease, border 0.3s ease',
                     }}
                   >
-                    <span className="text-lg font-semibold text-white">
+                    <IconCircle>
                       {role.icon}
-                    </span>
+                    </IconCircle>
                   </div>
 
                   <div
-                    className={`timeline-item-visible relative overflow-hidden rounded-2xl p-8 transition-all duration-700 ${
-                      isVisible
-                        ? 'translate-x-2 scale-[1.02] opacity-100'
-                        : 'translate-x-0 scale-100 opacity-90'
-                    }`}
+                    className={`timeline-item-visible relative overflow-hidden rounded-lg
+                                p-4 md:p-8
+                                w-[calc(100vw-5.5rem)] max-w-[92vw] md:w-auto md:max-w-none
+                                transition-all duration-700
+                                card-shell
+                                ${isVisible ? 'opacity-100 md:translate-x-2 md:scale-[1.02]' : 'opacity-95'}`}
                     style={{
                       background: isVisible
                         ? 'rgba(255, 255, 255, 0.08)'
@@ -456,48 +530,52 @@ const ExecutiveExperience = () => {
                       WebkitBackdropFilter: isVisible
                         ? 'blur(25px)'
                         : 'blur(15px)',
-                      boxShadow: isVisible
-                        ? '0 25px 50px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
-                        : '0 8px 16px rgba(0, 0, 0, 0.1)',
+                      border: isVisible 
+                        ? '1px solid rgba(0, 212, 255, 0.2)' 
+                        : '1px solid rgba(255, 255, 255, 0.05)',
+                      animation: isVisible ? 'glowPulse 3s ease-in-out infinite' : 'none',
+                      willChange: 'transform, opacity',
+                      transform: 'translateZ(0)', // Force hardware acceleration
                     }}
                   >
                     {/* Gradient border removed - using universal background */}
 
                     <div
-                      className={`pointer-events-none absolute -inset-4 transition-opacity duration-500 ${
-                        isVisible ? 'opacity-60' : 'opacity-0'
+                      className={`pointer-events-none absolute inset-0 md:-inset-2 transition-opacity duration-500 rounded-lg ${
+                        isVisible ? 'opacity-40' : 'opacity-0'
                       }`}
                       style={{
-                        borderRadius: 'inherit',
-                        background: 'transparent',
+                        background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(30, 144, 255, 0.05), rgba(0, 212, 255, 0.05))',
+                        backgroundSize: '200% 200%',
+                        animation: isVisible ? 'gradientShift 4s ease-in-out infinite' : 'none',
                         filter: 'blur(8px)',
                       }}
                     />
 
                     <div className="relative z-10">
-                      <span className="mb-4 inline-block rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white">
+                      <span className="mb-2 inline-block rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white">
                         {role.dates}
                       </span>
 
-                      <h3 className="text-xl font-bold leading-tight text-white md:text-2xl">
+                        <h3 className="text-[13px] font-bold leading-tight text-white break-words md:text-2xl title-tight">
                         {role.role}
                       </h3>
-                      <div className="mb-4 text-lg font-medium text-cyan-400">
+                      <div className="mb-2 text-xs font-medium text-cyan-400 md:text-base">
                         {role.company}
-                        <span className="ml-2 text-base text-slate-400">
+                        <span className="ml-2 text-xs text-slate-400 md:text-sm">
                           | {role.location}
                         </span>
                       </div>
 
-                      <p className="mb-6 text-base leading-relaxed text-slate-300">
+                      <p className="mb-2 text-[13px] leading-relaxed text-slate-300 md:text-base desc-tight">
                         {role.description}
                       </p>
 
-                      <div className="mb-6 flex flex-wrap gap-2 overflow-x-auto pb-2">
+                      <div className="mb-2 flex flex-wrap gap-0.5 pb-2">
                         {role.skills.map((skill) => (
                           <span
                             key={skill}
-                            className="whitespace-nowrap rounded-xl border border-blue-500/40 bg-blue-500/20 px-3 py-1 text-sm font-medium text-slate-200 transition-colors hover:bg-blue-500/30"
+                            className="whitespace-nowrap rounded-full border border-blue-500/40 bg-blue-500/20 px-1.5 py-0.5 text-xs font-medium text-slate-200 transition-colors hover:bg-blue-500/30 md:text-sm md:px-3 md:py-1"
                           >
                             {skill}
                           </span>
@@ -508,7 +586,7 @@ const ExecutiveExperience = () => {
                         type="button"
                         onClick={() => toggle(index)}
                         aria-expanded={isExpanded}
-                        className="mb-4 block w-full rounded-xl border border-cyan-500/40 bg-cyan-500/20 py-3 px-4 text-sm font-semibold text-cyan-400 transition-all duration-300 hover:bg-cyan-500/30 md:hidden"
+                        className="mb-2 block w-3/4 mx-auto rounded-md border border-cyan-500/40 bg-cyan-500/20 py-1.5 px-2 text-xs font-semibold text-cyan-400 transition-all duration-300 hover:bg-cyan-500/30 md:hidden"
                       >
                         {isExpanded ? 'Hide Achievements' : 'View Achievements'}
                         <span
@@ -528,17 +606,17 @@ const ExecutiveExperience = () => {
                         {role.achievements.map((achievement) => (
                           <div
                             key={achievement.title}
-                            className="rounded-lg border-l-4 border-cyan-400 bg-cyan-500/10 p-4 transition-all duration-300 hover:translate-x-1 hover:bg-cyan-500/15"
+                            className="rounded-md border-l-4 border-cyan-400 bg-cyan-500/10 p-3 transition-all duration-300 hover:translate-x-1 hover:bg-cyan-500/15 hover:shadow-lg hover:shadow-cyan-500/20"
                           >
                             <div className="flex items-start gap-3">
-                              <span className="mt-0.5 text-lg text-cyan-400">
+                              <span className="mt-0.5 text-lg text-cyan-400 stroke-2">
                                 →
                               </span>
                               <div>
-                                <h4 className="mb-2 font-semibold text-cyan-400">
+                                <h4 className="mb-1 text-sm font-semibold text-cyan-400 stroke-2 md:text-base md:mb-2">
                                   {achievement.title}
                                 </h4>
-                                <p className="leading-relaxed text-slate-300">
+                                <p className="text-[13px] leading-relaxed text-slate-300 md:text-sm">
                                   {achievement.text}
                                 </p>
                               </div>
@@ -553,9 +631,192 @@ const ExecutiveExperience = () => {
             })}
           </div>
         </div>
+
+        {/* Core Competencies Section */}
+        <div className="mx-auto max-w-full px-1 pb-8 md:max-w-6xl md:px-8 md:pb-16">
+          <div className="text-center mb-8 md:mb-12">
+            <h3 className="text-xl font-bold md:text-3xl mb-3">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Core Competencies
+              </span>
+            </h3>
+            <p className="text-sm md:text-lg text-slate-300 max-w-3xl mx-auto">
+              Strategic expertise across AI/ML, digital transformation, and enterprise leadership
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "AI/ML Strategy & Innovation",
+                skills: ["Generative AI", "LLM Deployment", "MLOps", "LLMOps", "Machine Learning", "Model Governance", "AI Ethics", "Predictive Analytics", "NLP", "Computer Vision", "Deep Learning"]
+              },
+              {
+                title: "Digital Transformation",
+                skills: ["Industry 4.0", "IoT Platforms", "Digital Twins", "DevOps", "Agile", "Change Management"]
+              },
+              {
+                title: "Cloud & Data Architecture",
+                skills: ["AWS", "Azure", "GCP", "Snowflake", "Databricks", "Spark", "Kafka", "Data Lakes", "Data Governance", "Big Data", "ETL/ELT", "Data Mesh"]
+              },
+              {
+                title: "Leadership & Strategy",
+                skills: ["Executive Leadership", "P&L Management", "Strategic Planning", "C-Suite Engagement", "Team Building", "Innovation"]
+              },
+              {
+                title: "Analytics & BI Platforms",
+                skills: ["Tableau", "Alteryx", "PowerBI", "Looker", "Python", "R", "SQL", "Data Science", "Statistical Analysis", "Apache Airflow"]
+              },
+              {
+                title: "Emerging Technologies",
+                skills: ["Blockchain", "AR/VR", "Robotics", "Geospatial", "Web 3.0", "Telematics"]
+              },
+              {
+                title: "Enterprise Technology Stack",
+                skills: ["Kubernetes", "Docker", "Microservices", "API Gateway", "CI/CD", "Infrastructure as Code", "Terraform", "Container Orchestration", "Distributed Systems"]
+              },
+              {
+                title: "Cross-Functional Excellence",
+                skills: ["Product Strategy", "Vendor Management", "Budget Planning", "Risk Management", "Compliance", "M&A Integration", "Executive Reporting", "Board Presentations"]
+              },
+              {
+                title: "Financial & Business Acumen",
+                skills: ["Revenue Growth", "Cost Optimization", "ROI Analysis", "Business Case Development", "Market Analysis", "Competitive Intelligence", "KPI Development", "Performance Metrics"]
+              }
+            ].map((competency, index) => (
+              <div
+                key={competency.title}
+                className="relative overflow-hidden rounded-lg p-6 transition-all duration-700 hover:scale-105"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  border: '1px solid rgba(0, 212, 255, 0.2)',
+                  animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
+                }}
+              >
+                {/* Gradient border effect */}
+                <div
+                  className="pointer-events-none absolute inset-0 transition-opacity duration-500 rounded-lg opacity-0 hover:opacity-40"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(30, 144, 255, 0.1))',
+                    backgroundSize: '200% 200%',
+                    animation: 'gradientShift 4s ease-in-out infinite',
+                  }}
+                />
+
+                <div className="relative z-10">
+                  <h4 className="text-lg font-bold text-white mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
+                    {competency.title}
+                  </h4>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {competency.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="px-3 py-1 text-xs font-medium rounded-full border transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                        style={{
+                          background: 'rgba(0, 212, 255, 0.1)',
+                          border: '1px solid rgba(0, 212, 255, 0.3)',
+                          color: '#9be8ff',
+                        }}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Education Section */}
+        <div className="mx-auto max-w-full px-1 pb-16 md:max-w-6xl md:px-8 md:pb-20">
+          <div className="text-center mb-8 md:mb-12">
+            <h3 className="text-xl font-bold md:text-3xl mb-3">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Education & Leadership Development
+              </span>
+            </h3>
+            <p className="text-sm md:text-lg text-slate-300 max-w-3xl mx-auto">
+              Academic foundation and continuous professional development
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* Primary Education */}
+            <div
+              className="relative overflow-hidden rounded-lg p-6 text-center transition-all duration-700 hover:scale-105"
+              style={{
+                background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(30, 144, 255, 0.08))',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                border: '1px solid rgba(0, 212, 255, 0.3)',
+                boxShadow: '0 8px 32px rgba(0, 212, 255, 0.1)',
+              }}
+            >
+              <div className="relative z-10">
+                <div className="text-3xl mb-4">🎓</div>
+                <h4 className="text-lg font-bold text-white mb-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  Bachelor of Arts, Business Administration
+                </h4>
+                <p className="text-cyan-400 font-semibold mb-2">The George Washington University</p>
+                <p className="text-slate-300 text-sm mb-3">School of Business • Washington, D.C.</p>
+                <div className="text-xs text-slate-400">
+                  <span className="bg-cyan-500/20 border border-cyan-500/30 rounded-full px-3 py-1">
+                    Study Abroad: Florence, Italy
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Leadership Approach */}
+            <div
+              className="relative overflow-hidden rounded-lg p-6 text-center transition-all duration-700 hover:scale-105"
+              style={{
+                background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(30, 144, 255, 0.08))',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                border: '1px solid rgba(0, 212, 255, 0.3)',
+                boxShadow: '0 8px 32px rgba(0, 212, 255, 0.1)',
+              }}
+            >
+              <div className="relative z-10">
+                <div className="text-3xl mb-4">🎯</div>
+                <h4 className="text-lg font-bold text-white mb-3 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  Leadership Approach
+                </h4>
+                <div className="space-y-2">
+                  {[
+                    "Transformational Leadership",
+                    "Innovation-Driven", 
+                    "Data-Driven Decisions",
+                    "People-First Culture",
+                    "Continuous Learning",
+                    "Results-Oriented"
+                  ].map((approach) => (
+                    <div
+                      key={approach}
+                      className="text-xs font-medium rounded-full border transition-all duration-300 hover:scale-105 py-1 px-3 inline-block mx-1"
+                      style={{
+                        background: 'rgba(0, 212, 255, 0.1)',
+                        border: '1px solid rgba(0, 212, 255, 0.3)',
+                        color: '#9be8ff',
+                      }}
+                    >
+                      {approach}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
-};
+});
+ExecutiveExperience.displayName = 'ExecutiveExperience';
 
 export default ExecutiveExperience;

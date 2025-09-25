@@ -24,10 +24,11 @@ const CompanyExpertise: React.FC = () => {
           z-index: 10;
           text-align: center;
           margin: 2rem auto;
-          max-width: 1200px;
           border-radius: 20px;
           border: 1px solid rgba(255, 255, 255, 0.1);
           transition: all 0.3s ease;
+          width: clamp(320px, calc(100vw - 2rem), 1200px);
+          max-width: 1200px;
         }
 
         .expertise-section:hover {
@@ -86,17 +87,32 @@ const CompanyExpertise: React.FC = () => {
 
         .companies-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
           gap: 1.5rem;
-          max-width: 1000px;
           margin: 0 auto;
           animation: gridFadeIn 1s ease-out 0.8s both;
+          max-width: 100%;
+          width: 100%;
+        }
+
+        /* Ensure consistent grid layouts across breakpoints */
+        @media (min-width: 640px) and (max-width: 1023px) {
+          .companies-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1.2rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .companies-grid {
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 1.5rem;
+            max-width: 1000px;
+          }
         }
 
         .company-card {
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
           border-radius: 12px;
-          padding: 1.25rem 1rem;
           text-align: center;
           transition: all 0.3s ease;
           position: relative;
@@ -104,6 +120,12 @@ const CompanyExpertise: React.FC = () => {
           cursor: pointer;
           border: 1px solid rgba(255, 255, 255, 0.2);
           animation: cardFloat 0.8s ease-out;
+          min-height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          max-width: 100%;
         }
 
         .company-card:nth-child(1) {
@@ -226,12 +248,14 @@ const CompanyExpertise: React.FC = () => {
         }
 
         /* Responsive Design */
-        @media (max-width: 1024px) {
-          .companies-grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
+        @media (min-width: 1440px) {
+          .expertise-section {
+            max-width: 1200px;
+            width: clamp(900px, 75vw, 1200px);
           }
+        }
 
+        @media (max-width: 1024px) {
           .expertise-subtitle {
             font-size: 1.9rem;
           }
@@ -240,6 +264,8 @@ const CompanyExpertise: React.FC = () => {
         @media (max-width: 768px) {
           .expertise-section {
             padding: 40px 1rem;
+            width: clamp(300px, calc(100vw - 1rem), 1200px);
+            margin: 1rem auto;
           }
 
           .expertise-header {
@@ -255,15 +281,6 @@ const CompanyExpertise: React.FC = () => {
             font-size: 1.6rem;
           }
 
-          .companies-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-          }
-
-          .company-card {
-            padding: 1rem 0.75rem;
-          }
-
           .company-name {
             font-size: 0.9rem;
           }
@@ -272,6 +289,8 @@ const CompanyExpertise: React.FC = () => {
         @media (max-width: 480px) {
           .expertise-section {
             padding: 30px 0.75rem;
+            width: clamp(280px, calc(100vw - 0.75rem), 1200px);
+            margin: 0.75rem auto;
           }
 
           .expertise-title {
@@ -284,54 +303,60 @@ const CompanyExpertise: React.FC = () => {
             line-height: 1.3;
           }
 
-          .companies-grid {
-            grid-template-columns: 1fr;
-            gap: 0.875rem;
-            max-width: 300px;
-          }
-
-          .company-card {
-            padding: 1.125rem 1rem;
-          }
-
           .company-name {
             font-size: 1rem;
           }
         }
+
+        /* iPhone SE micro-tune for extra safety */
+        @media (max-width: 360px) {
+          .expertise-section {
+            width: clamp(260px, calc(100vw - 0.5rem), 1200px);
+            margin: 0.5rem auto;
+            padding: 20px 0.5rem;
+          }
+          
+          .card-shell {
+            width: clamp(250px, calc(100vw - 1.5rem), 1200px);
+            padding: 0.75rem;
+          }
+        }
       `}</style>
 
-      <div className="expertise-section">
+      <div className="expertise-section mx-auto w-full max-w-6xl px-4 md:px-8 overflow-x-clip">
         <div className="expertise-container">
           <div className="expertise-header">
-            <h2 className="expertise-title">Proven Track Record Across</h2>
+            <h2 className="expertise-title">
+              Proven Track Record Across
+            </h2>
             <h3 className="expertise-subtitle">
               Big Four & Fortune 500 Organizations
             </h3>
           </div>
 
-          <div className="companies-grid">
-            <div className="company-card">
+          <div className="companies-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 max-w-full">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
               <h4 className="company-name">JPMorgan Chase</h4>
             </div>
-            <div className="company-card">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
               <h4 className="company-name">Capital One</h4>
             </div>
-            <div className="company-card">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
               <h4 className="company-name">Citi</h4>
             </div>
-            <div className="company-card">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
               <h4 className="company-name">Southwest Airlines</h4>
             </div>
-            <div className="company-card">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
               <h4 className="company-name">PwC</h4>
             </div>
-            <div className="company-card">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
               <h4 className="company-name">Booz Allen Hamilton</h4>
             </div>
-            <div className="company-card">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
               <h4 className="company-name">EY</h4>
             </div>
-            <div className="company-card">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
               <h4 className="company-name">Capgemini</h4>
             </div>
           </div>

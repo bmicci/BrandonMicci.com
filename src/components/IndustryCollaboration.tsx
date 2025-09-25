@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 
 const IndustryCollaboration: React.FC = () => {
   useEffect(() => {
-    // Smooth scroll to contact section with fixed-header offset
+    // Note: Primary contact button now uses mailto, but keeping scroll functionality for any remaining internal links
     const jumpers = document.querySelectorAll('a[href^="#connectwithme"]');
     jumpers.forEach((a) =>
       a.addEventListener('click', function (e: Event) {
@@ -73,7 +73,7 @@ const IndustryCollaboration: React.FC = () => {
           background: transparent;
           /* Border lines removed for clean Universal Background */
           overflow: hidden;
-          min-height: 100vh;
+          min-height: auto;
         }
 
         /* Neural Background with Particles - removed to use universal background */
@@ -683,10 +683,10 @@ const IndustryCollaboration: React.FC = () => {
             {/* LEFT: CTA + topics */}
             <div className="bm-card bm-card-pad">
               <div className="bm-inline-cta">
-                {/* Primary: scroll to your contact section */}
+                {/* Primary: email for collaboration discussion */}
                 <a
                   className="bm-btn bm-btn-primary"
-                  href="#connectwithme"
+                  href="mailto:brandonmicci@brandonmicci.com?subject=Collaboration Discussion&body=Hi Brandon,%0D%0A%0D%0AI'm interested in discussing potential collaboration opportunities.%0D%0A%0D%0ABest regards,"
                   id="bm-open-form"
                 >
                   <span>Discuss Collaboration</span>
@@ -698,7 +698,7 @@ const IndustryCollaboration: React.FC = () => {
                   <a
                     className="bm-btn bm-btn-secondary bm-btn-compact"
                     id="bm-resume"
-                    data-resume-url="https://YOUR-DOMAIN/path/Brandon_Micci_Resume.pdf"
+                    data-resume-url="/BrandonMicciSeniorAIExecutive.pdf"
                     href="#"
                   >
                     <svg
@@ -714,7 +714,7 @@ const IndustryCollaboration: React.FC = () => {
                   <a
                     className="bm-btn bm-btn-secondary bm-btn-compact"
                     id="bm-brief"
-                    data-brief-url="https://YOUR-DOMAIN/path/Brandon_Micci_Executive_Brief.pdf"
+                    data-brief-url="/Brandon_Micci_AI_Executive_Brief_2025.pdf"
                     href="#"
                   >
                     <svg
@@ -747,8 +747,8 @@ const IndustryCollaboration: React.FC = () => {
 
                 <span className="bm-cta-small">
                   or email directly:
-                  <a href="mailto:brandon@brandonmicci.com">
-                    brandon@brandonmicci.com
+                  <a href="mailto:brandonmicci@brandonmicci.com">
+                    brandonmicci@brandonmicci.com
                   </a>
                 </span>
               </div>

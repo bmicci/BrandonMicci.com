@@ -1,785 +1,573 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
+import { Icon } from '@/components/ui/Icon';
+import HeroImage from './HeroImage';
 
 const HeroSection = () => {
-  const [counts, setCounts] = useState({
-    value: 0,
-    users: 0,
-    roi: 0,
-    years: 0,
-  });
+  const [counts, setCounts] = useState({ value: 0, users: 0, roi: 0, years: 0 });
   const reduced = usePrefersReducedMotion();
 
   useEffect(() => {
-    const animateCounts = () => {
-      const duration = reduced ? 0 : 2000;
-      const steps = reduced ? 1 : 60;
-      const stepDuration = duration / steps;
+    const duration = reduced ? 0 : 1800;
+    const steps = reduced ? 1 : 60;
+    const stepDuration = duration / steps;
+    const targets = { value: 400, users: 27, roi: 250, years: 16 };
+    let currentStep = 0;
 
-      const targets = { value: 400, users: 27, roi: 250, years: 16 };
+    const interval = setInterval(() => {
+      currentStep++;
+      const p = currentStep / steps;
+      setCounts({
+        value: Math.floor(targets.value * p),
+        users: Math.floor(targets.users * p),
+        roi: Math.floor(targets.roi * p),
+        years: Math.floor(targets.years * p),
+      });
+      if (currentStep >= steps) clearInterval(interval);
+    }, stepDuration);
 
-      let currentStep = 0;
-      const interval = setInterval(() => {
-        currentStep++;
-        const progress = currentStep / steps;
-
-        setCounts({
-          value: Math.floor(targets.value * progress),
-          users: Math.floor(targets.users * progress),
-          roi: Math.floor(targets.roi * progress),
-          years: Math.floor(targets.years * progress),
-        });
-
-        if (currentStep >= steps) clearInterval(interval);
-      }, stepDuration);
-    };
-
-    const timer = setTimeout(animateCounts, 500);
-    return () => clearTimeout(timer);
+    return () => clearInterval(interval);
   }, [reduced]);
 
   return (
     <>
+      {/* ——— GLOBAL (light-touch) ——— */}
       <style jsx global>{`
         body {
-          font-family:
-            'Inter',
-            -apple-system,
-            BlinkMacSystemFont,
-            'Segoe UI',
-            Roboto,
-            sans-serif;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
           background: #0a0e27;
           color: white;
           margin: 0;
-          padding: 0;
-          overflow-x: hidden;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
+        @media (prefers-reduced-motion: reduce) {
+          * { animation: none !important; transition: none !important; }
+        }
+        /* iPad Pro: ensure hero section doesn't enforce screen-height causing gap */
+        @media (min-width:1024px) and (max-width:1279px){
+          .hero-section{ min-height:auto; padding-bottom: 1.25rem; }
+        }
+        /* iPad Pro: avoid oversized blank space on the next section */
+      `}</style>
 
+      {/* ——— HERO ——— */}
+      <style jsx>{`
         .hero-section {
-          min-height: 100vh;
           position: relative;
-          padding: 5rem 0 2rem 0; /* Add top padding to account for fixed navigation */
+          /* Stable viewport height avoids URL bar reflow jump */
+          min-height: 100svh;
+          padding: max(env(safe-area-inset-top), 4.5rem) 0 2rem 0;
           overflow: hidden;
-          background: transparent; /* Let universal background show through */
+          background: transparent;
+          /* Prevent descendant layout/paint from bubbling reflow up to sections */
+          contain: layout paint;
+          /* Disable scroll anchoring in case the browser tries to “help” mid-paint */
+          overflow-anchor: none;
         }
-
-        /* Floating particles removed - using universal background */
-
-        /* Random positioning for more natural feel */
-        .particle:nth-child(1) {
-          top: 12%;
-          left: 8%;
-          animation-delay: 0s;
-          animation-duration: 6s;
-        }
-        .particle:nth-child(2) {
-          top: 28%;
-          left: 18%;
-          animation-delay: 0.5s;
-          animation-duration: 8s;
-        }
-        .particle:nth-child(3) {
-          top: 45%;
-          left: 32%;
-          animation-delay: 1s;
-          animation-duration: 10s;
-        }
-        .particle:nth-child(4) {
-          top: 62%;
-          left: 48%;
-          animation-delay: 1.5s;
-          animation-duration: 7s;
-        }
-        .particle:nth-child(5) {
-          top: 78%;
-          left: 65%;
-          animation-delay: 2s;
-          animation-duration: 9s;
-        }
-        .particle:nth-child(6) {
-          top: 88%;
-          left: 82%;
-          animation-delay: 2.5s;
-          animation-duration: 11s;
-        }
-        .particle:nth-child(7) {
-          top: 22%;
-          left: 92%;
-          animation-delay: 3s;
-          animation-duration: 6s;
-        }
-        .particle:nth-child(8) {
-          top: 38%;
-          left: 78%;
-          animation-delay: 3.5s;
-          animation-duration: 8s;
-        }
-        .particle:nth-child(9) {
-          top: 55%;
-          left: 62%;
-          animation-delay: 4s;
-          animation-duration: 10s;
-        }
-        .particle:nth-child(10) {
-          top: 72%;
-          left: 42%;
-          animation-delay: 4.5s;
-          animation-duration: 7s;
-        }
-        .particle:nth-child(11) {
-          top: 85%;
-          left: 22%;
-          animation-delay: 5s;
-          animation-duration: 9s;
-        }
-        .particle:nth-child(12) {
-          top: 95%;
-          left: 5%;
-          animation-delay: 5.5s;
-          animation-duration: 11s;
-        }
-        .particle:nth-child(13) {
-          top: 8%;
-          left: 25%;
-          animation-delay: 6s;
-          animation-duration: 6s;
-        }
-        .particle:nth-child(14) {
-          top: 18%;
-          left: 45%;
-          animation-delay: 6.5s;
-          animation-duration: 8s;
-        }
-        .particle:nth-child(15) {
-          top: 35%;
-          left: 58%;
-          animation-delay: 7s;
-          animation-duration: 10s;
-        }
-        .particle:nth-child(16) {
-          top: 52%;
-          left: 72%;
-          animation-delay: 7.5s;
-          animation-duration: 7s;
-        }
-        .particle:nth-child(17) {
-          top: 68%;
-          left: 88%;
-          animation-delay: 8s;
-          animation-duration: 9s;
-        }
-        .particle:nth-child(18) {
-          top: 82%;
-          left: 95%;
-          animation-delay: 8.5s;
-          animation-duration: 11s;
-        }
-        .particle:nth-child(19) {
-          top: 5%;
-          left: 68%;
-          animation-delay: 9s;
-          animation-duration: 6s;
-        }
-        .particle:nth-child(20) {
-          top: 15%;
-          left: 85%;
-          animation-delay: 9.5s;
-          animation-duration: 8s;
-        }
-        .particle:nth-child(21) {
-          top: 42%;
-          left: 12%;
-          animation-delay: 10s;
-          animation-duration: 10s;
-        }
-        .particle:nth-child(22) {
-          top: 58%;
-          left: 28%;
-          animation-delay: 10.5s;
-          animation-duration: 7s;
-        }
-        .particle:nth-child(23) {
-          top: 75%;
-          left: 38%;
-          animation-delay: 11s;
-          animation-duration: 9s;
-        }
-        .particle:nth-child(24) {
-          top: 92%;
-          left: 52%;
-          animation-delay: 11.5s;
-          animation-duration: 11s;
-        }
-        .particle:nth-child(25) {
-          top: 25%;
-          left: 35%;
-          animation-delay: 12s;
-          animation-duration: 6s;
-        }
-        .particle:nth-child(26) {
-          top: 48%;
-          left: 55%;
-          animation-delay: 12.5s;
-          animation-duration: 8s;
-        }
-        .particle:nth-child(27) {
-          top: 65%;
-          left: 75%;
-          animation-delay: 13s;
-          animation-duration: 10s;
-        }
-        .particle:nth-child(28) {
-          top: 82%;
-          left: 88%;
-          animation-delay: 13.5s;
-          animation-duration: 7s;
-        }
-        .particle:nth-child(29) {
-          top: 95%;
-          left: 15%;
-          animation-delay: 14s;
-          animation-duration: 9s;
-        }
-        .particle:nth-child(30) {
-          top: 8%;
-          left: 38%;
-          animation-delay: 14.5s;
-          animation-duration: 11s;
-        }
-
-        @keyframes sparkleFloat {
-          0%,
-          100% {
-            transform: translate(0, 0) scale(1) rotate(0deg);
-            opacity: 0.7;
-          }
-          25% {
-            transform: translate(-15px, -25px) scale(1.3) rotate(90deg);
-            opacity: 1;
-          }
-          50% {
-            transform: translate(20px, -40px) scale(0.8) rotate(180deg);
-            opacity: 0.8;
-          }
-          75% {
-            transform: translate(8px, -20px) scale(1.1) rotate(270deg);
-            opacity: 0.9;
-          }
-        }
-
-        /* Enhanced twinkling effect */
-        .particle::before {
-          content: '';
-          position: absolute;
-          top: -4px;
-          left: -4px;
-          right: -4px;
-          bottom: -4px;
-          border-radius: 50%;
-          background: radial-gradient(
-            circle,
-            rgba(0, 212, 255, 0.4) 0%,
-            transparent 60%
-          );
-          animation: twinkle 1.5s infinite ease-in-out;
-        }
-
-        @keyframes twinkle {
-          0%,
-          100% {
-            opacity: 0;
-            transform: scale(0.3);
-          }
-          50% {
-            opacity: 1;
-            transform: scale(1.5);
-          }
-        }
-
-        /* Neural grid removed - using universal background */
-        @keyframes gridFlow {
-          0% {
-            transform: translate(0, 0);
-          }
-          100% {
-            transform: translate(60px, 60px);
-          }
-        }
-
         .hero-container {
-          max-width: 1400px;
+          max-width: 1200px;
           margin: 0 auto;
-          padding: 0 2rem;
+          padding: 0 1rem;
           position: relative;
           z-index: 10;
         }
 
-        /* Desktop Layout */
+        /* Desktop top grid */
         .hero-top {
           display: grid;
-          grid-template-columns: 1fr 400px;
-          gap: 4rem;
+          grid-template-columns: 1fr 420px;
+          gap: 3.5rem;
           align-items: start;
-          margin-bottom: 2rem;
+          margin-bottom: 1.5rem;
         }
-
+        /* Reduce excessive bottom whitespace on iPad Pro by relaxing section height */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .hero-section { min-height: auto; }
+        }
+        /* Tablet (iPad) layout tuning */
+        @media (min-width: 769px) and (max-width: 1023px) {
+          .hero-top {
+            grid-template-columns: minmax(420px, 1fr) min(340px, 36vw);
+            gap: 2rem;
+            align-items: center;
+          }
+          .headline { font-size: clamp(1.9rem, 3.4vw, 2.6rem); }
+          .dek { font-size: clamp(0.95rem, 1.4vw, 1.05rem); }
+          .cta-row { grid-template-columns: repeat(2, max-content); justify-content: start; gap: 0.85rem 1rem; }
+          .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; }
+        }
         .hero-content {
           display: flex;
           flex-direction: column;
-          gap: 1.2rem;
-          animation: slideInLeft 1s ease-out;
-        }
-        @keyframes slideInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
+          gap: 1rem;
         }
 
-        .hero-title {
-          font-size: 3.5rem;
+        .headline {
           font-weight: 800;
-          line-height: 1.1;
-          margin-bottom: 1rem;
           letter-spacing: -0.02em;
-          position: relative;
-          z-index: 15;
-          /* Add subtle background to improve readability */
-          padding: 0.5rem 1rem;
-          border-radius: 12px;
-          background-color: rgba(0, 0, 0, 0.15);
-          backdrop-filter: blur(3px);
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+          line-height: 1.1;
+          margin: 0 0 0.25rem 0;
+          font-size: clamp(2rem, 4.6vw, 3.5rem);
+          text-shadow: 0 1px 6px rgba(0,0,0,0.25);
         }
-        .gradient-text {
-          background: linear-gradient(
-            135deg,
-            #00d4ff 0%,
-            #1e90ff 50%,
-            #00d4ff 100%
-          );
+        .gradient {
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 55%, #00d4ff 100%);
           background-size: 200% 200%;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
-          animation: gradientShift 3s ease-in-out infinite;
+          animation: gradientShift 6s ease-in-out infinite;
         }
         @keyframes gradientShift {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
+          0%,100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
         }
 
-        /* Respect reduced motion preferences */
-        @media (prefers-reduced-motion: reduce) {
-          .floating-particles {
-            animation: none !important;
-          }
-          .particle {
-            animation: none !important;
-          }
-          .kpi-stat {
-            animation: none !important;
-          }
-          .differentiator-item {
-            animation: none !important;
-          }
-          .cta-button {
-            animation: none !important;
-          }
-          .gradient-text {
-            animation: none !important;
-          }
-        }
-
-        .hero-subtitle {
-          font-size: 1.2rem;
-          color: rgba(255, 255, 255, 0.8);
-          line-height: 1.4;
-          font-weight: 500;
-          white-space: nowrap;
-          position: relative;
-          z-index: 15;
-          /* Add subtle background to improve readability */
-          padding: 0.3rem 0.8rem;
-          border-radius: 8px;
-          background-color: rgba(0, 0, 0, 0.1);
-          backdrop-filter: blur(2px);
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        }
-        .hero-description {
-          font-size: 1.1rem;
-          color: rgba(255, 255, 255, 0.9);
-          line-height: 1.7;
-          position: relative;
-          z-index: 15;
-          /* Add subtle background to improve readability */
-          padding: 0.8rem 1rem;
-          border-radius: 10px;
-          background-color: rgba(0, 0, 0, 0.12);
-          backdrop-filter: blur(2px);
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        }
-        .gradient-highlight {
-          background: linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff);
-          background-size: 200% 200%;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          animation: gradientShift 3s ease-in-out infinite;
+        .dek {
+          margin-top: 0.5rem;
+          color: rgba(255,255,255,0.92);
+          line-height: 1.6;
           font-weight: 600;
+          font-size: clamp(1rem, 1.8vw, 1.25rem);
+          text-shadow: 0 1px 3px rgba(0,0,0,0.25);
         }
 
-        .cta-buttons {
-          display: flex;
-          gap: 1.5rem;
+        /* CTA group */
+        .cta-row {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.9rem;
+          margin: 1.25rem 0 1.75rem;
         }
-        .cta-button {
+        .btn {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          gap: 0.75rem;
-          padding: 1rem 2rem;
+          gap: 0.6rem;
           border-radius: 12px;
+          padding: 0.9rem 1.1rem;
           font-weight: 600;
-          font-size: 1rem;
           text-decoration: none;
-          transition: 0.3s;
-          border: 2px solid transparent;
-          position: relative;
-          overflow: hidden;
-          flex: 1;
+          border: 1.5px solid transparent;
+          font-size: clamp(0.95rem, 2.4vw, 1rem);
+          transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+          will-change: transform;
         }
-        .cta-button svg {
-          width: 16px;
-          height: 16px;
-          opacity: 0.9;
-          flex-shrink: 0;
-        }
-        .cta-button::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.1),
-            transparent
-          );
-          transition: left 0.5s;
-        }
-        .cta-button:hover::before {
-          left: 100%;
-        }
-        .cta-button.primary {
+        .btn :global(svg), .btn :global(.icon) { width: 18px; height: 18px; opacity: 0.95; }
+        .btn.primary{
           background: linear-gradient(135deg, #00d4ff, #1e90ff);
-          color: #fff;
-          box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+          color:#07101d; /* dark text on bright cyan */
         }
-        .cta-button.primary:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+        .btn.primary:hover{ transform: translateY(-1px); }
+
+        .btn.outline{
+          color:#9be8ff; 
+          border-color: rgba(0,212,255,0.45);
+          background: linear-gradient(180deg, rgba(0,212,255,0.10), rgba(30,144,255,0.06));
+          backdrop-filter: blur(8px);
+          box-shadow: 0 8px 24px -12px rgba(0,212,255,0.40);
         }
-        .cta-button.outline {
-          background: transparent;
-          color: #00d4ff;
-          border-color: rgba(0, 212, 255, 0.5);
-        }
-        .cta-button.outline:hover {
-          background: rgba(0, 212, 255, 0.1);
-          border-color: #00d4ff;
-          transform: translateY(-2px);
+        .btn.outline:hover{
+          background: linear-gradient(180deg, rgba(0,212,255,0.16), rgba(30,144,255,0.10));
+          border-color: rgba(0,212,255,0.70);
+          transform: translateY(-1px);
+          box-shadow: 0 10px 30px -12px rgba(30,144,255,0.55);
         }
 
-        .photo-container {
-          position: relative;
-          animation: slideInRight 1s ease-out;
-        }
-        @keyframes slideInRight {
-          from {
-            opacity: 0;
-            transform: translateX(50px);
+        /* ===== CTA LAYOUTS ===== */
+        /* default: 2 buttons, left-aligned, compact */
+        @media (min-width: 1024px) {
+          .cta-row {
+            grid-template-columns: repeat(2, max-content) !important;
+            justify-content: start !important;
+            gap: 1rem 1.25rem !important;
           }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        .photo-glassmorphism {
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-          border-radius: 20px;
-          padding: 1.5rem;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .photo-frame {
-          position: relative;
-          border-radius: 16px;
-          overflow: hidden;
-          width: 320px;
-          height: 500px;
-        }
-        .professional-photo {
-          object-fit: cover;
-          border-radius: 16px;
-        }
-        .photo-overlay {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-          padding: 2rem 1.5rem 1.5rem;
-          color: #fff;
-        }
-        .photo-title {
-          font-size: 1.5rem;
-          font-weight: 700;
-          margin-bottom: 0.5rem;
-          color: #fff;
-        }
-        .photo-role {
-          font-size: 1rem;
-          color: #00d4ff;
-          font-weight: 600;
         }
 
-        /* ===== Individual KPI Glass Boxes ===== */
+        /* 3rd CTA visibility: show for iPad Pro and up */
+        .show-xl { display: none; }
+        @media (min-width: 1024px) {
+          .show-xl { display: inline-flex; }
+          .cta-row.cta-3up-xl {
+            grid-template-columns: repeat(3, max-content) !important;
+            justify-content: start !important;
+            gap: 1rem 1.25rem !important;
+          }
+        }
+
+        /* === KPI grid: fixed columns, equal heights, no overflow === */
         .kpi-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 1rem;
-          margin-top: 0.5rem;
-        }
-        .kpi-box {
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(15px);
-          border: 1px solid rgba(0, 212, 255, 0.2);
-          border-radius: 16px;
-          padding: 1.5rem 1rem;
-          text-align: center;
-          transition: all 0.3s ease;
-          position: relative;
-          overflow: hidden;
-        }
-        .kpi-box::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
+          gap: clamp(0.8rem, 1.6vw, 1rem);
           width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(0, 212, 255, 0.1),
-            transparent
-          );
-          transition: left 0.5s ease;
-        }
-        .kpi-box:hover::before {
-          left: 100%;
-        }
-        .kpi-box:hover {
-          transform: translateY(-5px);
-          border-color: rgba(0, 212, 255, 0.4);
-          box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
-          background: rgba(255, 255, 255, 0.08);
-        }
-        .stat-number {
-          display: block;
-          font-size: 2.5rem;
-          font-weight: 800;
-          color: #00d4ff;
-          margin-bottom: 0.5rem;
-        }
-        .stat-label {
-          display: block;
-          font-size: 0.9rem;
-          color: rgba(255, 255, 255, 0.7);
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
+          align-items: stretch;
+          box-sizing: border-box;
+          margin-top: 0.25rem;
         }
 
-        /* Differentiators */
-        .differentiators-section {
-          margin: 4rem 0;
+        /* Wide desktop: 4-up */
+        @media (min-width: 1280px) {
+          .kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
         }
-        .differentiators-glass {
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(10px);
-          border-radius: 20px;
-          padding: 2.5rem;
-          border: 1px solid rgba(0, 212, 255, 0.2);
+        /* iPad Pro / small desktop: keep KPIs 4-up so they stay on one line */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
         }
-        .differentiators-header {
+        /* Tablet/Mobile: 2-up */
+        @media (max-width: 1023px) {
+          .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        .kpi-box {
+          /* container units let the number scale with CARD width */
+          container-type: inline-size;
+
           display: flex;
+          flex-direction: column;
           align-items: center;
-          justify-content: center;
-          gap: 1rem;
-          margin-bottom: 2rem;
+          justify-content: center;             /* centers the whole stack */
+          gap: clamp(0.35rem, 1vw, 0.6rem);    /* consistent gap between number/label */
+
+          min-height: clamp(120px, 12vw, 150px);
+          padding: clamp(1rem, 1.6vw, 1.25rem) clamp(1.2rem, 2.2vw, 1.5rem);
+          border-radius: 16px;
+
+          background: rgba(255,255,255,0.05);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(0,212,255,0.22);
+          transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+          box-sizing: border-box;
+          overflow: hidden;                     /* belt & suspenders */
         }
-        .rocket-icon {
-          font-size: 2rem;
-          animation: rocketTakeoff 3s ease-in-out infinite;
+
+        /* === KPI number: single centered element (robust, no grid quirks) === */
+        .stat-number{
+          display:block;
+          width:100%;
+          text-align:center;
+          line-height:1;
+          white-space:nowrap;
+          font-weight:800;
+          color:#00d4ff;
+          font-feature-settings:"tnum" 1, "lnum" 1;
+          letter-spacing:0;
+          font-size:clamp(1.6rem, 16cqw, 2.2rem);
         }
-        @keyframes rocketTakeoff {
-          0%,
-          100% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          25% {
-            transform: translateY(-8px) rotate(-5deg);
-          }
-          50% {
-            transform: translateY(-15px) rotate(0deg);
-          }
-          75% {
-            transform: translateY(-8px) rotate(5deg);
-          }
+        /* 4-up desktop sizing */
+        @media (min-width:1280px){ .stat-number{ font-size:clamp(1.55rem, 15cqw, 2.05rem); } }
+        @media (min-width:1440px){ .stat-number{ font-size:clamp(1.7rem, 16cqw, 2.35rem); } }
+
+        /* Label centering and equal height */
+        .stat-label{
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          text-align:center;
+          font-size:clamp(0.78rem, 1.6vw, 0.9rem);
+          color:rgba(255,255,255,0.72);
+          text-transform:uppercase;
+          letter-spacing:0.06em;
+          line-height:1.3;
+          min-height:calc(2 * 1.3em);
         }
-        .header-text {
-          font-size: 2rem;
-          font-weight: 700;
-          color: #fff;
-          margin: 0;
+
+        /* Safety: padding counts toward width everywhere */
+        .kpi-box, .kpi-box *{ box-sizing:border-box; }
+
+        /* Optional: avoid hover "jump" so row baseline stays flat */
+        .kpi-box:hover {
+          transform: none;
+          background: rgba(255,255,255,0.075);
+          border-color: rgba(0,212,255,0.38);
+          box-shadow: 0 10px 28px -12px rgba(0,212,255,0.35);
         }
-        .differentiators-grid {
+
+
+        /* Differentiators block */
+        .diff-wrap { 
+          margin: 2rem 0 0.75rem;  /* slightly tighter to reduce the fold gap on desktop */
+          display: flex; 
+          flex-direction: column; 
+          align-items: center; 
+          width: 100%; 
+          padding-inline: 1rem;               /* align with hero side gutters on desktop */
+        }
+        /* iPad Pro: add safe side padding so the glass box doesn't hug edges */
+        @media (min-width:1024px) and (max-width:1279px){
+          .diff-wrap{ 
+            padding-inline: clamp(1rem, 3vw, 1.5rem);
+            margin: 1rem 0 0.75rem;
+          }
+          .diff-glass{ margin-inline:auto; }
+        }
+        /* Desktop: keep glass slightly narrower than hero container so it never feels too wide */
+        @media (min-width:1280px){
+          .diff-glass{ max-width: 1100px; }
+        }
+        .diff-glass {
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(0,212,255,0.22);
+          border-radius: 20px;
+          padding: clamp(1.25rem, 3vw, 2.25rem);
+          backdrop-filter: blur(10px);
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        .diff-header {
+          display: flex; 
+          align-items: center; 
+          justify-content: center; 
+          gap: 0.8rem; 
+          margin-bottom: 0.75rem; /* tighter: helps peek without changing hero visuals */
+          padding: 1rem 0;
+          position: relative;
+        }
+        .diff-title {
+          font-size: clamp(1.5rem, 4.2vw, 2.4rem);
+          font-weight: 900;
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 50%, #00d4ff 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+          letter-spacing: -0.02em;
+          position: relative;
+          text-align: center;
+        }
+        .diff-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
+          gap: clamp(0.9rem, 2.5vw, 1.5rem);
         }
-        .differentiator-item {
-          background: rgba(255, 255, 255, 0.05);
+        .diff-item {
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.12);
           border-radius: 16px;
-          padding: 2rem;
-          border: 1px solid rgba(0, 212, 255, 0.1);
-          transition: 0.3s;
+          padding: clamp(0.9rem, 2.8vw, 1.25rem);
+          transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
         }
-        .differentiator-item:hover {
-          background: rgba(255, 255, 255, 0.08);
-          border-color: rgba(0, 212, 255, 0.3);
-          transform: translateY(-4px);
+        .diff-item:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); border-color: rgba(0,212,255,0.35); }
+        .diff-item h4 {
+          margin: 0; font-weight: 700; font-size: clamp(1rem, 2.4vw, 1.15rem);
         }
-        .item-title {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          font-size: 1.3rem;
-          font-weight: 700;
-          color: #fff;
-          margin-bottom: 1rem;
-        }
-        .item-icon {
-          width: 24px;
-          height: 24px;
-          fill: url(#blueGradient);
-        }
-        .item-text {
-          color: rgba(255, 255, 255, 0.8);
-          line-height: 1.6;
-          margin: 0;
+        .diff-item p {
+          margin: 0.4rem 0 0; color: #cbd5e1; line-height: 1.55; font-size: clamp(0.9rem, 2.2vw, 1rem);
         }
 
-        /* Hide mobile layout by default (this was the bug) */
-        .mobile-layout {
-          display: none;
-        }
+        /* Mobile overrides */
+        .mobile-layout { display: none; }
 
-        /* Hide mobile KPI grid on desktop */
-        .mobile-kpi-grid {
-          display: none;
-        }
-
-        /* Mobile tweaks */
-        .mobile-description {
-          text-align: center;
-        }
+        /* Hide the 2nd KPI set on desktop */
+        .kpi-mobile-only { display: none; }
 
         @media (max-width: 768px) {
-          .hero-container {
-            padding: 0 1rem;
-          }
-          /* Hide desktop on mobile */
-          .hero-top {
-            display: none;
-          }
-          /* Show mobile layout */
-          .mobile-layout {
-            display: block;
+          .hero-container { padding: 0 0.9rem; }
+          .hero-top { display: none; }
+          .mobile-layout { display: block; }
+
+          /* More top padding to clear the fixed header nicely */
+          .hero-section { padding-top: max(env(safe-area-inset-top), 5.25rem) !important; }
+
+          /* Constrain measure so lines don't feel wall-to-wall */
+          .mobile-intro { 
+            max-width: 38ch; 
+            margin-inline: auto; 
+            text-align: center;
+            padding: 0 0.25rem;
           }
 
-          .mobile-title {
-            font-size: 2rem;
+          /* Slightly more space below the H1 */
+          .mobile-intro h1 {
+            margin: 0;
+            margin-bottom: clamp(0.5rem, 2.5vw, 0.9rem) !important;
             font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1rem;
+            line-height: 1.12;
             letter-spacing: -0.02em;
-            text-align: center;
-          }
-          .mobile-subtitle {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.5;
-            font-weight: 500;
-            text-align: center;
-            margin-bottom: 2rem;
-          }
-          .mobile-photo {
-            max-width: 300px;
-            margin: 0 auto 2rem;
-          }
-          .mobile-photo .photo-frame {
-            width: 280px;
-            height: 350px;
+            font-size: clamp(1.45rem, 7.6vw, 2rem);
+            text-shadow: 0 1px 6px rgba(0,0,0,0.25);
           }
 
-          .mobile-kpi-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+          /* Guaranteed spacing for the photo wrapper */
+          .hero-image { 
+            margin-block: clamp(1.1rem, 6.5vw, 2.2rem) !important; 
           }
-          .cta-buttons {
-            grid-template-columns: 1fr;
+
+          /* A touch more space above tagline + comfy line-height */
+          .mobile-dek { 
+            margin-top: clamp(0.9rem, 4vw, 1.3rem) !important; 
+            line-height: 1.58 !important; 
+            font-size: clamp(0.95rem, 4.2vw, 1.05rem);
+            color: rgba(255,255,255,0.9);
+            font-weight: 700;
           }
-          .stat-number {
-            font-size: 2rem;
+
+          .cta-row { grid-template-columns: 1fr; gap: 0.7rem; margin-top: 1.4rem; }
+          .diff-grid { grid-template-columns: 1fr; justify-items: center; }
+          .diff-wrap { padding: 0 1rem; }
+          .diff-glass { margin: 0 auto; }
+
+          /* Mobile: center the header perfectly */
+          .diff-header {
+            display: grid !important;          /* swap flex → grid on mobile */
+            grid-auto-flow: row !important;
+            place-items: center !important;    /* centers each child (icon + title) */
+            justify-items: center !important;
+            text-align: center !important;
+            gap: 0.6rem !important;
+            width: 100% !important;
           }
-          .differentiators-grid {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+
+          .diff-header :global(svg),
+          .diff-header :global(.icon) {
+            display: block !important;
+            margin: 0 auto !important;         /* make sure the icon itself is centered */
+          }
+
+          .diff-title {
+            display: block !important;
+            margin-inline: auto !important;    /* ensure the text node centers, independent of icon width */
+            text-align: center !important;
+          }
+
+          /* Tighter card paddings & nicer rhythm */
+          .diff-wrap { 
+            padding-inline: clamp(0.75rem, 4vw, 1rem) !important; 
+          }
+
+          .diff-glass {
+            padding: clamp(1rem, 4.5vw, 1.75rem) !important;   /* slightly tighter than desktop */
+          }
+
+          /* One column grid already set; tighten vertical gaps a bit */
+          .diff-grid { 
+            row-gap: clamp(0.9rem, 3.8vw, 1.25rem) !important;
+          }
+
+          /* Card interior spacing */
+          .diff-item { 
+            padding: clamp(0.85rem, 3.8vw, 1.05rem) clamp(0.9rem, 4.2vw, 1.25rem) !important;
+            border-radius: 14px !important;                    /* a hair rounder reads cleaner on small screens */
+            text-align: center !important; 
+            width: 100% !important; 
+            display: flex !important;
+            justify-content: center !important;
+          }
+
+          /* Icon size up by ~1–2px and guaranteed centering */
+          .diff-item .diff-item-content svg,
+          .diff-item .diff-item-content :global(.icon) {
+            width: clamp(30px, 9vw, 36px) !important;          /* ~32→34/36px at phone sizes */
+            height: clamp(30px, 9vw, 36px) !important;
+            display: block !important;
+            margin: 0 auto !important;        /* ensure the icon is perfectly centered */
+          }
+
+          /* Tighter content gap inside each card */
+          .diff-item .diff-item-content {
+            display: grid !important;
+            place-items: center !important;   /* centers both horizontally + vertically */
+            text-align: center !important;
+            gap: clamp(0.5rem, 3.2vw, 0.75rem) !important;
+            width: 100% !important;
+          }
+
+          /* Micro-typography: maintain legibility without looking crowded */
+          .diff-item h4 {
+            font-size: clamp(1.05rem, 4.3vw, 1.2rem) !important;
+            margin: 0.05rem 0 0.15rem 0 !important;
+            line-height: 1.22 !important;
+            text-align: center !important;
+            width: 100% !important;
+          }
+          .diff-item p {
+            font-size: clamp(0.93rem, 3.9vw, 1.05rem) !important;
+            line-height: 1.55 !important;
+            text-align: center !important;
+            width: 100% !important;
+          }
+
+          /* Slightly more breathing room below the section header */
+          .diff-header { 
+            margin-bottom: clamp(1rem, 5vw, 1.25rem) !important; 
+          }
+
+          /* Show the 2nd KPI set ONLY on mobile */
+          .kpi-mobile-only { display: grid; }
+        }
+
+        @media (max-width: 380px) {
+          .mobile-intro h1 { font-size: clamp(1.35rem, 7vw, 1.9rem) !important; }
+        }
+
+        @media (max-width: 360px) {
+          .hero-section { padding-top: max(env(safe-area-inset-top), 4.1rem); }
+          .mobile-intro p { line-height: 1.42; }
+        }
+
+        /* Desktop photo column: smaller, and caption centered */
+        @media (min-width:1024px){
+          .hero-top{
+            grid-template-columns: minmax(560px, 1fr) min(400px, 28vw) !important; /* shrink image column */
+            gap: clamp(2.75rem, 3.5vw, 4rem) !important;
+            align-items: center !important;
+          }
+          .hero-top > *:last-child{
+            width: min(400px, 28vw) !important;
+            justify-self: end !important;
+            align-self: center !important;
+
+            display:flex;
+            flex-direction:column;
+            align-items:center;        /* centers inner content (including caption) */
+          }
+
+          /* Center common caption/overlay elements inside the image card */
+          .hero-top > *:last-child figcaption,
+          .hero-top > *:last-child .caption,
+          .hero-top > *:last-child .overlay,
+          .hero-top > *:last-child .overlay-card{
+            width:100%;
+            max-width:100%;
+            margin:0.5rem auto 0;
+            text-align:center;
+          }
+
+          /* If the caption/overlay is absolutely positioned, force true center */
+          .hero-top > *:last-child .overlay,
+          .hero-top > *:last-child .overlay-card{
+            left:50% !important;
+            transform:translateX(-50%) !important;
           }
         }
+        @media (min-width:1440px){
+          .hero-top{
+            grid-template-columns: minmax(620px,1fr) min(440px, 26vw) !important; /* scales nicely on big screens */
+          }
+        }
+
+        /* === START iPad Pro + Desktop 3rd CTA === */
+        .show-xl { display: none; }
+        @media (min-width: 1024px) {
+          .show-xl { display: inline-flex; }
+          .cta-row.cta-3up-xl {
+            grid-template-columns: repeat(3, max-content) !important;
+          }
+        }
+        /* === END iPad Pro + Desktop 3rd CTA === */
+
+
       `}</style>
 
       <div className="hero-section">
-        {/* SVG Gradient Definition */}
+        {/* SVG for gradient fills (icons) */}
         <svg width="0" height="0" style={{ position: 'absolute' }}>
           <defs>
-            <linearGradient
-              id="blueGradient"
-              x1="0%"
-              y1="0%"
-              x2="100%"
-              y2="100%"
-            >
+            <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#00d4ff" />
               <stop offset="50%" stopColor="#1e90ff" />
               <stop offset="100%" stopColor="#00d4ff" />
@@ -787,281 +575,196 @@ const HeroSection = () => {
           </defs>
         </svg>
 
-        {/* Background elements removed - using universal background */}
-
         <div className="hero-container">
-          {/* Desktop Layout */}
+          {/* ——— DESKTOP ——— */}
           <div className="hero-top">
             <div className="hero-content">
-              <div className="hero-intro">
-                <h1 className="hero-title">
-                  Senior{' '}
-                  <span className="gradient-text">
-                    AI & Digital Transformation
-                  </span>{' '}
-                  Executive
-                </h1>
-                <p className="hero-subtitle">
-                  Driving Fortune 500 digital transformation through AI, Data
-                  Strategy, and client-centric products
-                </p>
+              <h1 className="headline">
+                <span className="gradient">VP Head of AI Products</span> &{' '}
+                <span className="gradient">Enterprise AI Transformation</span> Leader
+              </h1>
+
+              <p className="dek">
+                Over <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>16+ years</span> as a proven
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>AI strategy executive</span> delivering <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>$400M+ in enterprise value</span>,
+                scaling <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>LLM deployments</span> to <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>27K+ users</span>, and achieving breakthrough ROI across
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> Fortune 500 organizations</span>. I translate complex <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>enterprise AI strategies</span> into measurable outcomes for
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> C-suite stakeholders</span>.
+              </p>
+
+              <div className="cta-row cta-3up-xl">
+                <a href="#connectwithme" className="btn primary">
+                  <Icon name="mail" size="md" className="icon text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
+                  Let&apos;s Connect
+                </a>
+                <a href="/BrandonMicciSeniorAIExecutive.pdf" target="_blank" rel="noopener noreferrer" className="btn outline">
+                  <Icon name="file" size="md" className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]" />
+                  Download Resume
+                </a>
+                {/* Wide-desktop only: appears at ≥1280px via .show-xl */}
+                <a href="/executive-brief.pdf" target="_blank" rel="noopener noreferrer" className="btn outline show-xl">
+                  <Icon name="briefcase" size="md" className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]" />
+                  Executive Brief
+                </a>
               </div>
 
-              <div className="hero-summary">
-                <p className="hero-description">
-                  With{' '}
-                  <span className="gradient-highlight">
-                    16+ years of experience
-                  </span>{' '}
-                  <span className="gradient-highlight">
-                    architecting enterprise-wide AI solutions
-                  </span>
-                  , I&apos;ve transformed complex technological challenges into
-                  over{' '}
-                  <span className="gradient-highlight">
-                    $400M in measurable business outcomes
-                  </span>
-                  . From leading one of our organization&apos;s largest LLM
-                  deployments in the payments space to building{' '}
-                  <span className="gradient-highlight">
-                    evangelical data communities of 30K+ users
-                  </span>
-                  , I bridge the gap between cutting-edge innovation and
-                  practical enterprise implementation.
-                </p>
-              </div>
-
-              {/* Desktop KPI Grid */}
               <div className="kpi-grid">
+                {/* Value Delivered */}
                 <div className="kpi-box">
-                  <span className="stat-number">${counts.value}M+</span>
+                  <span className="stat-number" aria-live="polite">${counts.value}M+</span>
                   <span className="stat-label">Value Delivered</span>
                 </div>
+
+                {/* AI Users */}
                 <div className="kpi-box">
-                  <span className="stat-number">{counts.users}K+</span>
+                  <span className="stat-number" aria-live="polite">{counts.users}K+</span>
                   <span className="stat-label">AI Users</span>
                 </div>
+
+                {/* Typical ROI */}
                 <div className="kpi-box">
-                  <span className="stat-number">{counts.roi}%</span>
+                  <span className="stat-number" aria-live="polite">{counts.roi}%</span>
                   <span className="stat-label">Typical ROI</span>
                 </div>
+
+                {/* Years Leading */}
                 <div className="kpi-box">
-                  <span className="stat-number">{counts.years}+</span>
+                  <span className="stat-number" aria-live="polite">{counts.years}+</span>
                   <span className="stat-label">Years Leading</span>
                 </div>
               </div>
-
-              <div className="hero-cta-section">
-                <div className="cta-buttons">
-                  <a
-                    href="mailto:contact@brandonmicci.com"
-                    className="cta-button primary"
-                  >
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                    </svg>
-                    Let&apos;s Connect
-                  </a>
-                  <a
-                    href="/resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cta-button outline"
-                  >
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-                    </svg>
-                    View Portfolio
-                  </a>
-                </div>
-              </div>
             </div>
 
-            <div className="photo-container">
-              <div className="photo-glassmorphism">
-                <div className="photo-frame">
-                  <Image
-                    src="/headshot.jpg"
-                    alt="Brandon Micci - AI & Digital Transformation Executive"
-                    className="professional-photo"
-                    fill
-                    sizes="(max-width: 480px) 240px, (max-width: 768px) 280px, 320px"
-                    priority
-                  />
-                  <div className="photo-overlay">
-                    <div className="photo-title">Brandon Micci</div>
-                    <div className="photo-role">
-                      VP, Head of NextGen AI/ML Solutions
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <HeroImage />
           </div>
 
-          {/* Mobile Layout */}
+          {/* ——— MOBILE ——— */}
           <div className="mobile-layout">
             <div className="mobile-intro">
-              <h1 className="mobile-title">
-                Senior{' '}
-                <span className="gradient-text">
-                  AI & Digital Transformation
-                </span>{' '}
-                Executive
+              <h1>
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>VP Head of AI Products</span><br />
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>Enterprise AI Transformation</span> Leader
               </h1>
-              <p className="mobile-subtitle">
-                Driving Fortune 500 digital transformation through AI, Data
-                Strategy, and client-centric products
+
+              {/* Wrap to ensure spacing hooks apply */}
+              <div className="hero-image">
+                <HeroImage />
+              </div>
+
+              <p className="mobile-dek">
+                Over <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>16+ years</span> delivering
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> $400M+ value</span>, scaling to
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> 27K+ users</span>, driving ROI across
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> Fortune 500</span>.
               </p>
             </div>
 
-            <div className="photo-container mobile-photo">
-              <div className="photo-glassmorphism">
-                <div className="photo-frame">
-                  <Image
-                    src="/headshot.jpg"
-                    alt="Brandon Micci - AI & Digital Transformation Executive"
-                    className="professional-photo"
-                    fill
-                    sizes="(max-width: 480px) 240px, (max-width: 768px) 280px, 320px"
-                    priority
+            <div className="cta-row">
+              <a href="#connectwithme" className="btn primary">
+                <Icon name="mail" size="md" className="icon text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
+                Let&apos;s Connect
+              </a>
+              <a href="/BrandonMicciSeniorAIExecutive.pdf" target="_blank" rel="noopener noreferrer" className="btn outline">
+                <Icon name="file" size="md" className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]" />
+                Download Resume
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* ——— DIFFERENTIATORS ——— */}
+        <div className="diff-wrap">
+          <div className="diff-glass">
+            <div className="diff-header">
+              <span className="diff-title">AI Executive Leadership Differentiators</span>
+            </div>
+
+            <div className="diff-grid">
+              {/* Card 1 */}
+              <div className="diff-item">
+                <div className="diff-item-content grid place-items-center text-center gap-3 md:flex md:flex-row md:items-start md:text-left md:gap-4">
+                  <Icon
+                    name="rocket"
+                    size="lg"
+                    className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
-                  <div className="photo-overlay">
-                    <div className="photo-title">Brandon Micci</div>
-                    <div className="photo-role">
-                      VP, Head of NextGen AI/ML Solutions
-                    </div>
+                  <div className="w-full md:w-auto">
+                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Visionary Leadership</h4>
+                    <p>Leading cutting-edge AI initiatives that reshape industries—from pioneering LLM deployments to building next-gen analytics platforms.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="diff-item">
+                <div className="diff-item-content grid place-items-center text-center gap-3 md:flex md:flex-row md:items-start md:text-left md:gap-4">
+                  <Icon
+                    name="zap"
+                    size="lg"
+                    className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
+                  />
+                  <div className="w-full md:w-auto">
+                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Execution Excellence</h4>
+                    <p>Proven track record of turning ambitious visions into measurable results—consistently delivering on time, on budget, at scale.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3 */}
+              <div className="diff-item">
+                <div className="diff-item-content grid place-items-center text-center gap-3 md:flex md:flex-row md:items-start md:text-left md:gap-4">
+                  <Icon
+                    name="target"
+                    size="lg"
+                    className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
+                  />
+                  <div className="w-full md:w-auto">
+                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Strategic Thinking</h4>
+                    <p>C-suite advisory capabilities that translate complex AI strategies into clear business roadmaps and competitive advantages.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 4 */}
+              <div className="diff-item">
+                <div className="diff-item-content grid place-items-center text-center gap-3 md:flex md:flex-row md:items-start md:text-left md:gap-4">
+                  <Icon
+                    name="sparkle"
+                    size="lg"
+                    className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
+                  />
+                  <div className="w-full md:w-auto">
+                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Innovation Catalyst</h4>
+                    <p>Building transformative solutions that don&apos;t just solve today&apos;s problems—they anticipate tomorrow&apos;s opportunities.</p>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div className="hero-summary">
-              <p className="hero-description mobile-description">
-                With{' '}
-                <span className="gradient-highlight">
-                  16+ years of experience
-                </span>{' '}
-                <span className="gradient-highlight">
-                  architecting enterprise-wide AI solutions
-                </span>
-                , I&apos;ve transformed complex technological challenges into
-                over{' '}
-                <span className="gradient-highlight">
-                  $400M in measurable business outcomes
-                </span>
-                . From leading one of our organization&apos;s largest LLM
-                deployments in the payments space to building{' '}
-                <span className="gradient-highlight">
-                  evangelical data communities of 30K+ users
-                </span>
-                , I bridge the gap between cutting-edge innovation and practical
-                enterprise implementation.
-              </p>
-            </div>
-
-            <div className="hero-cta-section" style={{ marginTop: '2rem' }}>
-              <div className="cta-buttons">
-                <a
-                  href="mailto:contact@brandonmicci.com"
-                  className="cta-button primary"
-                >
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                  </svg>
-                  Let&apos;s Connect
-                </a>
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cta-button outline"
-                >
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-                  </svg>
-                  View Portfolio
-                </a>
-              </div>
-            </div>
           </div>
 
-          {/* What Makes Me Different */}
-          <div className="differentiators-section">
-            <div className="differentiators-glass">
-              <div className="differentiators-header">
-                <span className="rocket-icon">🚀</span>
-                <h2 className="header-text">What Makes Me Different</h2>
-              </div>
-              <div className="differentiators-grid">
-                <div className="differentiator-item">
-                  <h3 className="item-title">
-                    <svg className="item-icon" viewBox="0 0 24 24">
-                      <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" />
-                    </svg>
-                    Scale Expertise
-                  </h3>
-                  <p className="item-text">
-                    Led the largest LLM deployment in payments (27,000+ users)
-                    and built global teams of 50+ professionals.
-                  </p>
-                </div>
-                <div className="differentiator-item">
-                  <h3 className="item-title">
-                    <svg className="item-icon" viewBox="0 0 24 24">
-                      <path d="M7 15h2c0 1.08 1.37 2 3 2s3-.92 3-2c0-1.1-1.04-1.5-3.24-2.03C9.64 12.44 7 11.78 7 9c0-1.79 1.47-3.31 3.5-3.82V3h3v2.18C15.53 5.69 17 7.21 17 9h-2c0-1.08-1.37-2-3-2s-3 .92-3 2c0 1.1 1.04 1.5 3.24 2.03C14.36 11.56 17 12.22 17 15c0 1.79-1.47 3.31-3.5 3.82V21h-3v-2.18C8.47 18.31 7 16.79 7 15z" />
-                    </svg>
-                    Financial Impact
-                  </h3>
-                  <p className="item-text">
-                    Consistent, outsized ROI—250%+ returns delivering $30M in
-                    new revenue streams.
-                  </p>
-                </div>
-                <div className="differentiator-item">
-                  <h3 className="item-title">
-                    <svg className="item-icon" viewBox="0 0 24 24">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                    Cross-Industry Innovation
-                  </h3>
-                  <p className="item-text">
-                    Deep expertise across Financial Services, Insurance,
-                    Airlines, Energy, and Life Sciences.
-                  </p>
-                </div>
-                <div className="differentiator-item">
-                  <h3 className="item-title">
-                    <svg className="item-icon" viewBox="0 0 24 24">
-                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                    </svg>
-                    Transformation Catalyst
-                  </h3>
-                  <p className="item-text">
-                    AI evangelist who builds adoption communities that drive
-                    organizational change at scale.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile KPI Grid */}
-          <div className="mobile-kpi-grid">
+          {/* Mobile KPI Grid (mobile-only) */}
+          <div className="kpi-grid kpi-mobile-only" style={{ marginTop: '1.25rem' }}>
+            {/* Value Delivered */}
             <div className="kpi-box">
-              <span className="stat-number">${counts.value}M+</span>
+              <span className="stat-number" aria-live="polite">${counts.value}M+</span>
               <span className="stat-label">Value Delivered</span>
             </div>
+
+            {/* AI Users */}
             <div className="kpi-box">
-              <span className="stat-number">{counts.users}K+</span>
+              <span className="stat-number" aria-live="polite">{counts.users}K+</span>
               <span className="stat-label">AI Users</span>
             </div>
+
+            {/* Typical ROI */}
             <div className="kpi-box">
-              <span className="stat-number">{counts.roi}%</span>
+              <span className="stat-number" aria-live="polite">{counts.roi}%</span>
               <span className="stat-label">Typical ROI</span>
             </div>
+
+            {/* Years Leading */}
             <div className="kpi-box">
-              <span className="stat-number">{counts.years}+</span>
+              <span className="stat-number" aria-live="polite">{counts.years}+</span>
               <span className="stat-label">Years Leading</span>
             </div>
           </div>

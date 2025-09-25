@@ -1,8 +1,9 @@
 'use client';
 
-// import AccessibleNav from '@/components/AccessibleNav'; // Removed - using Navigation from layout
-import HeroSection from '@/components/HeroSection';
+import NewHero from '@/components/NewHero';
+import CaseStudyCards from '@/components/CaseStudyCards';
 import dynamic from 'next/dynamic';
+import { useEffect } from 'react';
 
 // Universal background for entire page
 const UniversalBackground = dynamic(
@@ -11,54 +12,88 @@ const UniversalBackground = dynamic(
 );
 
 // Regular imports for lighter components
-import CompanyExpertise from '@/components/CompanyExpertise';
-import StrategicAdvantageHeader from '@/components/StrategicAdvantageHeader';
-import StrategicIntroCard from '@/components/StrategicIntroCard';
-import StrategicDifferentiators from '@/components/StrategicDifferentiators';
 import ExecutiveExperience from '@/components/ExecutiveExperience';
-import TransformationLeadership from '@/components/TransformationLeadership';
+import ProfessionalImpact from '@/components/TransformationLeadership';
 import IndustryCollaboration from '@/components/IndustryCollaboration';
 import TestimonialsSection from '@/components/TestimonialsSection';
 
 export default function Home() {
+  // Prevent first-load jump and manage hash anchors after first paint
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if ('scrollRestoration' in history) (history as History & { scrollRestoration?: string }).scrollRestoration = 'manual';
+    const { hash } = window.location;
+    if (!hash) window.scrollTo(0, 0);
+    requestAnimationFrame(() => {
+      if (hash) {
+        const el = document.getElementById(hash.slice(1));
+        if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
+    });
+  }, []);
+
   return (
-    <div className="min-h-screen text-white relative">
+    <div className="text-white relative">
       {/* Universal Background - covers entire page */}
       <UniversalBackground />
 
       {/* Hero Section */}
-      <HeroSection />
+      <section
+        id="home"
+        className="relative scroll-mt-[var(--header-h,4.5rem)]"
+      >
+        <NewHero />
+      </section>
 
       {/* Strategic Vision Section */}
-      <section id="strategic-vision" className="min-h-screen relative">
+      <section
+        id="strategic-vision"
+        className="
+          relative
+          scroll-mt-[var(--header-h,4.5rem)]
+          lg:-mt-12 xl:-mt-16
+        "
+      >
         {/* Strategic Vision Content */}
         <div className="relative z-10 w-full">
-          <StrategicAdvantageHeader />
-          <StrategicIntroCard />
-          <CompanyExpertise />
-          <StrategicDifferentiators />
+          <div className="container mx-auto px-4 py-12">
+            <h2 className="text-3xl font-bold mb-8 text-center">Strategic Advantage</h2>
+            <CaseStudyCards />
+          </div>
         </div>
       </section>
 
       {/* Executive Experience Section */}
-      <section id="executive-experience" className="min-h-screen relative">
+      <section
+        id="executive-experience"
+        className="relative scroll-mt-[var(--header-h,4.5rem)]"
+      >
         {/* Content */}
         <ExecutiveExperience />
       </section>
 
-      {/* Transformation Leadership Section */}
-      <section id="transformation-leadership" className="min-h-screen relative">
+      {/* Professional Impact Section */}
+      <section
+        id="transformation-leadership"
+        className="relative scroll-mt-[var(--header-h,4.5rem)]"
+      >
         {/* Content */}
-        <TransformationLeadership />
+        <ProfessionalImpact />
       </section>
 
-      {/* Testimonials Section */}
-      <section id="professional-impact" className="min-h-screen relative">
+      {/* Professional Impact Section */}
+      <section
+        id="professional-impact"
+        className="relative scroll-mt-[var(--header-h,4.5rem)]"
+      >
         <TestimonialsSection />
       </section>
 
       {/* Industry Collaboration & Speaking Section */}
-      <section id="connectwithme" className="min-h-screen relative">
+      <section
+        id="connectwithme"
+        className="relative scroll-mt-[var(--header-h,4.5rem)]"
+      >
         <IndustryCollaboration />
       </section>
     </div>
