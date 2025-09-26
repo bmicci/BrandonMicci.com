@@ -51,16 +51,33 @@ const HeroSection = () => {
           z-index: 10;
         }
 
-        /* Desktop top grid */
-        .hero-top {
-          display: grid;
-          grid-template-columns: 1fr 400px;
-          gap: 3rem;
-          align-items: start;
+        /* Full-width header at top */
+        .hero-header {
+          width: 100%;
+          text-align: left;
           margin-bottom: 1.5rem;
           max-width: 1200px;
           margin-left: auto;
           margin-right: auto;
+        }
+        
+        /* Content box below header */
+        .hero-content-box {
+          display: grid;
+          grid-template-columns: 1fr 320px;
+          gap: 2.5rem;
+          align-items: start;
+          margin-bottom: 1rem;
+          max-width: 1200px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        
+        /* Ensure desktop layout is visible on larger screens */
+        @media (min-width: 769px) {
+          .hero-content-box { display: grid !important; }
+          .mobile-layout { display: none !important; }
+          .hero-header { display: block !important; }
         }
         /* Reduce excessive bottom whitespace on iPad Pro by relaxing section height */
         @media (min-width: 1024px) and (max-width: 1279px) {
@@ -68,14 +85,55 @@ const HeroSection = () => {
         }
         /* Tablet (iPad) layout tuning */
         @media (min-width: 769px) and (max-width: 1023px) {
-          .hero-top {
-            grid-template-columns: 1fr 400px;
-            gap: 3rem;
+          .hero-content-box {
+            grid-template-columns: 1fr 280px;
+            gap: 2.5rem;
             align-items: start;
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
           }
+        }
+        
+        /* iPad Air/Mini specific optimizations */
+        @media (min-width: 768px) and (max-width: 820px) {
+          .hero-header {
+            margin-bottom: 2rem;
+          }
+          .hero-content-box {
+            grid-template-columns: 1fr 240px;
+            gap: 2rem;
+            max-width: 100%;
+            padding: 0 1rem;
+          }
+          .headline {
+            font-size: clamp(1.4rem, 4vw, 2.2rem);
+            margin-bottom: 0.75rem;
+          }
+          .dek {
+            font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+          }
+          .cta-row {
+            gap: 0.75rem 1rem;
+            margin-bottom: 1rem;
+          }
+          .kpi-grid {
+            gap: clamp(0.5rem, 1vw, 0.7rem);
+            margin-top: 0.75rem;
+          }
+          .kpi-box {
+            min-height: clamp(90px, 8vw, 110px);
+            padding: clamp(0.8rem, 1.4vw, 1rem) clamp(1rem, 1.8vw, 1.2rem);
+          }
+          .stat-number {
+            font-size: clamp(1.1rem, 10cqw, 1.4rem);
+          }
+          .stat-label {
+            font-size: clamp(0.65rem, 1.2vw, 0.75rem);
+          }
+        }
           .headline { 
             font-size: clamp(1.2rem, 3.5vw, 2.5rem);
             white-space: nowrap;
@@ -89,15 +147,15 @@ const HeroSection = () => {
         .hero-content {
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: 0.75rem;
         }
 
         .headline {
           font-weight: 800;
           letter-spacing: -0.02em;
           line-height: 1.1;
-          margin: 0 0 0.25rem 0;
-          font-size: clamp(1.2rem, 3.5vw, 2.5rem);
+          margin: 0 0 0.5rem 0;
+          font-size: clamp(1.6rem, 3.8vw, 2.8rem);
           text-shadow: 0 1px 6px rgba(0,0,0,0.25);
           white-space: nowrap !important;
           width: 100% !important;
@@ -118,11 +176,11 @@ const HeroSection = () => {
         }
 
         .dek {
-          margin-top: 0.5rem;
+          margin-top: 0.25rem;
           color: rgba(255,255,255,0.92);
-          line-height: 1.6;
+          line-height: 1.4;
           font-weight: 600;
-          font-size: clamp(1rem, 1.8vw, 1.25rem);
+          font-size: clamp(1.1rem, 1.9vw, 1.35rem);
           text-shadow: 0 1px 3px rgba(0,0,0,0.25);
         }
 
@@ -192,11 +250,11 @@ const HeroSection = () => {
         /* === KPI grid: fixed columns, equal heights, no overflow === */
         .kpi-grid {
           display: grid;
-          gap: clamp(0.8rem, 1.6vw, 1rem);
+          gap: clamp(0.6rem, 1.2vw, 0.8rem);
           width: 100%;
           align-items: stretch;
           box-sizing: border-box;
-          margin-top: 0.25rem;
+          margin-top: 0.5rem;
         }
 
         /* Wide desktop: 4-up */
@@ -220,9 +278,9 @@ const HeroSection = () => {
           flex-direction: column;
           align-items: center;
           justify-content: center;             /* centers the whole stack */
-          gap: clamp(0.35rem, 1vw, 0.6rem);    /* consistent gap between number/label */
+          gap: clamp(0.25rem, 0.8vw, 0.5rem);    /* consistent gap between number/label */
 
-          min-height: clamp(120px, 12vw, 150px);
+          min-height: clamp(100px, 10vw, 130px);
           padding: clamp(1rem, 1.6vw, 1.25rem) clamp(1.2rem, 2.2vw, 1.5rem);
           border-radius: 16px;
 
@@ -245,11 +303,11 @@ const HeroSection = () => {
           color:#00d4ff;
           font-feature-settings:"tnum" 1, "lnum" 1;
           letter-spacing:0;
-          font-size:clamp(1.6rem, 16cqw, 2.2rem);
+          font-size:clamp(1.4rem, 14cqw, 1.9rem);
         }
         /* 4-up desktop sizing */
-        @media (min-width:1280px){ .stat-number{ font-size:clamp(1.55rem, 15cqw, 2.05rem); } }
-        @media (min-width:1440px){ .stat-number{ font-size:clamp(1.7rem, 16cqw, 2.35rem); } }
+        @media (min-width:1280px){ .stat-number{ font-size:clamp(1.3rem, 12cqw, 1.7rem); } }
+        @media (min-width:1440px){ .stat-number{ font-size:clamp(1.4rem, 13cqw, 1.8rem); } }
 
         /* Label centering and equal height */
         .stat-label{
@@ -257,7 +315,7 @@ const HeroSection = () => {
           align-items:center;
           justify-content:center;
           text-align:center;
-          font-size:clamp(0.78rem, 1.6vw, 0.9rem);
+          font-size:clamp(0.7rem, 1.4vw, 0.8rem);
           color:rgba(255,255,255,0.72);
           text-transform:uppercase;
           letter-spacing:0.06em;
@@ -358,8 +416,9 @@ const HeroSection = () => {
 
         @media (max-width: 768px) {
           .hero-container { padding: 0 0.9rem; }
-          .hero-top { display: none; }
-          .mobile-layout { display: block; }
+          .hero-content-box { display: none !important; }
+          .mobile-layout { display: block !important; }
+          .hero-header { display: none !important; } /* Hide desktop header on mobile */
           .headline {
             font-size: clamp(1.1rem, 2.8vw, 1.8rem);
             white-space: nowrap;
@@ -509,16 +568,16 @@ const HeroSection = () => {
 
         /* Desktop photo column: smaller, and caption centered */
         @media (min-width:1024px){
-          .hero-top{
-            grid-template-columns: 1fr 400px !important; /* Fixed: text gets remaining space, image fixed at 400px */
-            gap: 3rem !important;
+          .hero-content-box{
+            grid-template-columns: 1fr 320px !important; /* Fixed: text gets remaining space, image fixed at 320px */
+            gap: 2.5rem !important;
             align-items: start !important;
             max-width: 1200px !important;
             margin-left: auto !important;
             margin-right: auto !important;
           }
-          .hero-top > *:last-child{
-            width: min(400px, 28vw) !important;
+          .hero-content-box > *:last-child{
+            width: min(320px, 24vw) !important;
             justify-self: end !important;
             align-self: center !important;
 
@@ -528,10 +587,10 @@ const HeroSection = () => {
           }
 
           /* Center common caption/overlay elements inside the image card */
-          .hero-top > *:last-child figcaption,
-          .hero-top > *:last-child .caption,
-          .hero-top > *:last-child .overlay,
-          .hero-top > *:last-child .overlay-card{
+          .hero-content-box > *:last-child figcaption,
+          .hero-content-box > *:last-child .caption,
+          .hero-content-box > *:last-child .overlay,
+          .hero-content-box > *:last-child .overlay-card{
             width:100%;
             max-width:100%;
             margin:0.5rem auto 0;
@@ -539,15 +598,15 @@ const HeroSection = () => {
           }
 
           /* If the caption/overlay is absolutely positioned, force true center */
-          .hero-top > *:last-child .overlay,
-          .hero-top > *:last-child .overlay-card{
+          .hero-content-box > *:last-child .overlay,
+          .hero-content-box > *:last-child .overlay-card{
             left:50% !important;
             transform:translateX(-50%) !important;
           }
         }
         @media (min-width:1440px){
-          .hero-top{
-            grid-template-columns: minmax(620px, 1fr) minmax(400px, 440px) !important; /* scales nicely on big screens */
+          .hero-content-box{
+            grid-template-columns: minmax(700px, 1fr) minmax(300px, 380px) !important; /* scales nicely on big screens */
             max-width: 1600px !important;
           }
           .headline {
@@ -583,12 +642,16 @@ const HeroSection = () => {
 
         <div className="hero-container">
           {/* ——— DESKTOP ——— */}
-          <div className="hero-top">
-            <div className="hero-content">
-              <h1 className="headline">
-                <span className="gradient">AI & Digital Transformation Executive</span>
-              </h1>
+          {/* Full-width header at top */}
+          <div className="hero-header">
+            <h1 className="headline">
+              <span className="gradient">AI & Digital Transformation Executive</span>
+            </h1>
+          </div>
 
+          {/* Content box below header */}
+          <div className="hero-content-box">
+            <div className="hero-content">
               <p className="dek">
                 <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>Senior technology executive</span> with <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>16+ years</span> of experience delivering <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>$400M+ in enterprise value</span> through <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>AI & Digital Transformation</span> efforts, scaling <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>LLM deployments</span> to <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>27K+ users</span> across <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>Fortune 500 companies</span>.
               </p>
@@ -743,7 +806,7 @@ const HeroSection = () => {
           </div>
 
           {/* Spacer between Leadership Differentiators and next section */}
-          <div style={{ height: '3rem' }}></div>
+          <div style={{ height: '1.5rem' }}></div>
 
           {/* Mobile KPI Grid (mobile-only) */}
           <div className="kpi-grid kpi-mobile-only" style={{ marginTop: '1.25rem' }}>

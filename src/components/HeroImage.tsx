@@ -7,7 +7,8 @@ const HeroImage = () => {
     <>
       <style jsx>{`
         .hi-card {
-          width: clamp(260px, 28vw, 400px);
+          width: clamp(220px, 24vw, 320px);
+          height: clamp(260px, 26vw, 360px);
           margin: 0 auto;
           border-radius: 22px;
           background: rgba(255,255,255,0.04);
@@ -16,10 +17,15 @@ const HeroImage = () => {
           overflow: hidden;              /* ensures corners/overflow stay perfect */
           position: relative;            /* required for ::before and containment */
           isolation: isolate;            /* prevents glow bleed */
+          display: flex;
+          flex-direction: column;
         }
         /* Tablet sizing */
         @media (min-width: 769px) and (max-width: 1023px) {
-          .hi-card { width: clamp(240px, 32vw, 360px); }
+          .hi-card { 
+            width: clamp(220px, 24vw, 280px);
+            height: clamp(240px, 24vw, 300px);
+          }
         }
         .hi-card::before {
           content: '';
@@ -32,7 +38,7 @@ const HeroImage = () => {
 
         /* UNTOUCHABLE IMAGE WRAPPER - no text inside this div */
         .hi-imgwrap {
-          aspect-ratio: 4 / 5;           /* gives the fill image real space */
+          flex: 1;                       /* takes remaining space after caption */
           position: relative;            /* required by next image fill */
           display: block;
         }
@@ -52,16 +58,26 @@ const HeroImage = () => {
           padding: 12px 14px 14px;
           background: linear-gradient(180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.14) 100%);
           text-align: center;            /* center caption text on desktop */
+          flex-shrink: 0;                /* fixed height, doesn't shrink */
         }
         .hi-name  { margin: 0 0 4px 0; font-weight: 700; color: #fff; font-size: 1rem; line-height: 1.2; }
         .hi-title { margin: 0; color: rgb(34 211 238); font-weight: 600; font-size: 0.9rem; line-height: 1.25; }
 
+        /* iPad Air/Mini specific sizing */
+        @media (min-width: 768px) and (max-width: 820px) {
+          .hi-card { 
+            width: clamp(200px, 22vw, 240px); 
+            height: clamp(220px, 24vw, 280px);
+            border-radius: 20px; 
+          }
+        }
+        
         @media (max-width: 768px) {
-          .hi-card { width: clamp(190px, 68vw, 320px); border-radius: 18px; }
+          .hi-card { width: clamp(180px, 60vw, 280px); border-radius: 18px; }
           .hi-imgwrap { aspect-ratio: 4 / 4.5; }
         }
         @media (max-width: 360px) {
-          .hi-card { width: clamp(170px, 82vw, 260px); border-radius: 16px; }
+          .hi-card { width: clamp(160px, 70vw, 220px); border-radius: 16px; }
           .hi-imgwrap { aspect-ratio: 4 / 4.3; }
           .hi-name { font-size: 0.95rem; }
           .hi-title { font-size: 0.85rem; }
