@@ -323,7 +323,7 @@ const HeroSection = () => {
           align-items: center; 
           justify-content: center; 
           gap: 0.8rem; 
-          margin-bottom: 0.75rem; /* tighter: helps peek without changing hero visuals */
+          margin-bottom: 0.5rem; /* minimal spacing between title and cards */
           padding: 1rem 0;
           position: relative;
         }
@@ -343,6 +343,7 @@ const HeroSection = () => {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: clamp(0.9rem, 2.5vw, 1.5rem);
+          margin-top: 2rem; /* add top margin to create space from header */
         }
         .diff-item {
           background: rgba(255,255,255,0.05);
@@ -446,6 +447,7 @@ const HeroSection = () => {
           /* One column grid already set; tighten vertical gaps a bit */
           .diff-grid { 
             row-gap: clamp(0.9rem, 3.8vw, 1.25rem) !important;
+            margin-top: 2.5rem !important; /* add top margin for mobile */
           }
 
           /* Card interior spacing */
@@ -491,9 +493,9 @@ const HeroSection = () => {
             width: 100% !important;
           }
 
-          /* Slightly more breathing room below the section header */
+          /* Minimal spacing below the section header on mobile */
           .diff-header { 
-            margin-bottom: clamp(1rem, 5vw, 1.25rem) !important; 
+            margin-bottom: 0.5rem !important; 
           }
 
           /* Show the 2nd KPI set ONLY on mobile */
@@ -580,16 +582,11 @@ const HeroSection = () => {
           <div className="hero-top">
             <div className="hero-content">
               <h1 className="headline">
-                <span className="gradient">VP Head of AI Products</span> &{' '}
-                <span className="gradient">Enterprise AI Transformation</span> Leader
+                <span className="gradient">Head of AI Products</span>
               </h1>
 
               <p className="dek">
-                Over <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>16+ years</span> as a proven
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>AI strategy executive</span> delivering <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>$400M+ in enterprise value</span>,
-                scaling <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>LLM deployments</span> to <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>27K+ users</span>, and achieving breakthrough ROI across
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> Fortune 500 organizations</span>. I translate complex <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>enterprise AI strategies</span> into measurable outcomes for
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> C-suite stakeholders</span>.
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>Senior technology executive</span> with <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>16+ years</span> of experience delivering <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>$400M+ in enterprise value</span> through <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>AI & Digital Transformation</span> efforts, scaling <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>LLM deployments</span> to <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>27K+ users</span> across <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>Fortune 500 companies</span>.
               </p>
 
               <div className="cta-row cta-3up-xl">
@@ -642,8 +639,7 @@ const HeroSection = () => {
           <div className="mobile-layout">
             <div className="mobile-intro">
               <h1>
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>VP Head of AI Products</span><br />
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>Enterprise AI Transformation</span> Leader
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>Head of AI Products</span>
               </h1>
 
               {/* Wrap to ensure spacing hooks apply */}
@@ -676,7 +672,7 @@ const HeroSection = () => {
         <div className="diff-wrap">
           <div className="diff-glass">
             <div className="diff-header">
-              <span className="diff-title">AI Executive Leadership Differentiators</span>
+              <span className="diff-title">Leadership Differentiators</span>
             </div>
 
             <div className="diff-grid">
@@ -741,6 +737,9 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
+
+          {/* Spacer between Leadership Differentiators and next section */}
+          <div style={{ height: '3rem' }}></div>
 
           {/* Mobile KPI Grid (mobile-only) */}
           <div className="kpi-grid kpi-mobile-only" style={{ marginTop: '1.25rem' }}>

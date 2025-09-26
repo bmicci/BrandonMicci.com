@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://brandonmicci.com
+
+# Sitemaps
+Sitemap: https://brandonmicci.com/sitemap.xml
