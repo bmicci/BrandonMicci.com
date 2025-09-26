@@ -54,10 +54,13 @@ const HeroSection = () => {
         /* Desktop top grid */
         .hero-top {
           display: grid;
-          grid-template-columns: 1fr 420px;
-          gap: 3.5rem;
+          grid-template-columns: 1fr 400px;
+          gap: 3rem;
           align-items: start;
           margin-bottom: 1.5rem;
+          max-width: 1200px;
+          margin-left: auto;
+          margin-right: auto;
         }
         /* Reduce excessive bottom whitespace on iPad Pro by relaxing section height */
         @media (min-width: 1024px) and (max-width: 1279px) {
@@ -66,11 +69,19 @@ const HeroSection = () => {
         /* Tablet (iPad) layout tuning */
         @media (min-width: 769px) and (max-width: 1023px) {
           .hero-top {
-            grid-template-columns: minmax(420px, 1fr) min(340px, 36vw);
-            gap: 2rem;
-            align-items: center;
+            grid-template-columns: 1fr 400px;
+            gap: 3rem;
+            align-items: start;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
           }
-          .headline { font-size: clamp(1.9rem, 3.4vw, 2.6rem); }
+          .headline { 
+            font-size: clamp(1.2rem, 3.5vw, 2.5rem);
+            white-space: nowrap;
+            width: 100%;
+            text-align: left;
+          }
           .dek { font-size: clamp(0.95rem, 1.4vw, 1.05rem); }
           .cta-row { grid-template-columns: repeat(2, max-content); justify-content: start; gap: 0.85rem 1rem; }
           .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; }
@@ -86,8 +97,12 @@ const HeroSection = () => {
           letter-spacing: -0.02em;
           line-height: 1.1;
           margin: 0 0 0.25rem 0;
-          font-size: clamp(2rem, 4.6vw, 3.5rem);
+          font-size: clamp(1.2rem, 3.5vw, 2.5rem);
           text-shadow: 0 1px 6px rgba(0,0,0,0.25);
+          white-space: nowrap !important;
+          width: 100% !important;
+          text-align: left !important;
+          overflow: visible !important;
         }
         .gradient {
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 55%, #00d4ff 100%);
@@ -345,6 +360,12 @@ const HeroSection = () => {
           .hero-container { padding: 0 0.9rem; }
           .hero-top { display: none; }
           .mobile-layout { display: block; }
+          .headline {
+            font-size: clamp(1.1rem, 2.8vw, 1.8rem);
+            white-space: nowrap;
+            width: 100%;
+            text-align: center;
+          }
 
           /* More top padding to clear the fixed header nicely */
           .hero-section { padding-top: max(env(safe-area-inset-top), 5.25rem) !important; }
@@ -489,9 +510,12 @@ const HeroSection = () => {
         /* Desktop photo column: smaller, and caption centered */
         @media (min-width:1024px){
           .hero-top{
-            grid-template-columns: minmax(560px, 1fr) min(400px, 28vw) !important; /* shrink image column */
-            gap: clamp(2.75rem, 3.5vw, 4rem) !important;
-            align-items: center !important;
+            grid-template-columns: 1fr 400px !important; /* Fixed: text gets remaining space, image fixed at 400px */
+            gap: 3rem !important;
+            align-items: start !important;
+            max-width: 1200px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
           }
           .hero-top > *:last-child{
             width: min(400px, 28vw) !important;
@@ -523,7 +547,12 @@ const HeroSection = () => {
         }
         @media (min-width:1440px){
           .hero-top{
-            grid-template-columns: minmax(620px,1fr) min(440px, 26vw) !important; /* scales nicely on big screens */
+            grid-template-columns: minmax(620px, 1fr) minmax(400px, 440px) !important; /* scales nicely on big screens */
+            max-width: 1600px !important;
+          }
+          .headline {
+            font-size: clamp(2.2rem, 3.5vw, 2.8rem) !important;
+            max-width: 100%;
           }
         }
 
