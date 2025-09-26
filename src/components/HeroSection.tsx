@@ -557,7 +557,7 @@ const HeroSection = () => {
           <div className="hero-top">
             <div className="hero-content">
               <h1 className="headline">
-                <span className="gradient">Head of AI Products</span>
+                <span className="gradient">AI & Digital Transformation Executive</span>
               </h1>
 
               <p className="dek">
@@ -614,7 +614,7 @@ const HeroSection = () => {
           <div className="mobile-layout">
             <div className="mobile-intro">
               <h1>
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>Head of AI Products</span>
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>AI & Digital Transformation Executive</span>
               </h1>
 
               {/* Wrap to ensure spacing hooks apply */}
