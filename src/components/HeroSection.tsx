@@ -1,35 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
+import React from 'react';
 import { Icon } from '@/components/ui/Icon';
 import HeroImage from './HeroImage';
 
 const HeroSection = () => {
-  const [counts, setCounts] = useState({ value: 0, users: 0, roi: 0, years: 0 });
-  const reduced = usePrefersReducedMotion();
-
-  useEffect(() => {
-    const duration = reduced ? 0 : 1800;
-    const steps = reduced ? 1 : 60;
-    const stepDuration = duration / steps;
-    const targets = { value: 400, users: 27, roi: 250, years: 16 };
-    let currentStep = 0;
-
-    const interval = setInterval(() => {
-      currentStep++;
-      const p = currentStep / steps;
-      setCounts({
-        value: Math.floor(targets.value * p),
-        users: Math.floor(targets.users * p),
-        roi: Math.floor(targets.roi * p),
-        years: Math.floor(targets.years * p),
-      });
-      if (currentStep >= steps) clearInterval(interval);
-    }, stepDuration);
-
-    return () => clearInterval(interval);
-  }, [reduced]);
 
   return (
     <>
@@ -608,25 +583,25 @@ const HeroSection = () => {
               <div className="kpi-grid">
                 {/* Value Delivered */}
                 <div className="kpi-box">
-                  <span className="stat-number" aria-live="polite">${counts.value}M+</span>
+                  <span className="stat-number">$400M+</span>
                   <span className="stat-label">Value Delivered</span>
                 </div>
 
                 {/* AI Users */}
                 <div className="kpi-box">
-                  <span className="stat-number" aria-live="polite">{counts.users}K+</span>
+                  <span className="stat-number">27K+</span>
                   <span className="stat-label">AI Users</span>
                 </div>
 
                 {/* Typical ROI */}
                 <div className="kpi-box">
-                  <span className="stat-number" aria-live="polite">{counts.roi}%</span>
+                  <span className="stat-number">250%</span>
                   <span className="stat-label">Typical ROI</span>
                 </div>
 
                 {/* Years Leading */}
                 <div className="kpi-box">
-                  <span className="stat-number" aria-live="polite">{counts.years}+</span>
+                  <span className="stat-number">16+</span>
                   <span className="stat-label">Years Leading</span>
                 </div>
               </div>
@@ -745,25 +720,25 @@ const HeroSection = () => {
           <div className="kpi-grid kpi-mobile-only" style={{ marginTop: '1.25rem' }}>
             {/* Value Delivered */}
             <div className="kpi-box">
-              <span className="stat-number" aria-live="polite">${counts.value}M+</span>
+              <span className="stat-number">$400M+</span>
               <span className="stat-label">Value Delivered</span>
             </div>
 
             {/* AI Users */}
             <div className="kpi-box">
-              <span className="stat-number" aria-live="polite">{counts.users}K+</span>
+              <span className="stat-number">27K+</span>
               <span className="stat-label">AI Users</span>
             </div>
 
             {/* Typical ROI */}
             <div className="kpi-box">
-              <span className="stat-number" aria-live="polite">{counts.roi}%</span>
+              <span className="stat-number">250%</span>
               <span className="stat-label">Typical ROI</span>
             </div>
 
             {/* Years Leading */}
             <div className="kpi-box">
-              <span className="stat-number" aria-live="polite">{counts.years}+</span>
+              <span className="stat-number">16+</span>
               <span className="stat-label">Years Leading</span>
             </div>
           </div>
