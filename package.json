@@ -6,12 +6,14 @@
     "dev": "NEXT_NO_TURBOPACK=1 next dev",
     "dev:turbo": "next dev --turbo",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3000",
+    "export": "next export",
     "typecheck": "tsc --noEmit",
     "lint": "next lint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "audit": "npm run typecheck && npm run lint && npm run format:check"
+    "audit": "npm run typecheck && npm run lint && npm run format:check",
+    "lhci:server": "lhci autorun --collect.url=http://localhost:3000 --collect.startServerCommand=\"npm run start\" --collect.startServerReadyPattern=\"started server on\" --upload.target=temporary-public-storage --assert.preset=lighthouse:recommended --assert.assertions.categories:performance=warn:0.90 --assert.assertions.categories:seo=warn:0.95 --budgetsPath=budgets.json"
   },
   "dependencies": {
     "@swc/helpers": "^0.5.2",
@@ -27,6 +29,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@lhci/cli": "0.15.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

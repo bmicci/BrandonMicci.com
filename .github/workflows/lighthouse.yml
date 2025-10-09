@@ -1,0 +1,23 @@
+name: Lighthouse CI
+
+on:
+  pull_request:
+    branches: [ main, prod, stage, preview, test/** ]
+  workflow_dispatch:
+
+jobs:
+  lhci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: npm run build
+      # Start server in background for LHCI to hit localhost:3000
+      - run: nohup npm run start >/dev/null 2>&1 &
+      # Give server a few seconds to boot
+      - run: npx wait-on http://localhost:3000
+      - run: npx lhci autorun --config=.lighthouserc.json --budgetsPath=budgets.json
+
