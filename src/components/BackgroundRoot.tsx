@@ -8,5 +8,13 @@ const UniversalBackground = dynamic(() => import('@/components/UniversalBackgrou
 });
 
 export default function BackgroundRoot() {
-  return <UniversalBackground />;
+  return (
+    <div
+      aria-hidden
+      className="pointer-events-none fixed inset-0 -z-10"
+      style={{ contain: 'layout paint style', overflow: 'hidden' }}
+    >
+      <UniversalBackground />
+    </div>
+  );
 }

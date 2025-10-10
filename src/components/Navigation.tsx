@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('home');
+  const [activeLink, setActiveLink] = useState(''); // Empty initial to avoid hydration mismatch
 
   // Handle scroll effect
   useEffect(() => {
@@ -15,6 +15,17 @@ const Navigation = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Sync active link with hash on mount and hash changes
+  useEffect(() => {
+    const syncHash = () => {
+      const hash = window.location.hash.slice(1) || 'home';
+      setActiveLink(hash);
+    };
+    syncHash();
+    window.addEventListener('hashchange', syncHash);
+    return () => window.removeEventListener('hashchange', syncHash);
   }, []);
 
   // Handle mobile menu toggle
