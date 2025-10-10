@@ -685,7 +685,7 @@ const HeroSection = () => {
 
       `}</style>
 
-      <div className="hero-section">
+      <div className="hero-section hero-stable">
         {/* SVG for gradient fills (icons) */}
         <svg width="0" height="0" style={{ position: 'absolute' }}>
           <defs>

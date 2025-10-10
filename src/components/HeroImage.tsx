@@ -8,7 +8,6 @@ const HeroImage = () => {
       <style jsx>{`
         .hi-card {
           width: clamp(220px, 24vw, 320px);
-          height: clamp(250px, 25vw, 340px);
           margin: 0 auto;
           border-radius: 20px;
           background: rgba(255,255,255,0.04);
@@ -24,7 +23,6 @@ const HeroImage = () => {
         @media (min-width: 769px) and (max-width: 1023px) {
           .hi-card { 
             width: clamp(220px, 24vw, 280px);
-            height: clamp(235px, 23vw, 300px);
           }
         }
         .hi-card::before {
@@ -68,18 +66,17 @@ const HeroImage = () => {
         @media (min-width: 768px) and (max-width: 820px) {
           .hi-card { 
             width: clamp(200px, 22vw, 240px); 
-            height: clamp(220px, 24vw, 280px);
             border-radius: 20px; 
           }
         }
         
         @media (max-width: 768px) {
           .hi-card { width: clamp(180px, 60vw, 280px); border-radius: 18px; }
-          .hi-imgwrap { aspect-ratio: 4 / 4.5; }
+          .hi-imgwrap { aspect-ratio: 640 / 853; }
         }
         @media (max-width: 360px) {
           .hi-card { width: clamp(160px, 70vw, 220px); border-radius: 16px; }
-          .hi-imgwrap { aspect-ratio: 4 / 4.3; }
+          .hi-imgwrap { aspect-ratio: 640 / 853; }
           .hi-name { font-size: 0.95rem; }
           .hi-title { font-size: 0.85rem; }
         }

@@ -17,9 +17,9 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.33,
+    "actual": 0.34,
     "values": [
-      0.33
+      0.34
     ],
     "operator": ">=",
     "passed": false,
@@ -53,36 +53,6 @@
     ],
     "operator": ">=",
     "passed": false,
-    "auditId": "errors-in-console",
-    "level": "error",
-    "url": "http://localhost:3000/",
-    "auditTitle": "Browser errors were logged to the console",
-    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/best-practices/errors-in-console/"
-  },
-  {
-    "name": "minScore",
-    "expected": 0.9,
-    "actual": 0,
-    "values": [
-      0
-    ],
-    "operator": ">=",
-    "passed": false,
-    "auditId": "heading-order",
-    "level": "error",
-    "url": "http://localhost:3000/",
-    "auditTitle": "Heading elements are not in a sequentially-descending order",
-    "auditDocumentationLink": "https://dequeuniversity.com/rules/axe/4.10/heading-order"
-  },
-  {
-    "name": "minScore",
-    "expected": 0.9,
-    "actual": 0,
-    "values": [
-      0
-    ],
-    "operator": ">=",
-    "passed": false,
     "auditId": "image-aspect-ratio",
     "level": "error",
     "url": "http://localhost:3000/",
@@ -92,9 +62,9 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.84,
+    "actual": 0.8,
     "values": [
-      0.84
+      0.8
     ],
     "operator": ">=",
     "passed": false,
@@ -103,21 +73,6 @@
     "url": "http://localhost:3000/",
     "auditTitle": "Largest Contentful Paint",
     "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/"
-  },
-  {
-    "name": "minScore",
-    "expected": 0.9,
-    "actual": 0.5,
-    "values": [
-      0.5
-    ],
-    "operator": ">=",
-    "passed": false,
-    "auditId": "legacy-javascript-insight",
-    "level": "error",
-    "url": "http://localhost:3000/",
-    "auditTitle": "Legacy JavaScript",
-    "auditDocumentationLink": "https://web.dev/articles/baseline-and-polyfills"
   },
   {
     "name": "maxLength",
