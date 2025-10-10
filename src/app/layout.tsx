@@ -4,6 +4,7 @@ import './globals.css';
 import Navigation from '@/components/Navigation';
 import BackgroundRoot from '@/components/BackgroundRoot';
 import StructuredData from '@/components/StructuredData';
+import DevLayoutShiftLogger from '@/components/DevLayoutShiftLogger';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 
@@ -123,6 +124,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <StructuredData />
+        {process.env.NODE_ENV === 'development' && <DevLayoutShiftLogger />}
         <Navigation />
         <BackgroundRoot />
         <main id="main" className="mt-16 md:mt-20">{children}</main>

@@ -8,7 +8,9 @@ const HeroImage = () => {
       <style jsx>{`
         .hi-card {
           width: clamp(220px, 24vw, 320px);
+          max-width: 320px;
           margin: 0 auto;
+          aspect-ratio: 640 / 950; /* Account for image + caption */
           border-radius: 20px;
           background: rgba(255,255,255,0.04);
           border: 1px solid rgba(0, 212, 255, 0.36);
@@ -23,6 +25,7 @@ const HeroImage = () => {
         @media (min-width: 769px) and (max-width: 1023px) {
           .hi-card { 
             width: clamp(220px, 24vw, 280px);
+            max-width: 280px;
           }
         }
         .hi-card::before {
