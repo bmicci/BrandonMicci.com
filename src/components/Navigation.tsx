@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -140,24 +141,17 @@ const Navigation = () => {
         }
 
         .logo-bm {
-          font-size: 2.2rem;
-          font-weight: 800;
-          color: #00d4ff; /* Fallback color for browsers that don't support gradient text */
-          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          text-decoration: none;
+          width: 40px;
+          height: 40px;
           transition: all 0.3s ease;
-          letter-spacing: -0.5px;
-          text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
           display: block;
-          line-height: 1;
+          border-radius: 8px;
+          overflow: hidden;
         }
 
         .logo:hover .logo-bm {
           transform: scale(1.05);
-          text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+          box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
         }
 
         .logo-text {
@@ -197,7 +191,7 @@ const Navigation = () => {
 
         @media (min-width: 769px) and (max-width: 1023px) {
           .nav-container { padding: 0.5rem 1.25rem; min-height: 68px; height: 68px; }
-          .logo-bm { font-size: 2rem; }
+          .logo-bm { width: 36px; height: 36px; }
           .logo-name { font-size: 0.9rem; }
           .logo-title { font-size: 0.55rem; }
           .nav-link { padding: 0.35rem 0.7rem; font-size: 0.82rem; }
@@ -375,7 +369,8 @@ const Navigation = () => {
           }
 
           .logo-bm {
-            font-size: 2rem;
+            width: 32px;
+            height: 32px;
           }
 
           .logo-name {
@@ -399,7 +394,8 @@ const Navigation = () => {
           }
 
           .logo-bm {
-            font-size: 1.8rem;
+            width: 28px;
+            height: 28px;
           }
 
           .logo-name {
@@ -419,7 +415,15 @@ const Navigation = () => {
       <header className={`wix-header ${isScrolled ? 'scrolled' : ''}`}>
         <nav className="nav-container" aria-label="Primary">
           <div className="logo" onClick={() => handleLinkClick('home')}>
-            <div className="logo-bm">BM</div>
+            <div className="logo-bm">
+              <Image
+                src="/logo-bm.png"
+                alt="Brandon Micci Logo"
+                width={40}
+                height={40}
+                priority
+              />
+            </div>
             <div className="logo-text">
               <div className="logo-name">Brandon Micci</div>
               <div className="logo-title">AI & Digital Transformation</div>

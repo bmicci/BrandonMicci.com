@@ -38,6 +38,7 @@
     "eslint-config-next": "15.5.2",
     "next-sitemap": "4.2.3",
     "prettier": "^3.6.2",
+    "pwa-asset-generator": "8.1.2",
     "typescript": "^5"
   },
   "engines": {
