@@ -3,6 +3,8 @@
 import React from 'react';
 import { Icon } from '@/components/ui/Icon';
 import HeroImage from './HeroImage';
+import AnimatedCounter from '@/components/AnimatedCounter';
+import { METRICS } from '@/lib/metrics';
 
 const HeroSection = () => {
 
@@ -732,25 +734,37 @@ const HeroSection = () => {
               <div className="kpi-grid">
                 {/* Value Delivered */}
                 <div className="kpi-box">
-                  <span className="stat-number">$400M+</span>
+                  <span className="sr-only">${METRICS.valueDeliveredM}M+ Value Delivered</span>
+                  <span className="stat-number">
+                    <AnimatedCounter value={METRICS.valueDeliveredM} suffix="M+" format={(n) => `$${n}`} />
+                  </span>
                   <span className="stat-label">Value Delivered</span>
                 </div>
 
                 {/* AI Users */}
                 <div className="kpi-box">
-                  <span className="stat-number">27K+</span>
+                  <span className="sr-only">{METRICS.aiUsersK}K+ AI Users</span>
+                  <span className="stat-number">
+                    <AnimatedCounter value={METRICS.aiUsersK} suffix="K+" />
+                  </span>
                   <span className="stat-label">AI Users</span>
                 </div>
 
                 {/* Typical ROI */}
                 <div className="kpi-box">
-                  <span className="stat-number">250%</span>
+                  <span className="sr-only">{METRICS.typicalROI}% Typical ROI</span>
+                  <span className="stat-number">
+                    <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
+                  </span>
                   <span className="stat-label">Typical ROI</span>
                 </div>
 
                 {/* Years Leading */}
                 <div className="kpi-box">
-                  <span className="stat-number">16+</span>
+                  <span className="sr-only">{METRICS.yearsLeading}+ Years Leading</span>
+                  <span className="stat-number">
+                    <AnimatedCounter value={METRICS.yearsLeading} suffix="+" />
+                  </span>
                   <span className="stat-label">Years Leading</span>
                 </div>
               </div>
@@ -869,25 +883,37 @@ const HeroSection = () => {
           <div className="kpi-grid kpi-mobile-only" style={{ marginTop: '1.25rem' }}>
             {/* Value Delivered */}
             <div className="kpi-box">
-              <span className="stat-number">$400M+</span>
+              <span className="sr-only">${METRICS.valueDeliveredM}M+ Value Delivered</span>
+              <span className="stat-number">
+                <AnimatedCounter value={METRICS.valueDeliveredM} suffix="M+" format={(n) => `$${n}`} />
+              </span>
               <span className="stat-label">Value Delivered</span>
             </div>
 
             {/* AI Users */}
             <div className="kpi-box">
-              <span className="stat-number">27K+</span>
+              <span className="sr-only">{METRICS.aiUsersK}K+ AI Users</span>
+              <span className="stat-number">
+                <AnimatedCounter value={METRICS.aiUsersK} suffix="K+" />
+              </span>
               <span className="stat-label">AI Users</span>
             </div>
 
             {/* Typical ROI */}
             <div className="kpi-box">
-              <span className="stat-number">250%</span>
+              <span className="sr-only">{METRICS.typicalROI}% Typical ROI</span>
+              <span className="stat-number">
+                <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
+              </span>
               <span className="stat-label">Typical ROI</span>
             </div>
 
             {/* Years Leading */}
             <div className="kpi-box">
-              <span className="stat-number">16+</span>
+              <span className="sr-only">{METRICS.yearsLeading}+ Years Leading</span>
+              <span className="stat-number">
+                <AnimatedCounter value={METRICS.yearsLeading} suffix="+" />
+              </span>
               <span className="stat-label">Years Leading</span>
             </div>
           </div>
