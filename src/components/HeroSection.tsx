@@ -26,7 +26,12 @@ const HeroSection = () => {
         }
         /* iPad Pro: ensure hero section doesn't enforce screen-height causing gap */
         @media (min-width:1024px) and (max-width:1279px){
-          .hero-section{ min-height:auto; padding-bottom: 1.25rem; }
+          .hero-section{ min-height:auto; padding-bottom: 0.5rem; }
+        }
+        /* Desktop: reduce top padding and bottom spacing */
+        @media (min-width:1280px){
+          .hero-section{ padding-top: max(env(safe-area-inset-top), 4.5rem) !important; padding-bottom: 0.5rem !important; }
+          .kpi-grid { margin-bottom: 0 !important; }
         }
         /* iPad Pro: avoid oversized blank space on the next section */
       `}</style>
@@ -465,8 +470,8 @@ const HeroSection = () => {
             text-align: center;
           }
 
-          /* More top padding to clear the fixed header nicely */
-          .hero-section { padding-top: max(env(safe-area-inset-top), 5.25rem) !important; }
+          /* Reduced top padding to clear the fixed header nicely */
+          .hero-section { padding-top: max(env(safe-area-inset-top), 4.5rem) !important; }
 
           /* Constrain measure so lines don't feel wall-to-wall */
           .mobile-intro { 
@@ -591,6 +596,11 @@ const HeroSection = () => {
           .diff-header { 
             margin-bottom: 0.5rem !important; 
           }
+          /* Tighten spacing after KPI grid on desktop */
+          @media (min-width:1024px){
+            .kpi-grid { margin-bottom: 0 !important; }
+            .hero-content-box { margin-bottom: 0 !important; }
+          }
 
           /* Show the 2nd KPI set ONLY on mobile */
           .kpi-mobile-only { display: grid; }
@@ -626,7 +636,7 @@ const HeroSection = () => {
         /* Desktop photo column: smaller, and caption centered */
         @media (min-width:1024px){
           .hero-content-box{
-            grid-template-columns: 1fr 320px !important; /* Fixed: text gets remaining space, image fixed at 320px */
+            grid-template-columns: 1fr 280px !important; /* Reduced: text gets more space, image smaller */
             gap: 2.1rem !important;
             align-items: start !important;
             max-width: 1200px !important;
@@ -634,7 +644,7 @@ const HeroSection = () => {
             margin-right: auto !important;
           }
           .hero-content-box > *:last-child{
-            width: min(320px, 24vw) !important;
+            width: min(280px, 22vw) !important; /* Smaller image to align with KPI bottom */
             justify-self: end !important;
             align-self: center !important;
 
@@ -642,6 +652,17 @@ const HeroSection = () => {
             flex-direction:column;
             align-items:center;        /* centers inner content (including caption) */
           }
+        }
+        /* Large desktop: even tighter spacing */
+        @media (min-width:1440px){
+          .hero-content-box{
+            grid-template-columns: 1fr 260px !important; /* Even smaller on large screens */
+            gap: 2.5rem !important;
+          }
+          .hero-content-box > *:last-child{
+            width: min(260px, 18vw) !important;
+          }
+        }
 
           /* Center common caption/overlay elements inside the image card */
           .hero-content-box > *:last-child figcaption,
@@ -877,7 +898,8 @@ const HeroSection = () => {
           </div>
 
           {/* Spacer between Leadership Differentiators and next section */}
-          <div style={{ height: '1.5rem' }}></div>
+          {/* Spacer between Leadership Differentiators and next section - reduced for tighter layout */}
+          <div style={{ height: '0.75rem' }}></div>
 
           {/* Mobile KPI Grid (mobile-only) */}
           <div className="kpi-grid kpi-mobile-only" style={{ marginTop: '1.25rem' }}>
