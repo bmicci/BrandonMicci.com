@@ -108,10 +108,8 @@ const Navigation = () => {
           justify-content: space-between;
           padding: 0.6rem 2rem;
           position: relative;
-          min-height: 58px;
-          transition:
-            padding 0.3s ease,
-            min-height 0.3s ease;
+          min-height: 72px;
+          height: 72px;
         }
 
         .logo {
@@ -184,28 +182,10 @@ const Navigation = () => {
           margin: 0;
         }
 
-        @media (min-width: 769px) {
-          .wix-header.scrolled .nav-container {
-            padding: 0.35rem 2rem;
-            min-height: 50px;
-          }
-
-          .wix-header.scrolled .logo-bm {
-            font-size: 1.9rem;
-          }
-
-          .wix-header.scrolled .logo-name {
-            font-size: 0.88rem;
-          }
-
-          .wix-header.scrolled .logo-title {
-            font-size: 0.55rem;
-            opacity: 0.85;
-          }
-        }
+        /* Removed scroll-based size changes to prevent CLS */
 
         @media (min-width: 769px) and (max-width: 1023px) {
-          .nav-container { padding: 0.5rem 1.25rem; min-height: 54px; }
+          .nav-container { padding: 0.5rem 1.25rem; min-height: 68px; height: 68px; }
           .logo-bm { font-size: 2rem; }
           .logo-name { font-size: 0.9rem; }
           .logo-title { font-size: 0.55rem; }
@@ -397,7 +377,8 @@ const Navigation = () => {
 
           .nav-container {
             padding: 0.6rem 1rem;
-            min-height: 56px;
+            min-height: 64px;
+            height: 64px;
           }
         }
 
@@ -420,7 +401,7 @@ const Navigation = () => {
         }
       `}</style>
 
-      <a href="#home" className="skip-to-content">
+      <a href="#main" className="skip-to-content">
         Skip to content
       </a>
 

@@ -112,7 +112,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <StructuredData />
         <Navigation />
-        {children}
+        <main id="main">{children}</main>
         <SpeedInsights />
         <Analytics />
       </body>

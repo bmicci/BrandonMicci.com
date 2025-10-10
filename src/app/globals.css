@@ -26,3 +26,13 @@ body {
 section {
   scroll-margin-top: var(--header-h);
 }
+
+/* Defer rendering work for below-the-fold sections; keep intrinsic size to avoid shifts */
+#strategic-vision,
+#executive-experience,
+#transformation-leadership,
+#professional-impact,
+#connectwithme {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+}
