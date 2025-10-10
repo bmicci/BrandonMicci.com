@@ -141,8 +141,8 @@ const Navigation = () => {
         }
 
         .logo-bm {
-          width: 40px;
-          height: 40px;
+          width: 52px;
+          height: 52px;
           transition: all 0.3s ease;
           display: block;
           border-radius: 8px;
@@ -191,7 +191,7 @@ const Navigation = () => {
 
         @media (min-width: 769px) and (max-width: 1023px) {
           .nav-container { padding: 0.5rem 1.25rem; min-height: 68px; height: 68px; }
-          .logo-bm { width: 36px; height: 36px; }
+          .logo-bm { width: 46px; height: 46px; }
           .logo-name { font-size: 0.9rem; }
           .logo-title { font-size: 0.55rem; }
           .nav-link { padding: 0.35rem 0.7rem; font-size: 0.82rem; }
@@ -369,8 +369,8 @@ const Navigation = () => {
           }
 
           .logo-bm {
-            width: 32px;
-            height: 32px;
+            width: 42px;
+            height: 42px;
           }
 
           .logo-name {
@@ -394,8 +394,8 @@ const Navigation = () => {
           }
 
           .logo-bm {
-            width: 28px;
-            height: 28px;
+            width: 38px;
+            height: 38px;
           }
 
           .logo-name {
@@ -417,10 +417,10 @@ const Navigation = () => {
           <div className="logo" onClick={() => handleLinkClick('home')}>
             <div className="logo-bm">
               <Image
-                src="/logo-bm.png"
+                src="/logo-bm-tight.png"
                 alt="Brandon Micci Logo"
-                width={40}
-                height={40}
+                width={52}
+                height={52}
                 priority
               />
             </div>
