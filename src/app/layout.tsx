@@ -81,7 +81,7 @@ export const metadata: Metadata = {
       'VP Head of AI Products at JPMorgan Chase. 27K+ LLM users deployed, $400M+ revenue generated. Expert in enterprise AI strategy, digital transformation, and Fortune 500 innovation leadership.',
     images: [
       {
-        url: '/headshot.webp',
+        url: '/opengraph-image',
         width: 1200,
         height: 630,
         alt: 'Brandon Micci - VP Head of AI Products',
@@ -96,7 +96,7 @@ export const metadata: Metadata = {
     title: 'Brandon Micci - VP Head of AI Products | Enterprise AI Transformation Leader',
     description:
       'VP Head of AI Products at JPMorgan Chase. 27K+ LLM users deployed, $400M+ revenue generated. Expert in enterprise AI strategy, digital transformation.',
-    images: ['/headshot.webp'],
+    images: ['/opengraph-image'],
     creator: '@brandonmicci',
   },
   icons: {
