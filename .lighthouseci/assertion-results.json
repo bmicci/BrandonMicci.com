@@ -17,9 +17,9 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.32,
+    "actual": 0.33,
     "values": [
-      0.32
+      0.33
     ],
     "operator": ">=",
     "passed": false,
@@ -92,9 +92,9 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.82,
+    "actual": 0.85,
     "values": [
-      0.82
+      0.85
     ],
     "operator": ">=",
     "passed": false,
@@ -103,6 +103,21 @@
     "url": "http://localhost:3000/",
     "auditTitle": "Largest Contentful Paint",
     "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.9,
+    "actual": 0.5,
+    "values": [
+      0.5
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "legacy-javascript-insight",
+    "level": "error",
+    "url": "http://localhost:3000/",
+    "auditTitle": "Legacy JavaScript",
+    "auditDocumentationLink": "https://web.dev/articles/baseline-and-polyfills"
   },
   {
     "name": "maxLength",
@@ -118,21 +133,6 @@
     "url": "http://localhost:3000/",
     "auditTitle": "Avoid serving legacy JavaScript to modern browsers",
     "auditDocumentationLink": "https://web.dev/baseline"
-  },
-  {
-    "name": "minScore",
-    "expected": 0.9,
-    "actual": 0.64,
-    "values": [
-      0.64
-    ],
-    "operator": ">=",
-    "passed": false,
-    "auditId": "max-potential-fid",
-    "level": "warn",
-    "url": "http://localhost:3000/",
-    "auditTitle": "Max Potential First Input Delay",
-    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/"
   },
   {
     "name": "minScore",
@@ -182,9 +182,9 @@
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.78,
+    "actual": 0.8,
     "values": [
-      0.78
+      0.8
     ],
     "operator": ">=",
     "passed": false,

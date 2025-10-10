@@ -10,11 +10,19 @@ import { Analytics } from '@vercel/analytics/next';
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
+  fallback: ['system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial'],
 });
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  adjustFontFallback: true,
+  fallback: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace'],
 });
 
 export const viewport: Viewport = {
@@ -108,6 +116,8 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const isProd = process.env.NODE_ENV === 'production';
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
@@ -115,8 +125,8 @@ export default function RootLayout({
         <Navigation />
         <BackgroundRoot />
         <main id="main" className="mt-16 md:mt-20">{children}</main>
-        <SpeedInsights />
-        <Analytics />
+        {isProd && <SpeedInsights />}
+        {isProd && <Analytics />}
       </body>
     </html>
   );

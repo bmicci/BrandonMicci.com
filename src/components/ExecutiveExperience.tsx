@@ -758,9 +758,9 @@ const ExecutiveExperience = memo(() => {
             >
               <div className="relative z-10">
                 <div className="text-3xl mb-4">🎓</div>
-                <h4 className="text-lg font-bold text-white mb-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                <h3 className="text-lg font-bold text-white mb-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                   Bachelor of Arts, Business Administration
-                </h4>
+                </h3>
                 <p className="text-cyan-400 font-semibold mb-2">The George Washington University</p>
                 <p className="text-slate-300 text-sm mb-3">School of Business • Washington, D.C.</p>
                 <div className="text-xs text-slate-400">
@@ -784,9 +784,9 @@ const ExecutiveExperience = memo(() => {
             >
               <div className="relative z-10">
                 <div className="text-3xl mb-4">🎯</div>
-                <h4 className="text-lg font-bold text-white mb-3 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                <h3 className="text-lg font-bold text-white mb-3 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                   Leadership Approach
-                </h4>
+                </h3>
                 <div className="space-y-2">
                   {[
                     "Transformational Leadership",

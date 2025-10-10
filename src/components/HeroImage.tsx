@@ -41,6 +41,7 @@ const HeroImage = () => {
           flex: 1;                       /* takes remaining space after caption */
           position: relative;            /* required by next image fill */
           display: block;
+          aspect-ratio: 640 / 853;       /* match source image ratio to prevent warnings */
         }
         .hi-img {
           position: absolute;
