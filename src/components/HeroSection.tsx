@@ -46,7 +46,7 @@ const HeroSection = () => {
         .hero-container {
           max-width: 1200px;
           margin: 0 auto;
-          padding: 0 1rem;
+          padding-inline: clamp(1rem, 3vw, 2rem);
           position: relative;
           z-index: 10;
         }
@@ -55,7 +55,7 @@ const HeroSection = () => {
         .hero-header {
           width: 100%;
           text-align: left;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1.1rem;
           max-width: 1200px;
           margin-left: auto;
           margin-right: auto;
@@ -65,9 +65,9 @@ const HeroSection = () => {
         .hero-content-box {
           display: grid;
           grid-template-columns: 1fr 320px;
-          gap: 2.5rem;
+          gap: 2.25rem;
           align-items: start;
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
           max-width: 1200px;
           margin-left: auto;
           margin-right: auto;
@@ -87,7 +87,7 @@ const HeroSection = () => {
         @media (min-width: 769px) and (max-width: 1023px) {
           .hero-content-box {
             grid-template-columns: 1fr 280px;
-            gap: 2.5rem;
+            gap: 2rem;
             align-items: start;
             max-width: 1200px;
             margin-left: auto;
@@ -134,9 +134,38 @@ const HeroSection = () => {
             font-size: clamp(0.65rem, 1.2vw, 0.75rem);
           }
         }
+
+        /* iPad Air portrait only: use mobile layout; avoid mini and pro */
+        /* Robust match for iPad Air portrait (allow minor rounding) */
+        @media (min-width: 810px) and (max-width: 830px) and (orientation: portrait) {
+          .hero-section { min-height: auto; padding-bottom: 1rem; }
+          .hero-header { display: none !important; }
+          .hero-content-box { display: none !important; }
+          .mobile-layout { display: block !important; }
+          /* Title: single line, centered; size tuned to fit */
+          .mobile-intro { max-width: 100% !important; text-align: center !important; padding-inline: clamp(0.75rem, 3vw, 1rem) !important; }
+          .mobile-intro h1 { 
+            font-size: clamp(2.3rem, 5vw, 2.8rem) !important; 
+            white-space: nowrap !important; 
+            margin-bottom: 0.9rem !important; 
+            text-align: center !important; 
+            letter-spacing: -0.02em !important;
+            line-height: 1.12 !important;
+            font-weight: 800 !important;
+          }
+          /* Larger hero image, but not overpowering */
+          .mobile-layout :global(.hi-card) { width: clamp(300px, 54vw, 360px) !important; height: clamp(330px, 56vw, 420px) !important; }
+          /* Add spacing around the image wrapper */
+          .hero-image { margin-block: clamp(1rem, 4vw, 1.8rem) !important; }
+          /* Larger subtitle/paragraph */
+          .mobile-dek { font-size: clamp(1.18rem, 2.6vw, 1.35rem) !important; line-height: 1.64 !important; max-width: 62ch !important; margin-inline: auto !important; text-align: center !important; font-weight: 700 !important; }
+          /* Stack CTAs on Air portrait and center width */
+          .cta-row { grid-template-columns: 1fr !important; max-width: 560px !important; margin-inline: auto !important; row-gap: 0.7rem !important; }
+        }
           .headline { 
             font-size: clamp(1.2rem, 3.5vw, 2.5rem);
-            white-space: nowrap;
+            white-space: normal; /* allow wrapping on tighter tablet widths */
+            overflow-wrap: anywhere;
             width: 100%;
             text-align: left;
           }
@@ -154,10 +183,11 @@ const HeroSection = () => {
           font-weight: 800;
           letter-spacing: -0.02em;
           line-height: 1.1;
-          margin: 0 0 0.5rem 0;
+          margin: 0 0 0.4rem 0;
           font-size: clamp(1.6rem, 3.8vw, 2.8rem);
           text-shadow: 0 1px 6px rgba(0,0,0,0.25);
-          white-space: nowrap !important;
+          white-space: normal !important; /* default to wrapping; desktop handled below */
+          overflow-wrap: anywhere !important;
           width: 100% !important;
           text-align: left !important;
           overflow: visible !important;
@@ -183,13 +213,14 @@ const HeroSection = () => {
           font-size: clamp(1.1rem, 1.9vw, 1.35rem);
           text-shadow: 0 1px 3px rgba(0,0,0,0.25);
         }
+        
 
         /* CTA group */
         .cta-row {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 0.9rem;
-          margin: 1.25rem 0 1.75rem;
+          gap: 0.85rem;
+          margin: 1rem 0 1.25rem;
         }
         .btn {
           display: inline-flex;
@@ -232,8 +263,14 @@ const HeroSection = () => {
           .cta-row {
             grid-template-columns: repeat(2, max-content) !important;
             justify-content: start !important;
-            gap: 1rem 1.25rem !important;
+            gap: 0.9rem 1.1rem !important;
           }
+          /* Desktop readability tweaks */
+          .hero-content .dek { max-width: 62ch; }
+          .headline { white-space: normal !important; text-wrap: balance; }
+          .btn { padding: 1rem 1.2rem; font-size: 1.05rem; }
+          .kpi-grid { margin-top: 0.6rem !important; }
+          .stat-label { letter-spacing: 0.04em; }
         }
 
         /* 3rd CTA visibility: show for iPad Pro and up */
@@ -254,7 +291,7 @@ const HeroSection = () => {
           width: 100%;
           align-items: stretch;
           box-sizing: border-box;
-          margin-top: 0.5rem;
+          margin-top: 0.35rem;
         }
 
         /* Wide desktop: 4-up */
@@ -557,6 +594,24 @@ const HeroSection = () => {
           .kpi-mobile-only { display: grid; }
         }
 
+        /* iPad Mini portrait: upscale mobile stack */
+        @media (min-width: 740px) and (max-width: 770px) and (orientation: portrait) {
+          .mobile-intro { max-width: 100% !important; text-align: center !important; padding-inline: clamp(0.75rem, 3vw, 1rem) !important; }
+          .mobile-intro h1 { 
+            font-size: clamp(2.2rem, 5.2vw, 2.7rem) !important; 
+            white-space: nowrap !important; 
+            margin-bottom: 0.9rem !important; 
+            text-align: center !important; 
+            letter-spacing: -0.02em !important;
+            line-height: 1.12 !important;
+            font-weight: 800 !important;
+          }
+          .mobile-layout :global(.hi-card) { width: clamp(280px, 58vw, 350px) !important; height: clamp(320px, 60vw, 410px) !important; }
+          .hero-image { margin-block: clamp(1rem, 4vw, 1.8rem) !important; }
+          .mobile-dek { font-size: clamp(1.16rem, 2.6vw, 1.32rem) !important; line-height: 1.62 !important; max-width: 62ch !important; margin-inline: auto !important; text-align: center !important; font-weight: 700 !important; }
+          .cta-row { grid-template-columns: 1fr !important; max-width: 540px !important; margin-inline: auto !important; row-gap: 0.7rem !important; }
+        }
+
         @media (max-width: 380px) {
           .mobile-intro h1 { font-size: clamp(1.35rem, 7vw, 1.9rem) !important; }
         }
@@ -570,7 +625,7 @@ const HeroSection = () => {
         @media (min-width:1024px){
           .hero-content-box{
             grid-template-columns: 1fr 320px !important; /* Fixed: text gets remaining space, image fixed at 320px */
-            gap: 2.5rem !important;
+            gap: 2.1rem !important;
             align-items: start !important;
             max-width: 1200px !important;
             margin-left: auto !important;
@@ -607,12 +662,14 @@ const HeroSection = () => {
         @media (min-width:1440px){
           .hero-content-box{
             grid-template-columns: minmax(700px, 1fr) minmax(300px, 380px) !important; /* scales nicely on big screens */
-            max-width: 1600px !important;
+            max-width: 1400px !important;
           }
           .headline {
-            font-size: clamp(2.2rem, 3.5vw, 2.8rem) !important;
+            font-size: clamp(2.2rem, 3.2vw, 2.8rem) !important;
+            white-space: nowrap !important; /* single-line on large desktop only */
             max-width: 100%;
           }
+          .btn { padding: 1.05rem 1.3rem; font-size: 1.06rem; }
         }
 
         /* === START iPad Pro + Desktop 3rd CTA === */

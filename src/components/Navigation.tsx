@@ -48,6 +48,25 @@ const Navigation = () => {
   return (
     <>
       <style jsx>{`
+        /* Skip to content link */
+        .skip-to-content {
+          position: absolute;
+          top: -40px;
+          left: 0;
+          background: #00d4ff;
+          color: #0a0a0a;
+          padding: 8px 16px;
+          text-decoration: none;
+          font-weight: 600;
+          z-index: 999999;
+          border-radius: 0 0 4px 0;
+          transition: top 0.3s ease;
+        }
+
+        .skip-to-content:focus {
+          top: 0;
+        }
+
         /* Reset for Wix compatibility */
         * {
           margin: 0;
@@ -401,8 +420,12 @@ const Navigation = () => {
         }
       `}</style>
 
+      <a href="#home" className="skip-to-content">
+        Skip to content
+      </a>
+
       <header className={`wix-header ${isScrolled ? 'scrolled' : ''}`}>
-        <nav className="nav-container">
+        <nav className="nav-container" aria-label="Primary">
           <div className="logo" onClick={() => handleLinkClick('home')}>
             <div className="logo-bm">BM</div>
             <div className="logo-text">

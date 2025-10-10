@@ -8,12 +8,12 @@ const HeroImage = () => {
       <style jsx>{`
         .hi-card {
           width: clamp(220px, 24vw, 320px);
-          height: clamp(260px, 26vw, 360px);
+          height: clamp(250px, 25vw, 340px);
           margin: 0 auto;
-          border-radius: 22px;
+          border-radius: 20px;
           background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(0, 212, 255, 0.4);
-          box-shadow: 0 24px 48px rgba(0,0,0,0.35), 0 0 30px rgba(0, 212, 255, 0.25), 0 0 60px rgba(0, 212, 255, 0.1);
+          border: 1px solid rgba(0, 212, 255, 0.36);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.32), 0 0 24px rgba(0, 212, 255, 0.22), 0 0 48px rgba(0, 212, 255, 0.1);
           overflow: hidden;              /* ensures corners/overflow stay perfect */
           position: relative;            /* required for ::before and containment */
           isolation: isolate;            /* prevents glow bleed */
@@ -24,7 +24,7 @@ const HeroImage = () => {
         @media (min-width: 769px) and (max-width: 1023px) {
           .hi-card { 
             width: clamp(220px, 24vw, 280px);
-            height: clamp(240px, 24vw, 300px);
+            height: clamp(235px, 23vw, 300px);
           }
         }
         .hi-card::before {
@@ -55,13 +55,13 @@ const HeroImage = () => {
 
         /* Caption lives OUTSIDE the image wrapper */
         .hi-caption {
-          padding: 12px 14px 14px;
+          padding: 10px 12px 12px;
           background: linear-gradient(180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.14) 100%);
           text-align: center;            /* center caption text on desktop */
           flex-shrink: 0;                /* fixed height, doesn't shrink */
         }
-        .hi-name  { margin: 0 0 4px 0; font-weight: 700; color: #fff; font-size: 1rem; line-height: 1.2; }
-        .hi-title { margin: 0; color: rgb(34 211 238); font-weight: 600; font-size: 0.9rem; line-height: 1.25; }
+        .hi-name  { margin: 0 0 3px 0; font-weight: 700; color: #fff; font-size: 0.98rem; line-height: 1.2; }
+        .hi-title { margin: 0; color: rgb(34 211 238); font-weight: 600; font-size: 0.88rem; line-height: 1.25; }
 
         /* iPad Air/Mini specific sizing */
         @media (min-width: 768px) and (max-width: 820px) {

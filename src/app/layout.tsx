@@ -1,9 +1,8 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Navigation from '@/components/Navigation';
 import StructuredData from '@/components/StructuredData';
-import SeoJsonLd from '@/components/SeoJsonLd';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 
@@ -17,13 +16,22 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#0a0f1f',
+};
+
 export const metadata: Metadata = {
-  title: 'Brandon Micci - VP Head of AI Products | Enterprise AI Transformation Leader',
+  title: {
+    default: 'Brandon Micci - VP Head of AI Products | Enterprise AI Transformation Leader',
+    template: '%s | Brandon Micci',
+  },
   description:
     'VP Head of AI Products at JPMorgan Chase. 27K+ LLM users deployed, $400M+ revenue generated. Expert in enterprise AI strategy, digital transformation, and Fortune 500 innovation leadership.',
   keywords: [
     'VP Head of AI Products',
-    'Enterprise AI Strategy Executive', 
+    'Enterprise AI Strategy Executive',
     'Fortune 500 AI Transformation Leader',
     'LLM Deployment Expert',
     'Digital Transformation VP',
@@ -31,9 +39,11 @@ export const metadata: Metadata = {
     'Enterprise AI Implementation',
     'Generative AI Scale Deployment',
     'Chief AI Officer',
-    'AI Strategy Consultant'
+    'AI Strategy Consultant',
+    'Next.js Portfolio',
+    'TypeScript',
   ],
-  authors: [{ name: 'Brandon Micci' }],
+  authors: [{ name: 'Brandon Micci', url: 'https://brandonmicci.com' }],
   creator: 'Brandon Micci',
   publisher: 'Brandon Micci',
   metadataBase: new URL('https://brandonmicci.com'),
@@ -67,6 +77,9 @@ export const metadata: Metadata = {
         alt: 'Brandon Micci - VP Head of AI Products',
       },
     ],
+    firstName: 'Brandon',
+    lastName: 'Micci',
+    username: 'brandonmicci',
   },
   twitter: {
     card: 'summary_large_image',
@@ -81,25 +94,23 @@ export const metadata: Metadata = {
       { url: '/favicon.ico', sizes: 'any' },
       { url: '/favicon_16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicon_32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
   },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <StructuredData />
-        <SeoJsonLd />
         <Navigation />
         {children}
         <SpeedInsights />
