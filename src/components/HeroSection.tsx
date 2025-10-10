@@ -28,10 +28,14 @@ const HeroSection = () => {
         @media (min-width:1024px) and (max-width:1279px){
           .hero-section{ min-height:auto; padding-bottom: 0.5rem; }
         }
-        /* Desktop: reduce top padding and bottom spacing */
-        @media (min-width:1280px){
-          .hero-section{ padding-top: max(env(safe-area-inset-top), 4.5rem) !important; padding-bottom: 0.5rem !important; }
+        /* Desktop: reduce top padding and bottom spacing - more aggressive */
+        @media (min-width:1024px){
+          .hero-section{ padding-top: max(env(safe-area-inset-top), 4rem) !important; padding-bottom: 0.25rem !important; }
           .kpi-grid { margin-bottom: 0 !important; }
+          .hero-content-box { margin-bottom: 0 !important; }
+        }
+        @media (min-width:1280px){
+          .hero-section{ padding-top: max(env(safe-area-inset-top), 3.5rem) !important; padding-bottom: 0 !important; }
         }
         /* iPad Pro: avoid oversized blank space on the next section */
       `}</style>
@@ -633,18 +637,18 @@ const HeroSection = () => {
           .mobile-intro p { line-height: 1.42; }
         }
 
-        /* Desktop photo column: smaller, and caption centered */
+        /* Desktop photo column: smaller, and caption centered - more aggressive */
         @media (min-width:1024px){
           .hero-content-box{
-            grid-template-columns: 1fr 280px !important; /* Reduced: text gets more space, image smaller */
-            gap: 2.1rem !important;
+            grid-template-columns: 1fr 250px !important; /* Much smaller: text gets more space, image smaller */
+            gap: 2rem !important;
             align-items: start !important;
             max-width: 1200px !important;
             margin-left: auto !important;
             margin-right: auto !important;
           }
           .hero-content-box > *:last-child{
-            width: min(280px, 22vw) !important; /* Smaller image to align with KPI bottom */
+            width: min(250px, 20vw) !important; /* Much smaller image to align with KPI bottom */
             justify-self: end !important;
             align-self: center !important;
 
@@ -656,11 +660,11 @@ const HeroSection = () => {
         /* Large desktop: even tighter spacing */
         @media (min-width:1440px){
           .hero-content-box{
-            grid-template-columns: 1fr 260px !important; /* Even smaller on large screens */
-            gap: 2.5rem !important;
+            grid-template-columns: 1fr 220px !important; /* Even smaller on large screens */
+            gap: 2.2rem !important;
           }
           .hero-content-box > *:last-child{
-            width: min(260px, 18vw) !important;
+            width: min(220px, 15vw) !important;
           }
         }
 
@@ -898,8 +902,8 @@ const HeroSection = () => {
           </div>
 
           {/* Spacer between Leadership Differentiators and next section */}
-          {/* Spacer between Leadership Differentiators and next section - reduced for tighter layout */}
-          <div style={{ height: '0.75rem' }}></div>
+          {/* Spacer between Leadership Differentiators and next section - minimal for tighter layout */}
+          <div style={{ height: '0.25rem' }}></div>
 
           {/* Mobile KPI Grid (mobile-only) */}
           <div className="kpi-grid kpi-mobile-only" style={{ marginTop: '1.25rem' }}>

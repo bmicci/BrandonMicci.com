@@ -127,7 +127,7 @@ export default function RootLayout({
         {process.env.NODE_ENV === 'development' && <DevLayoutShiftLogger />}
         <Navigation />
         <BackgroundRoot />
-        <main id="main" className="mt-16 md:mt-20">{children}</main>
+        <main id="main" className="mt-12 md:mt-14">{children}</main>
         {isVercel && <SpeedInsights />}
         {isVercel && <Analytics />}
       </body>
