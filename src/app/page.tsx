@@ -2,14 +2,7 @@
 
 // import AccessibleNav from '@/components/AccessibleNav'; // Removed - using Navigation from layout
 import HeroSection from '@/components/HeroSection';
-import dynamic from 'next/dynamic';
 import { useEffect } from 'react';
-
-// Universal background for entire page
-const UniversalBackground = dynamic(
-  () => import('@/components/UniversalBackground'),
-  { ssr: false }
-);
 
 // Regular imports for lighter components
 import CompanyExpertise from '@/components/CompanyExpertise';
@@ -38,9 +31,6 @@ export default function Home() {
 
   return (
     <div className="text-white relative">
-      {/* Universal Background - covers entire page */}
-      <UniversalBackground />
-
       {/* Hero Section */}
       <section
         id="home"

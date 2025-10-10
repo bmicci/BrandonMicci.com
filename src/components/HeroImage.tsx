@@ -94,6 +94,7 @@ const HeroImage = () => {
             fill
             sizes="(min-width:1280px) 460px, (min-width:1024px) 34vw, (min-width:769px) 32vw, 70vw"
             priority
+            fetchPriority="high"
             quality={92}
           />
         </div>

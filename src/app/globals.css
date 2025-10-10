@@ -27,12 +27,21 @@ section {
   scroll-margin-top: var(--header-h);
 }
 
-/* Defer rendering work for below-the-fold sections; keep intrinsic size to avoid shifts */
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+/* Reserve layout for section anchors to avoid jumps */
+#home,
 #strategic-vision,
 #executive-experience,
 #transformation-leadership,
 #professional-impact,
 #connectwithme {
   content-visibility: auto;
-  contain-intrinsic-size: 1000px;
+  contain-intrinsic-size: 900px; /* tune based on typical section height */
 }
+
+/* Avoid image-driven shifts if authors forget width/height */
+img { max-width: 100%; height: auto; }

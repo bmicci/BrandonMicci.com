@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Navigation from '@/components/Navigation';
+import BackgroundRoot from '@/components/BackgroundRoot';
 import StructuredData from '@/components/StructuredData';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
@@ -112,7 +113,8 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <StructuredData />
         <Navigation />
-        <main id="main">{children}</main>
+        <BackgroundRoot />
+        <main id="main" className="mt-16 md:mt-20">{children}</main>
         <SpeedInsights />
         <Analytics />
       </body>
