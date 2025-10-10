@@ -754,7 +754,7 @@ const IndustryCollaboration: React.FC = () => {
               </div>
 
               <div className="bm-topics">
-                <h4>Recent Speaking Topics</h4>
+                <h3 className="font-bold">Recent Speaking Topics</h3>
                 <ul>
                   <li>Enterprise AI Strategy &amp; Implementation</li>
                   <li>Scaling LLM Deployments in Financial Services</li>

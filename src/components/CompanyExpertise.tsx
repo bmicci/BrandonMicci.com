@@ -336,28 +336,28 @@ const CompanyExpertise: React.FC = () => {
 
           <div className="companies-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 max-w-full">
             <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
-              <h4 className="company-name">JPMorgan Chase</h4>
+              <div className="company-name font-bold">JPMorgan Chase</div>
             </div>
             <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
-              <h4 className="company-name">Capital One</h4>
+              <div className="company-name font-bold">Capital One</div>
             </div>
             <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
-              <h4 className="company-name">Citi</h4>
+              <div className="company-name font-bold">Citi</div>
             </div>
             <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
-              <h4 className="company-name">Southwest Airlines</h4>
+              <div className="company-name font-bold">Southwest Airlines</div>
             </div>
             <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
-              <h4 className="company-name">PwC</h4>
+              <div className="company-name font-bold">PwC</div>
             </div>
             <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
-              <h4 className="company-name">Booz Allen Hamilton</h4>
+              <div className="company-name font-bold">Booz Allen Hamilton</div>
             </div>
             <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
-              <h4 className="company-name">EY</h4>
+              <div className="company-name font-bold">EY</div>
             </div>
             <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
-              <h4 className="company-name">Capgemini</h4>
+              <div className="company-name font-bold">Capgemini</div>
             </div>
           </div>
         </div>

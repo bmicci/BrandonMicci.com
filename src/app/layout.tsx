@@ -116,7 +116,8 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const isProd = process.env.NODE_ENV === 'production';
+  // Only load analytics on Vercel (production deployment), not local builds
+  const isVercel = process.env.VERCEL === '1';
 
   return (
     <html lang="en">
@@ -125,8 +126,8 @@ export default function RootLayout({
         <Navigation />
         <BackgroundRoot />
         <main id="main" className="mt-16 md:mt-20">{children}</main>
-        {isProd && <SpeedInsights />}
-        {isProd && <Analytics />}
+        {isVercel && <SpeedInsights />}
+        {isVercel && <Analytics />}
       </body>
     </html>
   );

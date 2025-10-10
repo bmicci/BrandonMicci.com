@@ -809,7 +809,7 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Visionary Leadership</h4>
+                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Visionary Leadership</div>
                     <p>Leading cutting-edge AI initiatives that reshape industries—from pioneering LLM deployments to building next-gen analytics platforms.</p>
                   </div>
                 </div>
@@ -824,7 +824,7 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Execution Excellence</h4>
+                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Execution Excellence</div>
                     <p>Proven track record of turning ambitious visions into measurable results—consistently delivering on time, on budget, at scale.</p>
                   </div>
                 </div>
@@ -839,7 +839,7 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Strategic Thinking</h4>
+                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Strategic Thinking</div>
                     <p>C-suite advisory capabilities that translate complex AI strategies into clear business roadmaps and competitive advantages.</p>
                   </div>
                 </div>
@@ -854,7 +854,7 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Innovation Catalyst</h4>
+                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Innovation Catalyst</div>
                     <p>Building transformative solutions that don&apos;t just solve today&apos;s problems—they anticipate tomorrow&apos;s opportunities.</p>
                   </div>
                 </div>
