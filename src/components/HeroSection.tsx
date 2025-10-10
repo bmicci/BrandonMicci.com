@@ -231,7 +231,7 @@ const HeroSection = () => {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 0.85rem;
-          margin: 1rem 0 1.25rem;
+          margin: 1.2rem 0 1.25rem; /* Added more top margin for better spacing */
         }
         .btn {
           display: inline-flex;

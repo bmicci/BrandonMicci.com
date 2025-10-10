@@ -32,7 +32,7 @@ const HeroImage = () => {
         /* Desktop: even smaller height to match left content */
         @media (min-width: 1024px) {
           .hi-card { 
-            max-height: 360px; /* Tight height constraint for desktop */
+            max-height: 340px; /* Slightly tighter height constraint for desktop */
           }
         }
         .hi-card::before {
