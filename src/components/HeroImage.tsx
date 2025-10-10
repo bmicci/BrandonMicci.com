@@ -10,7 +10,7 @@ const HeroImage = () => {
           width: clamp(220px, 24vw, 320px);
           max-width: 320px;
           margin: 0 auto;
-          aspect-ratio: 640 / 950; /* Account for image + caption */
+          max-height: 420px; /* Constrain height to match left content */
           border-radius: 20px;
           background: rgba(255,255,255,0.04);
           border: 1px solid rgba(0, 212, 255, 0.36);
@@ -26,6 +26,13 @@ const HeroImage = () => {
           .hi-card { 
             width: clamp(220px, 24vw, 280px);
             max-width: 280px;
+            max-height: 380px; /* Smaller height for tablet */
+          }
+        }
+        /* Desktop: even smaller height to match left content */
+        @media (min-width: 1024px) {
+          .hi-card { 
+            max-height: 360px; /* Tight height constraint for desktop */
           }
         }
         .hi-card::before {
@@ -42,6 +49,7 @@ const HeroImage = () => {
           flex: 1;                       /* takes remaining space after caption */
           position: relative;            /* required by next image fill */
           display: block;
+          min-height: 0;                 /* allow flex item to shrink below content size */
           aspect-ratio: 640 / 853;       /* match source image ratio to prevent warnings */
         }
         .hi-img {
