@@ -1,19 +1,30 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const EMAIL = 'brandon@brandonmicci.com';
 const PHONE_DISPLAY = '(469) 708-8925';
-const PHONE_LINK = '+14697088925';
+// Store the tel number Base64-encoded to avoid trivial scraping
+const PHONE_LINK_B64 = 'KzE0Njk3MDg4OTI1'; // base64 for +14697088925
 const LINKEDIN = 'https://www.linkedin.com/in/brandonmicci';
 const V1CE = 'https://link.v1ce.co/brandon.micci';
 
 export default function ContactCard() {
   const [copied, setCopied] = useState(false);
+  const [phoneHref, setPhoneHref] = useState<string>('#');
 
   const execSubject = encodeURIComponent('Executive Opportunities – Brandon Micci');
   const speakSubject = encodeURIComponent('Speaking / Advisory Engagement – Brandon Micci');
+
+  useEffect(() => {
+    try {
+      const decoded = atob(PHONE_LINK_B64); // "+14697088925"
+      setPhoneHref(`tel:${decoded}`);
+    } catch {
+      setPhoneHref('#');
+    }
+  }, []);
 
   const copyEmail = async () => {
     try {
@@ -112,7 +123,7 @@ export default function ContactCard() {
               </a>
 
               <a
-                href={`tel:${PHONE_LINK}`}
+                href={phoneHref}
                 className="text-white/75 hover:text-cyan-400 transition"
               >
                 {PHONE_DISPLAY}
