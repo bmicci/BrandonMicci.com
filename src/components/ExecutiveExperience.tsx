@@ -613,9 +613,9 @@ const ExecutiveExperience = memo(() => {
                                 →
                               </span>
                               <div>
-                                <h4 className="mb-1 text-sm font-semibold text-cyan-400 stroke-2 md:text-base md:mb-2">
+                                <div className="mb-1 text-sm font-semibold text-cyan-400 stroke-2 md:text-base md:mb-2">
                                   {achievement.title}
-                                </h4>
+                                </div>
                                 <p className="text-[13px] leading-relaxed text-slate-300 md:text-sm">
                                   {achievement.text}
                                 </p>
@@ -706,9 +706,9 @@ const ExecutiveExperience = memo(() => {
                 />
 
                 <div className="relative z-10">
-                  <h4 className="text-lg font-bold text-white mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
+                  <div className="text-lg font-bold text-white mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
                     {competency.title}
-                  </h4>
+                  </div>
                   
                   <div className="flex flex-wrap gap-2">
                     {competency.skills.map((skill) => (
