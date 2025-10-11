@@ -18,7 +18,7 @@ const PHONE = '+14697088925'; // Google Voice for recruiter contact
 
 // Toggle extras without editing schema objects:
 const INCLUDE_FAQ = true;
-const INCLUDE_JOB_POSTING = true; // set false if you don't want to signal "open to roles" yet
+const INCLUDE_JOB_POSTING = false; // Disabled: JobPosting is for employers hiring candidates, not for being hired
 
 function buildJsonLd() {
   const website = {
@@ -245,15 +245,16 @@ function buildJsonLd() {
     title: 'Chief AI Officer / VP, Head of AI Products (Executive Leadership)',
     description:
       'Open to executive opportunities leading enterprise AI, data transformation, and generative AI strategy for Fortune 500 organizations.',
+    datePosted: '2024-09-01',
     hiringOrganization: {
-      '@type': 'Person',
-      name: NAME,
+      '@type': 'Organization',
+      name: 'Brandon Micci Digital Strategy',
       url: SITE_URL,
+      logo: LOGO,
       sameAs: [
         'https://www.linkedin.com/in/brandonmicci',
         'https://github.com/bmicci',
       ],
-      logo: LOGO,
     },
     employmentType: 'FULL_TIME',
     applicantLocationRequirements: {
@@ -280,7 +281,7 @@ function buildJsonLd() {
       currency: 'USD',
       value: {
         '@type': 'QuantitativeValue',
-        value: '350000',
+        value: '300000',
         unitText: 'YEAR',
       },
     },
