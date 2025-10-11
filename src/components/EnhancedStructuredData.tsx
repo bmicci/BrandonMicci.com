@@ -14,6 +14,7 @@ const DESCRIPTION =
 const LOGO = `${SITE_URL}/android-chrome-192x192.png`; // ok to keep; you just generated these
 const IMAGE = `${SITE_URL}/headshot.webp`;
 const EMAIL = "brandon@brandonmicci.com";
+const PHONE = "+14697088925"; // Google Voice for recruiter contact
 
 // Toggle extras without editing schema objects:
 const INCLUDE_FAQ = true;
@@ -43,6 +44,7 @@ function buildJsonLd() {
       "https://www.linkedin.com/in/brandonmicci",
       "https://github.com/bmicci",
       "https://twitter.com/brandonmicci",
+      "https://link.v1ce.co/brandon.micci",
     ],
     contactPoint: [
       {
@@ -67,6 +69,7 @@ function buildJsonLd() {
       "https://www.linkedin.com/in/brandonmicci",
       "https://github.com/bmicci",
       "https://twitter.com/brandonmicci",
+      "https://link.v1ce.co/brandon.micci",
     ],
     worksFor: {
       "@type": "Organization",
@@ -78,6 +81,7 @@ function buildJsonLd() {
         "@type": "ContactPoint",
         contactType: "Recruiting / executive search",
         email: EMAIL,
+        telephone: PHONE,
         areaServed: "US",
         availableLanguage: ["en"],
       },
@@ -109,8 +113,10 @@ function buildJsonLd() {
       { "@type": "CollegeOrUniversity", name: "University of Texas at Dallas" },
     ],
     award: [
-      // add/remove as desired
       "Led $400M+ enterprise value creation via AI & data transformation",
+      "Scaled LLM deployment to 27,000+ users at JPMorgan Chase",
+      "Achieved 30% operational efficiency improvement through AI implementation",
+      "Launched $20M IoT-AI optimization program in aviation sector",
     ],
   };
 
