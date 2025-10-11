@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,21 +41,29 @@ const Navigation = () => {
     setIsMobileMenuOpen(false);
   };
 
-  // Handle smooth scroll for anchor links
+  // Handle smooth scroll for section links
   const handleSmoothScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
     targetId: string
   ) => {
-    e.preventDefault();
-    const target = document.getElementById(targetId);
-    if (target) {
-      const offsetTop = target.offsetTop - 60; // Account for fixed header
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth',
-      });
+    // Only prevent default and smooth scroll if we're already on the homepage
+    const isOnHomepage = window.location.pathname === '/';
+    
+    if (isOnHomepage) {
+      e.preventDefault();
+      const target = document.getElementById(targetId);
+      if (target) {
+        const offsetTop = target.offsetTop - 60; // Account for fixed header
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth',
+        });
+      }
+      handleLinkClick(targetId);
+    } else {
+      // Let Next.js Link navigate to /#section, HashScrollOnLoad will handle scrolling
+      setIsMobileMenuOpen(false);
     }
-    handleLinkClick(targetId);
   };
 
   return (
@@ -432,61 +441,67 @@ const Navigation = () => {
 
           <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
             <li className="nav-item">
-              <a
-                href="#home"
+              <Link
+                href="/#home"
                 className={`nav-link ${activeLink === 'home' ? 'active' : ''}`}
                 onClick={(e) => handleSmoothScroll(e, 'home')}
+                scroll={false}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                href="#strategic-vision"
+              <Link
+                href="/#strategic-vision"
                 className={`nav-link ${activeLink === 'strategic-vision' ? 'active' : ''}`}
                 onClick={(e) => handleSmoothScroll(e, 'strategic-vision')}
+                scroll={false}
               >
                 Strategic Advantage
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                href="#executive-experience"
+              <Link
+                href="/#executive-experience"
                 className={`nav-link ${activeLink === 'executive-experience' ? 'active' : ''}`}
                 onClick={(e) => handleSmoothScroll(e, 'executive-experience')}
+                scroll={false}
               >
                 Executive Experience
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                href="#transformation-leadership"
+              <Link
+                href="/#transformation-leadership"
                 className={`nav-link ${activeLink === 'transformation-leadership' ? 'active' : ''}`}
                 onClick={(e) =>
                   handleSmoothScroll(e, 'transformation-leadership')
                 }
+                scroll={false}
               >
                 Transformation Leadership
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                href="#professional-impact"
+              <Link
+                href="/#professional-impact"
                 className={`nav-link ${activeLink === 'professional-impact' ? 'active' : ''}`}
                 onClick={(e) => handleSmoothScroll(e, 'professional-impact')}
+                scroll={false}
               >
                 Professional Impact
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                href="#connectwithme"
+              <Link
+                href="/#connectwithme"
                 className="cta-button"
                 onClick={(e) => handleSmoothScroll(e, 'connectwithme')}
+                scroll={false}
               >
                 <span>Connect With Me</span>
                 <span style={{ fontSize: '0.8rem' }}>→</span>
-              </a>
+              </Link>
             </li>
           </ul>
 
