@@ -78,6 +78,11 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    other: {
+      'probely-verification': 'a79223fa-0c9b-4949-b08d-edddb9694b0e',
+    },
+  },
   openGraph: {
     type: 'website',
     url: 'https://www.brandonmicci.com',
