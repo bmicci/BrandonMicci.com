@@ -26,11 +26,11 @@ const HeroSection = () => {
         }
         /* iPad Pro: ensure hero section doesn't enforce screen-height causing gap */
         @media (min-width:1024px) and (max-width:1279px){
-          .hero-section{ min-height:auto; padding-bottom: 0.5rem; }
+          .hero-section{ min-height:auto; padding-bottom: 0; }
         }
         /* Desktop: reduce top padding and bottom spacing - more aggressive */
         @media (min-width:1024px){
-          .hero-section{ padding-top: max(env(safe-area-inset-top), 4rem) !important; padding-bottom: 0.25rem !important; }
+          .hero-section{ padding-top: max(env(safe-area-inset-top), 4rem) !important; padding-bottom: 0 !important; }
           .kpi-grid { margin-bottom: 0 !important; }
           .hero-content-box { margin-bottom: 0 !important; }
         }
