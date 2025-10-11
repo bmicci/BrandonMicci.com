@@ -1,35 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
+import React from 'react';
 import { Icon } from '@/components/ui/Icon';
 import HeroImage from './HeroImage';
+import AnimatedCounter from '@/components/AnimatedCounter';
+import { METRICS } from '@/lib/metrics';
 
 const HeroSection = () => {
-  const [counts, setCounts] = useState({ value: 0, users: 0, roi: 0, years: 0 });
-  const reduced = usePrefersReducedMotion();
-
-  useEffect(() => {
-    const duration = reduced ? 0 : 1800;
-    const steps = reduced ? 1 : 60;
-    const stepDuration = duration / steps;
-    const targets = { value: 400, users: 27, roi: 250, years: 16 };
-    let currentStep = 0;
-
-    const interval = setInterval(() => {
-      currentStep++;
-      const p = currentStep / steps;
-      setCounts({
-        value: Math.floor(targets.value * p),
-        users: Math.floor(targets.users * p),
-        roi: Math.floor(targets.roi * p),
-        years: Math.floor(targets.years * p),
-      });
-      if (currentStep >= steps) clearInterval(interval);
-    }, stepDuration);
-
-    return () => clearInterval(interval);
-  }, [reduced]);
 
   return (
     <>
@@ -49,7 +26,16 @@ const HeroSection = () => {
         }
         /* iPad Pro: ensure hero section doesn't enforce screen-height causing gap */
         @media (min-width:1024px) and (max-width:1279px){
-          .hero-section{ min-height:auto; padding-bottom: 1.25rem; }
+          .hero-section{ min-height:auto; padding-bottom: 0; }
+        }
+        /* Desktop: reduce top padding and bottom spacing - more aggressive */
+        @media (min-width:1024px){
+          .hero-section{ padding-top: max(env(safe-area-inset-top), 4rem) !important; padding-bottom: 0 !important; }
+          .kpi-grid { margin-bottom: 0 !important; }
+          .hero-content-box { margin-bottom: 0 !important; }
+        }
+        @media (min-width:1280px){
+          .hero-section{ padding-top: max(env(safe-area-inset-top), 3.5rem) !important; padding-bottom: 0 !important; }
         }
         /* iPad Pro: avoid oversized blank space on the next section */
       `}</style>
@@ -71,18 +57,38 @@ const HeroSection = () => {
         .hero-container {
           max-width: 1200px;
           margin: 0 auto;
-          padding: 0 1rem;
+          padding-inline: clamp(1rem, 3vw, 2rem);
           position: relative;
           z-index: 10;
         }
 
-        /* Desktop top grid */
-        .hero-top {
+        /* Full-width header at top */
+        .hero-header {
+          width: 100%;
+          text-align: left;
+          margin-bottom: 1.1rem;
+          max-width: 1200px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        
+        /* Content box below header */
+        .hero-content-box {
           display: grid;
-          grid-template-columns: 1fr 420px;
-          gap: 3.5rem;
+          grid-template-columns: 1fr 320px;
+          gap: 2.25rem;
           align-items: start;
-          margin-bottom: 1.5rem;
+          margin-bottom: 0.75rem;
+          max-width: 1200px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        
+        /* Ensure desktop layout is visible on larger screens */
+        @media (min-width: 769px) {
+          .hero-content-box { display: grid !important; }
+          .mobile-layout { display: none !important; }
+          .hero-header { display: block !important; }
         }
         /* Reduce excessive bottom whitespace on iPad Pro by relaxing section height */
         @media (min-width: 1024px) and (max-width: 1279px) {
@@ -90,12 +96,90 @@ const HeroSection = () => {
         }
         /* Tablet (iPad) layout tuning */
         @media (min-width: 769px) and (max-width: 1023px) {
-          .hero-top {
-            grid-template-columns: minmax(420px, 1fr) min(340px, 36vw);
+          .hero-content-box {
+            grid-template-columns: 1fr 280px;
             gap: 2rem;
-            align-items: center;
+            align-items: start;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
           }
-          .headline { font-size: clamp(1.9rem, 3.4vw, 2.6rem); }
+        }
+        
+        /* iPad Air/Mini specific optimizations */
+        @media (min-width: 768px) and (max-width: 820px) {
+          .hero-header {
+            margin-bottom: 2rem;
+          }
+          .hero-content-box {
+            grid-template-columns: 1fr 240px;
+            gap: 2rem;
+            max-width: 100%;
+            padding: 0 1rem;
+          }
+          .headline {
+            font-size: clamp(1.4rem, 4vw, 2.2rem);
+            margin-bottom: 0.75rem;
+          }
+          .dek {
+            font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+          }
+          .cta-row {
+            gap: 0.75rem 1rem;
+            margin-bottom: 1rem;
+          }
+          .kpi-grid {
+            gap: clamp(0.5rem, 1vw, 0.7rem);
+            margin-top: 0.75rem;
+          }
+          .kpi-box {
+            min-height: clamp(90px, 8vw, 110px);
+            padding: clamp(0.8rem, 1.4vw, 1rem) clamp(1rem, 1.8vw, 1.2rem);
+          }
+          .stat-number {
+            font-size: clamp(1.1rem, 10cqw, 1.4rem);
+          }
+          .stat-label {
+            font-size: clamp(0.65rem, 1.2vw, 0.75rem);
+          }
+        }
+
+        /* iPad Air portrait only: use mobile layout; avoid mini and pro */
+        /* Robust match for iPad Air portrait (allow minor rounding) */
+        @media (min-width: 810px) and (max-width: 830px) and (orientation: portrait) {
+          .hero-section { min-height: auto; padding-bottom: 1rem; }
+          .hero-header { display: none !important; }
+          .hero-content-box { display: none !important; }
+          .mobile-layout { display: block !important; }
+          /* Title: single line, centered; size tuned to fit */
+          .mobile-intro { max-width: 100% !important; text-align: center !important; padding-inline: clamp(0.75rem, 3vw, 1rem) !important; }
+          .mobile-intro h1 { 
+            font-size: clamp(2.3rem, 5vw, 2.8rem) !important; 
+            white-space: nowrap !important; 
+            margin-bottom: 0.9rem !important; 
+            text-align: center !important; 
+            letter-spacing: -0.02em !important;
+            line-height: 1.12 !important;
+            font-weight: 800 !important;
+          }
+          /* Larger hero image, but not overpowering */
+          .mobile-layout :global(.hi-card) { width: clamp(300px, 54vw, 360px) !important; height: clamp(330px, 56vw, 420px) !important; }
+          /* Add spacing around the image wrapper */
+          .hero-image { margin-block: clamp(1rem, 4vw, 1.8rem) !important; }
+          /* Larger subtitle/paragraph */
+          .mobile-dek { font-size: clamp(1.18rem, 2.6vw, 1.35rem) !important; line-height: 1.64 !important; max-width: 62ch !important; margin-inline: auto !important; text-align: center !important; font-weight: 700 !important; }
+          /* Stack CTAs on Air portrait and center width */
+          .cta-row { grid-template-columns: 1fr !important; max-width: 560px !important; margin-inline: auto !important; row-gap: 0.7rem !important; }
+        }
+          .headline { 
+            font-size: clamp(1.2rem, 3.5vw, 2.5rem);
+            white-space: normal; /* allow wrapping on tighter tablet widths */
+            overflow-wrap: anywhere;
+            width: 100%;
+            text-align: left;
+          }
           .dek { font-size: clamp(0.95rem, 1.4vw, 1.05rem); }
           .cta-row { grid-template-columns: repeat(2, max-content); justify-content: start; gap: 0.85rem 1rem; }
           .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; }
@@ -103,16 +187,21 @@ const HeroSection = () => {
         .hero-content {
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: 0.75rem;
         }
 
         .headline {
           font-weight: 800;
           letter-spacing: -0.02em;
           line-height: 1.1;
-          margin: 0 0 0.25rem 0;
-          font-size: clamp(2rem, 4.6vw, 3.5rem);
+          margin: 0 0 0.4rem 0;
+          font-size: clamp(1.6rem, 3.8vw, 2.8rem);
           text-shadow: 0 1px 6px rgba(0,0,0,0.25);
+          white-space: normal !important; /* default to wrapping; desktop handled below */
+          overflow-wrap: anywhere !important;
+          width: 100% !important;
+          text-align: left !important;
+          overflow: visible !important;
         }
         .gradient {
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 55%, #00d4ff 100%);
@@ -128,20 +217,21 @@ const HeroSection = () => {
         }
 
         .dek {
-          margin-top: 0.5rem;
+          margin-top: 0.25rem;
           color: rgba(255,255,255,0.92);
-          line-height: 1.6;
+          line-height: 1.4;
           font-weight: 600;
-          font-size: clamp(1rem, 1.8vw, 1.25rem);
+          font-size: clamp(1.1rem, 1.9vw, 1.35rem);
           text-shadow: 0 1px 3px rgba(0,0,0,0.25);
         }
+        
 
         /* CTA group */
         .cta-row {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 0.9rem;
-          margin: 1.25rem 0 1.75rem;
+          gap: 0.85rem;
+          margin: 1.2rem 0 1.25rem; /* Added more top margin for better spacing */
         }
         .btn {
           display: inline-flex;
@@ -184,8 +274,14 @@ const HeroSection = () => {
           .cta-row {
             grid-template-columns: repeat(2, max-content) !important;
             justify-content: start !important;
-            gap: 1rem 1.25rem !important;
+            gap: 0.9rem 1.1rem !important;
           }
+          /* Desktop readability tweaks */
+          .hero-content .dek { max-width: 62ch; }
+          .headline { white-space: normal !important; text-wrap: balance; }
+          .btn { padding: 1rem 1.2rem; font-size: 1.05rem; }
+          .kpi-grid { margin-top: 0.6rem !important; }
+          .stat-label { letter-spacing: 0.04em; }
         }
 
         /* 3rd CTA visibility: show for iPad Pro and up */
@@ -202,11 +298,11 @@ const HeroSection = () => {
         /* === KPI grid: fixed columns, equal heights, no overflow === */
         .kpi-grid {
           display: grid;
-          gap: clamp(0.8rem, 1.6vw, 1rem);
+          gap: clamp(0.6rem, 1.2vw, 0.8rem);
           width: 100%;
           align-items: stretch;
           box-sizing: border-box;
-          margin-top: 0.25rem;
+          margin-top: 0.35rem;
         }
 
         /* Wide desktop: 4-up */
@@ -230,9 +326,9 @@ const HeroSection = () => {
           flex-direction: column;
           align-items: center;
           justify-content: center;             /* centers the whole stack */
-          gap: clamp(0.35rem, 1vw, 0.6rem);    /* consistent gap between number/label */
+          gap: clamp(0.25rem, 0.8vw, 0.5rem);    /* consistent gap between number/label */
 
-          min-height: clamp(120px, 12vw, 150px);
+          min-height: clamp(100px, 10vw, 130px);
           padding: clamp(1rem, 1.6vw, 1.25rem) clamp(1.2rem, 2.2vw, 1.5rem);
           border-radius: 16px;
 
@@ -255,11 +351,11 @@ const HeroSection = () => {
           color:#00d4ff;
           font-feature-settings:"tnum" 1, "lnum" 1;
           letter-spacing:0;
-          font-size:clamp(1.6rem, 16cqw, 2.2rem);
+          font-size:clamp(1.4rem, 14cqw, 1.9rem);
         }
         /* 4-up desktop sizing */
-        @media (min-width:1280px){ .stat-number{ font-size:clamp(1.55rem, 15cqw, 2.05rem); } }
-        @media (min-width:1440px){ .stat-number{ font-size:clamp(1.7rem, 16cqw, 2.35rem); } }
+        @media (min-width:1280px){ .stat-number{ font-size:clamp(1.3rem, 12cqw, 1.7rem); } }
+        @media (min-width:1440px){ .stat-number{ font-size:clamp(1.4rem, 13cqw, 1.8rem); } }
 
         /* Label centering and equal height */
         .stat-label{
@@ -267,7 +363,7 @@ const HeroSection = () => {
           align-items:center;
           justify-content:center;
           text-align:center;
-          font-size:clamp(0.78rem, 1.6vw, 0.9rem);
+          font-size:clamp(0.7rem, 1.4vw, 0.8rem);
           color:rgba(255,255,255,0.72);
           text-transform:uppercase;
           letter-spacing:0.06em;
@@ -323,7 +419,7 @@ const HeroSection = () => {
           align-items: center; 
           justify-content: center; 
           gap: 0.8rem; 
-          margin-bottom: 0.75rem; /* tighter: helps peek without changing hero visuals */
+          margin-bottom: 0.5rem; /* minimal spacing between title and cards */
           padding: 1rem 0;
           position: relative;
         }
@@ -343,6 +439,7 @@ const HeroSection = () => {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: clamp(0.9rem, 2.5vw, 1.5rem);
+          margin-top: 2rem; /* add top margin to create space from header */
         }
         .diff-item {
           background: rgba(255,255,255,0.05);
@@ -367,11 +464,18 @@ const HeroSection = () => {
 
         @media (max-width: 768px) {
           .hero-container { padding: 0 0.9rem; }
-          .hero-top { display: none; }
-          .mobile-layout { display: block; }
+          .hero-content-box { display: none !important; }
+          .mobile-layout { display: block !important; }
+          .hero-header { display: none !important; } /* Hide desktop header on mobile */
+          .headline {
+            font-size: clamp(1.1rem, 2.8vw, 1.8rem);
+            white-space: nowrap;
+            width: 100%;
+            text-align: center;
+          }
 
-          /* More top padding to clear the fixed header nicely */
-          .hero-section { padding-top: max(env(safe-area-inset-top), 5.25rem) !important; }
+          /* Reduced top padding to clear the fixed header nicely */
+          .hero-section { padding-top: max(env(safe-area-inset-top), 4.5rem) !important; }
 
           /* Constrain measure so lines don't feel wall-to-wall */
           .mobile-intro { 
@@ -446,6 +550,7 @@ const HeroSection = () => {
           /* One column grid already set; tighten vertical gaps a bit */
           .diff-grid { 
             row-gap: clamp(0.9rem, 3.8vw, 1.25rem) !important;
+            margin-top: 2.5rem !important; /* add top margin for mobile */
           }
 
           /* Card interior spacing */
@@ -491,13 +596,36 @@ const HeroSection = () => {
             width: 100% !important;
           }
 
-          /* Slightly more breathing room below the section header */
+          /* Minimal spacing below the section header on mobile */
           .diff-header { 
-            margin-bottom: clamp(1rem, 5vw, 1.25rem) !important; 
+            margin-bottom: 0.5rem !important; 
+          }
+          /* Tighten spacing after KPI grid on desktop */
+          @media (min-width:1024px){
+            .kpi-grid { margin-bottom: 0 !important; }
+            .hero-content-box { margin-bottom: 0 !important; }
           }
 
           /* Show the 2nd KPI set ONLY on mobile */
           .kpi-mobile-only { display: grid; }
+        }
+
+        /* iPad Mini portrait: upscale mobile stack */
+        @media (min-width: 740px) and (max-width: 770px) and (orientation: portrait) {
+          .mobile-intro { max-width: 100% !important; text-align: center !important; padding-inline: clamp(0.75rem, 3vw, 1rem) !important; }
+          .mobile-intro h1 { 
+            font-size: clamp(2.2rem, 5.2vw, 2.7rem) !important; 
+            white-space: nowrap !important; 
+            margin-bottom: 0.9rem !important; 
+            text-align: center !important; 
+            letter-spacing: -0.02em !important;
+            line-height: 1.12 !important;
+            font-weight: 800 !important;
+          }
+          .mobile-layout :global(.hi-card) { width: clamp(280px, 58vw, 350px) !important; height: clamp(320px, 60vw, 410px) !important; }
+          .hero-image { margin-block: clamp(1rem, 4vw, 1.8rem) !important; }
+          .mobile-dek { font-size: clamp(1.16rem, 2.6vw, 1.32rem) !important; line-height: 1.62 !important; max-width: 62ch !important; margin-inline: auto !important; text-align: center !important; font-weight: 700 !important; }
+          .cta-row { grid-template-columns: 1fr !important; max-width: 540px !important; margin-inline: auto !important; row-gap: 0.7rem !important; }
         }
 
         @media (max-width: 380px) {
@@ -509,15 +637,18 @@ const HeroSection = () => {
           .mobile-intro p { line-height: 1.42; }
         }
 
-        /* Desktop photo column: smaller, and caption centered */
+        /* Desktop photo column: smaller, and caption centered - more aggressive */
         @media (min-width:1024px){
-          .hero-top{
-            grid-template-columns: minmax(560px, 1fr) min(400px, 28vw) !important; /* shrink image column */
-            gap: clamp(2.75rem, 3.5vw, 4rem) !important;
-            align-items: center !important;
+          .hero-content-box{
+            grid-template-columns: 1fr 250px !important; /* Much smaller: text gets more space, image smaller */
+            gap: 2rem !important;
+            align-items: start !important;
+            max-width: 1200px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
           }
-          .hero-top > *:last-child{
-            width: min(400px, 28vw) !important;
+          .hero-content-box > *:last-child{
+            width: min(250px, 20vw) !important; /* Much smaller image to align with KPI bottom */
             justify-self: end !important;
             align-self: center !important;
 
@@ -525,12 +656,23 @@ const HeroSection = () => {
             flex-direction:column;
             align-items:center;        /* centers inner content (including caption) */
           }
+        }
+        /* Large desktop: even tighter spacing */
+        @media (min-width:1440px){
+          .hero-content-box{
+            grid-template-columns: 1fr 220px !important; /* Even smaller on large screens */
+            gap: 2.2rem !important;
+          }
+          .hero-content-box > *:last-child{
+            width: min(220px, 15vw) !important;
+          }
+        }
 
           /* Center common caption/overlay elements inside the image card */
-          .hero-top > *:last-child figcaption,
-          .hero-top > *:last-child .caption,
-          .hero-top > *:last-child .overlay,
-          .hero-top > *:last-child .overlay-card{
+          .hero-content-box > *:last-child figcaption,
+          .hero-content-box > *:last-child .caption,
+          .hero-content-box > *:last-child .overlay,
+          .hero-content-box > *:last-child .overlay-card{
             width:100%;
             max-width:100%;
             margin:0.5rem auto 0;
@@ -538,16 +680,23 @@ const HeroSection = () => {
           }
 
           /* If the caption/overlay is absolutely positioned, force true center */
-          .hero-top > *:last-child .overlay,
-          .hero-top > *:last-child .overlay-card{
+          .hero-content-box > *:last-child .overlay,
+          .hero-content-box > *:last-child .overlay-card{
             left:50% !important;
             transform:translateX(-50%) !important;
           }
         }
         @media (min-width:1440px){
-          .hero-top{
-            grid-template-columns: minmax(620px,1fr) min(440px, 26vw) !important; /* scales nicely on big screens */
+          .hero-content-box{
+            grid-template-columns: minmax(700px, 1fr) minmax(300px, 380px) !important; /* scales nicely on big screens */
+            max-width: 1400px !important;
           }
+          .headline {
+            font-size: clamp(2.2rem, 3.2vw, 2.8rem) !important;
+            white-space: nowrap !important; /* single-line on large desktop only */
+            max-width: 100%;
+          }
+          .btn { padding: 1.05rem 1.3rem; font-size: 1.06rem; }
         }
 
         /* === START iPad Pro + Desktop 3rd CTA === */
@@ -563,7 +712,7 @@ const HeroSection = () => {
 
       `}</style>
 
-      <div className="hero-section">
+      <div className="hero-section hero-stable">
         {/* SVG for gradient fills (icons) */}
         <svg width="0" height="0" style={{ position: 'absolute' }}>
           <defs>
@@ -577,19 +726,18 @@ const HeroSection = () => {
 
         <div className="hero-container">
           {/* ——— DESKTOP ——— */}
-          <div className="hero-top">
-            <div className="hero-content">
-              <h1 className="headline">
-                <span className="gradient">VP Head of AI Products</span> &{' '}
-                <span className="gradient">Enterprise AI Transformation</span> Leader
-              </h1>
+          {/* Full-width header at top */}
+          <div className="hero-header">
+            <h1 className="headline">
+              <span className="gradient">AI & Digital Transformation Executive</span>
+            </h1>
+          </div>
 
+          {/* Content box below header */}
+          <div className="hero-content-box">
+            <div className="hero-content">
               <p className="dek">
-                Over <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>16+ years</span> as a proven
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>AI strategy executive</span> delivering <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>$400M+ in enterprise value</span>,
-                scaling <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>LLM deployments</span> to <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>27K+ users</span>, and achieving breakthrough ROI across
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> Fortune 500 organizations</span>. I translate complex <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>enterprise AI strategies</span> into measurable outcomes for
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> C-suite stakeholders</span>.
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>Senior technology executive</span> with <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>16+ years</span> of experience delivering <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>$400M+ in enterprise value</span> through <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>AI & Digital Transformation</span> efforts, scaling <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>LLM deployments</span> to <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>27K+ users</span> across <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>Fortune 500 companies</span>.
               </p>
 
               <div className="cta-row cta-3up-xl">
@@ -611,25 +759,37 @@ const HeroSection = () => {
               <div className="kpi-grid">
                 {/* Value Delivered */}
                 <div className="kpi-box">
-                  <span className="stat-number" aria-live="polite">${counts.value}M+</span>
+                  <span className="sr-only">${METRICS.valueDeliveredM}M+ Value Delivered</span>
+                  <span className="stat-number">
+                    <AnimatedCounter value={METRICS.valueDeliveredM} suffix="M+" format={(n) => `$${n}`} />
+                  </span>
                   <span className="stat-label">Value Delivered</span>
                 </div>
 
                 {/* AI Users */}
                 <div className="kpi-box">
-                  <span className="stat-number" aria-live="polite">{counts.users}K+</span>
+                  <span className="sr-only">{METRICS.aiUsersK}K+ AI Users</span>
+                  <span className="stat-number">
+                    <AnimatedCounter value={METRICS.aiUsersK} suffix="K+" />
+                  </span>
                   <span className="stat-label">AI Users</span>
                 </div>
 
                 {/* Typical ROI */}
                 <div className="kpi-box">
-                  <span className="stat-number" aria-live="polite">{counts.roi}%</span>
+                  <span className="sr-only">{METRICS.typicalROI}% Typical ROI</span>
+                  <span className="stat-number">
+                    <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
+                  </span>
                   <span className="stat-label">Typical ROI</span>
                 </div>
 
                 {/* Years Leading */}
                 <div className="kpi-box">
-                  <span className="stat-number" aria-live="polite">{counts.years}+</span>
+                  <span className="sr-only">{METRICS.yearsLeading}+ Years Leading</span>
+                  <span className="stat-number">
+                    <AnimatedCounter value={METRICS.yearsLeading} suffix="+" />
+                  </span>
                   <span className="stat-label">Years Leading</span>
                 </div>
               </div>
@@ -642,8 +802,7 @@ const HeroSection = () => {
           <div className="mobile-layout">
             <div className="mobile-intro">
               <h1>
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>VP Head of AI Products</span><br />
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>Enterprise AI Transformation</span> Leader
+                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>AI & Digital Transformation Executive</span>
               </h1>
 
               {/* Wrap to ensure spacing hooks apply */}
@@ -676,7 +835,7 @@ const HeroSection = () => {
         <div className="diff-wrap">
           <div className="diff-glass">
             <div className="diff-header">
-              <span className="diff-title">AI Executive Leadership Differentiators</span>
+              <span className="diff-title">Leadership Differentiators</span>
             </div>
 
             <div className="diff-grid">
@@ -689,7 +848,7 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Visionary Leadership</h4>
+                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Visionary Leadership</div>
                     <p>Leading cutting-edge AI initiatives that reshape industries—from pioneering LLM deployments to building next-gen analytics platforms.</p>
                   </div>
                 </div>
@@ -704,7 +863,7 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Execution Excellence</h4>
+                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Execution Excellence</div>
                     <p>Proven track record of turning ambitious visions into measurable results—consistently delivering on time, on budget, at scale.</p>
                   </div>
                 </div>
@@ -719,7 +878,7 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Strategic Thinking</h4>
+                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Strategic Thinking</div>
                     <p>C-suite advisory capabilities that translate complex AI strategies into clear business roadmaps and competitive advantages.</p>
                   </div>
                 </div>
@@ -734,7 +893,7 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <h4 className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Innovation Catalyst</h4>
+                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Innovation Catalyst</div>
                     <p>Building transformative solutions that don&apos;t just solve today&apos;s problems—they anticipate tomorrow&apos;s opportunities.</p>
                   </div>
                 </div>
@@ -742,29 +901,45 @@ const HeroSection = () => {
             </div>
           </div>
 
+          {/* Spacer between Leadership Differentiators and next section */}
+          {/* Spacer between Leadership Differentiators and next section - minimal for tighter layout */}
+          <div style={{ height: '0.25rem' }}></div>
+
           {/* Mobile KPI Grid (mobile-only) */}
           <div className="kpi-grid kpi-mobile-only" style={{ marginTop: '1.25rem' }}>
             {/* Value Delivered */}
             <div className="kpi-box">
-              <span className="stat-number" aria-live="polite">${counts.value}M+</span>
+              <span className="sr-only">${METRICS.valueDeliveredM}M+ Value Delivered</span>
+              <span className="stat-number">
+                <AnimatedCounter value={METRICS.valueDeliveredM} suffix="M+" format={(n) => `$${n}`} />
+              </span>
               <span className="stat-label">Value Delivered</span>
             </div>
 
             {/* AI Users */}
             <div className="kpi-box">
-              <span className="stat-number" aria-live="polite">{counts.users}K+</span>
+              <span className="sr-only">{METRICS.aiUsersK}K+ AI Users</span>
+              <span className="stat-number">
+                <AnimatedCounter value={METRICS.aiUsersK} suffix="K+" />
+              </span>
               <span className="stat-label">AI Users</span>
             </div>
 
             {/* Typical ROI */}
             <div className="kpi-box">
-              <span className="stat-number" aria-live="polite">{counts.roi}%</span>
+              <span className="sr-only">{METRICS.typicalROI}% Typical ROI</span>
+              <span className="stat-number">
+                <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
+              </span>
               <span className="stat-label">Typical ROI</span>
             </div>
 
             {/* Years Leading */}
             <div className="kpi-box">
-              <span className="stat-number" aria-live="polite">{counts.years}+</span>
+              <span className="sr-only">{METRICS.yearsLeading}+ Years Leading</span>
+              <span className="stat-number">
+                <AnimatedCounter value={METRICS.yearsLeading} suffix="+" />
+              </span>
               <span className="stat-label">Years Leading</span>
             </div>
           </div>

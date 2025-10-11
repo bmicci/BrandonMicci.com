@@ -1,15 +1,9 @@
 'use client';
 
-import NewHero from '@/components/NewHero';
-import CaseStudyCards from '@/components/CaseStudyCards';
-import dynamic from 'next/dynamic';
+// import AccessibleNav from '@/components/AccessibleNav'; // Removed - using Navigation from layout
+import HeroSection from '@/components/HeroSection';
+import HashScrollOnLoad from '@/components/HashScrollOnLoad';
 import { useEffect } from 'react';
-
-// Universal background for entire page
-const UniversalBackground = dynamic(
-  () => import('@/components/UniversalBackground'),
-  { ssr: false }
-);
 
 // Regular imports for lighter components
 import ExecutiveExperience from '@/components/ExecutiveExperience';
@@ -18,25 +12,17 @@ import IndustryCollaboration from '@/components/IndustryCollaboration';
 import TestimonialsSection from '@/components/TestimonialsSection';
 
 export default function Home() {
-  // Prevent first-load jump and manage hash anchors after first paint
+  // Prevent first-load jump
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if ('scrollRestoration' in history) (history as History & { scrollRestoration?: string }).scrollRestoration = 'manual';
     const { hash } = window.location;
     if (!hash) window.scrollTo(0, 0);
-    requestAnimationFrame(() => {
-      if (hash) {
-        const el = document.getElementById(hash.slice(1));
-        if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
-      }
-    });
   }, []);
 
   return (
     <div className="text-white relative">
-      {/* Universal Background - covers entire page */}
-      <UniversalBackground />
-
+      <HashScrollOnLoad />
       {/* Hero Section */}
       <section
         id="home"
@@ -51,7 +37,7 @@ export default function Home() {
         className="
           relative
           scroll-mt-[var(--header-h,4.5rem)]
-          lg:-mt-12 xl:-mt-16
+          pt-8
         "
       >
         {/* Strategic Vision Content */}

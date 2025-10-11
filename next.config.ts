@@ -6,9 +6,10 @@ const nextConfig: NextConfig = {
     // domains: ['images.ctfassets.net', '...'] // add if you load remote images
   },
   compress: true,
-  reactStrictMode: true,
+  poweredByHeader: false,
+  generateEtags: true,
   experimental: {
-    optimizePackageImports: ['lucide-react'], // example if you use icon libs
+    optimizeCss: true,
   },
 };
 

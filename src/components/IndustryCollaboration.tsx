@@ -686,7 +686,7 @@ const IndustryCollaboration: React.FC = () => {
                 {/* Primary: email for collaboration discussion */}
                 <a
                   className="bm-btn bm-btn-primary"
-                  href="mailto:brandonmicci@brandonmicci.com?subject=Collaboration Discussion&body=Hi Brandon,%0D%0A%0D%0AI'm interested in discussing potential collaboration opportunities.%0D%0A%0D%0ABest regards,"
+                  href="mailto:brandon@brandonmicci.com?subject=Executive%20Opportunities%20%E2%80%93%20Brandon%20Micci"
                   id="bm-open-form"
                 >
                   <span>Discuss Collaboration</span>
@@ -745,16 +745,44 @@ const IndustryCollaboration: React.FC = () => {
                   </a>
                 </div>
 
-                <span className="bm-cta-small">
-                  or email directly:
-                  <a href="mailto:brandonmicci@brandonmicci.com">
-                    brandonmicci@brandonmicci.com
+                {/* NEW: second row - Save Contact + Email */}
+                <div className="bm-secondary-actions" style={{ marginTop: '12px' }}>
+                  <a
+                    className="bm-btn bm-btn-secondary bm-btn-compact"
+                    href="/brandon-micci.vcf"
+                    download
+                    aria-label="Download vCard for Brandon Micci"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M19,20H5V4H7V7H17V4H19M12,2A1,1 0 0,1 13,3A1,1 0 0,1 12,4A1,1 0 0,1 11,3A1,1 0 0,1 12,2M19,2H14.82C14.4,0.84 13.3,0 12,0C10.7,0 9.6,0.84 9.18,2H5A2,2 0 0,0 3,4V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V4A2,2 0 0,0 19,2Z" />
+                    </svg>
+                    Save Contact (vCard)
                   </a>
-                </span>
+                  <a
+                    className="bm-btn bm-btn-secondary bm-btn-compact"
+                    href="mailto:brandon@brandonmicci.com?subject=Executive%20Opportunities%20%E2%80%93%20Brandon%20Micci"
+                    aria-label="Email Brandon Micci"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z" />
+                    </svg>
+                    Email Brandon
+                  </a>
+                </div>
               </div>
 
               <div className="bm-topics">
-                <h4>Recent Speaking Topics</h4>
+                <h3 className="font-bold">Recent Speaking Topics</h3>
                 <ul>
                   <li>Enterprise AI Strategy &amp; Implementation</li>
                   <li>Scaling LLM Deployments in Financial Services</li>

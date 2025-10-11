@@ -1,42 +1,25 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const base = 'https://brandonmicci.com';
   return [
     {
-      url: 'https://brandonmicci.com',
+      url: `${base}/`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 1,
+      priority: 1.0,
     },
     {
-      url: 'https://brandonmicci.com/#strategic-vision',
+      url: `${base}/contact`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
+      changeFrequency: 'yearly',
+      priority: 0.5,
     },
     {
-      url: 'https://brandonmicci.com/#executive-experience',
+      url: `${base}/privacy`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://brandonmicci.com/#transformation-leadership',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://brandonmicci.com/#professional-impact',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://brandonmicci.com/#connectwithme',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
   ];
 }

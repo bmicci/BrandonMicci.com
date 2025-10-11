@@ -467,7 +467,7 @@ const ExecutiveExperience = memo(() => {
         <div className="px-2 py-6 md:px-8 md:py-12 text-center">
           <h2 className="text-2xl font-bold md:text-5xl">
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              AI Executive Leadership Experience
+              Executive Experience
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-4xl text-sm md:text-xl leading-relaxed text-slate-300 px-2">
@@ -613,9 +613,9 @@ const ExecutiveExperience = memo(() => {
                                 →
                               </span>
                               <div>
-                                <h4 className="mb-1 text-sm font-semibold text-cyan-400 stroke-2 md:text-base md:mb-2">
+                                <div className="mb-1 text-sm font-semibold text-cyan-400 stroke-2 md:text-base md:mb-2">
                                   {achievement.title}
-                                </h4>
+                                </div>
                                 <p className="text-[13px] leading-relaxed text-slate-300 md:text-sm">
                                   {achievement.text}
                                 </p>
@@ -706,9 +706,9 @@ const ExecutiveExperience = memo(() => {
                 />
 
                 <div className="relative z-10">
-                  <h4 className="text-lg font-bold text-white mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
+                  <div className="text-lg font-bold text-white mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
                     {competency.title}
-                  </h4>
+                  </div>
                   
                   <div className="flex flex-wrap gap-2">
                     {competency.skills.map((skill) => (
@@ -758,9 +758,9 @@ const ExecutiveExperience = memo(() => {
             >
               <div className="relative z-10">
                 <div className="text-3xl mb-4">🎓</div>
-                <h4 className="text-lg font-bold text-white mb-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                <h3 className="text-lg font-bold text-white mb-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                   Bachelor of Arts, Business Administration
-                </h4>
+                </h3>
                 <p className="text-cyan-400 font-semibold mb-2">The George Washington University</p>
                 <p className="text-slate-300 text-sm mb-3">School of Business • Washington, D.C.</p>
                 <div className="text-xs text-slate-400">
@@ -784,9 +784,9 @@ const ExecutiveExperience = memo(() => {
             >
               <div className="relative z-10">
                 <div className="text-3xl mb-4">🎯</div>
-                <h4 className="text-lg font-bold text-white mb-3 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                <h3 className="text-lg font-bold text-white mb-3 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                   Leadership Approach
-                </h4>
+                </h3>
                 <div className="space-y-2">
                   {[
                     "Transformational Leadership",

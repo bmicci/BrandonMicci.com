@@ -51,3 +51,37 @@ img { max-width: 100%; height: auto; }
 section {
   scroll-margin-top: var(--header-h);
 }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+/* Reserve layout for section anchors to avoid jumps */
+#home,
+#strategic-vision,
+#executive-experience,
+#transformation-leadership,
+#professional-impact,
+#connectwithme {
+  content-visibility: auto;
+  contain-intrinsic-size: 900px; /* tune based on typical section height */
+}
+
+/* Avoid image-driven shifts if authors forget width/height */
+img { max-width: 100%; height: auto; }
+
+/* Reduce synthetic font effects that cause layout wiggle */
+html, body {
+  font-synthesis-weight: none;
+  font-synthesis-style: none;
+  /* Prefer using font metrics for fallback sizing (modern browsers) */
+  font-size-adjust: from-font;
+}
+
+/* Prevent scrollbars causing reflow during first paints */
+html { overflow-y: scroll; }
+
+/* Utility to reserve line-height space for hero headings (tune if needed) */
+.hero-stable h1 { line-height: 1.05; }
+.hero-stable p  { line-height: 1.35; }
