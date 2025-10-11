@@ -686,7 +686,7 @@ const IndustryCollaboration: React.FC = () => {
                 {/* Primary: email for collaboration discussion */}
                 <a
                   className="bm-btn bm-btn-primary"
-                  href="mailto:brandonmicci@brandonmicci.com?subject=Collaboration Discussion&body=Hi Brandon,%0D%0A%0D%0AI'm interested in discussing potential collaboration opportunities.%0D%0A%0D%0ABest regards,"
+                  href="mailto:brandon@brandonmicci.com?subject=Collaboration Discussion&body=Hi Brandon,%0D%0A%0D%0AI'm interested in discussing potential collaboration opportunities.%0D%0A%0D%0ABest regards,"
                   id="bm-open-form"
                 >
                   <span>Discuss Collaboration</span>
@@ -747,8 +747,8 @@ const IndustryCollaboration: React.FC = () => {
 
                 <span className="bm-cta-small">
                   or email directly:
-                  <a href="mailto:brandonmicci@brandonmicci.com">
-                    brandonmicci@brandonmicci.com
+                  <a href="mailto:brandon@brandonmicci.com">
+                    brandon@brandonmicci.com
                   </a>
                 </span>
               </div>
