@@ -20,6 +20,8 @@ export function middleware(req: NextRequest) {
   // - our own scripts ('self') that carry the matching nonce
   // - Vercel Insights & Analytics
   // - Google Analytics endpoints
+  // Note: style-src 'unsafe-inline' required for Next.js styled-jsx and Tailwind
+  // This is Low risk (styles can't execute code) vs. script-src which is nonce-protected
   res.headers.set(
     'Content-Security-Policy',
     [
@@ -28,7 +30,8 @@ export function middleware(req: NextRequest) {
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
       "font-src 'self' data: https:",
-      "connect-src 'self' https: https://vercel.live https://*.vercel-insights.com https://*.vercel-analytics.com https://www.google-analytics.com https://vitals.vercel-insights.com",
+      "connect-src 'self' https://vercel.live https://*.vercel-insights.com https://*.vercel-analytics.com https://www.google-analytics.com https://vitals.vercel-insights.com",
+      "object-src 'none'",
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self'",
