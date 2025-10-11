@@ -1,26 +1,34 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function middleware(_request: NextRequest) {
-  // Add comprehensive security headers
-  const response = NextResponse.next();
+function makeNonce() {
+  const bytes = crypto.getRandomValues(new Uint8Array(16));
+  // base64 for CSP nonces
+  return Buffer.from(bytes).toString('base64');
+}
 
-  // Strict HTTPS transport (HSTS)
-  response.headers.set(
-    'Strict-Transport-Security',
-    'max-age=63072000; includeSubDomains; preload'
-  );
+export function middleware(req: NextRequest) {
+  const nonce = makeNonce();
 
-  // Content Security Policy - optimized for Next.js + Vercel
-  response.headers.set(
+  // Forward nonce to server components (layout can read it)
+  const requestHeaders = new Headers(req.headers);
+  requestHeaders.set('x-csp-nonce', nonce);
+
+  const res = NextResponse.next({ request: { headers: requestHeaders } });
+
+  // Strict CSP with nonce — allows:
+  // - our own scripts ('self') that carry the matching nonce
+  // - Vercel Insights & Analytics
+  // - Google Analytics endpoints
+  res.headers.set(
     'Content-Security-Policy',
     [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://*.vercel-insights.com https://*.vercel-analytics.com",
+      `script-src 'self' 'nonce-${nonce}' https://vercel.live https://*.vercel-insights.com https://*.vercel-analytics.com https://www.googletagmanager.com https://www.google-analytics.com`,
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
       "font-src 'self' data: https:",
-      "connect-src 'self' https://vercel.live https://*.vercel-insights.com https://*.vercel-analytics.com",
+      "connect-src 'self' https: https://vercel.live https://*.vercel-insights.com https://*.vercel-analytics.com https://www.google-analytics.com https://vitals.vercel-insights.com",
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self'",
@@ -28,25 +36,31 @@ export function middleware(_request: NextRequest) {
     ].join('; ')
   );
 
-  // Frame protection
-  response.headers.set('X-Frame-Options', 'DENY');
-
-  // MIME type sniffing protection
-  response.headers.set('X-Content-Type-Options', 'nosniff');
+  // Strict HTTPS transport (HSTS)
+  res.headers.set(
+    'Strict-Transport-Security',
+    'max-age=63072000; includeSubDomains; preload'
+  );
 
   // Referrer policy
-  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+
+  // Frame protection
+  res.headers.set('X-Frame-Options', 'DENY');
+
+  // MIME type sniffing protection
+  res.headers.set('X-Content-Type-Options', 'nosniff');
 
   // Permissions policy (formerly Feature-Policy)
-  response.headers.set(
+  res.headers.set(
     'Permissions-Policy',
     'camera=(), microphone=(), geolocation=(), interest-cohort=()'
   );
 
   // XSS protection (legacy but still useful)
-  response.headers.set('X-XSS-Protection', '1; mode=block');
+  res.headers.set('X-XSS-Protection', '1; mode=block');
 
-  return response;
+  return res;
 }
 
 export const config = {

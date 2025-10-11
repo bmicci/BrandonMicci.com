@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { headers } from 'next/headers';
+import Script from 'next/script';
 import './globals.css';
 import Navigation from '@/components/Navigation';
 import BackgroundRoot from '@/components/BackgroundRoot';
@@ -130,26 +132,59 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  // Read nonce from middleware
+  const headersList = await headers();
+  const nonce = headersList.get('x-csp-nonce') || undefined;
+
   // Only load analytics on Vercel (production deployment), not local builds
   const isVercel = process.env.VERCEL === '1';
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID; // set in Vercel env
 
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <EnhancedStructuredData />
+        {/* Structured Data with nonce */}
+        <EnhancedStructuredData nonce={nonce} />
+
         {process.env.NODE_ENV === 'development' && <DevLayoutShiftLogger />}
         <Navigation />
         <BackgroundRoot />
         <main id="main" className="mt-12 md:mt-14">
           {children}
         </main>
+
+        {/* Vercel Analytics */}
         {isVercel && <SpeedInsights />}
         {isVercel && <Analytics />}
+
+        {/* Google Analytics (GA4) */}
+        {GA_ID && (
+          <>
+            {/* Loader (external) */}
+            <Script
+              nonce={nonce}
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            {/* Config (inline; must carry nonce) */}
+            <Script id="ga4-init" nonce={nonce} strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}', { 
+                  anonymize_ip: true, 
+                  transport_type: 'beacon'
+                });
+              `}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );

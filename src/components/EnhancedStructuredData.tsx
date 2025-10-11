@@ -320,11 +320,17 @@ function buildJsonLd() {
   return payload;
 }
 
-export default function EnhancedStructuredData() {
+export default function EnhancedStructuredData({
+  nonce,
+}: {
+  nonce?: string;
+}) {
   const data = buildJsonLd();
   return (
     <script
+      id="structured-data"
       type="application/ld+json"
+      nonce={nonce}
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
   );
