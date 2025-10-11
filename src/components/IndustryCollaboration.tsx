@@ -686,7 +686,7 @@ const IndustryCollaboration: React.FC = () => {
                 {/* Primary: email for collaboration discussion */}
                 <a
                   className="bm-btn bm-btn-primary"
-                  href="mailto:brandon@brandonmicci.com?subject=Collaboration Discussion&body=Hi Brandon,%0D%0A%0D%0AI'm interested in discussing potential collaboration opportunities.%0D%0A%0D%0ABest regards,"
+                  href="mailto:brandon@brandonmicci.com?subject=Executive%20Opportunities%20%E2%80%93%20Brandon%20Micci"
                   id="bm-open-form"
                 >
                   <span>Discuss Collaboration</span>
@@ -742,6 +742,41 @@ const IndustryCollaboration: React.FC = () => {
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                     </svg>
                     LinkedIn
+                  </a>
+                </div>
+
+                {/* NEW: second row - Save Contact + Call */}
+                <div className="bm-secondary-actions" style={{ marginTop: '12px' }}>
+                  <a
+                    className="bm-btn bm-btn-secondary bm-btn-compact"
+                    href="/brandon-micci.vcf"
+                    download
+                    aria-label="Download vCard for Brandon Micci"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M19,20H5V4H7V7H17V4H19M12,2A1,1 0 0,1 13,3A1,1 0 0,1 12,4A1,1 0 0,1 11,3A1,1 0 0,1 12,2M19,2H14.82C14.4,0.84 13.3,0 12,0C10.7,0 9.6,0.84 9.18,2H5A2,2 0 0,0 3,4V20A2,2 0 0,0 5,22H19A2,2 0 0,0 21,20V4A2,2 0 0,0 19,2Z" />
+                    </svg>
+                    Save Contact (vCard)
+                  </a>
+                  <a
+                    className="bm-btn bm-btn-secondary bm-btn-compact"
+                    href="tel:+14697088925"
+                    aria-label="Call Brandon Micci at (469) 708-8925"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" />
+                    </svg>
+                    Call (469) 708-8925
                   </a>
                 </div>
 
