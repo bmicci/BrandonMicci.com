@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Navigation from '@/components/Navigation';
 import BackgroundRoot from '@/components/BackgroundRoot';
-import StructuredData from '@/components/StructuredData';
+import EnhancedStructuredData from '@/components/EnhancedStructuredData';
 import DevLayoutShiftLogger from '@/components/DevLayoutShiftLogger';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
@@ -123,7 +123,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <StructuredData />
+        <EnhancedStructuredData />
         {process.env.NODE_ENV === 'development' && <DevLayoutShiftLogger />}
         <Navigation />
         <BackgroundRoot />
