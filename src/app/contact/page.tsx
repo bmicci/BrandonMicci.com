@@ -76,7 +76,7 @@ export default function ContactPage() {
   );
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-12">
+    <main className="mx-auto max-w-4xl px-6 pt-24 pb-16">
       <ContactJsonLd />
       <section className="prose prose-invert">
         <h1>Contact</h1>
@@ -84,31 +84,31 @@ export default function ContactPage() {
           For <strong>executive search</strong>, <strong>advisory</strong>, or <strong>speaking</strong> inquiries, email me directly:
         </p>
 
-        <div className="not-prose mt-6 flex flex-col gap-3">
+        <div className="not-prose mt-8 flex flex-col gap-3">
           <a
             href={`mailto:${EMAIL}?subject=${subjectExec}&body=${bodyExec}`}
-            className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-medium hover:bg-white/10"
+            className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium hover:bg-white/[0.08] hover:border-white/15 transition"
             aria-label="Email Brandon for executive inquiries"
           >
-            ✉️ Executive inquiries — {EMAIL}
+            <span className="mr-2">✉️</span> Executive inquiries — {EMAIL}
           </a>
           <a
             href={`mailto:${EMAIL}?subject=${subjectSpeak}&body=${bodySpeak}`}
-            className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-medium hover:bg-white/10"
+            className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium hover:bg-white/[0.08] hover:border-white/15 transition"
             aria-label="Email Brandon for speaking and advisory inquiries"
           >
-            🎤 Speaking & advisory — {EMAIL}
+            <span className="mr-2">🎤</span> Speaking & advisory — {EMAIL}
           </a>
           <a
             href="/brandon-micci.vcf"
-            className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm font-medium hover:bg-white/10"
+            className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-r from-[#0E1B33] to-[#0A0F1F] px-5 py-3 text-sm font-medium hover:from-[#14274d] hover:to-[#0f1a2f] transition"
             aria-label="Download Brandon's vCard"
           >
-            📇 Download vCard (Brandon Micci)
+            <span className="mr-2">📇</span> Download vCard (Brandon Micci)
           </a>
         </div>
 
-        <hr className="my-8 border-white/10" />
+        <hr className="my-8 border-white/5" />
 
         <h2>Response Time</h2>
         <p>I aim to respond within one business day to executive search and event requests.</p>

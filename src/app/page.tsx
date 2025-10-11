@@ -2,6 +2,7 @@
 
 // import AccessibleNav from '@/components/AccessibleNav'; // Removed - using Navigation from layout
 import HeroSection from '@/components/HeroSection';
+import HashScrollOnLoad from '@/components/HashScrollOnLoad';
 import { useEffect } from 'react';
 
 // Regular imports for lighter components
@@ -15,22 +16,17 @@ import IndustryCollaboration from '@/components/IndustryCollaboration';
 import TestimonialsSection from '@/components/TestimonialsSection';
 
 export default function Home() {
-  // Prevent first-load jump and manage hash anchors after first paint
+  // Prevent first-load jump
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if ('scrollRestoration' in history) (history as History & { scrollRestoration?: string }).scrollRestoration = 'manual';
     const { hash } = window.location;
     if (!hash) window.scrollTo(0, 0);
-    requestAnimationFrame(() => {
-      if (hash) {
-        const el = document.getElementById(hash.slice(1));
-        if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
-      }
-    });
   }, []);
 
   return (
     <div className="text-white relative">
+      <HashScrollOnLoad />
       {/* Hero Section */}
       <section
         id="home"
