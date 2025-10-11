@@ -52,8 +52,12 @@ const TestimonialsSection: React.FC = () => {
           left: 0;
           width: 100%;
           height: 100%;
-          background-image: 
-            linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+          background-image:
+            linear-gradient(
+              90deg,
+              rgba(0, 212, 255, 0.03) 1px,
+              transparent 1px
+            ),
             linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px);
           background-size: 100px 100px;
           animation: gridSlide 25s linear infinite;
@@ -62,8 +66,12 @@ const TestimonialsSection: React.FC = () => {
         }
 
         @keyframes gridSlide {
-          0% { transform: translate(0, 0); }
-          100% { transform: translate(100px, 100px); }
+          0% {
+            transform: translate(0, 0);
+          }
+          100% {
+            transform: translate(100px, 100px);
+          }
         }
 
         /* SCROLLING BANNER */
@@ -119,8 +127,8 @@ const TestimonialsSection: React.FC = () => {
           padding: 1.5px;
           background: linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff);
           background-size: 200% 200%;
-          -webkit-mask: 
-            linear-gradient(#fff 0 0) content-box, 
+          -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
             linear-gradient(#fff 0 0);
           -webkit-mask-composite: xor;
           mask-composite: exclude;
@@ -129,15 +137,21 @@ const TestimonialsSection: React.FC = () => {
         }
 
         @keyframes borderShift {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
         }
 
         .testimonial-card:hover {
           transform: translateY(-8px) scale(1.02);
           background: rgba(255, 255, 255, 0.05);
-          box-shadow: 
+          box-shadow:
             0 20px 40px rgba(0, 212, 255, 0.2),
             inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
@@ -160,8 +174,13 @@ const TestimonialsSection: React.FC = () => {
         }
 
         @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
         }
 
         /* Testimonial content */
@@ -316,7 +335,8 @@ const TestimonialsSection: React.FC = () => {
           <span className="gradient-text">PROFESSIONAL IMPACT</span>
         </h2>
         <p className="testimonials-subtitle">
-          What technology leaders say about working with me and the impact I&apos;ve delivered
+          What technology leaders say about working with me and the impact
+          I&apos;ve delivered
         </p>
       </div>
 
@@ -324,13 +344,17 @@ const TestimonialsSection: React.FC = () => {
       <div className="testimonials-container">
         <div className="testimonials-banner">
           <div className="testimonials-track">
-            
             {/* Testimonial 1 */}
             <div className="testimonial-card">
               <div className="quote-icon">&quot;</div>
               <div className="testimonial-content">
                 <p className="testimonial-text">
-                  &quot;Brandon has an unwavering desire for his team to be the absolute best! He is the epitome of a servant leader that leads by example. One of Brandon&apos;s best qualities is his ability to always push the needle. He does not settle for mediocrity and has the propensity to always go above and beyond.&quot;
+                  &quot;Brandon has an unwavering desire for his team to be the
+                  absolute best! He is the epitome of a servant leader that
+                  leads by example. One of Brandon&apos;s best qualities is his
+                  ability to always push the needle. He does not settle for
+                  mediocrity and has the propensity to always go above and
+                  beyond.&quot;
                 </p>
                 <div className="testimonial-author">
                   <div className="author-avatar">DC</div>
@@ -339,7 +363,9 @@ const TestimonialsSection: React.FC = () => {
                     <div className="author-title">Technology Analyst</div>
                     <div className="author-company">Direct Report</div>
                   </div>
-                  <a href="#" className="linkedin-link">in</a>
+                  <a href="#" className="linkedin-link">
+                    in
+                  </a>
                 </div>
               </div>
             </div>
@@ -349,16 +375,25 @@ const TestimonialsSection: React.FC = () => {
               <div className="quote-icon">&quot;</div>
               <div className="testimonial-content">
                 <p className="testimonial-text">
-                  &quot;With Brandon, you get a rare combination of business background, process expertise, technical aptitude and leadership. He&apos;s a Leader with an agenda to accelerate change and drive innovation. His positive impact on Citigroup&apos;s culture and drive for digital and data transformation cannot be overstated.&quot;
+                  &quot;With Brandon, you get a rare combination of business
+                  background, process expertise, technical aptitude and
+                  leadership. He&apos;s a Leader with an agenda to accelerate
+                  change and drive innovation. His positive impact on
+                  Citigroup&apos;s culture and drive for digital and data
+                  transformation cannot be overstated.&quot;
                 </p>
                 <div className="testimonial-author">
                   <div className="author-avatar">DK</div>
                   <div className="author-info">
                     <div className="author-name">Dawn E Kosinski</div>
                     <div className="author-title">Global Account Director</div>
-                    <div className="author-company">Tableau, a Salesforce Company</div>
+                    <div className="author-company">
+                      Tableau, a Salesforce Company
+                    </div>
                   </div>
-                  <a href="#" className="linkedin-link">in</a>
+                  <a href="#" className="linkedin-link">
+                    in
+                  </a>
                 </div>
               </div>
             </div>
@@ -368,7 +403,11 @@ const TestimonialsSection: React.FC = () => {
               <div className="quote-icon">&quot;</div>
               <div className="testimonial-content">
                 <p className="testimonial-text">
-                  &quot;Brandon LIVES and embodies &apos;Get it done in IT.&apos; A no-nonsense, go get it, problem solver is who Brandon is. He is the guy who can get the room to both understand and act. One of my favorite folks I have worked with for this very reason.&quot;
+                  &quot;Brandon LIVES and embodies &apos;Get it done in
+                  IT.&apos; A no-nonsense, go get it, problem solver is who
+                  Brandon is. He is the guy who can get the room to both
+                  understand and act. One of my favorite folks I have worked
+                  with for this very reason.&quot;
                 </p>
                 <div className="testimonial-author">
                   <div className="author-avatar">JJ</div>
@@ -377,7 +416,9 @@ const TestimonialsSection: React.FC = () => {
                     <div className="author-title">Global Account Director</div>
                     <div className="author-company">Alteryx</div>
                   </div>
-                  <a href="#" className="linkedin-link">in</a>
+                  <a href="#" className="linkedin-link">
+                    in
+                  </a>
                 </div>
               </div>
             </div>
@@ -386,7 +427,11 @@ const TestimonialsSection: React.FC = () => {
               <div className="quote-icon">&quot;</div>
               <div className="testimonial-content">
                 <p className="testimonial-text">
-                  &quot;Brandon not only excels at managing a technology team and portfolio, but also pioneers key IoT initiatives, mentors younger professionals, and drives innovative technology change. This rare mix of productivity, leadership, vision, and ambition sets a great example.&quot;
+                  &quot;Brandon not only excels at managing a technology team
+                  and portfolio, but also pioneers key IoT initiatives, mentors
+                  younger professionals, and drives innovative technology
+                  change. This rare mix of productivity, leadership, vision, and
+                  ambition sets a great example.&quot;
                 </p>
                 <div className="testimonial-author">
                   <div className="author-avatar">BD</div>
@@ -395,7 +440,9 @@ const TestimonialsSection: React.FC = () => {
                     <div className="author-title">Sales Director</div>
                     <div className="author-company">Snowflake</div>
                   </div>
-                  <a href="#" className="linkedin-link">in</a>
+                  <a href="#" className="linkedin-link">
+                    in
+                  </a>
                 </div>
               </div>
             </div>
@@ -404,16 +451,25 @@ const TestimonialsSection: React.FC = () => {
               <div className="quote-icon">&quot;</div>
               <div className="testimonial-content">
                 <p className="testimonial-text">
-                  &quot;Brandon is an analytic, responsive and intelligent risk-taking manager. He is innovative, creative and ambitious. His willingness to learn and take on new responsibilities is something to be desired in any tech leader.&quot;
+                  &quot;Brandon is an analytic, responsive and intelligent
+                  risk-taking manager. He is innovative, creative and ambitious.
+                  His willingness to learn and take on new responsibilities is
+                  something to be desired in any tech leader.&quot;
                 </p>
                 <div className="testimonial-author">
                   <div className="author-avatar">JK</div>
                   <div className="author-info">
                     <div className="author-name">Juzer Kanchwala</div>
-                    <div className="author-title">SupplyChain Integration Lead</div>
-                    <div className="author-company">SAP Ariba Cloud Integration</div>
+                    <div className="author-title">
+                      SupplyChain Integration Lead
+                    </div>
+                    <div className="author-company">
+                      SAP Ariba Cloud Integration
+                    </div>
                   </div>
-                  <a href="#" className="linkedin-link">in</a>
+                  <a href="#" className="linkedin-link">
+                    in
+                  </a>
                 </div>
               </div>
             </div>
@@ -422,16 +478,24 @@ const TestimonialsSection: React.FC = () => {
               <div className="quote-icon">&quot;</div>
               <div className="testimonial-content">
                 <p className="testimonial-text">
-                  &quot;Brandon is a highly motivated and passionate IT professional who brings serious game to the Data & Analytics arena. Whether architecting an IoT solution or developing Tableau visualizations, he focuses on what the Customer needs.&quot;
+                  &quot;Brandon is a highly motivated and passionate IT
+                  professional who brings serious game to the Data & Analytics
+                  arena. Whether architecting an IoT solution or developing
+                  Tableau visualizations, he focuses on what the Customer
+                  needs.&quot;
                 </p>
                 <div className="testimonial-author">
                   <div className="author-avatar">EH</div>
                   <div className="author-info">
                     <div className="author-name">Ed Haas</div>
-                    <div className="author-title">Technology Category Manager</div>
+                    <div className="author-title">
+                      Technology Category Manager
+                    </div>
                     <div className="author-company">Southwest Airlines</div>
                   </div>
-                  <a href="#" className="linkedin-link">in</a>
+                  <a href="#" className="linkedin-link">
+                    in
+                  </a>
                 </div>
               </div>
             </div>
@@ -441,7 +505,10 @@ const TestimonialsSection: React.FC = () => {
               <div className="quote-icon">&quot;</div>
               <div className="testimonial-content">
                 <p className="testimonial-text">
-                  &quot;Brandon has an unwavering desire for his team to be the absolute best! He is the epitome of a servant leader that leads by example. One of Brandon&apos;s best qualities is his ability to always push the needle.&quot;
+                  &quot;Brandon has an unwavering desire for his team to be the
+                  absolute best! He is the epitome of a servant leader that
+                  leads by example. One of Brandon&apos;s best qualities is his
+                  ability to always push the needle.&quot;
                 </p>
                 <div className="testimonial-author">
                   <div className="author-avatar">DC</div>
@@ -450,7 +517,9 @@ const TestimonialsSection: React.FC = () => {
                     <div className="author-title">Technology Analyst</div>
                     <div className="author-company">Direct Report</div>
                   </div>
-                  <a href="#" className="linkedin-link">in</a>
+                  <a href="#" className="linkedin-link">
+                    in
+                  </a>
                 </div>
               </div>
             </div>
@@ -459,16 +528,23 @@ const TestimonialsSection: React.FC = () => {
               <div className="quote-icon">&quot;</div>
               <div className="testimonial-content">
                 <p className="testimonial-text">
-                  &quot;With Brandon, you get a rare combination of business background, process expertise, technical aptitude and leadership. He&apos;s a Leader with an agenda to accelerate change and drive innovation.&quot;
+                  &quot;With Brandon, you get a rare combination of business
+                  background, process expertise, technical aptitude and
+                  leadership. He&apos;s a Leader with an agenda to accelerate
+                  change and drive innovation.&quot;
                 </p>
                 <div className="testimonial-author">
                   <div className="author-avatar">DK</div>
                   <div className="author-info">
                     <div className="author-name">Dawn E Kosinski</div>
                     <div className="author-title">Global Account Director</div>
-                    <div className="author-company">Tableau, a Salesforce Company</div>
+                    <div className="author-company">
+                      Tableau, a Salesforce Company
+                    </div>
                   </div>
-                  <a href="#" className="linkedin-link">in</a>
+                  <a href="#" className="linkedin-link">
+                    in
+                  </a>
                 </div>
               </div>
             </div>
@@ -477,16 +553,23 @@ const TestimonialsSection: React.FC = () => {
               <div className="quote-icon">&quot;</div>
               <div className="testimonial-content">
                 <p className="testimonial-text">
-                  &quot;Brandon LIVES and embodies &apos;Get it done in IT.&apos; A no-nonsense, go get it, problem solver is who Brandon is. He is the guy who can get the room to both understand and act.&quot;
+                  &quot;Brandon LIVES and embodies &apos;Get it done in
+                  IT.&apos; A no-nonsense, go get it, problem solver is who
+                  Brandon is. He is the guy who can get the room to both
+                  understand and act.&quot;
                 </p>
                 <div className="testimonial-author">
                   <div className="author-avatar">JJ</div>
                   <div className="author-info">
                     <div className="author-name">John Jensen</div>
                     <div className="author-title">Analytics Specialist</div>
-                    <div className="author-company">Tableau, a Salesforce Company</div>
+                    <div className="author-company">
+                      Tableau, a Salesforce Company
+                    </div>
                   </div>
-                  <a href="#" className="linkedin-link">in</a>
+                  <a href="#" className="linkedin-link">
+                    in
+                  </a>
                 </div>
               </div>
             </div>
@@ -495,7 +578,10 @@ const TestimonialsSection: React.FC = () => {
               <div className="quote-icon">&quot;</div>
               <div className="testimonial-content">
                 <p className="testimonial-text">
-                  &quot;Brandon not only excels at managing a technology team and portfolio, but also pioneers key IoT initiatives, mentors younger professionals, and drives innovative technology change.&quot;
+                  &quot;Brandon not only excels at managing a technology team
+                  and portfolio, but also pioneers key IoT initiatives, mentors
+                  younger professionals, and drives innovative technology
+                  change.&quot;
                 </p>
                 <div className="testimonial-author">
                   <div className="author-avatar">BD</div>
@@ -504,7 +590,9 @@ const TestimonialsSection: React.FC = () => {
                     <div className="author-title">Sales Director</div>
                     <div className="author-company">Snowflake</div>
                   </div>
-                  <a href="#" className="linkedin-link">in</a>
+                  <a href="#" className="linkedin-link">
+                    in
+                  </a>
                 </div>
               </div>
             </div>
@@ -513,16 +601,25 @@ const TestimonialsSection: React.FC = () => {
               <div className="quote-icon">&quot;</div>
               <div className="testimonial-content">
                 <p className="testimonial-text">
-                  &quot;Brandon is an analytic, responsive and intelligent risk-taking manager. He is innovative, creative and ambitious. His willingness to learn and take on new responsibilities is something to be desired.&quot;
+                  &quot;Brandon is an analytic, responsive and intelligent
+                  risk-taking manager. He is innovative, creative and ambitious.
+                  His willingness to learn and take on new responsibilities is
+                  something to be desired.&quot;
                 </p>
                 <div className="testimonial-author">
                   <div className="author-avatar">JK</div>
                   <div className="author-info">
                     <div className="author-name">Juzer Kanchwala</div>
-                    <div className="author-title">SupplyChain Integration Lead</div>
-                    <div className="author-company">SAP Ariba Cloud Integration</div>
+                    <div className="author-title">
+                      SupplyChain Integration Lead
+                    </div>
+                    <div className="author-company">
+                      SAP Ariba Cloud Integration
+                    </div>
                   </div>
-                  <a href="#" className="linkedin-link">in</a>
+                  <a href="#" className="linkedin-link">
+                    in
+                  </a>
                 </div>
               </div>
             </div>
@@ -531,20 +628,26 @@ const TestimonialsSection: React.FC = () => {
               <div className="quote-icon">&quot;</div>
               <div className="testimonial-content">
                 <p className="testimonial-text">
-                  &quot;Brandon is a highly motivated and passionate IT professional who brings serious game to the Data & Analytics arena. Whether architecting an IoT solution or developing Tableau visualizations.&quot;
+                  &quot;Brandon is a highly motivated and passionate IT
+                  professional who brings serious game to the Data & Analytics
+                  arena. Whether architecting an IoT solution or developing
+                  Tableau visualizations.&quot;
                 </p>
                 <div className="testimonial-author">
                   <div className="author-avatar">EH</div>
                   <div className="author-info">
                     <div className="author-name">Ed Haas</div>
-                    <div className="author-title">Technology Category Manager</div>
+                    <div className="author-title">
+                      Technology Category Manager
+                    </div>
                     <div className="author-company">Southwest Airlines</div>
                   </div>
-                  <a href="#" className="linkedin-link">in</a>
+                  <a href="#" className="linkedin-link">
+                    in
+                  </a>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>

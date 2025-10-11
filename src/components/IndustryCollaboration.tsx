@@ -746,7 +746,10 @@ const IndustryCollaboration: React.FC = () => {
                 </div>
 
                 {/* NEW: second row - Save Contact + Email */}
-                <div className="bm-secondary-actions" style={{ marginTop: '12px' }}>
+                <div
+                  className="bm-secondary-actions"
+                  style={{ marginTop: '12px' }}
+                >
                   <a
                     className="bm-btn bm-btn-secondary bm-btn-compact"
                     href="/brandon-micci.vcf"

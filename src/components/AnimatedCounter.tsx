@@ -13,14 +13,21 @@ type Props = {
   format?: (n: number) => string | number;
 };
 
-export default function AnimatedCounter({ value, suffix = '', duration = 1200, format }: Props) {
+export default function AnimatedCounter({
+  value,
+  suffix = '',
+  duration = 1200,
+  format,
+}: Props) {
   const el = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     if (!el.current) return;
     if (typeof window === 'undefined') return;
 
-    const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    const prefersReduced = window.matchMedia?.(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
     if (prefersReduced) {
       el.current.textContent = `${format ? format(value) : value}${suffix}`;
       return;
@@ -44,4 +51,3 @@ export default function AnimatedCounter({ value, suffix = '', duration = 1200, f
 
   return <span ref={el} aria-hidden="true" />;
 }
-

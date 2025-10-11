@@ -14,7 +14,7 @@ export default function SmoothLink({
 }) {
   const pathname = usePathname();
   const reduced = usePrefersReducedMotion();
-  
+
   const onClick = (e: React.MouseEvent) => {
     // Only prevent default if we're already on the homepage
     if (pathname === '/') {
@@ -26,10 +26,15 @@ export default function SmoothLink({
     }
     // Otherwise, let Next.js handle the navigation to /#section
   };
-  
+
   // Always link to homepage + hash so it works from any page
   return (
-    <Link href={`/#${toId}`} onClick={onClick} className={className} scroll={false}>
+    <Link
+      href={`/#${toId}`}
+      onClick={onClick}
+      className={className}
+      scroll={false}
+    >
       {children}
     </Link>
   );

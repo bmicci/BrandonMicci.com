@@ -3,9 +3,12 @@
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 
-const PreferredBackground = dynamic(() => import('@/components/UniversalBackground'), {
-  ssr: false,
-});
+const PreferredBackground = dynamic(
+  () => import('@/components/UniversalBackground'),
+  {
+    ssr: false,
+  }
+);
 
 export default function BackgroundRoot() {
   const [enableAnim, setEnableAnim] = useState(false);
@@ -32,7 +35,10 @@ export default function BackgroundRoot() {
       });
       po.observe({ type: 'largest-contentful-paint', buffered: true });
       // Fallback: idle or 2s timeout
-      const win = window as Window & { requestIdleCallback?: (cb: () => void) => number; cancelIdleCallback?: (id: number) => void };
+      const win = window as Window & {
+        requestIdleCallback?: (cb: () => void) => number;
+        cancelIdleCallback?: (id: number) => void;
+      };
       const id = win.requestIdleCallback?.(start) ?? setTimeout(start, 2000);
       return () => {
         win.cancelIdleCallback?.(id);

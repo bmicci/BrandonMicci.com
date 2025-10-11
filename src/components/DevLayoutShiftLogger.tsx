@@ -9,16 +9,20 @@ export default function DevLayoutShiftLogger() {
     // Observe layout shifts (CLS)
     const po = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
-        const ls = entry as PerformanceEntry & { 
-          hadRecentInput?: boolean; 
-          value?: number; 
-          sources?: Array<{ node?: Element }> 
+        const ls = entry as PerformanceEntry & {
+          hadRecentInput?: boolean;
+          value?: number;
+          sources?: Array<{ node?: Element }>;
         };
         if (!ls.hadRecentInput) {
           const impact = ls.value?.toFixed(4);
           // Inspect impacted nodes (top 1)
           const node = ls?.sources?.[0]?.node as Element | undefined;
-          console.warn('[CLS]', impact, node ? node.tagName + (node.id ? `#${node.id}` : '') : '(no node)');
+          console.warn(
+            '[CLS]',
+            impact,
+            node ? node.tagName + (node.id ? `#${node.id}` : '') : '(no node)'
+          );
         }
       }
     });
@@ -30,4 +34,3 @@ export default function DevLayoutShiftLogger() {
 
   return null;
 }
-

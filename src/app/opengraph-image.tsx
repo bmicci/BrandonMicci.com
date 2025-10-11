@@ -19,7 +19,8 @@ export default async function OpengraphImage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'flex-start',
-          background: 'linear-gradient(135deg, #060E1B 0%, #0A0F1F 50%, #0E1B33 100%)',
+          background:
+            'linear-gradient(135deg, #060E1B 0%, #0A0F1F 50%, #0E1B33 100%)',
           fontFamily:
             'Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Helvetica Neue, Arial, sans-serif',
         }}

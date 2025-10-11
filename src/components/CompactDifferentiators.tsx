@@ -309,8 +309,9 @@ const CompactDifferentiators = () => {
                   Visionary Leadership:
                 </h3>
                 <p className="item-text">
-                  Leading cutting-edge AI initiatives that reshape industries—from 
-                  pioneering LLM deployments to building next-gen analytics platforms.
+                  Leading cutting-edge AI initiatives that reshape
+                  industries—from pioneering LLM deployments to building
+                  next-gen analytics platforms.
                 </p>
               </div>
 
@@ -320,8 +321,9 @@ const CompactDifferentiators = () => {
                   Execution Excellence:
                 </h3>
                 <p className="item-text">
-                  Proven track record of turning ambitious visions into measurable 
-                  results—consistently delivering on time, on budget, at scale.
+                  Proven track record of turning ambitious visions into
+                  measurable results—consistently delivering on time, on budget,
+                  at scale.
                 </p>
               </div>
 
@@ -331,8 +333,9 @@ const CompactDifferentiators = () => {
                   Strategic Thinking:
                 </h3>
                 <p className="item-text">
-                  C-suite advisory capabilities that translate complex AI strategies 
-                  into clear business roadmaps and competitive advantages.
+                  C-suite advisory capabilities that translate complex AI
+                  strategies into clear business roadmaps and competitive
+                  advantages.
                 </p>
               </div>
 
@@ -342,8 +345,9 @@ const CompactDifferentiators = () => {
                   Innovation Catalyst:
                 </h3>
                 <p className="item-text">
-                  Building transformative solutions that don&apos;t just solve today&apos;s 
-                  problems—they anticipate tomorrow&apos;s opportunities.
+                  Building transformative solutions that don&apos;t just solve
+                  today&apos;s problems—they anticipate tomorrow&apos;s
+                  opportunities.
                 </p>
               </div>
             </div>

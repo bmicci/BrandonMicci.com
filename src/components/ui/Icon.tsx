@@ -1,12 +1,30 @@
-import React, { memo } from "react";
-import * as L from "lucide-react";
+import React, { memo } from 'react';
+import * as L from 'lucide-react';
 
 type Name =
-  | "sparkle" | "brain" | "layers" | "target" | "badge"
-  | "globe" | "barchart" | "linechart" | "network" | "cloud"
-  | "mail" | "file" | "download" | "external-link"
-  | "file-text" | "briefcase" | "presentation" | "clipboard-list"
-  | "trending-up" | "settings" | "construction" | "rocket" | "zap";
+  | 'sparkle'
+  | 'brain'
+  | 'layers'
+  | 'target'
+  | 'badge'
+  | 'globe'
+  | 'barchart'
+  | 'linechart'
+  | 'network'
+  | 'cloud'
+  | 'mail'
+  | 'file'
+  | 'download'
+  | 'external-link'
+  | 'file-text'
+  | 'briefcase'
+  | 'presentation'
+  | 'clipboard-list'
+  | 'trending-up'
+  | 'settings'
+  | 'construction'
+  | 'rocket'
+  | 'zap';
 
 const MAP: Record<Name, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
   sparkle: L.Sparkles,
@@ -22,12 +40,12 @@ const MAP: Record<Name, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
   mail: L.Mail,
   file: L.FileText,
   download: L.Download,
-  "external-link": L.ExternalLink,
-  "file-text": L.FileText,
+  'external-link': L.ExternalLink,
+  'file-text': L.FileText,
   briefcase: L.Briefcase,
   presentation: L.Presentation,
-  "clipboard-list": L.ClipboardList,
-  "trending-up": L.TrendingUp,
+  'clipboard-list': L.ClipboardList,
+  'trending-up': L.TrendingUp,
   settings: L.Settings,
   construction: L.Construction,
   rocket: L.Rocket,
@@ -36,19 +54,30 @@ const MAP: Record<Name, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
 
 export type IconProps = {
   name: Name;
-  size?: "sm" | "md" | "lg";
+  size?: 'sm' | 'md' | 'lg';
   className?: string;
   gradient?: boolean; // cyan→blue gradient
-  stroke?: number;    // 1 | 1.5 | 2
+  stroke?: number; // 1 | 1.5 | 2
 };
 
-const sizeCN = { sm: "w-4 h-4", md: "w-6 h-6", lg: "w-8 h-8" };
+const sizeCN = { sm: 'w-4 h-4', md: 'w-6 h-6', lg: 'w-8 h-8' };
 
-export const Icon = memo(({ name, size="md", className="", gradient=true, stroke=2 }: IconProps) => {
-  const Cmp = MAP[name];
-  const paint = gradient
-    ? "text-cyan-400"
-    : "text-cyan-400";
-  return <Cmp className={`${sizeCN[size]} ${paint} ${className}`} strokeWidth={stroke} />;
-});
-Icon.displayName = "Icon";
+export const Icon = memo(
+  ({
+    name,
+    size = 'md',
+    className = '',
+    gradient = true,
+    stroke = 2,
+  }: IconProps) => {
+    const Cmp = MAP[name];
+    const paint = gradient ? 'text-cyan-400' : 'text-cyan-400';
+    return (
+      <Cmp
+        className={`${sizeCN[size]} ${paint} ${className}`}
+        strokeWidth={stroke}
+      />
+    );
+  }
+);
+Icon.displayName = 'Icon';

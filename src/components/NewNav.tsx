@@ -16,25 +16,42 @@ export default function NewNav() {
             </div>
             <div>
               <div className="text-white font-semibold">Brandon Micci</div>
-              <div className="text-xs text-white/60">AI & Digital Transformation</div>
+              <div className="text-xs text-white/60">
+                AI & Digital Transformation
+              </div>
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-white/80 hover:text-white transition-colors">
+            <a
+              href="#home"
+              className="text-white/80 hover:text-white transition-colors"
+            >
               Home
             </a>
-            <a href="#strategic-vision" className="text-white/80 hover:text-white transition-colors">
+            <a
+              href="#strategic-vision"
+              className="text-white/80 hover:text-white transition-colors"
+            >
               Strategic Advantage
             </a>
-            <a href="#executive-experience" className="text-white/80 hover:text-white transition-colors">
+            <a
+              href="#executive-experience"
+              className="text-white/80 hover:text-white transition-colors"
+            >
               Executive Experience
             </a>
-            <a href="#transformation-leadership" className="text-white/80 hover:text-white transition-colors">
+            <a
+              href="#transformation-leadership"
+              className="text-white/80 hover:text-white transition-colors"
+            >
               Transformation Leadership
             </a>
-            <a href="#professional-impact" className="text-white/80 hover:text-white transition-colors">
+            <a
+              href="#professional-impact"
+              className="text-white/80 hover:text-white transition-colors"
+            >
               Professional Impact
             </a>
             <a
@@ -53,9 +70,15 @@ export default function NewNav() {
             onClick={() => setOpen((o) => !o)}
           >
             <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-              <div className={`w-full h-0.5 bg-white transition-transform ${open ? 'rotate-45 translate-y-1.5' : ''}`}></div>
-              <div className={`w-full h-0.5 bg-white transition-opacity ${open ? 'opacity-0' : ''}`}></div>
-              <div className={`w-full h-0.5 bg-white transition-transform ${open ? '-rotate-45 -translate-y-1.5' : ''}`}></div>
+              <div
+                className={`w-full h-0.5 bg-white transition-transform ${open ? 'rotate-45 translate-y-1.5' : ''}`}
+              ></div>
+              <div
+                className={`w-full h-0.5 bg-white transition-opacity ${open ? 'opacity-0' : ''}`}
+              ></div>
+              <div
+                className={`w-full h-0.5 bg-white transition-transform ${open ? '-rotate-45 -translate-y-1.5' : ''}`}
+              ></div>
             </div>
           </button>
         </div>
@@ -67,19 +90,39 @@ export default function NewNav() {
           transition-transform duration-200 ${open ? 'translate-x-0' : 'translate-x-full'} md:static md:translate-x-0 md:hidden`}
         >
           <div className="flex flex-col h-full pt-16 px-6">
-            <a href="#home" className="text-white py-3 border-b border-white/10" onClick={() => setOpen(false)}>
+            <a
+              href="#home"
+              className="text-white py-3 border-b border-white/10"
+              onClick={() => setOpen(false)}
+            >
               Home
             </a>
-            <a href="#strategic-vision" className="text-white py-3 border-b border-white/10" onClick={() => setOpen(false)}>
+            <a
+              href="#strategic-vision"
+              className="text-white py-3 border-b border-white/10"
+              onClick={() => setOpen(false)}
+            >
               Strategic Advantage
             </a>
-            <a href="#executive-experience" className="text-white py-3 border-b border-white/10" onClick={() => setOpen(false)}>
+            <a
+              href="#executive-experience"
+              className="text-white py-3 border-b border-white/10"
+              onClick={() => setOpen(false)}
+            >
               Executive Experience
             </a>
-            <a href="#transformation-leadership" className="text-white py-3 border-b border-white/10" onClick={() => setOpen(false)}>
+            <a
+              href="#transformation-leadership"
+              className="text-white py-3 border-b border-white/10"
+              onClick={() => setOpen(false)}
+            >
               Transformation Leadership
             </a>
-            <a href="#professional-impact" className="text-white py-3 border-b border-white/10" onClick={() => setOpen(false)}>
+            <a
+              href="#professional-impact"
+              className="text-white py-3 border-b border-white/10"
+              onClick={() => setOpen(false)}
+            >
               Professional Impact
             </a>
             <a

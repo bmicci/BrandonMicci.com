@@ -23,7 +23,13 @@ const geistMono = Geist_Mono({
   display: 'swap',
   preload: true,
   adjustFontFallback: true,
-  fallback: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace'],
+  fallback: [
+    'ui-monospace',
+    'SFMono-Regular',
+    'Menlo',
+    'Consolas',
+    'monospace',
+  ],
 });
 
 export const viewport: Viewport = {
@@ -34,7 +40,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Brandon Micci - VP Head of AI Products | Enterprise AI Transformation Leader',
+    default:
+      'Brandon Micci - VP Head of AI Products | Enterprise AI Transformation Leader',
     template: '%s | Brandon Micci',
   },
   description:
@@ -88,7 +95,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Brandon Micci - VP Head of AI Products | Enterprise AI Transformation Leader',
+    title:
+      'Brandon Micci - VP Head of AI Products | Enterprise AI Transformation Leader',
     description:
       'VP Head of AI Products at JPMorgan Chase. 27K+ LLM users deployed, $400M+ revenue generated. Expert in enterprise AI strategy, digital transformation.',
     images: ['/opengraph-image'],
@@ -99,8 +107,16 @@ export const metadata: Metadata = {
       { url: '/favicon.ico', sizes: 'any' },
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+      {
+        url: '/android-chrome-192x192.png',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      {
+        url: '/android-chrome-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+      },
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
@@ -117,12 +133,16 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <EnhancedStructuredData />
         {process.env.NODE_ENV === 'development' && <DevLayoutShiftLogger />}
         <Navigation />
         <BackgroundRoot />
-        <main id="main" className="mt-12 md:mt-14">{children}</main>
+        <main id="main" className="mt-12 md:mt-14">
+          {children}
+        </main>
         {isVercel && <SpeedInsights />}
         {isVercel && <Analytics />}
       </body>

@@ -48,7 +48,7 @@ const Navigation = () => {
   ) => {
     // Only prevent default and smooth scroll if we're already on the homepage
     const isOnHomepage = window.location.pathname === '/';
-    
+
     if (isOnHomepage) {
       e.preventDefault();
       const target = document.getElementById(targetId);
@@ -199,12 +199,29 @@ const Navigation = () => {
         /* Removed scroll-based size changes to prevent CLS */
 
         @media (min-width: 769px) and (max-width: 1023px) {
-          .nav-container { padding: 0.5rem 1.25rem; min-height: 68px; height: 68px; }
-          .logo-bm { width: 46px; height: 46px; }
-          .logo-name { font-size: 0.9rem; }
-          .logo-title { font-size: 0.55rem; }
-          .nav-item :global(a.nav-link) { padding: 0.35rem 0.7rem; font-size: 0.82rem; }
-          .nav-item :global(a.cta-button) { padding: 0.38rem 0.7rem; font-size: 0.78rem; }
+          .nav-container {
+            padding: 0.5rem 1.25rem;
+            min-height: 68px;
+            height: 68px;
+          }
+          .logo-bm {
+            width: 46px;
+            height: 46px;
+          }
+          .logo-name {
+            font-size: 0.9rem;
+          }
+          .logo-title {
+            font-size: 0.55rem;
+          }
+          .nav-item :global(a.nav-link) {
+            padding: 0.35rem 0.7rem;
+            font-size: 0.82rem;
+          }
+          .nav-item :global(a.cta-button) {
+            padding: 0.38rem 0.7rem;
+            font-size: 0.78rem;
+          }
         }
 
         .nav-item {

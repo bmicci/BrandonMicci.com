@@ -2,7 +2,7 @@ name: Lighthouse CI
 
 on:
   pull_request:
-    branches: [ main, prod, stage, preview, test/** ]
+    branches: [main, prod, stage, preview, test/**]
   workflow_dispatch:
 
 jobs:
@@ -20,4 +20,3 @@ jobs:
       # Give server a few seconds to boot
       - run: npx wait-on http://localhost:3000
       - run: npx lhci autorun --config=.lighthouserc.json --budgetsPath=budgets.json
-

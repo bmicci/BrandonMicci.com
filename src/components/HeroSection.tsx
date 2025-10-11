@@ -7,13 +7,18 @@ import AnimatedCounter from '@/components/AnimatedCounter';
 import { METRICS } from '@/lib/metrics';
 
 const HeroSection = () => {
-
   return (
     <>
       {/* ——— GLOBAL (light-touch) ——— */}
       <style jsx global>{`
         body {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          font-family:
+            'Inter',
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            sans-serif;
           background: #0a0e27;
           color: white;
           margin: 0;
@@ -22,20 +27,36 @@ const HeroSection = () => {
           -moz-osx-font-smoothing: grayscale;
         }
         @media (prefers-reduced-motion: reduce) {
-          * { animation: none !important; transition: none !important; }
+          * {
+            animation: none !important;
+            transition: none !important;
+          }
         }
         /* iPad Pro: ensure hero section doesn't enforce screen-height causing gap */
-        @media (min-width:1024px) and (max-width:1279px){
-          .hero-section{ min-height:auto; padding-bottom: 0; }
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .hero-section {
+            min-height: auto;
+            padding-bottom: 0;
+          }
         }
         /* Desktop: reduce top padding and bottom spacing - more aggressive */
-        @media (min-width:1024px){
-          .hero-section{ padding-top: max(env(safe-area-inset-top), 4rem) !important; padding-bottom: 0 !important; }
-          .kpi-grid { margin-bottom: 0 !important; }
-          .hero-content-box { margin-bottom: 0 !important; }
+        @media (min-width: 1024px) {
+          .hero-section {
+            padding-top: max(env(safe-area-inset-top), 4rem) !important;
+            padding-bottom: 0 !important;
+          }
+          .kpi-grid {
+            margin-bottom: 0 !important;
+          }
+          .hero-content-box {
+            margin-bottom: 0 !important;
+          }
         }
-        @media (min-width:1280px){
-          .hero-section{ padding-top: max(env(safe-area-inset-top), 3.5rem) !important; padding-bottom: 0 !important; }
+        @media (min-width: 1280px) {
+          .hero-section {
+            padding-top: max(env(safe-area-inset-top), 3.5rem) !important;
+            padding-bottom: 0 !important;
+          }
         }
         /* iPad Pro: avoid oversized blank space on the next section */
       `}</style>
@@ -716,7 +737,13 @@ const HeroSection = () => {
         {/* SVG for gradient fills (icons) */}
         <svg width="0" height="0" style={{ position: 'absolute' }}>
           <defs>
-            <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <linearGradient
+              id="blueGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
               <stop offset="0%" stopColor="#00d4ff" />
               <stop offset="50%" stopColor="#1e90ff" />
               <stop offset="100%" stopColor="#00d4ff" />
@@ -729,7 +756,9 @@ const HeroSection = () => {
           {/* Full-width header at top */}
           <div className="hero-header">
             <h1 className="headline">
-              <span className="gradient">AI & Digital Transformation Executive</span>
+              <span className="gradient">
+                AI & Digital Transformation Executive
+              </span>
             </h1>
           </div>
 
@@ -737,21 +766,91 @@ const HeroSection = () => {
           <div className="hero-content-box">
             <div className="hero-content">
               <p className="dek">
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>Senior technology executive</span> with <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>16+ years</span> of experience delivering <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>$400M+ in enterprise value</span> through <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>AI & Digital Transformation</span> efforts, scaling <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>LLM deployments</span> to <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>27K+ users</span> across <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>Fortune 500 companies</span>.
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  Senior technology executive
+                </span>{' '}
+                with{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  16+ years
+                </span>{' '}
+                of experience delivering{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  $400M+ in enterprise value
+                </span>{' '}
+                through{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  AI & Digital Transformation
+                </span>{' '}
+                efforts, scaling{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  LLM deployments
+                </span>{' '}
+                to{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  27K+ users
+                </span>{' '}
+                across{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  Fortune 500 companies
+                </span>
+                .
               </p>
 
               <div className="cta-row cta-3up-xl">
                 <a href="#connectwithme" className="btn primary">
-                  <Icon name="mail" size="md" className="icon text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
+                  <Icon
+                    name="mail"
+                    size="md"
+                    className="icon text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
+                  />
                   Let&apos;s Connect
                 </a>
-                <a href="/BrandonMicciSeniorAIExecutive.pdf" target="_blank" rel="noopener noreferrer" className="btn outline">
-                  <Icon name="file" size="md" className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]" />
+                <a
+                  href="/BrandonMicciSeniorAIExecutive.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn outline"
+                >
+                  <Icon
+                    name="file"
+                    size="md"
+                    className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]"
+                  />
                   Download Resume
                 </a>
                 {/* Wide-desktop only: appears at ≥1280px via .show-xl */}
-                <a href="/executive-brief.pdf" target="_blank" rel="noopener noreferrer" className="btn outline show-xl">
-                  <Icon name="briefcase" size="md" className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]" />
+                <a
+                  href="/executive-brief.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn outline show-xl"
+                >
+                  <Icon
+                    name="briefcase"
+                    size="md"
+                    className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]"
+                  />
                   Executive Brief
                 </a>
               </div>
@@ -759,9 +858,15 @@ const HeroSection = () => {
               <div className="kpi-grid">
                 {/* Value Delivered */}
                 <div className="kpi-box">
-                  <span className="sr-only">${METRICS.valueDeliveredM}M+ Value Delivered</span>
+                  <span className="sr-only">
+                    ${METRICS.valueDeliveredM}M+ Value Delivered
+                  </span>
                   <span className="stat-number">
-                    <AnimatedCounter value={METRICS.valueDeliveredM} suffix="M+" format={(n) => `$${n}`} />
+                    <AnimatedCounter
+                      value={METRICS.valueDeliveredM}
+                      suffix="M+"
+                      format={(n) => `$${n}`}
+                    />
                   </span>
                   <span className="stat-label">Value Delivered</span>
                 </div>
@@ -777,7 +882,9 @@ const HeroSection = () => {
 
                 {/* Typical ROI */}
                 <div className="kpi-box">
-                  <span className="sr-only">{METRICS.typicalROI}% Typical ROI</span>
+                  <span className="sr-only">
+                    {METRICS.typicalROI}% Typical ROI
+                  </span>
                   <span className="stat-number">
                     <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
                   </span>
@@ -786,7 +893,9 @@ const HeroSection = () => {
 
                 {/* Years Leading */}
                 <div className="kpi-box">
-                  <span className="sr-only">{METRICS.yearsLeading}+ Years Leading</span>
+                  <span className="sr-only">
+                    {METRICS.yearsLeading}+ Years Leading
+                  </span>
                   <span className="stat-number">
                     <AnimatedCounter value={METRICS.yearsLeading} suffix="+" />
                   </span>
@@ -802,7 +911,12 @@ const HeroSection = () => {
           <div className="mobile-layout">
             <div className="mobile-intro">
               <h1>
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>AI & Digital Transformation Executive</span>
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  AI & Digital Transformation Executive
+                </span>
               </h1>
 
               {/* Wrap to ensure spacing hooks apply */}
@@ -811,20 +925,61 @@ const HeroSection = () => {
               </div>
 
               <p className="mobile-dek">
-                Over <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}>16+ years</span> delivering
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> $400M+ value</span>, scaling to
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> 27K+ users</span>, driving ROI across
-                <span className="gradient" style={{ WebkitTextFillColor: 'transparent' }}> Fortune 500</span>.
+                Over{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  16+ years
+                </span>{' '}
+                delivering
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  {' '}
+                  $400M+ value
+                </span>
+                , scaling to
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  {' '}
+                  27K+ users
+                </span>
+                , driving ROI across
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  {' '}
+                  Fortune 500
+                </span>
+                .
               </p>
             </div>
 
             <div className="cta-row">
               <a href="#connectwithme" className="btn primary">
-                <Icon name="mail" size="md" className="icon text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]" />
+                <Icon
+                  name="mail"
+                  size="md"
+                  className="icon text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
+                />
                 Let&apos;s Connect
               </a>
-              <a href="/BrandonMicciSeniorAIExecutive.pdf" target="_blank" rel="noopener noreferrer" className="btn outline">
-                <Icon name="file" size="md" className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]" />
+              <a
+                href="/BrandonMicciSeniorAIExecutive.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn outline"
+              >
+                <Icon
+                  name="file"
+                  size="md"
+                  className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]"
+                />
                 Download Resume
               </a>
             </div>
@@ -848,8 +1003,14 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Visionary Leadership</div>
-                    <p>Leading cutting-edge AI initiatives that reshape industries—from pioneering LLM deployments to building next-gen analytics platforms.</p>
+                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                      Visionary Leadership
+                    </div>
+                    <p>
+                      Leading cutting-edge AI initiatives that reshape
+                      industries—from pioneering LLM deployments to building
+                      next-gen analytics platforms.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -863,8 +1024,14 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Execution Excellence</div>
-                    <p>Proven track record of turning ambitious visions into measurable results—consistently delivering on time, on budget, at scale.</p>
+                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                      Execution Excellence
+                    </div>
+                    <p>
+                      Proven track record of turning ambitious visions into
+                      measurable results—consistently delivering on time, on
+                      budget, at scale.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -878,8 +1045,14 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Strategic Thinking</div>
-                    <p>C-suite advisory capabilities that translate complex AI strategies into clear business roadmaps and competitive advantages.</p>
+                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                      Strategic Thinking
+                    </div>
+                    <p>
+                      C-suite advisory capabilities that translate complex AI
+                      strategies into clear business roadmaps and competitive
+                      advantages.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -893,8 +1066,14 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Innovation Catalyst</div>
-                    <p>Building transformative solutions that don&apos;t just solve today&apos;s problems—they anticipate tomorrow&apos;s opportunities.</p>
+                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                      Innovation Catalyst
+                    </div>
+                    <p>
+                      Building transformative solutions that don&apos;t just
+                      solve today&apos;s problems—they anticipate
+                      tomorrow&apos;s opportunities.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -906,12 +1085,21 @@ const HeroSection = () => {
           <div style={{ height: '0.25rem' }}></div>
 
           {/* Mobile KPI Grid (mobile-only) */}
-          <div className="kpi-grid kpi-mobile-only" style={{ marginTop: '1.25rem' }}>
+          <div
+            className="kpi-grid kpi-mobile-only"
+            style={{ marginTop: '1.25rem' }}
+          >
             {/* Value Delivered */}
             <div className="kpi-box">
-              <span className="sr-only">${METRICS.valueDeliveredM}M+ Value Delivered</span>
+              <span className="sr-only">
+                ${METRICS.valueDeliveredM}M+ Value Delivered
+              </span>
               <span className="stat-number">
-                <AnimatedCounter value={METRICS.valueDeliveredM} suffix="M+" format={(n) => `$${n}`} />
+                <AnimatedCounter
+                  value={METRICS.valueDeliveredM}
+                  suffix="M+"
+                  format={(n) => `$${n}`}
+                />
               </span>
               <span className="stat-label">Value Delivered</span>
             </div>
@@ -936,7 +1124,9 @@ const HeroSection = () => {
 
             {/* Years Leading */}
             <div className="kpi-box">
-              <span className="sr-only">{METRICS.yearsLeading}+ Years Leading</span>
+              <span className="sr-only">
+                {METRICS.yearsLeading}+ Years Leading
+              </span>
               <span className="stat-number">
                 <AnimatedCounter value={METRICS.yearsLeading} suffix="+" />
               </span>

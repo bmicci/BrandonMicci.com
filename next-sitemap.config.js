@@ -11,8 +11,6 @@ module.exports = {
         allow: '/',
       },
     ],
-    additionalSitemaps: [
-      'https://brandonmicci.com/sitemap.xml',
-    ],
+    additionalSitemaps: ['https://brandonmicci.com/sitemap.xml'],
   },
 };

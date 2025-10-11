@@ -3,9 +3,7 @@
     "name": "minScore",
     "expected": 0.9,
     "actual": 0,
-    "values": [
-      0
-    ],
+    "values": [0],
     "operator": ">=",
     "passed": false,
     "auditId": "cls-culprits-insight",
@@ -18,9 +16,7 @@
     "name": "minScore",
     "expected": 0.9,
     "actual": 0.32,
-    "values": [
-      0.32
-    ],
+    "values": [0.32],
     "operator": ">=",
     "passed": false,
     "auditId": "cumulative-layout-shift",
@@ -33,9 +29,7 @@
     "name": "minScore",
     "expected": 0.9,
     "actual": 0.5,
-    "values": [
-      0.5
-    ],
+    "values": [0.5],
     "operator": ">=",
     "passed": false,
     "auditId": "dom-size",
@@ -48,9 +42,7 @@
     "name": "minScore",
     "expected": 0.9,
     "actual": 0.85,
-    "values": [
-      0.85
-    ],
+    "values": [0.85],
     "operator": ">=",
     "passed": false,
     "auditId": "largest-contentful-paint",
@@ -63,9 +55,7 @@
     "name": "minScore",
     "expected": 0.9,
     "actual": 0.5,
-    "values": [
-      0.5
-    ],
+    "values": [0.5],
     "operator": ">=",
     "passed": false,
     "auditId": "legacy-javascript-insight",
@@ -78,9 +68,7 @@
     "name": "maxLength",
     "expected": 0,
     "actual": 1,
-    "values": [
-      1
-    ],
+    "values": [1],
     "operator": "<=",
     "passed": false,
     "auditId": "legacy-javascript",
@@ -93,9 +81,7 @@
     "name": "minScore",
     "expected": 0.9,
     "actual": 0,
-    "values": [
-      0
-    ],
+    "values": [0],
     "operator": ">=",
     "passed": false,
     "auditId": "mainthread-work-breakdown",
@@ -108,9 +94,7 @@
     "name": "minScore",
     "expected": 0.9,
     "actual": 0,
-    "values": [
-      0
-    ],
+    "values": [0],
     "operator": ">=",
     "passed": false,
     "auditId": "network-dependency-tree-insight",
@@ -123,9 +107,7 @@
     "name": "maxLength",
     "expected": 0,
     "actual": 1,
-    "values": [
-      1
-    ],
+    "values": [1],
     "operator": "<=",
     "passed": false,
     "auditId": "render-blocking-insight",
@@ -138,9 +120,7 @@
     "name": "maxLength",
     "expected": 0,
     "actual": 1,
-    "values": [
-      1
-    ],
+    "values": [1],
     "operator": "<=",
     "passed": false,
     "auditId": "render-blocking-resources",
@@ -153,9 +133,7 @@
     "name": "minScore",
     "expected": 0.9,
     "actual": 0.79,
-    "values": [
-      0.79
-    ],
+    "values": [0.79],
     "operator": ">=",
     "passed": false,
     "auditProperty": "performance",

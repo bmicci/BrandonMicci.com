@@ -70,7 +70,9 @@ export default function ContactPage() {
   const bodyExec = encodeURIComponent(
     "Hi Brandon,\n\nI'm reaching out about an executive opportunity.\n\nCompany:\nRole/Title:\nLocation (or Remote):\nTimeline:\nNotes:\n\nThanks!"
   );
-  const subjectSpeak = encodeURIComponent('Speaking / Advisory Inquiry: Brandon Micci');
+  const subjectSpeak = encodeURIComponent(
+    'Speaking / Advisory Inquiry: Brandon Micci'
+  );
   const bodySpeak = encodeURIComponent(
     "Hi Brandon,\n\nI'm reaching out about a speaking/advisory engagement.\n\nEvent/Org:\nAudience:\nDate(s):\nTopic(s):\nFormat (keynote, workshop):\n\nThanks!"
   );
@@ -81,7 +83,8 @@ export default function ContactPage() {
       <section className="prose prose-invert">
         <h1>Contact</h1>
         <p className="opacity-90">
-          For <strong>executive search</strong>, <strong>advisory</strong>, or <strong>speaking</strong> inquiries, email me directly:
+          For <strong>executive search</strong>, <strong>advisory</strong>, or{' '}
+          <strong>speaking</strong> inquiries, email me directly:
         </p>
 
         <div className="not-prose mt-8 flex flex-col gap-3">
@@ -111,9 +114,11 @@ export default function ContactPage() {
         <hr className="my-8 border-white/5" />
 
         <h2>Response Time</h2>
-        <p>I aim to respond within one business day to executive search and event requests.</p>
+        <p>
+          I aim to respond within one business day to executive search and event
+          requests.
+        </p>
       </section>
     </main>
   );
 }
-

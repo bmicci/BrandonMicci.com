@@ -21,7 +21,9 @@ export default function Home() {
   // Prevent first-load jump
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    if ('scrollRestoration' in history) (history as History & { scrollRestoration?: string }).scrollRestoration = 'manual';
+    if ('scrollRestoration' in history)
+      (history as History & { scrollRestoration?: string }).scrollRestoration =
+        'manual';
     const { hash } = window.location;
     if (!hash) window.scrollTo(0, 0);
   }, []);

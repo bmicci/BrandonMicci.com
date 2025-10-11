@@ -15,4 +15,3 @@ export function useHydrationReady(delay = 1) {
   }, [ready, delay]);
   return ready;
 }
-

@@ -315,7 +315,7 @@ const CompanyExpertise: React.FC = () => {
             margin: 0.5rem auto;
             padding: 20px 0.5rem;
           }
-          
+
           .card-shell {
             width: clamp(250px, calc(100vw - 1.5rem), 1200px);
             padding: 0.75rem;
@@ -326,9 +326,7 @@ const CompanyExpertise: React.FC = () => {
       <div className="expertise-section mx-auto w-full max-w-6xl px-4 md:px-8 overflow-x-clip">
         <div className="expertise-container">
           <div className="expertise-header">
-            <h2 className="expertise-title">
-              Proven Track Record Across
-            </h2>
+            <h2 className="expertise-title">Proven Track Record Across</h2>
             <h3 className="expertise-subtitle">
               Big Four & Fortune 500 Organizations
             </h3>

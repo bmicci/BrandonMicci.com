@@ -1,10 +1,24 @@
 'use client';
 
 import { useEffect, useRef, useState, memo } from 'react';
-import { Brain, Rocket, Search, Plane, Database, Cloud, Shield, Building2, BarChart, TrendingUp, Globe } from 'lucide-react';
+import {
+  Brain,
+  Rocket,
+  Search,
+  Plane,
+  Database,
+  Cloud,
+  Shield,
+  Building2,
+  BarChart,
+  TrendingUp,
+  Globe,
+} from 'lucide-react';
 
-const IconCircle: React.FC<{ children: React.ReactNode }> = memo(({ children }) => (
-  <div className="
+const IconCircle: React.FC<{ children: React.ReactNode }> = memo(
+  ({ children }) => (
+    <div
+      className="
     relative flex items-center justify-center
     w-8 h-8 md:w-12 md:h-12
     rounded-full border border-white/10
@@ -14,12 +28,12 @@ const IconCircle: React.FC<{ children: React.ReactNode }> = memo(({ children }) 
     before:shadow-[0_0_14px_rgba(0,212,255,0.18)]
     md:before:shadow-[0_0_25px_rgba(0,212,255,0.25)]
     ring-1 ring-white/5
-  ">
-    <div className="relative z-10">
-      {children}
+  "
+    >
+      <div className="relative z-10">{children}</div>
     </div>
-  </div>
-));
+  )
+);
 IconCircle.displayName = 'IconCircle';
 
 type Achievement = {
@@ -222,7 +236,9 @@ const ROLES: Role[] = [
     role: 'Enterprise Analytics Leader, Risk & Compliance',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: <Building2 className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
+    icon: (
+      <Building2 className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />
+    ),
     description:
       'Drove enterprise-wide analytics strategy and governance, establishing data quality standards and building scalable analytics infrastructure to support risk management and regulatory compliance initiatives.',
     skills: ['Enterprise Analytics', 'Data Governance', 'Tableau'],
@@ -275,7 +291,9 @@ const ROLES: Role[] = [
     role: 'Senior Consultant, Lead Data Analyst',
     company: 'Booz Allen Hamilton',
     location: 'McLean, VA',
-    icon: <TrendingUp className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
+    icon: (
+      <TrendingUp className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />
+    ),
     description:
       "Established and led the firm's first dedicated data analytics practice, developing advanced analytics solutions for government and commercial clients across defense, healthcare, and financial services sectors.",
     skills: ['Data Analytics', 'Fraud Detection', 'Business Intelligence'],
@@ -384,7 +402,7 @@ const ExecutiveExperience = memo(() => {
   };
 
   return (
-      <div className="relative overflow-x-clip text-white se-tight">
+    <div className="relative overflow-x-clip text-white se-tight">
       {/* Gradient overlay removed to show Universal Background */}
 
       <style jsx>{`
@@ -412,22 +430,24 @@ const ExecutiveExperience = memo(() => {
         }
 
         @keyframes glowPulse {
-          0%, 100% {
-            box-shadow: 
-              0 25px 50px rgba(0, 0, 0, 0.3), 
+          0%,
+          100% {
+            box-shadow:
+              0 25px 50px rgba(0, 0, 0, 0.3),
               inset 0 1px 0 rgba(255, 255, 255, 0.15),
               0 0 20px rgba(0, 212, 255, 0.15);
           }
           50% {
-            box-shadow: 
-              0 35px 70px rgba(0, 0, 0, 0.4), 
+            box-shadow:
+              0 35px 70px rgba(0, 0, 0, 0.4),
               inset 0 1px 0 rgba(255, 255, 255, 0.2),
               0 0 30px rgba(0, 212, 255, 0.25);
           }
         }
 
         @keyframes iconPulse {
-          0%, 100% {
+          0%,
+          100% {
             transform: scale(1);
             box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
           }
@@ -458,8 +478,12 @@ const ExecutiveExperience = memo(() => {
           .se-tight .card-shell {
             width: calc(100vw - 5.75rem); /* a hair narrower for iPhone SE */
           }
-          .se-tight .title-tight { font-size: 13px; }
-          .se-tight .desc-tight  { font-size: 13px; }
+          .se-tight .title-tight {
+            font-size: 13px;
+          }
+          .se-tight .desc-tight {
+            font-size: 13px;
+          }
         }
       `}</style>
 
@@ -471,18 +495,20 @@ const ExecutiveExperience = memo(() => {
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-4xl text-sm md:text-xl leading-relaxed text-slate-300 px-2">
-            16+ years of architecting enterprise AI solutions, leading Fortune 500 digital transformation initiatives, and scaling LLM deployments
+            16+ years of architecting enterprise AI solutions, leading Fortune
+            500 digital transformation initiatives, and scaling LLM deployments
           </p>
         </div>
 
         <div className="mx-auto max-w-full overflow-x-clip px-1 pb-8 md:max-w-6xl md:px-8 md:pb-16">
           <div className="relative">
-            <div 
-              className="absolute -bottom-8 -top-20 left-6 md:left-12" 
+            <div
+              className="absolute -bottom-8 -top-20 left-6 md:left-12"
               style={{
                 width: '2px',
                 background: '#00d4ff',
-                boxShadow: '0 0 8px rgba(0, 212, 255, 0.6), 0 0 4px rgba(0, 212, 255, 0.8)',
+                boxShadow:
+                  '0 0 8px rgba(0, 212, 255, 0.6), 0 0 4px rgba(0, 212, 255, 0.8)',
                 transform: 'translateX(-50%)',
               }}
             />
@@ -502,17 +528,17 @@ const ExecutiveExperience = memo(() => {
                   <div
                     className="absolute top-2 left-6 md:top-4 md:left-12 flex h-8 w-8 md:h-12 md:w-12 items-center justify-center rounded-full"
                     style={{
-                      background: isVisible 
+                      background: isVisible
                         ? 'linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(30, 144, 255, 0.15))'
                         : 'rgba(255, 255, 255, 0.1)',
-                      border: isVisible ? '1px solid rgba(0, 212, 255, 0.3)' : '1px solid rgba(255, 255, 255, 0.1)',
+                      border: isVisible
+                        ? '1px solid rgba(0, 212, 255, 0.3)'
+                        : '1px solid rgba(255, 255, 255, 0.1)',
                       transform: 'translateX(-50%)',
                       transition: 'background 0.3s ease, border 0.3s ease',
                     }}
                   >
-                    <IconCircle>
-                      {role.icon}
-                    </IconCircle>
+                    <IconCircle>{role.icon}</IconCircle>
                   </div>
 
                   <div
@@ -530,10 +556,12 @@ const ExecutiveExperience = memo(() => {
                       WebkitBackdropFilter: isVisible
                         ? 'blur(25px)'
                         : 'blur(15px)',
-                      border: isVisible 
-                        ? '1px solid rgba(0, 212, 255, 0.2)' 
+                      border: isVisible
+                        ? '1px solid rgba(0, 212, 255, 0.2)'
                         : '1px solid rgba(255, 255, 255, 0.05)',
-                      animation: isVisible ? 'glowPulse 3s ease-in-out infinite' : 'none',
+                      animation: isVisible
+                        ? 'glowPulse 3s ease-in-out infinite'
+                        : 'none',
                       willChange: 'transform, opacity',
                       transform: 'translateZ(0)', // Force hardware acceleration
                     }}
@@ -545,9 +573,12 @@ const ExecutiveExperience = memo(() => {
                         isVisible ? 'opacity-40' : 'opacity-0'
                       }`}
                       style={{
-                        background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(30, 144, 255, 0.05), rgba(0, 212, 255, 0.05))',
+                        background:
+                          'linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(30, 144, 255, 0.05), rgba(0, 212, 255, 0.05))',
                         backgroundSize: '200% 200%',
-                        animation: isVisible ? 'gradientShift 4s ease-in-out infinite' : 'none',
+                        animation: isVisible
+                          ? 'gradientShift 4s ease-in-out infinite'
+                          : 'none',
                         filter: 'blur(8px)',
                       }}
                     />
@@ -557,7 +588,7 @@ const ExecutiveExperience = memo(() => {
                         {role.dates}
                       </span>
 
-                        <h3 className="text-[13px] font-bold leading-tight text-white break-words md:text-2xl title-tight">
+                      <h3 className="text-[13px] font-bold leading-tight text-white break-words md:text-2xl title-tight">
                         {role.role}
                       </h3>
                       <div className="mb-2 text-xs font-medium text-cyan-400 md:text-base">
@@ -641,48 +672,134 @@ const ExecutiveExperience = memo(() => {
               </span>
             </h3>
             <p className="text-sm md:text-lg text-slate-300 max-w-3xl mx-auto">
-              Strategic expertise across AI/ML, digital transformation, and enterprise leadership
+              Strategic expertise across AI/ML, digital transformation, and
+              enterprise leadership
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: "AI/ML Strategy & Innovation",
-                skills: ["Generative AI", "LLM Deployment", "MLOps", "LLMOps", "Machine Learning", "Model Governance", "AI Ethics", "Predictive Analytics", "NLP", "Computer Vision", "Deep Learning"]
+                title: 'AI/ML Strategy & Innovation',
+                skills: [
+                  'Generative AI',
+                  'LLM Deployment',
+                  'MLOps',
+                  'LLMOps',
+                  'Machine Learning',
+                  'Model Governance',
+                  'AI Ethics',
+                  'Predictive Analytics',
+                  'NLP',
+                  'Computer Vision',
+                  'Deep Learning',
+                ],
               },
               {
-                title: "Digital Transformation",
-                skills: ["Industry 4.0", "IoT Platforms", "Digital Twins", "DevOps", "Agile", "Change Management"]
+                title: 'Digital Transformation',
+                skills: [
+                  'Industry 4.0',
+                  'IoT Platforms',
+                  'Digital Twins',
+                  'DevOps',
+                  'Agile',
+                  'Change Management',
+                ],
               },
               {
-                title: "Cloud & Data Architecture",
-                skills: ["AWS", "Azure", "GCP", "Snowflake", "Databricks", "Spark", "Kafka", "Data Lakes", "Data Governance", "Big Data", "ETL/ELT", "Data Mesh"]
+                title: 'Cloud & Data Architecture',
+                skills: [
+                  'AWS',
+                  'Azure',
+                  'GCP',
+                  'Snowflake',
+                  'Databricks',
+                  'Spark',
+                  'Kafka',
+                  'Data Lakes',
+                  'Data Governance',
+                  'Big Data',
+                  'ETL/ELT',
+                  'Data Mesh',
+                ],
               },
               {
-                title: "Leadership & Strategy",
-                skills: ["Executive Leadership", "P&L Management", "Strategic Planning", "C-Suite Engagement", "Team Building", "Innovation"]
+                title: 'Leadership & Strategy',
+                skills: [
+                  'Executive Leadership',
+                  'P&L Management',
+                  'Strategic Planning',
+                  'C-Suite Engagement',
+                  'Team Building',
+                  'Innovation',
+                ],
               },
               {
-                title: "Analytics & BI Platforms",
-                skills: ["Tableau", "Alteryx", "PowerBI", "Looker", "Python", "R", "SQL", "Data Science", "Statistical Analysis", "Apache Airflow"]
+                title: 'Analytics & BI Platforms',
+                skills: [
+                  'Tableau',
+                  'Alteryx',
+                  'PowerBI',
+                  'Looker',
+                  'Python',
+                  'R',
+                  'SQL',
+                  'Data Science',
+                  'Statistical Analysis',
+                  'Apache Airflow',
+                ],
               },
               {
-                title: "Emerging Technologies",
-                skills: ["Blockchain", "AR/VR", "Robotics", "Geospatial", "Web 3.0", "Telematics"]
+                title: 'Emerging Technologies',
+                skills: [
+                  'Blockchain',
+                  'AR/VR',
+                  'Robotics',
+                  'Geospatial',
+                  'Web 3.0',
+                  'Telematics',
+                ],
               },
               {
-                title: "Enterprise Technology Stack",
-                skills: ["Kubernetes", "Docker", "Microservices", "API Gateway", "CI/CD", "Infrastructure as Code", "Terraform", "Container Orchestration", "Distributed Systems"]
+                title: 'Enterprise Technology Stack',
+                skills: [
+                  'Kubernetes',
+                  'Docker',
+                  'Microservices',
+                  'API Gateway',
+                  'CI/CD',
+                  'Infrastructure as Code',
+                  'Terraform',
+                  'Container Orchestration',
+                  'Distributed Systems',
+                ],
               },
               {
-                title: "Cross-Functional Excellence",
-                skills: ["Product Strategy", "Vendor Management", "Budget Planning", "Risk Management", "Compliance", "M&A Integration", "Executive Reporting", "Board Presentations"]
+                title: 'Cross-Functional Excellence',
+                skills: [
+                  'Product Strategy',
+                  'Vendor Management',
+                  'Budget Planning',
+                  'Risk Management',
+                  'Compliance',
+                  'M&A Integration',
+                  'Executive Reporting',
+                  'Board Presentations',
+                ],
               },
               {
-                title: "Financial & Business Acumen",
-                skills: ["Revenue Growth", "Cost Optimization", "ROI Analysis", "Business Case Development", "Market Analysis", "Competitive Intelligence", "KPI Development", "Performance Metrics"]
-              }
+                title: 'Financial & Business Acumen',
+                skills: [
+                  'Revenue Growth',
+                  'Cost Optimization',
+                  'ROI Analysis',
+                  'Business Case Development',
+                  'Market Analysis',
+                  'Competitive Intelligence',
+                  'KPI Development',
+                  'Performance Metrics',
+                ],
+              },
             ].map((competency, index) => (
               <div
                 key={competency.title}
@@ -699,7 +816,8 @@ const ExecutiveExperience = memo(() => {
                 <div
                   className="pointer-events-none absolute inset-0 transition-opacity duration-500 rounded-lg opacity-0 hover:opacity-40"
                   style={{
-                    background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(30, 144, 255, 0.1))',
+                    background:
+                      'linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(30, 144, 255, 0.1))',
                     backgroundSize: '200% 200%',
                     animation: 'gradientShift 4s ease-in-out infinite',
                   }}
@@ -709,7 +827,7 @@ const ExecutiveExperience = memo(() => {
                   <div className="text-lg font-bold text-white mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
                     {competency.title}
                   </div>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {competency.skills.map((skill) => (
                       <span
@@ -749,7 +867,8 @@ const ExecutiveExperience = memo(() => {
             <div
               className="relative overflow-hidden rounded-lg p-6 text-center transition-all duration-700 hover:scale-105"
               style={{
-                background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(30, 144, 255, 0.08))',
+                background:
+                  'linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(30, 144, 255, 0.08))',
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)',
                 border: '1px solid rgba(0, 212, 255, 0.3)',
@@ -761,8 +880,12 @@ const ExecutiveExperience = memo(() => {
                 <h3 className="text-lg font-bold text-white mb-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                   Bachelor of Arts, Business Administration
                 </h3>
-                <p className="text-cyan-400 font-semibold mb-2">The George Washington University</p>
-                <p className="text-slate-300 text-sm mb-3">School of Business • Washington, D.C.</p>
+                <p className="text-cyan-400 font-semibold mb-2">
+                  The George Washington University
+                </p>
+                <p className="text-slate-300 text-sm mb-3">
+                  School of Business • Washington, D.C.
+                </p>
                 <div className="text-xs text-slate-400">
                   <span className="bg-cyan-500/20 border border-cyan-500/30 rounded-full px-3 py-1">
                     Study Abroad: Florence, Italy
@@ -775,7 +898,8 @@ const ExecutiveExperience = memo(() => {
             <div
               className="relative overflow-hidden rounded-lg p-6 text-center transition-all duration-700 hover:scale-105"
               style={{
-                background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(30, 144, 255, 0.08))',
+                background:
+                  'linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(30, 144, 255, 0.08))',
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)',
                 border: '1px solid rgba(0, 212, 255, 0.3)',
@@ -789,12 +913,12 @@ const ExecutiveExperience = memo(() => {
                 </h3>
                 <div className="space-y-2">
                   {[
-                    "Transformational Leadership",
-                    "Innovation-Driven", 
-                    "Data-Driven Decisions",
-                    "People-First Culture",
-                    "Continuous Learning",
-                    "Results-Oriented"
+                    'Transformational Leadership',
+                    'Innovation-Driven',
+                    'Data-Driven Decisions',
+                    'People-First Culture',
+                    'Continuous Learning',
+                    'Results-Oriented',
                   ].map((approach) => (
                     <div
                       key={approach}
