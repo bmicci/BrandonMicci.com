@@ -157,6 +157,12 @@ function buildJsonLd() {
         name: "Professional Impact",
         item: `${SITE_URL}/#professional-impact`,
       },
+      {
+        "@type": "ListItem",
+        position: 6,
+        name: "Contact",
+        item: `${SITE_URL}/contact`,
+      },
     ],
   };
 
