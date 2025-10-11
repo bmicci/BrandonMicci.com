@@ -203,15 +203,15 @@ const Navigation = () => {
           .logo-bm { width: 46px; height: 46px; }
           .logo-name { font-size: 0.9rem; }
           .logo-title { font-size: 0.55rem; }
-          .nav-link { padding: 0.35rem 0.7rem; font-size: 0.82rem; }
-          .cta-button { padding: 0.38rem 0.7rem; font-size: 0.78rem; }
+          .nav-item :global(a.nav-link) { padding: 0.35rem 0.7rem; font-size: 0.82rem; }
+          .nav-item :global(a.cta-button) { padding: 0.38rem 0.7rem; font-size: 0.78rem; }
         }
 
         .nav-item {
           position: relative;
         }
 
-        .nav-link {
+        .nav-item :global(a.nav-link) {
           display: block;
           padding: 0.4rem 0.8rem;
           text-decoration: none;
@@ -226,7 +226,7 @@ const Navigation = () => {
           cursor: pointer;
         }
 
-        .nav-link::before {
+        .nav-item :global(a.nav-link)::before {
           content: '';
           position: absolute;
           top: 0;
@@ -240,16 +240,16 @@ const Navigation = () => {
           z-index: -1;
         }
 
-        .nav-link:hover::before {
+        .nav-item :global(a.nav-link):hover::before {
           opacity: 1;
         }
 
-        .nav-link:hover {
+        .nav-item :global(a.nav-link):hover {
           color: white;
           transform: translateY(-1px);
         }
 
-        .nav-link.active {
+        .nav-item :global(a.nav-link.active) {
           color: white;
           background: linear-gradient(135deg, #00d4ff30 0%, #1e90ff30 100%);
           border: 1px solid rgba(0, 212, 255, 0.3);
@@ -290,7 +290,7 @@ const Navigation = () => {
           transform: rotate(-45deg) translate(6px, -6px);
         }
 
-        .cta-button {
+        .nav-item :global(a.cta-button) {
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
           color: white !important;
           padding: 0.4rem 0.8rem;
@@ -308,7 +308,7 @@ const Navigation = () => {
           cursor: pointer;
         }
 
-        .cta-button::before {
+        .nav-item :global(a.cta-button)::before {
           content: '';
           position: absolute;
           top: 0;
@@ -324,11 +324,11 @@ const Navigation = () => {
           transition: left 0.5s ease;
         }
 
-        .cta-button:hover::before {
+        .nav-item :global(a.cta-button):hover::before {
           left: 100%;
         }
 
-        .cta-button:hover {
+        .nav-item :global(a.cta-button):hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
         }
@@ -366,13 +366,13 @@ const Navigation = () => {
             margin: 0 1rem;
           }
 
-          .nav-link {
+          .nav-item :global(a.nav-link) {
             padding: 0.75rem 1.4rem;
             margin: 0;
             border-radius: 8px;
           }
 
-          .cta-button {
+          .nav-item :global(a.cta-button) {
             margin: 0.6rem 1rem;
             justify-content: center;
           }
