@@ -90,6 +90,20 @@ function buildJsonLd() {
       "Digital Transformation",
       "AI Governance",
       "Data Platforms",
+      "AI Advisory and Speaking Engagements",
+      "Executive Workshops",
+    ],
+    hasOccupation: [
+      {
+        "@type": "Occupation",
+        name: "AI & Digital Transformation Executive",
+        description: "Delivers measurable ROI through enterprise AI and data strategy leadership.",
+      },
+      {
+        "@type": "Occupation",
+        name: "Keynote Speaker & Executive Advisor",
+        description: "Provides executive briefings, workshops, and advisory on AI strategy and transformation.",
+      },
     ],
     alumniOf: [
       { "@type": "CollegeOrUniversity", name: "University of Texas at Dallas" },
@@ -162,47 +176,56 @@ function buildJsonLd() {
     mainEntity: [
       {
         "@type": "Question",
-        name: "What executive roles is Brandon Micci best suited for?",
+        name: "What executive roles does Brandon Micci specialize in?",
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "Chief AI Officer (CAIO), VP/Head of AI Products, or SVP of Digital Transformation. Brandon leads enterprise AI strategy, GenAI product portfolios, and data modernization programs to measurable ROI at Fortune 500 scale.",
+            "Brandon Micci is a Senior AI and Digital Transformation Executive specializing in Chief AI Officer, VP of AI Products, and Head of Enterprise AI Strategy roles. He leads large-scale AI initiatives across Fortune 500 organizations—transforming data, analytics, and technology strategy into measurable ROI.",
         },
       },
       {
         "@type": "Question",
-        name: "What measurable outcomes has Brandon delivered in enterprise AI?",
+        name: "What measurable outcomes has Brandon achieved through AI leadership?",
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "Scaled LLM deployments to 27,000+ users, delivered $400M+ in enterprise value, and achieved typical ROI improvements of 250%+ through AI product strategy, platform governance, and end-to-end adoption.",
+            "Brandon has delivered $400M+ in measurable business value through AI and digital transformation. His initiatives include deploying an enterprise LLM assistant to 27,000 users at JPMorgan Chase, achieving 30% operational efficiency gains, and launching a $20M IoT-AI optimization program in aviation.",
         },
       },
       {
         "@type": "Question",
-        name: "What industries has Brandon led AI transformation in?",
+        name: "In what industries has Brandon led transformation programs?",
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "Financial services, aviation, and consulting—spanning regulated data environments, mission-critical operations, and cross-functional enterprise change.",
+            "Financial services, aviation, insurance, and consulting. Brandon has implemented AI-powered fraud analytics at global insurers, IoT modernization at major airlines, and AI governance frameworks for top financial institutions.",
         },
       },
       {
         "@type": "Question",
-        name: "What is Brandon's approach to building an enterprise AI operating model?",
+        name: "What are Brandon Micci's primary areas of expertise?",
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "A business-first operating model that connects data platform modernization, MLOps/LLMOps, responsible AI governance, and product roadmaps to value realization and scale.",
+            "Enterprise AI strategy, large language model deployment, AI governance, data modernization, and ROI-driven transformation. Brandon focuses on creating scalable AI platforms, governance models, and executive operating frameworks that accelerate adoption and measurable value.",
         },
       },
       {
         "@type": "Question",
-        name: "How can recruiters or hiring executives contact Brandon?",
+        name: "Does Brandon provide speaking or advisory services?",
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "Email Brandon at brandon@brandonmicci.com for executive opportunities in CAIO, VP of AI, or Digital Transformation leadership.",
+            "Yes. Brandon provides executive briefings, board workshops, and private advisory sessions focused on enterprise AI strategy, scaling LLMs, and digital transformation operating models. Engagements include 60–120 minute board sessions, 2–4 week ROI sprints, and keynote speaking.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How can recruiters or organizations contact Brandon Micci?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Email brandon@brandonmicci.com or connect via LinkedIn at linkedin.com/in/brandonmicci for executive search, advisory, or speaking engagements.",
         },
       },
     ],
