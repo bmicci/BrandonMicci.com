@@ -13,6 +13,7 @@ const DESCRIPTION =
 
 const LOGO = `${SITE_URL}/android-chrome-192x192.png`; // ok to keep; you just generated these
 const IMAGE = `${SITE_URL}/headshot.webp`;
+const EMAIL = "brandon@brandonmicci.com";
 
 // Toggle extras without editing schema objects:
 const INCLUDE_FAQ = true;
@@ -43,6 +44,14 @@ function buildJsonLd() {
       "https://github.com/bmicci",
       "https://twitter.com/brandonmicci",
     ],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "Executive inquiries",
+        email: EMAIL,
+        availableLanguage: ["en"],
+      },
+    ],
   };
 
   const person = {
@@ -53,6 +62,7 @@ function buildJsonLd() {
     url: SITE_URL,
     image: IMAGE,
     description: DESCRIPTION,
+    email: EMAIL,
     sameAs: [
       "https://www.linkedin.com/in/brandonmicci",
       "https://github.com/bmicci",
@@ -63,6 +73,15 @@ function buildJsonLd() {
       name: "JPMorgan Chase",
       url: "https://www.jpmorganchase.com",
     },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "Recruiting / executive search",
+        email: EMAIL,
+        areaServed: "US",
+        availableLanguage: ["en"],
+      },
+    ],
     knowsAbout: [
       "Enterprise AI Strategy",
       "Generative AI",
@@ -121,56 +140,69 @@ function buildJsonLd() {
     ],
   };
 
+  const contactPage = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    url: SITE_URL,
+    mainEntityOfPage: SITE_URL,
+    about: { "@type": "Person", name: NAME },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "Executive inquiries",
+        email: EMAIL,
+        availableLanguage: ["en"],
+      },
+    ],
+  };
+
   const faq = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: [
       {
         "@type": "Question",
-        name:
-          "What is Brandon Micci's expertise as an AI and Digital Transformation executive?",
+        name: "What executive roles is Brandon Micci best suited for?",
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "Brandon Micci is a Senior AI and Digital Transformation Executive specializing in scaling enterprise AI across Fortune 500 organizations. He has delivered $400M+ in measurable value through AI product strategy, LLM deployment, and enterprise modernization.",
+            "Chief AI Officer (CAIO), VP/Head of AI Products, or SVP of Digital Transformation. Brandon leads enterprise AI strategy, GenAI product portfolios, and data modernization programs to measurable ROI at Fortune 500 scale.",
         },
       },
       {
         "@type": "Question",
-        name:
-          "What leadership roles has Brandon Micci held in enterprise AI strategy?",
+        name: "What measurable outcomes has Brandon delivered in enterprise AI?",
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "Brandon has served as VP, Head of AI Products at JPMorgan Chase, leading enterprise-scale AI initiatives for 27,000+ users. He previously led digital transformation programs at Southwest Airlines, EY, and Capital One.",
+            "Scaled LLM deployments to 27,000+ users, delivered $400M+ in enterprise value, and achieved typical ROI improvements of 250%+ through AI product strategy, platform governance, and end-to-end adoption.",
         },
       },
       {
         "@type": "Question",
-        name:
-          "What makes Brandon Micci a top candidate for Chief AI Officer or VP of AI roles?",
+        name: "What industries has Brandon led AI transformation in?",
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "His combination of executive leadership, technical depth, and measurable ROI makes him uniquely suited for CAIO, CDO, or VP of AI roles. His focus areas include AI velocity, data democratization, responsible AI frameworks, and value realization.",
+            "Financial services, aviation, and consulting—spanning regulated data environments, mission-critical operations, and cross-functional enterprise change.",
         },
       },
       {
         "@type": "Question",
-        name: "Which industries has Brandon led AI transformation in?",
+        name: "What is Brandon's approach to building an enterprise AI operating model?",
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "Financial services, aviation, and consulting—generating $400M+ in enterprise value and >250% typical ROI.",
+            "A business-first operating model that connects data platform modernization, MLOps/LLMOps, responsible AI governance, and product roadmaps to value realization and scale.",
         },
       },
       {
         "@type": "Question",
-        name: "What is Brandon's approach to enterprise AI leadership?",
+        name: "How can recruiters or hiring executives contact Brandon?",
         acceptedAnswer: {
           "@type": "Answer",
           text:
-            "A business-first AI approach that connects data modernization, ML product strategy, and generative AI innovation to measurable ROI at scale.",
+            "Email Brandon at brandon@brandonmicci.com for executive opportunities in CAIO, VP of AI, or Digital Transformation leadership.",
         },
       },
     ],
@@ -198,7 +230,7 @@ function buildJsonLd() {
     validThrough: "2099-12-31", // keeps schema valid long-term
   };
 
-  const payload: Record<string, unknown>[] = [website, organization, person, profilePage, breadcrumbs];
+  const payload: Record<string, unknown>[] = [website, organization, person, profilePage, contactPage, breadcrumbs];
 
   if (INCLUDE_FAQ) payload.push(faq);
   if (INCLUDE_JOB_POSTING) payload.push(jobPosting);
