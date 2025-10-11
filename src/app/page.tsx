@@ -5,6 +5,12 @@ import HeroSection from '@/components/HeroSection';
 import HashScrollOnLoad from '@/components/HashScrollOnLoad';
 import { useEffect } from 'react';
 
+// Strategic Vision Components
+import StrategicAdvantageHeader from '@/components/StrategicAdvantageHeader';
+import StrategicIntroCard from '@/components/StrategicIntroCard';
+import CompanyExpertise from '@/components/CompanyExpertise';
+import StrategicDifferentiators from '@/components/StrategicDifferentiators';
+
 // Regular imports for lighter components
 import ExecutiveExperience from '@/components/ExecutiveExperience';
 import ProfessionalImpact from '@/components/TransformationLeadership';
@@ -28,7 +34,7 @@ export default function Home() {
         id="home"
         className="relative scroll-mt-[var(--header-h,4.5rem)]"
       >
-        <NewHero />
+        <HeroSection />
       </section>
 
       {/* Strategic Vision Section */}
@@ -42,10 +48,10 @@ export default function Home() {
       >
         {/* Strategic Vision Content */}
         <div className="relative z-10 w-full">
-          <div className="container mx-auto px-4 py-12">
-            <h2 className="text-3xl font-bold mb-8 text-center">Strategic Advantage</h2>
-            <CaseStudyCards />
-          </div>
+          <StrategicAdvantageHeader />
+          <StrategicIntroCard />
+          <CompanyExpertise />
+          <StrategicDifferentiators />
         </div>
       </section>
 

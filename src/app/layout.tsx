@@ -85,9 +85,6 @@ export const metadata: Metadata = {
         alt: 'Brandon Micci - VP Head of AI Products',
       },
     ],
-    firstName: 'Brandon',
-    lastName: 'Micci',
-    username: 'brandonmicci',
   },
   twitter: {
     card: 'summary_large_image',
@@ -97,7 +94,6 @@ export const metadata: Metadata = {
     images: ['/opengraph-image'],
     creator: '@brandonmicci',
   },
-  twitter: { card: 'summary_large_image' },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
