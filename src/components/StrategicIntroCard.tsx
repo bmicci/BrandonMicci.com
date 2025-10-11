@@ -15,7 +15,7 @@ const StrategicIntroCard: React.FC = () => {
             Roboto,
             sans-serif;
           max-width: 1000px;
-          margin: 0.25rem auto 1.5rem;
+          margin: 0 auto 1.5rem;
           padding: 2.5rem;
           background: rgba(255, 255, 255, 0.05);
           backdrop-filter: blur(20px);
@@ -28,7 +28,7 @@ const StrategicIntroCard: React.FC = () => {
 
         /* iPad Pro spacing tighten */
         @media (min-width:1024px) and (max-width:1279px){
-          .intro-card{ margin: 0.125rem auto 1.25rem; padding: 2.25rem; }
+          .intro-card{ margin: 0 auto 1.25rem; padding: 2.25rem; }
         }
 
         .intro-card::before {
@@ -109,7 +109,7 @@ const StrategicIntroCard: React.FC = () => {
         @media (max-width: 768px) {
           .intro-card {
             padding: 2rem 1.5rem;
-            margin: 1.5rem 1rem 2rem;
+            margin: 0 1rem 2rem;
           }
         }
 
