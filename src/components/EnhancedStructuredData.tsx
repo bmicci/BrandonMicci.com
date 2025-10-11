@@ -259,7 +259,45 @@ function buildJsonLd() {
     validThrough: "2099-12-31", // keeps schema valid long-term
   };
 
-  const payload: Record<string, unknown>[] = [website, organization, person, profilePage, contactPage, breadcrumbs];
+  // New schema: Occupation / RoleExperience (for Knowledge Graph + recruiter searches)
+  const roleExperience = {
+    "@context": "https://schema.org",
+    "@type": "Occupation",
+    "name": "VP, Head of AI Products",
+    "description": "Leads enterprise AI transformation initiatives across Fortune 500 organizations — delivering measurable ROI through applied Generative AI, data modernization, and large language model deployment.",
+    "occupationLocation": {
+      "@type": "Place",
+      "name": "Dallas, Texas, USA"
+    },
+    "estimatedSalary": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": {
+        "@type": "QuantitativeValue",
+        "value": "350000",
+        "unitText": "YEAR"
+      }
+    },
+    "skills": [
+      "Enterprise AI Strategy",
+      "Generative AI",
+      "LLM Deployment",
+      "Digital Transformation Leadership",
+      "AI Governance",
+      "Data Platforms",
+      "Executive Advisory"
+    ],
+    "responsibilities": [
+      "Define and scale enterprise AI product portfolios",
+      "Develop responsible AI governance frameworks",
+      "Deliver measurable ROI across data and digital initiatives",
+      "Lead AI Center of Excellence operations and adoption programs"
+    ],
+    "occupationalCategory": "Artificial Intelligence and Machine Learning Leadership",
+    "mainEntityOfPage": SITE_URL
+  };
+
+  const payload: Record<string, unknown>[] = [website, organization, person, profilePage, contactPage, roleExperience, breadcrumbs];
 
   if (INCLUDE_FAQ) payload.push(faq);
   if (INCLUDE_JOB_POSTING) payload.push(jobPosting);
