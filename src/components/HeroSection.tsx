@@ -42,7 +42,7 @@ const HeroSection = () => {
         /* Desktop: reduce top padding and bottom spacing - more aggressive */
         @media (min-width: 1024px) {
           .hero-section {
-            padding-top: max(env(safe-area-inset-top), 4rem) !important;
+            padding-top: max(env(safe-area-inset-top), 2rem) !important;
             padding-bottom: 0 !important;
           }
           .kpi-grid {
@@ -54,7 +54,7 @@ const HeroSection = () => {
         }
         @media (min-width: 1280px) {
           .hero-section {
-            padding-top: max(env(safe-area-inset-top), 3.5rem) !important;
+            padding-top: max(env(safe-area-inset-top), 1.5rem) !important;
             padding-bottom: 0 !important;
           }
         }
@@ -67,7 +67,7 @@ const HeroSection = () => {
           position: relative;
           /* Stable viewport height avoids URL bar reflow jump */
           min-height: 100svh;
-          padding: max(env(safe-area-inset-top), 4.5rem) 0 2rem 0;
+          padding: max(env(safe-area-inset-top), 2.5rem) 0 2rem 0;
           overflow: hidden;
           background: transparent;
           /* Prevent descendant layout/paint from bubbling reflow up to sections */
@@ -766,7 +766,7 @@ const HeroSection = () => {
           <div className="hero-content-box">
             <div className="hero-content">
               <p className="dek">
-                Driving enterprise transformation at the intersection of AI strategy, digital innovation, and measurable business impact across Fortune 500 organizations.
+                Driving <span className="gradient">enterprise transformation</span> at the intersection of <span className="gradient">AI strategy</span>, <span className="gradient">digital innovation</span>, and measurable business impact across <span className="gradient">Fortune 500</span> organizations.
               </p>
 
               <div className="cta-row cta-3up-xl">
@@ -820,7 +820,7 @@ const HeroSection = () => {
                       format={(n) => `$${n}`}
                     />
                   </span>
-                  <span className="stat-label">$400M+ Enterprise Revenue Created</span>
+                  <span className="stat-label">Enterprise Revenue Created</span>
                 </div>
 
                 {/* AI Users */}
@@ -829,7 +829,7 @@ const HeroSection = () => {
                   <span className="stat-number">
                     <AnimatedCounter value={METRICS.aiUsersK} suffix="K+" />
                   </span>
-                  <span className="stat-label">27K+ AI Users Enabled</span>
+                  <span className="stat-label">AI Users Enabled</span>
                 </div>
 
                 {/* Typical ROI */}
@@ -840,7 +840,7 @@ const HeroSection = () => {
                   <span className="stat-number">
                     <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
                   </span>
-                  <span className="stat-label">250% Peak Program ROI</span>
+                  <span className="stat-label">Peak Program ROI</span>
                 </div>
 
                 {/* Years Leading */}
@@ -851,7 +851,7 @@ const HeroSection = () => {
                   <span className="stat-number">
                     <AnimatedCounter value={METRICS.yearsLeading} suffix="+" />
                   </span>
-                  <span className="stat-label">16+ Years Executive Leadership</span>
+                  <span className="stat-label">Years Executive Leadership</span>
                 </div>
               </div>
             </div>
@@ -1053,7 +1053,7 @@ const HeroSection = () => {
                   format={(n) => `$${n}`}
                 />
               </span>
-              <span className="stat-label">$400M+ Enterprise Revenue Created</span>
+              <span className="stat-label">Enterprise Revenue Created</span>
             </div>
 
             {/* AI Users */}
@@ -1062,7 +1062,7 @@ const HeroSection = () => {
               <span className="stat-number">
                 <AnimatedCounter value={METRICS.aiUsersK} suffix="K+" />
               </span>
-              <span className="stat-label">27K+ AI Users Enabled</span>
+              <span className="stat-label">AI Users Enabled</span>
             </div>
 
             {/* Typical ROI */}
@@ -1071,7 +1071,7 @@ const HeroSection = () => {
               <span className="stat-number">
                 <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
               </span>
-              <span className="stat-label">250% Peak Program ROI</span>
+              <span className="stat-label">Peak Program ROI</span>
             </div>
 
             {/* Years Leading */}
@@ -1082,7 +1082,7 @@ const HeroSection = () => {
               <span className="stat-number">
                 <AnimatedCounter value={METRICS.yearsLeading} suffix="+" />
               </span>
-              <span className="stat-label">16+ Years Executive Leadership</span>
+              <span className="stat-label">Years Executive Leadership</span>
             </div>
           </div>
         </div>
