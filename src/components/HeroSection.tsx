@@ -817,7 +817,7 @@ const HeroSection = () => {
           <div className="hero-content-box">
             <div className="hero-content">
               <p className="dek">
-                Driving <span className="gradient">enterprise transformation</span> at the intersection of <span className="gradient">AI strategy</span>, <span className="gradient">digital innovation</span>, and measurable business impact across <span className="gradient">Fortune 500</span> organizations.
+                Driving <span className="gradient">enterprise transformation</span> at the intersection of <span className="gradient">AI strategy</span>, <span className="gradient">digital innovation</span>, and measurable ROI across <span className="gradient">Fortune 500</span> organizations.
               </p>
 
               <div className="cta-row cta-3up-xl">
