@@ -42,7 +42,7 @@ const HeroSection = () => {
         /* Desktop: reduce top padding and bottom spacing - more aggressive */
         @media (min-width: 1024px) {
           .hero-section {
-            padding-top: max(env(safe-area-inset-top), 2rem) !important;
+            padding-top: max(env(safe-area-inset-top), 0.75rem) !important;
             padding-bottom: 0 !important;
           }
           .kpi-grid {
@@ -54,7 +54,7 @@ const HeroSection = () => {
         }
         @media (min-width: 1280px) {
           .hero-section {
-            padding-top: max(env(safe-area-inset-top), 1.5rem) !important;
+            padding-top: max(env(safe-area-inset-top), 0.5rem) !important;
             padding-bottom: 0 !important;
           }
         }
@@ -67,7 +67,7 @@ const HeroSection = () => {
           position: relative;
           /* Stable viewport height avoids URL bar reflow jump */
           min-height: 100svh;
-          padding: max(env(safe-area-inset-top), 2.5rem) 0 2rem 0;
+          padding: max(env(safe-area-inset-top), 1.25rem) 0 2rem 0;
           overflow: hidden;
           background: transparent;
           /* Prevent descendant layout/paint from bubbling reflow up to sections */
@@ -475,6 +475,57 @@ const HeroSection = () => {
         }
         .diff-item p {
           margin: 0.4rem 0 0; color: #cbd5e1; line-height: 1.55; font-size: clamp(0.9rem, 2.2vw, 1rem);
+        }
+
+        /* Executive Philosophy - Quote Style */
+        .philosophy-quote {
+          max-width: 900px;
+          margin: 2rem auto;
+          padding: 2rem 1.5rem 2rem 2.5rem;
+          border-left: 4px solid rgba(0, 212, 255, 0.6); /* Cyan border */
+          background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(30, 144, 255, 0.05));
+          border-radius: 0 12px 12px 0;
+          position: relative;
+        }
+
+        .philosophy-quote::before {
+          content: '"';
+          position: absolute;
+          top: -10px;
+          left: 10px;
+          font-size: 4rem;
+          font-weight: 700;
+          color: rgba(0, 212, 255, 0.3);
+          line-height: 1;
+        }
+
+        .philosophy-text {
+          color: rgba(255, 255, 255, 0.95);
+          font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+          line-height: 1.75;
+          font-weight: 500;
+          text-align: center;
+          margin: 0;
+          font-style: italic;
+        }
+
+        .philosophy-attribution {
+          margin-top: 1rem;
+          text-align: right;
+          font-size: clamp(0.9rem, 1.8vw, 1rem);
+          color: rgba(251, 191, 36, 0.8);
+          font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+          .philosophy-quote {
+            padding: 1.5rem 1rem 1.5rem 1.5rem;
+            margin: 1.5rem 1rem;
+          }
+          .philosophy-text {
+            font-size: clamp(1rem, 4vw, 1.1rem);
+            line-height: 1.65;
+          }
         }
 
         /* Mobile overrides */
@@ -938,11 +989,18 @@ const HeroSection = () => {
           </div>
         </div>
 
+        {/* ——— EXECUTIVE PHILOSOPHY ——— */}
+        <div className="philosophy-quote">
+          <p className="philosophy-text">
+            I architect AI strategies that become business strategies—transforming how organizations compete and create value through AI-first operating models where intelligence drives every decision and competitive advantage. I balance innovation velocity with governance discipline, scaling transformation across global operations while managing regulatory risk—consistently delivering $400M+ in enterprise value.
+          </p>
+        </div>
+
         {/* ——— DIFFERENTIATORS ——— */}
-        <div className="diff-wrap">
+        <div className="diff-wrap" style={{ marginTop: '1.5rem' }}>
           <div className="diff-glass">
             <div className="diff-header">
-              <span className="diff-title">Leadership Differentiators</span>
+              <span className="diff-title">Strategic Leadership Capabilities</span>
             </div>
 
             <div className="diff-grid">
@@ -956,12 +1014,10 @@ const HeroSection = () => {
                   />
                   <div className="w-full md:w-auto">
                     <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                      Visionary Leadership
+                      Visionary AI Leadership & Roadmapping
                     </div>
                     <p>
-                      Leading cutting-edge AI initiatives that reshape
-                      industries—from pioneering LLM deployments to building
-                      next-gen analytics platforms.
+                      I define enterprise AI strategy that aligns C-suite priorities with actionable investment roadmaps—delivering measurable P&L impact and competitive differentiation.
                     </p>
                   </div>
                 </div>
@@ -977,12 +1033,10 @@ const HeroSection = () => {
                   />
                   <div className="w-full md:w-auto">
                     <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                      Execution Excellence
+                      Execution at Scale (LLM & Data Platforms)
                     </div>
                     <p>
-                      Proven track record of turning ambitious visions into
-                      measurable results—consistently delivering on time, on
-                      budget, at scale.
+                      I deliver LLM deployments and data platforms at Fortune 500 scale—architected for reliability, security, and enterprise adoption in highly regulated environments.
                     </p>
                   </div>
                 </div>
@@ -998,12 +1052,10 @@ const HeroSection = () => {
                   />
                   <div className="w-full md:w-auto">
                     <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                      Strategic Thinking
+                      C-Suite Strategy: AI, Data, and ROI
                     </div>
                     <p>
-                      C-suite advisory capabilities that translate complex AI
-                      strategies into clear business roadmaps and competitive
-                      advantages.
+                      I translate complex AI/ML capabilities into clear business cases, investment budgets, and ROI outcomes that drive executive decision-making.
                     </p>
                   </div>
                 </div>
@@ -1019,12 +1071,10 @@ const HeroSection = () => {
                   />
                   <div className="w-full md:w-auto">
                     <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                      Innovation Catalyst
+                      Innovation & AI Governance Frameworks
                     </div>
                     <p>
-                      Building transformative solutions that don&apos;t just
-                      solve today&apos;s problems—they anticipate
-                      tomorrow&apos;s opportunities.
+                      I establish AI governance frameworks that balance innovation velocity with risk management—ensuring compliance, transparency, and sustainable competitive advantage.
                     </p>
                   </div>
                 </div>

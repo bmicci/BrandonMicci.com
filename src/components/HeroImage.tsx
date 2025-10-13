@@ -7,8 +7,8 @@ const HeroImage = () => {
     <>
       <style jsx>{`
         .hi-card {
-          width: clamp(220px, 24vw, 320px);
-          max-width: 320px;
+          width: clamp(200px, 20vw, 280px);
+          max-width: 280px;
           margin: 0 auto;
           max-height: 420px; /* Constrain height to match left content */
           border-radius: 20px;
