@@ -1065,14 +1065,14 @@ const HeroSection = () => {
             <div className="diff-grid">
               {/* Card 1 */}
               <div className="diff-item">
-                <div className="diff-item-content flex flex-row items-start text-left gap-4">
+                <div className="diff-item-content flex flex-col items-center text-center gap-3">
                   <Icon
                     name="rocket"
                     size="lg"
-                    className="block w-8 h-8 flex-shrink-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
+                    className="block w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
-                  <div className="w-full md:w-auto">
-                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  <div className="w-full">
+                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
                       AI Strategy & Vision
                     </div>
                     <p>
@@ -1086,14 +1086,14 @@ const HeroSection = () => {
 
               {/* Card 2 */}
               <div className="diff-item">
-                <div className="diff-item-content flex flex-row items-start text-left gap-4">
+                <div className="diff-item-content flex flex-col items-center text-center gap-3">
                   <Icon
                     name="zap"
                     size="lg"
-                    className="block w-8 h-8 flex-shrink-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
+                    className="block w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
-                  <div className="w-full md:w-auto">
-                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  <div className="w-full">
+                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
                       Scale & Delivery
                     </div>
                     <p>
@@ -1107,14 +1107,14 @@ const HeroSection = () => {
 
               {/* Card 3 */}
               <div className="diff-item">
-                <div className="diff-item-content flex flex-row items-start text-left gap-4">
+                <div className="diff-item-content flex flex-col items-center text-center gap-3">
                   <Icon
                     name="target"
                     size="lg"
-                    className="block w-8 h-8 flex-shrink-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
+                    className="block w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
-                  <div className="w-full md:w-auto">
-                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  <div className="w-full">
+                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
                       C-Suite Impact
                     </div>
                     <p>
@@ -1128,14 +1128,14 @@ const HeroSection = () => {
 
               {/* Card 4 */}
               <div className="diff-item">
-                <div className="diff-item-content flex flex-row items-start text-left gap-4">
+                <div className="diff-item-content flex flex-col items-center text-center gap-3">
                   <Icon
                     name="sparkle"
                     size="lg"
-                    className="block w-8 h-8 flex-shrink-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
+                    className="block w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
-                  <div className="w-full md:w-auto">
-                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  <div className="w-full">
+                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
                       Governance & Innovation
                     </div>
                     <p>

@@ -224,14 +224,14 @@ const StrategicDifferentiators: React.FC = () => {
       <div className="differentiators-container mx-auto max-w-6xl px-4 md:px-8 overflow-x-clip">
         <div className="differentiators-grid">
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
-            <div className="diff-content flex items-start gap-4">
+            <div className="diff-content flex flex-col items-center text-center gap-3">
               <Icon
                 name="trending-up"
                 size="lg"
-                className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0"
+                className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)]"
               />
-              <div>
-                <h3 className="diff-title text-base md:text-lg font-bold text-white">
+              <div className="w-full">
+                <h3 className="diff-title text-base md:text-lg font-bold text-white text-center">
                   Enterprise-Scale Architecture
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -245,14 +245,14 @@ const StrategicDifferentiators: React.FC = () => {
           </div>
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
-            <div className="diff-content flex items-start gap-4">
+            <div className="diff-content flex flex-col items-center text-center gap-3">
               <Icon
                 name="globe"
                 size="lg"
-                className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0"
+                className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)]"
               />
-              <div>
-                <h3 className="diff-title text-base md:text-lg font-bold text-white">
+              <div className="w-full">
+                <h3 className="diff-title text-base md:text-lg font-bold text-white text-center">
                   Business-Technology Bridge
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -266,14 +266,14 @@ const StrategicDifferentiators: React.FC = () => {
           </div>
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
-            <div className="diff-content flex items-start gap-4">
+            <div className="diff-content flex flex-col items-center text-center gap-3">
               <Icon
                 name="settings"
                 size="lg"
-                className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0"
+                className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)]"
               />
-              <div>
-                <h3 className="diff-title text-base md:text-lg font-bold text-white">
+              <div className="w-full">
+                <h3 className="diff-title text-base md:text-lg font-bold text-white text-center">
                   Technical Architecture
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -287,14 +287,14 @@ const StrategicDifferentiators: React.FC = () => {
           </div>
 
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
-            <div className="diff-content flex items-start gap-4">
+            <div className="diff-content flex flex-col items-center text-center gap-3">
               <Icon
                 name="construction"
                 size="lg"
-                className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0"
+                className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)]"
               />
-              <div>
-                <h3 className="diff-title text-base md:text-lg font-bold text-white">
+              <div className="w-full">
+                <h3 className="diff-title text-base md:text-lg font-bold text-white text-center">
                   Transformation Leadership
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-300">
