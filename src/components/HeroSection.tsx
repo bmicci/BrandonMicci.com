@@ -260,12 +260,19 @@ const HeroSection = () => {
         .inline-link:hover {
           border-bottom-color: rgba(0, 212, 255, 0.8);
         }
+        .inline-link.gradient {
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 55%, #00d4ff 100%);
+          background-size: 200% 200%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
 
         .dek {
           margin-top: 0.25rem;
           color: rgba(255,255,255,0.92);
           line-height: 1.4;
-          font-weight: 600;
+          font-weight: 700;
           font-size: clamp(1.1rem, 1.9vw, 1.35rem);
           text-shadow: 0 1px 3px rgba(0,0,0,0.25);
         }
