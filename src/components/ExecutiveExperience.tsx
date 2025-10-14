@@ -485,11 +485,37 @@ const ExecutiveExperience = memo(() => {
             font-size: 13px;
           }
         }
+
+        .section-header-title {
+          font-size: 2.8rem;
+          font-weight: 800;
+          line-height: 1.2;
+          letter-spacing: -0.01em;
+          margin-bottom: 1rem;
+        }
+
+        @media (max-width: 1024px) {
+          .section-header-title {
+            font-size: 2.6rem;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .section-header-title {
+            font-size: 2.4rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .section-header-title {
+            font-size: 2rem;
+          }
+        }
       `}</style>
 
       <div className="relative z-10 font-sans">
         <div className="px-2 py-6 md:px-8 md:py-12 text-center">
-          <h2 className="text-2xl font-bold md:text-5xl">
+          <h2 className="section-header-title">
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               Executive Experience
             </span>

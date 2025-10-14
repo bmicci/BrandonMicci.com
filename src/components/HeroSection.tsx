@@ -1062,14 +1062,14 @@ const HeroSection = () => {
             <div className="diff-grid">
               {/* Card 1 */}
               <div className="diff-item">
-                <div className="diff-item-content grid place-items-center text-center gap-3 md:flex md:flex-row md:items-start md:text-left md:gap-4">
+                <div className="diff-item-content flex flex-row items-start text-left gap-4">
                   <Icon
                     name="rocket"
                     size="lg"
-                    className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
+                    className="block w-8 h-8 flex-shrink-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center md:text-left">
+                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                       AI Strategy & Vision
                     </div>
                     <p>
@@ -1081,14 +1081,14 @@ const HeroSection = () => {
 
               {/* Card 2 */}
               <div className="diff-item">
-                <div className="diff-item-content grid place-items-center text-center gap-3 md:flex md:flex-row md:items-start md:text-left md:gap-4">
+                <div className="diff-item-content flex flex-row items-start text-left gap-4">
                   <Icon
                     name="zap"
                     size="lg"
-                    className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
+                    className="block w-8 h-8 flex-shrink-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center md:text-left">
+                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                       Scale & Delivery
                     </div>
                     <p>
@@ -1100,14 +1100,14 @@ const HeroSection = () => {
 
               {/* Card 3 */}
               <div className="diff-item">
-                <div className="diff-item-content grid place-items-center text-center gap-3 md:flex md:flex-row md:items-start md:text-left md:gap-4">
+                <div className="diff-item-content flex flex-row items-start text-left gap-4">
                   <Icon
                     name="target"
                     size="lg"
-                    className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
+                    className="block w-8 h-8 flex-shrink-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center md:text-left">
+                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                       C-Suite Impact
                     </div>
                     <p>
@@ -1119,14 +1119,14 @@ const HeroSection = () => {
 
               {/* Card 4 */}
               <div className="diff-item">
-                <div className="diff-item-content grid place-items-center text-center gap-3 md:flex md:flex-row md:items-start md:text-left md:gap-4">
+                <div className="diff-item-content flex flex-row items-start text-left gap-4">
                   <Icon
                     name="sparkle"
                     size="lg"
-                    className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
+                    className="block w-8 h-8 flex-shrink-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center md:text-left">
+                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                       Governance & Innovation
                     </div>
                     <p>

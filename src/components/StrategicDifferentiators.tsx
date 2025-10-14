@@ -164,7 +164,6 @@ const StrategicDifferentiators: React.FC = () => {
         }
 
         .diff-title {
-          font-size: 1.25rem;
           font-weight: 700;
           margin-bottom: 0.8rem;
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
@@ -204,9 +203,6 @@ const StrategicDifferentiators: React.FC = () => {
         }
 
         @media (max-width: 480px) {
-          .diff-title {
-            font-size: 1.1rem;
-          }
           .diff-description {
             font-size: 0.95rem;
           }
@@ -235,7 +231,7 @@ const StrategicDifferentiators: React.FC = () => {
                 className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0"
               />
               <div>
-                <h3 className="diff-title text-base md:text-lg font-semibold text-white">
+                <h3 className="diff-title text-base md:text-lg font-bold text-white">
                   Enterprise-Scale Architecture
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -256,7 +252,7 @@ const StrategicDifferentiators: React.FC = () => {
                 className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0"
               />
               <div>
-                <h3 className="diff-title text-base md:text-lg font-semibold text-white">
+                <h3 className="diff-title text-base md:text-lg font-bold text-white">
                   Business-Technology Bridge
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -277,7 +273,7 @@ const StrategicDifferentiators: React.FC = () => {
                 className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0"
               />
               <div>
-                <h3 className="diff-title text-base md:text-lg font-semibold text-white">
+                <h3 className="diff-title text-base md:text-lg font-bold text-white">
                   Technical Architecture
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-300">
@@ -298,7 +294,7 @@ const StrategicDifferentiators: React.FC = () => {
                 className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] flex-shrink-0"
               />
               <div>
-                <h3 className="diff-title text-base md:text-lg font-semibold text-white">
+                <h3 className="diff-title text-base md:text-lg font-bold text-white">
                   Transformation Leadership
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-300">
