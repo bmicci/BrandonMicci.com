@@ -726,7 +726,10 @@ const HeroSection = () => {
           }
 
           /* Show the 2nd KPI set ONLY on mobile */
-          .kpi-mobile-only { display: grid; }
+          .kpi-mobile-only { 
+            display: grid;
+            padding: 0 1.25rem;
+          }
         }
 
         /* iPad Mini portrait: upscale mobile stack */

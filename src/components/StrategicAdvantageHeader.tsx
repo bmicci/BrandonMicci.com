@@ -55,7 +55,7 @@ const StrategicAdvantageHeader: React.FC = () => {
           font-size: 1.2rem;
           color: rgba(255, 255, 255, 0.9);
           line-height: 1.5;
-          font-weight: 400;
+          font-weight: 600;
           max-width: 900px;
           margin: 0 auto;
           animation: subtitleFade 1s ease-out 0.3s both;
