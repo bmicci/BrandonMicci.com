@@ -346,7 +346,8 @@ const CompanyExpertise: React.FC = () => {
               Big Four & Fortune 500 Organizations
             </h3>
             <p className="expertise-context">
-              Delivering transformation where it matters most—across the world&apos;s most complex, regulated enterprise environments
+              Delivering transformation where it matters most—across the
+              world&apos;s most complex, regulated enterprise environments
             </p>
           </div>
 

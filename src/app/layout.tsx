@@ -42,8 +42,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default:
-      'Brandon Micci | Enterprise AI & Digital Transformation Executive',
+    default: 'Brandon Micci | Enterprise AI & Digital Transformation Executive',
     template: '%s | Brandon Micci',
   },
   description:
@@ -103,8 +102,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title:
-      'Brandon Micci | Enterprise AI & Digital Transformation Executive',
+    title: 'Brandon Micci | Enterprise AI & Digital Transformation Executive',
     description:
       'Senior AI & Digital Transformation Executive. $400M+ enterprise revenue, 27K+ AI users, 250% peak ROI. Expert in AI strategy, LLM deployment, Fortune 500 transformation.',
     images: ['/opengraph-image'],

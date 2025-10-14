@@ -321,11 +321,7 @@ function buildJsonLd() {
   return payload;
 }
 
-export default function EnhancedStructuredData({
-  nonce,
-}: {
-  nonce?: string;
-}) {
+export default function EnhancedStructuredData({ nonce }: { nonce?: string }) {
   const data = buildJsonLd();
   return (
     <script

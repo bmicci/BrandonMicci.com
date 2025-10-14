@@ -235,10 +235,10 @@ const StrategicDifferentiators: React.FC = () => {
                   Enterprise-Scale Architecture
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-300">
-                  Proven delivery of AI/ML systems at massive scale—from
-                  27,000+ user LLM platforms to distributed analytics
-                  architectures handling petabyte-scale data workloads across
-                  global Fortune 500 infrastructure.
+                  Proven delivery of AI/ML systems at massive scale—from 27,000+
+                  user LLM platforms to distributed analytics architectures
+                  handling petabyte-scale data workloads across global Fortune
+                  500 infrastructure.
                 </p>
               </div>
             </div>

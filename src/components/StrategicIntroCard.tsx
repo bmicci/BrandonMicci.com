@@ -125,10 +125,12 @@ const StrategicIntroCard: React.FC = () => {
 
       <div className="intro-card">
         <p className="intro-text">
-          My track record demonstrates consistent delivery across the world&apos;s most demanding{' '}
-          <strong>enterprise environments</strong>—transforming{' '}
-          <strong>AI strategy</strong> into measurable business impact where{' '}
-          <strong>complexity, regulation, and stakeholder expectations</strong> are highest.
+          My track record demonstrates consistent delivery across the
+          world&apos;s most demanding <strong>enterprise environments</strong>
+          —transforming <strong>AI strategy</strong> into measurable business
+          impact where{' '}
+          <strong>complexity, regulation, and stakeholder expectations</strong>{' '}
+          are highest.
         </p>
       </div>
     </>

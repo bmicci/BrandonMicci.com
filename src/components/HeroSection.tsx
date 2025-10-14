@@ -831,7 +831,7 @@ const HeroSection = () => {
       <div className="hero-section hero-stable">
         {/* Energy field background */}
         <div className="hero-energy-field" />
-        
+
         {/* SVG for gradient fills (icons) */}
         <svg width="0" height="0" style={{ position: 'absolute' }}>
           <defs>
@@ -864,7 +864,9 @@ const HeroSection = () => {
           <div className="hero-content-box">
             <div className="hero-content">
               <p className="dek" style={{ textWrap: 'balance' as const }}>
-                Driving <span className="gradient">enterprise transformation</span> at the intersection of{' '}
+                Driving{' '}
+                <span className="gradient">enterprise transformation</span> at
+                the intersection of{' '}
                 <Link href="/#strategic-advantage" className="inline-link">
                   <span className="gradient">AI strategy</span>
                 </Link>
@@ -944,9 +946,7 @@ const HeroSection = () => {
 
                 {/* Typical ROI */}
                 <div className="kpi-box">
-                  <span className="sr-only">
-                    250% Peak Program ROI
-                  </span>
+                  <span className="sr-only">250% Peak Program ROI</span>
                   <span className="stat-number">
                     <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
                   </span>
@@ -994,7 +994,8 @@ const HeroSection = () => {
                 >
                   enterprise transformation
                 </span>{' '}
-                at the intersection of AI strategy, digital innovation, and measurable ROI—with{' '}
+                at the intersection of AI strategy, digital innovation, and
+                measurable ROI—with{' '}
                 <span
                   className="gradient"
                   style={{ WebkitTextFillColor: 'transparent' }}
@@ -1056,7 +1057,9 @@ const HeroSection = () => {
         <div className="diff-wrap" style={{ marginTop: '2.5rem' }}>
           <div className="diff-glass">
             <div className="diff-header">
-              <span className="diff-title">Strategic Leadership Capabilities</span>
+              <span className="diff-title">
+                Strategic Leadership Capabilities
+              </span>
             </div>
 
             <div className="diff-grid">
@@ -1073,7 +1076,9 @@ const HeroSection = () => {
                       AI Strategy & Vision
                     </div>
                     <p>
-                      I define enterprise AI strategy that aligns C-suite priorities with actionable investment roadmaps—delivering measurable P&L impact and competitive differentiation.
+                      I define enterprise AI strategy that aligns C-suite
+                      priorities with actionable investment roadmaps—delivering
+                      measurable P&L impact and competitive differentiation.
                     </p>
                   </div>
                 </div>
@@ -1092,7 +1097,9 @@ const HeroSection = () => {
                       Scale & Delivery
                     </div>
                     <p>
-                      I deliver enterprise AI solutions and data products at Fortune 500 scale—architected for reliability, security, and sustained adoption in highly regulated environments.
+                      I deliver enterprise AI solutions and data products at
+                      Fortune 500 scale—architected for reliability, security,
+                      and sustained adoption in highly regulated environments.
                     </p>
                   </div>
                 </div>
@@ -1111,7 +1118,9 @@ const HeroSection = () => {
                       C-Suite Impact
                     </div>
                     <p>
-                      I translate complex AI/ML capabilities into clear business cases, investment budgets, and ROI outcomes that drive executive decision-making.
+                      I translate complex AI/ML capabilities into clear business
+                      cases, investment budgets, and ROI outcomes that drive
+                      executive decision-making.
                     </p>
                   </div>
                 </div>
@@ -1130,7 +1139,10 @@ const HeroSection = () => {
                       Governance & Innovation
                     </div>
                     <p>
-                      I establish AI governance frameworks that balance innovation velocity with risk management—ensuring compliance, transparency, and sustainable competitive advantage.
+                      I establish AI governance frameworks that balance
+                      innovation velocity with risk management—ensuring
+                      compliance, transparency, and sustainable competitive
+                      advantage.
                     </p>
                   </div>
                 </div>
@@ -1140,9 +1152,18 @@ const HeroSection = () => {
         </div>
 
         {/* ——— EXECUTIVE PHILOSOPHY ——— */}
-        <div className="philosophy-quote" style={{ marginTop: '3.5rem', marginBottom: '3rem' }}>
+        <div
+          className="philosophy-quote"
+          style={{ marginTop: '3.5rem', marginBottom: '3rem' }}
+        >
           <p className="philosophy-text">
-            I architect AI strategies that become business strategies—transforming how organizations compete and create value through AI-first operating models where intelligence drives every decision and competitive advantage. I balance innovation velocity with governance discipline, scaling transformation across global operations while managing regulatory risk—consistently delivering $400M+ in enterprise value.
+            I architect AI strategies that become business
+            strategies—transforming how organizations compete and create value
+            through AI-first operating models where intelligence drives every
+            decision and competitive advantage. I balance innovation velocity
+            with governance discipline, scaling transformation across global
+            operations while managing regulatory risk—consistently delivering
+            $400M+ in enterprise value.
           </p>
         </div>
 
@@ -1155,9 +1176,7 @@ const HeroSection = () => {
         >
           {/* Value Delivered */}
           <div className="kpi-box">
-            <span className="sr-only">
-              $400M+ Enterprise Revenue Created
-            </span>
+            <span className="sr-only">$400M+ Enterprise Revenue Created</span>
             <span className="stat-number">
               <AnimatedCounter
                 value={METRICS.valueDeliveredM}
@@ -1179,7 +1198,9 @@ const HeroSection = () => {
 
           {/* Typical ROI */}
           <div className="kpi-box">
-            <span className="sr-only">{METRICS.typicalROI}% Peak Program ROI</span>
+            <span className="sr-only">
+              {METRICS.typicalROI}% Peak Program ROI
+            </span>
             <span className="stat-number">
               <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
             </span>
