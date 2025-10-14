@@ -7,8 +7,8 @@ const HeroImage = () => {
     <>
       <style jsx>{`
         .hi-card {
-          width: clamp(200px, 20vw, 280px);
-          max-width: 280px;
+          width: clamp(200px, 16vw, 240px);
+          max-width: 240px;
           margin: 0 auto;
           max-height: 420px; /* Constrain height to match left content */
           border-radius: 20px;
@@ -27,8 +27,8 @@ const HeroImage = () => {
         /* Tablet sizing */
         @media (min-width: 769px) and (max-width: 1023px) {
           .hi-card {
-            width: clamp(220px, 24vw, 280px);
-            max-width: 280px;
+            width: clamp(200px, 20vw, 240px);
+            max-width: 240px;
             max-height: 380px; /* Smaller height for tablet */
           }
         }

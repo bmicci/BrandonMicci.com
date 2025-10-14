@@ -865,7 +865,7 @@ const HeroSection = () => {
                 <Link href="/#strategic-advantage" className="inline-link gradient">
                   digital innovation
                 </Link>
-                , and measurable ROI across <span className="gradient">Fortune 500</span> organizations.
+                , and measurable <span className="gradient">ROI</span> across <span className="gradient">Fortune 500</span> organizations.
               </p>
 
               <div className="cta-row cta-3up-xl">
