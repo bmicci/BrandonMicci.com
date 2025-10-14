@@ -863,7 +863,7 @@ const HeroSection = () => {
           {/* Content box below header */}
           <div className="hero-content-box">
             <div className="hero-content">
-              <p className="dek" style={{ textWrap: 'balance' as const, maxWidth: '48rem' }}>
+              <p className="dek" style={{ textWrap: 'balance' as const }}>
                 Driving <span className="gradient">enterprise transformation</span> at the intersection of{' '}
                 <Link href="/#strategic-advantage" className="inline-link gradient">
                   AI strategy
@@ -872,7 +872,11 @@ const HeroSection = () => {
                 <Link href="/#strategic-advantage" className="inline-link gradient">
                   digital innovation
                 </Link>
-                , and measurable <span className="gradient">ROI</span> across <span className="gradient">Fortune 500</span> organizations.
+                , and measurable <span className="gradient">ROI</span>—with{' '}
+                <span className="gradient">16+ years</span> delivering{' '}
+                <span className="gradient">$400M+ value</span> across{' '}
+                <span className="gradient">Fortune 500 companies</span> and at{' '}
+                <span className="gradient">Big Four</span> firms.
               </p>
 
               <div className="cta-row cta-3up-xl">
@@ -913,7 +917,7 @@ const HeroSection = () => {
                 </a>
               </div>
 
-              <div className="kpi-grid">
+              <div className="kpi-grid" style={{ marginBottom: '2.5rem' }}>
                 {/* Value Delivered */}
                 <div className="kpi-box">
                   <span className="sr-only">
@@ -983,38 +987,42 @@ const HeroSection = () => {
               </div>
 
               <p className="mobile-dek">
-                Over{' '}
+                Driving{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  enterprise transformation
+                </span>{' '}
+                at the intersection of AI strategy, digital innovation, and measurable ROI—with{' '}
                 <span
                   className="gradient"
                   style={{ WebkitTextFillColor: 'transparent' }}
                 >
                   16+ years
                 </span>{' '}
-                delivering
+                delivering{' '}
                 <span
                   className="gradient"
                   style={{ WebkitTextFillColor: 'transparent' }}
                 >
-                  {' '}
                   $400M+ value
-                </span>
-                , scaling to
+                </span>{' '}
+                across{' '}
                 <span
                   className="gradient"
                   style={{ WebkitTextFillColor: 'transparent' }}
                 >
-                  {' '}
-                  27K+ users
-                </span>
-                , driving ROI across
+                  Fortune 500 companies
+                </span>{' '}
+                and at{' '}
                 <span
                   className="gradient"
                   style={{ WebkitTextFillColor: 'transparent' }}
                 >
-                  {' '}
-                  Fortune 500
-                </span>
-                .
+                  Big Four
+                </span>{' '}
+                firms.
               </p>
             </div>
 
@@ -1044,15 +1052,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* ——— EXECUTIVE PHILOSOPHY ——— */}
-        <div className="philosophy-quote">
-          <p className="philosophy-text">
-            I architect AI strategies that become business strategies—transforming how organizations compete and create value through AI-first operating models where intelligence drives every decision and competitive advantage. I balance innovation velocity with governance discipline, scaling transformation across global operations while managing regulatory risk—consistently delivering $400M+ in enterprise value.
-          </p>
-        </div>
-
         {/* ——— DIFFERENTIATORS ——— */}
-        <div className="diff-wrap" style={{ marginTop: '1.5rem' }}>
+        <div className="diff-wrap" style={{ marginTop: '2.5rem' }}>
           <div className="diff-glass">
             <div className="diff-header">
               <span className="diff-title">Strategic Leadership Capabilities</span>
@@ -1136,59 +1137,64 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Spacer between Leadership Differentiators and next section */}
-          {/* Spacer between Leadership Differentiators and next section - minimal for tighter layout */}
-          <div style={{ height: '0.25rem' }}></div>
+        {/* ——— EXECUTIVE PHILOSOPHY ——— */}
+        <div className="philosophy-quote" style={{ marginTop: '3.5rem', marginBottom: '3rem' }}>
+          <p className="philosophy-text">
+            I architect AI strategies that become business strategies—transforming how organizations compete and create value through AI-first operating models where intelligence drives every decision and competitive advantage. I balance innovation velocity with governance discipline, scaling transformation across global operations while managing regulatory risk—consistently delivering $400M+ in enterprise value.
+          </p>
+        </div>
 
-          {/* Mobile KPI Grid (mobile-only) */}
-          <div
-            className="kpi-grid kpi-mobile-only"
-            style={{ marginTop: '1.25rem' }}
-          >
-            {/* Value Delivered */}
-            <div className="kpi-box">
-              <span className="sr-only">
-                $400M+ Enterprise Revenue Created
-              </span>
-              <span className="stat-number">
-                <AnimatedCounter
-                  value={METRICS.valueDeliveredM}
-                  suffix="M+"
-                  format={(n) => `$${n}`}
-                />
-              </span>
-              <span className="stat-label">Enterprise Revenue Created</span>
-            </div>
+        <div style={{ marginBottom: '2.5rem' }}></div>
 
-            {/* AI Users */}
-            <div className="kpi-box">
-              <span className="sr-only">27K+ AI Users Enabled</span>
-              <span className="stat-number">
-                <AnimatedCounter value={METRICS.aiUsersK} suffix="K+" />
-              </span>
-              <span className="stat-label">AI Users Enabled</span>
-            </div>
+        {/* Mobile KPI Grid (mobile-only) */}
+        <div
+          className="kpi-grid kpi-mobile-only"
+          style={{ marginTop: '1.25rem' }}
+        >
+          {/* Value Delivered */}
+          <div className="kpi-box">
+            <span className="sr-only">
+              $400M+ Enterprise Revenue Created
+            </span>
+            <span className="stat-number">
+              <AnimatedCounter
+                value={METRICS.valueDeliveredM}
+                suffix="M+"
+                format={(n) => `$${n}`}
+              />
+            </span>
+            <span className="stat-label">Enterprise Revenue Created</span>
+          </div>
 
-            {/* Typical ROI */}
-            <div className="kpi-box">
-              <span className="sr-only">{METRICS.typicalROI}% Peak Program ROI</span>
-              <span className="stat-number">
-                <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
-              </span>
-              <span className="stat-label">Peak Program ROI</span>
-            </div>
+          {/* AI Users */}
+          <div className="kpi-box">
+            <span className="sr-only">27K+ AI Users Enabled</span>
+            <span className="stat-number">
+              <AnimatedCounter value={METRICS.aiUsersK} suffix="K+" />
+            </span>
+            <span className="stat-label">AI Users Enabled</span>
+          </div>
 
-            {/* Years Leading */}
-            <div className="kpi-box">
-              <span className="sr-only">
-                {METRICS.yearsLeading}+ Years Executive Leadership
-              </span>
-              <span className="stat-number">
-                <AnimatedCounter value={METRICS.yearsLeading} suffix="+" />
-              </span>
-              <span className="stat-label">Years Executive Leadership</span>
-            </div>
+          {/* Typical ROI */}
+          <div className="kpi-box">
+            <span className="sr-only">{METRICS.typicalROI}% Peak Program ROI</span>
+            <span className="stat-number">
+              <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
+            </span>
+            <span className="stat-label">Peak Program ROI</span>
+          </div>
+
+          {/* Years Leading */}
+          <div className="kpi-box">
+            <span className="sr-only">
+              {METRICS.yearsLeading}+ Years Executive Leadership
+            </span>
+            <span className="stat-number">
+              <AnimatedCounter value={METRICS.yearsLeading} suffix="+" />
+            </span>
+            <span className="stat-label">Years Executive Leadership</span>
           </div>
         </div>
       </div>
