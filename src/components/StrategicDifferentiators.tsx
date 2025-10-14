@@ -239,10 +239,10 @@ const StrategicDifferentiators: React.FC = () => {
                   Enterprise-Scale Architecture
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-300">
-                  Designing and deploying AI/ML systems at massive scale—from
+                  Proven delivery of AI/ML systems at massive scale—from
                   27,000+ user LLM platforms to distributed analytics
                   architectures handling petabyte-scale data workloads across
-                  global infrastructure.
+                  global Fortune 500 infrastructure.
                 </p>
               </div>
             </div>
@@ -260,10 +260,10 @@ const StrategicDifferentiators: React.FC = () => {
                   Business-Technology Bridge
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-300">
-                  Unique ability to translate between technical complexity and
-                  business value—turning AI capabilities into strategic
-                  competitive advantages across regulated industries and complex
-                  enterprise environments.
+                  Consistent track record translating technical innovation into
+                  business strategy—turning AI capabilities into revenue growth,
+                  market differentiation, and competitive advantage across
+                  regulated Fortune 500 environments.
                 </p>
               </div>
             </div>
@@ -281,10 +281,10 @@ const StrategicDifferentiators: React.FC = () => {
                   Technical Architecture
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-300">
-                  Hands-on AI/ML architecture experience combined with
-                  enterprise-scale system design. Building robust, scalable
-                  solutions that perform under real-world conditions and
-                  regulatory scrutiny.
+                  Deep technical expertise combined with enterprise
+                  leadership—delivering AI solutions that scale from concept to
+                  production while meeting stringent regulatory requirements and
+                  operational standards.
                 </p>
               </div>
             </div>
@@ -302,10 +302,10 @@ const StrategicDifferentiators: React.FC = () => {
                   Transformation Leadership
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-300">
-                  Expert at modernizing legacy systems while building
-                  evangelical communities that drive adoption at scale—like the
-                  world&apos;s largest Tableau community (30,000+ users). Change
-                  management at enterprise scale.
+                  Track record modernizing legacy systems while building
+                  adoption strategies that deliver sustained change—including
+                  the world&apos;s largest analytics community (30,000+ users).
+                  Change management proven at Fortune 500 scale.
                 </p>
               </div>
             </div>
