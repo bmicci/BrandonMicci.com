@@ -234,7 +234,7 @@ const StrategicDifferentiators: React.FC = () => {
                 <h3 className="diff-title text-base md:text-lg font-bold text-white text-center">
                   Enterprise-Scale Architecture
                 </h3>
-                <p className="diff-description mt-1 text-sm text-slate-300">
+                <p className="diff-description mt-1 text-sm text-slate-300 text-left">
                   Proven delivery of AI/ML systems at massive scale—from 27,000+
                   user LLM platforms to distributed analytics architectures
                   handling petabyte-scale data workloads across global Fortune
@@ -255,7 +255,7 @@ const StrategicDifferentiators: React.FC = () => {
                 <h3 className="diff-title text-base md:text-lg font-bold text-white text-center">
                   Business-Technology Bridge
                 </h3>
-                <p className="diff-description mt-1 text-sm text-slate-300">
+                <p className="diff-description mt-1 text-sm text-slate-300 text-left">
                   Consistent track record translating technical innovation into
                   business strategy—turning AI capabilities into revenue growth,
                   market differentiation, and competitive advantage across
@@ -276,7 +276,7 @@ const StrategicDifferentiators: React.FC = () => {
                 <h3 className="diff-title text-base md:text-lg font-bold text-white text-center">
                   Technical Architecture
                 </h3>
-                <p className="diff-description mt-1 text-sm text-slate-300">
+                <p className="diff-description mt-1 text-sm text-slate-300 text-left">
                   Deep technical expertise combined with enterprise
                   leadership—delivering AI solutions that scale from concept to
                   production while meeting stringent regulatory requirements and
@@ -297,7 +297,7 @@ const StrategicDifferentiators: React.FC = () => {
                 <h3 className="diff-title text-base md:text-lg font-bold text-white text-center">
                   Transformation Leadership
                 </h3>
-                <p className="diff-description mt-1 text-sm text-slate-300">
+                <p className="diff-description mt-1 text-sm text-slate-300 text-left">
                   Track record modernizing legacy systems while building
                   adoption strategies that deliver sustained change—including
                   the world&apos;s largest analytics community (30,000+ users).
