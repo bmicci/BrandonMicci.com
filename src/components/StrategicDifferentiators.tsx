@@ -219,6 +219,20 @@ const StrategicDifferentiators: React.FC = () => {
             font-size: 0.8rem;
           }
         }
+
+        /* Mobile: center all text for consistency with Hero section */
+        @media (max-width: 768px) {
+          .diff-description {
+            text-align: center !important;
+          }
+        }
+
+        /* Desktop: left-align body text for better readability */
+        @media (min-width: 769px) {
+          .diff-description {
+            text-align: left !important;
+          }
+        }
       `}</style>
 
       <div className="differentiators-container mx-auto max-w-6xl px-4 md:px-8 overflow-x-clip">
