@@ -147,7 +147,7 @@ const StrategicAdvantageHeader: React.FC = () => {
           >
             Big Four
           </a>{' '}
-          consulting
+          advisory
         </p>
       </div>
     </>
