@@ -26,11 +26,11 @@ export function middleware(req: NextRequest) {
     'Content-Security-Policy',
     [
       "default-src 'self'",
-      `script-src 'self' 'nonce-${nonce}' https://vercel.live https://*.vercel-insights.com https://*.vercel-analytics.com https://www.googletagmanager.com https://www.google-analytics.com`,
+      `script-src 'self' 'nonce-${nonce}' https://vercel.live https://*.vercel-insights.com https://*.vercel-analytics.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com`,
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
       "font-src 'self' data: https:",
-      "connect-src 'self' https://vercel.live https://*.vercel-insights.com https://*.vercel-analytics.com https://www.google-analytics.com https://vitals.vercel-insights.com",
+      "connect-src 'self' https://vercel.live https://*.vercel-insights.com https://*.vercel-analytics.com https://www.google-analytics.com https://analytics.google.com https://vitals.vercel-insights.com",
       "object-src 'none'",
       "frame-ancestors 'none'",
       "base-uri 'self'",
