@@ -1000,8 +1000,28 @@ const HeroSection = () => {
                 >
                   enterprise transformation
                 </span>{' '}
-                at the intersection of AI strategy, digital innovation, and
-                measurable ROI—with{' '}
+                at the intersection of{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  AI strategy
+                </span>
+                ,{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  digital innovation
+                </span>
+                , and measurable{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  ROI
+                </span>
+                —with{' '}
                 <span
                   className="gradient"
                   style={{ WebkitTextFillColor: 'transparent' }}
