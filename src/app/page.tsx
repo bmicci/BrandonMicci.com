@@ -42,6 +42,7 @@ export default function Home() {
       {/* Strategic Vision Section */}
       <section
         id="strategic-advantage"
+        aria-labelledby="strategic-advantage-title"
         className="
           relative
           scroll-mt-[var(--header-h,4.5rem)]

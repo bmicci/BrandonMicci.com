@@ -129,25 +129,24 @@ const StrategicAdvantageHeader: React.FC = () => {
       `}</style>
 
       <div className="strategic-header">
-        <h2 className="strategic-title">
-          <span className="gradient-text">Strategic Advantage</span>
+        <h2 id="strategic-advantage-title" className="strategic-title">
+          <span className="gradient-text">What Sets Me Apart</span>
         </h2>
         <p className="strategic-subtitle">
-          What sets me apart in the rapidly evolving{' '}
+          Proven execution across{' '}
           <a
             href="#transformation-leadership"
             className="text-cyan-400 hover:text-cyan-300 transition-colors"
           >
-            enterprise AI strategy
+            Fortune 500
           </a>{' '}
           and{' '}
           <a
             href="#executive-experience"
             className="text-cyan-400 hover:text-cyan-300 transition-colors"
           >
-            Fortune 500 digital transformation
-          </a>{' '}
-          landscape
+            Big Four enterprise transformations
+          </a>
         </p>
       </div>
     </>

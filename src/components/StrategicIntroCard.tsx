@@ -125,10 +125,10 @@ const StrategicIntroCard: React.FC = () => {
 
       <div className="intro-card">
         <p className="intro-text">
-          While many executives can talk about AI strategy, few can deliver the{' '}
-          <strong>scale, impact, and cross-industry expertise</strong> that
-          I&apos;ve consistently achieved. Here are the key differentiators that
-          make this possible:
+          My track record demonstrates consistent delivery across the world&apos;s most demanding{' '}
+          <strong>enterprise environments</strong>—transforming{' '}
+          <strong>AI strategy</strong> into measurable business impact where{' '}
+          <strong>complexity, regulation, and stakeholder expectations</strong> are highest.
         </p>
       </div>
     </>

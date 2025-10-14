@@ -85,6 +85,16 @@ const CompanyExpertise: React.FC = () => {
           animation: titleGlow 3s ease-in-out infinite;
         }
 
+        .expertise-context {
+          font-size: 1.1rem;
+          color: rgba(255, 255, 255, 0.85);
+          line-height: 1.6;
+          font-weight: 500;
+          max-width: 800px;
+          margin: 1rem auto 0;
+          text-align: center;
+        }
+
         .companies-grid {
           display: grid;
           gap: 1.5rem;
@@ -281,6 +291,11 @@ const CompanyExpertise: React.FC = () => {
             font-size: 1.6rem;
           }
 
+          .expertise-context {
+            font-size: 1rem;
+            margin: 0.75rem auto 0;
+          }
+
           .company-name {
             font-size: 0.9rem;
           }
@@ -330,6 +345,9 @@ const CompanyExpertise: React.FC = () => {
             <h3 className="expertise-subtitle">
               Big Four & Fortune 500 Organizations
             </h3>
+            <p className="expertise-context">
+              Delivering transformation where it matters most—across the world&apos;s most complex, regulated enterprise environments
+            </p>
           </div>
 
           <div className="companies-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 max-w-full">
