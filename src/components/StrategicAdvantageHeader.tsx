@@ -145,8 +145,9 @@ const StrategicAdvantageHeader: React.FC = () => {
             href="#executive-experience"
             className="text-cyan-400 hover:text-cyan-300 transition-colors"
           >
-            Big Four enterprise transformations
-          </a>
+            Big Four
+          </a>{' '}
+          consulting
         </p>
       </div>
     </>
