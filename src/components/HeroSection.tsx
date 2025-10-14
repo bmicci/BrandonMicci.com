@@ -1069,7 +1069,7 @@ const HeroSection = () => {
                   />
                   <div className="w-full md:w-auto">
                     <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                      Visionary AI Leadership & Roadmapping
+                      AI Strategy & Vision
                     </div>
                     <p>
                       I define enterprise AI strategy that aligns C-suite priorities with actionable investment roadmaps—delivering measurable P&L impact and competitive differentiation.
@@ -1088,10 +1088,10 @@ const HeroSection = () => {
                   />
                   <div className="w-full md:w-auto">
                     <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                      Execution at Scale (LLM & Data Platforms)
+                      Scale & Delivery
                     </div>
                     <p>
-                      I deliver LLM deployments and data platforms at Fortune 500 scale—architected for reliability, security, and enterprise adoption in highly regulated environments.
+                      I deliver enterprise AI solutions and data products at Fortune 500 scale—architected for reliability, security, and sustained adoption in highly regulated environments.
                     </p>
                   </div>
                 </div>
@@ -1107,7 +1107,7 @@ const HeroSection = () => {
                   />
                   <div className="w-full md:w-auto">
                     <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                      C-Suite Strategy: AI, Data, and ROI
+                      C-Suite Impact
                     </div>
                     <p>
                       I translate complex AI/ML capabilities into clear business cases, investment budgets, and ROI outcomes that drive executive decision-making.
@@ -1126,7 +1126,7 @@ const HeroSection = () => {
                   />
                   <div className="w-full md:w-auto">
                     <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                      Innovation & AI Governance Frameworks
+                      Governance & Innovation
                     </div>
                     <p>
                       I establish AI governance frameworks that balance innovation velocity with risk management—ensuring compliance, transparency, and sustainable competitive advantage.
