@@ -131,7 +131,7 @@ const HeroImage = () => {
         <div className="hi-imgwrap">
           <Image
             src="/headshot.webp"
-            alt="Brandon Micci VP Head of AI Products - Enterprise AI Transformation Leader at JPMorgan Chase"
+            alt="Brandon Micci — Enterprise AI & Digital Transformation Executive"
             className="hi-img"
             fill
             sizes="(min-width:1280px) 460px, (min-width:1024px) 34vw, (min-width:769px) 32vw, 70vw"

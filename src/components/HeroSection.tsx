@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Icon } from '@/components/ui/Icon';
 import HeroImage from './HeroImage';
 import AnimatedCounter from '@/components/AnimatedCounter';
@@ -72,9 +73,23 @@ const HeroSection = () => {
           background: transparent;
           /* Prevent descendant layout/paint from bubbling reflow up to sections */
           contain: layout paint;
-          /* Disable scroll anchoring in case the browser tries to “help” mid-paint */
+          /* Disable scroll anchoring in case the browser tries to "help" mid-paint */
           overflow-anchor: none;
         }
+
+        .hero-energy-field {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(
+            ellipse at center,
+            rgba(0, 212, 255, 0.12) 0%,
+            rgba(0, 150, 255, 0.06) 30%,
+            transparent 70%
+          );
+          pointer-events: none;
+          z-index: 0;
+        }
+
         .hero-container {
           max-width: 1200px;
           margin: 0 auto;
@@ -235,6 +250,15 @@ const HeroSection = () => {
         @keyframes gradientShift {
           0%,100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
+        }
+
+        .inline-link {
+          text-decoration: none;
+          border-bottom: 1px solid rgba(0, 212, 255, 0.4);
+          transition: border-color 0.2s ease;
+        }
+        .inline-link:hover {
+          border-bottom-color: rgba(0, 212, 255, 0.8);
         }
 
         .dek {
@@ -534,6 +558,19 @@ const HeroSection = () => {
         /* Hide the 2nd KPI set on desktop */
         .kpi-mobile-only { display: none; }
 
+        @media (max-width: 640px) {
+          .cta-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            width: 100%;
+          }
+          .cta-row .btn {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+
         @media (max-width: 768px) {
           .hero-container { padding: 0 0.9rem; }
           .hero-content-box { display: none !important; }
@@ -785,6 +822,9 @@ const HeroSection = () => {
       `}</style>
 
       <div className="hero-section hero-stable">
+        {/* Energy field background */}
+        <div className="hero-energy-field" />
+        
         {/* SVG for gradient fills (icons) */}
         <svg width="0" height="0" style={{ position: 'absolute' }}>
           <defs>
@@ -816,8 +856,16 @@ const HeroSection = () => {
           {/* Content box below header */}
           <div className="hero-content-box">
             <div className="hero-content">
-              <p className="dek">
-                Driving <span className="gradient">enterprise transformation</span> at the intersection of <span className="gradient">AI strategy</span>, <span className="gradient">digital innovation</span>, and measurable ROI across <span className="gradient">Fortune 500</span> organizations.
+              <p className="dek" style={{ textWrap: 'balance' as const, maxWidth: '48rem' }}>
+                Driving <span className="gradient">enterprise transformation</span> at the intersection of{' '}
+                <Link href="/#strategic-advantage" className="inline-link gradient">
+                  AI strategy
+                </Link>
+                ,{' '}
+                <Link href="/#strategic-advantage" className="inline-link gradient">
+                  digital innovation
+                </Link>
+                , and measurable ROI across <span className="gradient">Fortune 500</span> organizations.
               </p>
 
               <div className="cta-row cta-3up-xl">

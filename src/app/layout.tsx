@@ -43,24 +43,25 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: {
     default:
-      'Brandon Micci - VP Head of AI Products | Enterprise AI Transformation Leader',
+      'Brandon Micci | Enterprise AI & Digital Transformation Executive',
     template: '%s | Brandon Micci',
   },
   description:
-    'VP Head of AI Products at JPMorgan Chase. 27K+ LLM users deployed, $400M+ revenue generated. Expert in enterprise AI strategy, digital transformation, and Fortune 500 innovation leadership.',
+    'Senior AI & Digital Transformation Executive delivering measurable ROI at Fortune 500 scale. $400M+ enterprise revenue created, 27K+ AI users enabled, 250% peak program ROI. Expert in AI strategy, LLM deployment, and data platform architecture.',
   keywords: [
-    'VP Head of AI Products',
-    'Enterprise AI Strategy Executive',
-    'Fortune 500 AI Transformation Leader',
-    'LLM Deployment Expert',
-    'Digital Transformation VP',
-    'AI Executive JPMorgan Chase',
-    'Enterprise AI Implementation',
-    'Generative AI Scale Deployment',
+    'Enterprise AI Executive',
+    'Digital Transformation Executive',
+    'AI Strategy Director',
+    'Data Strategy Executive',
+    'Senior Director AI',
+    'VP AI Products',
     'Chief AI Officer',
-    'AI Strategy Consultant',
-    'Next.js Portfolio',
-    'TypeScript',
+    'LLM Deployment Expert',
+    'Fortune 500 AI Transformation',
+    'Enterprise Data Platform',
+    'AI Governance Framework',
+    'Digital Innovation Leader',
+    'Enterprise ROI AI Strategy',
   ],
   authors: [{ name: 'Brandon Micci', url: 'https://brandonmicci.com' }],
   creator: 'Brandon Micci',
@@ -88,24 +89,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.brandonmicci.com',
-    title: 'Brandon Micci — Enterprise AI Transformation Leader',
+    title: 'Brandon Micci | Enterprise AI & Digital Transformation Executive',
     description:
-      'VP Head of AI Products at JPMorgan Chase. 27K+ LLM users deployed, $400M+ revenue generated. Expert in enterprise AI strategy, digital transformation, and Fortune 500 innovation leadership.',
+      'Senior AI & Digital Transformation Executive delivering measurable ROI at Fortune 500 scale. $400M+ enterprise revenue, 27K+ AI users enabled, 250% peak ROI. Expert in AI strategy, LLM deployment, data platforms.',
     images: [
       {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Brandon Micci - VP Head of AI Products',
+        alt: 'Brandon Micci - Enterprise AI & Digital Transformation Executive',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title:
-      'Brandon Micci - VP Head of AI Products | Enterprise AI Transformation Leader',
+      'Brandon Micci | Enterprise AI & Digital Transformation Executive',
     description:
-      'VP Head of AI Products at JPMorgan Chase. 27K+ LLM users deployed, $400M+ revenue generated. Expert in enterprise AI strategy, digital transformation.',
+      'Senior AI & Digital Transformation Executive. $400M+ enterprise revenue, 27K+ AI users, 250% peak ROI. Expert in AI strategy, LLM deployment, Fortune 500 transformation.',
     images: ['/opengraph-image'],
     creator: '@brandonmicci',
   },

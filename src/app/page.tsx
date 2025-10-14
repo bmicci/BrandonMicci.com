@@ -33,7 +33,7 @@ export default function Home() {
       <HashScrollOnLoad />
       {/* Hero Section */}
       <section
-        id="home"
+        id="hero"
         className="relative scroll-mt-[var(--header-h,4.5rem)]"
       >
         <HeroSection />
@@ -41,7 +41,7 @@ export default function Home() {
 
       {/* Strategic Vision Section */}
       <section
-        id="strategic-vision"
+        id="strategic-advantage"
         className="
           relative
           scroll-mt-[var(--header-h,4.5rem)]
