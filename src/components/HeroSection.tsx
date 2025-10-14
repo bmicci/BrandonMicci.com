@@ -865,12 +865,12 @@ const HeroSection = () => {
             <div className="hero-content">
               <p className="dek" style={{ textWrap: 'balance' as const }}>
                 Driving <span className="gradient">enterprise transformation</span> at the intersection of{' '}
-                <Link href="/#strategic-advantage" className="inline-link gradient">
-                  AI strategy
+                <Link href="/#strategic-advantage" className="inline-link">
+                  <span className="gradient">AI strategy</span>
                 </Link>
                 ,{' '}
-                <Link href="/#strategic-advantage" className="inline-link gradient">
-                  digital innovation
+                <Link href="/#strategic-advantage" className="inline-link">
+                  <span className="gradient">digital innovation</span>
                 </Link>
                 , and measurable <span className="gradient">ROI</span>—with{' '}
                 <span className="gradient">16+ years</span> delivering{' '}
@@ -1069,7 +1069,7 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center md:text-left">
                       AI Strategy & Vision
                     </div>
                     <p>
@@ -1088,7 +1088,7 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center md:text-left">
                       Scale & Delivery
                     </div>
                     <p>
@@ -1107,7 +1107,7 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center md:text-left">
                       C-Suite Impact
                     </div>
                     <p>
@@ -1126,7 +1126,7 @@ const HeroSection = () => {
                     className="block w-8 h-8 flex-shrink-0 mx-auto md:mx-0 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
                   />
                   <div className="w-full md:w-auto">
-                    <div className="font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center md:text-left">
                       Governance & Innovation
                     </div>
                     <p>
