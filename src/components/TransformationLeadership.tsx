@@ -803,11 +803,11 @@ const TransformationLeadership = () => {
         <h2 className="portfolio-title">
           <span className="gradient-text">TRANSFORMATION LEADERSHIP</span>
         </h2>
-        <p className="portfolio-subtitle desktop-text">
+        <p className="portfolio-subtitle desktop-text font-semibold text-lg md:text-xl text-slate-200">
           Revolutionary innovations that don&apos;t just solve today&apos;s
           challenges—they redefine how entire industries operate tomorrow
         </p>
-        <p className="portfolio-subtitle mobile-text">
+        <p className="portfolio-subtitle mobile-text font-semibold text-lg md:text-xl text-slate-200">
           AI solutions driving Fortune 500 transformation
         </p>
       </div>

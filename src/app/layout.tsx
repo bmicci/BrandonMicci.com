@@ -153,7 +153,7 @@ export default async function RootLayout({
         {process.env.NODE_ENV === 'development' && <DevLayoutShiftLogger />}
         <Navigation />
         <BackgroundRoot />
-        <main id="main" className="mt-12 md:mt-14">
+        <main id="main" className="mt-8 md:mt-14">
           {children}
         </main>
 

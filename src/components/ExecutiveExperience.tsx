@@ -520,7 +520,7 @@ const ExecutiveExperience = memo(() => {
               Executive Experience
             </span>
           </h2>
-          <p className="mx-auto mt-3 max-w-4xl text-sm md:text-xl leading-relaxed text-slate-300 px-2">
+          <p className="mx-auto mt-3 max-w-4xl text-sm md:text-xl leading-relaxed text-slate-200 px-2 font-semibold">
             16+ years of architecting enterprise AI solutions, leading Fortune
             500 digital transformation initiatives, and scaling LLM deployments
           </p>

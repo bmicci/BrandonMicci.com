@@ -132,7 +132,7 @@ const StrategicAdvantageHeader: React.FC = () => {
         <h2 id="strategic-advantage-title" className="strategic-title">
           <span className="gradient-text">What Sets Me Apart</span>
         </h2>
-        <p className="strategic-subtitle">
+        <p className="strategic-subtitle font-semibold text-lg md:text-xl">
           Proven execution across{' '}
           <a
             href="#transformation-leadership"

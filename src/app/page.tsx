@@ -46,7 +46,7 @@ export default function Home() {
         className="
           relative
           scroll-mt-[var(--header-h,4.5rem)]
-          pt-8
+          pt-4
         "
       >
         {/* Strategic Vision Content */}

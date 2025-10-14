@@ -68,7 +68,7 @@ const HeroSection = () => {
           position: relative;
           /* Stable viewport height avoids URL bar reflow jump */
           min-height: 100svh;
-          padding: max(env(safe-area-inset-top), 1.25rem) 0 2rem 0;
+          padding: max(env(safe-area-inset-top), 1.25rem) 0 1rem 0;
           overflow: hidden;
           background: transparent;
           /* Prevent descendant layout/paint from bubbling reflow up to sections */
@@ -551,7 +551,7 @@ const HeroSection = () => {
         @media (max-width: 768px) {
           .philosophy-quote {
             padding: 1.5rem 1rem 1.5rem 1.5rem;
-            margin: 1.5rem 1rem;
+            margin: 1rem 1rem;
           }
           .philosophy-text {
             font-size: clamp(1rem, 4vw, 1.1rem);
@@ -579,7 +579,7 @@ const HeroSection = () => {
         }
 
         @media (max-width: 768px) {
-          .hero-container { padding: 0 0.9rem; }
+          .hero-container { padding: 0 1.25rem; }
           .hero-content-box { display: none !important; }
           .mobile-layout { display: block !important; }
           .hero-header { display: none !important; } /* Hide desktop header on mobile */
@@ -628,7 +628,10 @@ const HeroSection = () => {
 
           .cta-row { grid-template-columns: 1fr; gap: 0.7rem; margin-top: 1.4rem; }
           .diff-grid { grid-template-columns: 1fr; justify-items: center; }
-          .diff-wrap { padding: 0 1rem; }
+          .diff-wrap { 
+            padding: 0 1rem;
+            margin: 1rem 0 0.75rem;
+          }
           .diff-glass { margin: 0 auto; }
 
           /* Mobile: center the header perfectly */
