@@ -9,7 +9,7 @@ const TestimonialsSection: React.FC = () => {
         /* SECTION HEADER */
         .testimonials-header {
           text-align: center;
-          padding: 3rem 2rem 2rem;
+          padding: 1rem 2rem 1rem;
           animation: fadeInDown 1s ease-out;
         }
 
@@ -290,7 +290,7 @@ const TestimonialsSection: React.FC = () => {
         /* Mobile Responsive */
         @media (max-width: 768px) {
           .testimonials-header {
-            padding: 2rem 1rem;
+            padding: 1rem 1rem;
           }
           .testimonials-title {
             font-size: 2rem;

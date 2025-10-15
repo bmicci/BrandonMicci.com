@@ -203,7 +203,7 @@ const TransformationLeadership = () => {
             Roboto,
             sans-serif;
           color: white;
-          padding: 3rem 0 4rem;
+          padding: 1.5rem 0 1.5rem;
           position: relative;
           z-index: 10;
           overflow: hidden;
@@ -329,7 +329,7 @@ const TransformationLeadership = () => {
 
         .portfolio-header-section {
           text-align: center;
-          padding: 3rem 2rem;
+          padding: 1rem 2rem;
           animation: fadeInDown 1s ease-out;
           background: transparent;
         }
@@ -372,7 +372,7 @@ const TransformationLeadership = () => {
         .projects-container-secondary {
           max-width: 1200px;
           margin: 0 auto;
-          padding: 0 2rem 4rem;
+          padding: 0 2rem 1.5rem;
           position: relative;
           background: transparent;
 
@@ -769,11 +769,11 @@ const TransformationLeadership = () => {
 
         @media (max-width: 480px) {
           .transformation-section {
-            padding: 2rem 0 3rem;
+            padding: 1rem 0 1rem;
           }
 
           .portfolio-header-section {
-            padding: 1.5rem 1rem;
+            padding: 1rem 1rem;
           }
         }
 
