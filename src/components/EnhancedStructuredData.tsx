@@ -112,7 +112,7 @@ function buildJsonLd() {
       },
     ],
     alumniOf: [
-      { '@type': 'CollegeOrUniversity', name: 'University of Texas at Dallas' },
+      { '@type': 'CollegeOrUniversity', name: 'The George Washington University' },
     ],
     award: [
       'Led $400M+ enterprise value creation via AI & data transformation',
@@ -139,7 +139,7 @@ function buildJsonLd() {
         '@type': 'ListItem',
         position: 2,
         name: 'Strategic Advantage',
-        item: `${SITE_URL}/#strategic-vision`,
+        item: `${SITE_URL}/#strategic-advantage`,
       },
       {
         '@type': 'ListItem',

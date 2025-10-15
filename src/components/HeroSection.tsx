@@ -44,7 +44,7 @@ const HeroSection = () => {
         @media (min-width: 1024px) {
           .hero-section {
             padding-top: max(env(safe-area-inset-top), 0.75rem) !important;
-            padding-bottom: 0 !important;
+            padding-bottom: 0.5rem !important;
           }
           .kpi-grid {
             margin-bottom: 0 !important;
@@ -53,10 +53,16 @@ const HeroSection = () => {
             margin-bottom: 0 !important;
           }
         }
+        /* iPad Pro specific override (1024-1279px) for tighter spacing */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .hero-section {
+            padding-bottom: 0.25rem !important;
+          }
+        }
         @media (min-width: 1280px) {
           .hero-section {
             padding-top: max(env(safe-area-inset-top), 0.5rem) !important;
-            padding-bottom: 0 !important;
+            padding-bottom: 0.5rem !important;
           }
         }
         /* iPad Pro: avoid oversized blank space on the next section */
@@ -471,9 +477,15 @@ const HeroSection = () => {
           align-items: center; 
           justify-content: center; 
           gap: 0.8rem; 
-          margin-bottom: 0.5rem; /* minimal spacing between title and cards */
+          margin-bottom: 0.5rem; /* desktop spacing */
           padding: 1rem 0;
           position: relative;
+        }
+        /* Mobile diff-header margin */
+        @media (max-width: 768px) {
+          .diff-header {
+            margin-bottom: clamp(0.4rem, 3vw, 0.6rem) !important;
+          }
         }
         .diff-title {
           font-size: clamp(1.5rem, 4.2vw, 2.4rem);
