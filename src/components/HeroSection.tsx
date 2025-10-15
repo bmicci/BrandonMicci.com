@@ -131,6 +131,13 @@ const HeroSection = () => {
           .hero-content-box { display: grid !important; }
           .mobile-layout { display: none !important; }
           .hero-header { display: block !important; }
+          /* SEO: Hide mobile h1 on desktop (only one h1 per page) */
+          .mobile-layout h1 { display: none !important; }
+        }
+        
+        /* SEO: Hide desktop h1 on mobile (only one h1 per page) */
+        @media (max-width: 768px) {
+          .hero-header h1 { display: none !important; }
         }
         /* Reduce excessive bottom whitespace on iPad Pro by relaxing section height */
         @media (min-width: 1024px) and (max-width: 1279px) {

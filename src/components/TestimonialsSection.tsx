@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 const TestimonialsSection: React.FC = () => {
   return (
@@ -335,8 +336,14 @@ const TestimonialsSection: React.FC = () => {
           <span className="gradient-text">PROFESSIONAL IMPACT</span>
         </h2>
         <p className="testimonials-subtitle">
-          What technology leaders say about working with me and the impact
-          I&apos;ve delivered
+          What{' '}
+          <Link
+            href="/#executive-experience"
+            className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
+          >
+            colleagues and executives
+          </Link>
+          {' '}say about working with me and the impact I&apos;ve delivered
         </p>
       </div>
 

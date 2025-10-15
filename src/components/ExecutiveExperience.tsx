@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, memo } from 'react';
+import Link from 'next/link';
 import {
   Brain,
   Rocket,
@@ -521,8 +522,21 @@ const ExecutiveExperience = memo(() => {
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-4xl text-sm md:text-xl leading-relaxed text-slate-200 px-2 font-semibold">
-            16+ years of architecting enterprise AI solutions, leading Fortune
-            500 digital transformation initiatives, and scaling LLM deployments
+            16+ years of{' '}
+            <Link
+              href="/#strategic-advantage"
+              className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
+            >
+              architecting enterprise AI solutions
+            </Link>
+            , leading{' '}
+            <Link
+              href="/#transformation-leadership"
+              className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
+            >
+              Fortune 500 digital transformation initiatives
+            </Link>
+            , and scaling LLM deployments
           </p>
         </div>
 

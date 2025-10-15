@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import {
   Bot,
   Zap,
@@ -805,10 +806,36 @@ const TransformationLeadership = () => {
         </h2>
         <p className="portfolio-subtitle desktop-text font-semibold text-lg md:text-xl text-slate-200">
           Revolutionary innovations that don&apos;t just solve today&apos;s
-          challenges—they redefine how entire industries operate tomorrow
+          challenges—they redefine how entire industries operate tomorrow. Built
+          on{' '}
+          <Link
+            href="/#strategic-advantage"
+            className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
+          >
+            proven expertise
+          </Link>
+          {' '}and{' '}
+          <Link
+            href="/#executive-experience"
+            className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
+          >
+            16+ years of executive leadership
+          </Link>
         </p>
         <p className="portfolio-subtitle mobile-text font-semibold text-lg md:text-xl text-slate-200">
-          AI solutions driving Fortune 500 transformation
+          <Link
+            href="/#strategic-advantage"
+            className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
+          >
+            AI solutions
+          </Link>
+          {' '}driving{' '}
+          <Link
+            href="/#executive-experience"
+            className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
+          >
+            Fortune 500 transformation
+          </Link>
         </p>
       </div>
 

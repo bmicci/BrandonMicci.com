@@ -283,6 +283,38 @@ function buildJsonLd() {
           text: 'Email brandon@brandonmicci.com or connect via LinkedIn at linkedin.com/in/brandonmicci for executive search, advisory, or speaking engagements.',
         },
       },
+      {
+        '@type': 'Question',
+        name: 'What Fortune 500 companies has Brandon worked with?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Brandon has led enterprise AI and digital transformation initiatives at JPMorgan Chase, Capital One, Citigroup, Southwest Airlines, and delivered advisory engagements through Ernst & Young (EY), PwC, Capgemini, and Booz Allen Hamilton for Fortune 50 insurance and financial services clients.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What technical skills does Brandon bring to AI leadership roles?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has built and led 50+ FTE technical organizations with $45M+ P&L responsibility.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What size organizations and budgets has Brandon managed?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Brandon has led cross-functional teams of 50+ full-time employees with direct P&L oversight of $45M+ technology portfolios. His programs have generated $400M+ in measurable enterprise value across Fortune 500 organizations.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is Brandon open to relocation for executive roles?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Brandon is based in Dallas, Texas and open to hybrid, remote, or relocation opportunities for the right executive role. He has successfully led distributed global teams and is available for Chief AI Officer, VP AI Products, and Senior Director AI Strategy positions.',
+        },
+      },
     ],
   };
 

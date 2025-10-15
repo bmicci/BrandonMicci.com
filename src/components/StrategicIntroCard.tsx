@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 const StrategicIntroCard: React.FC = () => {
   return (
@@ -108,6 +109,19 @@ const StrategicIntroCard: React.FC = () => {
           }
         }
 
+        .internal-link {
+          color: rgba(0, 212, 255, 0.9);
+          text-decoration: none;
+          border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+          transition: all 0.3s ease;
+          font-weight: 700;
+        }
+
+        .internal-link:hover {
+          color: rgba(0, 212, 255, 1);
+          border-bottom-color: rgba(0, 212, 255, 0.8);
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
           .intro-card {
@@ -126,9 +140,15 @@ const StrategicIntroCard: React.FC = () => {
       <div className="intro-card">
         <p className="intro-text">
           My track record demonstrates consistent delivery across the
-          world&apos;s most demanding <strong>enterprise environments</strong>
-          —transforming <strong>AI strategy</strong> into measurable business
-          impact where{' '}
+          world&apos;s most demanding{' '}
+          <Link href="/#transformation-leadership" className="internal-link">
+            <strong>enterprise environments</strong>
+          </Link>
+          —transforming{' '}
+          <Link href="/#executive-experience" className="internal-link">
+            <strong>AI strategy</strong>
+          </Link>{' '}
+          into measurable business impact where{' '}
           <strong>complexity, regulation, and stakeholder expectations</strong>{' '}
           are highest.
         </p>
