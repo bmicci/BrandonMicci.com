@@ -48,6 +48,7 @@ export const metadata: Metadata = {
   description:
     'Senior AI & Digital Transformation Executive delivering measurable ROI at Fortune 500 scale. $400M+ enterprise revenue created, 27K+ AI users enabled, 250% peak program ROI. Expert in AI strategy, LLM deployment, and data platform architecture.',
   keywords: [
+    // Executive Roles
     'Enterprise AI Executive',
     'Digital Transformation Executive',
     'AI Strategy Director',
@@ -55,12 +56,55 @@ export const metadata: Metadata = {
     'Senior Director AI',
     'VP AI Products',
     'Chief AI Officer',
-    'LLM Deployment Expert',
+    'Head of AI',
+    'Digital Innovation Leader',
+    
+    // Core AI/ML Skills
+    'LLM Deployment',
+    'Generative AI',
+    'MLOps',
+    'LLMOps',
+    'Machine Learning',
+    'Natural Language Processing',
+    'Computer Vision',
+    'Deep Learning',
+    'AI Governance',
+    
+    // Cloud & Data
+    'AWS',
+    'Azure',
+    'Snowflake',
+    'Databricks',
+    'Apache Spark',
+    'Kafka',
+    'Data Lakes',
+    'Big Data',
+    'Data Governance',
+    
+    // Enterprise & Leadership
     'Fortune 500 AI Transformation',
     'Enterprise Data Platform',
-    'AI Governance Framework',
-    'Digital Innovation Leader',
-    'Enterprise ROI AI Strategy',
+    'P&L Management',
+    'Executive Leadership',
+    'C-Suite Engagement',
+    'Strategic Planning',
+    'ROI Analysis',
+    
+    // Transformation
+    'Digital Transformation',
+    'Industry 4.0',
+    'IoT Platforms',
+    'DevOps',
+    'Kubernetes',
+    'Docker',
+    'Microservices',
+    
+    // Analytics
+    'Tableau',
+    'Power BI',
+    'Python',
+    'SQL',
+    'Data Science',
   ],
   authors: [{ name: 'Brandon Micci', url: 'https://brandonmicci.com' }],
   creator: 'Brandon Micci',

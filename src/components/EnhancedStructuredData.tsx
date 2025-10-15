@@ -87,15 +87,62 @@ function buildJsonLd() {
       },
     ],
     knowsAbout: [
+      // Core AI/ML
       'Enterprise AI Strategy',
       'Generative AI',
       'LLM Deployment',
+      'MLOps',
+      'LLMOps',
+      'Machine Learning',
+      'Natural Language Processing',
+      'Computer Vision',
+      'Deep Learning',
+      'Predictive Analytics',
       'AI Product Management',
-      'Digital Transformation',
       'AI Governance',
+      'AI Ethics',
+      'Model Governance',
+      
+      // Digital Transformation
+      'Digital Transformation',
+      'Industry 4.0',
+      'IoT Platforms',
+      'Digital Twins',
+      'Change Management',
+      
+      // Cloud & Infrastructure
+      'AWS',
+      'Azure',
+      'Google Cloud Platform',
+      'Snowflake',
+      'Databricks',
+      'Apache Spark',
+      'Kafka',
+      'Data Lakes',
+      'Big Data',
+      'DevOps',
+      'CI/CD',
+      'Kubernetes',
+      'Docker',
+      'Microservices',
+      
+      // Data & Analytics
       'Data Platforms',
-      'AI Advisory and Speaking Engagements',
-      'Executive Workshops',
+      'Data Governance',
+      'Tableau',
+      'Alteryx',
+      'Power BI',
+      'Python',
+      'SQL',
+      'Data Science',
+      
+      // Leadership & Strategy
+      'Executive Leadership',
+      'P&L Management',
+      'C-Suite Engagement',
+      'Strategic Planning',
+      'ROI Analysis',
+      'Team Building',
     ],
     hasOccupation: [
       {
