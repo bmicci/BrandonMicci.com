@@ -220,18 +220,9 @@ const StrategicDifferentiators: React.FC = () => {
           }
         }
 
-        /* Mobile: center all text for consistency with Hero section */
-        @media (max-width: 768px) {
-          .diff-description {
-            text-align: center !important;
-          }
-        }
-
-        /* Desktop: left-align body text for better readability */
-        @media (min-width: 769px) {
-          .diff-description {
-            text-align: left !important;
-          }
+        /* Center all text for consistency with Hero section */
+        .diff-description {
+          text-align: center !important;
         }
       `}</style>
 
