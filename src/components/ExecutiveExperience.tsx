@@ -26,9 +26,11 @@ const IconCircle: React.FC<{ children: React.ReactNode }> = memo(
     bg-white/[0.03] backdrop-blur-sm
     shadow-inner
     before:content-[''] before:absolute before:inset-0 before:rounded-full
-    before:shadow-[0_0_14px_rgba(0,212,255,0.18)]
-    md:before:shadow-[0_0_25px_rgba(0,212,255,0.25)]
-    ring-1 ring-white/5
+    before:shadow-[0_0_20px_rgba(0,212,255,0.5)]
+    md:before:shadow-[0_0_35px_rgba(0,212,255,0.6)]
+    ring-2 ring-cyan-400/40
+    transition-all duration-300
+    hover:scale-110
   "
     >
       <div className="relative z-10">{children}</div>
@@ -59,7 +61,7 @@ const ROLES: Role[] = [
     role: 'VP, Head of AI Products',
     company: 'JPMorgan Chase',
     location: 'Plano, TX',
-    icon: <Brain className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
+    icon: <Brain className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       'Drive enterprise AI strategy and implementation across payments operations, leading organization-wide transformation initiatives that enhance operational efficiency and customer experience at scale.',
     skills: [
@@ -88,7 +90,7 @@ const ROLES: Role[] = [
     role: 'Senior Director, Intelligent Industry GTM & Solution Leader',
     company: 'Capgemini',
     location: 'Dallas, TX',
-    icon: <Rocket className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
+    icon: <Rocket className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       'Directed go-to-market strategy and solution development for emerging AI technologies, leading cross-functional teams of product managers, solution architects, and sales professionals.',
     skills: ['Go-to-Market Strategy', 'IoT Solutions', 'Product Management'],
@@ -112,7 +114,7 @@ const ROLES: Role[] = [
     role: 'Senior Manager, Forensic Analytics & Data Science',
     company: 'Ernst & Young',
     location: 'Dallas, TX',
-    icon: <Search className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
+    icon: <Search className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       "Spearheaded AI/ML strategy and capability development within EY's Forensics Practice, serving as Regional Leader for complex analytics engagements across Financial Services, Life Sciences, and Energy sectors.",
     skills: [
@@ -141,7 +143,7 @@ const ROLES: Role[] = [
     role: 'IoT & Digital Innovation Leader',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: <Plane className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
+    icon: <Plane className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       'Led digital transformation initiatives focused on IoT implementation and cloud migration, driving operational efficiency improvements across airline infrastructure and customer-facing systems.',
     skills: ['IoT Architecture', 'Cloud Migration', 'Digital Transformation'],
@@ -165,7 +167,7 @@ const ROLES: Role[] = [
     role: 'Data Enablement & Analytics COE Lead',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: <Database className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
+    icon: <Database className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       'Established and led the enterprise-wide Center of Excellence for data analytics, driving adoption of modern BI platforms and building analytical capabilities across all business units.',
     skills: ['Data Analytics', 'COE Leadership', 'Platform Architecture'],
@@ -189,7 +191,7 @@ const ROLES: Role[] = [
     role: 'VP, Global Digital and Cloud Transformation Leader',
     company: 'Citigroup',
     location: 'Irving, TX',
-    icon: <Cloud className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
+    icon: <Cloud className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       'Spearheaded global cloud transformation initiatives and DevOps adoption across multiple business units, establishing enterprise-wide standards for cloud-native architecture and deployment practices.',
     skills: ['Cloud Architecture', 'DevOps', 'Global Programs', 'CI/CD'],
@@ -213,7 +215,7 @@ const ROLES: Role[] = [
     role: 'Risk Analytics Leader, Auto Finance & Home Loans',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: <Shield className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
+    icon: <Shield className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       'Led risk analytics transformation for consumer lending portfolios, implementing advanced ML models and automated compliance systems to enhance risk assessment and regulatory reporting capabilities.',
     skills: ['Risk Analytics', 'Compliance Tech', 'NLP/OCR'],
@@ -238,7 +240,7 @@ const ROLES: Role[] = [
     company: 'Capital One',
     location: 'Plano, TX',
     icon: (
-      <Building2 className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />
+      <Building2 className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />
     ),
     description:
       'Drove enterprise-wide analytics strategy and governance, establishing data quality standards and building scalable analytics infrastructure to support risk management and regulatory compliance initiatives.',
@@ -263,7 +265,7 @@ const ROLES: Role[] = [
     role: 'Center of Excellence Leader, Tableau & Big Data',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: <BarChart className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
+    icon: <BarChart className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       "Pioneered enterprise-wide business intelligence transformation, establishing one of the world's largest Tableau communities and driving company-wide adoption of self-service analytics capabilities.",
     skills: [
@@ -293,7 +295,7 @@ const ROLES: Role[] = [
     company: 'Booz Allen Hamilton',
     location: 'McLean, VA',
     icon: (
-      <TrendingUp className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />
+      <TrendingUp className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />
     ),
     description:
       "Established and led the firm's first dedicated data analytics practice, developing advanced analytics solutions for government and commercial clients across defense, healthcare, and financial services sectors.",
@@ -314,7 +316,7 @@ const ROLES: Role[] = [
     role: 'Global Operations and Strategy Associate',
     company: 'PricewaterhouseCoopers',
     location: 'Tampa, FL',
-    icon: <Globe className="w-4 h-4 md:w-6 md:h-6 text-cyan-400 stroke-2" />,
+    icon: <Globe className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       "Served as strategic analyst and performance metrics lead for global delivery operations, pioneering the firm's first business intelligence implementations and executive dashboard automation initiatives.",
     skills: ['Strategy', 'Operations', 'Executive Analytics'],
@@ -543,10 +545,10 @@ const ExecutiveExperience = memo(() => {
         <div className="mx-auto max-w-full overflow-x-clip px-1 pb-8 md:max-w-6xl md:px-8 md:pb-16">
           <div className="relative">
             <div
-              className="absolute -bottom-8 -top-20 left-6 md:left-12"
+              className="absolute -bottom-4 -top-8 left-6 md:left-12"
               style={{
                 width: '2px',
-                background: '#00d4ff',
+                background: 'linear-gradient(to bottom, transparent 0%, rgba(0, 212, 255, 0.3) 5%, rgba(0, 212, 255, 1) 15%, rgba(0, 212, 255, 1) 85%, rgba(0, 212, 255, 0.3) 95%, transparent 100%)',
                 boxShadow:
                   '0 0 8px rgba(0, 212, 255, 0.6), 0 0 4px rgba(0, 212, 255, 0.8)',
                 transform: 'translateX(-50%)',
@@ -624,15 +626,27 @@ const ExecutiveExperience = memo(() => {
                     />
 
                     <div className="relative z-10">
-                      <span className="mb-2 inline-block rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+                      <span 
+                        className="mb-2 inline-block rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white"
+                        style={{
+                          background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.25), rgba(30, 144, 255, 0.3))',
+                          border: '1px solid rgba(0, 212, 255, 0.5)',
+                          boxShadow: '0 0 15px rgba(0, 212, 255, 0.3)'
+                        }}
+                      >
                         {role.dates}
                       </span>
 
                       <h3 className="text-[13px] font-bold leading-tight text-white break-words md:text-2xl title-tight">
                         {role.role}
                       </h3>
-                      <div className="mb-2 text-xs font-medium text-cyan-400 md:text-base">
-                        {role.company}
+                      <div className="mb-2 text-xs font-medium md:text-base">
+                        <span 
+                          className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400"
+                          style={{ textShadow: '0 0 20px rgba(0, 212, 255, 0.4)' }}
+                        >
+                          {role.company}
+                        </span>
                         <span className="ml-2 text-xs text-slate-400 md:text-sm">
                           | {role.location}
                         </span>
@@ -646,7 +660,12 @@ const ExecutiveExperience = memo(() => {
                         {role.skills.map((skill) => (
                           <span
                             key={skill}
-                            className="whitespace-nowrap rounded-full border border-blue-500/40 bg-blue-500/20 px-1.5 py-0.5 text-xs font-medium text-slate-200 transition-colors hover:bg-blue-500/30 md:text-sm md:px-3 md:py-1"
+                            className="whitespace-nowrap rounded-full px-1.5 py-0.5 text-xs font-medium text-slate-200 transition-colors hover:bg-cyan-500/30 md:text-sm md:px-3 md:py-1"
+                            style={{
+                              border: '1px solid rgba(0, 212, 255, 0.6)',
+                              background: 'rgba(0, 212, 255, 0.15)',
+                              boxShadow: '0 0 10px rgba(0, 212, 255, 0.2)'
+                            }}
                           >
                             {skill}
                           </span>
@@ -677,7 +696,12 @@ const ExecutiveExperience = memo(() => {
                         {role.achievements.map((achievement) => (
                           <div
                             key={achievement.title}
-                            className="rounded-md border-l-4 border-cyan-400 bg-cyan-500/10 p-3 transition-all duration-300 hover:translate-x-1 hover:bg-cyan-500/15 hover:shadow-lg hover:shadow-cyan-500/20"
+                            className="rounded-md border-l-4 p-3 transition-all duration-300 hover:translate-x-1 hover:bg-cyan-500/15 hover:shadow-lg hover:shadow-cyan-500/20"
+                            style={{
+                              borderLeft: '4px solid rgba(0, 212, 255, 0.6)',
+                              background: 'rgba(0, 212, 255, 0.1)',
+                              boxShadow: '-2px 0 8px rgba(0, 212, 255, 0.2)'
+                            }}
                           >
                             <div className="flex items-start gap-3">
                               <span className="mt-0.5 text-lg text-cyan-400 stroke-2">
