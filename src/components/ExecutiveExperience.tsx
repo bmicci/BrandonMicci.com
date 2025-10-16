@@ -315,7 +315,7 @@ const ROLES: Role[] = [
     dates: '2009 - 2013',
     role: 'Global Operations and Strategy Associate',
     company: 'PricewaterhouseCoopers',
-    location: 'Tampa, FL',
+    location: 'McLean, VA',
     icon: <Globe className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       "Served as strategic analyst and performance metrics lead for global delivery operations, pioneering the firm's first business intelligence implementations and executive dashboard automation initiatives.",

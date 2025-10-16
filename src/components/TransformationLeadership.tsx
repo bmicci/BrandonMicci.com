@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import {
   Bot,
@@ -132,66 +131,6 @@ const secondaryProjects: Project[] = [
 ];
 
 const TransformationLeadership = () => {
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    // Skip mouse tracking on mobile devices for better performance
-    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
-      return;
-    }
-
-    const cards = cardRefs.current.filter(Boolean) as HTMLDivElement[];
-
-    if (!cards.length) {
-      return;
-    }
-
-    const baseBackground = 'rgba(255, 255, 255, 0.05)';
-    const cleanups: Array<() => void> = [];
-
-    cards.forEach((card) => {
-      let rafId: number;
-
-      const handleMouseMove = (event: MouseEvent) => {
-        // Use requestAnimationFrame to throttle updates for better performance
-        if (rafId) {
-          cancelAnimationFrame(rafId);
-        }
-
-        rafId = requestAnimationFrame(() => {
-          const rect = card.getBoundingClientRect();
-          const x = ((event.clientX - rect.left) / rect.width) * 100;
-          const y = ((event.clientY - rect.top) / rect.height) * 100;
-          card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(0, 212, 255, 0.1), ${baseBackground})`;
-        });
-      };
-
-      const handleMouseLeave = () => {
-        if (rafId) {
-          cancelAnimationFrame(rafId);
-        }
-        card.style.background = baseBackground;
-      };
-
-      card.style.background = baseBackground;
-      card.addEventListener('mousemove', handleMouseMove);
-      card.addEventListener('mouseleave', handleMouseLeave);
-
-      cleanups.push(() => {
-        if (rafId) {
-          cancelAnimationFrame(rafId);
-        }
-        card.removeEventListener('mousemove', handleMouseMove);
-        card.removeEventListener('mouseleave', handleMouseLeave);
-        card.style.background = baseBackground;
-      });
-    });
-
-    return () => {
-      cleanups.forEach((cleanup) => cleanup());
-    };
-  }, []);
-
   return (
     <div className="transformation-section">
       <style jsx>{`
@@ -358,7 +297,8 @@ const TransformationLeadership = () => {
 
         .portfolio-subtitle {
           font-size: 1.2rem;
-          color: rgba(255, 255, 255, 0.8);
+          color: rgba(255, 255, 255, 0.95);
+          font-weight: 600;
           max-width: 800px;
           margin: 0 auto;
           line-height: 1.6;
@@ -388,58 +328,35 @@ const TransformationLeadership = () => {
 
         .project-card {
           background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(25px);
+          -webkit-backdrop-filter: blur(25px);
           border-radius: 16px;
-          border: 1px solid rgba(0, 212, 255, 0.22);
+          border: 1px solid rgba(0, 212, 255, 0.2);
           overflow: hidden;
           position: relative;
           transition: all 0.3s ease;
           opacity: 0;
-          transform: translateY(30px);
-          animation: cardReveal 0.8s ease forwards;
+          animation: cardReveal 0.6s ease forwards;
         }
 
         .project-card:nth-child(1) {
           animation-delay: 0.1s;
         }
         .project-card:nth-child(2) {
-          animation-delay: 0.15s;
-        }
-        .project-card:nth-child(3) {
           animation-delay: 0.2s;
         }
-        .project-card:nth-child(4) {
-          animation-delay: 0.25s;
+        .project-card:nth-child(3) {
+          animation-delay: 0.3s;
         }
-
-        .project-card::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          border-radius: 16px;
-          border: 0.5px solid rgba(0, 255, 255, 0.3);
-          padding: 2px;
-          background: linear-gradient(135deg, #00ffff, #00d4ff, #00ffff);
-          background-size: 200% 200%;
-          -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-          -webkit-mask-composite: xor;
-          mask-composite: exclude;
-          opacity: 0.5;
-          animation: gradientRotate 4s linear infinite;
+        .project-card:nth-child(4) {
+          animation-delay: 0.4s;
         }
 
         .project-card:hover {
-          transform: translateY(-5px) scale(1.01);
+          transform: translateY(-8px) scale(1.02);
           background: rgba(255, 255, 255, 0.08);
-          border-color: rgba(0, 212, 255, 0.4);
-          box-shadow: 0 8px 32px rgba(0, 212, 255, 0.15);
-        }
-
-        .project-card:hover::before {
-          opacity: 1;
+          border-color: rgba(0, 212, 255, 0.2);
+          box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
         .project-image {
@@ -470,22 +387,6 @@ const TransformationLeadership = () => {
 
         .project-card:hover .project-image::before {
           opacity: 1;
-        }
-
-        .project-image::after {
-          content: '';
-          position: absolute;
-          top: -50%;
-          left: -50%;
-          width: 200%;
-          height: 200%;
-          background: linear-gradient(
-            45deg,
-            transparent,
-            rgba(255, 255, 255, 0.1),
-            transparent
-          );
-          animation: shimmer 3s infinite;
         }
 
         .project-icon {
@@ -526,7 +427,9 @@ const TransformationLeadership = () => {
         }
 
         .project-description {
-          color: rgba(255, 255, 255, 0.8);
+          color: rgba(255, 255, 255, 1);
+          font-weight: 500;
+          text-shadow: 0 1px 2px rgba(0,0,0,0.3);
           line-height: 1.5;
           margin-bottom: 1.2rem;
           font-size: 0.9rem;
@@ -567,7 +470,8 @@ const TransformationLeadership = () => {
 
         .project-metric-label {
           font-size: 0.7rem;
-          color: rgba(255, 255, 255, 0.7);
+          color: rgba(255, 255, 255, 0.85);
+          font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.5px;
         }
@@ -579,21 +483,22 @@ const TransformationLeadership = () => {
         }
 
         .tech-tag {
-          background: rgba(30, 144, 255, 0.1);
-          border: 1px solid rgba(30, 144, 255, 0.25);
-          color: rgba(255, 255, 255, 0.9);
+          background: rgba(0, 212, 255, 0.25);
+          border: 1px solid rgba(0, 212, 255, 0.7);
+          box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+          color: rgba(255, 255, 255, 1);
           padding: 0.25rem 0.6rem;
           border-radius: 12px;
           font-size: 0.7rem;
-          font-weight: 500;
+          font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.3px;
           transition: all 0.3s ease;
         }
 
         .tech-tag:hover {
-          background: rgba(30, 144, 255, 0.18);
-          border-color: rgba(30, 144, 255, 0.4);
+          background: rgba(0, 212, 255, 0.35);
+          border-color: rgba(0, 212, 255, 0.8);
           transform: translateY(-1px);
         }
 
@@ -631,34 +536,6 @@ const TransformationLeadership = () => {
         @keyframes cardReveal {
           to {
             opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes gradientRotate {
-          0% {
-            background-position: 0% 50%;
-          }
-          100% {
-            background-position: 200% 50%;
-          }
-        }
-
-        @keyframes shimmer {
-          0% {
-            transform: translateX(-100%) translateY(-100%) rotate(45deg);
-          }
-          100% {
-            transform: translateX(100%) translateY(100%) rotate(45deg);
-          }
-        }
-
-        @keyframes circuitMove {
-          0% {
-            transform: translate(0, 0);
-          }
-          100% {
-            transform: translate(100px, 100px);
           }
         }
 
@@ -695,14 +572,6 @@ const TransformationLeadership = () => {
           .star-field {
             animation: none !important;
             opacity: 0.2;
-          }
-
-          .project-card::before {
-            animation: none !important;
-          }
-
-          .project-image::after {
-            animation: none !important;
           }
 
           .portfolio-header-section {
@@ -780,16 +649,13 @@ const TransformationLeadership = () => {
 
         /* Reduce motion for users who prefer it */
         @media (prefers-reduced-motion: reduce) {
-          .star-field,
-          .project-card::before,
-          .project-image::after {
+          .star-field {
             animation: none !important;
           }
 
           .project-card {
             animation: none !important;
             opacity: 1;
-            transform: none;
           }
         }
       `}</style>
@@ -804,7 +670,7 @@ const TransformationLeadership = () => {
         <h2 className="portfolio-title">
           <span className="gradient-text">TRANSFORMATION LEADERSHIP</span>
         </h2>
-        <p className="portfolio-subtitle desktop-text font-semibold text-lg md:text-xl text-slate-200">
+        <p className="portfolio-subtitle desktop-text font-semibold text-lg md:text-xl text-slate-100">
           Revolutionary innovations that don&apos;t just solve today&apos;s
           challenges—they redefine how entire industries operate tomorrow. Built
           on{' '}
@@ -822,7 +688,7 @@ const TransformationLeadership = () => {
             16+ years of executive leadership
           </Link>
         </p>
-        <p className="portfolio-subtitle mobile-text font-semibold text-lg md:text-xl text-slate-200">
+        <p className="portfolio-subtitle mobile-text font-semibold text-lg md:text-xl text-slate-100">
           <Link
             href="/#strategic-advantage"
             className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
@@ -847,9 +713,6 @@ const TransformationLeadership = () => {
               <div
                 key={project.title}
                 className="project-card"
-                ref={(el) => {
-                  cardRefs.current[index] = el;
-                }}
               >
                 <div className="project-image">
                   <IconComponent size={56} className="project-icon" />
@@ -904,9 +767,6 @@ const TransformationLeadership = () => {
               <div
                 key={project.title}
                 className="project-card"
-                ref={(el) => {
-                  cardRefs.current[primaryProjects.length + index] = el;
-                }}
               >
                 <div className="project-image">
                   <IconComponent size={56} className="project-icon" />
