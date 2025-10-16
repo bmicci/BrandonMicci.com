@@ -61,7 +61,7 @@ const ROLES: Role[] = [
     role: 'VP, Head of AI Products',
     company: 'JPMorgan Chase',
     location: 'Plano, TX',
-    icon: <Brain className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: <Brain className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       'Drive enterprise AI strategy and implementation across payments operations, leading organization-wide transformation initiatives that enhance operational efficiency and customer experience at scale.',
     skills: [
@@ -90,7 +90,7 @@ const ROLES: Role[] = [
     role: 'Senior Director, Intelligent Industry GTM & Solution Leader',
     company: 'Capgemini',
     location: 'Dallas, TX',
-    icon: <Rocket className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: <Rocket className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       'Directed go-to-market strategy and solution development for emerging AI technologies, leading cross-functional teams of product managers, solution architects, and sales professionals.',
     skills: ['Go-to-Market Strategy', 'IoT Solutions', 'Product Management'],
@@ -114,7 +114,7 @@ const ROLES: Role[] = [
     role: 'Senior Manager, Forensic Analytics & Data Science',
     company: 'Ernst & Young',
     location: 'Dallas, TX',
-    icon: <Search className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: <Search className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       "Spearheaded AI/ML strategy and capability development within EY's Forensics Practice, serving as Regional Leader for complex analytics engagements across Financial Services, Life Sciences, and Energy sectors.",
     skills: [
@@ -143,7 +143,7 @@ const ROLES: Role[] = [
     role: 'IoT & Digital Innovation Leader',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: <Plane className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: <Plane className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       'Led digital transformation initiatives focused on IoT implementation and cloud migration, driving operational efficiency improvements across airline infrastructure and customer-facing systems.',
     skills: ['IoT Architecture', 'Cloud Migration', 'Digital Transformation'],
@@ -167,7 +167,7 @@ const ROLES: Role[] = [
     role: 'Data Enablement & Analytics COE Lead',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: <Database className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: <Database className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       'Established and led the enterprise-wide Center of Excellence for data analytics, driving adoption of modern BI platforms and building analytical capabilities across all business units.',
     skills: ['Data Analytics', 'COE Leadership', 'Platform Architecture'],
@@ -191,7 +191,7 @@ const ROLES: Role[] = [
     role: 'VP, Global Digital and Cloud Transformation Leader',
     company: 'Citigroup',
     location: 'Irving, TX',
-    icon: <Cloud className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: <Cloud className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       'Spearheaded global cloud transformation initiatives and DevOps adoption across multiple business units, establishing enterprise-wide standards for cloud-native architecture and deployment practices.',
     skills: ['Cloud Architecture', 'DevOps', 'Global Programs', 'CI/CD'],
@@ -215,7 +215,7 @@ const ROLES: Role[] = [
     role: 'Risk Analytics Leader, Auto Finance & Home Loans',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: <Shield className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: <Shield className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       'Led risk analytics transformation for consumer lending portfolios, implementing advanced ML models and automated compliance systems to enhance risk assessment and regulatory reporting capabilities.',
     skills: ['Risk Analytics', 'Compliance Tech', 'NLP/OCR'],
@@ -240,7 +240,7 @@ const ROLES: Role[] = [
     company: 'Capital One',
     location: 'Plano, TX',
     icon: (
-      <Building2 className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />
+      <Building2 className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />
     ),
     description:
       'Drove enterprise-wide analytics strategy and governance, establishing data quality standards and building scalable analytics infrastructure to support risk management and regulatory compliance initiatives.',
@@ -265,7 +265,7 @@ const ROLES: Role[] = [
     role: 'Center of Excellence Leader, Tableau & Big Data',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: <BarChart className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: <BarChart className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       "Pioneered enterprise-wide business intelligence transformation, establishing one of the world's largest Tableau communities and driving company-wide adoption of self-service analytics capabilities.",
     skills: [
@@ -295,7 +295,7 @@ const ROLES: Role[] = [
     company: 'Booz Allen Hamilton',
     location: 'McLean, VA',
     icon: (
-      <TrendingUp className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />
+      <TrendingUp className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />
     ),
     description:
       "Established and led the firm's first dedicated data analytics practice, developing advanced analytics solutions for government and commercial clients across defense, healthcare, and financial services sectors.",
@@ -316,7 +316,7 @@ const ROLES: Role[] = [
     role: 'Global Operations and Strategy Associate',
     company: 'PricewaterhouseCoopers',
     location: 'Tampa, FL',
-    icon: <Globe className="w-4 h-4 md:w-6 md:h-6 text-cyan-300 stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: <Globe className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
       "Served as strategic analyst and performance metrics lead for global delivery operations, pioneering the firm's first business intelligence implementations and executive dashboard automation initiatives.",
     skills: ['Strategy', 'Operations', 'Executive Analytics'],
@@ -654,7 +654,7 @@ const ExecutiveExperience = memo(() => {
                         </span>
                       </div>
 
-                      <p className="mb-2 text-[13px] leading-relaxed text-slate-300 md:text-base desc-tight">
+                      <p className="mb-2 text-sm leading-relaxed text-slate-100 md:text-base desc-tight" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
                         {role.description}
                       </p>
 
@@ -664,9 +664,10 @@ const ExecutiveExperience = memo(() => {
                             key={skill}
                             className="whitespace-nowrap rounded-full px-1.5 py-0.5 text-xs font-medium text-slate-200 transition-colors hover:bg-cyan-500/30 md:text-sm md:px-3 md:py-1"
                             style={{
-                              border: '1px solid rgba(0, 212, 255, 0.6)',
-                              background: 'rgba(0, 212, 255, 0.15)',
-                              boxShadow: '0 0 10px rgba(0, 212, 255, 0.2)'
+                              border: '1px solid rgba(0, 212, 255, 0.7)',
+                              background: 'rgba(0, 212, 255, 0.25)',
+                              boxShadow: '0 0 8px rgba(0, 212, 255, 0.3)',
+                              fontWeight: 600
                             }}
                           >
                             {skill}
@@ -713,7 +714,7 @@ const ExecutiveExperience = memo(() => {
                                 <div className="mb-1 text-sm font-semibold text-cyan-400 stroke-2 md:text-base md:mb-2">
                                   {achievement.title}
                                 </div>
-                                <p className="text-[13px] leading-relaxed text-slate-300 md:text-sm">
+                                <p className="text-sm leading-relaxed text-slate-100 md:text-base" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
                                   {achievement.text}
                                 </p>
                               </div>
@@ -737,7 +738,7 @@ const ExecutiveExperience = memo(() => {
                 Core Competencies
               </span>
             </h3>
-            <p className="text-sm md:text-lg text-slate-300 max-w-3xl mx-auto">
+            <p className="text-sm md:text-lg text-slate-100 max-w-3xl mx-auto font-medium">
               Strategic expertise across AI/ML, digital transformation, and
               enterprise leadership
             </p>
@@ -923,7 +924,7 @@ const ExecutiveExperience = memo(() => {
                 Education & Leadership Development
               </span>
             </h3>
-            <p className="text-sm md:text-lg text-slate-300 max-w-3xl mx-auto">
+            <p className="text-sm md:text-lg text-slate-100 max-w-3xl mx-auto font-medium">
               Academic foundation and continuous professional development
             </p>
           </div>
