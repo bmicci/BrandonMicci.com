@@ -548,10 +548,12 @@ const ExecutiveExperience = memo(() => {
               className="absolute -bottom-4 -top-8 left-6 md:left-12"
               style={{
                 width: '2px',
-                background: 'linear-gradient(to bottom, transparent 0%, rgba(0, 212, 255, 0.3) 5%, rgba(0, 212, 255, 1) 15%, rgba(0, 212, 255, 1) 85%, rgba(0, 212, 255, 0.3) 95%, transparent 100%)',
+                backgroundColor: 'rgba(0, 212, 255, 0.8)',
+                background: 'linear-gradient(to bottom, rgba(0, 212, 255, 0.8) 0%, rgba(0, 212, 255, 0.9) 15%, rgba(0, 212, 255, 0.9) 85%, rgba(0, 212, 255, 0.8) 100%)',
                 boxShadow:
-                  '0 0 8px rgba(0, 212, 255, 0.6), 0 0 4px rgba(0, 212, 255, 0.8)',
+                  '0 0 8px rgba(0, 212, 255, 0.6), 0 0 16px rgba(0, 212, 255, 0.3)',
                 transform: 'translateX(-50%)',
+                willChange: 'opacity',
               }}
             />
 
