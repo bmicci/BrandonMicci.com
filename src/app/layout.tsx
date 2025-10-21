@@ -131,7 +131,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    url: 'https://www.brandonmicci.com',
+    url: 'https://brandonmicci.com',
     title: 'Brandon Micci | Enterprise AI & Digital Transformation Executive',
     description:
       'Senior AI & Digital Transformation Executive delivering measurable ROI at Fortune 500 scale. $400M+ enterprise revenue, 27K+ AI users enabled, 250% peak ROI. Expert in AI strategy, LLM deployment, data platforms.',

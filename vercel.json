@@ -4,5 +4,18 @@
   "buildCommand": "npm run build",
   "installCommand": "npm ci",
   "devCommand": "npm run dev",
-  "github": { "silent": false }
+  "github": { "silent": false },
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.brandonmicci.com"
+        }
+      ],
+      "destination": "https://brandonmicci.com/:path*",
+      "permanent": true
+    }
+  ]
 }
