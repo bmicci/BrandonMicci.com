@@ -174,7 +174,12 @@ function buildJsonLd() {
     '@type': 'ProfilePage',
     name: `About ${NAME}`,
     url: `${SITE_URL}/`,
-    about: { '@type': 'Person', name: NAME },
+    mainEntity: {
+      '@type': 'Person',
+      name: NAME,
+      url: SITE_URL,
+    },
+    mainEntityOfPage: SITE_URL,
   };
 
   const breadcrumbs = {
