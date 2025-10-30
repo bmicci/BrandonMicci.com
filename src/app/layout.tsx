@@ -126,7 +126,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'PLACEHOLDER_ADD_YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE',
+    google: '9YsMxiPFUlcYZSIiOKJHFLThjWQ0h8eqGIKDOIQ3GX0',
     other: {
       'msvalidate.01': 'PLACEHOLDER_ADD_YOUR_BING_WEBMASTER_VERIFICATION_CODE',
       'probely-verification': 'a79223fa-0c9b-4949-b08d-edddb9694b0e',
