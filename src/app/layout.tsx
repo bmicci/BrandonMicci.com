@@ -128,7 +128,7 @@ export const metadata: Metadata = {
   verification: {
     google: '9YsMxiPFUlcYZSIiOKJHFLThjWQ0h8eqGIKDOIQ3GX0',
     other: {
-      'msvalidate.01': 'PLACEHOLDER_ADD_YOUR_BING_WEBMASTER_VERIFICATION_CODE',
+      'msvalidate.01': '4F5964509C3753D3CF3DD1FC42172AE9',
       'probely-verification': 'a79223fa-0c9b-4949-b08d-edddb9694b0e',
     },
   },
