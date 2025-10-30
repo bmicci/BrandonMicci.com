@@ -7,6 +7,7 @@ import Navigation from '@/components/Navigation';
 import BackgroundRoot from '@/components/BackgroundRoot';
 import EnhancedStructuredData from '@/components/EnhancedStructuredData';
 import DevLayoutShiftLogger from '@/components/DevLayoutShiftLogger';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 
@@ -42,7 +43,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Brandon Micci | Enterprise AI & Digital Transformation Executive',
+    default: 'Brandon Micci | Chief AI Officer & VP AI Products | Fortune 500 AI Executive',
     template: '%s | Brandon Micci',
   },
   description:
@@ -125,7 +126,9 @@ export const metadata: Metadata = {
     },
   },
   verification: {
+    google: 'PLACEHOLDER_ADD_YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE',
     other: {
+      'msvalidate.01': 'PLACEHOLDER_ADD_YOUR_BING_WEBMASTER_VERIFICATION_CODE',
       'probely-verification': 'a79223fa-0c9b-4949-b08d-edddb9694b0e',
     },
   },
@@ -188,6 +191,16 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        {/* Performance: DNS prefetch and preconnect for external resources */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://vercel-insights.com" />
+        <link rel="dns-prefetch" href="https://vercel-analytics.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://vercel.live" crossOrigin="anonymous" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -196,6 +209,7 @@ export default async function RootLayout({
 
         {process.env.NODE_ENV === 'development' && <DevLayoutShiftLogger />}
         <Navigation />
+        <Breadcrumbs />
         <BackgroundRoot />
         <main id="main" className="mt-8 md:mt-14">
           {children}

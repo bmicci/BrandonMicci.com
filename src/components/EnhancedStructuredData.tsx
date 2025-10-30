@@ -389,6 +389,69 @@ function buildJsonLd() {
     mainEntityOfPage: SITE_URL,
   };
 
+  // Professional Service / Local Business schema for local SEO
+  const professionalService = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Brandon Micci - AI & Digital Transformation Advisory',
+    description: 'Enterprise AI Strategy & Digital Transformation Executive Services for Fortune 500 organizations. Expert in LLM deployment, data platforms, and measurable ROI delivery.',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Dallas',
+      addressRegion: 'TX',
+      addressCountry: 'US',
+    },
+    areaServed: [
+      {
+        '@type': 'Place',
+        name: 'United States',
+      },
+      {
+        '@type': 'Place',
+        name: 'Remote',
+      },
+    ],
+    priceRange: 'Enterprise',
+    telephone: PHONE,
+    email: EMAIL,
+    url: SITE_URL,
+    image: IMAGE,
+    founder: {
+      '@type': 'Person',
+      name: NAME,
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Executive Services',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Executive AI Strategy',
+            description: 'Enterprise AI transformation and strategy consulting for C-suite executives and Fortune 500 organizations.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Digital Transformation Leadership',
+            description: 'Full-scale digital transformation programs including LLM deployment, data modernization, and cloud strategy.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Executive Advisory & Speaking',
+            description: 'Board workshops, executive briefings, keynote speaking, and strategic advisory on AI and digital innovation.',
+          },
+        },
+      ],
+    },
+  };
+
   const payload: Record<string, unknown>[] = [
     website,
     organization,
@@ -396,6 +459,7 @@ function buildJsonLd() {
     profilePage,
     contactPage,
     roleExperience,
+    professionalService,
     breadcrumbs,
   ];
 

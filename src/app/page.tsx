@@ -16,6 +16,7 @@ import ExecutiveExperience from '@/components/ExecutiveExperience';
 import ProfessionalImpact from '@/components/TransformationLeadership';
 import IndustryCollaboration from '@/components/IndustryCollaboration';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import FAQSection from '@/components/FAQSection';
 
 export default function Home() {
   // Prevent first-load jump
@@ -82,6 +83,14 @@ export default function Home() {
         className="relative scroll-mt-[var(--header-h,4.5rem)]"
       >
         <TestimonialsSection />
+      </section>
+
+      {/* FAQ Section */}
+      <section
+        id="faq"
+        className="relative scroll-mt-[var(--header-h,4.5rem)]"
+      >
+        <FAQSection />
       </section>
 
       {/* Industry Collaboration & Speaking Section */}
