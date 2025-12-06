@@ -39,7 +39,7 @@ const FAQ_DATA: FAQItem[] = [
   },
   {
     question: 'What technical skills does Brandon bring to AI leadership roles?',
-    answer: 'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has built and led 50+ FTE technical organizations with $45M+ P&L responsibility.',
+    answer: 'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has built and led 50+ FTE technical organizations with $30M+ P&L responsibility, including $15M+ direct P&L ownership at JPMorgan Chase.',
   },
   {
     question: 'What size organizations and budgets has Brandon managed?',
