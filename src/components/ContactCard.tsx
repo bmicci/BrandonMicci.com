@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 // TODO: implement /api/contact/vcard to generate a .vcf file with Brandon's details
 // TODO: Replace sms: link with a future Twilio/Plivo-powered SMS flow
@@ -68,19 +69,32 @@ const ContactCard: React.FC = () => {
           margin-bottom: 1.5rem;
         }
 
-        .logo-block {
-          width: 64px;
-          height: 64px;
-          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
-          border-radius: 16px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 1.5rem;
-          font-weight: 800;
-          color: #0a0e27;
+        .headshot-container {
+          width: 72px;
+          height: 72px;
+          border-radius: 50%;
+          overflow: hidden;
           flex-shrink: 0;
-          box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
+          position: relative;
+          box-shadow: 
+            0 0 0 3px rgba(0, 212, 255, 0.4),
+            0 4px 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .headshot-glow {
+          position: absolute;
+          inset: -3px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 50%, #00d4ff 100%);
+          background-size: 200% 200%;
+          animation: rotate-glow 4s linear infinite;
+          z-index: -1;
+        }
+
+        @keyframes rotate-glow {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
 
         .text-stack {
@@ -270,9 +284,19 @@ const ContactCard: React.FC = () => {
 
       <div className="contact-card">
         <div className="card-content">
-          {/* Header with logo and text */}
+          {/* Header with headshot and text */}
           <div className="header-row">
-            <div className="logo-block">BM</div>
+            <div className="headshot-container">
+              <div className="headshot-glow" />
+              <Image
+                src="/headshot.webp"
+                alt="Brandon Micci"
+                width={72}
+                height={72}
+                style={{ objectFit: 'cover', borderRadius: '50%' }}
+                priority
+              />
+            </div>
             <div className="text-stack">
               <h1 className="name">Brandon Micci</h1>
               <p className="subtitle">Enterprise AI & Digital Transformation Executive</p>
