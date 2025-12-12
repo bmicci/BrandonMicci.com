@@ -70,15 +70,15 @@ const ContactCard: React.FC = () => {
         }
 
         .headshot-container {
-          width: 72px;
-          height: 72px;
+          width: 100px;
+          height: 100px;
           border-radius: 50%;
           overflow: hidden;
           flex-shrink: 0;
           position: relative;
           box-shadow: 
             0 0 0 3px rgba(0, 212, 255, 0.4),
-            0 4px 20px rgba(0, 212, 255, 0.3);
+            0 4px 25px rgba(0, 212, 255, 0.35);
         }
 
         .headshot-glow {
@@ -258,10 +258,9 @@ const ContactCard: React.FC = () => {
             padding: 1.5rem 1.25rem;
           }
 
-          .logo-block {
-            width: 56px;
-            height: 56px;
-            font-size: 1.25rem;
+          .headshot-container {
+            width: 85px;
+            height: 85px;
           }
 
           .name {
@@ -291,8 +290,8 @@ const ContactCard: React.FC = () => {
               <Image
                 src="/headshot.webp"
                 alt="Brandon Micci"
-                width={72}
-                height={72}
+                width={100}
+                height={100}
                 style={{ objectFit: 'cover', borderRadius: '50%' }}
                 priority
               />
