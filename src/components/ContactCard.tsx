@@ -10,7 +10,7 @@ import Image from 'next/image';
 const ContactCard: React.FC = () => {
   const linkedInUrl = 'https://linkedin.com/in/brandonmicci';
   const emailAddress = 'brandon@brandonmicci.com';
-  const phoneNumber = '+1XXXXXXXXXX'; // TODO: Replace with actual phone number
+  const phoneNumber = '+16103100066';
   
   return (
     <>
