@@ -15,8 +15,5 @@ jobs:
           node-version: '20'
       - run: npm ci
       - run: npm run build
-      # Start server in background for LHCI to hit localhost:3000
-      - run: nohup npm run start >/dev/null 2>&1 &
-      # Give server a few seconds to boot
-      - run: npx wait-on http://localhost:3000
+      # LHCI will start the server automatically via startServerCommand in .lighthouserc.json
       - run: npx lhci autorun --config=.lighthouserc.json --budgetsPath=budgets.json
