@@ -284,7 +284,7 @@ const ContactCard: React.FC = () => {
             </li>
           </ul>
 
-          {/* Action Buttons */}
+          {/* Action Buttons - Vertical */}
           <div className="action-buttons">
             <a 
               href="https://brandonmicci.com" 
@@ -295,32 +295,30 @@ const ContactCard: React.FC = () => {
               <span className="emoji">🌐</span>
               View AI Portfolio
             </a>
-            <div className="secondary-row">
-              <a 
-                href={linkedInUrl}
-                className="btn btn-secondary btn-small"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="emoji-small">🔗</span>
-                LinkedIn
-              </a>
-              <a 
-                href={`mailto:${emailAddress}`}
-                className="btn btn-secondary btn-small"
-              >
-                <span className="emoji-small">📧</span>
-                Email
-              </a>
-              <a 
-                href="/brandon-micci.vcf"
-                className="btn btn-secondary btn-small"
-                download
-              >
-                <span className="emoji-small">💾</span>
-                Save
-              </a>
-            </div>
+            <a 
+              href={linkedInUrl}
+              className="btn btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="emoji">🔗</span>
+              LinkedIn
+            </a>
+            <a 
+              href={`mailto:${emailAddress}`}
+              className="btn btn-secondary"
+            >
+              <span className="emoji">📧</span>
+              Email
+            </a>
+            <a 
+              href="/brandon-micci.vcf"
+              className="btn btn-secondary"
+              download
+            >
+              <span className="emoji">💾</span>
+              Save Contact
+            </a>
           </div>
         </div>
       </div>
