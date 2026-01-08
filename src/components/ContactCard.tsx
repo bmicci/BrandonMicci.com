@@ -163,19 +163,10 @@ const ContactCard: React.FC = () => {
           box-shadow: 0 6px 20px rgba(56, 189, 220, 0.35);
         }
 
-        .secondary-row {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 0.5rem;
-        }
-
         .btn-secondary {
           background: transparent;
           color: #38bddc;
           border: 1.5px solid rgba(56, 189, 220, 0.4);
-          padding: 0.8rem 0.5rem;
-          font-size: 0.85rem;
-          white-space: nowrap;
         }
 
         .btn-secondary:hover {
@@ -184,12 +175,21 @@ const ContactCard: React.FC = () => {
           transform: translateY(-1px);
         }
 
-        .emoji {
-          font-size: 1rem;
+        .btn-tertiary {
+          background: transparent;
+          color: rgba(255, 255, 255, 0.7);
+          border: 1.5px solid rgba(255, 255, 255, 0.25);
         }
 
-        .emoji-small {
-          font-size: 0.9rem;
+        .btn-tertiary:hover {
+          background: rgba(255, 255, 255, 0.05);
+          border-color: rgba(255, 255, 255, 0.4);
+          color: white;
+          transform: translateY(-1px);
+        }
+
+        .emoji {
+          font-size: 1rem;
         }
 
         @media (max-width: 480px) {
@@ -212,15 +212,6 @@ const ContactCard: React.FC = () => {
 
           .company {
             font-size: 0.75rem;
-          }
-
-          .btn-secondary {
-            padding: 0.7rem 0.25rem;
-            font-size: 0.75rem;
-          }
-
-          .emoji-small {
-            font-size: 0.8rem;
           }
         }
       `}</style>
@@ -250,9 +241,8 @@ const ContactCard: React.FC = () => {
             </div>
           </div>
 
-          {/* Action Buttons */}
+          {/* Action Buttons - Vertical Stack */}
           <div className="action-buttons">
-            {/* Primary CTA */}
             <a 
               href="https://brandonmicci.com" 
               className="btn btn-primary"
@@ -262,34 +252,30 @@ const ContactCard: React.FC = () => {
               <span className="emoji">🌐</span>
               View AI Portfolio
             </a>
-
-            {/* Secondary row: LinkedIn | Email | Save Contact */}
-            <div className="secondary-row">
-              <a 
-                href={linkedInUrl}
-                className="btn btn-secondary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="emoji-small">🔗</span>
-                LinkedIn
-              </a>
-              <a 
-                href={`mailto:${emailAddress}`}
-                className="btn btn-secondary"
-              >
-                <span className="emoji-small">📧</span>
-                Email
-              </a>
-              <a 
-                href="/brandon-micci.vcf"
-                className="btn btn-secondary"
-                download
-              >
-                <span className="emoji-small">💾</span>
-                Contact
-              </a>
-            </div>
+            <a 
+              href={linkedInUrl}
+              className="btn btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="emoji">🔗</span>
+              LinkedIn
+            </a>
+            <a 
+              href={`mailto:${emailAddress}`}
+              className="btn btn-secondary"
+            >
+              <span className="emoji">📧</span>
+              Email
+            </a>
+            <a 
+              href="/brandon-micci.vcf"
+              className="btn btn-tertiary"
+              download
+            >
+              <span className="emoji">💾</span>
+              Save Contact (vCard)
+            </a>
           </div>
         </div>
       </div>
