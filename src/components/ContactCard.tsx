@@ -37,7 +37,7 @@ const ContactCard: React.FC = () => {
         .headshot-wrapper {
           display: flex;
           justify-content: center;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1rem;
         }
 
         .headshot-container {
@@ -71,7 +71,7 @@ const ContactCard: React.FC = () => {
 
         /* Name & Title - Centered */
         .name {
-          font-size: 2rem;
+          font-size: 2.125rem;
           font-weight: 800;
           color: white;
           margin: 0 0 0.5rem 0;
@@ -80,7 +80,7 @@ const ContactCard: React.FC = () => {
         }
 
         .subtitle {
-          font-size: 1.1rem;
+          font-size: 1.125rem;
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -90,7 +90,7 @@ const ContactCard: React.FC = () => {
         }
 
         .company {
-          font-size: 0.95rem;
+          font-size: 1rem;
           color: rgba(255, 255, 255, 0.6);
           margin: 0 0 1.5rem 0;
           font-weight: 400;
@@ -98,25 +98,25 @@ const ContactCard: React.FC = () => {
 
         /* Tagline */
         .tagline {
-          font-size: 1.15rem;
+          font-size: 1.125rem;
           color: white;
-          margin: 0 0 1.25rem 0;
+          margin: 0 0 1.375rem 0;
           line-height: 1.4;
           font-weight: 500;
         }
 
         /* Achievement Lines */
         .achievements {
-          margin: 0 0 2rem 0;
+          margin: 0 0 1.5rem 0;
           padding: 0;
           list-style: none;
           display: flex;
           flex-direction: column;
-          gap: 0.6rem;
+          gap: 0.75rem;
         }
 
         .achievement-item {
-          font-size: 0.9rem;
+          font-size: 0.906rem;
           color: rgba(255, 255, 255, 0.7);
           line-height: 1.4;
         }
@@ -188,7 +188,7 @@ const ContactCard: React.FC = () => {
 
         @media (max-width: 480px) {
           .card-content {
-            padding: 2rem 1.5rem;
+            padding: 1.75rem 1.5rem;
           }
 
           .headshot-container {
@@ -197,15 +197,19 @@ const ContactCard: React.FC = () => {
           }
 
           .name {
-            font-size: 1.75rem;
+            font-size: 1.875rem;
           }
 
           .subtitle {
-            font-size: 1rem;
+            font-size: 1.0625rem;
+          }
+
+          .company {
+            font-size: 0.9375rem;
           }
 
           .tagline {
-            font-size: 1.05rem;
+            font-size: 1.0625rem;
           }
 
           .achievement-item {
