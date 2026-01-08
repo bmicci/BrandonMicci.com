@@ -116,9 +116,10 @@ const ContactCard: React.FC = () => {
         }
 
         .achievement-item {
-          font-size: 0.906rem;
-          color: rgba(255, 255, 255, 0.7);
+          font-size: 0.95rem;
+          color: rgba(255, 255, 255, 0.85);
           line-height: 1.4;
+          font-weight: 500;
         }
 
         .achievement-item .highlight {
@@ -126,15 +127,14 @@ const ContactCard: React.FC = () => {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
-          font-weight: 600;
+          font-weight: 700;
         }
 
         .achievement-sub {
-          font-size: 0.875rem;
-          color: rgba(255, 255, 255, 0.75);
+          font-size: 0.85rem;
+          color: rgba(180, 200, 220, 0.8);
           margin-top: 0.2rem;
-          font-weight: 500;
-          letter-spacing: 0.01em;
+          font-weight: 400;
         }
 
         /* Buttons */
