@@ -3,8 +3,6 @@
 import React from 'react';
 import Image from 'next/image';
 
-// TODO: Add ?src= tracking params for analytics (e.g., ?src=nfc&ref=v1ce for NFC, ?src=email_sig for email signature)
-
 const ContactCard: React.FC = () => {
   const linkedInUrl = 'https://linkedin.com/in/brandonmicci';
   const emailAddress = 'brandon@brandonmicci.com';
@@ -16,136 +14,116 @@ const ContactCard: React.FC = () => {
           width: 100%;
           max-width: 420px;
           background: linear-gradient(
-            135deg,
-            rgba(10, 14, 39, 0.95) 0%,
-            rgba(15, 23, 42, 0.95) 50%,
-            rgba(10, 14, 39, 0.95) 100%
+            180deg,
+            rgba(15, 23, 42, 0.98) 0%,
+            rgba(10, 14, 30, 0.98) 100%
           );
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
           border-radius: 24px;
-          border: 1px solid rgba(56, 189, 220, 0.2);
-          box-shadow:
-            0 0 40px rgba(56, 189, 220, 0.12),
-            0 0 80px rgba(45, 138, 191, 0.08),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(56, 189, 220, 0.15);
           overflow: hidden;
           position: relative;
-        }
-
-        .contact-card::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          border-radius: 24px;
-          padding: 1px;
-          background: linear-gradient(
-            135deg,
-            rgba(56, 189, 220, 0.35) 0%,
-            rgba(45, 138, 191, 0.2) 50%,
-            rgba(56, 189, 220, 0.35) 100%
-          );
-          -webkit-mask: 
-            linear-gradient(#fff 0 0) content-box, 
-            linear-gradient(#fff 0 0);
-          -webkit-mask-composite: xor;
-          mask-composite: exclude;
-          pointer-events: none;
         }
 
         .card-content {
-          padding: 2rem 1.5rem;
+          padding: 2.5rem 2rem;
           position: relative;
           z-index: 1;
+          text-align: center;
         }
 
-        .header-row {
+        /* Headshot - Centered */
+        .headshot-wrapper {
           display: flex;
-          align-items: flex-start;
-          gap: 1rem;
-          margin-bottom: 1.75rem;
+          justify-content: center;
+          margin-bottom: 1.5rem;
         }
 
         .headshot-container {
-          width: 100px;
-          height: 100px;
+          width: 130px;
+          height: 130px;
+          border-radius: 50%;
+          overflow: visible;
+          position: relative;
+        }
+
+        .headshot-ring {
+          position: absolute;
+          inset: -2px;
+          border-radius: 50%;
+          border: 2px solid #38bddc;
+        }
+
+        .headshot-inner {
+          width: 100%;
+          height: 100%;
           border-radius: 50%;
           overflow: hidden;
-          flex-shrink: 0;
-          position: relative;
-          box-shadow: 
-            0 0 0 1.5px rgba(56, 189, 220, 0.6),
-            0 4px 16px rgba(56, 189, 220, 0.2);
+          background: #0f172a;
         }
 
-        .headshot-glow {
-          position: absolute;
-          inset: -1.5px;
-          border-radius: 50%;
-          background: linear-gradient(135deg, #38bddc 0%, #2d8abf 50%, #38bddc 100%);
-          background-size: 200% 200%;
-          animation: rotate-glow 4s linear infinite;
-          z-index: -1;
-        }
-
-        @keyframes rotate-glow {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-
-        .text-stack {
-          flex: 1;
-          min-width: 0;
-        }
-
+        /* Name & Title - Centered */
         .name {
-          font-size: 1.8rem;
+          font-size: 2rem;
           font-weight: 800;
           color: white;
-          margin: 0 0 0.35rem 0;
+          margin: 0 0 0.5rem 0;
           line-height: 1.1;
           letter-spacing: -0.02em;
         }
 
         .subtitle {
-          font-size: 0.875rem;
+          font-size: 1.1rem;
           color: #38bddc;
-          margin: 0 0 0.15rem 0;
+          margin: 0 0 0.25rem 0;
           font-weight: 600;
-          line-height: 1.3;
         }
 
         .company {
-          font-size: 0.8rem;
+          font-size: 0.95rem;
           color: rgba(255, 255, 255, 0.6);
-          margin: 0 0 0.5rem 0;
+          margin: 0 0 1.5rem 0;
+          font-weight: 400;
+        }
+
+        /* Tagline */
+        .tagline {
+          font-size: 1.15rem;
+          color: white;
+          margin: 0 0 1.75rem 0;
+          line-height: 1.4;
           font-weight: 500;
         }
 
-        .tagline {
-          font-size: 0.85rem;
-          color: rgba(255, 255, 255, 0.85);
-          margin: 0;
-          line-height: 1.4;
-          font-weight: 600;
-        }
-
-        .highlights {
-          margin: 1.25rem 0 1.75rem 0;
+        /* Achievement Lines */
+        .achievements {
+          margin: 0 0 2rem 0;
           padding: 0;
           list-style: none;
           display: flex;
           flex-direction: column;
-          gap: 0.5rem;
+          gap: 0.6rem;
         }
 
-        .highlight-item {
-          font-size: 0.75rem;
+        .achievement-item {
+          font-size: 0.9rem;
           color: rgba(255, 255, 255, 0.7);
           line-height: 1.4;
         }
 
+        .achievement-item .highlight {
+          color: #38bddc;
+          font-weight: 600;
+        }
+
+        .achievement-sub {
+          font-size: 0.85rem;
+          color: rgba(255, 255, 255, 0.5);
+          margin-top: 0.15rem;
+        }
+
+        /* Buttons */
         .action-buttons {
           display: flex;
           flex-direction: column;
@@ -156,10 +134,10 @@ const ContactCard: React.FC = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 0.5rem;
-          padding: 0.875rem 1.25rem;
+          gap: 0.6rem;
+          padding: 1rem 1.5rem;
           border-radius: 12px;
-          font-size: 0.95rem;
+          font-size: 1rem;
           font-weight: 600;
           text-decoration: none;
           transition: all 0.2s ease;
@@ -168,123 +146,107 @@ const ContactCard: React.FC = () => {
         }
 
         .btn-primary {
-          background: linear-gradient(135deg, #38bddc 0%, #2d8abf 100%);
+          background: #38bddc;
           color: #0a0e27;
-          box-shadow: 0 4px 15px rgba(56, 189, 220, 0.25);
         }
 
         .btn-primary:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(56, 189, 220, 0.35);
+          background: #4dc9e6;
+          transform: translateY(-1px);
         }
 
         .btn-secondary {
           background: transparent;
           color: #38bddc;
-          border: 1.5px solid rgba(56, 189, 220, 0.4);
+          border: 1.5px solid #38bddc;
         }
 
         .btn-secondary:hover {
           background: rgba(56, 189, 220, 0.1);
-          border-color: #38bddc;
           transform: translateY(-1px);
         }
 
-        .secondary-row {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 0.5rem;
-        }
-
-        .btn-small {
-          padding: 0.75rem 0.5rem;
-          font-size: 0.85rem;
-        }
-
-        .emoji {
-          font-size: 1rem;
-        }
-
-        .emoji-small {
-          font-size: 0.9rem;
+        .icon {
+          width: 20px;
+          height: 20px;
+          flex-shrink: 0;
         }
 
         @media (max-width: 480px) {
           .card-content {
-            padding: 1.5rem 1.25rem;
+            padding: 2rem 1.5rem;
           }
 
           .headshot-container {
-            width: 85px;
-            height: 85px;
+            width: 110px;
+            height: 110px;
           }
 
           .name {
-            font-size: 1.55rem;
+            font-size: 1.75rem;
           }
 
           .subtitle {
-            font-size: 0.8rem;
+            font-size: 1rem;
           }
 
-          .company {
-            font-size: 0.75rem;
+          .tagline {
+            font-size: 1.05rem;
           }
 
-          .highlight-item {
-            font-size: 0.7rem;
+          .achievement-item {
+            font-size: 0.85rem;
           }
 
-          .btn-small {
-            padding: 0.65rem 0.25rem;
-            font-size: 0.75rem;
-          }
-
-          .emoji-small {
-            font-size: 0.8rem;
+          .btn {
+            padding: 0.9rem 1.25rem;
+            font-size: 0.95rem;
           }
         }
       `}</style>
 
       <div className="contact-card">
         <div className="card-content">
-          {/* Header with headshot and text */}
-          <div className="header-row">
+          {/* Headshot - Centered */}
+          <div className="headshot-wrapper">
             <div className="headshot-container">
-              <div className="headshot-glow" />
-              <Image
-                src="/headshot.webp"
-                alt="Brandon Micci"
-                width={100}
-                height={100}
-                style={{ objectFit: 'cover', borderRadius: '50%' }}
-                priority
-              />
-            </div>
-            <div className="text-stack">
-              <h1 className="name">Brandon Micci</h1>
-              <p className="subtitle">Head of AI Strategy, Payments</p>
-              <p className="company">JPMorgan Chase</p>
-              <p className="tagline">
-                Enterprise AI at scale. Strategy to execution.
-              </p>
+              <div className="headshot-ring" />
+              <div className="headshot-inner">
+                <Image
+                  src="/headshot.webp"
+                  alt="Brandon Micci"
+                  width={130}
+                  height={130}
+                  style={{ objectFit: 'cover' }}
+                  priority
+                />
+              </div>
             </div>
           </div>
 
-          {/* Highlights */}
-          <ul className="highlights">
-            <li className="highlight-item">
-              27K+ users on enterprise LLM platform (largest in payments)
+          {/* Name & Title */}
+          <h1 className="name">Brandon Micci</h1>
+          <p className="subtitle">Head of AI Strategy, Payments</p>
+          <p className="company">JPMorgan Chase</p>
+
+          {/* Tagline */}
+          <p className="tagline">Enterprise AI at scale. Strategy to execution.</p>
+
+          {/* Achievements */}
+          <ul className="achievements">
+            <li className="achievement-item">
+              Scaled enterprise LLM to <span className="highlight">27K+ users</span>
             </li>
-            <li className="highlight-item">
-              $400M+ career impact
+            <li className="achievement-item">
+              Delivered <span className="highlight">$400M+</span> ROI
             </li>
-            <li className="highlight-item">
-              16 years across Big 4, Fortune 500, Financial Services
+            <li className="achievement-item">
+              <span className="highlight">16 years</span> expertise across
+              <div className="achievement-sub">Big 4, Fortune 500, Financial Services</div>
             </li>
           </ul>
 
-          {/* Action Buttons - Vertical */}
+          {/* Action Buttons */}
           <div className="action-buttons">
             <a 
               href="https://brandonmicci.com" 
@@ -292,7 +254,10 @@ const ContactCard: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="emoji">🌐</span>
+              <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
               View AI Portfolio
             </a>
             <a 
@@ -301,14 +266,19 @@ const ContactCard: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="emoji">🔗</span>
+              <svg className="icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
               LinkedIn
             </a>
             <a 
               href={`mailto:${emailAddress}`}
               className="btn btn-secondary"
             >
-              <span className="emoji">📧</span>
+              <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="M22 6l-10 7L2 6"/>
+              </svg>
               Email
             </a>
             <a 
@@ -316,7 +286,9 @@ const ContactCard: React.FC = () => {
               className="btn btn-secondary"
               download
             >
-              <span className="emoji">💾</span>
+              <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+              </svg>
               Save Contact
             </a>
           </div>
@@ -327,4 +299,3 @@ const ContactCard: React.FC = () => {
 };
 
 export default ContactCard;
-
