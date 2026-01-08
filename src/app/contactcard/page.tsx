@@ -21,9 +21,18 @@ export default function ContactCardPage() {
           align-items: center;
           justify-content: center;
           padding: 1.5rem;
+          padding-top: 0;
+          margin-top: -2rem;
           position: relative;
           overflow: hidden;
           background: #0a0e27;
+        }
+
+        @media (max-width: 768px) {
+          .contactcard-page {
+            margin-top: -1rem;
+            padding-bottom: 2rem;
+          }
         }
 
         .contactcard-bg {

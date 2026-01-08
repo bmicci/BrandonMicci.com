@@ -74,13 +74,13 @@ const ContactCard: React.FC = () => {
           flex-shrink: 0;
           position: relative;
           box-shadow: 
-            0 0 0 2px rgba(56, 189, 220, 0.5),
-            0 4px 20px rgba(56, 189, 220, 0.25);
+            0 0 0 1.5px rgba(56, 189, 220, 0.6),
+            0 4px 16px rgba(56, 189, 220, 0.2);
         }
 
         .headshot-glow {
           position: absolute;
-          inset: -2px;
+          inset: -1.5px;
           border-radius: 50%;
           background: linear-gradient(135deg, #38bddc 0%, #2d8abf 50%, #38bddc 100%);
           background-size: 200% 200%;
@@ -100,12 +100,12 @@ const ContactCard: React.FC = () => {
         }
 
         .name {
-          font-size: 1.65rem;
-          font-weight: 700;
+          font-size: 1.8rem;
+          font-weight: 800;
           color: white;
-          margin: 0 0 0.3rem 0;
-          line-height: 1.15;
-          letter-spacing: -0.01em;
+          margin: 0 0 0.35rem 0;
+          line-height: 1.1;
+          letter-spacing: -0.02em;
         }
 
         .subtitle {
@@ -173,7 +173,7 @@ const ContactCard: React.FC = () => {
           background: transparent;
           color: #38bddc;
           border: 1.5px solid rgba(56, 189, 220, 0.4);
-          padding: 0.75rem 0.5rem;
+          padding: 0.8rem 0.5rem;
           font-size: 0.85rem;
           white-space: nowrap;
         }
@@ -203,7 +203,7 @@ const ContactCard: React.FC = () => {
           }
 
           .name {
-            font-size: 1.45rem;
+            font-size: 1.55rem;
           }
 
           .subtitle {
@@ -287,7 +287,7 @@ const ContactCard: React.FC = () => {
                 download
               >
                 <span className="emoji-small">💾</span>
-                Save
+                Contact
               </a>
             </div>
           </div>
