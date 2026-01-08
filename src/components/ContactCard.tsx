@@ -24,10 +24,10 @@ const ContactCard: React.FC = () => {
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
           border-radius: 24px;
-          border: 1px solid rgba(0, 212, 255, 0.2);
+          border: 1px solid rgba(56, 189, 220, 0.2);
           box-shadow:
-            0 0 40px rgba(0, 212, 255, 0.15),
-            0 0 80px rgba(30, 144, 255, 0.1),
+            0 0 40px rgba(56, 189, 220, 0.12),
+            0 0 80px rgba(45, 138, 191, 0.08),
             inset 0 1px 0 rgba(255, 255, 255, 0.05);
           overflow: hidden;
           position: relative;
@@ -41,9 +41,9 @@ const ContactCard: React.FC = () => {
           padding: 1px;
           background: linear-gradient(
             135deg,
-            rgba(0, 212, 255, 0.4) 0%,
-            rgba(30, 144, 255, 0.2) 50%,
-            rgba(0, 212, 255, 0.4) 100%
+            rgba(56, 189, 220, 0.35) 0%,
+            rgba(45, 138, 191, 0.2) 50%,
+            rgba(56, 189, 220, 0.35) 100%
           );
           -webkit-mask: 
             linear-gradient(#fff 0 0) content-box, 
@@ -74,15 +74,15 @@ const ContactCard: React.FC = () => {
           flex-shrink: 0;
           position: relative;
           box-shadow: 
-            0 0 0 3px rgba(0, 212, 255, 0.4),
-            0 4px 25px rgba(0, 212, 255, 0.35);
+            0 0 0 2px rgba(56, 189, 220, 0.5),
+            0 4px 20px rgba(56, 189, 220, 0.25);
         }
 
         .headshot-glow {
           position: absolute;
-          inset: -3px;
+          inset: -2px;
           border-radius: 50%;
-          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 50%, #00d4ff 100%);
+          background: linear-gradient(135deg, #38bddc 0%, #2d8abf 50%, #38bddc 100%);
           background-size: 200% 200%;
           animation: rotate-glow 4s linear infinite;
           z-index: -1;
@@ -100,16 +100,17 @@ const ContactCard: React.FC = () => {
         }
 
         .name {
-          font-size: 1.5rem;
-          font-weight: 800;
+          font-size: 1.65rem;
+          font-weight: 700;
           color: white;
-          margin: 0 0 0.25rem 0;
-          line-height: 1.2;
+          margin: 0 0 0.3rem 0;
+          line-height: 1.15;
+          letter-spacing: -0.01em;
         }
 
         .subtitle {
           font-size: 0.875rem;
-          color: #00d4ff;
+          color: #38bddc;
           margin: 0 0 0.15rem 0;
           font-weight: 600;
           line-height: 1.3;
@@ -152,14 +153,14 @@ const ContactCard: React.FC = () => {
         }
 
         .btn-primary {
-          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+          background: linear-gradient(135deg, #38bddc 0%, #2d8abf 100%);
           color: #0a0e27;
-          box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+          box-shadow: 0 4px 15px rgba(56, 189, 220, 0.25);
         }
 
         .btn-primary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+          box-shadow: 0 6px 20px rgba(56, 189, 220, 0.35);
         }
 
         .secondary-row {
@@ -170,16 +171,16 @@ const ContactCard: React.FC = () => {
 
         .btn-secondary {
           background: transparent;
-          color: #00d4ff;
-          border: 1.5px solid rgba(0, 212, 255, 0.5);
+          color: #38bddc;
+          border: 1.5px solid rgba(56, 189, 220, 0.4);
           padding: 0.75rem 0.5rem;
           font-size: 0.85rem;
           white-space: nowrap;
         }
 
         .btn-secondary:hover {
-          background: rgba(0, 212, 255, 0.1);
-          border-color: #00d4ff;
+          background: rgba(56, 189, 220, 0.1);
+          border-color: #38bddc;
           transform: translateY(-1px);
         }
 
@@ -202,7 +203,7 @@ const ContactCard: React.FC = () => {
           }
 
           .name {
-            font-size: 1.35rem;
+            font-size: 1.45rem;
           }
 
           .subtitle {
