@@ -202,23 +202,8 @@ const ContactCard: React.FC = () => {
           transform: translateY(-1px);
         }
 
-        .secondary-row {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 0.5rem;
-        }
-
-        .btn-small {
-          padding: 0.7rem 0.5rem;
-          font-size: 0.8rem;
-        }
-
         .emoji {
           font-size: 1rem;
-        }
-
-        .emoji-small {
-          font-size: 0.85rem;
         }
 
         @media (max-width: 480px) {
@@ -245,15 +230,6 @@ const ContactCard: React.FC = () => {
 
           .highlight-item {
             font-size: 0.7rem;
-          }
-
-          .btn-small {
-            padding: 0.6rem 0.25rem;
-            font-size: 0.75rem;
-          }
-
-          .emoji-small {
-            font-size: 0.75rem;
           }
         }
       `}</style>
@@ -296,7 +272,7 @@ const ContactCard: React.FC = () => {
             </li>
           </ul>
 
-          {/* Action Buttons */}
+          {/* Action Buttons - All Vertical */}
           <div className="action-buttons">
             <a 
               href="https://brandonmicci.com" 
@@ -307,32 +283,30 @@ const ContactCard: React.FC = () => {
               <span className="emoji">🌐</span>
               View AI Portfolio
             </a>
-            <div className="secondary-row">
-              <a 
-                href={linkedInUrl}
-                className="btn btn-secondary btn-small"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="emoji-small">🔗</span>
-                LinkedIn
-              </a>
-              <a 
-                href={`mailto:${emailAddress}`}
-                className="btn btn-secondary btn-small"
-              >
-                <span className="emoji-small">📧</span>
-                Email
-              </a>
-              <a 
-                href="/brandon-micci.vcf"
-                className="btn btn-secondary btn-small"
-                download
-              >
-                <span className="emoji-small">💾</span>
-                Save
-              </a>
-            </div>
+            <a 
+              href={linkedInUrl}
+              className="btn btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="emoji">🔗</span>
+              LinkedIn
+            </a>
+            <a 
+              href={`mailto:${emailAddress}`}
+              className="btn btn-secondary"
+            >
+              <span className="emoji">📧</span>
+              Email
+            </a>
+            <a 
+              href="/brandon-micci.vcf"
+              className="btn btn-secondary"
+              download
+            >
+              <span className="emoji">💾</span>
+              Save Contact
+            </a>
           </div>
         </div>
       </div>
