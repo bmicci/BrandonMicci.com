@@ -50,9 +50,15 @@ const ContactCard: React.FC = () => {
 
         .headshot-ring {
           position: absolute;
-          inset: -2px;
+          inset: -1.5px;
           border-radius: 50%;
-          border: 2px solid #38bddc;
+          border: 1.5px solid transparent;
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%) border-box;
+          -webkit-mask: 
+            linear-gradient(#fff 0 0) padding-box, 
+            linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
         }
 
         .headshot-inner {
@@ -75,7 +81,10 @@ const ContactCard: React.FC = () => {
 
         .subtitle {
           font-size: 1.1rem;
-          color: #38bddc;
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
           margin: 0 0 0.25rem 0;
           font-weight: 600;
         }
@@ -91,7 +100,7 @@ const ContactCard: React.FC = () => {
         .tagline {
           font-size: 1.15rem;
           color: white;
-          margin: 0 0 1.75rem 0;
+          margin: 0 0 1.25rem 0;
           line-height: 1.4;
           font-weight: 500;
         }
@@ -113,13 +122,16 @@ const ContactCard: React.FC = () => {
         }
 
         .achievement-item .highlight {
-          color: #38bddc;
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
           font-weight: 600;
         }
 
         .achievement-sub {
           font-size: 0.85rem;
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(255, 255, 255, 0.55);
           margin-top: 0.15rem;
         }
 
@@ -146,23 +158,25 @@ const ContactCard: React.FC = () => {
         }
 
         .btn-primary {
-          background: #38bddc;
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
           color: #0a0e27;
         }
 
         .btn-primary:hover {
-          background: #4dc9e6;
+          filter: brightness(1.1);
           transform: translateY(-1px);
         }
 
         .btn-secondary {
           background: transparent;
-          color: #38bddc;
-          border: 1.5px solid #38bddc;
+          color: #00d4ff;
+          border: 1.5px solid #00d4ff;
+          position: relative;
         }
 
         .btn-secondary:hover {
-          background: rgba(56, 189, 220, 0.1);
+          background: rgba(0, 212, 255, 0.1);
+          border-color: #1e90ff;
           transform: translateY(-1px);
         }
 
