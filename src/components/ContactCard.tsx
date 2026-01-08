@@ -130,9 +130,11 @@ const ContactCard: React.FC = () => {
         }
 
         .achievement-sub {
-          font-size: 0.85rem;
-          color: rgba(255, 255, 255, 0.55);
-          margin-top: 0.15rem;
+          font-size: 0.875rem;
+          color: rgba(255, 255, 255, 0.75);
+          margin-top: 0.2rem;
+          font-weight: 500;
+          letter-spacing: 0.01em;
         }
 
         /* Buttons */
