@@ -110,9 +110,16 @@ const ContactCard: React.FC = () => {
         .subtitle {
           font-size: 0.875rem;
           color: #00d4ff;
-          margin: 0 0 0.5rem 0;
+          margin: 0 0 0.15rem 0;
           font-weight: 600;
           line-height: 1.3;
+        }
+
+        .company {
+          font-size: 0.8rem;
+          color: rgba(255, 255, 255, 0.6);
+          margin: 0 0 0.5rem 0;
+          font-weight: 500;
         }
 
         .description {
@@ -120,6 +127,7 @@ const ContactCard: React.FC = () => {
           color: rgba(255, 255, 255, 0.7);
           margin: 0;
           line-height: 1.4;
+          font-style: italic;
         }
 
         .action-buttons {
@@ -166,6 +174,7 @@ const ContactCard: React.FC = () => {
           border: 1.5px solid rgba(0, 212, 255, 0.5);
           padding: 0.75rem 0.5rem;
           font-size: 0.85rem;
+          white-space: nowrap;
         }
 
         .btn-secondary:hover {
@@ -200,6 +209,10 @@ const ContactCard: React.FC = () => {
             font-size: 0.8rem;
           }
 
+          .company {
+            font-size: 0.75rem;
+          }
+
           .btn-secondary {
             padding: 0.7rem 0.25rem;
             font-size: 0.75rem;
@@ -228,9 +241,10 @@ const ContactCard: React.FC = () => {
             </div>
             <div className="text-stack">
               <h1 className="name">Brandon Micci</h1>
-              <p className="subtitle">Head of AI, Payments • 16+ yrs AI & Digital</p>
+              <p className="subtitle">Head of AI Strategy, Payments</p>
+              <p className="company">JPMorgan Chase</p>
               <p className="description">
-                Connecting you to AI strategy, scale, and real-world impact.
+                Transforming enterprises through AI.
               </p>
             </div>
           </div>
@@ -272,7 +286,7 @@ const ContactCard: React.FC = () => {
                 download
               >
                 <span className="emoji-small">💾</span>
-                Save Contact
+                Save
               </a>
             </div>
           </div>
