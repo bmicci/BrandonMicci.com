@@ -132,30 +132,18 @@ const ContactCard: React.FC = () => {
         }
 
         .highlights {
-          margin: 1.25rem 0 1.5rem 0;
+          margin: 1.25rem 0 1.75rem 0;
           padding: 0;
           list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
         }
 
         .highlight-item {
           font-size: 0.75rem;
           color: rgba(255, 255, 255, 0.7);
-          margin-bottom: 0.4rem;
-          padding-left: 1rem;
-          position: relative;
           line-height: 1.4;
-        }
-
-        .highlight-item::before {
-          content: '•';
-          position: absolute;
-          left: 0;
-          color: #38bddc;
-        }
-
-        .highlight-item strong {
-          color: #38bddc;
-          font-weight: 700;
         }
 
         .action-buttons {
@@ -202,8 +190,23 @@ const ContactCard: React.FC = () => {
           transform: translateY(-1px);
         }
 
+        .secondary-row {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 0.5rem;
+        }
+
+        .btn-small {
+          padding: 0.75rem 0.5rem;
+          font-size: 0.85rem;
+        }
+
         .emoji {
           font-size: 1rem;
+        }
+
+        .emoji-small {
+          font-size: 0.9rem;
         }
 
         @media (max-width: 480px) {
@@ -230,6 +233,15 @@ const ContactCard: React.FC = () => {
 
           .highlight-item {
             font-size: 0.7rem;
+          }
+
+          .btn-small {
+            padding: 0.65rem 0.25rem;
+            font-size: 0.75rem;
+          }
+
+          .emoji-small {
+            font-size: 0.8rem;
           }
         }
       `}</style>
@@ -262,17 +274,17 @@ const ContactCard: React.FC = () => {
           {/* Highlights */}
           <ul className="highlights">
             <li className="highlight-item">
-              <strong>27K+ users</strong> on enterprise LLM platform (largest in payments)
+              27K+ users on enterprise LLM platform (largest in payments)
             </li>
             <li className="highlight-item">
-              <strong>$400M+</strong> career impact
+              $400M+ career impact
             </li>
             <li className="highlight-item">
-              <strong>16 years</strong> across Big 4, Fortune 500, Financial Services
+              16 years across Big 4, Fortune 500, Financial Services
             </li>
           </ul>
 
-          {/* Action Buttons - All Vertical */}
+          {/* Action Buttons */}
           <div className="action-buttons">
             <a 
               href="https://brandonmicci.com" 
@@ -283,30 +295,32 @@ const ContactCard: React.FC = () => {
               <span className="emoji">🌐</span>
               View AI Portfolio
             </a>
-            <a 
-              href={linkedInUrl}
-              className="btn btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="emoji">🔗</span>
-              LinkedIn
-            </a>
-            <a 
-              href={`mailto:${emailAddress}`}
-              className="btn btn-secondary"
-            >
-              <span className="emoji">📧</span>
-              Email
-            </a>
-            <a 
-              href="/brandon-micci.vcf"
-              className="btn btn-secondary"
-              download
-            >
-              <span className="emoji">💾</span>
-              Save Contact
-            </a>
+            <div className="secondary-row">
+              <a 
+                href={linkedInUrl}
+                className="btn btn-secondary btn-small"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="emoji-small">🔗</span>
+                LinkedIn
+              </a>
+              <a 
+                href={`mailto:${emailAddress}`}
+                className="btn btn-secondary btn-small"
+              >
+                <span className="emoji-small">📧</span>
+                Email
+              </a>
+              <a 
+                href="/brandon-micci.vcf"
+                className="btn btn-secondary btn-small"
+                download
+              >
+                <span className="emoji-small">💾</span>
+                Save
+              </a>
+            </div>
           </div>
         </div>
       </div>
