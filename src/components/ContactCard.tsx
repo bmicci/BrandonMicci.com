@@ -3,14 +3,11 @@
 import React from 'react';
 import Image from 'next/image';
 
-// TODO: implement /api/contact/vcard to generate a .vcf file with Brandon's details
-// TODO: Replace sms: link with a future Twilio/Plivo-powered SMS flow
 // TODO: Add ?src= tracking params for analytics (e.g., ?src=nfc&ref=v1ce for NFC, ?src=email_sig for email signature)
 
 const ContactCard: React.FC = () => {
   const linkedInUrl = 'https://linkedin.com/in/brandonmicci';
   const emailAddress = 'brandon@brandonmicci.com';
-  const phoneNumber = '+16103100066';
   
   return (
     <>
@@ -66,7 +63,7 @@ const ContactCard: React.FC = () => {
           display: flex;
           align-items: flex-start;
           gap: 1rem;
-          margin-bottom: 1.5rem;
+          margin-bottom: 1.75rem;
         }
 
         .headshot-container {
@@ -125,50 +122,10 @@ const ContactCard: React.FC = () => {
           line-height: 1.4;
         }
 
-        .kpi-strip {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 0.75rem;
-          margin-bottom: 1.75rem;
-          padding: 1rem;
-          background: rgba(0, 212, 255, 0.05);
-          border-radius: 12px;
-          border: 1px solid rgba(0, 212, 255, 0.1);
-        }
-
-        .kpi-item {
-          text-align: center;
-        }
-
-        .kpi-value {
-          font-size: 1.25rem;
-          font-weight: 800;
-          color: #00d4ff;
-          line-height: 1;
-          margin-bottom: 0.25rem;
-        }
-
-        .kpi-label {
-          font-size: 0.65rem;
-          color: rgba(255, 255, 255, 0.6);
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
-
-        .section-label {
-          font-size: 0.7rem;
-          color: rgba(255, 255, 255, 0.5);
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          margin-bottom: 0.75rem;
-          font-weight: 600;
-        }
-
         .action-buttons {
           display: flex;
           flex-direction: column;
           gap: 0.75rem;
-          margin-bottom: 1.5rem;
         }
 
         .btn {
@@ -197,10 +154,18 @@ const ContactCard: React.FC = () => {
           box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
         }
 
+        .secondary-row {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 0.5rem;
+        }
+
         .btn-secondary {
           background: transparent;
           color: #00d4ff;
           border: 1.5px solid rgba(0, 212, 255, 0.5);
+          padding: 0.75rem 0.5rem;
+          font-size: 0.85rem;
         }
 
         .btn-secondary:hover {
@@ -209,48 +174,12 @@ const ContactCard: React.FC = () => {
           transform: translateY(-1px);
         }
 
-        .btn-tertiary {
-          background: transparent;
-          color: rgba(255, 255, 255, 0.7);
-          border: 1.5px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-tertiary:hover {
-          background: rgba(255, 255, 255, 0.05);
-          border-color: rgba(255, 255, 255, 0.4);
-          color: white;
-        }
-
-        .contact-row {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding-top: 1rem;
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-link {
-          display: flex;
-          align-items: center;
-          gap: 0.35rem;
-          font-size: 0.8rem;
-          color: rgba(255, 255, 255, 0.7);
-          text-decoration: none;
-          transition: color 0.2s ease;
-          padding: 0.5rem;
-        }
-
-        .contact-link:hover {
-          color: #00d4ff;
-        }
-
-        .contact-group {
-          display: flex;
-          gap: 0.5rem;
-        }
-
         .emoji {
           font-size: 1rem;
+        }
+
+        .emoji-small {
+          font-size: 0.9rem;
         }
 
         @media (max-width: 480px) {
@@ -271,12 +200,13 @@ const ContactCard: React.FC = () => {
             font-size: 0.8rem;
           }
 
-          .kpi-value {
-            font-size: 1.1rem;
+          .btn-secondary {
+            padding: 0.7rem 0.25rem;
+            font-size: 0.75rem;
           }
 
-          .kpi-label {
-            font-size: 0.6rem;
+          .emoji-small {
+            font-size: 0.8rem;
           }
         }
       `}</style>
@@ -298,32 +228,16 @@ const ContactCard: React.FC = () => {
             </div>
             <div className="text-stack">
               <h1 className="name">Brandon Micci</h1>
-              <p className="subtitle">Enterprise AI & Digital Transformation Executive</p>
+              <p className="subtitle">Head of AI, Payments • 16+ yrs AI & Digital</p>
               <p className="description">
                 Connecting you to AI strategy, scale, and real-world impact.
               </p>
             </div>
           </div>
 
-          {/* KPI Strip */}
-          <div className="kpi-strip">
-            <div className="kpi-item">
-              <div className="kpi-value">27K+</div>
-              <div className="kpi-label">LLM Users</div>
-            </div>
-            <div className="kpi-item">
-              <div className="kpi-value">$400M+</div>
-              <div className="kpi-label">Revenue Impact</div>
-            </div>
-            <div className="kpi-item">
-              <div className="kpi-value">16+ yrs</div>
-              <div className="kpi-label">AI & Digital</div>
-            </div>
-          </div>
-
-          {/* Quick Actions */}
-          <div className="section-label">Quick Actions</div>
+          {/* Action Buttons */}
           <div className="action-buttons">
+            {/* Primary CTA */}
             <a 
               href="https://brandonmicci.com" 
               className="btn btn-primary"
@@ -333,39 +247,32 @@ const ContactCard: React.FC = () => {
               <span className="emoji">🌐</span>
               View AI Portfolio
             </a>
-            <a 
-              href={linkedInUrl}
-              className="btn btn-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="emoji">🔗</span>
-              Connect on LinkedIn
-            </a>
-            <a 
-              href="/brandon-micci.vcf"
-              className="btn btn-tertiary"
-              download
-            >
-              <span className="emoji">💾</span>
-              Save Contact (vCard)
-            </a>
-          </div>
 
-          {/* Bottom contact row */}
-          <div className="contact-row">
-            <a href={`mailto:${emailAddress}`} className="contact-link">
-              <span className="emoji">📧</span>
-              Email Brandon
-            </a>
-            <div className="contact-group">
-              <a href={`tel:${phoneNumber}`} className="contact-link">
-                <span className="emoji">📞</span>
-                Call
+            {/* Secondary row: LinkedIn | Email | Save Contact */}
+            <div className="secondary-row">
+              <a 
+                href={linkedInUrl}
+                className="btn btn-secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="emoji-small">🔗</span>
+                LinkedIn
               </a>
-              <a href={`sms:${phoneNumber}`} className="contact-link">
-                <span className="emoji">💬</span>
-                Text
+              <a 
+                href={`mailto:${emailAddress}`}
+                className="btn btn-secondary"
+              >
+                <span className="emoji-small">📧</span>
+                Email
+              </a>
+              <a 
+                href="/brandon-micci.vcf"
+                className="btn btn-secondary"
+                download
+              >
+                <span className="emoji-small">💾</span>
+                Save Contact
               </a>
             </div>
           </div>
