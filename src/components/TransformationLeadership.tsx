@@ -322,7 +322,11 @@ const TransformationLeadership = () => {
         .cta-container {
           display: flex;
           justify-content: center;
-          padding: 1.5rem 2rem 2rem;
+          padding: 2rem 2rem 2.5rem;
+        }
+
+        .cta-wrapper {
+          text-align: center;
         }
 
         .case-studies-cta {
@@ -331,14 +335,15 @@ const TransformationLeadership = () => {
           gap: 0.5rem;
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
           color: white;
-          padding: 0.875rem 2rem;
-          border-radius: 8px;
+          padding: 1rem 2rem;
+          border-radius: 12px;
           font-weight: 600;
-          font-size: 1rem;
+          font-size: 1.05rem;
           text-decoration: none;
           transition: all 0.3s ease;
           position: relative;
           overflow: hidden;
+          box-shadow: 0 8px 24px rgba(0, 212, 255, 0.3);
         }
 
         .case-studies-cta::before {
@@ -362,17 +367,23 @@ const TransformationLeadership = () => {
         }
 
         .case-studies-cta:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 12px 30px rgba(0, 212, 255, 0.4);
+          transform: scale(1.05);
+          box-shadow: 0 12px 32px rgba(0, 212, 255, 0.45);
         }
 
         .cta-arrow {
-          font-size: 1.1rem;
+          font-size: 1.2rem;
           transition: transform 0.3s ease;
         }
 
         .case-studies-cta:hover .cta-arrow {
           transform: translateX(4px);
+        }
+
+        .cta-subtext {
+          margin-top: 0.75rem;
+          font-size: 0.875rem;
+          color: rgba(255, 255, 255, 0.6);
         }
 
         .projects-grid {
@@ -870,10 +881,15 @@ const TransformationLeadership = () => {
 
       {/* CTA to full case studies page */}
       <div className="cta-container">
-        <Link href="/case-studies" className="case-studies-cta">
-          <span>View All Case Studies</span>
-          <span className="cta-arrow">→</span>
-        </Link>
+        <div className="cta-wrapper">
+          <Link href="/case-studies" className="case-studies-cta">
+            <span>View All Case Studies</span>
+            <span className="cta-arrow">→</span>
+          </Link>
+          <p className="cta-subtext">
+            Detailed breakdowns with challenges, solutions &amp; results
+          </p>
+        </div>
       </div>
     </div>
   );
