@@ -28,15 +28,15 @@ type Project = {
 
 const primaryProjects: Project[] = [
   {
-    title: 'Enterprise LLM Deployment',
+    title: 'Enterprise Knowledge Assistant',
     icon: Bot,
     description:
-      'Industry-first Large Language Model implementation across JPMorgan Chase Payments operations, representing the largest enterprise LLM deployment in financial services.',
+      'Industry-first LLM platform that evolved from 7,500+ policy documents to 10+ integrated data sources, representing the largest enterprise LLM deployment in financial services.',
     mobileDescription:
-      'Largest LLM deployment in financial services at JPMorgan.',
+      'Largest LLM deployment in financial services with 27K+ users.',
     metrics: [
       { value: '27,000+', label: 'Active Users' },
-      { value: '40%', label: 'Automation Rate' },
+      { value: '10+', label: 'Data Sources' },
     ],
     tags: ['LLM', 'NLP', 'Enterprise AI'],
   },
@@ -44,7 +44,7 @@ const primaryProjects: Project[] = [
     title: 'IoT Innovation Platform',
     icon: Zap,
     description:
-      'Breakthrough IoT ecosystem at Southwest Airlines implementing edge computing and AI analytics across fuel, baggage, and de-icing operations.',
+      'Breakthrough IoT ecosystem at a major U.S. airline implementing edge computing and AI analytics across fuel, baggage, and de-icing operations.',
     mobileDescription: 'IoT platform delivering massive operational savings.',
     metrics: [
       { value: '250%', label: 'ROI Achievement' },
@@ -68,7 +68,7 @@ const primaryProjects: Project[] = [
     title: "World's Largest Analytics Community",
     icon: Users,
     description:
-      "Established Capital One's enterprise Tableau platform—the largest evangelical analytics community worldwide.",
+      "Established enterprise Tableau platform at a top 10 U.S. bank—the largest evangelical analytics community worldwide.",
     mobileDescription:
       "30,000+ user platform—world's largest analytics community.",
     metrics: [
@@ -96,8 +96,8 @@ const secondaryProjects: Project[] = [
     title: 'Global Infrastructure Transformation',
     icon: Network,
     description:
-      'Worldwide infrastructure modernization at Citigroup, architecting telemetry platforms that eliminated weekly Sev1 outages.',
-    mobileDescription: 'Achieved 98% uptime from weekly outages at Citi.',
+      'Worldwide infrastructure modernization at a global financial institution, architecting telemetry platforms that eliminated weekly Sev1 outages.',
+    mobileDescription: 'Achieved 98% uptime from weekly outages.',
     metrics: [
       { value: '98%', label: 'Uptime' },
       { value: '200%', label: 'Cloud Acceleration' },
@@ -108,7 +108,7 @@ const secondaryProjects: Project[] = [
     title: 'Event-Based Marketing Engine',
     icon: Target,
     description:
-      'Real-time Hadoop-powered engine at Citigroup reaching millions with personalized campaigns and 300% conversion improvement.',
+      'Real-time Hadoop-powered engine at a global financial institution reaching millions with personalized campaigns and 300% conversion improvement.',
     mobileDescription: 'Reached 10M+ customers with 300% better conversion.',
     metrics: [
       { value: '10M+', label: 'Customers Reached' },
@@ -120,8 +120,8 @@ const secondaryProjects: Project[] = [
     title: 'Analytics-as-a-Service Platform',
     icon: LineChart,
     description:
-      'Self-service analytics platform at EY automating Risk, Compliance, and Fraud detection, generating continuous revenue stream.',
-    mobileDescription: 'SaaS platform generating $30M annual revenue at EY.',
+      'Self-service analytics platform at a Big 4 consulting firm automating Risk, Compliance, and Fraud detection, generating continuous revenue stream.',
+    mobileDescription: 'SaaS platform generating $30M annual revenue.',
     metrics: [
       { value: '$30M', label: 'Annual Revenue' },
       { value: '85%', label: 'Process Automation' },
@@ -316,8 +316,63 @@ const TransformationLeadership = () => {
           padding: 0 2rem 1.5rem;
           position: relative;
           background: transparent;
-
           overflow: hidden;
+        }
+
+        .cta-container {
+          display: flex;
+          justify-content: center;
+          padding: 1.5rem 2rem 2rem;
+        }
+
+        .case-studies-cta {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+          color: white;
+          padding: 0.875rem 2rem;
+          border-radius: 8px;
+          font-weight: 600;
+          font-size: 1rem;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .case-studies-cta::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+          );
+          transition: left 0.5s ease;
+        }
+
+        .case-studies-cta:hover::before {
+          left: 100%;
+        }
+
+        .case-studies-cta:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 12px 30px rgba(0, 212, 255, 0.4);
+        }
+
+        .cta-arrow {
+          font-size: 1.1rem;
+          transition: transform 0.3s ease;
+        }
+
+        .case-studies-cta:hover .cta-arrow {
+          transform: translateX(4px);
         }
 
         .projects-grid {
@@ -811,6 +866,14 @@ const TransformationLeadership = () => {
             );
           })}
         </div>
+      </div>
+
+      {/* CTA to full case studies page */}
+      <div className="cta-container">
+        <Link href="/case-studies" className="case-studies-cta">
+          <span>View All Case Studies</span>
+          <span className="cta-arrow">→</span>
+        </Link>
       </div>
     </div>
   );

@@ -1,22 +1,55 @@
 'use client';
 
-// import AccessibleNav from '@/components/AccessibleNav'; // Removed - using Navigation from layout
+import dynamic from 'next/dynamic';
 import HeroSection from '@/components/HeroSection';
 import HashScrollOnLoad from '@/components/HashScrollOnLoad';
 import { useEffect } from 'react';
 
-// Strategic Vision Components
+// Strategic Vision Components - Above fold, load immediately
 import StrategicAdvantageHeader from '@/components/StrategicAdvantageHeader';
 import StrategicIntroCard from '@/components/StrategicIntroCard';
 import CompanyExpertise from '@/components/CompanyExpertise';
 import StrategicDifferentiators from '@/components/StrategicDifferentiators';
 
-// Regular imports for lighter components
-import ExecutiveExperience from '@/components/ExecutiveExperience';
-import ProfessionalImpact from '@/components/TransformationLeadership';
-import IndustryCollaboration from '@/components/IndustryCollaboration';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import FAQSection from '@/components/FAQSection';
+// Below-fold components - Lazy loaded for better initial page performance
+const ExperienceHighlights = dynamic(
+  () => import('@/components/ExperienceHighlights'),
+  { loading: () => <SectionSkeleton height="400px" /> }
+);
+
+const ProfessionalImpact = dynamic(
+  () => import('@/components/TransformationLeadership'),
+  { loading: () => <SectionSkeleton height="800px" /> }
+);
+
+const TestimonialsSection = dynamic(
+  () => import('@/components/TestimonialsSection'),
+  { loading: () => <SectionSkeleton height="500px" /> }
+);
+
+const FAQSection = dynamic(
+  () => import('@/components/FAQSection'),
+  { loading: () => <SectionSkeleton height="400px" /> }
+);
+
+const IndustryCollaboration = dynamic(
+  () => import('@/components/IndustryCollaboration'),
+  { loading: () => <SectionSkeleton height="600px" /> }
+);
+
+// Simple loading skeleton for lazy-loaded sections
+function SectionSkeleton({ height }: { height: string }) {
+  return (
+    <div
+      style={{
+        height,
+        background: 'linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.03) 100%)',
+        borderRadius: '8px',
+        margin: '1rem 2rem',
+      }}
+    />
+  );
+}
 
 export default function Home() {
   // Prevent first-load jump
@@ -59,13 +92,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Executive Experience Section */}
+      {/* Executive Experience Highlights - Full timeline at /experience */}
       <section
         id="executive-experience"
         className="relative scroll-mt-[var(--header-h,4.5rem)]"
       >
-        {/* Content */}
-        <ExecutiveExperience />
+        <ExperienceHighlights />
       </section>
 
       {/* Professional Impact Section */}

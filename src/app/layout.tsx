@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     template: '%s | Brandon Micci',
   },
   description:
-    'Senior AI & Digital Transformation Executive delivering measurable ROI at Fortune 500 scale. $400M+ enterprise revenue created, 27K+ AI users enabled, 250% peak program ROI. Expert in AI strategy, LLM deployment, and data platform architecture.',
+    'Dallas, TX-based AI & Digital Transformation Executive at JPMorgan Chase delivering measurable ROI at Fortune 500 scale. $400M+ enterprise revenue created, 27K+ AI users enabled, 250% peak program ROI. Expert in AI strategy, LLM deployment, and data platform architecture.',
   keywords: [
     // Executive Roles
     'Enterprise AI Executive',
@@ -137,7 +137,7 @@ export const metadata: Metadata = {
     url: 'https://brandonmicci.com',
     title: 'Brandon Micci | Enterprise AI & Digital Transformation Executive',
     description:
-      'Senior AI & Digital Transformation Executive delivering measurable ROI at Fortune 500 scale. $400M+ enterprise revenue, 27K+ AI users enabled, 250% peak ROI. Expert in AI strategy, LLM deployment, data platforms.',
+      'Dallas-based AI & Digital Transformation Executive at JPMorgan Chase delivering measurable ROI at Fortune 500 scale. $400M+ enterprise revenue, 27K+ AI users enabled, 250% peak ROI. Expert in AI strategy, LLM deployment, data platforms.',
     images: [
       {
         url: '/opengraph-image',
@@ -151,7 +151,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Brandon Micci | Enterprise AI & Digital Transformation Executive',
     description:
-      'Senior AI & Digital Transformation Executive. $400M+ enterprise revenue, 27K+ AI users, 250% peak ROI. Expert in AI strategy, LLM deployment, Fortune 500 transformation.',
+      'Dallas-based AI & Digital Transformation Executive at JPMorgan Chase. $400M+ enterprise revenue, 27K+ AI users, 250% peak ROI. Expert in AI strategy, LLM deployment, Fortune 500 transformation.',
     images: ['/opengraph-image'],
     creator: '@brandonmicci',
   },

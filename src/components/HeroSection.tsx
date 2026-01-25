@@ -131,14 +131,8 @@ const HeroSection = () => {
           .hero-content-box { display: grid !important; }
           .mobile-layout { display: none !important; }
           .hero-header { display: block !important; }
-          /* SEO: Hide mobile h1 on desktop (only one h1 per page) */
-          .mobile-layout h1 { display: none !important; }
         }
         
-        /* SEO: Hide desktop h1 on mobile (only one h1 per page) */
-        @media (max-width: 768px) {
-          .hero-header h1 { display: none !important; }
-        }
         /* Reduce excessive bottom whitespace on iPad Pro by relaxing section height */
         @media (min-width: 1024px) and (max-width: 1279px) {
           .hero-section { min-height: auto; }
@@ -601,7 +595,15 @@ const HeroSection = () => {
           .hero-container { padding: 0 1.25rem; }
           .hero-content-box { display: none !important; }
           .mobile-layout { display: block !important; }
-          .hero-header { display: none !important; } /* Hide desktop header on mobile */
+          .hero-header { 
+            display: block !important; 
+            text-align: center !important; 
+            margin-bottom: 1.2rem !important;
+          }
+          .hero-header .headline {
+            text-align: center !important;
+            margin: 0 auto 0.4rem auto !important;
+          }
           .headline {
             font-size: clamp(1.1rem, 2.8vw, 1.8rem);
             white-space: nowrap;
@@ -997,15 +999,6 @@ const HeroSection = () => {
           {/* ——— MOBILE ——— */}
           <div className="mobile-layout">
             <div className="mobile-intro">
-              <h1>
-                <span
-                  className="gradient"
-                  style={{ WebkitTextFillColor: 'transparent' }}
-                >
-                  Enterprise AI & Digital Transformation Executive
-                </span>
-              </h1>
-
               {/* Wrap to ensure spacing hooks apply */}
               <div className="hero-image">
                 <HeroImage />
