@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 const StrategicIntroCard: React.FC = () => {
   return (
@@ -15,7 +16,7 @@ const StrategicIntroCard: React.FC = () => {
             Roboto,
             sans-serif;
           max-width: 1000px;
-          margin: 2rem auto 2rem;
+          margin: 0 auto 1.5rem;
           padding: 2.5rem;
           background: rgba(255, 255, 255, 0.05);
           backdrop-filter: blur(20px);
@@ -24,6 +25,14 @@ const StrategicIntroCard: React.FC = () => {
           position: relative;
           animation: fadeInUp 1s ease-out 0.3s both;
           transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* iPad Pro spacing tighten */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .intro-card {
+            margin: 0 auto 1.25rem;
+            padding: 2.25rem;
+          }
         }
 
         .intro-card::before {
@@ -100,11 +109,24 @@ const StrategicIntroCard: React.FC = () => {
           }
         }
 
+        .internal-link {
+          color: rgba(0, 212, 255, 0.9);
+          text-decoration: none;
+          border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+          transition: all 0.3s ease;
+          font-weight: 700;
+        }
+
+        .internal-link:hover {
+          color: rgba(0, 212, 255, 1);
+          border-bottom-color: rgba(0, 212, 255, 0.8);
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
           .intro-card {
             padding: 2rem 1.5rem;
-            margin: 1.5rem 1rem 2rem;
+            margin: 0 1rem 2rem;
           }
         }
 
@@ -117,10 +139,18 @@ const StrategicIntroCard: React.FC = () => {
 
       <div className="intro-card">
         <p className="intro-text">
-          While many executives can talk about AI strategy, few can deliver the{' '}
-          <strong>scale, impact, and cross-industry expertise</strong> that
-          I&apos;ve consistently achieved. Here are the key differentiators that
-          make this possible:
+          My track record demonstrates consistent delivery across the
+          world&apos;s most demanding{' '}
+          <Link href="/#transformation-leadership" className="internal-link">
+            <strong>enterprise environments</strong>
+          </Link>
+          —transforming{' '}
+          <Link href="/#executive-experience" className="internal-link">
+            <strong>AI strategy</strong>
+          </Link>{' '}
+          into measurable business impact where{' '}
+          <strong>complexity, regulation, and stakeholder expectations</strong>{' '}
+          are highest.
         </p>
       </div>
     </>

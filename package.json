@@ -6,19 +6,22 @@
     "dev": "NEXT_NO_TURBOPACK=1 next dev",
     "dev:turbo": "next dev --turbo",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3000",
+    "export": "next export",
     "typecheck": "tsc --noEmit",
     "lint": "next lint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "audit": "npm run typecheck && npm run lint && npm run format:check"
+    "audit": "npm run typecheck && npm run lint && npm run format:check",
+    "lhci:server": "lhci autorun --collect.url=http://localhost:3000 --collect.startServerCommand=\"npm run start\" --collect.startServerReadyPattern=\"started server on\" --upload.target=temporary-public-storage --assert.preset=lighthouse:recommended --assert.assertions.categories:performance=warn:0.90 --assert.assertions.categories:seo=warn:0.95 --budgetsPath=budgets.json"
   },
   "dependencies": {
     "@swc/helpers": "^0.5.2",
     "@vercel/analytics": "1.5.0",
     "@vercel/speed-insights": "1.2.0",
     "autoprefixer": "^10.4.21",
-    "next": "15.5.2",
+    "lucide-react": "0.544.0",
+    "next": "16.0.10",
     "postcss": "^8.5.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
@@ -26,15 +29,30 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@lhci/cli": "0.15.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "critters": "0.0.23",
     "eslint": "^9",
-    "eslint-config-next": "15.5.2",
+    "eslint-config-next": "16.0.10",
+    "next-sitemap": "4.2.3",
     "prettier": "^3.6.2",
+    "pwa-asset-generator": "8.1.2",
     "typescript": "^5"
   },
   "engines": {
     "node": "20.x"
+  },
+  "browserslist": {
+    "production": [
+      "defaults and supports es6-module",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version"
+    ]
   }
 }

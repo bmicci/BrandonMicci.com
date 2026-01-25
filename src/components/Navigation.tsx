@@ -1,11 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('home');
+  const [activeLink, setActiveLink] = useState(''); // Empty initial to avoid hydration mismatch
 
   // Handle scroll effect
   useEffect(() => {
@@ -15,6 +17,17 @@ const Navigation = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Sync active link with hash on mount and hash changes
+  useEffect(() => {
+    const syncHash = () => {
+      const hash = window.location.hash.slice(1) || 'home';
+      setActiveLink(hash);
+    };
+    syncHash();
+    window.addEventListener('hashchange', syncHash);
+    return () => window.removeEventListener('hashchange', syncHash);
   }, []);
 
   // Handle mobile menu toggle
@@ -28,26 +41,53 @@ const Navigation = () => {
     setIsMobileMenuOpen(false);
   };
 
-  // Handle smooth scroll for anchor links
+  // Handle smooth scroll for section links
   const handleSmoothScroll = (
     e: React.MouseEvent<HTMLAnchorElement>,
     targetId: string
   ) => {
-    e.preventDefault();
-    const target = document.getElementById(targetId);
-    if (target) {
-      const offsetTop = target.offsetTop - 60; // Account for fixed header
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth',
-      });
+    // Only prevent default and smooth scroll if we're already on the homepage
+    const isOnHomepage = window.location.pathname === '/';
+
+    if (isOnHomepage) {
+      e.preventDefault();
+      const target = document.getElementById(targetId);
+      if (target) {
+        const offsetTop = target.offsetTop - 60; // Account for fixed header
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth',
+        });
+      }
+      handleLinkClick(targetId);
+    } else {
+      // Let Next.js Link navigate to /#section, HashScrollOnLoad will handle scrolling
+      setIsMobileMenuOpen(false);
     }
-    handleLinkClick(targetId);
   };
 
   return (
     <>
       <style jsx>{`
+        /* Skip to content link */
+        .skip-to-content {
+          position: absolute;
+          top: -40px;
+          left: 0;
+          background: #00d4ff;
+          color: #0a0a0a;
+          padding: 8px 16px;
+          text-decoration: none;
+          font-weight: 600;
+          z-index: 999999;
+          border-radius: 0 0 4px 0;
+          transition: top 0.3s ease;
+        }
+
+        .skip-to-content:focus {
+          top: 0;
+        }
+
         /* Reset for Wix compatibility */
         * {
           margin: 0;
@@ -89,10 +129,8 @@ const Navigation = () => {
           justify-content: space-between;
           padding: 0.6rem 2rem;
           position: relative;
-          min-height: 58px;
-          transition:
-            padding 0.3s ease,
-            min-height 0.3s ease;
+          min-height: 72px;
+          height: 72px;
         }
 
         .logo {
@@ -103,27 +141,26 @@ const Navigation = () => {
           color: white;
           transition: transform 0.3s ease;
           cursor: pointer;
+          position: relative;
+          z-index: 10;
         }
 
         .logo:hover {
           transform: translateY(-2px);
         }
 
-        .logo-icon {
+        .logo-bm {
           width: 52px;
           height: 52px;
-          background-image: url('/logo.png');
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-          border-radius: 6px;
-          position: relative;
-          overflow: hidden;
           transition: all 0.3s ease;
+          display: block;
+          border-radius: 8px;
+          overflow: hidden;
         }
 
-        .logo:hover .logo-icon {
+        .logo:hover .logo-bm {
           transform: scale(1.05);
+          box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
         }
 
         .logo-text {
@@ -135,10 +172,11 @@ const Navigation = () => {
         .logo-name {
           font-size: 0.95rem;
           font-weight: 700;
-          color: #00d4ff;
+          color: white;
           white-space: nowrap;
           text-decoration: none;
-          transition: font-size 0.3s ease;
+          transition: all 0.3s ease;
+          margin: 0;
         }
 
         .logo-title {
@@ -147,9 +185,8 @@ const Navigation = () => {
           font-weight: 400;
           letter-spacing: 0.3px;
           white-space: nowrap;
-          transition:
-            font-size 0.3s ease,
-            opacity 0.3s ease;
+          transition: all 0.3s ease;
+          margin: 0;
         }
 
         .nav-menu {
@@ -159,24 +196,31 @@ const Navigation = () => {
           margin: 0;
         }
 
-        @media (min-width: 769px) {
-          .wix-header.scrolled .nav-container {
-            padding: 0.35rem 2rem;
-            min-height: 50px;
-          }
+        /* Removed scroll-based size changes to prevent CLS */
 
-          .wix-header.scrolled .logo-icon {
+        @media (min-width: 769px) and (max-width: 1023px) {
+          .nav-container {
+            padding: 0.5rem 1.25rem;
+            min-height: 68px;
+            height: 68px;
+          }
+          .logo-bm {
             width: 46px;
             height: 46px;
           }
-
-          .wix-header.scrolled .logo-name {
-            font-size: 0.88rem;
+          .logo-name {
+            font-size: 0.9rem;
           }
-
-          .wix-header.scrolled .logo-title {
+          .logo-title {
             font-size: 0.55rem;
-            opacity: 0.85;
+          }
+          .nav-item :global(a.nav-link) {
+            padding: 0.35rem 0.7rem;
+            font-size: 0.82rem;
+          }
+          .nav-item :global(a.cta-button) {
+            padding: 0.38rem 0.7rem;
+            font-size: 0.78rem;
           }
         }
 
@@ -184,7 +228,7 @@ const Navigation = () => {
           position: relative;
         }
 
-        .nav-link {
+        .nav-item :global(a.nav-link) {
           display: block;
           padding: 0.4rem 0.8rem;
           text-decoration: none;
@@ -199,7 +243,7 @@ const Navigation = () => {
           cursor: pointer;
         }
 
-        .nav-link::before {
+        .nav-item :global(a.nav-link)::before {
           content: '';
           position: absolute;
           top: 0;
@@ -213,16 +257,16 @@ const Navigation = () => {
           z-index: -1;
         }
 
-        .nav-link:hover::before {
+        .nav-item :global(a.nav-link):hover::before {
           opacity: 1;
         }
 
-        .nav-link:hover {
+        .nav-item :global(a.nav-link):hover {
           color: white;
           transform: translateY(-1px);
         }
 
-        .nav-link.active {
+        .nav-item :global(a.nav-link.active) {
           color: white;
           background: linear-gradient(135deg, #00d4ff30 0%, #1e90ff30 100%);
           border: 1px solid rgba(0, 212, 255, 0.3);
@@ -263,7 +307,7 @@ const Navigation = () => {
           transform: rotate(-45deg) translate(6px, -6px);
         }
 
-        .cta-button {
+        .nav-item :global(a.cta-button) {
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
           color: white !important;
           padding: 0.4rem 0.8rem;
@@ -281,7 +325,7 @@ const Navigation = () => {
           cursor: pointer;
         }
 
-        .cta-button::before {
+        .nav-item :global(a.cta-button)::before {
           content: '';
           position: absolute;
           top: 0;
@@ -297,17 +341,17 @@ const Navigation = () => {
           transition: left 0.5s ease;
         }
 
-        .cta-button:hover::before {
+        .nav-item :global(a.cta-button):hover::before {
           left: 100%;
         }
 
-        .cta-button:hover {
+        .nav-item :global(a.cta-button):hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
+        /* Mobile Responsiveness - Extended to include all iPads */
+        @media (max-width: 1279px) {
           .mobile-toggle {
             display: flex;
           }
@@ -339,35 +383,45 @@ const Navigation = () => {
             margin: 0 1rem;
           }
 
-          .nav-link {
+          .nav-item :global(a.nav-link) {
             padding: 0.75rem 1.4rem;
             margin: 0;
             border-radius: 8px;
           }
 
-          .cta-button {
+          .nav-item :global(a.cta-button) {
             margin: 0.6rem 1rem;
             justify-content: center;
           }
 
-          .logo-icon {
-            width: 48px;
-            height: 48px;
+          .logo-bm {
+            width: 42px;
+            height: 42px;
           }
 
           .logo-name {
             font-size: 1.2rem;
           }
 
+          .logo-title {
+            font-size: 0.7rem;
+          }
+
           .nav-container {
             padding: 0.6rem 1rem;
-            min-height: 56px;
+            min-height: 64px;
+            height: 64px;
           }
         }
 
         @media (max-width: 640px) {
           .logo {
             gap: 0.5rem;
+          }
+
+          .logo-bm {
+            width: 38px;
+            height: 38px;
           }
 
           .logo-name {
@@ -377,17 +431,25 @@ const Navigation = () => {
           .logo-title {
             display: none;
           }
-
-          .logo-text {
-            display: flex;
-          }
         }
       `}</style>
 
+      <a href="#main" className="skip-to-content">
+        Skip to content
+      </a>
+
       <header className={`wix-header ${isScrolled ? 'scrolled' : ''}`}>
-        <nav className="nav-container">
+        <nav className="nav-container" aria-label="Primary">
           <div className="logo" onClick={() => handleLinkClick('home')}>
-            <div className="logo-icon"></div>
+            <div className="logo-bm">
+              <Image
+                src="/logo-bm-tight.png"
+                alt="Brandon Micci Logo"
+                width={52}
+                height={52}
+                priority
+              />
+            </div>
             <div className="logo-text">
               <div className="logo-name">Brandon Micci</div>
               <div className="logo-title">AI & Digital Transformation</div>
@@ -396,61 +458,67 @@ const Navigation = () => {
 
           <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
             <li className="nav-item">
-              <a
-                href="#home"
+              <Link
+                href="/#home"
                 className={`nav-link ${activeLink === 'home' ? 'active' : ''}`}
                 onClick={(e) => handleSmoothScroll(e, 'home')}
+                scroll={false}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                href="#strategic-vision"
+              <Link
+                href="/#strategic-vision"
                 className={`nav-link ${activeLink === 'strategic-vision' ? 'active' : ''}`}
                 onClick={(e) => handleSmoothScroll(e, 'strategic-vision')}
+                scroll={false}
               >
                 Strategic Advantage
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                href="#executive-experience"
+              <Link
+                href="/#executive-experience"
                 className={`nav-link ${activeLink === 'executive-experience' ? 'active' : ''}`}
                 onClick={(e) => handleSmoothScroll(e, 'executive-experience')}
+                scroll={false}
               >
                 Executive Experience
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                href="#transformation-leadership"
+              <Link
+                href="/#transformation-leadership"
                 className={`nav-link ${activeLink === 'transformation-leadership' ? 'active' : ''}`}
                 onClick={(e) =>
                   handleSmoothScroll(e, 'transformation-leadership')
                 }
+                scroll={false}
               >
                 Transformation Leadership
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                href="#professional-impact"
+              <Link
+                href="/#professional-impact"
                 className={`nav-link ${activeLink === 'professional-impact' ? 'active' : ''}`}
                 onClick={(e) => handleSmoothScroll(e, 'professional-impact')}
+                scroll={false}
               >
                 Professional Impact
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a
-                href="#connect-with-me"
+              <Link
+                href="/#connectwithme"
                 className="cta-button"
-                onClick={(e) => handleSmoothScroll(e, 'connect-with-me')}
+                onClick={(e) => handleSmoothScroll(e, 'connectwithme')}
+                scroll={false}
               >
                 <span>Connect With Me</span>
                 <span style={{ fontSize: '0.8rem' }}>→</span>
-              </a>
+              </Link>
             </li>
           </ul>
 

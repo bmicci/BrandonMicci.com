@@ -1,6 +1,16 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import Link from 'next/link';
+import {
+  Bot,
+  Zap,
+  ShieldAlert,
+  Users,
+  Factory,
+  Network,
+  Target,
+  LineChart,
+} from 'lucide-react';
 
 type ProjectMetric = {
   value: string;
@@ -9,7 +19,7 @@ type ProjectMetric = {
 
 type Project = {
   title: string;
-  emoji: string;
+  icon: React.ComponentType<{ size?: number; className?: string }>;
   description: string;
   mobileDescription: string;
   metrics: ProjectMetric[];
@@ -18,23 +28,23 @@ type Project = {
 
 const primaryProjects: Project[] = [
   {
-    title: 'Enterprise LLM Deployment',
-    emoji: '🤖',
+    title: 'Enterprise Knowledge Assistant',
+    icon: Bot,
     description:
-      'Industry-first Large Language Model implementation across JPMorgan Chase Payments operations, representing the largest enterprise LLM deployment in financial services.',
+      'Industry-first LLM platform that evolved from 7,500+ policy documents to 10+ integrated data sources, representing the largest enterprise LLM deployment in financial services.',
     mobileDescription:
-      'Largest LLM deployment in financial services at JPMorgan.',
+      'Largest LLM deployment in financial services with 27K+ users.',
     metrics: [
       { value: '27,000+', label: 'Active Users' },
-      { value: '40%', label: 'Automation Rate' },
+      { value: '10+', label: 'Data Sources' },
     ],
     tags: ['LLM', 'NLP', 'Enterprise AI'],
   },
   {
     title: 'IoT Innovation Platform',
-    emoji: '✈️',
+    icon: Zap,
     description:
-      'Breakthrough IoT ecosystem at Southwest Airlines implementing edge computing and AI analytics across fuel, baggage, and de-icing operations.',
+      'Breakthrough IoT ecosystem at a major U.S. airline implementing edge computing and AI analytics across fuel, baggage, and de-icing operations.',
     mobileDescription: 'IoT platform delivering massive operational savings.',
     metrics: [
       { value: '250%', label: 'ROI Achievement' },
@@ -44,7 +54,7 @@ const primaryProjects: Project[] = [
   },
   {
     title: 'AI Fraud Detection Engine',
-    emoji: '🔍',
+    icon: ShieldAlert,
     description:
       'Real-time fraud analytics platform for global insurance leader processing millions of transactions with advanced ML algorithms.',
     mobileDescription: 'Real-time ML fraud detection at massive scale.',
@@ -56,9 +66,9 @@ const primaryProjects: Project[] = [
   },
   {
     title: "World's Largest Analytics Community",
-    emoji: '📊',
+    icon: Users,
     description:
-      "Established Capital One's enterprise Tableau platform—the largest evangelical analytics community worldwide.",
+      "Established enterprise Tableau platform at a top 10 U.S. bank—the largest evangelical analytics community worldwide.",
     mobileDescription:
       "30,000+ user platform—world's largest analytics community.",
     metrics: [
@@ -72,7 +82,7 @@ const primaryProjects: Project[] = [
 const secondaryProjects: Project[] = [
   {
     title: 'Industry 4.0 IoT Ecosystem',
-    emoji: '🏢',
+    icon: Factory,
     description:
       'Comprehensive platform integrating 1000+ IoT devices across telematics, smart buildings, and wearables with unified AI analytics.',
     mobileDescription: 'Connected 1000+ IoT devices for Fortune 50 insurers.',
@@ -84,10 +94,10 @@ const secondaryProjects: Project[] = [
   },
   {
     title: 'Global Infrastructure Transformation',
-    emoji: '🌐',
+    icon: Network,
     description:
-      'Worldwide infrastructure modernization at Citigroup, architecting telemetry platforms that eliminated weekly Sev1 outages.',
-    mobileDescription: 'Achieved 98% uptime from weekly outages at Citi.',
+      'Worldwide infrastructure modernization at a global financial institution, architecting telemetry platforms that eliminated weekly Sev1 outages.',
+    mobileDescription: 'Achieved 98% uptime from weekly outages.',
     metrics: [
       { value: '98%', label: 'Uptime' },
       { value: '200%', label: 'Cloud Acceleration' },
@@ -96,9 +106,9 @@ const secondaryProjects: Project[] = [
   },
   {
     title: 'Event-Based Marketing Engine',
-    emoji: '📱',
+    icon: Target,
     description:
-      'Real-time Hadoop-powered engine at Citigroup reaching millions with personalized campaigns and 300% conversion improvement.',
+      'Real-time Hadoop-powered engine at a global financial institution reaching millions with personalized campaigns and 300% conversion improvement.',
     mobileDescription: 'Reached 10M+ customers with 300% better conversion.',
     metrics: [
       { value: '10M+', label: 'Customers Reached' },
@@ -108,10 +118,10 @@ const secondaryProjects: Project[] = [
   },
   {
     title: 'Analytics-as-a-Service Platform',
-    emoji: '💼',
+    icon: LineChart,
     description:
-      'Self-service analytics platform at EY automating Risk, Compliance, and Fraud detection, generating continuous revenue stream.',
-    mobileDescription: 'SaaS platform generating $30M annual revenue at EY.',
+      'Self-service analytics platform at a Big 4 consulting firm automating Risk, Compliance, and Fraud detection, generating continuous revenue stream.',
+    mobileDescription: 'SaaS platform generating $30M annual revenue.',
     metrics: [
       { value: '$30M', label: 'Annual Revenue' },
       { value: '85%', label: 'Process Automation' },
@@ -121,46 +131,6 @@ const secondaryProjects: Project[] = [
 ];
 
 const TransformationLeadership = () => {
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const cards = cardRefs.current.filter(Boolean) as HTMLDivElement[];
-
-    if (!cards.length) {
-      return;
-    }
-
-    const baseBackground = 'rgba(255, 255, 255, 0.03)';
-    const cleanups: Array<() => void> = [];
-
-    cards.forEach((card) => {
-      const handleMouseMove = (event: MouseEvent) => {
-        const rect = card.getBoundingClientRect();
-        const x = ((event.clientX - rect.left) / rect.width) * 100;
-        const y = ((event.clientY - rect.top) / rect.height) * 100;
-        card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(0, 212, 255, 0.1), ${baseBackground})`;
-      };
-
-      const handleMouseLeave = () => {
-        card.style.background = baseBackground;
-      };
-
-      card.style.background = baseBackground;
-      card.addEventListener('mousemove', handleMouseMove);
-      card.addEventListener('mouseleave', handleMouseLeave);
-
-      cleanups.push(() => {
-        card.removeEventListener('mousemove', handleMouseMove);
-        card.removeEventListener('mouseleave', handleMouseLeave);
-        card.style.background = baseBackground;
-      });
-    });
-
-    return () => {
-      cleanups.forEach((cleanup) => cleanup());
-    };
-  }, []);
-
   return (
     <div className="transformation-section">
       <style jsx>{`
@@ -173,7 +143,7 @@ const TransformationLeadership = () => {
             Roboto,
             sans-serif;
           color: white;
-          padding: 3rem 0 4rem;
+          padding: 1.5rem 0 1.5rem;
           position: relative;
           z-index: 10;
           overflow: hidden;
@@ -194,7 +164,7 @@ const TransformationLeadership = () => {
           width: 200%;
           height: 300%;
           background-repeat: repeat;
-          opacity: 0.4;
+          opacity: 0.15;
           animation: starDrift var(--duration) linear infinite;
         }
 
@@ -299,7 +269,7 @@ const TransformationLeadership = () => {
 
         .portfolio-header-section {
           text-align: center;
-          padding: 3rem 2rem;
+          padding: 1rem 2rem;
           animation: fadeInDown 1s ease-out;
           background: transparent;
         }
@@ -313,162 +283,208 @@ const TransformationLeadership = () => {
         }
 
         .portfolio-title .gradient-text {
+          color: #00d4ff; /* Fallback solid color */
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
+          /* Improve gradient text rendering */
+          -webkit-text-stroke: 0.5px transparent;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
 
         .portfolio-subtitle {
           font-size: 1.2rem;
-          color: rgba(255, 255, 255, 0.8);
+          color: rgba(255, 255, 255, 0.95);
+          font-weight: 600;
           max-width: 800px;
           margin: 0 auto;
           line-height: 1.6;
         }
 
         .projects-container {
-          max-width: 1400px;
+          max-width: 1200px;
           margin: 0 auto;
           padding: 0 2rem 2rem;
         }
 
         .projects-container-secondary {
-          max-width: 1400px;
+          max-width: 1200px;
           margin: 0 auto;
-          padding: 0 2rem 4rem;
+          padding: 0 2rem 1.5rem;
           position: relative;
           background: transparent;
-          border-radius: 24px;
           overflow: hidden;
         }
 
-        .projects-container-secondary::before {
+        .cta-container {
+          display: flex;
+          justify-content: center;
+          padding: 1.5rem 2rem 2rem;
+        }
+
+        .case-studies-cta {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+          color: white;
+          padding: 0.875rem 2rem;
+          border-radius: 8px;
+          font-weight: 600;
+          font-size: 1rem;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .case-studies-cta::before {
           content: '';
           position: absolute;
           top: 0;
-          left: 0;
+          left: -100%;
           width: 100%;
           height: 100%;
-          background-image:
-            linear-gradient(
-              90deg,
-              rgba(0, 212, 255, 0.05) 1px,
-              transparent 1px
-            ),
-            linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px);
-          background-size: 100px 100px;
-          animation: circuitMove 20s linear infinite;
-          z-index: 0;
-          pointer-events: none;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+          );
+          transition: left 0.5s ease;
         }
 
-        .projects-container-secondary .projects-grid {
-          position: relative;
-          z-index: 1;
+        .case-studies-cta:hover::before {
+          left: 100%;
+        }
+
+        .case-studies-cta:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 12px 30px rgba(0, 212, 255, 0.4);
+        }
+
+        .cta-arrow {
+          font-size: 1.1rem;
+          transition: transform 0.3s ease;
+        }
+
+        .case-studies-cta:hover .cta-arrow {
+          transform: translateX(4px);
         }
 
         .projects-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
+          gap: 1.5rem;
         }
 
         .project-card {
-          background: rgba(255, 255, 255, 0.03);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          border-radius: 24px;
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(25px);
+          -webkit-backdrop-filter: blur(25px);
+          border-radius: 16px;
+          border: 1px solid rgba(0, 212, 255, 0.2);
           overflow: hidden;
           position: relative;
-          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          transition: all 0.3s ease;
           opacity: 0;
-          transform: translateY(30px);
-          animation: cardReveal 0.8s ease forwards;
+          animation: cardReveal 0.6s ease forwards;
         }
 
         .project-card:nth-child(1) {
           animation-delay: 0.1s;
         }
         .project-card:nth-child(2) {
-          animation-delay: 0.15s;
-        }
-        .project-card:nth-child(3) {
           animation-delay: 0.2s;
         }
-        .project-card:nth-child(4) {
-          animation-delay: 0.25s;
+        .project-card:nth-child(3) {
+          animation-delay: 0.3s;
         }
-
-        .project-card::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          border-radius: 24px;
-          padding: 2px;
-          background: linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff);
-          background-size: 200% 200%;
-          -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
-          -webkit-mask-composite: xor;
-          mask-composite: exclude;
-          opacity: 0.5;
-          animation: gradientRotate 4s linear infinite;
+        .project-card:nth-child(4) {
+          animation-delay: 0.4s;
         }
 
         .project-card:hover {
-          transform: translateY(-10px) scale(1.02);
-          box-shadow: 0 30px 60px rgba(0, 212, 255, 0.3);
-        }
-
-        .project-card:hover::before {
-          opacity: 1;
+          transform: translateY(-8px) scale(1.02);
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(0, 212, 255, 0.2);
+          box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
         .project-image {
-          height: 160px;
-          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+          height: 140px;
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          border-bottom: 1px solid rgba(0, 212, 255, 0.15);
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 3.5rem;
           position: relative;
           overflow: hidden;
         }
 
-        .project-image::after {
+        .project-image::before {
           content: '';
           position: absolute;
-          top: -50%;
-          left: -50%;
-          width: 200%;
-          height: 200%;
+          inset: 0;
           background: linear-gradient(
-            45deg,
-            transparent,
-            rgba(255, 255, 255, 0.1),
-            transparent
+            135deg,
+            rgba(0, 212, 255, 0.1) 0%,
+            rgba(30, 144, 255, 0.05) 100%
           );
-          animation: shimmer 3s infinite;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-image::before {
+          opacity: 1;
+        }
+
+        .project-icon {
+          color: #00d4ff;
+          z-index: 1;
+          position: relative;
+          transition: all 0.3s ease;
+          filter: drop-shadow(0 2px 4px rgba(0, 212, 255, 0.3));
+        }
+
+        .project-card:hover .project-icon {
+          color: #ffffff;
+          transform: scale(1.05);
+          filter: drop-shadow(0 4px 8px rgba(0, 212, 255, 0.5));
         }
 
         .project-content {
-          padding: 1.8rem;
+          padding: 2rem;
           position: relative;
           z-index: 1;
         }
 
         .project-title {
-          font-size: 1.4rem;
+          font-size: 1.25rem;
           font-weight: 700;
-          color: #ffffff;
+          color: #00d4ff; /* Fallback solid color */
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
           margin-bottom: 0.8rem;
           line-height: 1.3;
+          /* Improve gradient text rendering */
+          -webkit-text-stroke: 0.5px transparent;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
 
         .project-description {
-          color: rgba(255, 255, 255, 0.8);
+          color: rgba(255, 255, 255, 1);
+          font-weight: 500;
+          text-shadow: 0 1px 2px rgba(0,0,0,0.3);
           line-height: 1.5;
           margin-bottom: 1.2rem;
           font-size: 0.9rem;
@@ -482,18 +498,18 @@ const TransformationLeadership = () => {
         }
 
         .project-metric {
-          background: rgba(0, 212, 255, 0.1);
-          border: 1px solid rgba(0, 212, 255, 0.3);
-          border-radius: 10px;
+          background: rgba(0, 212, 255, 0.08);
+          border: 1px solid rgba(0, 212, 255, 0.2);
+          border-radius: 12px;
           padding: 0.8rem;
           text-align: center;
           transition: all 0.3s ease;
         }
 
         .project-metric:hover {
-          background: rgba(0, 212, 255, 0.15);
-          transform: scale(1.05);
-          box-shadow: 0 5px 15px rgba(0, 212, 255, 0.2);
+          background: rgba(0, 212, 255, 0.12);
+          border-color: rgba(0, 212, 255, 0.3);
+          transform: translateY(-2px);
         }
 
         .project-metric-number {
@@ -509,7 +525,8 @@ const TransformationLeadership = () => {
 
         .project-metric-label {
           font-size: 0.7rem;
-          color: rgba(255, 255, 255, 0.7);
+          color: rgba(255, 255, 255, 0.85);
+          font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.5px;
         }
@@ -521,23 +538,23 @@ const TransformationLeadership = () => {
         }
 
         .tech-tag {
-          background: rgba(30, 144, 255, 0.15);
-          border: 1px solid rgba(30, 144, 255, 0.4);
-          color: rgba(255, 255, 255, 0.9);
+          background: rgba(0, 212, 255, 0.25);
+          border: 1px solid rgba(0, 212, 255, 0.7);
+          box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+          color: rgba(255, 255, 255, 1);
           padding: 0.25rem 0.6rem;
-          border-radius: 15px;
+          border-radius: 12px;
           font-size: 0.7rem;
-          font-weight: 500;
+          font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.3px;
           transition: all 0.3s ease;
         }
 
         .tech-tag:hover {
-          background: rgba(30, 144, 255, 0.25);
-          border-color: #1e90ff;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 8px rgba(30, 144, 255, 0.3);
+          background: rgba(0, 212, 255, 0.35);
+          border-color: rgba(0, 212, 255, 0.8);
+          transform: translateY(-1px);
         }
 
         .desktop-text {
@@ -546,6 +563,18 @@ const TransformationLeadership = () => {
 
         .mobile-text {
           display: none;
+        }
+
+        /* Fallback for browsers that don't support gradient text properly */
+        @supports not (background-clip: text) or not
+          (-webkit-background-clip: text) {
+          .portfolio-title .gradient-text,
+          .project-title,
+          .project-metric-number {
+            color: #00d4ff;
+            background: none;
+            -webkit-text-fill-color: initial;
+          }
         }
 
         @keyframes fadeInDown {
@@ -562,34 +591,6 @@ const TransformationLeadership = () => {
         @keyframes cardReveal {
           to {
             opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes gradientRotate {
-          0% {
-            background-position: 0% 50%;
-          }
-          100% {
-            background-position: 200% 50%;
-          }
-        }
-
-        @keyframes shimmer {
-          0% {
-            transform: translateX(-100%) translateY(-100%) rotate(45deg);
-          }
-          100% {
-            transform: translateX(100%) translateY(100%) rotate(45deg);
-          }
-        }
-
-        @keyframes circuitMove {
-          0% {
-            transform: translate(0, 0);
-          }
-          100% {
-            transform: translate(100px, 100px);
           }
         }
 
@@ -604,6 +605,30 @@ const TransformationLeadership = () => {
         }
 
         @media (max-width: 768px) {
+          /* Use solid colors on mobile for better performance and rendering */
+          .portfolio-title .gradient-text,
+          .project-title {
+            color: #00d4ff !important;
+            background: none !important;
+            -webkit-text-fill-color: initial !important;
+            -webkit-background-clip: initial !important;
+            background-clip: initial !important;
+          }
+
+          .project-metric-number {
+            color: #00d4ff !important;
+            background: none !important;
+            -webkit-text-fill-color: initial !important;
+            -webkit-background-clip: initial !important;
+            background-clip: initial !important;
+          }
+
+          /* Disable performance-heavy animations on mobile */
+          .star-field {
+            animation: none !important;
+            opacity: 0.2;
+          }
+
           .portfolio-header-section {
             padding: 2rem 1rem;
           }
@@ -627,7 +652,6 @@ const TransformationLeadership = () => {
 
           .project-image {
             height: 140px;
-            font-size: 3rem;
           }
 
           .project-content {
@@ -670,11 +694,23 @@ const TransformationLeadership = () => {
 
         @media (max-width: 480px) {
           .transformation-section {
-            padding: 2rem 0 3rem;
+            padding: 1rem 0 1rem;
           }
 
           .portfolio-header-section {
-            padding: 1.5rem 1rem;
+            padding: 1rem 1rem;
+          }
+        }
+
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+          .star-field {
+            animation: none !important;
+          }
+
+          .project-card {
+            animation: none !important;
+            opacity: 1;
           }
         }
       `}</style>
@@ -687,116 +723,161 @@ const TransformationLeadership = () => {
 
       <div className="portfolio-header-section">
         <h2 className="portfolio-title">
-          <span className="gradient-text">INNOVATION PORTFOLIO</span>
+          <span className="gradient-text">TRANSFORMATION LEADERSHIP</span>
         </h2>
-        <p className="portfolio-subtitle desktop-text">
-          Strategic AI implementations delivering quantifiable business
-          transformation across Fortune 500 technology ecosystems
+        <p className="portfolio-subtitle desktop-text font-semibold text-lg md:text-xl text-slate-100">
+          Revolutionary innovations that don&apos;t just solve today&apos;s
+          challenges—they redefine how entire industries operate tomorrow. Built
+          on{' '}
+          <Link
+            href="/#strategic-advantage"
+            className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
+          >
+            proven expertise
+          </Link>
+          {' '}and{' '}
+          <Link
+            href="/#executive-experience"
+            className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
+          >
+            16+ years of executive leadership
+          </Link>
         </p>
-        <p className="portfolio-subtitle mobile-text">
-          AI solutions driving Fortune 500 transformation
+        <p className="portfolio-subtitle mobile-text font-semibold text-lg md:text-xl text-slate-100">
+          <Link
+            href="/#strategic-advantage"
+            className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
+          >
+            AI solutions
+          </Link>
+          {' '}driving{' '}
+          <Link
+            href="/#executive-experience"
+            className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
+          >
+            Fortune 500 transformation
+          </Link>
         </p>
       </div>
 
       <div className="projects-container">
         <div className="projects-grid">
-          {primaryProjects.map((project, index) => (
-            <div
-              key={project.title}
-              className="project-card"
-              ref={(el) => {
-                cardRefs.current[index] = el;
-              }}
-            >
-              <div className="project-image">
-                <span>{project.emoji}</span>
-              </div>
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description desktop-text">
-                  {project.description}
-                </p>
-                <p className="project-description mobile-text">
-                  {project.mobileDescription}
-                </p>
+          {primaryProjects.map((project, index) => {
+            const IconComponent = project.icon;
+            return (
+              <div
+                key={project.title}
+                className="project-card"
+              >
+                <div className="project-image">
+                  <IconComponent size={56} className="project-icon" />
+                </div>
+                <div className="project-content">
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-description desktop-text">
+                    {project.description}
+                  </p>
+                  <p className="project-description mobile-text">
+                    {project.mobileDescription}
+                  </p>
 
-                <div className="project-metrics">
-                  {project.metrics.map((metric) => (
-                    <div
-                      key={`${project.title}-${metric.label}`}
-                      className="project-metric"
-                    >
-                      <span className="project-metric-number">
-                        {metric.value}
+                  <div className="project-metrics">
+                    {project.metrics.map((metric) => (
+                      <div
+                        key={`${project.title}-${metric.label}`}
+                        className="project-metric"
+                      >
+                        <span className="project-metric-number">
+                          {metric.value}
+                        </span>
+                        <div className="project-metric-label">
+                          {metric.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="tech-tags">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={`${project.title}-${tag}`}
+                        className="tech-tag"
+                      >
+                        {tag}
                       </span>
-                      <div className="project-metric-label">{metric.label}</div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="tech-tags">
-                  {project.tags.map((tag) => (
-                    <span key={`${project.title}-${tag}`} className="tech-tag">
-                      {tag}
-                    </span>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
       <div className="projects-container-secondary">
         <div className="projects-grid">
-          {secondaryProjects.map((project, index) => (
-            <div
-              key={project.title}
-              className="project-card"
-              ref={(el) => {
-                cardRefs.current[primaryProjects.length + index] = el;
-              }}
-            >
-              <div className="project-image">
-                <span>{project.emoji}</span>
-              </div>
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description desktop-text">
-                  {project.description}
-                </p>
-                <p className="project-description mobile-text">
-                  {project.mobileDescription}
-                </p>
+          {secondaryProjects.map((project, index) => {
+            const IconComponent = project.icon;
+            return (
+              <div
+                key={project.title}
+                className="project-card"
+              >
+                <div className="project-image">
+                  <IconComponent size={56} className="project-icon" />
+                </div>
+                <div className="project-content">
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-description desktop-text">
+                    {project.description}
+                  </p>
+                  <p className="project-description mobile-text">
+                    {project.mobileDescription}
+                  </p>
 
-                <div className="project-metrics">
-                  {project.metrics.map((metric) => (
-                    <div
-                      key={`${project.title}-${metric.label}`}
-                      className="project-metric"
-                    >
-                      <span className="project-metric-number">
-                        {metric.value}
+                  <div className="project-metrics">
+                    {project.metrics.map((metric) => (
+                      <div
+                        key={`${project.title}-${metric.label}`}
+                        className="project-metric"
+                      >
+                        <span className="project-metric-number">
+                          {metric.value}
+                        </span>
+                        <div className="project-metric-label">
+                          {metric.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="tech-tags">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={`${project.title}-${tag}`}
+                        className="tech-tag"
+                      >
+                        {tag}
                       </span>
-                      <div className="project-metric-label">{metric.label}</div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="tech-tags">
-                  {project.tags.map((tag) => (
-                    <span key={`${project.title}-${tag}`} className="tech-tag">
-                      {tag}
-                    </span>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
+      </div>
+
+      {/* CTA to full case studies page */}
+      <div className="cta-container">
+        <Link href="/case-studies" className="case-studies-cta">
+          <span>View All Case Studies</span>
+          <span className="cta-arrow">→</span>
+        </Link>
       </div>
     </div>
   );
 };
 
 export default TransformationLeadership;
+

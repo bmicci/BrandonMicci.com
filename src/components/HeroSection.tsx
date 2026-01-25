@@ -1,48 +1,16 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
+import React from 'react';
+import Link from 'next/link';
+import { Icon } from '@/components/ui/Icon';
+import HeroImage from './HeroImage';
+import AnimatedCounter from '@/components/AnimatedCounter';
+import { METRICS } from '@/lib/metrics';
 
 const HeroSection = () => {
-  const [counts, setCounts] = useState({
-    value: 0,
-    users: 0,
-    roi: 0,
-    years: 0,
-  });
-  const reduced = usePrefersReducedMotion();
-
-  useEffect(() => {
-    const animateCounts = () => {
-      const duration = reduced ? 0 : 2000;
-      const steps = reduced ? 1 : 60;
-      const stepDuration = duration / steps;
-
-      const targets = { value: 400, users: 27, roi: 250, years: 16 };
-
-      let currentStep = 0;
-      const interval = setInterval(() => {
-        currentStep++;
-        const progress = currentStep / steps;
-
-        setCounts({
-          value: Math.floor(targets.value * progress),
-          users: Math.floor(targets.users * progress),
-          roi: Math.floor(targets.roi * progress),
-          years: Math.floor(targets.years * progress),
-        });
-
-        if (currentStep >= steps) clearInterval(interval);
-      }, stepDuration);
-    };
-
-    const timer = setTimeout(animateCounts, 500);
-    return () => clearTimeout(timer);
-  }, [reduced]);
-
   return (
     <>
+      {/* ——— GLOBAL (light-touch) ——— */}
       <style jsx global>{`
         body {
           font-family:
@@ -55,722 +23,843 @@ const HeroSection = () => {
           background: #0a0e27;
           color: white;
           margin: 0;
-          padding: 0;
-          overflow-x: hidden;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
         }
+        @media (prefers-reduced-motion: reduce) {
+          * {
+            animation: none !important;
+            transition: none !important;
+          }
+        }
+        /* iPad Pro: ensure hero section doesn't enforce screen-height causing gap */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .hero-section {
+            min-height: auto;
+            padding-bottom: 0;
+          }
+        }
+        /* Desktop: reduce top padding and bottom spacing - more aggressive */
+        @media (min-width: 1024px) {
+          .hero-section {
+            padding-top: max(env(safe-area-inset-top), 0.75rem) !important;
+            padding-bottom: 0.5rem !important;
+          }
+          .kpi-grid {
+            margin-bottom: 0 !important;
+          }
+          .hero-content-box {
+            margin-bottom: 0 !important;
+          }
+        }
+        /* iPad Pro specific override (1024-1279px) for tighter spacing */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .hero-section {
+            padding-bottom: 0.25rem !important;
+          }
+        }
+        @media (min-width: 1280px) {
+          .hero-section {
+            padding-top: max(env(safe-area-inset-top), 0.5rem) !important;
+            padding-bottom: 0.5rem !important;
+          }
+        }
+        /* iPad Pro: avoid oversized blank space on the next section */
+      `}</style>
 
+      {/* ——— HERO ——— */}
+      <style jsx>{`
         .hero-section {
-          min-height: 100vh;
           position: relative;
-          padding: 5rem 0 2rem 0; /* Add top padding to account for fixed navigation */
+          /* Stable viewport height avoids URL bar reflow jump */
+          min-height: 100svh;
+          padding: max(env(safe-area-inset-top), 1.25rem) 0 1rem 0;
           overflow: hidden;
-          background: transparent; /* Let universal background show through */
+          background: transparent;
+          /* Prevent descendant layout/paint from bubbling reflow up to sections */
+          contain: layout paint;
+          /* Disable scroll anchoring in case the browser tries to "help" mid-paint */
+          overflow-anchor: none;
         }
 
-        /* Floating particles removed - using universal background */
-
-        /* Random positioning for more natural feel */
-        .particle:nth-child(1) {
-          top: 12%;
-          left: 8%;
-          animation-delay: 0s;
-          animation-duration: 6s;
-        }
-        .particle:nth-child(2) {
-          top: 28%;
-          left: 18%;
-          animation-delay: 0.5s;
-          animation-duration: 8s;
-        }
-        .particle:nth-child(3) {
-          top: 45%;
-          left: 32%;
-          animation-delay: 1s;
-          animation-duration: 10s;
-        }
-        .particle:nth-child(4) {
-          top: 62%;
-          left: 48%;
-          animation-delay: 1.5s;
-          animation-duration: 7s;
-        }
-        .particle:nth-child(5) {
-          top: 78%;
-          left: 65%;
-          animation-delay: 2s;
-          animation-duration: 9s;
-        }
-        .particle:nth-child(6) {
-          top: 88%;
-          left: 82%;
-          animation-delay: 2.5s;
-          animation-duration: 11s;
-        }
-        .particle:nth-child(7) {
-          top: 22%;
-          left: 92%;
-          animation-delay: 3s;
-          animation-duration: 6s;
-        }
-        .particle:nth-child(8) {
-          top: 38%;
-          left: 78%;
-          animation-delay: 3.5s;
-          animation-duration: 8s;
-        }
-        .particle:nth-child(9) {
-          top: 55%;
-          left: 62%;
-          animation-delay: 4s;
-          animation-duration: 10s;
-        }
-        .particle:nth-child(10) {
-          top: 72%;
-          left: 42%;
-          animation-delay: 4.5s;
-          animation-duration: 7s;
-        }
-        .particle:nth-child(11) {
-          top: 85%;
-          left: 22%;
-          animation-delay: 5s;
-          animation-duration: 9s;
-        }
-        .particle:nth-child(12) {
-          top: 95%;
-          left: 5%;
-          animation-delay: 5.5s;
-          animation-duration: 11s;
-        }
-        .particle:nth-child(13) {
-          top: 8%;
-          left: 25%;
-          animation-delay: 6s;
-          animation-duration: 6s;
-        }
-        .particle:nth-child(14) {
-          top: 18%;
-          left: 45%;
-          animation-delay: 6.5s;
-          animation-duration: 8s;
-        }
-        .particle:nth-child(15) {
-          top: 35%;
-          left: 58%;
-          animation-delay: 7s;
-          animation-duration: 10s;
-        }
-        .particle:nth-child(16) {
-          top: 52%;
-          left: 72%;
-          animation-delay: 7.5s;
-          animation-duration: 7s;
-        }
-        .particle:nth-child(17) {
-          top: 68%;
-          left: 88%;
-          animation-delay: 8s;
-          animation-duration: 9s;
-        }
-        .particle:nth-child(18) {
-          top: 82%;
-          left: 95%;
-          animation-delay: 8.5s;
-          animation-duration: 11s;
-        }
-        .particle:nth-child(19) {
-          top: 5%;
-          left: 68%;
-          animation-delay: 9s;
-          animation-duration: 6s;
-        }
-        .particle:nth-child(20) {
-          top: 15%;
-          left: 85%;
-          animation-delay: 9.5s;
-          animation-duration: 8s;
-        }
-        .particle:nth-child(21) {
-          top: 42%;
-          left: 12%;
-          animation-delay: 10s;
-          animation-duration: 10s;
-        }
-        .particle:nth-child(22) {
-          top: 58%;
-          left: 28%;
-          animation-delay: 10.5s;
-          animation-duration: 7s;
-        }
-        .particle:nth-child(23) {
-          top: 75%;
-          left: 38%;
-          animation-delay: 11s;
-          animation-duration: 9s;
-        }
-        .particle:nth-child(24) {
-          top: 92%;
-          left: 52%;
-          animation-delay: 11.5s;
-          animation-duration: 11s;
-        }
-        .particle:nth-child(25) {
-          top: 25%;
-          left: 35%;
-          animation-delay: 12s;
-          animation-duration: 6s;
-        }
-        .particle:nth-child(26) {
-          top: 48%;
-          left: 55%;
-          animation-delay: 12.5s;
-          animation-duration: 8s;
-        }
-        .particle:nth-child(27) {
-          top: 65%;
-          left: 75%;
-          animation-delay: 13s;
-          animation-duration: 10s;
-        }
-        .particle:nth-child(28) {
-          top: 82%;
-          left: 88%;
-          animation-delay: 13.5s;
-          animation-duration: 7s;
-        }
-        .particle:nth-child(29) {
-          top: 95%;
-          left: 15%;
-          animation-delay: 14s;
-          animation-duration: 9s;
-        }
-        .particle:nth-child(30) {
-          top: 8%;
-          left: 38%;
-          animation-delay: 14.5s;
-          animation-duration: 11s;
-        }
-
-        @keyframes sparkleFloat {
-          0%,
-          100% {
-            transform: translate(0, 0) scale(1) rotate(0deg);
-            opacity: 0.7;
-          }
-          25% {
-            transform: translate(-15px, -25px) scale(1.3) rotate(90deg);
-            opacity: 1;
-          }
-          50% {
-            transform: translate(20px, -40px) scale(0.8) rotate(180deg);
-            opacity: 0.8;
-          }
-          75% {
-            transform: translate(8px, -20px) scale(1.1) rotate(270deg);
-            opacity: 0.9;
-          }
-        }
-
-        /* Enhanced twinkling effect */
-        .particle::before {
-          content: '';
+        .hero-energy-field {
           position: absolute;
-          top: -4px;
-          left: -4px;
-          right: -4px;
-          bottom: -4px;
-          border-radius: 50%;
+          inset: 0;
           background: radial-gradient(
-            circle,
-            rgba(0, 212, 255, 0.4) 0%,
-            transparent 60%
+            ellipse at center,
+            rgba(0, 212, 255, 0.12) 0%,
+            rgba(0, 150, 255, 0.06) 30%,
+            transparent 70%
           );
-          animation: twinkle 1.5s infinite ease-in-out;
-        }
-
-        @keyframes twinkle {
-          0%,
-          100% {
-            opacity: 0;
-            transform: scale(0.3);
-          }
-          50% {
-            opacity: 1;
-            transform: scale(1.5);
-          }
-        }
-
-        /* Neural grid removed - using universal background */
-        @keyframes gridFlow {
-          0% {
-            transform: translate(0, 0);
-          }
-          100% {
-            transform: translate(60px, 60px);
-          }
+          pointer-events: none;
+          z-index: 0;
         }
 
         .hero-container {
-          max-width: 1400px;
+          max-width: 1200px;
           margin: 0 auto;
-          padding: 0 2rem;
+          padding-inline: clamp(1rem, 3vw, 2rem);
           position: relative;
           z-index: 10;
         }
 
-        /* Desktop Layout */
-        .hero-top {
+        /* Full-width header at top */
+        .hero-header {
+          width: 100%;
+          text-align: left;
+          margin-bottom: 1.1rem;
+          max-width: 1200px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        
+        /* Content box below header */
+        .hero-content-box {
           display: grid;
-          grid-template-columns: 1fr 400px;
-          gap: 4rem;
+          grid-template-columns: 1fr 320px;
+          gap: 2.25rem;
           align-items: start;
-          margin-bottom: 2rem;
+          margin-bottom: 0.75rem;
+          max-width: 1200px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        
+        /* Ensure desktop layout is visible on larger screens */
+        @media (min-width: 769px) {
+          .hero-content-box { display: grid !important; }
+          .mobile-layout { display: none !important; }
+          .hero-header { display: block !important; }
+        }
+        
+        /* Reduce excessive bottom whitespace on iPad Pro by relaxing section height */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .hero-section { min-height: auto; }
+        }
+        /* Tablet (iPad) layout tuning */
+        @media (min-width: 769px) and (max-width: 1023px) {
+          .hero-content-box {
+            grid-template-columns: 1fr 280px;
+            gap: 2rem;
+            align-items: start;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+        
+        /* iPad Air/Mini specific optimizations */
+        @media (min-width: 768px) and (max-width: 820px) {
+          .hero-header {
+            margin-bottom: 2rem;
+          }
+          .hero-content-box {
+            grid-template-columns: 1fr 240px;
+            gap: 2rem;
+            max-width: 100%;
+            padding: 0 1rem;
+          }
+          .headline {
+            font-size: clamp(1.4rem, 4vw, 2.2rem);
+            margin-bottom: 0.75rem;
+          }
+          .dek {
+            font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+            line-height: 1.5;
+            margin-bottom: 1rem;
+          }
+          .cta-row {
+            gap: 0.75rem 1rem;
+            margin-bottom: 1rem;
+          }
+          .kpi-grid {
+            gap: clamp(0.5rem, 1vw, 0.7rem);
+            margin-top: 0.75rem;
+          }
+          .kpi-box {
+            min-height: clamp(90px, 8vw, 110px);
+            padding: clamp(0.8rem, 1.4vw, 1rem) clamp(1rem, 1.8vw, 1.2rem);
+          }
+          .stat-number {
+            font-size: clamp(1.1rem, 10cqw, 1.4rem);
+          }
+          .stat-label {
+            font-size: clamp(0.65rem, 1.2vw, 0.75rem);
+          }
         }
 
+        /* iPad Air portrait only: use mobile layout; avoid mini and pro */
+        /* Robust match for iPad Air portrait (allow minor rounding) */
+        @media (min-width: 810px) and (max-width: 830px) and (orientation: portrait) {
+          .hero-section { min-height: auto; padding-bottom: 1rem; }
+          .hero-header { display: none !important; }
+          .hero-content-box { display: none !important; }
+          .mobile-layout { display: block !important; }
+          /* Title: single line, centered; size tuned to fit */
+          .mobile-intro { max-width: 100% !important; text-align: center !important; padding-inline: clamp(0.75rem, 3vw, 1rem) !important; }
+          .mobile-intro h1 { 
+            font-size: clamp(2.3rem, 5vw, 2.8rem) !important; 
+            white-space: nowrap !important; 
+            margin-bottom: 0.9rem !important; 
+            text-align: center !important; 
+            letter-spacing: -0.02em !important;
+            line-height: 1.12 !important;
+            font-weight: 800 !important;
+          }
+          /* Larger hero image, but not overpowering */
+          .mobile-layout :global(.hi-card) { width: clamp(300px, 54vw, 360px) !important; height: clamp(330px, 56vw, 420px) !important; }
+          /* Add spacing around the image wrapper */
+          .hero-image { margin-block: clamp(1rem, 4vw, 1.8rem) !important; }
+          /* Larger subtitle/paragraph */
+          .mobile-dek { font-size: clamp(1.18rem, 2.6vw, 1.35rem) !important; line-height: 1.64 !important; max-width: 62ch !important; margin-inline: auto !important; text-align: center !important; font-weight: 700 !important; }
+          /* Stack CTAs on Air portrait and center width */
+          .cta-row { grid-template-columns: 1fr !important; max-width: 560px !important; margin-inline: auto !important; row-gap: 0.7rem !important; }
+        }
+          .headline { 
+            font-size: clamp(1.2rem, 3.5vw, 2.5rem);
+            white-space: normal; /* allow wrapping on tighter tablet widths */
+            overflow-wrap: anywhere;
+            width: 100%;
+            text-align: left;
+          }
+          .dek { font-size: clamp(0.95rem, 1.4vw, 1.05rem); }
+          .cta-row { grid-template-columns: repeat(2, max-content); justify-content: start; gap: 0.85rem 1rem; }
+          .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem; }
+        }
         .hero-content {
           display: flex;
           flex-direction: column;
-          gap: 1.2rem;
-          animation: slideInLeft 1s ease-out;
-        }
-        @keyframes slideInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
+          gap: 0.75rem;
         }
 
-        .hero-title {
-          font-size: 3.5rem;
+        .headline {
           font-weight: 800;
-          line-height: 1.1;
-          margin-bottom: 1rem;
           letter-spacing: -0.02em;
-          position: relative;
-          z-index: 15;
-          /* Add subtle background to improve readability */
-          padding: 0.5rem 1rem;
-          border-radius: 12px;
-          background-color: rgba(0, 0, 0, 0.15);
-          backdrop-filter: blur(3px);
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+          line-height: 1.1;
+          margin: 0 0 0.4rem 0;
+          font-size: clamp(1.6rem, 3.8vw, 2.8rem);
+          text-shadow: 0 1px 6px rgba(0,0,0,0.25);
+          white-space: normal !important; /* default to wrapping; desktop handled below */
+          overflow-wrap: anywhere !important;
+          width: 100% !important;
+          text-align: left !important;
+          overflow: visible !important;
         }
-        .gradient-text {
-          background: linear-gradient(
-            135deg,
-            #00d4ff 0%,
-            #1e90ff 50%,
-            #00d4ff 100%
-          );
+        .gradient {
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 55%, #00d4ff 100%);
           background-size: 200% 200%;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
-          animation: gradientShift 3s ease-in-out infinite;
+          animation: gradientShift 6s ease-in-out infinite;
         }
         @keyframes gradientShift {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
+          0%,100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
         }
 
-        /* Respect reduced motion preferences */
-        @media (prefers-reduced-motion: reduce) {
-          .floating-particles {
-            animation: none !important;
-          }
-          .particle {
-            animation: none !important;
-          }
-          .kpi-stat {
-            animation: none !important;
-          }
-          .differentiator-item {
-            animation: none !important;
-          }
-          .cta-button {
-            animation: none !important;
-          }
-          .gradient-text {
-            animation: none !important;
-          }
+        .inline-link {
+          text-decoration: none;
+          border-bottom: 1px solid rgba(0, 212, 255, 0.4);
+          transition: border-color 0.2s ease;
         }
-
-        .hero-subtitle {
-          font-size: 1.2rem;
-          color: rgba(255, 255, 255, 0.8);
-          line-height: 1.4;
-          font-weight: 500;
-          white-space: nowrap;
-          position: relative;
-          z-index: 15;
-          /* Add subtle background to improve readability */
-          padding: 0.3rem 0.8rem;
-          border-radius: 8px;
-          background-color: rgba(0, 0, 0, 0.1);
-          backdrop-filter: blur(2px);
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        .inline-link:hover {
+          border-bottom-color: rgba(0, 212, 255, 0.8);
         }
-        .hero-description {
-          font-size: 1.1rem;
-          color: rgba(255, 255, 255, 0.9);
-          line-height: 1.7;
-          position: relative;
-          z-index: 15;
-          /* Add subtle background to improve readability */
-          padding: 0.8rem 1rem;
-          border-radius: 10px;
-          background-color: rgba(0, 0, 0, 0.12);
-          backdrop-filter: blur(2px);
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        }
-        .gradient-highlight {
-          background: linear-gradient(135deg, #00d4ff, #1e90ff, #00d4ff);
+        .inline-link.gradient {
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 55%, #00d4ff 100%);
           background-size: 200% 200%;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
-          animation: gradientShift 3s ease-in-out infinite;
-          font-weight: 600;
         }
 
-        .cta-buttons {
-          display: flex;
-          gap: 1.5rem;
+        .dek {
+          margin-top: 0.25rem;
+          color: rgba(255,255,255,0.92);
+          line-height: 1.4;
+          font-weight: 700;
+          font-size: clamp(1.1rem, 1.9vw, 1.35rem);
+          text-shadow: 0 1px 3px rgba(0,0,0,0.25);
         }
-        .cta-button {
+        
+
+        /* CTA group */
+        .cta-row {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.85rem;
+          margin: 1.2rem 0 1.25rem; /* Added more top margin for better spacing */
+        }
+        .btn {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          gap: 0.75rem;
-          padding: 1rem 2rem;
+          gap: 0.6rem;
           border-radius: 12px;
+          padding: 0.9rem 1.1rem;
           font-weight: 600;
-          font-size: 1rem;
           text-decoration: none;
-          transition: 0.3s;
-          border: 2px solid transparent;
-          position: relative;
-          overflow: hidden;
-          flex: 1;
+          border: 1.5px solid transparent;
+          font-size: clamp(0.95rem, 2.4vw, 1rem);
+          transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+          will-change: transform;
         }
-        .cta-button svg {
-          width: 16px;
-          height: 16px;
-          opacity: 0.9;
-          flex-shrink: 0;
-        }
-        .cta-button::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.1),
-            transparent
-          );
-          transition: left 0.5s;
-        }
-        .cta-button:hover::before {
-          left: 100%;
-        }
-        .cta-button.primary {
+        .btn :global(svg), .btn :global(.icon) { width: 18px; height: 18px; opacity: 0.95; }
+        .btn.primary{
           background: linear-gradient(135deg, #00d4ff, #1e90ff);
-          color: #fff;
-          box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+          color:#07101d; /* dark text on bright cyan */
         }
-        .cta-button.primary:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+        .btn.primary:hover{ transform: translateY(-1px); }
+
+        .btn.outline{
+          color:#9be8ff; 
+          border-color: rgba(0,212,255,0.45);
+          background: linear-gradient(180deg, rgba(0,212,255,0.10), rgba(30,144,255,0.06));
+          backdrop-filter: blur(8px);
+          box-shadow: 0 8px 24px -12px rgba(0,212,255,0.40);
         }
-        .cta-button.outline {
-          background: transparent;
-          color: #00d4ff;
-          border-color: rgba(0, 212, 255, 0.5);
-        }
-        .cta-button.outline:hover {
-          background: rgba(0, 212, 255, 0.1);
-          border-color: #00d4ff;
-          transform: translateY(-2px);
+        .btn.outline:hover{
+          background: linear-gradient(180deg, rgba(0,212,255,0.16), rgba(30,144,255,0.10));
+          border-color: rgba(0,212,255,0.70);
+          transform: translateY(-1px);
+          box-shadow: 0 10px 30px -12px rgba(30,144,255,0.55);
         }
 
-        .photo-container {
-          position: relative;
-          animation: slideInRight 1s ease-out;
-        }
-        @keyframes slideInRight {
-          from {
-            opacity: 0;
-            transform: translateX(50px);
+        /* ===== CTA LAYOUTS ===== */
+        /* default: 2 buttons, left-aligned, compact */
+        @media (min-width: 1024px) {
+          .cta-row {
+            grid-template-columns: repeat(2, max-content) !important;
+            justify-content: start !important;
+            gap: 0.9rem 1.1rem !important;
           }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        .photo-glassmorphism {
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-          border-radius: 20px;
-          padding: 1.5rem;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .photo-frame {
-          position: relative;
-          border-radius: 16px;
-          overflow: hidden;
-          width: 320px;
-          height: 500px;
-        }
-        .professional-photo {
-          object-fit: cover;
-          border-radius: 16px;
-        }
-        .photo-overlay {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-          padding: 2rem 1.5rem 1.5rem;
-          color: #fff;
-        }
-        .photo-title {
-          font-size: 1.5rem;
-          font-weight: 700;
-          margin-bottom: 0.5rem;
-          color: #fff;
-        }
-        .photo-role {
-          font-size: 1rem;
-          color: #00d4ff;
-          font-weight: 600;
+          /* Desktop readability tweaks */
+          .hero-content .dek { max-width: 62ch; }
+          .headline { white-space: normal !important; text-wrap: balance; }
+          .btn { padding: 1rem 1.2rem; font-size: 1.05rem; }
+          .kpi-grid { margin-top: 0.6rem !important; }
+          .stat-label { letter-spacing: 0.04em; }
         }
 
-        /* ===== Individual KPI Glass Boxes ===== */
+        /* 3rd CTA visibility: show for iPad Pro and up */
+        .show-xl { display: none; }
+        @media (min-width: 1024px) {
+          .show-xl { display: inline-flex; }
+          .cta-row.cta-3up-xl {
+            grid-template-columns: repeat(3, max-content) !important;
+            justify-content: start !important;
+            gap: 1rem 1.25rem !important;
+          }
+        }
+
+        /* === KPI grid: fixed columns, equal heights, no overflow === */
         .kpi-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 1rem;
-          margin-top: 0.5rem;
-        }
-        .kpi-box {
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(15px);
-          border: 1px solid rgba(0, 212, 255, 0.2);
-          border-radius: 16px;
-          padding: 1.5rem 1rem;
-          text-align: center;
-          transition: all 0.3s ease;
-          position: relative;
-          overflow: hidden;
-        }
-        .kpi-box::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
+          gap: clamp(0.6rem, 1.2vw, 0.8rem);
           width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(0, 212, 255, 0.1),
-            transparent
-          );
-          transition: left 0.5s ease;
-        }
-        .kpi-box:hover::before {
-          left: 100%;
-        }
-        .kpi-box:hover {
-          transform: translateY(-5px);
-          border-color: rgba(0, 212, 255, 0.4);
-          box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
-          background: rgba(255, 255, 255, 0.08);
-        }
-        .stat-number {
-          display: block;
-          font-size: 2.5rem;
-          font-weight: 800;
-          color: #00d4ff;
-          margin-bottom: 0.5rem;
-        }
-        .stat-label {
-          display: block;
-          font-size: 0.9rem;
-          color: rgba(255, 255, 255, 0.7);
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
+          align-items: stretch;
+          box-sizing: border-box;
+          margin-top: 0.35rem;
         }
 
-        /* Differentiators */
-        .differentiators-section {
-          margin: 4rem 0;
+        /* Wide desktop: 4-up */
+        @media (min-width: 1280px) {
+          .kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
         }
-        .differentiators-glass {
-          background: rgba(255, 255, 255, 0.05);
-          backdrop-filter: blur(10px);
-          border-radius: 20px;
-          padding: 2.5rem;
-          border: 1px solid rgba(0, 212, 255, 0.2);
+        /* iPad Pro / small desktop: keep KPIs 4-up so they stay on one line */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .kpi-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
         }
-        .differentiators-header {
+        /* Tablet/Mobile: 2-up */
+        @media (max-width: 1023px) {
+          .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        .kpi-box {
+          /* container units let the number scale with CARD width */
+          container-type: inline-size;
+
           display: flex;
+          flex-direction: column;
           align-items: center;
-          justify-content: center;
-          gap: 1rem;
-          margin-bottom: 2rem;
+          justify-content: center;             /* centers the whole stack */
+          gap: clamp(0.25rem, 0.8vw, 0.5rem);    /* consistent gap between number/label */
+
+          min-height: clamp(100px, 10vw, 130px);
+          padding: clamp(1rem, 1.6vw, 1.25rem) clamp(1.2rem, 2.2vw, 1.5rem);
+          border-radius: 16px;
+
+          background: rgba(255,255,255,0.05);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(0,212,255,0.22);
+          transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+          box-sizing: border-box;
+          overflow: hidden;                     /* belt & suspenders */
         }
-        .rocket-icon {
-          font-size: 2rem;
-          animation: rocketTakeoff 3s ease-in-out infinite;
+
+        /* === KPI number: single centered element (robust, no grid quirks) === */
+        .stat-number{
+          display:block;
+          width:100%;
+          text-align:center;
+          line-height:1;
+          white-space:nowrap;
+          font-weight:800;
+          color:#00d4ff;
+          font-feature-settings:"tnum" 1, "lnum" 1;
+          letter-spacing:0;
+          font-size:clamp(1.4rem, 14cqw, 1.9rem);
         }
-        @keyframes rocketTakeoff {
-          0%,
-          100% {
-            transform: translateY(0px) rotate(0deg);
+        /* 4-up desktop sizing */
+        @media (min-width:1280px){ .stat-number{ font-size:clamp(1.3rem, 12cqw, 1.7rem); } }
+        @media (min-width:1440px){ .stat-number{ font-size:clamp(1.4rem, 13cqw, 1.8rem); } }
+
+        /* Label centering and equal height */
+        .stat-label{
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          text-align:center;
+          font-size:clamp(0.7rem, 1.4vw, 0.8rem);
+          color:rgba(255,255,255,0.72);
+          text-transform:uppercase;
+          letter-spacing:0.06em;
+          line-height:1.3;
+          min-height:calc(2 * 1.3em);
+        }
+
+        /* Safety: padding counts toward width everywhere */
+        .kpi-box, .kpi-box *{ box-sizing:border-box; }
+
+        /* Optional: avoid hover "jump" so row baseline stays flat */
+        .kpi-box:hover {
+          transform: none;
+          background: rgba(255,255,255,0.075);
+          border-color: rgba(0,212,255,0.38);
+          box-shadow: 0 10px 28px -12px rgba(0,212,255,0.35);
+        }
+
+
+        /* Differentiators block */
+        .diff-wrap { 
+          margin: 2rem 0 0.75rem;  /* slightly tighter to reduce the fold gap on desktop */
+          display: flex; 
+          flex-direction: column; 
+          align-items: center; 
+          width: 100%; 
+          padding-inline: 1rem;               /* align with hero side gutters on desktop */
+        }
+        /* iPad Pro: add safe side padding so the glass box doesn't hug edges */
+        @media (min-width:1024px) and (max-width:1279px){
+          .diff-wrap{ 
+            padding-inline: clamp(1rem, 3vw, 1.5rem);
+            margin: 1rem 0 0.75rem;
           }
-          25% {
-            transform: translateY(-8px) rotate(-5deg);
-          }
-          50% {
-            transform: translateY(-15px) rotate(0deg);
-          }
-          75% {
-            transform: translateY(-8px) rotate(5deg);
+          .diff-glass{ margin-inline:auto; }
+        }
+        /* Desktop: keep glass slightly narrower than hero container so it never feels too wide */
+        @media (min-width:1280px){
+          .diff-glass{ max-width: 1100px; }
+        }
+        .diff-glass {
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(0,212,255,0.22);
+          border-radius: 20px;
+          padding: clamp(1.25rem, 3vw, 2.25rem);
+          backdrop-filter: blur(10px);
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+        .diff-header {
+          display: flex; 
+          align-items: center; 
+          justify-content: center; 
+          gap: 0.8rem; 
+          margin-bottom: 0.5rem; /* desktop spacing */
+          padding: 1rem 0;
+          position: relative;
+        }
+        /* Mobile diff-header margin */
+        @media (max-width: 768px) {
+          .diff-header {
+            margin-bottom: clamp(0.4rem, 3vw, 0.6rem) !important;
           }
         }
-        .header-text {
-          font-size: 2rem;
-          font-weight: 700;
-          color: #fff;
-          margin: 0;
+        .diff-title {
+          font-size: clamp(1.5rem, 4.2vw, 2.4rem);
+          font-weight: 900;
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 50%, #00d4ff 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+          letter-spacing: -0.02em;
+          position: relative;
+          text-align: center;
         }
-        .differentiators-grid {
+        .diff-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 2rem;
+          gap: clamp(0.9rem, 2.5vw, 1.5rem);
+          margin-top: 2rem; /* add top margin to create space from header */
         }
-        .differentiator-item {
-          background: rgba(255, 255, 255, 0.05);
+        .diff-item {
+          background: rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.12);
           border-radius: 16px;
-          padding: 2rem;
-          border: 1px solid rgba(0, 212, 255, 0.1);
-          transition: 0.3s;
+          padding: clamp(0.9rem, 2.8vw, 1.25rem);
+          transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
         }
-        .differentiator-item:hover {
-          background: rgba(255, 255, 255, 0.08);
-          border-color: rgba(0, 212, 255, 0.3);
-          transform: translateY(-4px);
+        .diff-item:hover { transform: translateY(-2px); background: rgba(255,255,255,0.08); border-color: rgba(0,212,255,0.35); }
+        .diff-item h4 {
+          margin: 0; font-weight: 700; font-size: clamp(1rem, 2.4vw, 1.15rem);
         }
-        .item-title {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          font-size: 1.3rem;
+        .diff-item p {
+          margin: 0.4rem 0 0; color: #cbd5e1; line-height: 1.55; font-size: clamp(0.9rem, 2.2vw, 1rem);
+        }
+
+        /* Executive Philosophy - Quote Style */
+        .philosophy-quote {
+          max-width: 900px;
+          margin: 2rem auto;
+          padding: 2rem 1.5rem 2rem 2.5rem;
+          border-left: 4px solid rgba(0, 212, 255, 0.6); /* Cyan border */
+          background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(30, 144, 255, 0.05));
+          border-radius: 0 12px 12px 0;
+          position: relative;
+        }
+
+        .philosophy-quote::before {
+          content: '"';
+          position: absolute;
+          top: -10px;
+          left: 10px;
+          font-size: 4rem;
           font-weight: 700;
-          color: #fff;
-          margin-bottom: 1rem;
-        }
-        .item-icon {
-          width: 24px;
-          height: 24px;
-          fill: url(#blueGradient);
-        }
-        .item-text {
-          color: rgba(255, 255, 255, 0.8);
-          line-height: 1.6;
-          margin: 0;
+          color: rgba(0, 212, 255, 0.3);
+          line-height: 1;
         }
 
-        /* Hide mobile layout by default (this was the bug) */
-        .mobile-layout {
-          display: none;
-        }
-
-        /* Hide mobile KPI grid on desktop */
-        .mobile-kpi-grid {
-          display: none;
-        }
-
-        /* Mobile tweaks */
-        .mobile-description {
+        .philosophy-text {
+          color: rgba(255, 255, 255, 0.95);
+          font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+          line-height: 1.75;
+          font-weight: 500;
           text-align: center;
+          margin: 0;
+          font-style: italic;
+        }
+
+        .philosophy-attribution {
+          margin-top: 1rem;
+          text-align: right;
+          font-size: clamp(0.9rem, 1.8vw, 1rem);
+          color: rgba(251, 191, 36, 0.8);
+          font-weight: 600;
         }
 
         @media (max-width: 768px) {
-          .hero-container {
-            padding: 0 1rem;
+          .philosophy-quote {
+            padding: 1.5rem 1rem 1.5rem 1.5rem;
+            margin: 1rem 1rem;
           }
-          /* Hide desktop on mobile */
-          .hero-top {
-            display: none;
-          }
-          /* Show mobile layout */
-          .mobile-layout {
-            display: block;
-          }
-
-          .mobile-title {
-            font-size: 2rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-            text-align: center;
-          }
-          .mobile-subtitle {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.5;
-            font-weight: 500;
-            text-align: center;
-            margin-bottom: 2rem;
-          }
-          .mobile-photo {
-            max-width: 300px;
-            margin: 0 auto 2rem;
-          }
-          .mobile-photo .photo-frame {
-            width: 280px;
-            height: 350px;
-          }
-
-          .mobile-kpi-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-          }
-          .cta-buttons {
-            grid-template-columns: 1fr;
-          }
-          .stat-number {
-            font-size: 2rem;
-          }
-          .differentiators-grid {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+          .philosophy-text {
+            font-size: clamp(1rem, 4vw, 1.1rem);
+            line-height: 1.65;
           }
         }
+
+        /* Mobile overrides */
+        .mobile-layout { display: none; }
+
+        /* Hide the 2nd KPI set on desktop */
+        .kpi-mobile-only { display: none; }
+
+        @media (max-width: 640px) {
+          .cta-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            width: 100%;
+          }
+          .cta-row .btn {
+            width: 100%;
+            justify-content: center;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .hero-container { padding: 0 1.25rem; }
+          .hero-content-box { display: none !important; }
+          .mobile-layout { display: block !important; }
+          .hero-header { 
+            display: block !important; 
+            text-align: center !important; 
+            margin-bottom: 1.2rem !important;
+          }
+          .hero-header .headline {
+            text-align: center !important;
+            margin: 0 auto 0.4rem auto !important;
+          }
+          .headline {
+            font-size: clamp(1.1rem, 2.8vw, 1.8rem);
+            white-space: nowrap;
+            width: 100%;
+            text-align: center;
+          }
+
+          /* Reduced top padding to clear the fixed header nicely */
+          .hero-section { padding-top: max(env(safe-area-inset-top), 4.5rem) !important; }
+
+          /* Constrain measure so lines don't feel wall-to-wall */
+          .mobile-intro { 
+            max-width: 38ch; 
+            margin-inline: auto; 
+            text-align: center;
+            padding: 0 0.25rem;
+          }
+
+          /* Slightly more space below the H1 */
+          .mobile-intro h1 {
+            margin: 0;
+            margin-bottom: clamp(0.5rem, 2.5vw, 0.9rem) !important;
+            font-weight: 800;
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+            font-size: clamp(1.45rem, 7.6vw, 2rem);
+            text-shadow: 0 1px 6px rgba(0,0,0,0.25);
+          }
+
+          /* Guaranteed spacing for the photo wrapper */
+          .hero-image { 
+            margin-block: clamp(1.1rem, 6.5vw, 2.2rem) !important; 
+          }
+
+          /* A touch more space above tagline + comfy line-height */
+          .mobile-dek { 
+            margin-top: clamp(0.9rem, 4vw, 1.3rem) !important; 
+            line-height: 1.58 !important; 
+            font-size: clamp(0.95rem, 4.2vw, 1.05rem);
+            color: rgba(255,255,255,0.9);
+            font-weight: 700;
+          }
+
+          .cta-row { grid-template-columns: 1fr; gap: 0.7rem; margin-top: 1.4rem; }
+          .diff-grid { grid-template-columns: 1fr; justify-items: center; }
+          .diff-wrap { 
+            padding: 0 1rem;
+            margin: 1rem 0 0.75rem;
+          }
+          .diff-glass { margin: 0 auto; }
+
+          /* Mobile: center the header perfectly */
+          .diff-header {
+            display: grid !important;          /* swap flex → grid on mobile */
+            grid-auto-flow: row !important;
+            place-items: center !important;    /* centers each child (icon + title) */
+            justify-items: center !important;
+            text-align: center !important;
+            gap: 0.6rem !important;
+            width: 100% !important;
+          }
+
+          .diff-header :global(svg),
+          .diff-header :global(.icon) {
+            display: block !important;
+            margin: 0 auto !important;         /* make sure the icon itself is centered */
+          }
+
+          .diff-title {
+            display: block !important;
+            margin-inline: auto !important;    /* ensure the text node centers, independent of icon width */
+            text-align: center !important;
+          }
+
+          /* Tighter card paddings & nicer rhythm */
+          .diff-wrap { 
+            padding-inline: clamp(0.75rem, 4vw, 1rem) !important; 
+          }
+
+          .diff-glass {
+            padding: clamp(1rem, 4.5vw, 1.75rem) !important;   /* slightly tighter than desktop */
+          }
+
+          /* One column grid already set; tighten vertical gaps a bit */
+          .diff-grid { 
+            row-gap: clamp(0.9rem, 3.8vw, 1.25rem) !important;
+            margin-top: 2.5rem !important; /* add top margin for mobile */
+          }
+
+          /* Card interior spacing */
+          .diff-item { 
+            padding: clamp(0.85rem, 3.8vw, 1.05rem) clamp(0.9rem, 4.2vw, 1.25rem) !important;
+            border-radius: 14px !important;                    /* a hair rounder reads cleaner on small screens */
+            text-align: center !important; 
+            width: 100% !important; 
+            display: flex !important;
+            justify-content: center !important;
+          }
+
+          /* Icon size up by ~1–2px and guaranteed centering */
+          .diff-item .diff-item-content svg,
+          .diff-item .diff-item-content :global(.icon) {
+            width: clamp(30px, 9vw, 36px) !important;          /* ~32→34/36px at phone sizes */
+            height: clamp(30px, 9vw, 36px) !important;
+            display: block !important;
+            margin: 0 auto !important;        /* ensure the icon is perfectly centered */
+          }
+
+          /* Tighter content gap inside each card */
+          .diff-item .diff-item-content {
+            display: grid !important;
+            place-items: center !important;   /* centers both horizontally + vertically */
+            text-align: center !important;
+            gap: clamp(0.5rem, 3.2vw, 0.75rem) !important;
+            width: 100% !important;
+          }
+
+          /* Micro-typography: maintain legibility without looking crowded */
+          .diff-item h4 {
+            font-size: clamp(1.05rem, 4.3vw, 1.2rem) !important;
+            margin: 0.05rem 0 0.15rem 0 !important;
+            line-height: 1.22 !important;
+            text-align: center !important;
+            width: 100% !important;
+          }
+          .diff-item p {
+            font-size: clamp(0.93rem, 3.9vw, 1.05rem) !important;
+            line-height: 1.55 !important;
+            text-align: center !important;
+            width: 100% !important;
+          }
+
+          /* Minimal spacing below the section header on mobile */
+          .diff-header { 
+            margin-bottom: 0.5rem !important; 
+          }
+          /* Tighten spacing after KPI grid on desktop */
+          @media (min-width:1024px){
+            .kpi-grid { margin-bottom: 0 !important; }
+            .hero-content-box { margin-bottom: 0 !important; }
+          }
+
+          /* Show the 2nd KPI set ONLY on mobile */
+          .kpi-mobile-only { 
+            display: grid;
+            padding: 0 1.25rem;
+          }
+        }
+
+        /* iPad Mini portrait: upscale mobile stack */
+        @media (min-width: 740px) and (max-width: 770px) and (orientation: portrait) {
+          .mobile-intro { max-width: 100% !important; text-align: center !important; padding-inline: clamp(0.75rem, 3vw, 1rem) !important; }
+          .mobile-intro h1 { 
+            font-size: clamp(2.2rem, 5.2vw, 2.7rem) !important; 
+            white-space: nowrap !important; 
+            margin-bottom: 0.9rem !important; 
+            text-align: center !important; 
+            letter-spacing: -0.02em !important;
+            line-height: 1.12 !important;
+            font-weight: 800 !important;
+          }
+          .mobile-layout :global(.hi-card) { width: clamp(280px, 58vw, 350px) !important; height: clamp(320px, 60vw, 410px) !important; }
+          .hero-image { margin-block: clamp(1rem, 4vw, 1.8rem) !important; }
+          .mobile-dek { font-size: clamp(1.16rem, 2.6vw, 1.32rem) !important; line-height: 1.62 !important; max-width: 62ch !important; margin-inline: auto !important; text-align: center !important; font-weight: 700 !important; }
+          .cta-row { grid-template-columns: 1fr !important; max-width: 540px !important; margin-inline: auto !important; row-gap: 0.7rem !important; }
+        }
+
+        @media (max-width: 380px) {
+          .mobile-intro h1 { font-size: clamp(1.35rem, 7vw, 1.9rem) !important; }
+        }
+
+        @media (max-width: 360px) {
+          .hero-section { padding-top: max(env(safe-area-inset-top), 4.1rem); }
+          .mobile-intro p { line-height: 1.42; }
+        }
+
+        /* Desktop photo column: smaller, and caption centered - more aggressive */
+        @media (min-width:1024px){
+          .hero-content-box{
+            grid-template-columns: 1fr 250px !important; /* Much smaller: text gets more space, image smaller */
+            gap: 2rem !important;
+            align-items: start !important;
+            max-width: 1200px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .hero-content-box > *:last-child{
+            width: min(250px, 20vw) !important; /* Much smaller image to align with KPI bottom */
+            justify-self: end !important;
+            align-self: center !important;
+
+            display:flex;
+            flex-direction:column;
+            align-items:center;        /* centers inner content (including caption) */
+          }
+        }
+        /* Large desktop: even tighter spacing */
+        @media (min-width:1440px){
+          .hero-content-box{
+            grid-template-columns: 1fr 220px !important; /* Even smaller on large screens */
+            gap: 2.2rem !important;
+          }
+          .hero-content-box > *:last-child{
+            width: min(220px, 15vw) !important;
+          }
+        }
+
+          /* Center common caption/overlay elements inside the image card */
+          .hero-content-box > *:last-child figcaption,
+          .hero-content-box > *:last-child .caption,
+          .hero-content-box > *:last-child .overlay,
+          .hero-content-box > *:last-child .overlay-card{
+            width:100%;
+            max-width:100%;
+            margin:0.5rem auto 0;
+            text-align:center;
+          }
+
+          /* If the caption/overlay is absolutely positioned, force true center */
+          .hero-content-box > *:last-child .overlay,
+          .hero-content-box > *:last-child .overlay-card{
+            left:50% !important;
+            transform:translateX(-50%) !important;
+          }
+        }
+        @media (min-width:1440px){
+          .hero-content-box{
+            grid-template-columns: minmax(700px, 1fr) minmax(300px, 380px) !important; /* scales nicely on big screens */
+            max-width: 1400px !important;
+          }
+          .headline {
+            font-size: clamp(2.2rem, 3.2vw, 2.8rem) !important;
+            white-space: nowrap !important; /* single-line on large desktop only */
+            max-width: 100%;
+          }
+          .btn { padding: 1.05rem 1.3rem; font-size: 1.06rem; }
+        }
+
+        /* === START iPad Pro + Desktop 3rd CTA === */
+        .show-xl { display: none; }
+        @media (min-width: 1024px) {
+          .show-xl { display: inline-flex; }
+          .cta-row.cta-3up-xl {
+            grid-template-columns: repeat(3, max-content) !important;
+          }
+        }
+        /* === END iPad Pro + Desktop 3rd CTA === */
+
+
       `}</style>
 
-      <div className="hero-section">
-        {/* SVG Gradient Definition */}
+      <div className="hero-section hero-stable">
+        {/* Energy field background */}
+        <div className="hero-energy-field" />
+
+        {/* SVG for gradient fills (icons) */}
         <svg width="0" height="0" style={{ position: 'absolute' }}>
           <defs>
             <linearGradient
@@ -787,283 +876,384 @@ const HeroSection = () => {
           </defs>
         </svg>
 
-        {/* Background elements removed - using universal background */}
-
         <div className="hero-container">
-          {/* Desktop Layout */}
-          <div className="hero-top">
-            <div className="hero-content">
-              <div className="hero-intro">
-                <h1 className="hero-title">
-                  Senior{' '}
-                  <span className="gradient-text">
-                    AI & Digital Transformation
-                  </span>{' '}
-                  Executive
-                </h1>
-                <p className="hero-subtitle">
-                  Driving Fortune 500 digital transformation through AI, Data
-                  Strategy, and client-centric products
-                </p>
-              </div>
-
-              <div className="hero-summary">
-                <p className="hero-description">
-                  With{' '}
-                  <span className="gradient-highlight">
-                    16+ years of experience
-                  </span>{' '}
-                  <span className="gradient-highlight">
-                    architecting enterprise-wide AI solutions
-                  </span>
-                  , I&apos;ve transformed complex technological challenges into
-                  over{' '}
-                  <span className="gradient-highlight">
-                    $400M in measurable business outcomes
-                  </span>
-                  . From leading one of our organization&apos;s largest LLM
-                  deployments in the payments space to building{' '}
-                  <span className="gradient-highlight">
-                    evangelical data communities of 30K+ users
-                  </span>
-                  , I bridge the gap between cutting-edge innovation and
-                  practical enterprise implementation.
-                </p>
-              </div>
-
-              {/* Desktop KPI Grid */}
-              <div className="kpi-grid">
-                <div className="kpi-box">
-                  <span className="stat-number">${counts.value}M+</span>
-                  <span className="stat-label">Value Delivered</span>
-                </div>
-                <div className="kpi-box">
-                  <span className="stat-number">{counts.users}K+</span>
-                  <span className="stat-label">AI Users</span>
-                </div>
-                <div className="kpi-box">
-                  <span className="stat-number">{counts.roi}%</span>
-                  <span className="stat-label">Typical ROI</span>
-                </div>
-                <div className="kpi-box">
-                  <span className="stat-number">{counts.years}+</span>
-                  <span className="stat-label">Years Leading</span>
-                </div>
-              </div>
-
-              <div className="hero-cta-section">
-                <div className="cta-buttons">
-                  <a
-                    href="mailto:contact@brandonmicci.com"
-                    className="cta-button primary"
-                  >
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                    </svg>
-                    Let&apos;s Connect
-                  </a>
-                  <a
-                    href="/resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="cta-button outline"
-                  >
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-                    </svg>
-                    View Portfolio
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="photo-container">
-              <div className="photo-glassmorphism">
-                <div className="photo-frame">
-                  <Image
-                    src="/headshot.jpg"
-                    alt="Brandon Micci - AI & Digital Transformation Executive"
-                    className="professional-photo"
-                    fill
-                    sizes="(max-width: 480px) 240px, (max-width: 768px) 280px, 320px"
-                    priority
-                  />
-                  <div className="photo-overlay">
-                    <div className="photo-title">Brandon Micci</div>
-                    <div className="photo-role">
-                      VP, Head of NextGen AI/ML Solutions
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* ——— DESKTOP ——— */}
+          {/* Full-width header at top */}
+          <div className="hero-header">
+            <h1 className="headline">
+              <span className="gradient">
+                Enterprise AI & Digital Transformation Executive
+              </span>
+            </h1>
           </div>
 
-          {/* Mobile Layout */}
-          <div className="mobile-layout">
-            <div className="mobile-intro">
-              <h1 className="mobile-title">
-                Senior{' '}
-                <span className="gradient-text">
-                  AI & Digital Transformation
-                </span>{' '}
-                Executive
-              </h1>
-              <p className="mobile-subtitle">
-                Driving Fortune 500 digital transformation through AI, Data
-                Strategy, and client-centric products
+          {/* Content box below header */}
+          <div className="hero-content-box">
+            <div className="hero-content">
+              <p className="dek" style={{ textWrap: 'balance' as const }}>
+                Driving{' '}
+                <span className="gradient">enterprise transformation</span> at
+                the intersection of{' '}
+                <Link href="/#strategic-advantage" className="inline-link">
+                  <span className="gradient">AI strategy</span>
+                </Link>
+                ,{' '}
+                <Link href="/#strategic-advantage" className="inline-link">
+                  <span className="gradient">digital innovation</span>
+                </Link>
+                , and measurable <span className="gradient">ROI</span>—with{' '}
+                <span className="gradient">16+ years</span> delivering{' '}
+                <span className="gradient">$400M+ value</span> across{' '}
+                <span className="gradient">Fortune 500 companies</span> and at{' '}
+                <span className="gradient">Big Four</span> firms.
               </p>
-            </div>
 
-            <div className="photo-container mobile-photo">
-              <div className="photo-glassmorphism">
-                <div className="photo-frame">
-                  <Image
-                    src="/headshot.jpg"
-                    alt="Brandon Micci - AI & Digital Transformation Executive"
-                    className="professional-photo"
-                    fill
-                    sizes="(max-width: 480px) 240px, (max-width: 768px) 280px, 320px"
-                    priority
+              <div className="cta-row cta-3up-xl">
+                <a href="#connectwithme" className="btn primary">
+                  <Icon
+                    name="mail"
+                    size="md"
+                    className="icon text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
                   />
-                  <div className="photo-overlay">
-                    <div className="photo-title">Brandon Micci</div>
-                    <div className="photo-role">
-                      VP, Head of NextGen AI/ML Solutions
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="hero-summary">
-              <p className="hero-description mobile-description">
-                With{' '}
-                <span className="gradient-highlight">
-                  16+ years of experience
-                </span>{' '}
-                <span className="gradient-highlight">
-                  architecting enterprise-wide AI solutions
-                </span>
-                , I&apos;ve transformed complex technological challenges into
-                over{' '}
-                <span className="gradient-highlight">
-                  $400M in measurable business outcomes
-                </span>
-                . From leading one of our organization&apos;s largest LLM
-                deployments in the payments space to building{' '}
-                <span className="gradient-highlight">
-                  evangelical data communities of 30K+ users
-                </span>
-                , I bridge the gap between cutting-edge innovation and practical
-                enterprise implementation.
-              </p>
-            </div>
-
-            <div className="hero-cta-section" style={{ marginTop: '2rem' }}>
-              <div className="cta-buttons">
-                <a
-                  href="mailto:contact@brandonmicci.com"
-                  className="cta-button primary"
-                >
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                  </svg>
                   Let&apos;s Connect
                 </a>
                 <a
-                  href="/resume.pdf"
+                  href="/BrandonMicciSeniorAIExecutive.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cta-button outline"
+                  className="btn outline"
                 >
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-                  </svg>
-                  View Portfolio
+                  <Icon
+                    name="file"
+                    size="md"
+                    className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]"
+                  />
+                  Download Resume
+                </a>
+                {/* Wide-desktop only: appears at ≥1280px via .show-xl */}
+                <a
+                  href="/executive-brief.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn outline show-xl"
+                >
+                  <Icon
+                    name="briefcase"
+                    size="md"
+                    className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]"
+                  />
+                  Executive Brief
                 </a>
               </div>
-            </div>
-          </div>
 
-          {/* What Makes Me Different */}
-          <div className="differentiators-section">
-            <div className="differentiators-glass">
-              <div className="differentiators-header">
-                <span className="rocket-icon">🚀</span>
-                <h2 className="header-text">What Makes Me Different</h2>
-              </div>
-              <div className="differentiators-grid">
-                <div className="differentiator-item">
-                  <h3 className="item-title">
-                    <svg className="item-icon" viewBox="0 0 24 24">
-                      <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" />
-                    </svg>
-                    Scale Expertise
-                  </h3>
-                  <p className="item-text">
-                    Led the largest LLM deployment in payments (27,000+ users)
-                    and built global teams of 50+ professionals.
-                  </p>
+              <div className="kpi-grid" style={{ marginBottom: '2.5rem' }}>
+                {/* Value Delivered */}
+                <div className="kpi-box">
+                  <span className="sr-only">
+                    $400M+ Enterprise Revenue Created
+                  </span>
+                  <span className="stat-number">
+                    <AnimatedCounter
+                      value={METRICS.valueDeliveredM}
+                      suffix="M+"
+                      format={(n) => `$${n}`}
+                    />
+                  </span>
+                  <span className="stat-label">Enterprise Revenue Created</span>
                 </div>
-                <div className="differentiator-item">
-                  <h3 className="item-title">
-                    <svg className="item-icon" viewBox="0 0 24 24">
-                      <path d="M7 15h2c0 1.08 1.37 2 3 2s3-.92 3-2c0-1.1-1.04-1.5-3.24-2.03C9.64 12.44 7 11.78 7 9c0-1.79 1.47-3.31 3.5-3.82V3h3v2.18C15.53 5.69 17 7.21 17 9h-2c0-1.08-1.37-2-3-2s-3 .92-3 2c0 1.1 1.04 1.5 3.24 2.03C14.36 11.56 17 12.22 17 15c0 1.79-1.47 3.31-3.5 3.82V21h-3v-2.18C8.47 18.31 7 16.79 7 15z" />
-                    </svg>
-                    Financial Impact
-                  </h3>
-                  <p className="item-text">
-                    Consistent, outsized ROI—250%+ returns delivering $30M in
-                    new revenue streams.
-                  </p>
+
+                {/* AI Users */}
+                <div className="kpi-box">
+                  <span className="sr-only">27K+ AI Users Enabled</span>
+                  <span className="stat-number">
+                    <AnimatedCounter value={METRICS.aiUsersK} suffix="K+" />
+                  </span>
+                  <span className="stat-label">AI Users Enabled</span>
                 </div>
-                <div className="differentiator-item">
-                  <h3 className="item-title">
-                    <svg className="item-icon" viewBox="0 0 24 24">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                    Cross-Industry Innovation
-                  </h3>
-                  <p className="item-text">
-                    Deep expertise across Financial Services, Insurance,
-                    Airlines, Energy, and Life Sciences.
-                  </p>
+
+                {/* Typical ROI */}
+                <div className="kpi-box">
+                  <span className="sr-only">250% Peak Program ROI</span>
+                  <span className="stat-number">
+                    <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
+                  </span>
+                  <span className="stat-label">Peak Program ROI</span>
                 </div>
-                <div className="differentiator-item">
-                  <h3 className="item-title">
-                    <svg className="item-icon" viewBox="0 0 24 24">
-                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                    </svg>
-                    Transformation Catalyst
-                  </h3>
-                  <p className="item-text">
-                    AI evangelist who builds adoption communities that drive
-                    organizational change at scale.
-                  </p>
+
+                {/* Years Leading */}
+                <div className="kpi-box">
+                  <span className="sr-only">
+                    {METRICS.yearsLeading}+ Years Executive Leadership
+                  </span>
+                  <span className="stat-number">
+                    <AnimatedCounter value={METRICS.yearsLeading} suffix="+" />
+                  </span>
+                  <span className="stat-label">Years Executive Leadership</span>
                 </div>
               </div>
             </div>
+
+            <HeroImage />
           </div>
 
-          {/* Mobile KPI Grid */}
-          <div className="mobile-kpi-grid">
-            <div className="kpi-box">
-              <span className="stat-number">${counts.value}M+</span>
-              <span className="stat-label">Value Delivered</span>
+          {/* ——— MOBILE ——— */}
+          <div className="mobile-layout">
+            <div className="mobile-intro">
+              {/* Wrap to ensure spacing hooks apply */}
+              <div className="hero-image">
+                <HeroImage />
+              </div>
+
+              <p className="mobile-dek">
+                Driving{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  enterprise transformation
+                </span>{' '}
+                at the intersection of{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  AI strategy
+                </span>
+                ,{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  digital innovation
+                </span>
+                , and measurable{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  ROI
+                </span>
+                —with{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  16+ years
+                </span>{' '}
+                delivering{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  $400M+ value
+                </span>{' '}
+                across{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  Fortune 500 companies
+                </span>{' '}
+                and at{' '}
+                <span
+                  className="gradient"
+                  style={{ WebkitTextFillColor: 'transparent' }}
+                >
+                  Big Four
+                </span>{' '}
+                firms.
+              </p>
             </div>
-            <div className="kpi-box">
-              <span className="stat-number">{counts.users}K+</span>
-              <span className="stat-label">AI Users</span>
+
+            <div className="cta-row">
+              <a href="#connectwithme" className="btn primary">
+                <Icon
+                  name="mail"
+                  size="md"
+                  className="icon text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
+                />
+                Let&apos;s Connect
+              </a>
+              <a
+                href="/BrandonMicciSeniorAIExecutive.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn outline"
+              >
+                <Icon
+                  name="file"
+                  size="md"
+                  className="icon text-cyan-400 drop-shadow-[0_0_6px_rgba(0,212,255,0.4)] hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]"
+                />
+                Download Resume
+              </a>
             </div>
-            <div className="kpi-box">
-              <span className="stat-number">{counts.roi}%</span>
-              <span className="stat-label">Typical ROI</span>
+          </div>
+        </div>
+
+        {/* ——— DIFFERENTIATORS ——— */}
+        <div className="diff-wrap" style={{ marginTop: '2.5rem' }}>
+          <div className="diff-glass">
+            <div className="diff-header">
+              <span className="diff-title">
+                Strategic Leadership Capabilities
+              </span>
             </div>
-            <div className="kpi-box">
-              <span className="stat-number">{counts.years}+</span>
-              <span className="stat-label">Years Leading</span>
+
+            <div className="diff-grid">
+              {/* Card 1 */}
+              <div className="diff-item">
+                <div className="diff-item-content flex flex-col items-center text-center gap-3">
+                  <Icon
+                    name="rocket"
+                    size="lg"
+                    className="block w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
+                  />
+                  <div className="w-full">
+                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
+                      AI Strategy & Vision
+                    </div>
+                    <p>
+                      I define enterprise AI strategy that aligns C-suite
+                      priorities with actionable investment roadmaps—delivering
+                      measurable P&L impact and competitive differentiation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="diff-item">
+                <div className="diff-item-content flex flex-col items-center text-center gap-3">
+                  <Icon
+                    name="zap"
+                    size="lg"
+                    className="block w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
+                  />
+                  <div className="w-full">
+                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
+                      Scale & Delivery
+                    </div>
+                    <p>
+                      I deliver enterprise AI solutions and data products at
+                      Fortune 500 scale—architected for reliability, security,
+                      and sustained adoption in highly regulated environments.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3 */}
+              <div className="diff-item">
+                <div className="diff-item-content flex flex-col items-center text-center gap-3">
+                  <Icon
+                    name="target"
+                    size="lg"
+                    className="block w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
+                  />
+                  <div className="w-full">
+                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
+                      C-Suite Impact
+                    </div>
+                    <p>
+                      I translate complex AI/ML capabilities into clear business
+                      cases, investment budgets, and ROI outcomes that drive
+                      executive decision-making.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 4 */}
+              <div className="diff-item">
+                <div className="diff-item-content flex flex-col items-center text-center gap-3">
+                  <Icon
+                    name="sparkle"
+                    size="lg"
+                    className="block w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)] text-cyan-400"
+                  />
+                  <div className="w-full">
+                    <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
+                      Governance & Innovation
+                    </div>
+                    <p>
+                      I establish AI governance frameworks that balance
+                      innovation velocity with risk management—ensuring
+                      compliance, transparency, and sustainable competitive
+                      advantage.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+
+        {/* ——— EXECUTIVE PHILOSOPHY ——— */}
+        <div
+          className="philosophy-quote"
+          style={{ marginTop: '3.5rem', marginBottom: '3rem' }}
+        >
+          <p className="philosophy-text">
+            I architect AI strategies that become business
+            strategies—transforming how organizations compete and create value
+            through AI-first operating models where intelligence drives every
+            decision and competitive advantage. I balance innovation velocity
+            with governance discipline, scaling transformation across global
+            operations while managing regulatory risk—consistently delivering
+            $400M+ in enterprise value.
+          </p>
+        </div>
+
+        <div style={{ marginBottom: '2.5rem' }}></div>
+
+        {/* Mobile KPI Grid (mobile-only) */}
+        <div
+          className="kpi-grid kpi-mobile-only"
+          style={{ marginTop: '1.25rem' }}
+        >
+          {/* Value Delivered */}
+          <div className="kpi-box">
+            <span className="sr-only">$400M+ Enterprise Revenue Created</span>
+            <span className="stat-number">
+              <AnimatedCounter
+                value={METRICS.valueDeliveredM}
+                suffix="M+"
+                format={(n) => `$${n}`}
+              />
+            </span>
+            <span className="stat-label">Enterprise Revenue Created</span>
+          </div>
+
+          {/* AI Users */}
+          <div className="kpi-box">
+            <span className="sr-only">27K+ AI Users Enabled</span>
+            <span className="stat-number">
+              <AnimatedCounter value={METRICS.aiUsersK} suffix="K+" />
+            </span>
+            <span className="stat-label">AI Users Enabled</span>
+          </div>
+
+          {/* Typical ROI */}
+          <div className="kpi-box">
+            <span className="sr-only">
+              {METRICS.typicalROI}% Peak Program ROI
+            </span>
+            <span className="stat-number">
+              <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
+            </span>
+            <span className="stat-label">Peak Program ROI</span>
+          </div>
+
+          {/* Years Leading */}
+          <div className="kpi-box">
+            <span className="sr-only">
+              {METRICS.yearsLeading}+ Years Executive Leadership
+            </span>
+            <span className="stat-number">
+              <AnimatedCounter value={METRICS.yearsLeading} suffix="+" />
+            </span>
+            <span className="stat-label">Years Executive Leadership</span>
           </div>
         </div>
       </div>

@@ -305,45 +305,49 @@ const CompactDifferentiators = () => {
             <div className="items-grid">
               <div className="compact-item">
                 <h3 className="item-title">
-                  <span className="item-emoji">⭐</span>
-                  Scale Expertise:
+                  <span className="item-emoji">🚀</span>
+                  Visionary Leadership:
                 </h3>
                 <p className="item-text">
-                  Led the largest LLM deployment in payments (27,000+ users) and
-                  built global teams of 50+ professionals.
-                </p>
-              </div>
-
-              <div className="compact-item">
-                <h3 className="item-title">
-                  <span className="item-emoji">💡</span>
-                  Financial Impact:
-                </h3>
-                <p className="item-text">
-                  Consistent, outsized ROI—250%+ returns delivering $30M in new
-                  revenue streams.
-                </p>
-              </div>
-
-              <div className="compact-item">
-                <h3 className="item-title">
-                  <span className="item-emoji">🎯</span>
-                  Cross-Industry Innovation:
-                </h3>
-                <p className="item-text">
-                  Deep expertise across Financial Services, Insurance, Airlines,
-                  Energy, and Life Sciences.
+                  Leading cutting-edge AI initiatives that reshape
+                  industries—from pioneering LLM deployments to building
+                  next-gen analytics platforms.
                 </p>
               </div>
 
               <div className="compact-item">
                 <h3 className="item-title">
                   <span className="item-emoji">⚡</span>
-                  Transformation Catalyst:
+                  Execution Excellence:
                 </h3>
                 <p className="item-text">
-                  AI evangelist who builds adoption communities that drive
-                  organizational change at scale.
+                  Proven track record of turning ambitious visions into
+                  measurable results—consistently delivering on time, on budget,
+                  at scale.
+                </p>
+              </div>
+
+              <div className="compact-item">
+                <h3 className="item-title">
+                  <span className="item-emoji">🎯</span>
+                  Strategic Thinking:
+                </h3>
+                <p className="item-text">
+                  C-suite advisory capabilities that translate complex AI
+                  strategies into clear business roadmaps and competitive
+                  advantages.
+                </p>
+              </div>
+
+              <div className="compact-item">
+                <h3 className="item-title">
+                  <span className="item-emoji">💡</span>
+                  Innovation Catalyst:
+                </h3>
+                <p className="item-text">
+                  Building transformative solutions that don&apos;t just solve
+                  today&apos;s problems—they anticipate tomorrow&apos;s
+                  opportunities.
                 </p>
               </div>
             </div>

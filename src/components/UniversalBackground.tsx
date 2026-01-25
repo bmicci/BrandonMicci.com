@@ -17,7 +17,7 @@ const UniversalBackground: React.FC = () => {
           top: 0;
           left: 0;
           width: 100%;
-          height: 100vh;
+          height: 100svh;
           background: linear-gradient(
             135deg,
             #050505 0%,
@@ -292,7 +292,6 @@ const UniversalBackground: React.FC = () => {
           {Array.from({ length: 30 }, (_, i) => {
             const isSmall = i % 3 === 0;
             const isLarge = i % 5 === 0;
-            const isMedium = i % 2 === 0 && !isLarge;
 
             let className = 'universal-particle';
             if (isSmall) className += ' small';

@@ -1,0 +1,334 @@
+# Brandon Micci - Enterprise AI & Digital Transformation Executive
+
+> Senior AI executive with 16+ years delivering Fortune 500 transformations. $400M+ enterprise revenue created, 27K+ AI users enabled, 250% peak program ROI. Expert in AI strategy, LLM deployment, and data platform architecture.
+
+## Professional Summary
+
+I am an AI & Digital Transformation Executive who turns emerging technology into measurable enterprise growth. Over the past 16 years, I've led large-scale transformations that generated $400M+ in new revenue, scaled GenAI to 27,000+ users, accelerated cloud adoption by 200%, and built platforms that reshape how Fortune 500 organizations operate.
+
+At JPMorgan Chase, I currently lead AI strategy for client servicing and onboarding, building scalable, future-ready platforms that modernize financial services and enhance client experience. My leadership has also included deploying the first LLM-powered AI Assistant in a Fortune 500 payments organization, architecting IoT solutions that save $20M annually, and securing a $400M, 10-year engagement at EY to design and build an AI-powered fraud detection engine for a Fortune 50 insurance client.
+
+I specialize in building and leading high-performing organizations that connect cutting-edge AI and emerging technologies to real business challenges. My expertise includes:
+• Enterprise AI/ML strategy and execution at scale
+• Digital transformation across Fortune 500 organizations
+• Cloud modernization and DevOps acceleration (200% adoption improvement)
+• Building and leading data science & analytics teams (50+ FTEs)
+• Go-to-market strategy for emerging technologies
+
+Philosophy: Technology should make organizations smarter, faster, and more resilient. I thrive at the intersection of AI innovation and business strategy, translating complex technical concepts into executive-level impact and leading teams that deliver measurable business value.
+
+## Core Competencies
+
+- Enterprise AI Strategy & Roadmapping
+- LLM Deployment & Scaling (27,000+ users at enterprise scale)
+- Digital Transformation Leadership
+- Data Platform Architecture & Governance
+- AI/ML Product Management
+- Fortune 500 Client Engagement
+- P&L Ownership & ROI Delivery ($45M+ technology portfolios)
+- Cross-Functional Team Leadership (50+ FTE organizations)
+- Cloud Migration & DevOps (200% acceleration)
+- IoT & Edge Computing Architecture
+- Change Management & Stakeholder Engagement
+
+## Current Role
+
+### VP, Head of NextGen AI/ML Solutions - JPMorgan Chase
+**February 2024 - Present | Plano, Texas**
+
+Drive enterprise AI strategy and implementation across payments operations, leading organization-wide transformation initiatives that enhance operational efficiency and customer experience. Oversee AI product development lifecycle from strategy through deployment and scaling.
+
+**Key Achievements:**
+- Architected comprehensive AI strategy resulting in 30% efficiency gains and 20% workforce optimization across payments operations
+- Pioneered first-of-its-kind AI Assistant (LLM) scaling to 27,000+ users across the Payments organization—marking the largest LLM deployment in the payments sector
+- Deployed intelligent automation handling 40% of customer inquiries while reducing handle time by 300%
+- Led strategic AI governance initiatives ensuring responsible AI deployment across multiple business units
+
+## Career History
+
+### Senior Director, Intelligent Industry GTM & Solution Leader - Capgemini
+**January 2022 - February 2024 (2 years 2 months) | Dallas, Texas**
+
+Directed go-to-market strategy and solution development for emerging AI technologies, leading cross-functional teams of product managers, solution architects, and sales professionals. Responsible for market penetration strategies and revenue growth in intelligent industry solutions.
+
+**Key Achievements:**
+- Orchestrated go-to-market strategy for NextGen insurance solutions, achieving a 34% market share increase
+- Architected telematics solutions for Fortune 50 insurance providers, delivering 60% improvement in loss mitigation
+- Launched Industry 4.0 IoT Platform integrating telematics, smart building monitoring, wearables, and industrial equipment under a unified ecosystem with real-time AI analytics and detection
+- Established innovation practice from the ground up, creating new service offerings and commercializing Industry 4.0, NextGen and AI solutions that expanded market reach across the insurance sector
+
+### Senior Manager, Forensic Technology and Forensic Data Analytics - Ernst & Young (EY)
+**February 2021 - February 2022 (1 year 1 month) | Dallas, Texas**
+
+Spearheaded AI/ML strategy and capability development within Ernst & Young's Forensics Practice, serving as Regional Leader and subject matter expert for complex analytics engagements across Financial Services, Life Sciences, and Energy sectors.
+
+**Key Achievements:**
+- Secured $400M, 10-year strategic engagement with a global insurance leader, delivering real-time AI-powered fraud analytics engine that enhanced threat detection and response capabilities
+- Developed Analytics-as-a-Service platform automating Risk, Compliance, and Fraud detection processes, generating $30M in new continuous annual revenue
+- Led talent development initiatives scaling AI/ML capabilities regionally and establishing forensic analytics COE
+
+### Head of Digital Innovation & IoT - Southwest Airlines
+**August 2019 - December 2020 (1 year 5 months) | Dallas, Texas**
+
+Promoted to newly created role after identifying advanced operational data needs. Led strategic digital transformation using IoT, AI, and Edge Computing platforms. Reported directly to CIO with $25M annual technology budget.
+
+**Key Achievements:**
+- Pioneered breakthrough IoT Fuel Savings pilot delivering 250% ROI within six months, leading to rapid scaling that deployed capabilities to 3 airports monthly and generated $20M annual savings
+- Led comprehensive innovation transformation implementing IoT capabilities across 3 Fuel Farms, 7 Baggage Handling Systems, and 8 De-Icing Stations while architecting AWS-based platform for enhanced resiliency and reliability
+- Migrated 10+ legacy applications to the cloud in 6 months, reducing annual technology spend by $3.2M
+
+### Data Enablement & Analytics COE Lead - Southwest Airlines
+**February 2019 - August 2019 (7 months) | Dallas, Texas**
+
+Recruited to replicate Capital One's world-record Tableau success. Built comprehensive data community and center of excellence across enterprise analytics platforms.
+
+**Key Achievements:**
+- Decommissioned hundreds of legacy dashboards across 5 legacy BI platforms, reducing annual support costs by $5M
+- Built evangelical Data Analyst Community scaling to 2500+ users with 40% adoption increase of Tableau & Alteryx
+- Architected Tier 1 Production Data Environment achieving 100% availability for critical real-time Ops Data
+
+### Vice President, Global Digital and Cloud Transformation Leader - Citigroup
+**November 2017 - February 2019 (1 year 4 months) | Irving, Texas**
+
+Led global infrastructure transformation initiatives, driving quality improvement and performance optimization across Citigroup's worldwide technology ecosystem. Responsible for strategic technology modernization and cloud enablement programs.
+
+**Key Achievements:**
+- Architected global telemetry platform increasing environment stability and uptime to 98% across worldwide operations
+- Evangelized DevOps transformation program accelerating cloud enablement by 200% through CI/CD pipeline implementation and a microservices architecture
+- Drove modernization initiatives across legacy infrastructure stacks, establishing world-class performance standards
+
+### Risk Analytics Leader, Auto Finance & Home Loans - Capital One
+**July 2016 - November 2017 (1 year 5 months) | Plano, Texas**
+
+Built and led the first Risk & Analytics Reporting Team for Capital One's Auto Finance & Home Loans division. Architected comprehensive data warehouse and analytics platform within 2 months.
+
+**Key Achievements:**
+- Built and led team of 7 analysts and data engineers, architecting the first dedicated Tableau environment for Auto Finance
+- Implemented automated compliance testing with advanced NLP solutions to digest customer complaints and real-time OCR scanning for regulatory requirements, creating automated controls to detect emerging high-risk blind spots
+
+### Enterprise Analytics Leader - Enterprise Risk & Compliance - Capital One
+**January 2016 - July 2016 (7 months) | Richmond, Virginia**
+
+Led development of large-scale Tableau Dashboard efforts cross-functionally as internal consultant. Managed team of 10 on-shore Data Engineers and Data Analysts across enterprise risk and compliance initiatives.
+
+**Key Achievements:**
+- Achieved 200% team output increase with 10 Data Engineers/Analysts, delivering 15+ enterprise risk dashboards
+- Established enterprise gold standard for Data Quality, including comprehensive data governance frameworks, lineage automation, and validation processes that enhanced organizational capability by 80%
+
+### Center of Excellence Leader, Tableau, BI & Big Data Platforms - Capital One
+**January 2015 - January 2016 (1 year 1 month) | McLean, Virginia**
+
+Established and drove Tableau & Big Data Center of Excellence across Capital One Enterprise. Led comprehensive platform transformation and legacy system modernization initiatives.
+
+**Key Achievements:**
+- Established enterprise Tableau COE driving adoption to 30,000+ users—largest evangelical Tableau community worldwide
+- Appointed to lead development of top-of-house Tableau mobile dashboards for Capital One's CEO, Rich Fairbanks
+
+### Senior Consultant, Lead Data Analyst - Booz Allen Hamilton
+**October 2013 - January 2015 (1 year 4 months) | McLean, Virginia**
+
+Commissioned as a Senior Consultant to build out and lead the firm's first Tableau Enterprise Data & Analytics department dedicated to fraud and compliance. Led development of data analytics and BI solutions.
+
+### Global Operations and Strategy Associate - PricewaterhouseCoopers (PwC)
+**August 2012 - October 2013 (1 year 3 months) | McLean, Virginia**
+
+As Lead Analyst to the COO of Global Delivery, I was the sole provider of performance metrics reporting and dashboards and spearheaded the firm's first Tableau deployment for optimized dashboard automation.
+
+## Major Achievements
+
+### $400M+ Enterprise Revenue Created
+Secured and delivered a $400M, 10-year strategic engagement at Ernst & Young with a Fortune 50 global insurance leader, building an AI-powered fraud detection and analytics platform that processes millions of real-time transactions with 99.9% accuracy.
+
+### 27,000+ AI Users Enabled
+Pioneered the largest LLM deployment in the financial services payments sector at JPMorgan Chase, scaling an AI Assistant to 27,000+ users. This industry-first implementation handles 40% of customer inquiries with 300% reduction in handle time.
+
+### 250% Peak Program ROI
+Led breakthrough IoT innovation at Southwest Airlines delivering 250% ROI within six months, generating $20M+ in annual savings through fuel optimization, baggage handling improvements, and de-icing automation across airports nationwide.
+
+### 30,000+ User Analytics Platform
+Established Capital One's enterprise Tableau platform—the world's largest evangelical analytics community—scaling to 30,000+ users and delivering an 80% boost in organizational data capabilities through comprehensive governance frameworks and best practices.
+
+### 200% Cloud Acceleration
+Evangelized DevOps transformation at Citigroup, accelerating cloud enablement by 200% through CI/CD pipeline implementation, microservices architecture, and comprehensive telemetry platforms that achieved 98% uptime across global operations.
+
+## Technical Expertise
+
+### AI/ML Strategy & Innovation
+- Generative AI
+- LLM Deployment & Scaling
+- MLOps
+- LLMOps
+- Machine Learning
+- Model Governance
+- AI Ethics
+- Predictive Analytics
+- Natural Language Processing (NLP)
+- Computer Vision
+- Deep Learning
+- Fraud Detection & Anomaly Detection
+
+### Digital Transformation
+- Industry 4.0
+- IoT Platforms & Architecture
+- Digital Twins
+- DevOps & Agile Methodologies
+- Change Management & Organizational Transformation
+- Enterprise-Wide Digital Strategy
+
+### Cloud & Data Architecture
+- Amazon Web Services (AWS)
+- Microsoft Azure
+- Google Cloud Platform (GCP)
+- Snowflake
+- Databricks
+- Apache Spark
+- Apache Kafka
+- Data Lakes
+- Data Governance & Quality Frameworks
+- Big Data Technologies
+- ETL/ELT Pipelines
+- Data Mesh Architecture
+
+### Leadership & Strategy
+- Executive Leadership & Team Building
+- P&L Management & Budget Oversight
+- Strategic Planning & Roadmapping
+- C-Suite Engagement & Executive Communication
+- Cross-Functional Team Leadership (50+ FTE organizations)
+- Innovation & Product Strategy
+- Stakeholder Management
+
+### Analytics & BI Platforms
+- Tableau (World's largest community expertise - 30,000+ users)
+- Alteryx
+- Power BI
+- Looker
+- Python
+- R
+- SQL
+- Data Science & Statistical Analysis
+- Apache Airflow
+- Data Warehousing
+
+### Emerging Technologies
+- Blockchain
+- AR/VR (Augmented/Virtual Reality)
+- Robotics & Automation
+- Geospatial Analytics
+- Web 3.0
+- Telematics
+- Edge Computing
+
+### Enterprise Technology Stack
+- Kubernetes
+- Docker & Container Orchestration
+- Microservices Architecture
+- API Gateway & Integration
+- CI/CD Pipelines
+- Infrastructure as Code
+- Terraform
+- Distributed Systems
+- Enterprise Service Bus
+
+### Cross-Functional Excellence
+- Product Strategy & Management
+- Vendor Management & Partnerships
+- Budget Planning & Financial Management
+- Risk Management & Compliance
+- M&A Integration
+- Executive Reporting & Board Presentations
+- Go-to-Market Strategy
+- Change Management
+
+### Financial & Business Acumen
+- Revenue Growth & P&L Ownership
+- Cost Optimization & Efficiency
+- ROI Analysis & Business Case Development
+- Market Analysis & Competitive Intelligence
+- KPI Development & Performance Metrics
+- Business Strategy & Planning
+- Investment Portfolio Management
+
+## Industry Experience
+
+### Financial Services
+- **JPMorgan Chase:** AI strategy for payments operations, LLM deployment at scale
+- **Capital One:** Enterprise analytics, risk management, data governance (30,000+ users)
+- **Citigroup:** Global infrastructure transformation, cloud migration, DevOps
+
+### Aviation
+- **Southwest Airlines:** IoT innovation, digital transformation, analytics COE (250% ROI)
+
+### Big Four & Major Consulting
+- **Ernst & Young (EY):** Forensic analytics, AI-powered fraud detection ($400M engagement)
+- **Capgemini:** Intelligent industry solutions, go-to-market strategy, Industry 4.0
+- **PricewaterhouseCoopers (PwC):** Global operations strategy, enterprise analytics
+- **Booz Allen Hamilton:** Tableau COE development, fraud & compliance analytics
+
+### Insurance
+- Fortune 50 insurance providers (telematics, loss mitigation, AI fraud detection)
+
+## Education
+
+**Bachelor of Arts in Administration**
+The George Washington University, Washington, DC
+Graduated: 2009
+
+## Professional Skills
+
+- Executive Leadership & Team Building
+- Strategic Planning & Roadmap Development
+- P&L Management & Budget Oversight
+- Stakeholder Management & Executive Communication
+- Change Management & Organizational Transformation
+- Vendor Management & Strategic Partnerships
+- Agile & Scrum Methodologies
+- Product Management & Go-to-Market Strategy
+- Risk Management & Governance
+- Public Speaking & Thought Leadership
+
+## Contact Information
+
+- **Website:** https://brandonmicci.com
+- **LinkedIn:** https://www.linkedin.com/in/brandonmicci/
+- **Email:** brandon@brandonmicci.com
+- **Location:** Dallas, Texas, United States
+- **Resume:** https://brandonmicci.com/executive-brief.pdf
+
+## Site Structure
+
+- **[Home](https://brandonmicci.com):** Complete professional portfolio and executive summary
+- **[Strategic Advantage](https://brandonmicci.com/#strategic-advantage):** What sets me apart - proven Fortune 500 execution and Big Four advisory experience
+- **[Executive Experience](https://brandonmicci.com/#executive-experience):** 16+ year career timeline with detailed role descriptions and achievements
+- **[Transformation Leadership](https://brandonmicci.com/#transformation-leadership):** Major project portfolio including LLM deployments, IoT innovation, and platform transformations
+- **[Professional Impact](https://brandonmicci.com/#professional-impact):** Case studies and measurable business outcomes
+- **[Contact](https://brandonmicci.com/contact):** Get in touch for executive opportunities
+- **[Privacy Policy](https://brandonmicci.com/privacy):** Data handling practices and compliance
+
+## Keywords for Executive Recruiters
+
+Enterprise AI Executive, VP AI Products, Head of AI, Chief AI Officer, AI Strategy Director, Digital Transformation Executive, Digital Transformation Leader, LLM Deployment Expert, Fortune 500 AI Transformation, Senior Director AI, VP AI Strategy, Data Strategy Executive, AI Governance Framework, Enterprise Data Platform, Digital Innovation Leader, Enterprise ROI AI Strategy, AI Product Management, Machine Learning Executive, GenAI Leadership, Enterprise Technology Leader, Cloud Transformation Executive, IoT Innovation Leader, Data Science Leadership, Analytics Executive, Big Four Consultant, Fortune 500 Technology Leader
+
+## Target Roles
+
+- Vice President, AI Products
+- Vice President, AI Strategy
+- Head of AI
+- Senior Director, AI & ML
+- Chief AI Officer
+- VP, Digital Transformation
+- VP, Data Strategy
+- Senior Director, Digital Innovation
+- Head of Enterprise AI
+- VP, Emerging Technologies
+
+## Availability
+
+Currently employed as Head of AI, Payments at JPMorgan Chase. Open to discussing exceptional VP+ and C-suite opportunities in AI strategy, digital transformation, and enterprise technology leadership.
+
+---
+
+**Last Updated:** October 2025
+
+**For AI/LLM Context:** This file provides comprehensive information about Brandon Micci's professional background, expertise, and career achievements for use by AI systems, search engines, and executive recruitment platforms. Brandon is an accomplished AI and Digital Transformation executive with proven Fortune 500 delivery, Big Four consulting experience, and measurable business impact including $400M+ in enterprise revenue, 27,000+ AI users enabled, and 250% ROI achievements.
+

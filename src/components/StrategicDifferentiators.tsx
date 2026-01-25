@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
+import { Icon } from '@/components/ui/Icon';
 
 const StrategicDifferentiators: React.FC = () => {
   useEffect(() => {
@@ -35,9 +36,6 @@ const StrategicDifferentiators: React.FC = () => {
             'Segoe UI',
             Roboto,
             sans-serif;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 2rem;
         }
 
         .differentiators-grid {
@@ -166,7 +164,6 @@ const StrategicDifferentiators: React.FC = () => {
         }
 
         .diff-title {
-          font-size: 1.25rem;
           font-weight: 700;
           margin-bottom: 0.8rem;
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
@@ -196,9 +193,6 @@ const StrategicDifferentiators: React.FC = () => {
         }
 
         @media (max-width: 768px) {
-          .differentiators-container {
-            padding: 0 1rem;
-          }
           .differentiators-grid {
             grid-template-columns: 1fr;
             gap: 1rem;
@@ -209,87 +203,112 @@ const StrategicDifferentiators: React.FC = () => {
         }
 
         @media (max-width: 480px) {
-          .diff-title {
-            font-size: 1.1rem;
-          }
           .diff-description {
             font-size: 0.95rem;
           }
         }
+
+        @media (max-width: 360px) {
+          .diff-card {
+            padding: 0.75rem;
+          }
+          .diff-card h4 {
+            font-size: 0.9rem;
+          }
+          .diff-card p {
+            font-size: 0.8rem;
+          }
+        }
+
+        /* Center all text for consistency with Hero section */
+        .diff-description {
+          text-align: center !important;
+        }
       `}</style>
 
-      <div className="differentiators-container">
+      <div className="differentiators-container mx-auto max-w-6xl px-4 md:px-8 overflow-x-clip">
         <div className="differentiators-grid">
-          <div className="diff-card">
-            <div className="diff-content">
-              <div className="diff-icon">📈</div>
-              <h4 className="diff-title">Scale Expertise</h4>
-              <p className="diff-description">
-                Successfully deployed the largest LLM implementation in the
-                payments industry (27,000+ users) and led global data science
-                organizations of 50+ professionals with $45M+ technology
-                portfolios.
-              </p>
+          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
+            <div className="diff-content flex flex-col items-center text-center gap-3">
+              <Icon
+                name="trending-up"
+                size="lg"
+                className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)]"
+              />
+              <div className="w-full">
+                <h3 className="diff-title text-base md:text-lg font-bold text-white text-center">
+                  Enterprise-Scale Architecture
+                </h3>
+                <p className="diff-description mt-1 text-sm text-slate-100 text-left font-medium">
+                  Proven delivery of AI/ML systems at massive scale—from 27,000+
+                  user LLM platforms to distributed analytics architectures
+                  handling petabyte-scale data workloads across global Fortune
+                  500 infrastructure.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="diff-card">
-            <div className="diff-content">
-              <div className="diff-icon">💰</div>
-              <h4 className="diff-title">Financial Impact</h4>
-              <p className="diff-description">
-                Consistent track record of delivering massive ROI—from 250%
-                returns on IoT initiatives to $30M in new annual revenue streams
-                through Analytics-as-a-Service platforms.
-              </p>
+          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
+            <div className="diff-content flex flex-col items-center text-center gap-3">
+              <Icon
+                name="globe"
+                size="lg"
+                className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)]"
+              />
+              <div className="w-full">
+                <h3 className="diff-title text-base md:text-lg font-bold text-white text-center">
+                  Business-Technology Bridge
+                </h3>
+                <p className="diff-description mt-1 text-sm text-slate-100 text-left font-medium">
+                  Consistent track record translating technical innovation into
+                  business strategy—turning AI capabilities into revenue growth,
+                  market differentiation, and competitive advantage across
+                  regulated Fortune 500 environments.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="diff-card">
-            <div className="diff-content">
-              <div className="diff-icon">🌐</div>
-              <h4 className="diff-title">Cross-Industry Innovation</h4>
-              <p className="diff-description">
-                Deep expertise spanning Financial Services, Insurance, Airlines,
-                Energy, and Life Sciences with transferable solutions that adapt
-                to unique business contexts.
-              </p>
+          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
+            <div className="diff-content flex flex-col items-center text-center gap-3">
+              <Icon
+                name="settings"
+                size="lg"
+                className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)]"
+              />
+              <div className="w-full">
+                <h3 className="diff-title text-base md:text-lg font-bold text-white text-center">
+                  Technical Architecture
+                </h3>
+                <p className="diff-description mt-1 text-sm text-slate-100 text-left font-medium">
+                  Deep technical expertise combined with enterprise
+                  leadership—delivering AI solutions that scale from concept to
+                  production while meeting stringent regulatory requirements and
+                  operational standards.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="diff-card">
-            <div className="diff-content">
-              <div className="diff-icon">🎯</div>
-              <h4 className="diff-title">Technical + Strategic Leadership</h4>
-              <p className="diff-description">
-                Rare combination of hands-on AI/ML architecture experience with
-                C-suite strategic advisory capabilities—translating complex
-                technology into business strategy.
-              </p>
-            </div>
-          </div>
-
-          <div className="diff-card">
-            <div className="diff-content">
-              <div className="diff-icon">🚀</div>
-              <h4 className="diff-title">Transformation Catalyst</h4>
-              <p className="diff-description">
-                Proven ability to modernize legacy systems while building
-                evangelical communities that drive adoption at scale—like the
-                world&apos;s largest Tableau community (30,000+ users).
-              </p>
-            </div>
-          </div>
-
-          <div className="diff-card">
-            <div className="diff-content">
-              <div className="diff-icon">💡</div>
-              <h4 className="diff-title">Ambiguous Environment Expert</h4>
-              <p className="diff-description">
-                Thrive in high-stakes environments where emerging technologies
-                meet complex business challenges, creating clarity from chaos
-                and actionable roadmaps from ambiguity.
-              </p>
+          <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
+            <div className="diff-content flex flex-col items-center text-center gap-3">
+              <Icon
+                name="construction"
+                size="lg"
+                className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)]"
+              />
+              <div className="w-full">
+                <h3 className="diff-title text-base md:text-lg font-bold text-white text-center">
+                  Transformation Leadership
+                </h3>
+                <p className="diff-description mt-1 text-sm text-slate-100 text-left font-medium">
+                  Track record modernizing legacy systems while building
+                  adoption strategies that deliver sustained change—including
+                  the world&apos;s largest analytics community (30,000+ users).
+                  Change management proven at Fortune 500 scale.
+                </p>
+              </div>
             </div>
           </div>
         </div>
