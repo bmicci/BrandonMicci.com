@@ -246,23 +246,32 @@ const UniversalBackground: React.FC = () => {
           }
         }
 
-        /* Mobile optimizations */
+        /* Mobile optimizations - disable heavy animations for performance */
         @media (max-width: 768px) {
           .universal-grid {
             background-size: 80px 80px;
-            opacity: 0.8;
+            opacity: 0.5;
+            animation: none !important;
           }
 
           .universal-particle {
-            opacity: 0.7;
+            animation: none !important;
+            opacity: 0.5;
           }
 
           .universal-circle {
             transform: scale(0.7);
+            animation: none !important;
+            opacity: 0.1;
           }
 
-          /* Reduce particles on mobile */
-          .universal-particle:nth-child(n + 10) {
+          .universal-gradient-overlay-1,
+          .universal-gradient-overlay-2 {
+            animation: none !important;
+          }
+
+          /* Hide most particles on mobile for performance */
+          .universal-particle:nth-child(n + 6) {
             display: none;
           }
         }
@@ -270,6 +279,11 @@ const UniversalBackground: React.FC = () => {
         @media (max-width: 480px) {
           .universal-circle {
             transform: scale(0.5);
+          }
+          
+          /* Hide even more particles on small screens */
+          .universal-particle:nth-child(n + 4) {
+            display: none;
           }
         }
       `}</style>
