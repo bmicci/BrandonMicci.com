@@ -443,7 +443,7 @@ const Navigation = () => {
           <div className="logo" onClick={() => handleLinkClick('home')}>
             <div className="logo-bm">
               <Image
-                src="/logo-bm-tight.png"
+                src="/logo-bm-tight.webp"
                 alt="Brandon Micci Logo"
                 width={52}
                 height={52}

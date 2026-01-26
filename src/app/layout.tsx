@@ -193,7 +193,7 @@ export default async function RootLayout({
     <html lang="en">
       <head>
         {/* Performance: Preload critical above-fold assets */}
-        <link rel="preload" href="/logo-bm-tight.png" as="image" type="image/png" />
+        <link rel="preload" href="/logo-bm-tight.webp" as="image" type="image/webp" />
         <link rel="preload" href="/headshot.webp" as="image" type="image/webp" />
         
         {/* Performance: DNS prefetch and preconnect for external resources */}
