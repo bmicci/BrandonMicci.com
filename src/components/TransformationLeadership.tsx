@@ -84,8 +84,8 @@ const secondaryProjects: Project[] = [
     title: 'Industry 4.0 IoT Ecosystem',
     icon: Factory,
     description:
-      'Comprehensive platform integrating 1000+ IoT devices across telematics, smart buildings, and wearables with unified AI analytics.',
-    mobileDescription: 'Connected 1000+ IoT devices for Fortune 50 insurers.',
+      'Comprehensive platform integrating thousands of devices across telematics, smart buildings, and wearables with unified AI analytics.',
+    mobileDescription: 'Connected thousands of devices for Fortune 50 insurers.',
     metrics: [
       { value: '1000+', label: 'Connected Devices' },
       { value: '60%', label: 'Loss Reduction' },
@@ -121,9 +121,9 @@ const secondaryProjects: Project[] = [
     icon: LineChart,
     description:
       'Self-service analytics platform at a Big 4 consulting firm automating Risk, Compliance, and Fraud detection, generating continuous revenue stream.',
-    mobileDescription: 'SaaS platform generating $30M annual revenue.',
+    mobileDescription: 'SaaS platform generating $25MM+ annual revenue.',
     metrics: [
-      { value: '$30M', label: 'Annual Revenue' },
+      { value: '$25MM+', label: 'Annual Revenue' },
       { value: '85%', label: 'Process Automation' },
     ],
     tags: ['SaaS', 'Analytics', 'Platform'],

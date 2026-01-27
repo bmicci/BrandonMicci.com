@@ -194,13 +194,13 @@ const caseStudies: CaseStudy[] = [
     solution:
       'Developed and launched a comprehensive Analytics-as-a-Service platform automating Risk, Compliance, and Fraud detection workflows. Created a self-service model that could be deployed across multiple client engagements.',
     results: [
-      'Generated $30M in annual recurring revenue',
+      'Generated $25MM+ in annual recurring revenue',
       'Achieved 85% process automation',
       'Scaled platform across multiple Fortune 500 clients',
       'Reduced client implementation time by 60%',
     ],
     metrics: [
-      { value: '$30M', label: 'Annual Revenue' },
+      { value: '$25MM+', label: 'Annual Revenue' },
       { value: '85%', label: 'Process Automation' },
     ],
     technologies: ['SaaS', 'Analytics', 'Platform', 'Risk & Compliance'],

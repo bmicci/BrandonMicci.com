@@ -101,7 +101,7 @@ const ROLES: Role[] = [
       },
       {
         title: 'Fortune 50 Impact',
-        text: 'Architected telematics solutions for Fortune 50 insurance providers, delivering 60% improvement in loss mitigation.',
+        text: 'Architected telematics solutions for Fortune 50 insurance providers, delivering significant improvements in loss mitigation.',
       },
       {
         title: 'Platform Innovation',
@@ -130,7 +130,7 @@ const ROLES: Role[] = [
       },
       {
         title: 'Revenue Generation',
-        text: 'Developed an Analytics-as-a-Service platform generating $30MM in new continuous annual revenue.',
+        text: 'Developed an Analytics-as-a-Service platform generating $25MM+ in annual recurring revenue.',
       },
       {
         title: 'Capability Building',
@@ -174,7 +174,7 @@ const ROLES: Role[] = [
     achievements: [
       {
         title: 'Cost Optimization',
-        text: 'Decommissioned hundreds of legacy dashboards across 5 platforms, reducing annual support costs by $5M.',
+        text: 'Decommissioned hundreds of legacy dashboards across 5 platforms, improving data governance and operational efficiency.',
       },
       {
         title: 'Community Building',
@@ -182,7 +182,7 @@ const ROLES: Role[] = [
       },
       {
         title: 'Operational Excellence',
-        text: 'Architected a Tier 1 production data environment achieving 100% availability for critical real-time operations.',
+        text: 'Architected enterprise Tier 1 production data environment achieving 100% availability and disaster recovery for critical real-time operations, implementing secure data isolation and access controls.',
       },
     ],
   },
@@ -222,7 +222,7 @@ const ROLES: Role[] = [
     achievements: [
       {
         title: 'Team Building',
-        text: 'Built and led the first Risk & Analytics Reporting Team (7 analysts/engineers) with a dedicated Tableau environment.',
+        text: 'Built and led the first Risk & Analytics Reporting Team (10 data engineers and analysts) with a dedicated Tableau environment.',
       },
       {
         title: 'Compliance Innovation',
