@@ -83,14 +83,15 @@ section {
 }
 
 /* Reserve layout for section anchors to avoid jumps */
-#home,
-#strategic-vision,
+#hero,
+#strategic-advantage,
 #executive-experience,
 #transformation-leadership,
 #professional-impact,
+#faq,
 #connectwithme {
   content-visibility: auto;
-  contain-intrinsic-size: 900px; /* tune based on typical section height */
+  contain-intrinsic-size: auto 900px; /* tune based on typical section height */
 }
 
 /* Avoid image-driven shifts if authors forget width/height */
