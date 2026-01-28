@@ -126,9 +126,9 @@ const caseStudies: CaseStudy[] = [
     challenge:
       'A major insurer sought to modernize their risk assessment and loss prevention capabilities through connected device data from telematics, smart buildings, and wearables.',
     solution:
-      'Built a comprehensive Industry 4.0 platform integrating 1000+ IoT devices across multiple data streams. Unified telematics, smart building sensors, and wearable data into a single AI-powered analytics platform.',
+      'Built a comprehensive Industry 4.0 platform integrating thousands of IoT devices across multiple data streams. Unified telematics, smart building sensors, and wearable data into a single AI-powered analytics platform.',
     results: [
-      'Integrated 1000+ IoT devices into unified platform',
+      'Integrated thousands of IoT devices into unified platform',
       'Achieved 60% reduction in preventable losses',
       'Enabled real-time risk monitoring and alerting',
       'Created new data-driven insurance product offerings',

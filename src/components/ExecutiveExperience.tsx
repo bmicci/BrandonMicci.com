@@ -81,7 +81,7 @@ const ROLES: Role[] = [
       },
       {
         title: 'Customer Impact',
-        text: 'Deployed intelligent automation handling 40% of customer inquiries while reducing handle time by 300%.',
+        text: 'Deployed intelligent automation handling 40% of customer inquiries while reducing handle times by 55%, improving SLA performance and operational throughput.',
       },
     ],
   },
@@ -150,7 +150,7 @@ const ROLES: Role[] = [
     achievements: [
       {
         title: 'Breakthrough ROI',
-        text: 'Pioneered an IoT Fuel Savings pilot delivering 250% ROI within six months, generating $5.8M annual savings.',
+        text: 'Pioneered IoT Fuel Savings pilot delivering 250% ROI in 6 months; scaled program to 20+ stations generating $20M+ annual savings.',
       },
       {
         title: 'Cloud Transformation',
@@ -281,7 +281,7 @@ const ROLES: Role[] = [
       },
       {
         title: 'Executive Engagement',
-        text: "Appointed to develop top-of-house mobile dashboards for Capital One's CEO, Rich Fairbanks.",
+        text: "Appointed to develop top-of-house mobile dashboards for Capital One's CEO, Rich Fairbank.",
       },
       {
         title: 'Platform Transformation',
