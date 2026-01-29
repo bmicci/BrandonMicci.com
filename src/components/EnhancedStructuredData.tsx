@@ -476,6 +476,8 @@ export default function EnhancedStructuredData({ nonce }: { nonce?: string }) {
       id="structured-data"
       type="application/ld+json"
       nonce={nonce}
+      // Suppress hydration warning: nonce is intentionally different between server (CSP) and client
+      suppressHydrationWarning
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
   );
