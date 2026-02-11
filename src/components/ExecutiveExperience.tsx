@@ -58,65 +58,73 @@ type Role = {
 const ROLES: Role[] = [
   {
     dates: '2024 - PRESENT',
-    role: 'VP, Head of AI Products',
+    role: 'Head of AI Strategy & Enablement',
     company: 'JPMorgan Chase',
-    location: 'Plano, TX',
+    location: 'Dallas, TX',
     icon: <Brain className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
-      'Drive enterprise AI strategy and implementation across payments operations, leading organization-wide transformation initiatives that enhance operational efficiency and customer experience at scale.',
+      'Lead AI strategy, automation, and LLM transformation across Payments Operations. Own end-to-end AI product delivery, $15M+ P&L, governance, and enterprise scaling for call centers, client servicing, and knowledge systems.',
     skills: [
       'AI Strategy',
       'LLM Deployment',
-      'Enterprise Architecture',
-      'Team Leadership',
+      'P&L Management',
+      'AI Governance',
     ],
     achievements: [
       {
+        title: '$22M+ Annualized Savings',
+        text: 'Delivered $22M+ annualized savings through LLM-powered workflow automation, intelligent routing, and accelerated knowledge retrieval.',
+      },
+      {
         title: 'Industry-Leading AI Deployment',
-        text: 'Pioneered first-of-its-kind AI Assistant scaling to 27,000+ users across Payments—the largest LLM deployment in the payments industry.',
+        text: 'Architected multi-repository RAG system spanning 12+ knowledge sources, scaling enterprise LLM Assistant to 27,000+ employees—one of the largest LLM deployments in Commercial Payments.',
       },
       {
         title: 'Operational Excellence',
-        text: 'Architected comprehensive AI strategy delivering 30% efficiency gains and 20% workforce optimization across operations.',
+        text: 'Automated 38% of Tier-1 inquiries and reduced handle times by 55%, improving SLA performance and operational throughput.',
       },
       {
-        title: 'Customer Impact',
-        text: 'Deployed intelligent automation handling 40% of customer inquiries while reducing handle times by 55%, improving SLA performance and operational throughput.',
+        title: 'AI Governance',
+        text: 'Established AI governance framework and model risk management standards, ensuring regulatory compliance across 30+ AI/ML use cases.',
       },
     ],
   },
   {
-    dates: '2022',
-    role: 'Senior Director, Intelligent Industry GTM & Solution Leader',
+    dates: '2022 - 2024',
+    role: 'Senior Director, Head of AI/IoT & Emerging Technology Practice',
     company: 'Capgemini',
     location: 'Dallas, TX',
     icon: <Rocket className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
-      'Directed go-to-market strategy and solution development for emerging AI technologies, leading cross-functional teams of product managers, solution architects, and sales professionals.',
-    skills: ['Go-to-Market Strategy', 'IoT Solutions', 'Product Management'],
+      'Directed AI and emerging technology commercialization across Intelligent Industry portfolio. Built and scaled new practice focused on digital transformation and real-time AI analytics for Fortune 50 clients.',
+    skills: ['P&L Management', 'AI/IoT Solutions', 'GTM Strategy', 'Team Leadership'],
     achievements: [
       {
-        title: 'Market Dominance',
-        text: 'Orchestrated go-to-market strategy achieving 34% market share increase in NextGen insurance solutions.',
+        title: '$30M P&L Ownership',
+        text: 'Owned $30M P&L for AI/IoT practice, leading 30+ architects, data scientists, and product leaders across pricing, margin optimization, and revenue targets.',
+      },
+      {
+        title: '$9.8M Revenue Growth',
+        text: 'Drove $9.8M in new revenue through GTM execution and solution commercialization, achieving 34% market penetration in new insurance technology vertical.',
       },
       {
         title: 'Fortune 50 Impact',
-        text: 'Architected telematics solutions for Fortune 50 insurance providers, delivering significant improvements in loss mitigation.',
+        text: 'Architected telematics and AI-driven risk platforms for Fortune 50 insurers, delivering significant improvements in loss mitigation through real-time predictive analytics.',
       },
       {
-        title: 'Platform Innovation',
-        text: 'Launched Industry 4.0 IoT Platform integrating telematics, smart building monitoring, and wearables under a unified ecosystem.',
+        title: 'Industry 4.0 Platform',
+        text: 'Launched Industry 4.0 IoT Platform connecting thousands of devices across telematics, smart buildings, wearables, and industrial equipment with unified AI analytics.',
       },
     ],
   },
   {
     dates: '2021 - 2022',
-    role: 'Senior Manager, Forensic Analytics & Data Science',
+    role: 'Senior Manager, AI/ML Forensic Analytics & Technology',
     company: 'Ernst & Young',
     location: 'Dallas, TX',
     icon: <Search className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
-      "Spearheaded AI/ML strategy and capability development within EY's Forensics Practice, serving as Regional Leader for complex analytics engagements across Financial Services, Life Sciences, and Energy sectors.",
+      "Scaled AI/ML & Data Science strategy within Forensics Practice. Regional Leader and SME advising engagements across Financial Services, Life Sciences, and Energy sectors.",
     skills: [
       'Fraud Analytics',
       'AI/ML',
@@ -126,171 +134,121 @@ const ROLES: Role[] = [
     achievements: [
       {
         title: 'Mega-Deal Success',
-        text: 'Secured $400MM, 10-year strategic engagement with a global insurance leader, delivering real-time AI-powered fraud analytics.',
+        text: 'Procured $400MM, 10-year strategic engagement with global insurance firm for real-time AI-powered fraud analytics engine.',
       },
       {
         title: 'Revenue Generation',
-        text: 'Developed an Analytics-as-a-Service platform generating $25MM+ in annual recurring revenue.',
+        text: 'Championed Analytics-as-a-Service platform enhancements and go-to-market strategy, contributing to $25MM+ in annual recurring revenue.',
       },
       {
-        title: 'Capability Building',
-        text: 'Led regional AI/ML talent development and established a forensic analytics Center of Excellence.',
+        title: 'ESG Innovation',
+        text: 'Pioneered ESG analytics prototype for Fortune 50 Oil & Gas sector, driving $6M+ in new revenue; led DOJ/FCPA compliance monitoring for healthcare client.',
       },
     ],
   },
   {
-    dates: '2019 - 2021',
-    role: 'IoT & Digital Innovation Leader',
+    dates: '2020 - 2021',
+    role: 'Head of Digital Innovation & IoT',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
     icon: <Plane className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
-      'Led digital transformation initiatives focused on IoT implementation and cloud migration, driving operational efficiency improvements across airline infrastructure and customer-facing systems.',
-    skills: ['IoT Architecture', 'Cloud Migration', 'Digital Transformation'],
+      'Promoted to newly created role reporting directly to CIO. Built and led Innovation Team driving digital transformation leveraging IoT, AI, and Edge Computing. Managed $25M technology budget and cross-functional team of 20+.',
+    skills: ['IoT Architecture', 'Edge Computing', 'Digital Transformation', 'Budget Management'],
     achievements: [
       {
         title: 'Breakthrough ROI',
-        text: 'Pioneered IoT Fuel Savings pilot delivering 250% ROI in 6 months; scaled program to 20+ stations generating $20M+ annual savings.',
+        text: 'Pioneered IoT Fuel Savings initiative delivering 250% ROI in 6 months; scaled to 20 stations generating $20M+ annual savings.',
       },
       {
-        title: 'Cloud Transformation',
-        text: 'Migrated 10+ legacy applications to the cloud in 6 months, reducing annual technology spend by $3.2M.',
-      },
-      {
-        title: 'Infrastructure Modernization',
-        text: 'Implemented IoT capabilities across 3 Fuel Farms, 7 Baggage Handling Systems, and 8 De-Icing Stations.',
+        title: 'Comprehensive IoT Transformation',
+        text: 'Led comprehensive IoT transformation across 3 Fuel Farms, 7 Baggage Handling Systems, and 8 De-Icing Stations on AWS-based platform.',
       },
     ],
   },
   {
-    dates: '2019',
-    role: 'Data Enablement & Analytics COE Lead',
+    dates: '2019 - 2020',
+    role: 'Manager, Data Enablement & Analytics COE',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
     icon: <Database className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
-      'Established and led the enterprise-wide Center of Excellence for data analytics, driving adoption of modern BI platforms and building analytical capabilities across all business units.',
-    skills: ['Data Analytics', 'COE Leadership', 'Platform Architecture'],
+      "Built Southwest's first Data Enablement & Analytics COE, driving 40% adoption increase in Tableau/Alteryx across 2,500+ users.",
+    skills: ['Data Analytics', 'COE Leadership', 'Tableau', 'Alteryx'],
     achievements: [
       {
-        title: 'Cost Optimization',
-        text: 'Decommissioned hundreds of legacy dashboards across 5 platforms, improving data governance and operational efficiency.',
+        title: 'Platform Rationalization',
+        text: 'Replaced and decommissioned thousands of underutilized legacy dashboards across Business Objects, Quickbase, Cognos, and Crystal Reports platforms.',
       },
       {
         title: 'Community Building',
-        text: 'Built an evangelical Data Analyst Community scaling to 2,500+ users with 40% adoption increase.',
+        text: 'Created evangelical Data Analyst Community growing to several thousand users, driving cultural shift toward data-driven decision-making.',
       },
       {
         title: 'Operational Excellence',
-        text: 'Architected enterprise Tier 1 production data environment achieving 100% availability and disaster recovery for critical real-time operations, implementing secure data isolation and access controls.',
+        text: 'Architected Tier 1 Production Data Environment achieving 100% availability and disaster recovery for critical real-time operations, implementing secure data isolation and access controls.',
       },
     ],
   },
   {
     dates: '2017 - 2019',
-    role: 'VP, Global Digital and Cloud Transformation Leader',
+    role: 'Vice President, Global Infrastructure Transformation',
     company: 'Citigroup',
     location: 'Irving, TX',
     icon: <Cloud className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
-      'Spearheaded global cloud transformation initiatives and DevOps adoption across multiple business units, establishing enterprise-wide standards for cloud-native architecture and deployment practices.',
-    skills: ['Cloud Architecture', 'DevOps', 'Global Programs', 'CI/CD'],
+      'Led global infrastructure transformation across LATAM, NAM, EMEA, and APAC regions, matrixed across global CTOs while indirectly managing 500+ engineers worldwide.',
+    skills: ['Global Programs', 'DevOps', 'Cloud Architecture', 'CI/CD'],
     achievements: [
       {
         title: 'Global Platform',
-        text: 'Architected a global telemetry platform increasing environment stability to 98% across worldwide operations.',
+        text: 'Architected global telemetry platform and service improvement program eliminating weekly Sev1 outages, accelerating cloud adoption by 200%, achieving 98% uptime worldwide.',
       },
       {
-        title: 'DevOps Acceleration',
-        text: 'Evangelized DevOps transformation accelerating cloud enablement by 200% through CI/CD pipeline implementation.',
+        title: 'Marketing Engine',
+        text: 'Built event-based marketing engine leveraging Hadoop/Cloudera reaching 10M+ customers through data-driven targeted campaigns.',
       },
       {
-        title: 'Legacy Modernization',
-        text: 'Drove modernization across legacy infrastructure stacks, establishing world-class performance standards.',
+        title: 'DevOps Transformation',
+        text: 'Led organizational change management for DevOps transformation across 500+ engineers, establishing world-class CI/CD practices.',
       },
     ],
   },
   {
-    dates: '2016 - 2017',
-    role: 'Risk Analytics Leader, Auto Finance & Home Loans',
+    dates: '2015 - 2017',
+    role: 'Manager, Big Data & Analytics COE',
     company: 'Capital One',
-    location: 'Plano, TX',
-    icon: <Shield className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
-    description:
-      'Led risk analytics transformation for consumer lending portfolios, implementing advanced ML models and automated compliance systems to enhance risk assessment and regulatory reporting capabilities.',
-    skills: ['Risk Analytics', 'Compliance Tech', 'NLP/OCR'],
-    achievements: [
-      {
-        title: 'Team Building',
-        text: 'Built and led the first Risk & Analytics Reporting Team (10 data engineers and analysts) with a dedicated Tableau environment.',
-      },
-      {
-        title: 'Compliance Innovation',
-        text: 'Implemented automated compliance testing with advanced NLP and real-time OCR scanning for regulatory requirements.',
-      },
-      {
-        title: 'Risk Management',
-        text: 'Created automated controls to detect emerging high-risk blind spots in real time.',
-      },
-    ],
-  },
-  {
-    dates: '2016',
-    role: 'Enterprise Analytics Leader, Risk & Compliance',
-    company: 'Capital One',
-    location: 'Plano, TX',
-    icon: (
-      <Building2 className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />
-    ),
-    description:
-      'Drove enterprise-wide analytics strategy and governance, establishing data quality standards and building scalable analytics infrastructure to support risk management and regulatory compliance initiatives.',
-    skills: ['Enterprise Analytics', 'Data Governance', 'Tableau'],
-    achievements: [
-      {
-        title: 'Performance Optimization',
-        text: 'Achieved 200% team output increase with 10 Data Engineers/Analysts, delivering 15+ enterprise risk dashboards.',
-      },
-      {
-        title: 'Data Governance',
-        text: 'Established an enterprise gold standard for Data Quality, enhancing organizational capability by 80%.',
-      },
-      {
-        title: 'Cross-Functional Leadership',
-        text: 'Led large-scale Tableau dashboard efforts as an internal consultant across enterprise functions.',
-      },
-    ],
-  },
-  {
-    dates: '2015 - 2016',
-    role: 'Center of Excellence Leader, Tableau & Big Data',
-    company: 'Capital One',
-    location: 'Plano, TX',
+    location: 'Richmond / Plano',
     icon: <BarChart className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
-      "Pioneered enterprise-wide business intelligence transformation, establishing one of the world's largest Tableau communities and driving company-wide adoption of self-service analytics capabilities.",
+      "Established and led Capital One's Tableau & Big Data Center of Excellence—one of the most successful enterprise analytics transformations in financial services. Built Risk & Analytics organization for Auto Finance & Home Loans.",
     skills: [
       'Tableau COE',
       'Big Data',
-      'Community Building',
+      'Risk Analytics',
       'Executive Dashboards',
     ],
     achievements: [
       {
-        title: 'World Record Achievement',
-        text: 'Established an enterprise Tableau COE driving adoption to 30,000+ users—one of the largest evangelical Tableau communities worldwide.',
+        title: 'World-Class Analytics Community',
+        text: 'Built largest evangelical Tableau community globally, scaling adoption from zero to 30,000+ enterprise users.',
       },
       {
-        title: 'Executive Engagement',
-        text: "Appointed to develop top-of-house mobile dashboards for Capital One's CEO, Rich Fairbank.",
+        title: 'CEO Dashboard Architect',
+        text: 'Appointed to architect executive mobile dashboards for CEO Rich Fairbank, delivering top-of-house BI for strategic decision-making.',
       },
       {
-        title: 'Platform Transformation',
-        text: 'Led comprehensive big data platform transformation and legacy system modernization.',
+        title: '$8M Cost Savings',
+        text: 'Led enterprise-wide platform rationalization, decommissioning 2,000+ legacy dashboards and reports, delivering $8M annual savings.',
+      },
+      {
+        title: 'NLP/OCR Innovation',
+        text: 'Pioneered NLP/OCR automation scanning official regulatory changes from government sources, auto-generating compliance testing scripts and increasing control coverage by 80%.',
       },
     ],
   },
   {
-    dates: '2013 - 2014',
+    dates: '2013 - 2015',
     role: 'Senior Consultant, Lead Data Analyst',
     company: 'Booz Allen Hamilton',
     location: 'McLean, VA',
@@ -298,16 +256,16 @@ const ROLES: Role[] = [
       <TrendingUp className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />
     ),
     description:
-      "Established and led the firm's first dedicated data analytics practice, developing advanced analytics solutions for government and commercial clients across defense, healthcare, and financial services sectors.",
-    skills: ['Data Analytics', 'Fraud Detection', 'Business Intelligence'],
+      "Pioneered Tableau Enterprise deployments, establishing data analytics infrastructure for fraud detection, compliance, and C-suite reporting.",
+    skills: ['Data Analytics', 'Fraud Detection', 'Predictive Analytics', 'ML'],
     achievements: [
       {
-        title: 'Department Creation',
-        text: "Built and led the firm's first Tableau Enterprise Data & Analytics department dedicated to fraud and compliance.",
+        title: 'Fraud Detection',
+        text: 'Architected predictive analytics platform using ML, increasing fraud detection anomalies by 150%.',
       },
       {
-        title: 'Solution Development',
-        text: 'Led development of data analytics and BI solutions for government and commercial clients.',
+        title: 'Governance Framework',
+        text: 'Established steering committee to govern new system implementation, formalizing continuous reporting framework for compliance management.',
       },
     ],
   },
