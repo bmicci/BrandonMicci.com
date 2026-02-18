@@ -248,7 +248,7 @@ const ContactCard: React.FC = () => {
 
           {/* Name & Title */}
           <h1 className="name">Brandon Micci</h1>
-          <p className="subtitle">Head of AI Strategy, Payments</p>
+          <p className="subtitle">Head of AI Strategy & Business Transformation</p>
           <p className="company">JPMorgan Chase</p>
 
           {/* Tagline */}

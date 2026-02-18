@@ -60,7 +60,6 @@ const primaryProjects: Project[] = [
     mobileDescription: 'Real-time ML fraud detection at massive scale.',
     metrics: [
       { value: '$400M', label: 'Contract Value' },
-      { value: '99.9%', label: 'Accuracy Rate' },
     ],
     tags: ['ML', 'Fraud Detection', 'Real-time'],
   },
@@ -88,7 +87,7 @@ const secondaryProjects: Project[] = [
     mobileDescription: 'Connected thousands of devices for Fortune 50 insurers.',
     metrics: [
       { value: '1000+', label: 'Connected Devices' },
-      { value: '60%', label: 'Loss Reduction' },
+      { value: 'Significant', label: 'Loss Mitigation' },
     ],
     tags: ['Industry 4.0', 'Telematics', 'AI Analytics'],
   },
@@ -108,11 +107,10 @@ const secondaryProjects: Project[] = [
     title: 'Event-Based Marketing Engine',
     icon: Target,
     description:
-      'Real-time Hadoop-powered engine at a global financial institution reaching millions with personalized campaigns and 300% conversion improvement.',
-    mobileDescription: 'Reached 10M+ customers with 300% better conversion.',
+      'Real-time Hadoop-powered engine at a global financial institution reaching millions with data-driven targeted campaigns.',
+    mobileDescription: 'Reached 10M+ customers with data-driven targeted campaigns.',
     metrics: [
       { value: '10M+', label: 'Customers Reached' },
-      { value: '300%', label: 'Conversion Uplift' },
     ],
     tags: ['Hadoop', 'Real-time', 'Big Data'],
   },

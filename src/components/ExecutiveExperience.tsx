@@ -58,7 +58,7 @@ type Role = {
 const ROLES: Role[] = [
   {
     dates: '2024 - PRESENT',
-    role: 'Head of AI Strategy & Enablement',
+    role: 'Head of AI Strategy & Business Transformation',
     company: 'JPMorgan Chase',
     location: 'Dallas, TX',
     icon: <Brain className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
@@ -147,8 +147,8 @@ const ROLES: Role[] = [
     ],
   },
   {
-    dates: '2020 - 2021',
-    role: 'Head of Digital Innovation & IoT',
+    dates: '2019 - 2020',
+    role: 'Head of Digital Innovation & IoT (Promoted 2020)',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
     icon: <Plane className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
@@ -197,7 +197,7 @@ const ROLES: Role[] = [
     location: 'Irving, TX',
     icon: <Cloud className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
-      'Led global infrastructure transformation across LATAM, NAM, EMEA, and APAC regions, matrixed across global CTOs while indirectly managing 500+ engineers worldwide.',
+      'Led global infrastructure transformation and service quality programs across LATAM, NAM, EMEA, and APAC regions, matrixed across global CTOs while indirectly managing 500+ engineers worldwide. Drove platform modernization, cloud acceleration, and DevOps transformation across mission-critical banking systems.',
     skills: ['Global Programs', 'DevOps', 'Cloud Architecture', 'CI/CD'],
     achievements: [
       {

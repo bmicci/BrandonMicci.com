@@ -3,14 +3,14 @@
 export default function CaseStudyCards() {
   const caseStudies = [
     {
-      title: 'Scaled LLM to 27K+ Users',
+      title: 'Transformed 27K+ Employees via Enterprise AI',
       description:
         'Deployed multi-tenant guardrailed LLM platform; governance & ROI tracking built-in.',
-      outcome: 'Outcome: 30% cycle-time reduction',
+      outcome: 'Outcome: $22M+ annualized savings',
       icon: '🚀',
     },
     {
-      title: '$400M+ Revenue Generated',
+      title: '$400M+ Business Impact Delivered',
       description:
         'Led enterprise AI strategy that secured major Fortune 500 contracts and partnerships.',
       outcome: 'Outcome: 10-year strategic engagement',
@@ -27,7 +27,7 @@ export default function CaseStudyCards() {
       title: 'Enterprise AI Architecture',
       description:
         'Designed and deployed petabyte-scale analytics architectures across global infrastructure.',
-      outcome: 'Outcome: 20% workforce optimization',
+      outcome: 'Outcome: 38% Tier-1 automation, 55% handle time reduction',
       icon: '⚡',
     },
     {

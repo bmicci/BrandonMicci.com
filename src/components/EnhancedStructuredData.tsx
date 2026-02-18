@@ -7,7 +7,7 @@ import React from 'react';
 
 const SITE_URL = 'https://brandonmicci.com';
 const NAME = 'Brandon Micci';
-const JOB_TITLE = 'VP, Head of AI Products';
+const JOB_TITLE = 'Head of AI Strategy & Business Transformation';
 const DESCRIPTION =
   'Enterprise AI Transformation leader with 16+ years of experience delivering $400M+ in value and scaling LLM deployments to 27K+ users across Fortune 500 companies.';
 
@@ -164,7 +164,7 @@ function buildJsonLd() {
     award: [
       'Led $400M+ enterprise value creation via AI & data transformation',
       'Scaled LLM deployment to 27,000+ users at JPMorgan Chase',
-      'Achieved 30% operational efficiency improvement through AI implementation',
+      'Delivered $22M+ annualized savings through AI-led business transformation',
       'Launched $20M IoT-AI optimization program in aviation sector',
     ],
   };
@@ -245,7 +245,7 @@ function buildJsonLd() {
         name: 'What executive roles does Brandon Micci specialize in?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Brandon Micci is a Senior AI and Digital Transformation Executive specializing in Chief AI Officer, VP of AI Products, and Head of Enterprise AI Strategy roles. He leads large-scale AI initiatives across Fortune 500 organizations—transforming data, analytics, and technology strategy into measurable ROI.',
+          text: 'Brandon Micci is a Senior AI and Digital Transformation Executive specializing in Chief Data & AI Officer, Head of AI Strategy, and Enterprise AI Transformation roles. He leads large-scale AI initiatives across Fortune 500 organizations—transforming data, analytics, and technology strategy into measurable ROI.',
         },
       },
       {
@@ -253,7 +253,7 @@ function buildJsonLd() {
         name: 'What measurable outcomes has Brandon achieved through AI leadership?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Brandon has delivered $400M+ in measurable business value through AI and digital transformation. His initiatives include deploying an enterprise LLM assistant to 27,000 users at JPMorgan Chase, achieving 30% operational efficiency gains, and launching a $20M IoT-AI optimization program in aviation.',
+          text: 'Brandon has delivered $400M+ in measurable business value through AI and digital transformation. His initiatives include deploying an enterprise LLM assistant to 27,000 users at JPMorgan Chase, delivering $22M+ in annualized efficiency gains, and launching a $20M IoT-AI optimization program in aviation.',
         },
       },
       {
@@ -301,7 +301,7 @@ function buildJsonLd() {
         name: 'What technical skills does Brandon bring to AI leadership roles?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has built and led 50+ FTE technical organizations with $45M+ P&L responsibility.',
+          text: 'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has built and led 50+ FTE technical organizations with $30M+ P&L responsibility at Capgemini and $15M+ direct P&L ownership at JPMorgan Chase.',
         },
       },
       {
@@ -309,7 +309,7 @@ function buildJsonLd() {
         name: 'What size organizations and budgets has Brandon managed?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Brandon has led cross-functional teams of 50+ full-time employees with direct P&L oversight of $45M+ technology portfolios. His programs have generated $400M+ in measurable enterprise value across Fortune 500 organizations.',
+          text: 'Brandon has led cross-functional teams of 50+ full-time employees with direct P&L oversight of $30M+ technology portfolios. His programs have generated $400M+ in measurable enterprise value across Fortune 500 organizations.',
         },
       },
       {
@@ -317,7 +317,7 @@ function buildJsonLd() {
         name: 'Is Brandon open to relocation for executive roles?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Brandon is based in Dallas, Texas and open to hybrid, remote, or relocation opportunities for the right executive role. He has successfully led distributed global teams and is available for Chief AI Officer, VP AI Products, and Senior Director AI Strategy positions.',
+          text: 'Brandon is based in Dallas, Texas and open to hybrid, remote, or relocation opportunities for the right executive role. He has successfully led distributed global teams and is available for Chief Data & AI Officer, Head of AI Strategy, and VP AI & Digital Transformation positions.',
         },
       },
     ],
@@ -326,7 +326,7 @@ function buildJsonLd() {
   const jobPosting = {
     '@context': 'https://schema.org',
     '@type': 'JobPosting',
-    title: 'Chief AI Officer / VP, Head of AI Products (Executive Leadership)',
+    title: 'Head of AI Strategy & Business Transformation (Executive Leadership)',
     description:
       'Open to executive opportunities leading enterprise AI, data transformation, and generative AI strategy for Fortune 500 organizations.',
     datePosted: '2024-09-01',
@@ -353,7 +353,7 @@ function buildJsonLd() {
   const roleExperience = {
     '@context': 'https://schema.org',
     '@type': 'Occupation',
-    name: 'VP, Head of AI Products',
+    name: 'Head of AI Strategy & Business Transformation',
     description:
       'Leads enterprise AI transformation initiatives across Fortune 500 organizations — delivering measurable ROI through applied Generative AI, data modernization, and large language model deployment.',
     occupationLocation: {

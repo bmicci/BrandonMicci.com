@@ -950,7 +950,7 @@ const HeroSection = () => {
                 {/* Value Delivered */}
                 <div className="kpi-box">
                   <span className="sr-only">
-                    $400M+ Enterprise Revenue Created
+                    $400M+ Enterprise Business Impact
                   </span>
                   <span className="stat-number">
                     <AnimatedCounter
@@ -959,16 +959,16 @@ const HeroSection = () => {
                       format={(n) => `$${n}`}
                     />
                   </span>
-                  <span className="stat-label">Enterprise Revenue Created</span>
+                  <span className="stat-label">Enterprise Business Impact</span>
                 </div>
 
                 {/* AI Users */}
                 <div className="kpi-box">
-                  <span className="sr-only">27K+ AI Users Enabled</span>
+                  <span className="sr-only">27K+ Employees Transformed</span>
                   <span className="stat-number">
                     <AnimatedCounter value={METRICS.aiUsersK} suffix="K+" />
                   </span>
-                  <span className="stat-label">AI Users Enabled</span>
+                  <span className="stat-label">Employees Transformed</span>
                 </div>
 
                 {/* Typical ROI */}
@@ -1214,7 +1214,7 @@ const HeroSection = () => {
         >
           {/* Value Delivered */}
           <div className="kpi-box">
-            <span className="sr-only">$400M+ Enterprise Revenue Created</span>
+            <span className="sr-only">$400M+ Enterprise Business Impact</span>
             <span className="stat-number">
               <AnimatedCounter
                 value={METRICS.valueDeliveredM}
@@ -1222,16 +1222,16 @@ const HeroSection = () => {
                 format={(n) => `$${n}`}
               />
             </span>
-            <span className="stat-label">Enterprise Revenue Created</span>
+            <span className="stat-label">Enterprise Business Impact</span>
           </div>
 
           {/* AI Users */}
           <div className="kpi-box">
-            <span className="sr-only">27K+ AI Users Enabled</span>
+            <span className="sr-only">27K+ Employees Transformed</span>
             <span className="stat-number">
               <AnimatedCounter value={METRICS.aiUsersK} suffix="K+" />
             </span>
-            <span className="stat-label">AI Users Enabled</span>
+            <span className="stat-label">Employees Transformed</span>
           </div>
 
           {/* Typical ROI */}

@@ -11,11 +11,11 @@ interface FAQItem {
 const FAQ_DATA: FAQItem[] = [
   {
     question: 'What executive roles does Brandon Micci specialize in?',
-    answer: 'Brandon Micci is a Senior AI and Digital Transformation Executive specializing in Chief AI Officer, VP of AI Products, and Head of Enterprise AI Strategy roles. He leads large-scale AI initiatives across Fortune 500 organizations—transforming data, analytics, and technology strategy into measurable ROI.',
+    answer: 'Brandon Micci is a Senior AI and Digital Transformation Executive specializing in Chief Data & AI Officer, Head of AI Strategy, and Enterprise AI Transformation roles. He leads large-scale AI initiatives across Fortune 500 organizations—transforming data, analytics, and technology strategy into measurable ROI.',
   },
   {
     question: 'What measurable outcomes has Brandon achieved through AI leadership?',
-    answer: 'Brandon has delivered $400M+ in measurable business value through AI and digital transformation. His initiatives include deploying an enterprise LLM assistant to 27,000 users at JPMorgan Chase, achieving 30% operational efficiency gains, and launching a $20M IoT-AI optimization program in aviation.',
+    answer: 'Brandon has delivered $400M+ in measurable business value through AI and digital transformation. His initiatives include deploying an enterprise LLM assistant to 27,000 users at JPMorgan Chase, delivering $22M+ in annualized efficiency gains, and launching a $20M IoT-AI optimization program in aviation.',
   },
   {
     question: 'In what industries has Brandon led transformation programs?',
@@ -39,15 +39,15 @@ const FAQ_DATA: FAQItem[] = [
   },
   {
     question: 'What technical skills does Brandon bring to AI leadership roles?',
-    answer: 'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has built and led 50+ FTE technical organizations with $30M+ P&L responsibility, including $15M+ direct P&L ownership at JPMorgan Chase.',
+    answer: 'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has built and led 50+ FTE technical organizations with $30M+ P&L responsibility at Capgemini and $15M+ direct P&L ownership at JPMorgan Chase.',
   },
   {
     question: 'What size organizations and budgets has Brandon managed?',
-    answer: 'Brandon has led cross-functional teams of 50+ full-time employees with direct P&L oversight of $45M+ technology portfolios. His programs have generated $400M+ in measurable enterprise value across Fortune 500 organizations.',
+    answer: 'Brandon has led cross-functional teams of 50+ full-time employees with direct P&L oversight of $30M+ technology portfolios. His programs have generated $400M+ in measurable enterprise value across Fortune 500 organizations.',
   },
   {
     question: 'Is Brandon open to relocation for executive roles?',
-    answer: 'Brandon is based in Dallas, Texas and open to hybrid, remote, or relocation opportunities for the right executive role. He has successfully led distributed global teams and is available for Chief AI Officer, VP AI Products, and Senior Director AI Strategy positions.',
+    answer: 'Brandon is based in Dallas, Texas and open to hybrid, remote, or relocation opportunities for the right executive role. He has successfully led distributed global teams and is available for Chief Data & AI Officer, Head of AI Strategy, and VP AI & Digital Transformation positions.',
   },
 ];
 

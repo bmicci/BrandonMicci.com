@@ -43,7 +43,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Brandon Micci | Chief AI Officer & VP AI Products | Fortune 500 AI Executive',
+    default: 'Brandon Micci | Head of AI Strategy & Business Transformation | Fortune 500 AI Executive',
     template: '%s | Brandon Micci',
   },
   description:

@@ -85,13 +85,12 @@ const caseStudies: CaseStudy[] = [
       'Designed and implemented a real-time fraud analytics platform leveraging advanced machine learning algorithms. Built scalable infrastructure to handle massive transaction volumes with sub-second response times.',
     results: [
       'Secured $400M contract value based on platform capabilities',
-      'Achieved 99.9% accuracy rate in fraud detection',
+      'Designed real-time AI-powered fraud analytics engine',
       'Processing millions of transactions in real-time',
       'Reduced false positives by 60% compared to legacy systems',
     ],
     metrics: [
       { value: '$400M', label: 'Contract Value' },
-      { value: '99.9%', label: 'Accuracy Rate' },
     ],
     technologies: ['ML', 'Fraud Detection', 'Real-time Processing', 'Python'],
   },
@@ -129,13 +128,13 @@ const caseStudies: CaseStudy[] = [
       'Built a comprehensive Industry 4.0 platform integrating thousands of IoT devices across multiple data streams. Unified telematics, smart building sensors, and wearable data into a single AI-powered analytics platform.',
     results: [
       'Integrated thousands of IoT devices into unified platform',
-      'Achieved 60% reduction in preventable losses',
+      'Delivered significant improvements in loss mitigation through real-time predictive analytics',
       'Enabled real-time risk monitoring and alerting',
       'Created new data-driven insurance product offerings',
     ],
     metrics: [
       { value: '1000+', label: 'Connected Devices' },
-      { value: '60%', label: 'Loss Reduction' },
+      { value: 'Significant', label: 'Loss Mitigation' },
     ],
     technologies: ['Industry 4.0', 'Telematics', 'AI Analytics', 'IoT'],
   },
@@ -173,13 +172,12 @@ const caseStudies: CaseStudy[] = [
       'Built a real-time Hadoop-powered marketing engine capable of processing millions of customer interactions and delivering personalized campaigns based on behavioral triggers and events.',
     results: [
       'Reached 10M+ customers with personalized campaigns',
-      'Achieved 300% improvement in conversion rates',
+      'Delivered data-driven targeted campaigns at scale',
       'Enabled real-time event-based marketing triggers',
       'Reduced campaign deployment time from weeks to hours',
     ],
     metrics: [
       { value: '10M+', label: 'Customers Reached' },
-      { value: '300%', label: 'Conversion Uplift' },
     ],
     technologies: ['Hadoop', 'Real-time', 'Big Data', 'Marketing Tech'],
   },
