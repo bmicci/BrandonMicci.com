@@ -63,29 +63,25 @@ const ROLES: Role[] = [
     location: 'Dallas, TX',
     icon: <Brain className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
-      'Lead AI strategy, automation, and LLM transformation across Payments Operations. Own end-to-end AI product delivery, $15M+ P&L, governance, and enterprise scaling for call centers, client servicing, and knowledge systems.',
+      'Lead AI strategy and business transformation across JPMorgan Payments Operations, spanning Client Service, Onboarding, Merchant Services, and call center operations. Own end-to-end AI product delivery, $15M+ P&L, governance, and enterprise scaling.',
     skills: [
       'AI Strategy',
-      'LLM Deployment',
-      'P&L Management',
-      'AI Governance',
+      'LLM / RAG Deployment',
+      'Responsible AI Governance',
+      'P&L Ownership',
     ],
     achievements: [
       {
         title: '$22M+ Annualized Savings',
-        text: 'Delivered $22M+ annualized savings through LLM-powered workflow automation, intelligent routing, and accelerated knowledge retrieval.',
+        text: 'Delivered $22M+ in annualized savings through LLM-powered workflow automation, intelligent routing, and accelerated knowledge retrieval across Payments Operations.',
       },
       {
-        title: 'Industry-Leading AI Deployment',
-        text: 'Architected multi-repository RAG system spanning 12+ knowledge sources, scaling enterprise LLM Assistant to 27,000+ employees—one of the largest LLM deployments in Commercial Payments.',
+        title: 'Enterprise AI Platform at Scale',
+        text: 'Architected enterprise knowledge graph and LLM/RAG platform scaling to 27,000+ employees—the largest AI deployment in Payments.',
       },
       {
-        title: 'Operational Excellence',
-        text: 'Automated 38% of Tier-1 inquiries and reduced handle times by 55%, improving SLA performance and operational throughput.',
-      },
-      {
-        title: 'AI Governance',
-        text: 'Established AI governance framework and model risk management standards, ensuring regulatory compliance across 30+ AI/ML use cases.',
+        title: 'Responsible AI Governance',
+        text: 'Established AI governance framework and model risk management standards ensuring regulatory compliance across 30+ production AI/ML models.',
       },
     ],
   },
@@ -96,24 +92,20 @@ const ROLES: Role[] = [
     location: 'Dallas, TX',
     icon: <Rocket className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
-      'Directed AI and emerging technology commercialization across Intelligent Industry portfolio. Built and scaled new practice focused on digital transformation and real-time AI analytics for Fortune 50 clients.',
-    skills: ['P&L Management', 'AI/IoT Solutions', 'GTM Strategy', 'Team Leadership'],
+      'Directed AI and emerging technology commercialization across the Intelligent Industry portfolio. Built and scaled a new practice focused on digital transformation and real-time AI analytics for Fortune 50 clients.',
+    skills: ['P&L Ownership ($30M)', 'AI/IoT Strategy', 'Fortune 50 Client Delivery', 'Practice Leadership'],
     achievements: [
       {
-        title: '$30M P&L Ownership',
+        title: '$30M P&L Built from Zero',
         text: 'Owned $30M P&L for AI/IoT practice, leading 30+ architects, data scientists, and product leaders across pricing, margin optimization, and revenue targets.',
       },
       {
-        title: '$9.8M Revenue Growth',
-        text: 'Drove $9.8M in new revenue through GTM execution and solution commercialization, achieving 34% market penetration in new insurance technology vertical.',
+        title: 'Fortune 50 AI Transformation',
+        text: 'Architected AI/IoT solutions for Fortune 50 clients, delivering telematics platforms and real-time analytics driving measurable loss mitigation and operational efficiency.',
       },
       {
-        title: 'Fortune 50 Impact',
-        text: 'Architected telematics and AI-driven risk platforms for Fortune 50 insurers, delivering significant improvements in loss mitigation through real-time predictive analytics.',
-      },
-      {
-        title: 'Industry 4.0 Platform',
-        text: 'Launched Industry 4.0 IoT Platform connecting thousands of devices across telematics, smart buildings, wearables, and industrial equipment with unified AI analytics.',
+        title: 'Industry 4.0 Platform Launch',
+        text: 'Launched Industry 4.0 IoT Platform integrating telematics, smart building monitoring, and wearables into a unified ecosystem for enterprise clients.',
       },
     ],
   },
@@ -153,21 +145,25 @@ const ROLES: Role[] = [
     location: 'Dallas, TX',
     icon: <Plane className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
-      'Promoted to newly created role reporting directly to CIO. Built and led Innovation Team driving digital transformation leveraging IoT, AI, and Edge Computing. Managed $25M technology budget and cross-functional team of 20+.',
-    skills: ['IoT Architecture', 'Edge Computing', 'Digital Transformation', 'Budget Management'],
+      'Promoted to newly created role reporting directly to CIO. Built and led Digital Innovation & IoT organization driving digital transformation across critical airline operations. Managed $25M annual technology budget and cross-functional team of 20+.',
+    skills: ['IoT Strategy', 'Digital Innovation', '$25M Technology Budget', 'CIO Reporting'],
     achievements: [
       {
-        title: 'Breakthrough ROI',
-        text: 'Pioneered IoT Fuel Savings initiative delivering 250% ROI in 6 months; scaled to 20 stations generating $20M+ annual savings.',
+        title: '250% ROI in 6 Months',
+        text: 'Pioneered IoT Fuel Savings initiative delivering 250% ROI in 6 months; scaled to 20 stations generating $20M+ in annual savings.',
       },
       {
-        title: 'Comprehensive IoT Transformation',
-        text: 'Led comprehensive IoT transformation across 3 Fuel Farms, 7 Baggage Handling Systems, and 8 De-Icing Stations on AWS-based platform.',
+        title: 'Multi-Year Technology Roadmap',
+        text: 'Developed multi-year technology roadmap for IoT and digital innovation, aligning emerging technologies with operational needs and CIO priorities.',
+      },
+      {
+        title: 'Infrastructure Modernization',
+        text: 'Implemented IoT capabilities across Fuel Farms, Baggage Handling Systems, and De-Icing Stations — transforming real-time operational visibility.',
       },
     ],
   },
   {
-    dates: '2019 - 2020',
+    dates: '2019',
     role: 'Manager, Data Enablement & Analytics COE',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
@@ -197,20 +193,20 @@ const ROLES: Role[] = [
     location: 'Irving, TX',
     icon: <Cloud className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
-      'Led global infrastructure transformation and service quality programs across LATAM, NAM, EMEA, and APAC regions, matrixed across global CTOs while indirectly managing 500+ engineers worldwide. Drove platform modernization, cloud acceleration, and DevOps transformation across mission-critical banking systems.',
-    skills: ['Global Programs', 'DevOps', 'Cloud Architecture', 'CI/CD'],
+      'Led global infrastructure transformation and service quality programs across LATAM, NAM, EMEA, and APAC, matrixed across global CTOs while indirectly managing 500+ engineers worldwide. Drove platform modernization, cloud acceleration, and DevOps transformation across mission-critical banking systems.',
+    skills: ['Global Infrastructure', 'DevOps Transformation', 'Cloud Acceleration', 'CI/CD'],
     achievements: [
       {
-        title: 'Global Platform',
-        text: 'Architected global telemetry platform and service improvement program eliminating weekly Sev1 outages, accelerating cloud adoption by 200%, achieving 98% uptime worldwide.',
+        title: '98% Uptime Worldwide',
+        text: 'Architected global telemetry platform and service improvement program eliminating weekly Sev1 outages, achieving 98% uptime across worldwide operations.',
       },
       {
-        title: 'Marketing Engine',
+        title: '200% Cloud Acceleration',
+        text: 'Drove DevOps transformation accelerating cloud adoption by 200% through CI/CD pipeline implementation and enterprise-standard engineering practices across 500+ engineers.',
+      },
+      {
+        title: 'Data-Driven Marketing at Scale',
         text: 'Built event-based marketing engine leveraging Hadoop/Cloudera reaching 10M+ customers through data-driven targeted campaigns.',
-      },
-      {
-        title: 'DevOps Transformation',
-        text: 'Led organizational change management for DevOps transformation across 500+ engineers, establishing world-class CI/CD practices.',
       },
     ],
   },

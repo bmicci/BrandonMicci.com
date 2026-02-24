@@ -326,7 +326,7 @@ function buildJsonLd() {
   const jobPosting = {
     '@context': 'https://schema.org',
     '@type': 'JobPosting',
-    title: 'Head of AI Strategy & Business Transformation (Executive Leadership)',
+    title: 'Chief AI Officer / Head of AI Strategy & Business Transformation (Executive Leadership)',
     description:
       'Open to executive opportunities leading enterprise AI, data transformation, and generative AI strategy for Fortune 500 organizations.',
     datePosted: '2024-09-01',
