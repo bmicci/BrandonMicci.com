@@ -88,14 +88,7 @@ const Navigation = () => {
           top: 0;
         }
 
-        /* Reset for Wix compatibility */
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-
-        .wix-header {
+        .site-header {
           font-family:
             'Inter',
             -apple-system,
@@ -116,7 +109,7 @@ const Navigation = () => {
           transition: all 0.3s ease;
         }
 
-        .wix-header.scrolled {
+        .site-header.scrolled {
           background: rgba(10, 10, 10, 0.95) !important;
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
@@ -438,7 +431,7 @@ const Navigation = () => {
         Skip to content
       </a>
 
-      <header className={`wix-header ${isScrolled ? 'scrolled' : ''}`}>
+      <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
         <nav className="nav-container" aria-label="Primary">
           <div className="logo" onClick={() => handleLinkClick('home')}>
             <div className="logo-bm">

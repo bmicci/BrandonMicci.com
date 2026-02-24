@@ -95,7 +95,7 @@ export default function Home() {
         <ProfessionalImpact />
       </section>
 
-      {/* Professional Impact Section */}
+      {/* Testimonials Section */}
       <section
         id="professional-impact"
         className="relative scroll-mt-[var(--header-h,4.5rem)]"
