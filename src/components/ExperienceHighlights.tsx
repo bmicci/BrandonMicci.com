@@ -91,7 +91,7 @@ const ExperienceHighlights = () => {
             </span>
           </h2>
           <p className="text-lg text-slate-200 max-w-3xl mx-auto font-medium">
-            16+ years leading AI strategy, digital transformation, and data
+            17+ years leading AI strategy, digital transformation, and data
             innovation across Fortune 500 organizations
           </p>
         </div>

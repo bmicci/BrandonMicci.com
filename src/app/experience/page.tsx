@@ -5,7 +5,7 @@ import ExecutiveExperience from '@/components/ExecutiveExperience';
 export const metadata: Metadata = {
   title: 'Executive Experience | AI Leadership & Digital Transformation',
   description:
-    'Explore Brandon Micci\'s 16+ year executive career spanning Fortune 500 banks, Big Four consulting, and leading enterprises. Head of AI Strategy & Business Transformation at JPMorgan Chase, delivering $400M+ enterprise value through AI strategy and digital transformation.',
+    'Explore Brandon Micci\'s 17+ year executive career spanning Fortune 500 banks, Big Four consulting, and leading enterprises. Head of AI Strategy & Business Transformation at JPMorgan Chase, delivering $400M+ enterprise value through AI strategy and digital transformation.',
   keywords: [
     'AI executive experience',
     'enterprise AI leadership',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Executive Experience | Brandon Micci',
     description:
-      '16+ years leading AI strategy and digital transformation across Fortune 500 organizations. $400M+ enterprise value delivered.',
+      '17+ years leading AI strategy and digital transformation across Fortune 500 organizations. $400M+ enterprise value delivered.',
     url: 'https://brandonmicci.com/experience',
     type: 'profile',
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Executive Experience | Brandon Micci',
     description:
-      '16+ years leading AI strategy and digital transformation across Fortune 500 organizations.',
+      '17+ years leading AI strategy and digital transformation across Fortune 500 organizations.',
   },
   alternates: {
     canonical: '/experience',

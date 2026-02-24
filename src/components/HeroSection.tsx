@@ -902,7 +902,7 @@ const HeroSection = () => {
                   <span className="gradient">digital innovation</span>
                 </Link>
                 , and measurable <span className="gradient">ROI</span>—with{' '}
-                <span className="gradient">16+ years</span> delivering{' '}
+                <span className="gradient">17+ years</span> delivering{' '}
                 <span className="gradient">$400M+ value</span> across{' '}
                 <span className="gradient">Fortune 500 companies</span> and at{' '}
                 <span className="gradient">Big Four</span> firms.
@@ -1038,7 +1038,7 @@ const HeroSection = () => {
                   className="gradient"
                   style={{ WebkitTextFillColor: 'transparent' }}
                 >
-                  16+ years
+                  17+ years
                 </span>{' '}
                 delivering{' '}
                 <span

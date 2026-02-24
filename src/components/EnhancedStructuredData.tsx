@@ -9,7 +9,7 @@ const SITE_URL = 'https://brandonmicci.com';
 const NAME = 'Brandon Micci';
 const JOB_TITLE = 'Head of AI Strategy & Business Transformation';
 const DESCRIPTION =
-  'Enterprise AI Transformation leader with 16+ years of experience delivering $400M+ in value and scaling LLM deployments to 27K+ users across Fortune 500 companies.';
+  'Enterprise AI Transformation leader with 17+ years of experience delivering $400M+ in value and scaling LLM deployments to 27K+ users across Fortune 500 companies.';
 
 const LOGO = `${SITE_URL}/android-chrome-192x192.png`; // ok to keep; you just generated these
 const IMAGE = `${SITE_URL}/headshot.webp`;
