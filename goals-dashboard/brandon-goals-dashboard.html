@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brandon's Master Goals Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg-primary:#08080f;--bg-surface:#0f0f1a;--bg-elevated:#161624;
+--border:#1e1e2e;--border-light:#2a2a3e;
+--gold:#c9a84c;--gold-light:#e8c97a;--gold-dim:#8a6f2e;
+--text-primary:#f0f0f5;--text-secondary:#8a8aa8;--text-dim:#4a4a6a;
+--health:#C1121F;--career:#0077B6;--relationships:#E63946;
+--family:#F4A261;--finance:#2D6A4F;--home:#E76F51;
+--fun:#7209B7;--memberships:#264653;--personal-dev:#2A9D8F;
+--spiritual:#4361EE;--vision:#C9A84C;
+--sidebar-w:240px;--topbar-h:64px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);min-height:100vh;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg-primary)}
+::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--gold)}
+
+/* TOP BAR */
+.topbar{position:fixed;top:0;left:0;right:0;height:var(--topbar-h);background:rgba(8,8,15,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--gold-dim);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.topbar-left{display:flex;align-items:center;gap:14px}
+.monogram{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-light));display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:800;font-size:16px;color:var(--bg-primary);flex-shrink:0}
+.topbar-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--text-primary);white-space:nowrap}
+.topbar-right{display:flex;align-items:center;gap:12px}
+.view-toggle{display:flex;background:var(--bg-surface);border-radius:8px;overflow:hidden;border:1px solid var(--border)}
+.view-btn{padding:6px 16px;font-size:12px;font-weight:500;background:transparent;color:var(--text-secondary);border:none;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
+.view-btn.active{background:var(--gold);color:var(--bg-primary)}
+.filter-pills{display:flex;gap:6px;margin-left:8px}
+.pill{padding:5px 14px;font-size:11px;font-weight:500;border-radius:20px;border:1px solid var(--border-light);background:transparent;color:var(--text-secondary);cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;white-space:nowrap}
+.pill.active{background:var(--gold);color:var(--bg-primary);border-color:var(--gold)}
+.pill:hover:not(.active){border-color:var(--gold-dim);color:var(--text-primary)}
+.search-wrap{position:relative;display:flex;align-items:center}
+.search-toggle{background:none;border:none;color:var(--text-secondary);cursor:pointer;padding:4px;display:flex;align-items:center;transition:color .2s}
+.search-toggle:hover{color:var(--gold)}
+.search-input{width:0;opacity:0;border:none;background:var(--bg-surface);color:var(--text-primary);font-family:'Inter',sans-serif;font-size:13px;padding:6px 12px;border-radius:6px;transition:all .3s;border:1px solid transparent}
+.search-input.open{width:200px;opacity:1;border-color:var(--border-light);margin-right:6px}
+.search-input:focus{outline:none;border-color:var(--gold-dim)}
+
+/* SIDEBAR */
+.sidebar{position:fixed;top:var(--topbar-h);left:0;bottom:0;width:var(--sidebar-w);background:var(--bg-surface);border-right:1px solid var(--border);overflow-y:auto;z-index:50;display:flex;flex-direction:column;padding-top:8px}
+.sidebar-nav{flex:1;padding:8px 0}
+.nav-item{display:flex;align-items:center;gap:10px;padding:10px 16px;cursor:pointer;transition:all .2s;border-left:3px solid transparent;position:relative}
+.nav-item:hover{background:rgba(201,168,76,0.05)}
+.nav-item.active{background:rgba(201,168,76,0.08);border-left-color:var(--gold)}
+.nav-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.nav-label{font-size:13px;color:var(--text-secondary);flex:1;line-height:1.3}
+.nav-item.active .nav-label{color:var(--text-primary);font-weight:500}
+.nav-badge{font-size:10px;color:var(--text-dim);background:var(--bg-elevated);padding:2px 6px;border-radius:10px;white-space:nowrap}
+.nav-status{font-size:9px;padding:2px 6px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.nav-status.in-progress{background:rgba(42,157,143,0.2);color:#2A9D8F}
+.nav-status.phase2{background:rgba(201,168,76,0.2);color:var(--gold)}
+.sidebar-bottom{padding:16px;border-top:1px solid var(--border)}
+.overall-progress-label{font-size:11px;color:var(--text-secondary);margin-bottom:8px;display:flex;justify-content:space-between}
+.progress-bar-wrap{height:6px;background:var(--bg-primary);border-radius:3px;overflow:hidden}
+.progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold-dim),var(--gold));border-radius:3px;transition:width .4s ease}
+.affirmations-btn{margin-top:12px;width:100%;padding:8px;background:rgba(201,168,76,0.08);border:1px solid var(--gold-dim);border-radius:8px;color:var(--gold);font-size:11px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center;gap:6px}
+.affirmations-btn:hover{background:rgba(201,168,76,0.15);border-color:var(--gold)}
+
+/* MAIN */
+.main{margin-left:var(--sidebar-w);margin-top:var(--topbar-h);padding:24px 32px 60px;min-height:calc(100vh - var(--topbar-h))}
+
+/* QUOTE */
+.quote-banner{background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(201,168,76,0.03));border:1px solid var(--gold-dim);border-radius:12px;padding:20px 28px;margin-bottom:28px;position:relative;overflow:hidden}
+.quote-banner::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
+.quote-text{font-family:'Playfair Display',serif;font-size:15px;font-style:italic;color:var(--gold-light);line-height:1.6}
+.quote-attr{font-size:11px;color:var(--gold-dim);margin-top:8px}
+
+/* STATS BAR */
+.stats-bar{display:flex;gap:24px;margin-bottom:24px;padding:12px 20px;background:var(--bg-surface);border-radius:10px;border:1px solid var(--border)}
+.stat-item{display:flex;align-items:center;gap:8px}
+.stat-label{font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px}
+.stat-value{font-size:18px;font-weight:700;color:var(--text-primary);font-variant-numeric:tabular-nums}
+.stat-value.gold{color:var(--gold)}
+
+/* SECTION */
+.section-view{display:none}
+.section-view.active{display:block}
+.section-header{margin-bottom:20px}
+.section-title{font-size:28px;font-weight:700;margin-bottom:6px}
+.section-rule{height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin-top:8px;border-radius:1px}
+.in-progress-banner{display:inline-flex;align-items:center;gap:8px;background:rgba(42,157,143,0.12);border:1px dashed rgba(42,157,143,0.4);padding:10px 18px;border-radius:8px;margin-bottom:20px;font-size:13px;color:#2A9D8F}
+
+/* TIMEFRAME BLOCK */
+.timeframe-block{margin-bottom:28px}
+.timeframe-header{display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:12px 16px;background:var(--bg-surface);border-radius:10px;border:1px solid var(--border);margin-bottom:12px;transition:all .2s;user-select:none}
+.timeframe-header:hover{border-color:var(--border-light)}
+.timeframe-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;display:flex;align-items:center;gap:10px}
+.timeframe-progress{display:flex;align-items:center;gap:10px}
+.timeframe-count{font-size:12px;color:var(--text-secondary)}
+.timeframe-bar{width:120px;height:4px;background:var(--bg-primary);border-radius:2px;overflow:hidden}
+.timeframe-bar-fill{height:100%;border-radius:2px;transition:width .4s ease}
+.chevron{transition:transform .3s;color:var(--text-dim)}
+.timeframe-header.collapsed .chevron{transform:rotate(-90deg)}
+.timeframe-content{padding:0 4px;overflow:hidden;transition:max-height .3s ease}
+.timeframe-content.collapsed{max-height:0!important;overflow:hidden}
+
+/* GOAL ITEMS */
+.category-header{font-size:13px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.5px;margin:16px 0 8px;padding-left:4px}
+.category-header:first-child{margin-top:4px}
+.goal-item{display:flex;align-items:flex-start;gap:10px;padding:8px 12px;border-radius:8px;transition:all .2s;cursor:pointer;position:relative}
+.goal-item:hover{background:rgba(201,168,76,0.04)}
+.goal-checkbox{width:18px;height:18px;border:2px solid var(--border-light);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .2s;margin-top:1px;cursor:pointer}
+.goal-checkbox.checked{background:var(--gold);border-color:var(--gold)}
+.goal-checkbox.checked::after{content:'';display:block;width:5px;height:9px;border:solid var(--bg-primary);border-width:0 2px 2px 0;transform:rotate(45deg);margin-top:-2px}
+.goal-text{font-size:14px;color:var(--text-primary);line-height:1.5;transition:all .2s}
+.goal-item.completed .goal-text{text-decoration:line-through;color:var(--text-dim)}
+.goal-item.search-dim{opacity:0.15}
+.goal-item.search-highlight{background:rgba(201,168,76,0.08)}
+
+/* PLACEHOLDER CARD */
+.placeholder-card{border:2px dashed var(--gold-dim);border-radius:12px;padding:24px;text-align:center;color:var(--gold-dim);font-size:14px;margin:8px 0 16px;background:rgba(201,168,76,0.03)}
+
+/* CONFIRMED GOALS */
+.confirmed-goals{background:var(--bg-surface);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-bottom:20px}
+.confirmed-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--gold);margin-bottom:10px}
+
+/* VISION BOARD */
+.vision-placeholder{position:relative;border-radius:16px;padding:60px 40px;text-align:center;background:var(--bg-surface);overflow:hidden;border:2px solid transparent;background-clip:padding-box}
+.vision-placeholder::before{content:'';position:absolute;inset:-2px;border-radius:18px;padding:2px;background:linear-gradient(135deg,var(--gold),var(--gold-dim),var(--gold-light),var(--gold-dim),var(--gold));background-size:300% 300%;animation:gradientBorder 4s ease infinite;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+@keyframes gradientBorder{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.vision-icon{font-size:48px;margin-bottom:16px;color:var(--gold)}
+.vision-headline{font-family:'Playfair Display',serif;font-size:32px;color:var(--gold-light);margin-bottom:8px}
+.vision-sub{font-size:14px;color:var(--text-secondary);margin-bottom:16px}
+.vision-body{font-size:13px;color:var(--text-dim);max-width:500px;margin:0 auto 20px;line-height:1.6}
+.coming-soon-badge{display:inline-block;padding:6px 20px;border:1px solid var(--gold);border-radius:20px;color:var(--gold);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+
+/* TIMELINE VIEW */
+.timeline-view{display:none}
+.timeline-view.active{display:block}
+.timeline-container{overflow-x:auto;padding-bottom:20px}
+.timeline-grid{display:grid;grid-template-columns:180px repeat(4,1fr);min-width:900px;gap:1px;background:var(--border)}
+.tl-header{background:var(--bg-elevated);padding:12px 16px;font-family:'Playfair Display',serif;font-size:14px;font-weight:600;color:var(--text-primary);position:sticky;top:0;z-index:5}
+.tl-header.now{border-bottom:3px solid var(--gold)}
+.tl-row-label{background:var(--bg-surface);padding:10px 12px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:8px;border-right:1px solid var(--border)}
+.tl-cell{background:var(--bg-primary);padding:8px;min-height:60px}
+.tl-chip{font-size:11px;padding:4px 8px;border-radius:6px;margin:2px 0;line-height:1.3;cursor:pointer;transition:all .2s;border-left:3px solid}
+.tl-chip:hover{transform:translateX(2px)}
+.tl-chip.completed{opacity:0.4;text-decoration:line-through}
+
+/* AFFIRMATIONS MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px);z-index:200;display:none;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:var(--bg-elevated);border:1px solid var(--gold-dim);border-radius:16px;padding:32px;max-width:520px;width:90%;max-height:80vh;overflow-y:auto}
+.modal-title{font-family:'Playfair Display',serif;font-size:22px;color:var(--gold-light);margin-bottom:4px}
+.modal-subtitle{font-size:12px;color:var(--text-dim);margin-bottom:20px}
+.affirmation{padding:12px 16px;border-left:3px solid var(--gold-dim);margin-bottom:10px;font-size:14px;color:var(--text-primary);line-height:1.5;background:rgba(201,168,76,0.03);border-radius:0 8px 8px 0;transition:all .2s}
+.affirmation:hover{border-left-color:var(--gold);background:rgba(201,168,76,0.06)}
+.modal-close{margin-top:16px;width:100%;padding:10px;background:var(--gold);color:var(--bg-primary);border:none;border-radius:8px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;font-size:13px;transition:background .2s}
+.modal-close:hover{background:var(--gold-light)}
+
+/* Responsive */
+@media(max-width:900px){
+  .sidebar{display:none}
+  .main{margin-left:0}
+  .filter-pills{display:none}
+  .topbar-title{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="monogram">BM</div>
+    <div class="topbar-title">Brandon's Master Goals</div>
+  </div>
+  <div class="topbar-right">
+    <div class="search-wrap">
+      <input type="text" class="search-input" id="searchInput" placeholder="Search goals...">
+      <button class="search-toggle" id="searchToggle" aria-label="Search"><i data-lucide="search" style="width:18px;height:18px"></i></button>
+    </div>
+    <div class="view-toggle">
+      <button class="view-btn active" data-view="goals">Goals</button>
+      <button class="view-btn" data-view="timeline">Timeline</button>
+    </div>
+    <div class="filter-pills">
+      <button class="pill active" data-filter="all">All</button>
+      <button class="pill" data-filter="40">Age 40</button>
+      <button class="pill" data-filter="45">Age 45</button>
+      <button class="pill" data-filter="50">Age 50</button>
+      <button class="pill" data-filter="60">Age 60</button>
+    </div>
+  </div>
+</header>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar"></aside>
+
+<!-- AFFIRMATIONS MODAL -->
+<div class="modal-overlay" id="affirmModal">
+  <div class="modal">
+    <div class="modal-title">Daily Affirmations</div>
+    <div class="modal-subtitle">Read these every morning. Believe them.</div>
+    <div class="affirmation">1. I am building generational wealth and a legacy that lasts.</div>
+    <div class="affirmation">2. I am a visionary leader who creates real impact.</div>
+    <div class="affirmation">3. I lead with integrity and excellence in everything I do.</div>
+    <div class="affirmation">4. I am in the best shape of my life — mentally and physically.</div>
+    <div class="affirmation">5. I attract abundance, opportunity, and meaningful relationships.</div>
+    <div class="affirmation">6. I am unstoppable when I focus.</div>
+    <div class="affirmation">7. I am rising to global influence and building a better future.</div>
+    <div class="affirmation">8. I have overcome hard things before. I will overcome again.</div>
+    <div class="affirmation">9. I am resilient, determined, and relentless.</div>
+    <div class="affirmation">10. My best days are ahead of me.</div>
+    <button class="modal-close" onclick="document.getElementById('affirmModal').classList.remove('open')">Close</button>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="main" id="mainContent"></main>
+
+<script>
+// ============================================================
+// GOALS DATA
+// ============================================================
+const SECTIONS = [
+  {
+    id: 'health',
+    name: 'Health & Fitness',
+    color: 'var(--health)',
+    colorHex: '#C1121F',
+    timeframes: {
+      '40': {
+        label: '1 YEAR (Age 40)',
+        categories: [
+          { header: 'Physique & Weight:', goals: [
+            'Complete 75 Hard (Q1)',
+            'Lose 10\u201315 lbs (210 \u2192 195\u2013190)',
+            'Goal weight under 200 lbs (stretch: 190)',
+            'Body fat down to 12% (from 14.5%)',
+            'Visible abs / lose love handles',
+            'Stronger core and obliques',
+            'Strengthen legs, glutes, lower back',
+            'Thinner jawline / more refined face structure'
+          ]},
+          { header: 'Health & Wellness:', goals: [
+            'Heal gut issues (IBS)',
+            'Healthier skin / less wrinkles / look younger',
+            'Whiter teeth',
+            'Limit alcohol substantially or altogether'
+          ]},
+          { header: 'Fitness Routine:', goals: [
+            'Get back into yoga \u2014 start taking classes',
+            'Join a bootcamp class',
+            'Find a fit crew / fitness community in Dallas',
+            'Focus on recovery \u2014 join a recovery clinic (cryo, sauna, cold plunge)'
+          ]},
+          { header: 'Flexibility & Mobility:', goals: [
+            'Stretch more / become more flexible',
+            'Regular mobility work'
+          ]},
+          { header: 'Biohacking & Longevity:', goals: [
+            'Continue TRT treatments',
+            'HGH or Sermorelin',
+            'hCG / fertility treatments',
+            'Peptides (BPC-157, others for longevity/healing)',
+            'Regular bloodwork (2x/year)'
+          ]}
+        ]
+      },
+      '45': {
+        label: '5 YEARS (Age 45)',
+        categories: [
+          { header: 'Physique:', goals: [
+            'Maintain peak fitness and performance',
+            'Weight at 190 or below',
+            'Stay lean at 10\u201312% body fat',
+            'Visible abs maintained',
+            'Alcohol-free except very special occasions'
+          ]},
+          { header: 'Ideal Weekly Routine:', goals: [
+            'Gym 5\u20137 days/week',
+            'Yoga 2\u20133x/week',
+            'Mix of lifting and bootcamp classes',
+            'Walk outdoors 3\u20134 days/week',
+            'Cycling on non-walk days'
+          ]},
+          { header: 'Sports & Activities:', goals: [
+            'Tennis (solid player)',
+            'Golf (playing regularly)',
+            'Cycling (regular + big cycling trips)',
+            'Hiking trips annually',
+            'Skiing annually',
+            'Camping / outdoor activities'
+          ]},
+          { header: 'Martial Arts & Tactical:', goals: [
+            'Tactical self-defense and shooting',
+            'Krav Maga / MMA',
+            'Tactical training courses'
+          ]},
+          { header: 'Biohacking & Longevity:', goals: [
+            'Hormone optimization continued',
+            'Peptides for longevity and healing',
+            'Stem cell treatments',
+            'Annual fitness retreat'
+          ]}
+        ]
+      },
+      '50': {
+        label: '10 YEARS (Age 50)',
+        categories: [
+          { header: null, goals: [
+            'Still active and in peak shape',
+            'Visible abs maintained, 10\u201312% body fat',
+            'Look like I\'m in my 40s or late 30s',
+            'Tennis, golf, cycling, skiing, hiking regularly',
+            'Complete a famous hike/climb',
+            'Complete a famous cycling challenge',
+            'Advanced longevity treatments (NAD+, glutathione, stem cells)',
+            'Sauna in house',
+            'Wake up pain-free, feel 20 years younger'
+          ]}
+        ]
+      },
+      '60': {
+        label: '20 YEARS (Age 60)',
+        categories: [
+          { header: null, goals: [
+            'Still maintaining abs and low body fat',
+            'Fit, energized, and active',
+            'More yoga, walking, regenerative activities',
+            'Golf, tennis, cycling, skiing, hiking',
+            'Playing with grandkids',
+            'Feel like I\'m 40 \u2014 energized, pain-free, thriving'
+          ]}
+        ]
+      }
+    }
+  },
+  {
+    id: 'career',
+    name: 'Business & Career',
+    color: 'var(--career)',
+    colorHex: '#0077B6',
+    timeframes: {
+      '40': {
+        label: '1 YEAR (Age 40)',
+        categories: [
+          { header: 'Role & Compensation:', goals: [
+            'VP at Fintech, Digital Bank, or Hyperscaler',
+            'Total comp: $300\u2013400K+ (base $230\u2013260K)',
+            'Negotiate sign-on bonus $50\u2013100K'
+          ]},
+          { header: 'Skills & Development:', goals: [
+            'Sharpen executive presence and board-readiness',
+            'Find C-suite mentor (CIO/CTO/CDO/CAIO)',
+            'Find political mentor',
+            'Maximize executive coach benefit'
+          ]},
+          { header: 'Thought Leadership:', goals: [
+            '2\u20133 AI conference speaking engagements',
+            'LinkedIn to 7K+ followers',
+            '1\u20132 podcast appearances',
+            'Build media relationships'
+          ]},
+          { header: 'Network:', goals: [
+            'Join 1\u20132 executive networks (YPO, Pavilion)',
+            'Expand network in AI and fintech'
+          ]}
+        ]
+      },
+      '45': {
+        label: '5 YEARS (Age 45)',
+        categories: [
+          { header: 'Role & Compensation:', goals: [
+            'SVP/EVP at Fortune 100 OR C-Suite at mid-size company',
+            'Total comp: $500K\u2013$1M',
+            '$100\u2013200K in vested RSUs/equity'
+          ]},
+          { header: 'Thought Leadership:', goals: [
+            '5+ keynotes/year',
+            'TEDx talk completed',
+            'Book in progress',
+            'Featured in WSJ, Forbes, Fortune',
+            'TV appearances (Fox Business, Bloomberg, CNBC)',
+            'LinkedIn 25K+ followers'
+          ]},
+          { header: 'Network & Politics:', goals: [
+            '50+ C-suite connections',
+            'Inner circle of 10 trusted advisors',
+            'Know local politicians, congressmen, senators',
+            '5+ political fundraisers/year (Republican Party)'
+          ]},
+          { header: 'Boards:', goals: [
+            '1\u20132 board seats (nonprofit/advisory/startup)',
+            '$25\u201350K/year board income'
+          ]}
+        ]
+      },
+      '50': {
+        label: '10 YEARS (Age 50)',
+        categories: [
+          { header: 'Role & Compensation:', goals: [
+            'C-Suite Fortune 500 (CIO/CDO/CAIO/CEO)',
+            'Total comp: $1\u20133M+',
+            '$500K\u2013$1M in vested RSUs/equity'
+          ]},
+          { header: 'Thought Leadership:', goals: [
+            'Book published (bestseller goal)',
+            'Ring the bell on Wall Street',
+            'Davos / World Economic Forum attendee',
+            'Congress testimony on AI/tech',
+            'Forbes/Fortune lists and covers',
+            'Speaking fees $25\u201350K+'
+          ]},
+          { header: 'Network & Politics:', goals: [
+            '100+ C-suite connections',
+            'Know governors, national figures',
+            'Major donor status; exploratory discussions about running'
+          ]},
+          { header: 'Boards:', goals: [
+            '1\u20132 public company boards, 3\u20134 total'
+          ]}
+        ]
+      },
+      '60': {
+        label: '20 YEARS (Age 60)',
+        categories: [
+          { header: null, goals: [
+            'CEO / Board Portfolio / Political transition',
+            'Total comp: $3\u20135M (or $1M+ board income)',
+            'Speaking circuit $50\u2013100K+ per appearance',
+            'Household name in business and politics',
+            'Inner circle of kingmakers and power brokers',
+            'Ready to run or in political career',
+            '1+ Fortune 500 board seat, Chair of 1 board'
+          ]}
+        ]
+      }
+    }
+  },
+  {
+    id: 'relationships',
+    name: 'Relationships & Romance',
+    color: 'var(--relationships)',
+    colorHex: '#E63946',
+    timeframes: {
+      '40': {
+        label: '1 YEAR (Age 40)',
+        categories: [
+          { header: null, goals: [
+            'Starting fresh \u2014 finding her through apps, matchmaker, friends, social circles',
+            'Looking for: values alignment, ambitious, fitness-oriented, family-oriented, wants kids',
+            'Engaged by 2026 (flexible) \u2014 definitely by 2028',
+            'Dream: Propose in Italy',
+            'Regular date nights, quality time, 1\u20132 trips together',
+            'Partner joins on business trips when possible',
+            'Come home to family dinners every night'
+          ]}
+        ]
+      },
+      '45': {
+        label: '5 YEARS (Age 45)',
+        categories: [
+          { header: null, goals: [
+            'Destination wedding in Italy (intimate gathering)',
+            'Honeymoon in Maldives',
+            '2\u20133 kids by 45; done having kids by 45',
+            'Present, involved dad \u2014 coaching, quality time, teaching',
+            'Very strong marriage \u2014 divorce never an option',
+            'Weekly date nights, annual romantic trip (no kids)',
+            'Wife is stay-at-home if she chooses',
+            'Family joins on business trips often',
+            'Home: Dallas suburbs or bi-coastal Florida'
+          ]}
+        ]
+      },
+      '50': {
+        label: '10 YEARS (Age 50)',
+        categories: [
+          { header: null, goals: [
+            'Marriage stronger than ever, still madly in love, best friends',
+            '10-year anniversary trip somewhere incredible',
+            'Kids (ages 5\u201312): private school, thriving in academics, sports, arts',
+            'Close family, quality time, lots of time with grandparents',
+            'Dream house with pool; 2nd or 3rd vacation home'
+          ]}
+        ]
+      },
+      '60': {
+        label: '20 YEARS (Age 60)',
+        categories: [
+          { header: null, goals: [
+            'Still traveling together, empty nest adventures',
+            'Wife comes on business trips',
+            'Kids (ages 15\u201322): attending top universities, well-adjusted, independent',
+            'Talk daily, visit at college monthly',
+            'Instilled: hard work, faith, integrity, ambition',
+            'Grandchildren post-60; very involved grandparent',
+            'Family compound near water or in Italy',
+            '4\u20135 vacation homes; home base Florida or Texas'
+          ]}
+        ]
+      }
+    }
+  },
+  {
+    id: 'family',
+    name: 'Family & Friends',
+    color: 'var(--family)',
+    colorHex: '#F4A261',
+    timeframes: {
+      '40': {
+        label: '1 YEAR (Age 40)',
+        categories: [
+          { header: 'Parents:', goals: [
+            'See parents weekly if possible (dinner or quality time)',
+            'Spend more intentional quality time with them',
+            'Annual family trip together'
+          ]},
+          { header: 'Special Goal:', goals: [
+            'Restore a classic car with Dad \u2014 do this while he\'s still here'
+          ]},
+          { header: 'Extended Family:', goals: [
+            'Talk to cousins once a month',
+            'Visit Austin cousins quarterly',
+            'Be more deliberate about staying connected',
+            'Big cousin gathering once a year'
+          ]},
+          { header: 'Friendships:', goals: [
+            'Build tight inner circle in Dallas',
+            'Weekly or bi-weekly dinners (business ideas, ventures, investments)',
+            'Visit lifetime best friends at least once this year'
+          ]},
+          { header: 'Community:', goals: [
+            'Volunteer more',
+            'Join 1\u20132 volunteer groups or nonprofits'
+          ]}
+        ]
+      },
+      '45': {
+        label: '5 YEARS (Age 45)',
+        categories: [
+          { header: 'Parents:', goals: [
+            'See weekly or twice a week',
+            'Lots of time with parents and kids together',
+            'Kids spend plenty of time with both sets of grandparents'
+          ]},
+          { header: 'Extended Family:', goals: [
+            'Same cadence (monthly calls, quarterly visits)',
+            'Family gatherings twice a year now that kids are in picture'
+          ]},
+          { header: 'Friendships:', goals: [
+            'Inner circle of 8\u201312 top quality friends in Dallas',
+            'Annual trip with lifetime best friends',
+            'More frequent get-togethers'
+          ]},
+          { header: 'Community & Philanthropy:', goals: [
+            'Bigger involvement',
+            'Board seat on 1 nonprofit',
+            'Begin thinking about starting a foundation'
+          ]}
+        ]
+      },
+      '50': {
+        label: '10 YEARS (Age 50)',
+        categories: [
+          { header: 'Parents (ages ~85\u201387):', goals: [
+            'Spend lots of quality time while still here',
+            'Big annual trip with parents, wife, and kids \u2014 see the world together',
+            'Cherish every moment'
+          ]},
+          { header: 'Extended Family:', goals: [
+            'Tighter than ever',
+            'Big family trips with both sides 1\u20132x/year'
+          ]},
+          { header: 'Friendships:', goals: [
+            'Inner circle grown to 15\u201320 globally (not just Dallas)'
+          ]},
+          { header: 'Philanthropy:', goals: [
+            'Foundation started (stretch goal)',
+            'Major donor / active in multiple charities',
+            'Focus areas: Children and cancer-related causes'
+          ]}
+        ]
+      },
+      '60': {
+        label: '20 YEARS (Age 60)',
+        categories: [
+          { header: 'Honor Parents\' Memory & Legacy:', goals: [
+            'Name something after them (scholarship, foundation wing, building)',
+            'Annual family tradition to celebrate their lives',
+            'Philanthropy in their name',
+            'Legacy book or video documenting their story',
+            'Endowed scholarship',
+            'Family foundation named after them'
+          ]},
+          { header: 'Extended Family:', goals: [
+            'The one who brings everyone together',
+            'Organizes and plans family trips and gatherings',
+            'Patriarch role'
+          ]},
+          { header: 'Friendships:', goals: [
+            'Global circle of ~30 close-knit, successful, ambitious, like-minded individuals'
+          ]},
+          { header: 'Philanthropy:', goals: [
+            'Foundation grown significantly',
+            'Causes: Anti-bullying (personal), children with disabilities/alternative learning, cancer, children\'s causes',
+            '$500K\u2013$1M/year philanthropic giving'
+          ]}
+        ]
+      }
+    }
+  },
+  {
+    id: 'finance',
+    name: 'Finance',
+    color: 'var(--finance)',
+    colorHex: '#2D6A4F',
+    timeframes: {
+      '40': {
+        label: '1 YEAR (Age 40)',
+        categories: [
+          { header: 'Income:', goals: [
+            'Total comp: $300\u2013400K (base $230\u2013260K)',
+            'Negotiate sign-on bonus $50\u2013100K'
+          ]},
+          { header: 'Net Worth:', goals: [
+            'Current: ~$370K',
+            'Target: $450\u2013500K'
+          ]},
+          { header: '401K:', goals: [
+            'Target: $230K',
+            'Max out contributions with new job',
+            'Maximize employer match from Day 1'
+          ]},
+          { header: 'Brokerage:', goals: [
+            'Restart with $10K'
+          ]},
+          { header: 'Emergency Fund:', goals: [
+            'Rebuild to 6 months expenses'
+          ]},
+          { header: 'Debt:', goals: [
+            'Consolidate $150K into HELOC',
+            'Pay down aggressively, free up cash flow'
+          ]},
+          { header: 'Real Estate:', goals: [
+            'Stay in current townhome',
+            'Goal: Turn into rental eventually',
+            'Begin exploring vacation homes in Florida'
+          ]}
+        ]
+      },
+      '45': {
+        label: '5 YEARS (Age 45)',
+        categories: [
+          { header: 'Income:', goals: [
+            'Total comp: $500K\u2013$1M',
+            'Board income: $25\u201350K/year'
+          ]},
+          { header: 'Net Worth:', goals: [
+            'Target: $2\u20132.5M'
+          ]},
+          { header: 'Investments:', goals: [
+            '401K: $600K',
+            'Brokerage: $200\u2013250K',
+            'Equity/RSUs: $100\u2013200K vested'
+          ]},
+          { header: 'Real Estate:', goals: [
+            '2 properties (main home + townhome as rental)',
+            'Fully debt-free'
+          ]}
+        ]
+      },
+      '50': {
+        label: '10 YEARS (Age 50)',
+        categories: [
+          { header: 'Income:', goals: [
+            'Total comp: $1\u20133M+'
+          ]},
+          { header: 'Net Worth:', goals: [
+            'Target: $6\u20138M'
+          ]},
+          { header: 'Investments:', goals: [
+            '401K: $1.3M',
+            'Brokerage: $750K\u2013$1M',
+            'Equity/RSUs: $500K\u2013$1M vested',
+            'Real estate equity: $1.5\u20132M'
+          ]},
+          { header: 'Passive Income ($10\u201315K/month):', goals: [
+            'Rental income: $2\u20133K/month',
+            'Board seats (2\u20133): $4\u20136K/month',
+            'Speaking (6\u201310/year): $2\u20134K/month',
+            'Book royalties/consulting: $1\u20132K/month',
+            'Dividends: $1\u20132K/month'
+          ]}
+        ]
+      },
+      '60': {
+        label: '20 YEARS (Age 60)',
+        categories: [
+          { header: 'Income:', goals: [
+            'Total comp: $3\u20135M (or $1M+ board income if retired)'
+          ]},
+          { header: 'Net Worth:', goals: [
+            'Target: $15\u201325M'
+          ]},
+          { header: 'Investments:', goals: [
+            '401K: $5M+',
+            'Brokerage: $2\u20135M',
+            'Real estate equity: $5M+'
+          ]},
+          { header: 'Passive Income ($25\u201350K/month):', goals: [
+            'Board income (3 boards): $10\u201315K/month',
+            'Rental income (2\u20133 properties): $5\u20138K/month',
+            'Speaking (10\u201315/year @ $50\u2013100K): $5\u201310K/month',
+            'Investment dividends: $3\u20135K/month',
+            'Book royalties/IP: $1\u20132K/month',
+            'Consulting/advisory: $2\u20135K/month'
+          ]}
+        ]
+      }
+    }
+  },
+  {
+    id: 'home',
+    name: 'Home & Lifestyle',
+    color: 'var(--home)',
+    colorHex: '#E76F51',
+    timeframes: {
+      '40': {
+        label: '1 YEAR (Age 40) \u2014 Current Townhome',
+        categories: [
+          { header: null, goals: [
+            'Furnish rooftop deck',
+            'Furnish patio',
+            'Finish decorating and furnishing current townhome',
+            'Optimize current home theater'
+          ]}
+        ]
+      },
+      '45': {
+        label: '5 YEARS (Age 45) \u2014 First Major Home Upgrade',
+        categories: [
+          { header: null, goals: [
+            'Large home with pool',
+            'Home gym',
+            'Lego room',
+            'Wine cellar (starter)',
+            'Home theater \u2014 dedicated room',
+            'Outdoor kitchen with pizza oven & grill',
+            'Smart home \u2014 fully automated',
+            'Home office with views'
+          ]}
+        ]
+      },
+      '50': {
+        label: '10 YEARS (Age 50) \u2014 Dream Home',
+        categories: [
+          { header: 'Master Suite:', goals: [
+            'His and hers walk-in closets (custom built)',
+            'Dual shower (spa-style)',
+            'Spa-style master bathroom with soaking tub',
+            'Fireplace in master bedroom',
+            'Private balcony off master',
+            'Morning kitchen / coffee bar in master suite'
+          ]},
+          { header: 'Kitchen & Dining:', goals: [
+            'Chef\'s kitchen with professional appliances (Wolf, Sub-Zero, etc.)',
+            'Butler\'s pantry',
+            'Formal dining room for hosting dinner parties'
+          ]},
+          { header: 'Living & Entertainment:', goals: [
+            'Great room with soaring ceilings',
+            'Home theater / media room (dedicated)',
+            'Library / study with built-in bookshelves',
+            'Game room (poker table, billiards, arcade)',
+            'Music room / listening room',
+            'Bar area (wet bar or full bar)',
+            'Cigar lounge or whiskey room',
+            'Lego room',
+            'Arts & crafts room'
+          ]},
+          { header: 'Wellness & Fitness:', goals: [
+            'Home gym',
+            'Sauna / steam room'
+          ]},
+          { header: 'Outdoor Living:', goals: [
+            'Large yard with pool (indoor/outdoor with spa)',
+            'Hot tub / jacuzzi separate from pool',
+            'Outdoor kitchen with pizza oven & grill',
+            'Outdoor fireplace / fire pit',
+            'Cabana or pool house',
+            'Sport court (basketball, pickleball)',
+            'Bocce ball court',
+            'Putting green',
+            'Outdoor shower',
+            'Landscaped gardens / water features',
+            'Rooftop deck or terrace'
+          ]},
+          { header: 'Functional & Tech:', goals: [
+            'Wine cellar (temperature-controlled)',
+            'Car garage / showroom for collection',
+            'Guest house for family visits',
+            'Whole-home audio system (Sonos, etc.)',
+            'Integrated security system with cameras',
+            'Automated lighting, shades, and climate control',
+            'Voice-controlled everything',
+            'Dedicated server room / networking closet'
+          ]}
+        ]
+      },
+      '60': {
+        label: '20 YEARS (Age 60) \u2014 Legacy Home',
+        categories: [
+          { header: null, goals: [
+            'All Age 50 features plus:',
+            'Indoor gun range',
+            '4\u20135 properties total',
+            'Family compound near water or in Italy',
+            'Full car collection showroom',
+            'Staff quarters if needed'
+          ]}
+        ]
+      }
+    }
+  },
+  {
+    id: 'fun',
+    name: 'Fun & Recreation',
+    color: 'var(--fun)',
+    colorHex: '#7209B7',
+    pinned: [
+      {
+        label: 'TOP 5 BUCKET LIST TRIPS',
+        goals: [
+          'Egypt \u2014 Pyramids, Nile, ancient history',
+          'SE Asia \u2014 Thailand, Vietnam, Indonesia, Cambodia',
+          'Machu Picchu \u2014 Hike the Inca Trail',
+          'Viking River Cruise \u2014 France & Germany with parents',
+          'African Safari \u2014 Kenya, Tanzania, or South Africa'
+        ]
+      }
+    ],
+    allAges: [
+      {
+        label: 'Travel Cadence',
+        items: [
+          '2 big trips per year + 1 annual family trip with parents + a few weekend trips',
+          'Always 1 relaxing trip (beach or exotic) + 1 luxury or adventure trip',
+          'Style mix: luxury Europe or Asia with cultural immersion, plus one active/adventure trip'
+        ]
+      },
+      {
+        label: 'Collecting',
+        subcategories: [
+          { header: 'Watches:', goals: ['Currently: Rolex collection', 'By 50: Add Audemars Piguet (AP) and Patek Philippe'] },
+          { header: 'Cars:', goals: ['Near-term: Porsche 911 + G-Wagon or Range Rover', 'Mid-term: Porsche Panamera + Ferrari (dream car)', 'Long-term: Classic car collection'] },
+          { header: 'Wine:', goals: ['Begin collecting from age 40 onward', 'Build a curated cellar'] },
+          { header: 'Art:', goals: ['Mix of paintings, glass, and sculptures', 'Goal to own originals; build collection ages 40\u201360'] },
+          { header: 'Legos:', goals: ['Continue collecting UCS sets', 'Dedicated Lego room in dream home'] }
+        ]
+      },
+      {
+        label: 'Hobbies',
+        subcategories: [
+          { header: 'Current (Age 40):', goals: ['Cooking (Italian, gourmet)', 'Fitness / strength training', 'Travel', 'Building Legos', 'Entertaining / hosting', 'Gaming'] },
+          { header: 'Pick Up (Ages 40\u201345):', goals: ['Golf', 'Tennis', 'Cycling', 'Wine appreciation and collecting', 'Art collecting'] },
+          { header: 'Continue & Add (Ages 45\u201360):', goals: ['Skiing', 'Hiking', 'Krav Maga / tactical shooting', 'Boating', 'Watch collecting', 'Car collecting'] }
+        ]
+      },
+      {
+        label: 'Experiences & Bucket List',
+        subcategories: [
+          { header: 'Travel & Adventure:', goals: ['Charter a yacht for a family vacation', 'Rent a villa in Italy for extended family', 'Helicopter tour experiences', 'Learn to sail', 'Race a car on a track (Porsche Experience)', 'Get pilot\'s license (stretch goal)'] },
+          { header: 'Hosting & Entertaining:', goals: ['Host an annual dinner party / gala at home', 'Host holiday gatherings as a family tradition', 'Private chef dinner parties at home', 'Michelin restaurant bucket list tour'] },
+          { header: 'Sports & Signature Events:', goals: ['F1 Monaco Grand Prix (PRIORITY)', 'Super Bowl', 'The Masters', 'US Open Tennis (NYC)', 'Kentucky Derby', 'Cowboys & Stars box seats', 'VIP concerts and festival experiences'] }
+        ]
+      }
+    ],
+    timeframes: {
+      '40': {
+        label: '1 YEAR (Age 40) \u2014 Ideal Weekend',
+        categories: [
+          { header: null, goals: [
+            'Early morning workout',
+            'Brunch with friends or family',
+            'Afternoon at country club (tennis or pool)',
+            'Dinner out with family or friends',
+            'Evening: live concert/music OR relaxing night at home with wine and grilling'
+          ]}
+        ]
+      },
+      '45': {
+        label: '5 YEARS (Age 45) \u2014 Ideal Weekend (With Family)',
+        categories: [
+          { header: null, goals: [
+            'Morning workout or family activity',
+            'Day at beach, park, pool, or boating',
+            'Family dinner or BBQ',
+            'Time at country club',
+            'Relaxing together \u2014 quality time over everything'
+          ]}
+        ]
+      },
+      '50': {
+        label: '10 YEARS (Age 50) \u2014 Ideal Weekend',
+        categories: [
+          { header: null, goals: [
+            'Morning golf or tennis',
+            'Family time at vacation home',
+            'Hosting friends and family for a dinner party',
+            'Wine from the cellar, home-cooked gourmet meal'
+          ]}
+        ]
+      },
+      '60': {
+        label: '20 YEARS (Age 60) \u2014 Ideal Weekend',
+        categories: [
+          { header: null, goals: [
+            'Golf or tennis with friends or grandkids',
+            'Boating or relaxing at family compound',
+            'Multi-generational gatherings \u2014 the patriarch hosting everyone',
+            'Enjoying the life that was built'
+          ]}
+        ]
+      }
+    }
+  },
+  {
+    id: 'memberships',
+    name: 'Memberships & Access',
+    color: 'var(--memberships)',
+    colorHex: '#264653',
+    timeframes: {
+      '40': {
+        label: '1 YEAR (Age 40)',
+        categories: [
+          { header: null, goals: [
+            'Life Time Fitness (current)',
+            'Recovery clinic membership (cryo, sauna, cold plunge)',
+            'Spa membership',
+            'Amex Fine Hotels & Resorts (current)',
+            'Research and establish Virtuoso travel advisor relationship',
+            'Country club membership'
+          ]}
+        ]
+      },
+      '45': {
+        label: '5 YEARS (Age 45)',
+        categories: [
+          { header: null, goals: [
+            'Country club established',
+            'Golf club (prestigious course)',
+            'Social clubs (Soho House, private members clubs)',
+            'Wine club memberships (Napa, Tuscany)',
+            'Cigar club / whiskey society',
+            'Box seats: Dallas Cowboys & Dallas Stars',
+            'VIP concert and festival access',
+            'Art gallery / museum patron',
+            'Theater and symphony patron',
+            'Charity galas and fundraiser circuit'
+          ]}
+        ]
+      },
+      '50': {
+        label: '10 YEARS (Age 50)',
+        categories: [
+          { header: null, goals: [
+            'Yacht club membership',
+            'Private aviation membership (NetJets, Wheels Up)',
+            'Charter a yacht with family',
+            'Virtuoso travel advisor \u2014 established long-term relationship',
+            'Active on charity gala circuit',
+            'Political donor circles (Republican Party)'
+          ]}
+        ]
+      },
+      '60': {
+        label: '20 YEARS (Age 60)',
+        categories: [
+          { header: null, goals: [
+            'All memberships maintained',
+            'Elite / invite-only clubs (Bohemian Grove, Alfalfa Club level)',
+            'Davos / World Economic Forum access',
+            'Major political donor status'
+          ]}
+        ]
+      }
+    }
+  },
+  {
+    id: 'personal-dev',
+    name: 'Personal Development',
+    color: 'var(--personal-dev)',
+    colorHex: '#2A9D8F',
+    inProgress: true,
+    confirmedGoals: ['Executive MBA \u2014 Target age 45\u201350'],
+    timeframes: {
+      '40': { label: '1 YEAR (Age 40)', categories: [] },
+      '45': { label: '5 YEARS (Age 45)', categories: [] },
+      '50': { label: '10 YEARS (Age 50)', categories: [] },
+      '60': { label: '20 YEARS (Age 60)', categories: [] }
+    }
+  },
+  {
+    id: 'spiritual',
+    name: 'Spiritual',
+    color: 'var(--spiritual)',
+    colorHex: '#4361EE',
+    inProgress: true,
+    confirmedGoals: ['Grow closer to God', 'Find a church home in Dallas'],
+    timeframes: {
+      '40': { label: '1 YEAR (Age 40)', categories: [] },
+      '45': { label: '5 YEARS (Age 45)', categories: [] },
+      '50': { label: '10 YEARS (Age 50)', categories: [] },
+      '60': { label: '20 YEARS (Age 60)', categories: [] }
+    }
+  },
+  {
+    id: 'vision',
+    name: 'Vision Board',
+    color: 'var(--vision)',
+    colorHex: '#C9A84C',
+    isVision: true
+  }
+];
+
+// ============================================================
+// STATE
+// ============================================================
+let activeSection = 'health';
+let activeFilter = 'all';
+let activeView = 'goals';
+let searchQuery = '';
+let checkedGoals = JSON.parse(localStorage.getItem('bm-goals-checked') || '{}');
+
+function saveChecked() {
+  localStorage.setItem('bm-goals-checked', JSON.stringify(checkedGoals));
+}
+
+function goalId(sectionId, tf, catIdx, goalIdx) {
+  return sectionId + '-' + tf + '-' + catIdx + '-' + goalIdx;
+}
+
+function funGoalId(type, subIdx, goalIdx) {
+  return 'fun-' + type + '-' + subIdx + '-' + goalIdx;
+}
+
+// ============================================================
+// COUNT HELPERS
+// ============================================================
+function countSection(section) {
+  let total = 0, done = 0;
+  if (section.isVision) return { total: 0, done: 0 };
+  if (section.timeframes) {
+    for (const tf of Object.keys(section.timeframes)) {
+      const tfData = section.timeframes[tf];
+      if (tfData.categories) {
+        tfData.categories.forEach((cat, ci) => {
+          cat.goals.forEach((g, gi) => {
+            total++;
+            if (checkedGoals[goalId(section.id, tf, ci, gi)]) done++;
+          });
+        });
+      }
+    }
+  }
+  if (section.confirmedGoals) {
+    section.confirmedGoals.forEach((g, gi) => {
+      total++;
+      if (checkedGoals[goalId(section.id, 'confirmed', 0, gi)]) done++;
+    });
+  }
+  if (section.pinned) {
+    section.pinned.forEach((p, pi) => {
+      p.goals.forEach((g, gi) => {
+        total++;
+        if (checkedGoals[funGoalId('pinned', pi, gi)]) done++;
+      });
+    });
+  }
+  if (section.allAges) {
+    section.allAges.forEach((aa, ai) => {
+      if (aa.goals) {
+        aa.goals.forEach((g, gi) => { total++; if (checkedGoals[funGoalId('allages-' + ai, 0, gi)]) done++; });
+      }
+      if (aa.items) {
+        // items are not checkable for travel cadence
+      }
+      if (aa.subcategories) {
+        aa.subcategories.forEach((sub, si) => {
+          sub.goals.forEach((g, gi) => {
+            total++;
+            if (checkedGoals[funGoalId('allages-' + ai + '-' + si, 0, gi)]) done++;
+          });
+        });
+      }
+    });
+  }
+  return { total, done };
+}
+
+function countTimeframe(section, tf) {
+  let total = 0, done = 0;
+  const tfData = section.timeframes[tf];
+  if (!tfData || !tfData.categories) return { total: 0, done: 0 };
+  tfData.categories.forEach((cat, ci) => {
+    cat.goals.forEach((g, gi) => {
+      total++;
+      if (checkedGoals[goalId(section.id, tf, ci, gi)]) done++;
+    });
+  });
+  return { total, done };
+}
+
+function countAll() {
+  let total = 0, done = 0;
+  SECTIONS.forEach(s => {
+    const c = countSection(s);
+    total += c.total;
+    done += c.done;
+  });
+  return { total, done };
+}
+
+// ============================================================
+// RENDER SIDEBAR
+// ============================================================
+function renderSidebar() {
+  const sb = document.getElementById('sidebar');
+  let html = '<nav class="sidebar-nav">';
+  SECTIONS.forEach(s => {
+    const c = countSection(s);
+    const isActive = activeSection === s.id;
+    html += '<div class="nav-item' + (isActive ? ' active' : '') + '" data-section="' + s.id + '">';
+    html += '<span class="nav-dot" style="background:' + s.colorHex + '"></span>';
+    html += '<span class="nav-label">' + s.name + '</span>';
+    if (s.inProgress) {
+      html += '<span class="nav-status in-progress">In Progress</span>';
+    } else if (s.isVision) {
+      html += '<span class="nav-status phase2">Phase 2</span>';
+    } else if (c.total > 0) {
+      html += '<span class="nav-badge">' + c.done + '/' + c.total + '</span>';
+    }
+    html += '</div>';
+  });
+  html += '</nav>';
+
+  const overall = countAll();
+  const pct = overall.total > 0 ? Math.round((overall.done / overall.total) * 100) : 0;
+  html += '<div class="sidebar-bottom">';
+  html += '<div class="overall-progress-label"><span>Overall Progress</span><span>' + pct + '%</span></div>';
+  html += '<div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:' + pct + '%;background:linear-gradient(90deg,var(--gold-dim),var(--gold))"></div></div>';
+  html += '<button class="affirmations-btn" onclick="document.getElementById(\'affirmModal\').classList.add(\'open\')"><i data-lucide="sparkles" style="width:14px;height:14px"></i> Daily Affirmations</button>';
+  html += '</div>';
+  sb.innerHTML = html;
+
+  sb.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+      activeSection = item.dataset.section;
+      render();
+    });
+  });
+  lucide.createIcons();
+}
+
+// ============================================================
+// RENDER GOAL ITEM
+// ============================================================
+function goalItemHTML(id, text) {
+  const checked = checkedGoals[id];
+  const dimClass = searchQuery && !matchesSearch(text) ? ' search-dim' : '';
+  const hlClass = searchQuery && matchesSearch(text) ? ' search-highlight' : '';
+  return '<div class="goal-item' + (checked ? ' completed' : '') + dimClass + hlClass + '" data-id="' + id + '">' +
+    '<div class="goal-checkbox' + (checked ? ' checked' : '') + '"></div>' +
+    '<span class="goal-text">' + text + '</span></div>';
+}
+
+function matchesSearch(text) {
+  if (!searchQuery) return true;
+  return text.toLowerCase().includes(searchQuery.toLowerCase());
+}
+
+// ============================================================
+// RENDER MAIN CONTENT — GOALS VIEW
+// ============================================================
+function renderGoalsView() {
+  const section = SECTIONS.find(s => s.id === activeSection);
+  if (!section) return '';
+
+  let html = '';
+
+  // Section header
+  html += '<div class="section-header">';
+  html += '<h2 class="section-title" style="color:' + section.colorHex + '">' + section.name + '</h2>';
+  html += '<div class="section-rule"></div>';
+  html += '</div>';
+
+  // Vision Board
+  if (section.isVision) {
+    html += '<div class="vision-placeholder">';
+    html += '<div class="vision-icon"><i data-lucide="image" style="width:48px;height:48px;color:var(--gold)"></i></div>';
+    html += '<h2 class="vision-headline">Vision Board</h2>';
+    html += '<p class="vision-sub">A visual representation of the life being built.</p>';
+    html += '<p class="vision-body">Phase 2 \u2014 Coming Soon. This space will hold images, aspirational visuals, and the tangible manifestation of every goal above.</p>';
+    html += '<span class="coming-soon-badge">Coming Soon</span>';
+    html += '</div>';
+    return html;
+  }
+
+  // In Progress banner
+  if (section.inProgress) {
+    html += '<div class="in-progress-banner"><i data-lucide="construction" style="width:16px;height:16px"></i> This section is in progress. Goals are being built out.</div>';
+  }
+
+  // Stats bar
+  const sectionCount = countSection(section);
+  html += '<div class="stats-bar">';
+  html += '<div class="stat-item"><span class="stat-label">Total Goals</span><span class="stat-value">' + sectionCount.total + '</span></div>';
+  html += '<div class="stat-item"><span class="stat-label">Completed</span><span class="stat-value gold">' + sectionCount.done + '</span></div>';
+  html += '<div class="stat-item"><span class="stat-label">Remaining</span><span class="stat-value">' + (sectionCount.total - sectionCount.done) + '</span></div>';
+  html += '</div>';
+
+  // Confirmed goals for in-progress sections
+  if (section.confirmedGoals && section.confirmedGoals.length > 0) {
+    html += '<div class="confirmed-goals"><div class="confirmed-label">Confirmed Goals</div>';
+    section.confirmedGoals.forEach((g, gi) => {
+      html += goalItemHTML(goalId(section.id, 'confirmed', 0, gi), g);
+    });
+    html += '</div>';
+  }
+
+  // Fun & Recreation special: pinned + allAges
+  if (section.pinned) {
+    section.pinned.forEach((p, pi) => {
+      html += '<div class="timeframe-block" data-timeframe="all">';
+      html += '<div class="timeframe-header">';
+      html += '<div class="timeframe-title"><span style="color:' + section.colorHex + '">\u2605</span> ' + p.label + '</div>';
+      html += '<span class="chevron"><i data-lucide="chevron-down" style="width:16px;height:16px"></i></span>';
+      html += '</div>';
+      html += '<div class="timeframe-content">';
+      p.goals.forEach((g, gi) => {
+        html += goalItemHTML(funGoalId('pinned', pi, gi), g);
+      });
+      html += '</div></div>';
+    });
+
+    // Other destinations (not checkable, just info)
+    html += '<div style="padding:8px 12px;font-size:13px;color:var(--text-secondary);margin-bottom:16px"><strong style="color:var(--text-primary)">Other Destinations:</strong> Italy (wedding + family compound), Greece, Maldives (honeymoon)</div>';
+  }
+
+  if (section.allAges) {
+    section.allAges.forEach((aa, ai) => {
+      html += '<div class="timeframe-block" data-timeframe="all">';
+      html += '<div class="timeframe-header">';
+      html += '<div class="timeframe-title"><span style="color:' + section.colorHex + '">\u221E</span> ALL AGES \u2014 ' + aa.label + '</div>';
+      html += '<span class="chevron"><i data-lucide="chevron-down" style="width:16px;height:16px"></i></span>';
+      html += '</div>';
+      html += '<div class="timeframe-content">';
+      if (aa.items) {
+        aa.items.forEach(item => {
+          html += '<div style="padding:6px 12px;font-size:13px;color:var(--text-secondary);line-height:1.5">\u2022 ' + item + '</div>';
+        });
+      }
+      if (aa.subcategories) {
+        aa.subcategories.forEach((sub, si) => {
+          html += '<div class="category-header">' + sub.header + '</div>';
+          sub.goals.forEach((g, gi) => {
+            html += goalItemHTML(funGoalId('allages-' + ai + '-' + si, 0, gi), g);
+          });
+        });
+      }
+      if (aa.goals) {
+        aa.goals.forEach((g, gi) => {
+          html += goalItemHTML(funGoalId('allages-' + ai, 0, gi), g);
+        });
+      }
+      html += '</div></div>';
+    });
+  }
+
+  // Timeframes
+  if (section.timeframes) {
+    const timeframeKeys = ['40', '45', '50', '60'];
+    timeframeKeys.forEach(tf => {
+      const tfData = section.timeframes[tf];
+      if (!tfData) return;
+
+      const show = activeFilter === 'all' || activeFilter === tf;
+      if (!show) return;
+
+      const tfCount = countTimeframe(section, tf);
+      const isPlaceholder = section.inProgress && tfData.categories.length === 0;
+
+      html += '<div class="timeframe-block" data-timeframe="' + tf + '">';
+      html += '<div class="timeframe-header">';
+      html += '<div class="timeframe-title">' + tfData.label + '</div>';
+      html += '<div class="timeframe-progress">';
+      if (!isPlaceholder) {
+        const tfPct = tfCount.total > 0 ? Math.round((tfCount.done / tfCount.total) * 100) : 0;
+        html += '<span class="timeframe-count">' + tfCount.done + ' / ' + tfCount.total + '</span>';
+        html += '<div class="timeframe-bar"><div class="timeframe-bar-fill" style="width:' + tfPct + '%;background:' + section.colorHex + '"></div></div>';
+      }
+      html += '<span class="chevron"><i data-lucide="chevron-down" style="width:16px;height:16px"></i></span>';
+      html += '</div></div>';
+      html += '<div class="timeframe-content">';
+
+      if (isPlaceholder) {
+        html += '<div class="placeholder-card">\ud83d\udea7 This timeframe is being built out. Check back soon.</div>';
+      } else {
+        tfData.categories.forEach((cat, ci) => {
+          if (cat.header) {
+            html += '<div class="category-header">' + cat.header + '</div>';
+          }
+          cat.goals.forEach((g, gi) => {
+            html += goalItemHTML(goalId(section.id, tf, ci, gi), g);
+          });
+        });
+      }
+      html += '</div></div>';
+    });
+  }
+
+  return html;
+}
+
+// ============================================================
+// RENDER TIMELINE VIEW
+// ============================================================
+function renderTimelineView() {
+  let html = '<div class="timeline-container"><div class="timeline-grid">';
+  // Header row
+  html += '<div class="tl-header" style="background:var(--bg-surface)">Life Area</div>';
+  html += '<div class="tl-header now">Age 40 (1 Year)</div>';
+  html += '<div class="tl-header">Age 45 (5 Years)</div>';
+  html += '<div class="tl-header">Age 50 (10 Years)</div>';
+  html += '<div class="tl-header">Age 60 (20 Years)</div>';
+
+  SECTIONS.forEach(s => {
+    if (s.isVision || !s.timeframes) return;
+    html += '<div class="tl-row-label"><span class="nav-dot" style="background:' + s.colorHex + ';width:6px;height:6px"></span>' + s.name + '</div>';
+    ['40','45','50','60'].forEach(tf => {
+      html += '<div class="tl-cell">';
+      const tfData = s.timeframes[tf];
+      if (tfData && tfData.categories) {
+        tfData.categories.forEach((cat, ci) => {
+          cat.goals.forEach((g, gi) => {
+            const id = goalId(s.id, tf, ci, gi);
+            const checked = checkedGoals[id];
+            const text = g.length > 50 ? g.substring(0, 47) + '...' : g;
+            html += '<div class="tl-chip' + (checked ? ' completed' : '') + '" style="background:' + s.colorHex + '15;color:' + s.colorHex + ';border-color:' + s.colorHex + '" data-id="' + id + '" title="' + g.replace(/"/g, '&quot;') + '">' + text + '</div>';
+          });
+        });
+      }
+      if (s.inProgress && tfData && tfData.categories.length === 0) {
+        html += '<div class="tl-chip" style="background:rgba(201,168,76,0.1);color:var(--gold-dim);border-color:var(--gold-dim)">\ud83d\udea7 In progress</div>';
+      }
+      html += '</div>';
+    });
+  });
+  html += '</div></div>';
+  return html;
+}
+
+// ============================================================
+// RENDER
+// ============================================================
+function render() {
+  renderSidebar();
+
+  const main = document.getElementById('mainContent');
+  let html = '';
+
+  // Quote
+  html += '<div class="quote-banner">';
+  html += '<div class="quote-text">\u201cTo go from business visionary to world leader \u2014 creating technologies that transform how we live, then rising to global influence to unite nations and build a better future.\u201d</div>';
+  html += '<div class="quote-attr">\u2014 Brandon\'s Mission</div>';
+  html += '</div>';
+
+  // Global stats
+  const overall = countAll();
+  html += '<div class="stats-bar">';
+  html += '<div class="stat-item"><span class="stat-label">Total Goals</span><span class="stat-value">' + overall.total + '</span></div>';
+  html += '<div class="stat-item"><span class="stat-label">Completed</span><span class="stat-value gold">' + overall.done + '</span></div>';
+  html += '<div class="stat-item"><span class="stat-label">Remaining</span><span class="stat-value">' + (overall.total - overall.done) + '</span></div>';
+  html += '</div>';
+
+  if (activeView === 'goals') {
+    html += '<div class="section-view active">' + renderGoalsView() + '</div>';
+    html += '<div class="timeline-view"></div>';
+  } else {
+    html += '<div class="section-view"></div>';
+    html += '<div class="timeline-view active">' + renderTimelineView() + '</div>';
+  }
+
+  main.innerHTML = html;
+
+  // Init icons
+  lucide.createIcons();
+
+  // Bind checkboxes
+  main.querySelectorAll('.goal-item').forEach(item => {
+    item.addEventListener('click', (e) => {
+      const id = item.dataset.id;
+      if (!id) return;
+      checkedGoals[id] = !checkedGoals[id];
+      if (!checkedGoals[id]) delete checkedGoals[id];
+      saveChecked();
+      render();
+    });
+  });
+
+  // Bind timeline chips
+  main.querySelectorAll('.tl-chip[data-id]').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const id = chip.dataset.id;
+      checkedGoals[id] = !checkedGoals[id];
+      if (!checkedGoals[id]) delete checkedGoals[id];
+      saveChecked();
+      render();
+    });
+  });
+
+  // Bind collapse/expand
+  main.querySelectorAll('.timeframe-header').forEach(header => {
+    header.addEventListener('click', (e) => {
+      if (e.target.closest('.goal-item')) return;
+      const content = header.nextElementSibling;
+      if (content && content.classList.contains('timeframe-content')) {
+        header.classList.toggle('collapsed');
+        content.classList.toggle('collapsed');
+      }
+    });
+  });
+}
+
+// ============================================================
+// EVENT LISTENERS
+// ============================================================
+
+// View toggle
+document.querySelectorAll('.view-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeView = btn.dataset.view;
+    render();
+  });
+});
+
+// Filter pills
+document.querySelectorAll('.pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    activeFilter = pill.dataset.filter;
+    render();
+  });
+});
+
+// Search
+const searchToggle = document.getElementById('searchToggle');
+const searchInput = document.getElementById('searchInput');
+searchToggle.addEventListener('click', () => {
+  searchInput.classList.toggle('open');
+  if (searchInput.classList.contains('open')) {
+    searchInput.focus();
+  } else {
+    searchInput.value = '';
+    searchQuery = '';
+    render();
+  }
+});
+searchInput.addEventListener('input', () => {
+  searchQuery = searchInput.value;
+  render();
+});
+
+// Close modal on overlay click
+document.getElementById('affirmModal').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) {
+    e.target.classList.remove('open');
+  }
+});
+
+// Initial render
+render();
+</script>
+</body>
+</html>
