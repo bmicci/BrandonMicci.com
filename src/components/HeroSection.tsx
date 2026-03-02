@@ -918,7 +918,7 @@ const HeroSection = () => {
                   Let&apos;s Connect
                 </a>
                 <a
-                  href="/BrandonMicciSeniorAIExecutive.pdf"
+                  href="/BrandonMicciResume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn outline"
@@ -1075,7 +1075,7 @@ const HeroSection = () => {
                 Let&apos;s Connect
               </a>
               <a
-                href="/BrandonMicciSeniorAIExecutive.pdf"
+                href="/BrandonMicciResume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn outline"
