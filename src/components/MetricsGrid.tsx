@@ -353,7 +353,7 @@ const MetricsGrid = () => {
             <div className="metric-card">
               <span 
                 className="metric-number" 
-                data-target="16" 
+                data-target="17"
                 data-suffix="+"
                 ref={(el) => { metricRefs.current[3] = el; }}
               >

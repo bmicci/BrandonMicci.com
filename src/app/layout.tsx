@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Brandon Micci - AI & Digital Transformation",
-  description: "Portfolio showcasing AI expertise and digital transformation solutions",
+  title: "Brandon Micci | Head of AI Strategy & Business Transformation",
+  description:
+    "Dallas, TX-based AI Strategy & Business Transformation Executive at JPMorgan Chase. 17+ years delivering $400M+ in enterprise impact — $22M+ AI-driven savings, 27K+ AI users enabled, 30K+ analytics users scaled. Expert in Generative AI, Agentic AI, LLM deployment, and enterprise data strategy.",
 };
 
 export default function RootLayout({
