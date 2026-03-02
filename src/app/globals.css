@@ -1,9 +1,123 @@
+@import '../styles/components.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --step-0: clamp(1rem, 0.96rem + 0.6vw, 1.25rem);
+  --step-1: clamp(1.25rem, 1.1rem + 1.2vw, 1.75rem);
+  --step-2: clamp(1.75rem, 1.5rem + 2.4vw, 2.5rem);
+  --step-3: clamp(2.25rem, 1.8rem + 3.2vw, 3.25rem);
+  /* Fixed header height; adjust if your header height changes */
+  --header-h: 4.5rem;
+}
+
+h1 {
+  font-size: var(--step-3);
+  line-height: 1.1;
+}
+h2 {
+  font-size: var(--step-2);
+  line-height: 1.15;
+}
+p {
+  font-size: var(--step-0);
+  line-height: 1.6;
+}
+section {
+  padding-block: clamp(1.5rem, 3vw, 2rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Web Vitals optimizations */
+img {
+  max-width: 100%;
+  height: auto;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Focus outlines for accessibility */
+*:focus-visible {
+  outline: 2px solid #00d4ff;
+  outline-offset: 2px;
+}
+
+/* Color contrast improvements */
+.gradient-text {
+  background: linear-gradient(135deg, #00d4ff 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* iPad Pro: Fix large gap between hero and strategic sections */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  section#home,
+  section#strategic-vision {
+    min-height: auto !important;
+  }
+}
+
+/* Ensure all in-page anchors land below the fixed header */
+section {
+  scroll-margin-top: var(--header-h);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Reserve layout for section anchors to avoid jumps */
+#hero,
+#strategic-advantage,
+#executive-experience,
+#transformation-leadership,
+#professional-impact,
+#faq,
+#connectwithme {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px; /* tune based on typical section height */
+}
+
+/* Avoid image-driven shifts if authors forget width/height */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Reduce synthetic font effects that cause layout wiggle */
+html,
 body {
-  background: #0a0a0a;
-  color: #ededed;
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-synthesis-weight: none;
+  font-synthesis-style: none;
+  /* Prefer using font metrics for fallback sizing (modern browsers) */
+  font-size-adjust: from-font;
+}
+
+/* Prevent scrollbars causing reflow during first paints */
+html {
+  overflow-y: scroll;
+}
+
+/* Utility to reserve line-height space for hero headings (tune if needed) */
+.hero-stable h1 {
+  line-height: 1.05;
+}
+.hero-stable p {
+  line-height: 1.35;
 }

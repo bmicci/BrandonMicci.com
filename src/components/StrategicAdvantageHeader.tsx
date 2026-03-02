@@ -7,12 +7,31 @@ const StrategicAdvantageHeader: React.FC = () => {
     <>
       <style jsx>{`
         .strategic-header {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          padding: 3rem 2rem 2rem;
+          font-family:
+            'Inter',
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            sans-serif;
+          padding: 0.5rem 2rem 0.5rem;
           text-align: center;
           position: relative;
           z-index: 10;
           animation: titleSlideUp 1s ease-out;
+        }
+
+        /* iPad Pro spacing tighten */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .strategic-header {
+            padding: 0.25rem 1.5rem 0.5rem;
+          }
+          .strategic-title {
+            font-size: 2.4rem;
+          }
+          .strategic-subtitle {
+            max-width: 850px;
+          }
         }
 
         .strategic-title {
@@ -36,7 +55,7 @@ const StrategicAdvantageHeader: React.FC = () => {
           font-size: 1.2rem;
           color: rgba(255, 255, 255, 0.9);
           line-height: 1.5;
-          font-weight: 400;
+          font-weight: 600;
           max-width: 900px;
           margin: 0 auto;
           animation: subtitleFade 1s ease-out 0.3s both;
@@ -97,23 +116,38 @@ const StrategicAdvantageHeader: React.FC = () => {
         }
 
         @keyframes sparkleEffect {
-          0%, 100% { 
-            opacity: 0.3; 
-            transform: scale(0.8); 
+          0%,
+          100% {
+            opacity: 0.3;
+            transform: scale(0.8);
           }
-          50% { 
-            opacity: 1; 
-            transform: scale(1.1); 
+          50% {
+            opacity: 1;
+            transform: scale(1.1);
           }
         }
       `}</style>
-      
+
       <div className="strategic-header">
-        <h2 className="strategic-title">
-          <span className="gradient-text">Strategic Advantage</span>
+        <h2 id="strategic-advantage-title" className="strategic-title">
+          <span className="gradient-text">What Sets Me Apart</span>
         </h2>
-        <p className="strategic-subtitle">
-          What sets me apart in the rapidly evolving AI and data strategy landscape
+        <p className="strategic-subtitle font-semibold text-lg md:text-xl">
+          Proven execution across{' '}
+          <a
+            href="#transformation-leadership"
+            className="text-cyan-400 hover:text-cyan-300 transition-colors"
+          >
+            Fortune 500
+          </a>{' '}
+          and{' '}
+          <a
+            href="#executive-experience"
+            className="text-cyan-400 hover:text-cyan-300 transition-colors"
+          >
+            Big Four
+          </a>{' '}
+          advisory
         </p>
       </div>
     </>

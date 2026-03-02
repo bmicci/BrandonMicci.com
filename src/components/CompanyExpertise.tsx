@@ -8,66 +8,45 @@ const CompanyExpertise: React.FC = () => {
       <style jsx>{`
         /* Company Expertise Section */
         .expertise-section {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          font-family:
+            'Inter',
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            sans-serif;
           color: white;
           padding: 60px 2rem;
           position: relative;
-          background: linear-gradient(135deg, rgba(0, 212, 255, 0.03) 0%, rgba(30, 144, 255, 0.05) 100%);
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
           z-index: 10;
           text-align: center;
-          margin: 2rem 0;
+          margin: 2rem auto;
           border-radius: 20px;
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
-          overflow: hidden;
-          border: 2px solid transparent;
-          background-clip: padding-box;
+          border: 1px solid rgba(255, 255, 255, 0.1);
           transition: all 0.3s ease;
+          width: clamp(320px, calc(100vw - 2rem), 1200px);
+          max-width: 1200px;
         }
 
         .expertise-section:hover {
           transform: translateY(-2px);
-          box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+          box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(0, 212, 255, 0.3);
         }
 
-        .expertise-section::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          border-radius: 20px;
-          background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(30, 144, 255, 0.2), rgba(0, 212, 255, 0.3));
-          background-size: 200% 200%;
-          animation: borderGlow 4s ease-in-out infinite;
-          z-index: -1;
-        }
-
-        .expertise-section::after {
-          content: '';
-          position: absolute;
-          top: 2px;
-          left: 2px;
-          right: 2px;
-          bottom: 2px;
-          border-radius: 18px;
-          background: linear-gradient(135deg, rgba(0, 212, 255, 0.03) 0%, rgba(30, 144, 255, 0.05) 100%);
-          z-index: -1;
-        }
-
-        @keyframes borderGlow {
-          0% { 
+        @keyframes gradientShift {
+          0% {
             background-position: 0% 50%;
-            opacity: 0.4;
           }
-          50% { 
+          50% {
             background-position: 100% 50%;
-            opacity: 0.8;
           }
-          100% { 
+          100% {
             background-position: 0% 50%;
-            opacity: 0.4;
           }
         }
 
@@ -84,7 +63,7 @@ const CompanyExpertise: React.FC = () => {
 
         .expertise-title {
           font-size: 1.1rem;
-          color: rgba(255, 255, 255, 0.7);
+          color: rgba(255, 255, 255, 0.9);
           text-transform: uppercase;
           letter-spacing: 3px;
           font-weight: 600;
@@ -93,37 +72,7 @@ const CompanyExpertise: React.FC = () => {
           position: relative;
         }
 
-        .expertise-title::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: -3rem;
-          width: 2rem;
-          height: 2px;
-          background: linear-gradient(90deg, transparent, #00d4ff, transparent);
-          transform: translateY(-50%);
-          opacity: 0.6;
-        }
-
-        .expertise-title::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          right: -3rem;
-          width: 2rem;
-          height: 2px;
-          background: linear-gradient(90deg, transparent, #00d4ff, transparent);
-          transform: translateY(-50%);
-          opacity: 0.6;
-        }
-
-        /* Hide decorative lines on mobile */
-        @media (max-width: 768px) {
-          .expertise-title::before,
-          .expertise-title::after {
-            display: none;
-          }
-        }
+        /* Removed decorative elements that were causing stuck dots */
 
         .expertise-subtitle {
           font-size: 2.2rem;
@@ -136,36 +85,83 @@ const CompanyExpertise: React.FC = () => {
           animation: titleGlow 3s ease-in-out infinite;
         }
 
+        .expertise-context {
+          font-size: 1.1rem;
+          color: rgba(255, 255, 255, 0.85);
+          line-height: 1.6;
+          font-weight: 500;
+          max-width: 800px;
+          margin: 1rem auto 0;
+          text-align: center;
+        }
+
         .companies-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
           gap: 1.5rem;
-          max-width: 1000px;
           margin: 0 auto;
           animation: gridFadeIn 1s ease-out 0.8s both;
+          max-width: 100%;
+          width: 100%;
+        }
+
+        /* Ensure consistent grid layouts across breakpoints */
+        @media (min-width: 640px) and (max-width: 1023px) {
+          .companies-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1.2rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .companies-grid {
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 1.5rem;
+            max-width: 1000px;
+          }
         }
 
         .company-card {
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
           border-radius: 12px;
-          padding: 1.25rem 1rem;
           text-align: center;
-          transition: all 0.4s ease;
+          transition: all 0.3s ease;
           position: relative;
           overflow: hidden;
           cursor: pointer;
-          border: 2px solid transparent;
+          border: 1px solid rgba(255, 255, 255, 0.2);
           animation: cardFloat 0.8s ease-out;
+          min-height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          max-width: 100%;
         }
 
-        .company-card:nth-child(1) { animation-delay: 0.1s; }
-        .company-card:nth-child(2) { animation-delay: 0.2s; }
-        .company-card:nth-child(3) { animation-delay: 0.3s; }
-        .company-card:nth-child(4) { animation-delay: 0.4s; }
-        .company-card:nth-child(5) { animation-delay: 0.5s; }
-        .company-card:nth-child(6) { animation-delay: 0.6s; }
-        .company-card:nth-child(7) { animation-delay: 0.7s; }
-        .company-card:nth-child(8) { animation-delay: 0.8s; }
+        .company-card:nth-child(1) {
+          animation-delay: 0.1s;
+        }
+        .company-card:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        .company-card:nth-child(3) {
+          animation-delay: 0.3s;
+        }
+        .company-card:nth-child(4) {
+          animation-delay: 0.4s;
+        }
+        .company-card:nth-child(5) {
+          animation-delay: 0.5s;
+        }
+        .company-card:nth-child(6) {
+          animation-delay: 0.6s;
+        }
+        .company-card:nth-child(7) {
+          animation-delay: 0.7s;
+        }
+        .company-card:nth-child(8) {
+          animation-delay: 0.8s;
+        }
 
         .company-card::before {
           content: '';
@@ -174,7 +170,12 @@ const CompanyExpertise: React.FC = () => {
           left: -100%;
           width: 100%;
           height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+          );
           transition: left 0.6s ease;
         }
 
@@ -183,11 +184,10 @@ const CompanyExpertise: React.FC = () => {
         }
 
         .company-card:hover {
-          transform: translateY(-8px) scale(1.05);
-          box-shadow: 
-            0 15px 35px rgba(0, 212, 255, 0.4),
-            0 0 0 3px rgba(255, 255, 255, 0.1);
-          border-color: rgba(255, 255, 255, 0.2);
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(0, 212, 255, 0.2);
+          background: rgba(255, 255, 255, 0.15);
+          border-color: rgba(0, 212, 255, 0.4);
         }
 
         .company-name {
@@ -226,10 +226,11 @@ const CompanyExpertise: React.FC = () => {
         }
 
         @keyframes titleGlow {
-          0%, 100% { 
+          0%,
+          100% {
             text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
           }
-          50% { 
+          50% {
             text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
           }
         }
@@ -257,12 +258,14 @@ const CompanyExpertise: React.FC = () => {
         }
 
         /* Responsive Design */
-        @media (max-width: 1024px) {
-          .companies-grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
+        @media (min-width: 1440px) {
+          .expertise-section {
+            max-width: 1200px;
+            width: clamp(900px, 75vw, 1200px);
           }
-          
+        }
+
+        @media (max-width: 1024px) {
           .expertise-subtitle {
             font-size: 1.9rem;
           }
@@ -271,30 +274,28 @@ const CompanyExpertise: React.FC = () => {
         @media (max-width: 768px) {
           .expertise-section {
             padding: 40px 1rem;
+            width: clamp(300px, calc(100vw - 1rem), 1200px);
+            margin: 1rem auto;
           }
-          
+
           .expertise-header {
             margin-bottom: 2rem;
           }
-          
+
           .expertise-title {
             font-size: 0.95rem;
             letter-spacing: 2px;
           }
-          
+
           .expertise-subtitle {
             font-size: 1.6rem;
           }
-          
-          .companies-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+
+          .expertise-context {
+            font-size: 1rem;
+            margin: 0.75rem auto 0;
           }
-          
-          .company-card {
-            padding: 1rem 0.75rem;
-          }
-          
+
           .company-name {
             font-size: 0.9rem;
           }
@@ -303,65 +304,77 @@ const CompanyExpertise: React.FC = () => {
         @media (max-width: 480px) {
           .expertise-section {
             padding: 30px 0.75rem;
+            width: clamp(280px, calc(100vw - 0.75rem), 1200px);
+            margin: 0.75rem auto;
           }
-          
+
           .expertise-title {
             font-size: 0.85rem;
             letter-spacing: 1.5px;
           }
-          
+
           .expertise-subtitle {
             font-size: 1.4rem;
             line-height: 1.3;
           }
-          
-          .companies-grid {
-            grid-template-columns: 1fr;
-            gap: 0.875rem;
-            max-width: 300px;
-          }
-          
-          .company-card {
-            padding: 1.125rem 1rem;
-          }
-          
+
           .company-name {
             font-size: 1rem;
           }
         }
+
+        /* iPhone SE micro-tune for extra safety */
+        @media (max-width: 360px) {
+          .expertise-section {
+            width: clamp(260px, calc(100vw - 0.5rem), 1200px);
+            margin: 0.5rem auto;
+            padding: 20px 0.5rem;
+          }
+
+          .card-shell {
+            width: clamp(250px, calc(100vw - 1.5rem), 1200px);
+            padding: 0.75rem;
+          }
+        }
       `}</style>
-      
-      <div className="expertise-section">
+
+      <div className="expertise-section mx-auto w-full max-w-6xl px-4 md:px-8 overflow-x-clip">
         <div className="expertise-container">
           <div className="expertise-header">
             <h2 className="expertise-title">Proven Track Record Across</h2>
-            <h3 className="expertise-subtitle">Big Four & Fortune 500 Organizations</h3>
+            <h3 className="expertise-subtitle">
+              Big Four & Fortune 500 Organizations
+            </h3>
+            <p className="expertise-context">
+              Delivering transformation where it matters most—across the
+              world&apos;s most complex, regulated enterprise environments
+            </p>
           </div>
-          
-          <div className="companies-grid">
-            <div className="company-card">
-              <h4 className="company-name">JPMorgan Chase</h4>
+
+          <div className="companies-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 max-w-full">
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
+              <div className="company-name font-bold">JPMorgan Chase</div>
             </div>
-            <div className="company-card">
-              <h4 className="company-name">Capital One</h4>
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
+              <div className="company-name font-bold">Capital One</div>
             </div>
-            <div className="company-card">
-              <h4 className="company-name">Citi</h4>
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
+              <div className="company-name font-bold">Citi</div>
             </div>
-            <div className="company-card">
-              <h4 className="company-name">Southwest Airlines</h4>
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
+              <div className="company-name font-bold">Southwest Airlines</div>
             </div>
-            <div className="company-card">
-              <h4 className="company-name">PwC</h4>
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
+              <div className="company-name font-bold">PwC</div>
             </div>
-            <div className="company-card">
-              <h4 className="company-name">Booz Allen Hamilton</h4>
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
+              <div className="company-name font-bold">Booz Allen Hamilton</div>
             </div>
-            <div className="company-card">
-              <h4 className="company-name">EY</h4>
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
+              <div className="company-name font-bold">EY</div>
             </div>
-            <div className="company-card">
-              <h4 className="company-name">Capgemini</h4>
+            <div className="company-card card-shell rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm">
+              <div className="company-name font-bold">Capgemini</div>
             </div>
           </div>
         </div>
