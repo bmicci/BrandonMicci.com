@@ -469,9 +469,9 @@ const Navigation = () => {
             </li>
             <li className="nav-item">
               <Link
-                href="/#strategic-vision"
-                className={`nav-link ${activeLink === 'strategic-vision' ? 'active' : ''}`}
-                onClick={(e) => handleSmoothScroll(e, 'strategic-vision')}
+                href="/#strategic-advantage"
+                className={`nav-link ${activeLink === 'strategic-advantage' ? 'active' : ''}`}
+                onClick={(e) => handleSmoothScroll(e, 'strategic-advantage')}
                 scroll={false}
               >
                 Strategic Advantage

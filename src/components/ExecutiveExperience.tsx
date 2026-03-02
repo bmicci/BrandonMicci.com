@@ -482,7 +482,7 @@ const ExecutiveExperience = memo(() => {
             </span>
           </h2>
           <p className="mx-auto mt-3 max-w-4xl text-sm md:text-xl leading-relaxed text-slate-200 px-2 font-semibold">
-            16+ years of{' '}
+            17+ years of{' '}
             <Link
               href="/#strategic-advantage"
               className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"

@@ -749,7 +749,7 @@ const TransformationLeadership = () => {
             href="/#executive-experience"
             className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
           >
-            16+ years of executive leadership
+            17+ years of executive leadership
           </Link>
         </p>
         <p className="portfolio-subtitle mobile-text font-semibold text-lg md:text-xl text-slate-100">
