@@ -140,7 +140,7 @@ const ROLES: Role[] = [
   },
   {
     dates: '2019 - 2020',
-    role: 'Head of Digital Innovation & IoT (Promoted 2020)',
+    role: 'Head of Digital Innovation & IoT (Promoted Aug 2019)',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
     icon: <Plane className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
@@ -163,7 +163,7 @@ const ROLES: Role[] = [
     ],
   },
   {
-    dates: '2019',
+    dates: 'Feb 2019 – Aug 2019',
     role: 'Manager, Data Enablement & Analytics COE',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',

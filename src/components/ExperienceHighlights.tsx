@@ -31,7 +31,7 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
   },
   {
     dates: 'Jan 2022 - Feb 2024',
-    role: 'Senior Director, Intelligent Industry & Emerging Technology',
+    role: 'Senior Director, Head of AI/IoT & Emerging Technology',
     companyType: 'Global Consulting Firm',
     icon: (
       <Rocket
@@ -46,7 +46,7 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
   },
   {
     dates: 'Feb 2021 - Jan 2022',
-    role: 'Senior Manager, Forensic Technology & Data Analytics',
+    role: 'Senior Manager, AI/ML Forensic Analytics & Technology',
     companyType: 'Big Four Consulting',
     icon: (
       <Search
