@@ -22,7 +22,7 @@ const Navigation = () => {
   // Sync active link with hash on mount and hash changes
   useEffect(() => {
     const syncHash = () => {
-      const hash = window.location.hash.slice(1) || 'home';
+      const hash = window.location.hash.slice(1) || 'hero';
       setActiveLink(hash);
     };
     syncHash();
@@ -433,7 +433,7 @@ const Navigation = () => {
 
       <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
         <nav className="nav-container" aria-label="Primary">
-          <div className="logo" onClick={() => handleLinkClick('home')}>
+          <div className="logo" onClick={() => handleLinkClick('hero')}>
             <div className="logo-bm">
               <Image
                 src="/logo-bm-tight.webp"
@@ -452,9 +452,9 @@ const Navigation = () => {
           <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
             <li className="nav-item">
               <Link
-                href="/#home"
-                className={`nav-link ${activeLink === 'home' ? 'active' : ''}`}
-                onClick={(e) => handleSmoothScroll(e, 'home')}
+                href="/"
+                className={`nav-link ${activeLink === 'hero' ? 'active' : ''}`}
+                onClick={(e) => handleSmoothScroll(e, 'hero')}
                 scroll={false}
               >
                 Home
