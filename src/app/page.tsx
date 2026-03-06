@@ -11,45 +11,31 @@ import StrategicIntroCard from '@/components/StrategicIntroCard';
 import CompanyExpertise from '@/components/CompanyExpertise';
 import StrategicDifferentiators from '@/components/StrategicDifferentiators';
 
-// Below-fold components - Lazy loaded for better initial page performance
+// Below-fold components - Lazy loaded with SSR to prevent CLS
 const ExperienceHighlights = dynamic(
   () => import('@/components/ExperienceHighlights'),
-  { loading: () => <SectionSkeleton height="400px" /> }
+  { ssr: true }
 );
 
 const ProfessionalImpact = dynamic(
   () => import('@/components/TransformationLeadership'),
-  { loading: () => <SectionSkeleton height="800px" /> }
+  { ssr: true }
 );
 
 const TestimonialsSection = dynamic(
   () => import('@/components/TestimonialsSection'),
-  { loading: () => <SectionSkeleton height="500px" /> }
+  { ssr: true }
 );
 
 const FAQSection = dynamic(
   () => import('@/components/FAQSection'),
-  { loading: () => <SectionSkeleton height="400px" /> }
+  { ssr: true }
 );
 
 const IndustryCollaboration = dynamic(
   () => import('@/components/IndustryCollaboration'),
-  { loading: () => <SectionSkeleton height="600px" /> }
+  { ssr: true }
 );
-
-// Simple loading skeleton for lazy-loaded sections
-function SectionSkeleton({ height }: { height: string }) {
-  return (
-    <div
-      style={{
-        height,
-        background: 'linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.03) 100%)',
-        borderRadius: '8px',
-        margin: '1rem 2rem',
-      }}
-    />
-  );
-}
 
 export default function Home() {
   // Prevent first-load jump
@@ -109,7 +95,7 @@ export default function Home() {
         <ProfessionalImpact />
       </section>
 
-      {/* Professional Impact Section */}
+      {/* Testimonials Section */}
       <section
         id="professional-impact"
         className="relative scroll-mt-[var(--header-h,4.5rem)]"

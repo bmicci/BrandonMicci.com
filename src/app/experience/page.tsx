@@ -5,7 +5,7 @@ import ExecutiveExperience from '@/components/ExecutiveExperience';
 export const metadata: Metadata = {
   title: 'Executive Experience | AI Leadership & Digital Transformation',
   description:
-    'Explore Brandon Micci\'s 16+ year executive career spanning Fortune 500 banks, Big Four consulting, and leading enterprises. VP AI Products at JPMorgan Chase, delivering $400M+ enterprise value through AI strategy and digital transformation.',
+    'Explore Brandon Micci\'s 17+ year executive career spanning Fortune 500 banks, Big Four consulting, and leading enterprises. Head of AI Strategy & Business Transformation at JPMorgan Chase, delivering $400M+ enterprise value through AI strategy and digital transformation.',
   keywords: [
     'AI executive experience',
     'enterprise AI leadership',
@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     'digital transformation executive',
     'LLM deployment leader',
     'Chief AI Officer candidate',
-    'VP AI Products',
+    'Head of AI Strategy',
     'Dallas AI executive',
   ],
   openGraph: {
     title: 'Executive Experience | Brandon Micci',
     description:
-      '16+ years leading AI strategy and digital transformation across Fortune 500 organizations. $400M+ enterprise value delivered.',
+      '17+ years leading AI strategy and digital transformation across Fortune 500 organizations. $400M+ enterprise value delivered.',
     url: 'https://brandonmicci.com/experience',
     type: 'profile',
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Executive Experience | Brandon Micci',
     description:
-      '16+ years leading AI strategy and digital transformation across Fortune 500 organizations.',
+      '17+ years leading AI strategy and digital transformation across Fortune 500 organizations.',
   },
   alternates: {
     canonical: '/experience',
@@ -37,6 +37,29 @@ export const metadata: Metadata = {
 export default function ExperiencePage() {
   return (
     <div className="text-white relative min-h-screen">
+      {/* Back to Home Link */}
+      <div className="mx-auto max-w-6xl px-4 pt-24 pb-4">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-slate-400 hover:text-cyan-400 transition-colors text-sm font-medium"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+          Back to Home
+        </Link>
+      </div>
+
       {/* Full Timeline - component includes its own header */}
       <ExecutiveExperience />
 

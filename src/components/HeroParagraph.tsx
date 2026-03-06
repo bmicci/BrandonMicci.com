@@ -93,13 +93,13 @@ const HeroParagraph = () => {
       <div className="hero-paragraph-wrapper">
         <div className="hero-paragraph-container">
           <p className="hero-intro">
-            With 16+ years of experience architecting enterprise-wide AI
+            With 17+ years of experience architecting enterprise-wide AI
             solutions, I&apos;ve transformed complex technological challenges
-            into over $400M in measurable business outcomes. From leading the
-            largest LLM deployment in the payments industry to building
-            evangelical data communities of 30,000+ users, I bridge the gap
-            between cutting-edge innovation and practical enterprise
-            implementation.
+            into over $400M in measurable business outcomes. From delivering
+            $22M+ in annualized savings through LLM-powered automation at
+            JPMorgan to building evangelical data communities of 30,000+ users
+            at Capital One, I bridge the gap between cutting-edge AI innovation
+            and practical enterprise implementation.
           </p>
         </div>
       </div>

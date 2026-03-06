@@ -60,7 +60,6 @@ const primaryProjects: Project[] = [
     mobileDescription: 'Real-time ML fraud detection at massive scale.',
     metrics: [
       { value: '$400M', label: 'Contract Value' },
-      { value: '99.9%', label: 'Accuracy Rate' },
     ],
     tags: ['ML', 'Fraud Detection', 'Real-time'],
   },
@@ -73,7 +72,7 @@ const primaryProjects: Project[] = [
       "30,000+ user platform—world's largest analytics community.",
     metrics: [
       { value: '30,000+', label: 'Platform Users' },
-      { value: '80%', label: 'Capability Boost' },
+      { value: '$8M', label: 'Annual Savings' },
     ],
     tags: ['Tableau', 'Data Governance', 'COE'],
   },
@@ -84,11 +83,11 @@ const secondaryProjects: Project[] = [
     title: 'Industry 4.0 IoT Ecosystem',
     icon: Factory,
     description:
-      'Comprehensive platform integrating 1000+ IoT devices across telematics, smart buildings, and wearables with unified AI analytics.',
-    mobileDescription: 'Connected 1000+ IoT devices for Fortune 50 insurers.',
+      'Comprehensive platform integrating thousands of devices across telematics, smart buildings, and wearables with unified AI analytics.',
+    mobileDescription: 'Connected thousands of devices for Fortune 50 insurers.',
     metrics: [
       { value: '1000+', label: 'Connected Devices' },
-      { value: '60%', label: 'Loss Reduction' },
+      { value: 'Significant', label: 'Loss Mitigation' },
     ],
     tags: ['Industry 4.0', 'Telematics', 'AI Analytics'],
   },
@@ -108,11 +107,10 @@ const secondaryProjects: Project[] = [
     title: 'Event-Based Marketing Engine',
     icon: Target,
     description:
-      'Real-time Hadoop-powered engine at a global financial institution reaching millions with personalized campaigns and 300% conversion improvement.',
-    mobileDescription: 'Reached 10M+ customers with 300% better conversion.',
+      'Real-time Hadoop-powered engine at a global financial institution reaching millions with data-driven targeted campaigns.',
+    mobileDescription: 'Reached 10M+ customers with data-driven targeted campaigns.',
     metrics: [
       { value: '10M+', label: 'Customers Reached' },
-      { value: '300%', label: 'Conversion Uplift' },
     ],
     tags: ['Hadoop', 'Real-time', 'Big Data'],
   },
@@ -120,11 +118,10 @@ const secondaryProjects: Project[] = [
     title: 'Analytics-as-a-Service Platform',
     icon: LineChart,
     description:
-      'Self-service analytics platform at a Big 4 consulting firm automating Risk, Compliance, and Fraud detection, generating continuous revenue stream.',
-    mobileDescription: 'SaaS platform generating $30M annual revenue.',
+      'Repeatable analytics framework for Risk, Compliance, and Fraud detection deployed across multiple Fortune 100 client engagements at a Big 4 consulting firm—generating $25MM+ in annual recurring revenue.',
+    mobileDescription: 'SaaS platform generating $25MM+ annual revenue.',
     metrics: [
-      { value: '$30M', label: 'Annual Revenue' },
-      { value: '85%', label: 'Process Automation' },
+      { value: '$25MM+', label: 'Annual Recurring Revenue' },
     ],
     tags: ['SaaS', 'Analytics', 'Platform'],
   },
@@ -322,7 +319,11 @@ const TransformationLeadership = () => {
         .cta-container {
           display: flex;
           justify-content: center;
-          padding: 1.5rem 2rem 2rem;
+          padding: 2rem 2rem 2.5rem;
+        }
+
+        .cta-wrapper {
+          text-align: center;
         }
 
         .case-studies-cta {
@@ -331,14 +332,15 @@ const TransformationLeadership = () => {
           gap: 0.5rem;
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
           color: white;
-          padding: 0.875rem 2rem;
-          border-radius: 8px;
+          padding: 1rem 2rem;
+          border-radius: 12px;
           font-weight: 600;
-          font-size: 1rem;
+          font-size: 1.05rem;
           text-decoration: none;
           transition: all 0.3s ease;
           position: relative;
           overflow: hidden;
+          box-shadow: 0 8px 24px rgba(0, 212, 255, 0.3);
         }
 
         .case-studies-cta::before {
@@ -362,17 +364,23 @@ const TransformationLeadership = () => {
         }
 
         .case-studies-cta:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 12px 30px rgba(0, 212, 255, 0.4);
+          transform: scale(1.05);
+          box-shadow: 0 12px 32px rgba(0, 212, 255, 0.45);
         }
 
         .cta-arrow {
-          font-size: 1.1rem;
+          font-size: 1.2rem;
           transition: transform 0.3s ease;
         }
 
         .case-studies-cta:hover .cta-arrow {
           transform: translateX(4px);
+        }
+
+        .cta-subtext {
+          margin-top: 0.75rem;
+          font-size: 0.875rem;
+          color: rgba(255, 255, 255, 0.6);
         }
 
         .projects-grid {
@@ -740,7 +748,7 @@ const TransformationLeadership = () => {
             href="/#executive-experience"
             className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
           >
-            16+ years of executive leadership
+            17+ years of executive leadership
           </Link>
         </p>
         <p className="portfolio-subtitle mobile-text font-semibold text-lg md:text-xl text-slate-100">
@@ -870,10 +878,15 @@ const TransformationLeadership = () => {
 
       {/* CTA to full case studies page */}
       <div className="cta-container">
-        <Link href="/case-studies" className="case-studies-cta">
-          <span>View All Case Studies</span>
-          <span className="cta-arrow">→</span>
-        </Link>
+        <div className="cta-wrapper">
+          <Link href="/case-studies" className="case-studies-cta">
+            <span>View All Case Studies</span>
+            <span className="cta-arrow">→</span>
+          </Link>
+          <p className="cta-subtext">
+            Detailed breakdowns with challenges, solutions &amp; results
+          </p>
+        </div>
       </div>
     </div>
   );

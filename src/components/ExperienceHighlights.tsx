@@ -16,7 +16,7 @@ type HighlightRole = {
 const HIGHLIGHT_ROLES: HighlightRole[] = [
   {
     dates: 'Feb 2024 - Present',
-    role: 'VP, Head of NextGen AI/ML Solutions',
+    role: 'Head of AI Strategy & Business Transformation',
     companyType: 'Fortune 50 Bank (Payments)',
     icon: (
       <Brain
@@ -31,7 +31,7 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
   },
   {
     dates: 'Jan 2022 - Feb 2024',
-    role: 'Senior Director, Intelligent Industry & Emerging Technology',
+    role: 'Senior Director, Head of AI/IoT & Emerging Technology',
     companyType: 'Global Consulting Firm',
     icon: (
       <Rocket
@@ -46,7 +46,7 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
   },
   {
     dates: 'Feb 2021 - Jan 2022',
-    role: 'Senior Manager, Forensic Technology & Data Analytics',
+    role: 'Senior Manager, AI/ML Forensic Analytics & Technology',
     companyType: 'Big Four Consulting',
     icon: (
       <Search
@@ -60,9 +60,9 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
       'Procured strategic engagement for real-time AI-powered fraud analytics engine',
   },
   {
-    dates: '2015 - 2019',
+    dates: '2015 - 2020',
     role: 'Analytics COE Leader & Digital Innovation',
-    companyType: 'Fortune 100 Bank + Major Airline',
+    companyType: 'Fortune 100 Banks + Major Airline',
     icon: (
       <BarChart
         className="w-6 h-6 text-cyan-400"
@@ -91,7 +91,7 @@ const ExperienceHighlights = () => {
             </span>
           </h2>
           <p className="text-lg text-slate-200 max-w-3xl mx-auto font-medium">
-            16+ years leading AI strategy, digital transformation, and data
+            17+ years leading AI strategy, digital transformation, and data
             innovation across Fortune 500 organizations
           </p>
         </div>

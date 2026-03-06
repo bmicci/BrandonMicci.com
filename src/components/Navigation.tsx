@@ -22,7 +22,7 @@ const Navigation = () => {
   // Sync active link with hash on mount and hash changes
   useEffect(() => {
     const syncHash = () => {
-      const hash = window.location.hash.slice(1) || 'home';
+      const hash = window.location.hash.slice(1) || 'hero';
       setActiveLink(hash);
     };
     syncHash();
@@ -88,14 +88,7 @@ const Navigation = () => {
           top: 0;
         }
 
-        /* Reset for Wix compatibility */
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-
-        .wix-header {
+        .site-header {
           font-family:
             'Inter',
             -apple-system,
@@ -116,7 +109,7 @@ const Navigation = () => {
           transition: all 0.3s ease;
         }
 
-        .wix-header.scrolled {
+        .site-header.scrolled {
           background: rgba(10, 10, 10, 0.95) !important;
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
@@ -438,12 +431,12 @@ const Navigation = () => {
         Skip to content
       </a>
 
-      <header className={`wix-header ${isScrolled ? 'scrolled' : ''}`}>
+      <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
         <nav className="nav-container" aria-label="Primary">
-          <div className="logo" onClick={() => handleLinkClick('home')}>
+          <div className="logo" onClick={() => handleLinkClick('hero')}>
             <div className="logo-bm">
               <Image
-                src="/logo-bm-tight.png"
+                src="/logo-bm-tight.webp"
                 alt="Brandon Micci Logo"
                 width={52}
                 height={52}
@@ -459,9 +452,9 @@ const Navigation = () => {
           <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
             <li className="nav-item">
               <Link
-                href="/#home"
-                className={`nav-link ${activeLink === 'home' ? 'active' : ''}`}
-                onClick={(e) => handleSmoothScroll(e, 'home')}
+                href="/"
+                className={`nav-link ${activeLink === 'hero' ? 'active' : ''}`}
+                onClick={(e) => handleSmoothScroll(e, 'hero')}
                 scroll={false}
               >
                 Home
@@ -469,9 +462,9 @@ const Navigation = () => {
             </li>
             <li className="nav-item">
               <Link
-                href="/#strategic-vision"
-                className={`nav-link ${activeLink === 'strategic-vision' ? 'active' : ''}`}
-                onClick={(e) => handleSmoothScroll(e, 'strategic-vision')}
+                href="/#strategic-advantage"
+                className={`nav-link ${activeLink === 'strategic-advantage' ? 'active' : ''}`}
+                onClick={(e) => handleSmoothScroll(e, 'strategic-advantage')}
                 scroll={false}
               >
                 Strategic Advantage

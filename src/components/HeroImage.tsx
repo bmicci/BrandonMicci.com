@@ -143,7 +143,7 @@ const HeroImage = () => {
 
         <div className="hi-caption">
           <p className="hi-name">Brandon Micci</p>
-          <p className="hi-title">VP, Head of AI Products</p>
+          <p className="hi-title">Head of AI Strategy & Business Transformation</p>
         </div>
       </div>
     </>

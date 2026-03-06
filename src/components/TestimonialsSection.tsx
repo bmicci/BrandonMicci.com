@@ -327,6 +327,27 @@ const TestimonialsSection: React.FC = () => {
             top: 1rem;
             right: 1rem;
           }
+
+          /* Disable heavy animations on mobile for performance */
+          .testimonials-grid-bg {
+            animation: none !important;
+          }
+          .testimonial-card {
+            animation: none !important;
+          }
+          .border-glow {
+            animation: none !important;
+          }
+        }
+
+        /* Respect reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+          .testimonials-track,
+          .testimonials-grid-bg,
+          .testimonial-card,
+          .border-glow {
+            animation: none !important;
+          }
         }
       `}</style>
 
