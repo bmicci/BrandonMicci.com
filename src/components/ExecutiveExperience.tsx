@@ -126,7 +126,7 @@ const ROLES: Role[] = [
     achievements: [
       {
         title: 'Mega-Deal Success',
-        text: 'Procured $400MM, 10-year strategic engagement with global insurance firm for real-time AI-powered fraud analytics engine.',
+        text: 'Procured $400MM, 10-year strategic engagement with Top-5 national health insurer for real-time AI-powered fraud analytics engine.',
       },
       {
         title: 'Revenue Generation',

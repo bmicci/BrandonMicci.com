@@ -72,7 +72,7 @@ const primaryProjects: Project[] = [
       "30,000+ user platform—world's largest analytics community.",
     metrics: [
       { value: '30,000+', label: 'Platform Users' },
-      { value: '80%', label: 'Capability Boost' },
+      { value: '$8M', label: 'Annual Savings' },
     ],
     tags: ['Tableau', 'Data Governance', 'COE'],
   },
@@ -118,11 +118,10 @@ const secondaryProjects: Project[] = [
     title: 'Analytics-as-a-Service Platform',
     icon: LineChart,
     description:
-      'Self-service analytics platform at a Big 4 consulting firm automating Risk, Compliance, and Fraud detection, generating continuous revenue stream.',
+      'Repeatable analytics framework for Risk, Compliance, and Fraud detection deployed across multiple Fortune 100 client engagements at a Big 4 consulting firm—generating $25MM+ in annual recurring revenue.',
     mobileDescription: 'SaaS platform generating $25MM+ annual revenue.',
     metrics: [
-      { value: '$25MM+', label: 'Annual Revenue' },
-      { value: '85%', label: 'Process Automation' },
+      { value: '$25MM+', label: 'Annual Recurring Revenue' },
     ],
     tags: ['SaaS', 'Analytics', 'Platform'],
   },

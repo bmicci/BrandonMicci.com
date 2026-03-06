@@ -77,10 +77,10 @@ const caseStudies: CaseStudy[] = [
     id: 'fraud-detection',
     title: 'AI Fraud Detection Engine',
     icon: ShieldAlert,
-    company: 'Fortune 50 Insurer',
+    company: 'Top-5 National Health Insurer',
     industry: 'Insurance',
     challenge:
-      'A global insurance leader needed real-time fraud detection capabilities that could process millions of transactions while maintaining accuracy rates that exceed industry standards.',
+      'A Top-5 national health insurer needed real-time fraud detection capabilities that could process millions of transactions while maintaining accuracy rates that exceed industry standards.',
     solution:
       'Designed and implemented a real-time fraud analytics platform leveraging advanced machine learning algorithms. Built scalable infrastructure to handle massive transaction volumes with sub-second response times.',
     results: [
@@ -107,12 +107,12 @@ const caseStudies: CaseStudy[] = [
     results: [
       'Built the largest Tableau analytics community worldwide',
       'Onboarded 30,000+ platform users',
-      'Achieved 80% improvement in analytics capability across the organization',
+      'Decommissioned 2,000+ legacy dashboards, delivering $8M in annual savings',
       'Created a replicable COE model for other analytics platforms',
     ],
     metrics: [
       { value: '30,000+', label: 'Platform Users' },
-      { value: '80%', label: 'Capability Boost' },
+      { value: '$8M', label: 'Annual Savings' },
     ],
     technologies: ['Tableau', 'Data Governance', 'COE', 'Analytics'],
   },
@@ -190,16 +190,15 @@ const caseStudies: CaseStudy[] = [
     challenge:
       'A Big 4 consulting firm needed to productize their analytics capabilities to create scalable, recurring revenue streams while automating complex Risk, Compliance, and Fraud detection processes.',
     solution:
-      'Developed and launched a comprehensive Analytics-as-a-Service platform automating Risk, Compliance, and Fraud detection workflows. Created a self-service model that could be deployed across multiple client engagements.',
+      'Built a repeatable Analytics-as-a-Service framework for Risk, Compliance, and Fraud detection—engineered for scale and deployed across multiple large Fortune 100 client engagements. The self-service model reduced implementation overhead and created a consistent, recurring revenue stream.',
     results: [
       'Generated $25MM+ in annual recurring revenue',
-      'Achieved 85% process automation',
-      'Scaled platform across multiple Fortune 500 clients',
-      'Reduced client implementation time by 60%',
+      'Deployed as a repeatable framework across multiple Fortune 100 client engagements',
+      'Standardized analytics patterns for Risk, Compliance, and Fraud detection at enterprise scale',
+      'Reduced client implementation time through reusable platform components',
     ],
     metrics: [
-      { value: '$25MM+', label: 'Annual Revenue' },
-      { value: '85%', label: 'Process Automation' },
+      { value: '$25MM+', label: 'Annual Recurring Revenue' },
     ],
     technologies: ['SaaS', 'Analytics', 'Platform', 'Risk & Compliance'],
   },

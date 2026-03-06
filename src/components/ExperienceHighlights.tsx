@@ -60,9 +60,9 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
       'Procured strategic engagement for real-time AI-powered fraud analytics engine',
   },
   {
-    dates: '2015 - 2019',
+    dates: '2015 - 2020',
     role: 'Analytics COE Leader & Digital Innovation',
-    companyType: 'Fortune 100 Bank + Major Airline',
+    companyType: 'Fortune 100 Banks + Major Airline',
     icon: (
       <BarChart
         className="w-6 h-6 text-cyan-400"
