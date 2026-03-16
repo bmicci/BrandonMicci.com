@@ -1,0 +1,96 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  deployments: write
+
+concurrency:
+  group: vercel-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run lint
+        run: npm run lint -- --max-warnings=0
+
+      - name: Build application
+        run: npm run build
+
+      - name: Pull Vercel environment information
+        if: ${{ env.VERCEL_TOKEN != '' }}
+        run: npx vercel pull --yes --environment=production --token "$VERCEL_TOKEN"
+
+      - name: Deploy to Vercel
+        id: vercel_deploy
+        if: ${{ env.VERCEL_TOKEN != '' }}
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          echo "Starting Vercel build..."
+          npx vercel build --prod --token "$VERCEL_TOKEN" 2>&1 | tee vercel-build.log
+          echo "Deploying prebuilt output to Vercel..."
+          npx vercel deploy --prebuilt --prod --token "$VERCEL_TOKEN" 2>&1 | tee vercel-deploy.log
+
+      - name: Annotate deployment failure
+        if: steps.vercel_deploy.outcome == 'failure'
+        run: echo "::error::Vercel deployment failed. Review the attached logs and AI analysis for remediation guidance."
+
+      - name: Upload deployment logs
+        if: steps.vercel_deploy.outcome == 'failure'
+        uses: actions/upload-artifact@v4
+        with:
+          name: vercel-logs
+          path: |
+            vercel-build.log
+            vercel-deploy.log
+          if-no-files-found: warn
+
+      - name: AI-assisted log analysis
+        if: steps.vercel_deploy.outcome == 'failure'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+        run: |
+          if [ ! -f vercel-deploy.log ]; then
+            echo "vercel-deploy.log not found; skipping AI analysis."
+            exit 0
+          fi
+          node scripts/analyze-vercel-error.mjs vercel-deploy.log || true
+
+      - name: Fail workflow when deployment fails
+        if: steps.vercel_deploy.outcome == 'failure'
+        run: exit 1
+
+      - name: Output preview URL
+        if: steps.vercel_deploy.outcome == 'success'
+        run: |
+          DEPLOY_URL=$(grep -Eo 'https://[^ ]+\.vercel\.app' vercel-deploy.log | tail -n 1 || true)
+          if [ -n "$DEPLOY_URL" ]; then
+            echo "Deployment available at $DEPLOY_URL"
+          else
+            echo "Deployment succeeded but no URL could be parsed."
+          fi
