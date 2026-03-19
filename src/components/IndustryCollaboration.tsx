@@ -698,8 +698,10 @@ const IndustryCollaboration: React.FC = () => {
                   <a
                     className="bm-btn bm-btn-secondary bm-btn-compact"
                     id="bm-resume"
-                    data-resume-url="/BrandonMicciResume.pdf"
-                    href="#"
+                    href="/BrandonMicciResume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Download Brandon Micci Resume (PDF)"
                   >
                     <svg
                       width="16"
@@ -714,8 +716,10 @@ const IndustryCollaboration: React.FC = () => {
                   <a
                     className="bm-btn bm-btn-secondary bm-btn-compact"
                     id="bm-brief"
-                    data-brief-url="/executive-brief.pdf"
-                    href="#"
+                    href="/Brandon_Micci_AI_Executive_Brief_2025.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Download Brandon Micci Executive Brief (PDF)"
                   >
                     <svg
                       width="16"

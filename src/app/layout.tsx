@@ -8,6 +8,7 @@ import BackgroundRoot from '@/components/BackgroundRoot';
 import EnhancedStructuredData from '@/components/EnhancedStructuredData';
 import DevLayoutShiftLogger from '@/components/DevLayoutShiftLogger';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import FloatingCTA from '@/components/FloatingCTA';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 
@@ -215,6 +216,7 @@ export default async function RootLayout({
         <Navigation />
         <Breadcrumbs />
         <BackgroundRoot />
+        <FloatingCTA />
         <main id="main" className="mt-8 md:mt-14">
           {children}
         </main>

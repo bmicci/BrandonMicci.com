@@ -391,7 +391,14 @@ const TestimonialsSection: React.FC = () => {
                     <div className="author-title">Technology Analyst</div>
                     <div className="author-company">Direct Report</div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
@@ -419,7 +426,14 @@ const TestimonialsSection: React.FC = () => {
                       Tableau, a Salesforce Company
                     </div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
@@ -444,7 +458,14 @@ const TestimonialsSection: React.FC = () => {
                     <div className="author-title">Global Account Director</div>
                     <div className="author-company">Alteryx</div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
@@ -468,7 +489,14 @@ const TestimonialsSection: React.FC = () => {
                     <div className="author-title">Sales Director</div>
                     <div className="author-company">Snowflake</div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
@@ -495,7 +523,14 @@ const TestimonialsSection: React.FC = () => {
                       SAP Ariba Cloud Integration
                     </div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
@@ -521,7 +556,14 @@ const TestimonialsSection: React.FC = () => {
                     </div>
                     <div className="author-company">Southwest Airlines</div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
@@ -545,7 +587,14 @@ const TestimonialsSection: React.FC = () => {
                     <div className="author-title">Technology Analyst</div>
                     <div className="author-company">Direct Report</div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
@@ -570,7 +619,14 @@ const TestimonialsSection: React.FC = () => {
                       Tableau, a Salesforce Company
                     </div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
@@ -595,7 +651,14 @@ const TestimonialsSection: React.FC = () => {
                       Tableau, a Salesforce Company
                     </div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
@@ -618,7 +681,14 @@ const TestimonialsSection: React.FC = () => {
                     <div className="author-title">Sales Director</div>
                     <div className="author-company">Snowflake</div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
@@ -645,7 +715,14 @@ const TestimonialsSection: React.FC = () => {
                       SAP Ariba Cloud Integration
                     </div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
@@ -670,7 +747,14 @@ const TestimonialsSection: React.FC = () => {
                     </div>
                     <div className="author-company">Southwest Airlines</div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>

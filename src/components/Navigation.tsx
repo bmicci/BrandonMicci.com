@@ -3,11 +3,13 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState(''); // Empty initial to avoid hydration mismatch
+  const pathname = usePathname();
 
   // Handle scroll effect
   useEffect(() => {
@@ -433,7 +435,18 @@ const Navigation = () => {
 
       <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
         <nav className="nav-container" aria-label="Primary">
-          <div className="logo" onClick={() => handleLinkClick('hero')}>
+          <Link
+            href="/"
+            className="logo"
+            onClick={(e) => {
+              handleLinkClick('hero');
+              if (pathname === '/') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+            aria-label="Brandon Micci — Home"
+          >
             <div className="logo-bm">
               <Image
                 src="/logo-bm-tight.webp"
@@ -447,7 +460,7 @@ const Navigation = () => {
               <div className="logo-name">Brandon Micci</div>
               <div className="logo-title">AI & Digital Transformation</div>
             </div>
-          </div>
+          </Link>
 
           <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
             <li className="nav-item">
@@ -500,6 +513,15 @@ const Navigation = () => {
                 scroll={false}
               >
                 Professional Impact
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                href="/case-studies"
+                className={`nav-link ${pathname === '/case-studies' ? 'active' : ''}`}
+                onClick={() => handleLinkClick('')}
+              >
+                Case Studies
               </Link>
             </li>
             <li className="nav-item">
