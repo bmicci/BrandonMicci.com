@@ -14,13 +14,17 @@ const FloatingCTA = () => {
       // Show after scrolling past ~400px (past the hero)
       const shouldShow = scrollY > 400;
 
-      // Hide when near or past the #connectwithme section
+      // Hide when near or past the #connectwithme section (homepage)
       const contactSection = document.getElementById('connectwithme');
       let nearContact = false;
       if (contactSection) {
         const rect = contactSection.getBoundingClientRect();
-        // Hide when section is within viewport or above
         nearContact = rect.top < window.innerHeight;
+      } else {
+        // On sub-pages (no #connectwithme): hide when within 500px of page bottom
+        const distFromBottom =
+          document.documentElement.scrollHeight - scrollY - window.innerHeight;
+        nearContact = distFromBottom < 500;
       }
 
       setIsVisible(shouldShow);
