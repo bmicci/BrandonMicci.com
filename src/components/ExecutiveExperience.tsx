@@ -9,8 +9,6 @@ import {
   Plane,
   Database,
   Cloud,
-  Shield,
-  Building2,
   BarChart,
   TrendingUp,
   Globe,

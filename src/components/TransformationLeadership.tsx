@@ -770,7 +770,7 @@ const TransformationLeadership = () => {
 
       <div className="projects-container">
         <div className="projects-grid">
-          {primaryProjects.map((project, index) => {
+          {primaryProjects.map((project) => {
             const IconComponent = project.icon;
             return (
               <div
@@ -824,7 +824,7 @@ const TransformationLeadership = () => {
 
       <div className="projects-container-secondary">
         <div className="projects-grid">
-          {secondaryProjects.map((project, index) => {
+          {secondaryProjects.map((project) => {
             const IconComponent = project.icon;
             return (
               <div
