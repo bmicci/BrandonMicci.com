@@ -1114,9 +1114,10 @@ const HeroSection = () => {
                       AI Strategy & Vision
                     </div>
                     <p>
-                      I define enterprise AI strategy that aligns C-suite
-                      priorities with actionable investment roadmaps—delivering
-                      measurable P&L impact and competitive differentiation.
+                      I define enterprise AI strategy and the future-state
+                      operating model — aligning C-suite priorities with
+                      actionable investment roadmaps that deliver measurable
+                      P&L impact.
                     </p>
                   </div>
                 </div>
@@ -1135,9 +1136,11 @@ const HeroSection = () => {
                       Scale & Delivery
                     </div>
                     <p>
-                      I deliver enterprise AI solutions and data products at
-                      Fortune 500 scale—architected for reliability, security,
-                      and sustained adoption in highly regulated environments.
+                      I scale AI from isolated use cases to enterprise
+                      capability — delivering solutions and data products at
+                      Fortune 500 scale, architected for reliability,
+                      security, and sustained adoption in regulated
+                      environments.
                     </p>
                   </div>
                 </div>
@@ -1156,9 +1159,10 @@ const HeroSection = () => {
                       C-Suite Impact
                     </div>
                     <p>
-                      I translate complex AI/ML capabilities into clear business
-                      cases, investment budgets, and ROI outcomes that drive
-                      executive decision-making.
+                      I translate complex AI/ML capabilities into executive
+                      storytelling, clear business cases, investment budgets,
+                      and ROI outcomes that drive board-level
+                      decision-making.
                     </p>
                   </div>
                 </div>
@@ -1174,13 +1178,14 @@ const HeroSection = () => {
                   />
                   <div className="w-full">
                     <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
-                      Governance & Innovation
+                      Responsible AI & Governance
                     </div>
                     <p>
-                      I establish AI governance frameworks that balance
-                      innovation velocity with risk management—ensuring
-                      compliance, transparency, and sustainable competitive
-                      advantage.
+                      I architect AI systems with embedded governance from
+                      day one — model risk frameworks, evaluation harnesses,
+                      human-in-the-loop review, and AIOps for continuous
+                      monitoring. Built for regulated environments where
+                      compliance is non-negotiable.
                     </p>
                   </div>
                 </div>
@@ -1198,7 +1203,7 @@ const HeroSection = () => {
             I architect AI strategies that become business
             strategies—transforming how organizations compete and create value
             through AI-first operating models where intelligence drives every
-            decision and competitive advantage. I balance innovation velocity
+            decision and business outcomes. I balance innovation velocity
             with governance discipline, scaling transformation across global
             operations while managing regulatory risk—consistently delivering
             $400M+ in enterprise value.

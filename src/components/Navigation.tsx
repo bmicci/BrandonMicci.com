@@ -104,16 +104,16 @@ const Navigation = () => {
           right: 0 !important;
           width: 100% !important;
           z-index: 999999 !important;
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          background: rgba(10, 10, 10, 0.85) !important;
+          backdrop-filter: blur(24px) saturate(140%);
+          -webkit-backdrop-filter: blur(24px) saturate(140%);
+          background: rgba(10, 15, 30, 0.92) !important;
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           transition: all 0.3s ease;
         }
 
         .site-header.scrolled {
-          background: rgba(10, 10, 10, 0.95) !important;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+          background: rgba(10, 15, 30, 0.97) !important;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
 
         .nav-container {
@@ -356,9 +356,9 @@ const Navigation = () => {
             top: 100%;
             left: 0;
             right: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(10, 15, 30, 0.97);
+            backdrop-filter: blur(24px) saturate(140%);
+            -webkit-backdrop-filter: blur(24px) saturate(140%);
             flex-direction: column;
             padding: 0.4rem 0 1rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);

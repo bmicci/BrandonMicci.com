@@ -27,7 +27,7 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
     keyMetric: '$22M+',
     metricLabel: 'Annualized Savings',
     achievement:
-      'Scaled enterprise LLM Assistant to 27,000+ users—largest deployment in payments industry',
+      'Built reusable AI platform scaling LLM Assistant to 27,000+ users across the entire JPMorgan Chase Payments business — including merchant services, client onboarding, servicing operations, and call centers. Established AI delivery lifecycle (experiment → production → operations) with human-in-the-loop review, LLM evaluation harnesses, and AIOps practice.',
   },
   {
     dates: 'Jan 2022 - Feb 2024',
@@ -72,7 +72,7 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
     keyMetric: '30,000+',
     metricLabel: 'Platform Users',
     achievement:
-      'Built world-class analytics community; delivered 250% ROI IoT pilot scaled to $20M+ annual',
+      'Built enterprise analytics community of practice; delivered 250% ROI IoT pilot scaled to $20M+ annual',
   },
 ];
 

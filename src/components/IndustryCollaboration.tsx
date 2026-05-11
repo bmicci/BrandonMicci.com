@@ -20,7 +20,7 @@ const IndustryCollaboration: React.FC = () => {
     if (brief) {
       const url = brief.getAttribute('data-brief-url');
       brief.addEventListener('click', (e: Event) => {
-        if (!url || url.indexOf('YOUR-DOMAIN') !== -1) return; // ignore until set
+        if (!url) return;
         e.preventDefault();
         const a = document.createElement('a');
         a.href = url;
@@ -37,7 +37,7 @@ const IndustryCollaboration: React.FC = () => {
     if (resume) {
       const url = resume.getAttribute('data-resume-url');
       resume.addEventListener('click', (e: Event) => {
-        if (!url || url.indexOf('YOUR-DOMAIN') !== -1) return; // ignore until set
+        if (!url) return;
         e.preventDefault();
         const a = document.createElement('a');
         a.href = url;
@@ -716,7 +716,7 @@ const IndustryCollaboration: React.FC = () => {
                   <a
                     className="bm-btn bm-btn-secondary bm-btn-compact"
                     id="bm-brief"
-                    href="/Brandon_Micci_AI_Executive_Brief_2025.pdf"
+                    href="/Brandon_Micci_AI_Executive_Brief.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Download Brandon Micci Executive Brief (PDF)"

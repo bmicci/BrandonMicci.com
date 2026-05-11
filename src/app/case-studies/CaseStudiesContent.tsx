@@ -38,18 +38,20 @@ const caseStudies: CaseStudy[] = [
     challenge:
       'A global payments organization needed to democratize access to institutional knowledge across 7,500+ policy and procedure documents while maintaining strict governance, security, and compliance standards required in financial services.',
     solution:
-      'Led the industry-first deployment of a multi-tenant, guardrailed Large Language Model platform that evolved from a policy search tool into a comprehensive enterprise knowledge assistant. Expanded from initial policy documents to 10+ integrated data sources across the Payments division.',
+      'Led the industry-first deployment of a multi-tenant, guardrailed Large Language Model platform that evolved from a policy search tool into a comprehensive enterprise knowledge assistant. Built a reusable AI platform with shared building blocks — APIs, services, prompt/agent patterns, evaluation harnesses, playbooks — for production-grade reliability and observability. Expanded from initial policy documents to 10+ integrated data sources across the Payments division. Scope spanned the full JPMorgan Chase Payments business — merchant services, client onboarding, servicing operations, and call centers.',
     results: [
       'Scaled from 7,500 policy documents to 10+ integrated data sources',
       'Deployed the largest enterprise LLM implementation in financial services',
       'Onboarded 27,000+ active users across the Payments organization',
+      'Designed human-in-the-loop review workflows for high-stakes interactions in regulated payments operations',
+      'Established LLM evaluation harnesses and AIOps practice for continuous improvement across the AI delivery lifecycle',
       'Established governance model now replicated across other divisions',
     ],
     metrics: [
       { value: '27,000+', label: 'Active Users' },
       { value: '10+', label: 'Data Sources' },
     ],
-    technologies: ['LLM', 'NLP', 'Enterprise AI', 'Governance Frameworks'],
+    technologies: ['LLM', 'NLP', 'Enterprise AI', 'Responsible AI & Governance', 'AIOps', 'Human-in-the-Loop'],
   },
   {
     id: 'iot-innovation',
@@ -96,16 +98,16 @@ const caseStudies: CaseStudy[] = [
   },
   {
     id: 'analytics-community',
-    title: "World's Largest Analytics Community",
+    title: "Enterprise Analytics Community of Practice",
     icon: Users,
     company: 'Top 10 U.S. Bank',
     industry: 'Financial Services',
     challenge:
       'A top 10 U.S. bank needed to democratize data analytics across a large, distributed organization while maintaining governance and driving a culture of data-driven decision making.',
     solution:
-      "Established the enterprise Tableau Center of Excellence, building the world's largest evangelical analytics community. Created training programs, governance frameworks, and self-service capabilities that empowered business users.",
+      "Established the enterprise Tableau Center of Excellence, building a 30,000+ user analytics community of practice. Created training programs, governance frameworks, and self-service capabilities that empowered business users.",
     results: [
-      'Built the largest Tableau analytics community worldwide',
+      'Built an enterprise Tableau analytics community of practice',
       'Onboarded 30,000+ platform users',
       'Decommissioned 2,000+ legacy dashboards, delivering $8M in annual savings',
       'Created a replicable COE model for other analytics platforms',

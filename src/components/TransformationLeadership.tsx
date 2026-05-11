@@ -64,12 +64,12 @@ const primaryProjects: Project[] = [
     tags: ['ML', 'Fraud Detection', 'Real-time'],
   },
   {
-    title: "World's Largest Analytics Community",
+    title: "Enterprise Analytics Community of Practice",
     icon: Users,
     description:
-      "Established enterprise Tableau platform at a top 10 U.S. bank—the largest evangelical analytics community worldwide.",
+      "Established enterprise Tableau platform at a top 10 U.S. bank — a 30,000+ user analytics community of practice.",
     mobileDescription:
-      "30,000+ user platform—world's largest analytics community.",
+      "30,000+ user platform — enterprise analytics community of practice.",
     metrics: [
       { value: '30,000+', label: 'Platform Users' },
       { value: '$8M', label: 'Annual Savings' },

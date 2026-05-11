@@ -240,10 +240,13 @@ const StrategicDifferentiators: React.FC = () => {
                   Enterprise-Scale Architecture
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-100 text-left font-medium">
-                  Proven delivery of AI/ML systems at massive scale—from 27,000+
-                  user LLM platforms to distributed analytics architectures
-                  handling petabyte-scale data workloads across global Fortune
-                  500 infrastructure.
+                  Architected reusable AI platforms with shared building
+                  blocks — APIs, services, prompt/agent patterns, evaluation
+                  harnesses, and playbooks — designed for production-grade
+                  reliability, observability, and continuous improvement at
+                  Fortune 500 scale. Proven delivery from 27,000+ user LLM
+                  platforms to distributed analytics architectures handling
+                  petabyte-scale data workloads.
                 </p>
               </div>
             </div>
@@ -263,7 +266,7 @@ const StrategicDifferentiators: React.FC = () => {
                 <p className="diff-description mt-1 text-sm text-slate-100 text-left font-medium">
                   Consistent track record translating technical innovation into
                   business strategy—turning AI capabilities into revenue growth,
-                  market differentiation, and competitive advantage across
+                  market differentiation, and business outcomes across
                   regulated Fortune 500 environments.
                 </p>
               </div>
@@ -303,10 +306,11 @@ const StrategicDifferentiators: React.FC = () => {
                   Transformation Leadership
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-100 text-left font-medium">
-                  Track record modernizing legacy systems while building
-                  adoption strategies that deliver sustained change—including
-                  the world&apos;s largest analytics community (30,000+ users).
-                  Change management proven at Fortune 500 scale.
+                  Drove enterprise AI adoption through change leadership —
+                  manager enablement, talent upskilling pathways, and a
+                  30,000+ user analytics community of practice — combined
+                  with executive storytelling and KPI dashboards that
+                  translate technical work into board-level outcomes.
                 </p>
               </div>
             </div>
