@@ -231,22 +231,18 @@ const StrategicDifferentiators: React.FC = () => {
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
             <div className="diff-content flex flex-col items-center text-center gap-3">
               <Icon
-                name="trending-up"
+                name="badge"
                 size="lg"
                 className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)]"
               />
               <div className="w-full">
                 <h3 className="diff-title text-base md:text-lg font-bold text-white text-center">
-                  Enterprise-Scale Architecture
+                  Regulated-Industry Native
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-100 text-left font-medium">
-                  Architected reusable AI platforms with shared building
-                  blocks — APIs, services, prompt/agent patterns, evaluation
-                  harnesses, and playbooks — designed for production-grade
-                  reliability, observability, and continuous improvement at
-                  Fortune 500 scale. Proven delivery from 27,000+ user LLM
-                  platforms to distributed analytics architectures handling
-                  petabyte-scale data workloads.
+                  AI delivered in payments, financial services, insurance,
+                  and aviation. Production systems that meet compliance,
+                  audit, and risk standards. Not lab demos.
                 </p>
               </div>
             </div>
@@ -255,19 +251,18 @@ const StrategicDifferentiators: React.FC = () => {
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
             <div className="diff-content flex flex-col items-center text-center gap-3">
               <Icon
-                name="globe"
+                name="target"
                 size="lg"
                 className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)]"
               />
               <div className="w-full">
                 <h3 className="diff-title text-base md:text-lg font-bold text-white text-center">
-                  Business-Technology Bridge
+                  Strategy Through Delivery
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-100 text-left font-medium">
-                  Consistent track record translating technical innovation into
-                  business strategy—turning AI capabilities into revenue growth,
-                  market differentiation, and business outcomes across
-                  regulated Fortune 500 environments.
+                  I own the full lifecycle: strategy, executive buy-in,
+                  investment, delivery, and operations. Roadmaps that ship,
+                  not slideware.
                 </p>
               </div>
             </div>
@@ -276,19 +271,18 @@ const StrategicDifferentiators: React.FC = () => {
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
             <div className="diff-content flex flex-col items-center text-center gap-3">
               <Icon
-                name="settings"
+                name="briefcase"
                 size="lg"
                 className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)]"
               />
               <div className="w-full">
                 <h3 className="diff-title text-base md:text-lg font-bold text-white text-center">
-                  Technical Architecture
+                  Operator + Advisor
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-100 text-left font-medium">
-                  Deep technical expertise combined with enterprise
-                  leadership—delivering AI solutions that scale from concept to
-                  production while meeting stringent regulatory requirements and
-                  operational standards.
+                  17+ years blending Fortune 500 operating roles with Big
+                  Four advisory. I&apos;ve sat on both sides of the
+                  buyer/seller table.
                 </p>
               </div>
             </div>
@@ -297,20 +291,18 @@ const StrategicDifferentiators: React.FC = () => {
           <div className="diff-card rounded-lg border border-white/10 bg-white/[0.04] p-4 md:p-6 backdrop-blur-sm w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[calc(100vw-1.5rem)] sm:max-w-[calc(100vw-1.5rem)] md:w-auto md:max-w-none transition hover:border-cyan-400/40 hover:bg-white/[0.06] hover:scale-[1.01]">
             <div className="diff-content flex flex-col items-center text-center gap-3">
               <Icon
-                name="construction"
+                name="network"
                 size="lg"
                 className="text-cyan-400 w-8 h-8 transition drop-shadow-none hover:drop-shadow-[0_0_4px_rgba(0,212,255,0.4)]"
               />
               <div className="w-full">
                 <h3 className="diff-title text-base md:text-lg font-bold text-white text-center">
-                  Transformation Leadership
+                  Adoption at Scale
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-100 text-left font-medium">
-                  Drove enterprise AI adoption through change leadership —
-                  manager enablement, talent upskilling pathways, and a
-                  30,000+ user analytics community of practice — combined
-                  with executive storytelling and KPI dashboards that
-                  translate technical work into board-level outcomes.
+                  Real adoption at scale, driven by change leadership not
+                  mandates. Backed by a 27,000+ user LLM platform and
+                  30,000+ analytics community of practice.
                 </p>
               </div>
             </div>
