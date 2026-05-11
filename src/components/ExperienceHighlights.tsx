@@ -31,7 +31,7 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
   },
   {
     dates: 'Jan 2022 - Feb 2024',
-    role: 'Senior Director, Head of AI/IoT & Emerging Technology',
+    role: 'Senior Director, Head of AI/IoT & Emerging Technology Practice',
     companyType: 'Global Consulting Firm',
     icon: (
       <Rocket
