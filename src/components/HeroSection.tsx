@@ -1194,13 +1194,11 @@ const HeroSection = () => {
           style={{ marginTop: '3.5rem', marginBottom: '3rem' }}
         >
           <p className="philosophy-text">
-            I architect AI strategies that become business
-            strategies—transforming how organizations compete and create value
-            through AI-first operating models where intelligence drives every
-            decision and business outcomes. I balance innovation velocity
-            with governance discipline, scaling transformation across global
-            operations while managing regulatory risk—consistently delivering
-            $400M+ in enterprise value.
+            I architect AI strategies that become business strategies.
+            AI-first operating models where intelligence drives every
+            decision and outcome. I balance innovation velocity with
+            governance discipline, scaling transformation across regulated
+            global operations. The result: $400M+ in enterprise value.
           </p>
         </div>
 
