@@ -193,10 +193,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Performance: Preload critical above-fold assets */}
-        <link rel="preload" href="/logo-bm-tight.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/headshot.webp" as="image" type="image/webp" />
-        
+        {/* Note: do not manually preload logo-bm-tight.webp or headshot.webp here.
+            Next.js <Image priority /> already preloads the optimized variant.
+            A manual preload of the source file fetches the full-size image
+            in parallel — wasted bandwidth and a small LCP regression. */}
+
         {/* Performance: DNS prefetch and preconnect for external resources */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />

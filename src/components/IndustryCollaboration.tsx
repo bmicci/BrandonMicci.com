@@ -758,7 +758,7 @@ const IndustryCollaboration: React.FC = () => {
                     className="bm-btn bm-btn-secondary bm-btn-compact"
                     href="/brandon-micci.vcf"
                     download
-                    aria-label="Download vCard for Brandon Micci"
+                    aria-label="Save Contact (vCard) for Brandon Micci"
                   >
                     <svg
                       width="16"

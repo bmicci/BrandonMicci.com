@@ -445,7 +445,7 @@ const Navigation = () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }
             }}
-            aria-label="Brandon Micci — Home"
+            aria-label="Brandon Micci, home"
           >
             <div className="logo-bm">
               <Image
