@@ -1096,7 +1096,7 @@ const HeroSection = () => {
           <div className="diff-glass">
             <div className="diff-header">
               <span className="diff-title">
-                Strategic Leadership Capabilities
+                Executive Capabilities
               </span>
             </div>
 
@@ -1114,10 +1114,9 @@ const HeroSection = () => {
                       AI Strategy & Vision
                     </div>
                     <p>
-                      I define enterprise AI strategy and the future-state
-                      operating model — aligning C-suite priorities with
-                      actionable investment roadmaps that deliver measurable
-                      P&L impact.
+                      I define enterprise AI strategy aligned to C-suite
+                      priorities. Investment roadmaps with measurable P&L
+                      impact.
                     </p>
                   </div>
                 </div>
@@ -1136,10 +1135,8 @@ const HeroSection = () => {
                       Scale & Delivery
                     </div>
                     <p>
-                      I scale AI from isolated use cases to enterprise
-                      capability — delivering solutions and data products at
-                      Fortune 500 scale, architected for reliability,
-                      security, and sustained adoption in regulated
+                      I scale AI from pilot to enterprise capability. Built
+                      for Fortune 500 reliability and adoption in regulated
                       environments.
                     </p>
                   </div>
@@ -1159,10 +1156,9 @@ const HeroSection = () => {
                       C-Suite Impact
                     </div>
                     <p>
-                      I translate complex AI/ML capabilities into executive
-                      storytelling, clear business cases, investment budgets,
-                      and ROI outcomes that drive board-level
-                      decision-making.
+                      I translate complex AI into board-level decisions.
+                      Business cases, ROI, and executive storytelling that
+                      move investment.
                     </p>
                   </div>
                 </div>
@@ -1181,11 +1177,9 @@ const HeroSection = () => {
                       Responsible AI & Governance
                     </div>
                     <p>
-                      I architect AI systems with embedded governance from
-                      day one — model risk frameworks, evaluation harnesses,
-                      human-in-the-loop review, and AIOps for continuous
-                      monitoring. Built for regulated environments where
-                      compliance is non-negotiable.
+                      I embed governance from day one: risk frameworks,
+                      evaluation, and AIOps. Built for regulated environments
+                      where compliance is non-negotiable.
                     </p>
                   </div>
                 </div>
