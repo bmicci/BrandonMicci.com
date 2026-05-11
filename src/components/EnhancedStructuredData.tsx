@@ -14,7 +14,6 @@ const DESCRIPTION =
 const LOGO = `${SITE_URL}/android-chrome-192x192.png`; // ok to keep; you just generated these
 const IMAGE = `${SITE_URL}/headshot.webp`;
 const EMAIL = 'brandon@brandonmicci.com';
-const PHONE = '+14697088925'; // Google Voice for recruiter contact
 
 // Toggle extras without editing schema objects:
 const INCLUDE_FAQ = true;
@@ -81,7 +80,6 @@ function buildJsonLd() {
         '@type': 'ContactPoint',
         contactType: 'Recruiting / executive search',
         email: EMAIL,
-        telephone: PHONE,
         areaServed: 'US',
         availableLanguage: ['en'],
       },
@@ -428,7 +426,6 @@ function buildJsonLd() {
       },
     ],
     priceRange: 'Enterprise',
-    telephone: PHONE,
     email: EMAIL,
     url: SITE_URL,
     image: IMAGE,
