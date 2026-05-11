@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AI & Digital Transformation Case Studies | Brandon Micci',
+  title: { absolute: 'AI & Digital Transformation Case Studies | Brandon Micci' },
   description:
     'Explore detailed case studies of enterprise AI deployments, IoT platforms, and digital transformation initiatives led by Brandon Micci across Fortune 500 financial services, aviation, and Big 4 consulting.',
   keywords: [

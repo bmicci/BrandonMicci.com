@@ -80,41 +80,48 @@ export default function ContactPage() {
   return (
     <main className="mx-auto max-w-4xl px-6 pt-24 pb-16">
       <ContactJsonLd />
-      <section className="prose prose-invert">
-        <h1>Contact</h1>
-        <p className="opacity-90">
-          For <strong>executive search</strong>, <strong>advisory</strong>, or{' '}
-          <strong>speaking</strong> inquiries, email me directly:
+      <section
+        className="rounded-3xl border border-white/10 bg-gradient-to-b from-[rgba(15,23,42,0.92)] to-[rgba(10,14,30,0.92)] p-8 md:p-12 shadow-2xl backdrop-blur-md"
+      >
+        <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+          Contact
+        </h1>
+        <p className="mt-4 text-white/90 leading-relaxed">
+          For <strong className="text-white">executive search</strong>,{' '}
+          <strong className="text-white">advisory</strong>, or{' '}
+          <strong className="text-white">speaking</strong> inquiries, email me directly:
         </p>
 
-        <div className="not-prose mt-8 flex flex-col gap-3">
+        <div className="mt-8 flex flex-col gap-3">
           <a
             href={`mailto:${EMAIL}?subject=${subjectExec}&body=${bodyExec}`}
-            className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium hover:bg-white/[0.08] hover:border-white/15 transition"
+            className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-white hover:bg-white/[0.08] hover:border-white/15 transition"
             aria-label="Email Brandon for executive inquiries"
           >
             <span className="mr-2">✉️</span> Executive inquiries — {EMAIL}
           </a>
           <a
             href={`mailto:${EMAIL}?subject=${subjectSpeak}&body=${bodySpeak}`}
-            className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium hover:bg-white/[0.08] hover:border-white/15 transition"
+            className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-white hover:bg-white/[0.08] hover:border-white/15 transition"
             aria-label="Email Brandon for speaking and advisory inquiries"
           >
             <span className="mr-2">🎤</span> Speaking & advisory — {EMAIL}
           </a>
           <a
             href="/brandon-micci.vcf"
-            className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-r from-[#0E1B33] to-[#0A0F1F] px-5 py-3 text-sm font-medium hover:from-[#14274d] hover:to-[#0f1a2f] transition"
+            className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-r from-[#0E1B33] to-[#0A0F1F] px-5 py-3 text-sm font-medium text-white hover:from-[#14274d] hover:to-[#0f1a2f] transition"
             aria-label="Download Brandon's vCard"
           >
             <span className="mr-2">📇</span> Download vCard (Brandon Micci)
           </a>
         </div>
 
-        <hr className="my-8 border-white/5" />
+        <hr className="my-8 border-white/10" />
 
-        <h2>Response Time</h2>
-        <p>
+        <h2 className="text-2xl font-semibold text-white tracking-tight">
+          Response Time
+        </h2>
+        <p className="mt-3 text-white/90 leading-relaxed">
           I aim to respond within one business day to executive search and event
           requests.
         </p>
