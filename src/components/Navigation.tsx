@@ -160,28 +160,27 @@ const Navigation = () => {
 
         .logo-text {
           display: flex;
-          flex-direction: column;
+          align-items: center;
           line-height: 1.2;
         }
 
         .logo-name {
-          font-size: 0.95rem;
+          font-size: 1.05rem;
           font-weight: 700;
           color: white;
           white-space: nowrap;
           text-decoration: none;
           transition: all 0.3s ease;
           margin: 0;
+          letter-spacing: -0.01em;
         }
 
-        .logo-title {
-          font-size: 0.6rem;
-          color: rgba(255, 255, 255, 0.7);
-          font-weight: 400;
-          letter-spacing: 0.3px;
-          white-space: nowrap;
-          transition: all 0.3s ease;
-          margin: 0;
+        /* Hide the name text on mobile — logo mark alone keeps the nav clean
+           and prevents overflow against the hamburger menu. */
+        @media (max-width: 768px) {
+          .logo-name {
+            display: none;
+          }
         }
 
         .nav-menu {
@@ -204,10 +203,7 @@ const Navigation = () => {
             height: 46px;
           }
           .logo-name {
-            font-size: 0.9rem;
-          }
-          .logo-title {
-            font-size: 0.55rem;
+            font-size: 0.95rem;
           }
           .nav-item :global(a.nav-link) {
             padding: 0.35rem 0.7rem;
@@ -394,14 +390,6 @@ const Navigation = () => {
             height: 42px;
           }
 
-          .logo-name {
-            font-size: 1.2rem;
-          }
-
-          .logo-title {
-            font-size: 0.7rem;
-          }
-
           .nav-container {
             padding: 0.6rem 1rem;
             min-height: 64px;
@@ -417,14 +405,6 @@ const Navigation = () => {
           .logo-bm {
             width: 38px;
             height: 38px;
-          }
-
-          .logo-name {
-            font-size: 1.05rem;
-          }
-
-          .logo-title {
-            display: none;
           }
         }
       `}</style>
@@ -458,7 +438,6 @@ const Navigation = () => {
             </div>
             <div className="logo-text">
               <div className="logo-name">Brandon Micci</div>
-              <div className="logo-title">AI & Digital Transformation</div>
             </div>
           </Link>
 
