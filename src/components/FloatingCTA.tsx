@@ -37,7 +37,7 @@ const FloatingCTA = () => {
       e.preventDefault();
       const target = document.getElementById('connectwithme');
       if (target) {
-        window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
+        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
       }
     }
   };

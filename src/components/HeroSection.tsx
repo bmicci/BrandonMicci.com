@@ -1088,6 +1088,52 @@ const HeroSection = () => {
                 Download Resume
               </a>
             </div>
+
+            {/* Mobile KPI Grid — sits directly under the CTAs in the mobile
+               hero stack so the numbers land before the user scrolls past the
+               fold (mirrors desktop placement). Hidden on desktop via
+               .kpi-mobile-only above. */}
+            <div className="kpi-grid kpi-mobile-only" style={{ marginTop: '1.25rem' }}>
+              <div className="kpi-box">
+                <span className="sr-only">$400M+ Enterprise Business Impact</span>
+                <span className="stat-number">
+                  <AnimatedCounter
+                    value={METRICS.valueDeliveredM}
+                    suffix="M+"
+                    format={(n) => `$${n}`}
+                  />
+                </span>
+                <span className="stat-label">Enterprise Business Impact</span>
+              </div>
+
+              <div className="kpi-box">
+                <span className="sr-only">27K+ Employees Transformed</span>
+                <span className="stat-number">
+                  <AnimatedCounter value={METRICS.aiUsersK} suffix="K+" />
+                </span>
+                <span className="stat-label">Employees Transformed</span>
+              </div>
+
+              <div className="kpi-box">
+                <span className="sr-only">
+                  {METRICS.typicalROI}% Peak Program ROI
+                </span>
+                <span className="stat-number">
+                  <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
+                </span>
+                <span className="stat-label">Peak Program ROI</span>
+              </div>
+
+              <div className="kpi-box">
+                <span className="sr-only">
+                  {METRICS.yearsLeading}+ Years Executive Leadership
+                </span>
+                <span className="stat-number">
+                  <AnimatedCounter value={METRICS.yearsLeading} suffix="+" />
+                </span>
+                <span className="stat-label">Years Executive Leadership</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1203,56 +1249,6 @@ const HeroSection = () => {
         </div>
 
         <div style={{ marginBottom: '2.5rem' }}></div>
-
-        {/* Mobile KPI Grid (mobile-only) */}
-        <div
-          className="kpi-grid kpi-mobile-only"
-          style={{ marginTop: '1.25rem' }}
-        >
-          {/* Value Delivered */}
-          <div className="kpi-box">
-            <span className="sr-only">$400M+ Enterprise Business Impact</span>
-            <span className="stat-number">
-              <AnimatedCounter
-                value={METRICS.valueDeliveredM}
-                suffix="M+"
-                format={(n) => `$${n}`}
-              />
-            </span>
-            <span className="stat-label">Enterprise Business Impact</span>
-          </div>
-
-          {/* AI Users */}
-          <div className="kpi-box">
-            <span className="sr-only">27K+ Employees Transformed</span>
-            <span className="stat-number">
-              <AnimatedCounter value={METRICS.aiUsersK} suffix="K+" />
-            </span>
-            <span className="stat-label">Employees Transformed</span>
-          </div>
-
-          {/* Typical ROI */}
-          <div className="kpi-box">
-            <span className="sr-only">
-              {METRICS.typicalROI}% Peak Program ROI
-            </span>
-            <span className="stat-number">
-              <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
-            </span>
-            <span className="stat-label">Peak Program ROI</span>
-          </div>
-
-          {/* Years Leading */}
-          <div className="kpi-box">
-            <span className="sr-only">
-              {METRICS.yearsLeading}+ Years Executive Leadership
-            </span>
-            <span className="stat-number">
-              <AnimatedCounter value={METRICS.yearsLeading} suffix="+" />
-            </span>
-            <span className="stat-label">Years Executive Leadership</span>
-          </div>
-        </div>
       </div>
     </>
   );
