@@ -37,7 +37,10 @@ const FloatingCTA = () => {
       e.preventDefault();
       const target = document.getElementById('connectwithme');
       if (target) {
-        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+        // Use scrollIntoView so the section's CSS scroll-margin-top
+        // (set via scroll-mt-[var(--header-h)]) does the offset math.
+        // Previous offsetTop math was unreliable across positioned ancestors.
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
   };
