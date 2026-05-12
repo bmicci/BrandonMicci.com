@@ -15,7 +15,7 @@ type HighlightRole = {
 
 const HIGHLIGHT_ROLES: HighlightRole[] = [
   {
-    dates: 'Feb 2024 - Present',
+    dates: 'Feb 2024 - April 2026',
     role: 'Head of AI Strategy & Business Transformation',
     companyType: 'Fortune 50 Bank (Payments)',
     icon: (

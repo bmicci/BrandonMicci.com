@@ -44,7 +44,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Brandon Micci | Head of AI Strategy & Business Transformation | Fortune 500 AI Executive',
+    default: 'Brandon Micci | AI Strategy & Business Transformation Executive | Fortune 500 AI Leader',
     template: '%s | Brandon Micci',
   },
   description:
@@ -136,7 +136,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://brandonmicci.com',
-    title: 'Brandon Micci | Head of AI Strategy & Business Transformation',
+    title: 'Brandon Micci | AI Strategy & Business Transformation Executive',
     description:
       'Dallas-based AI Strategy & Business Transformation Executive. $400M+ enterprise impact, $22M+ AI-driven savings, 27K+ AI users enabled. Expert in Generative AI, Agentic AI, LLM deployment, and enterprise data strategy.',
     images: [
@@ -150,7 +150,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Brandon Micci | Head of AI Strategy & Business Transformation',
+    title: 'Brandon Micci | AI Strategy & Business Transformation Executive',
     description:
       'Dallas-based AI Strategy & Business Transformation Executive. $400M+ enterprise impact, $22M+ AI-driven savings, 27K+ AI users. Expert in Generative AI, Agentic AI, LLM deployment, Fortune 500 transformation.',
     images: ['/opengraph-image'],

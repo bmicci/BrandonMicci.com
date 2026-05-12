@@ -7,7 +7,7 @@ import React from 'react';
 
 const SITE_URL = 'https://brandonmicci.com';
 const NAME = 'Brandon Micci';
-const JOB_TITLE = 'Head of AI Strategy & Business Transformation';
+const JOB_TITLE = 'AI Strategy & Business Transformation Executive';
 const DESCRIPTION =
   'Enterprise AI Transformation leader with 17+ years of experience delivering $400M+ in value and scaling LLM deployments to 27K+ users across Fortune 500 companies.';
 
