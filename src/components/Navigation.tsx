@@ -104,16 +104,16 @@ const Navigation = () => {
           right: 0 !important;
           width: 100% !important;
           z-index: 999999 !important;
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          background: rgba(10, 10, 10, 0.85) !important;
+          backdrop-filter: blur(24px) saturate(140%);
+          -webkit-backdrop-filter: blur(24px) saturate(140%);
+          background: rgba(10, 15, 30, 0.92) !important;
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           transition: all 0.3s ease;
         }
 
         .site-header.scrolled {
-          background: rgba(10, 10, 10, 0.95) !important;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+          background: rgba(10, 15, 30, 0.97) !important;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
 
         .nav-container {
@@ -160,28 +160,27 @@ const Navigation = () => {
 
         .logo-text {
           display: flex;
-          flex-direction: column;
+          align-items: center;
           line-height: 1.2;
         }
 
         .logo-name {
-          font-size: 0.95rem;
+          font-size: 1.05rem;
           font-weight: 700;
           color: white;
           white-space: nowrap;
           text-decoration: none;
           transition: all 0.3s ease;
           margin: 0;
+          letter-spacing: -0.01em;
         }
 
-        .logo-title {
-          font-size: 0.6rem;
-          color: rgba(255, 255, 255, 0.7);
-          font-weight: 400;
-          letter-spacing: 0.3px;
-          white-space: nowrap;
-          transition: all 0.3s ease;
-          margin: 0;
+        /* Hide the name text on mobile — logo mark alone keeps the nav clean
+           and prevents overflow against the hamburger menu. */
+        @media (max-width: 768px) {
+          .logo-name {
+            display: none;
+          }
         }
 
         .nav-menu {
@@ -204,10 +203,7 @@ const Navigation = () => {
             height: 46px;
           }
           .logo-name {
-            font-size: 0.9rem;
-          }
-          .logo-title {
-            font-size: 0.55rem;
+            font-size: 0.95rem;
           }
           .nav-item :global(a.nav-link) {
             padding: 0.35rem 0.7rem;
@@ -356,9 +352,9 @@ const Navigation = () => {
             top: 100%;
             left: 0;
             right: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(10, 15, 30, 0.97);
+            backdrop-filter: blur(24px) saturate(140%);
+            -webkit-backdrop-filter: blur(24px) saturate(140%);
             flex-direction: column;
             padding: 0.4rem 0 1rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -394,14 +390,6 @@ const Navigation = () => {
             height: 42px;
           }
 
-          .logo-name {
-            font-size: 1.2rem;
-          }
-
-          .logo-title {
-            font-size: 0.7rem;
-          }
-
           .nav-container {
             padding: 0.6rem 1rem;
             min-height: 64px;
@@ -417,14 +405,6 @@ const Navigation = () => {
           .logo-bm {
             width: 38px;
             height: 38px;
-          }
-
-          .logo-name {
-            font-size: 1.05rem;
-          }
-
-          .logo-title {
-            display: none;
           }
         }
       `}</style>
@@ -445,7 +425,7 @@ const Navigation = () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }
             }}
-            aria-label="Brandon Micci — Home"
+            aria-label="Brandon Micci, home"
           >
             <div className="logo-bm">
               <Image
@@ -458,7 +438,6 @@ const Navigation = () => {
             </div>
             <div className="logo-text">
               <div className="logo-name">Brandon Micci</div>
-              <div className="logo-title">AI & Digital Transformation</div>
             </div>
           </Link>
 

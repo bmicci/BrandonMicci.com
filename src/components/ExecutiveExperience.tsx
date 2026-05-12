@@ -9,8 +9,6 @@ import {
   Plane,
   Database,
   Cloud,
-  Shield,
-  Building2,
   BarChart,
   TrendingUp,
   Globe,
@@ -67,21 +65,33 @@ const ROLES: Role[] = [
     skills: [
       'AI Strategy',
       'LLM / RAG Deployment',
-      'Responsible AI Governance',
+      'Responsible AI & Governance',
       'P&L Ownership',
     ],
     achievements: [
+      {
+        title: 'End-to-End AI Portfolio Ownership',
+        text: 'Owned end-to-end AI portfolio for the entire JPMorgan Chase Payments business — strategy through delivery — including merchant services, client onboarding, servicing operations, and call centers.',
+      },
       {
         title: '$22M+ Annualized Savings',
         text: 'Delivered $22M+ in annualized savings through LLM-powered workflow automation, intelligent routing, and accelerated knowledge retrieval across Payments Operations.',
       },
       {
-        title: 'Enterprise AI Platform at Scale',
-        text: 'Architected enterprise knowledge graph and LLM/RAG platform scaling to 27,000+ employees—the largest AI deployment in Payments.',
+        title: 'Reusable AI Platform at Scale',
+        text: 'Architected reusable AI platform with shared building blocks — APIs, services, prompt/agent patterns, playbooks, evaluation harnesses — for production-grade reliability and observability. Scaled the enterprise knowledge assistant to 27,000+ employees.',
       },
       {
-        title: 'Responsible AI Governance',
-        text: 'Established AI governance framework and model risk management standards ensuring regulatory compliance across 30+ production AI/ML models.',
+        title: 'Human-in-the-Loop Review',
+        text: 'Designed human-in-the-loop review workflows for high-stakes AI-assisted decisions in regulated payments operations.',
+      },
+      {
+        title: 'LLM Evaluation & AIOps',
+        text: 'Established LLM evaluation harnesses and AIOps practice ensuring continuous improvement and model reliability across the AI delivery lifecycle (experiment → production → operations).',
+      },
+      {
+        title: 'Responsible AI by Design',
+        text: 'Established Responsible AI framework and model risk management standards ensuring regulatory compliance across 30+ production AI/ML models.',
       },
     ],
   },
@@ -226,8 +236,8 @@ const ROLES: Role[] = [
     ],
     achievements: [
       {
-        title: 'World-Class Analytics Community',
-        text: 'Built largest evangelical Tableau community globally, scaling adoption from zero to 30,000+ enterprise users.',
+        title: 'Enterprise Analytics Community of Practice',
+        text: 'Built an enterprise evangelical Tableau community of practice, scaling adoption from zero to 30,000+ enterprise users.',
       },
       {
         title: 'CEO Dashboard Architect',

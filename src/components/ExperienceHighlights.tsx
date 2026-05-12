@@ -27,11 +27,11 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
     keyMetric: '$22M+',
     metricLabel: 'Annualized Savings',
     achievement:
-      'Scaled enterprise LLM Assistant to 27,000+ users—largest deployment in payments industry',
+      "Scaled the Payments LLM Assistant to 27,000+ users and established the firm's AI delivery lifecycle — evaluation, AIOps, and production governance.",
   },
   {
     dates: 'Jan 2022 - Feb 2024',
-    role: 'Senior Director, Head of AI/IoT & Emerging Technology',
+    role: 'Senior Director, Head of AI/IoT & Emerging Technology Practice',
     companyType: 'Global Consulting Firm',
     icon: (
       <Rocket
@@ -42,7 +42,7 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
     keyMetric: '$30M',
     metricLabel: 'P&L Ownership',
     achievement:
-      'Built AI/IoT practice from ground up; drove $9.8M new revenue with 34% market share increase',
+      'Built the AI/IoT and Emerging Tech practice from inception. Drove $9.8M in new revenue and 34% market share gain.',
   },
   {
     dates: 'Feb 2021 - Jan 2022',
@@ -57,7 +57,7 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
     keyMetric: '$400M',
     metricLabel: '10-Year Deal',
     achievement:
-      'Procured strategic engagement for real-time AI-powered fraud analytics engine',
+      'Captured a strategic engagement to build a real-time, AI-powered fraud analytics engine for a Top-5 health insurer.',
   },
   {
     dates: '2015 - 2020',
@@ -72,7 +72,7 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
     keyMetric: '30,000+',
     metricLabel: 'Platform Users',
     achievement:
-      'Built world-class analytics community; delivered 250% ROI IoT pilot scaled to $20M+ annual',
+      'Established a 30,000+ user analytics community of practice at a top-10 bank. Delivered a 250% ROI IoT pilot scaled to $20M+ in annual value at a major airline.',
   },
 ];
 

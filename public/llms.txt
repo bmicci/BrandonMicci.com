@@ -1,12 +1,12 @@
 # Brandon Micci - Enterprise AI & Digital Transformation Executive
 
-> Senior AI executive with 16+ years delivering Fortune 500 transformations. $400M+ enterprise revenue created, 27K+ AI users enabled, 250% peak program ROI. Expert in AI strategy, LLM deployment, and data platform architecture.
+> Senior AI executive with 17+ years delivering Fortune 500 transformations. $400M+ enterprise revenue created, 27K+ AI users enabled, 250% peak program ROI. Expert in AI strategy, LLM deployment, and data platform architecture.
 
 ## Professional Summary
 
-I am an AI & Digital Transformation Executive who turns emerging technology into measurable enterprise growth. Over the past 16 years, I've led large-scale transformations that generated $400M+ in new revenue, scaled GenAI to 27,000+ users, accelerated cloud adoption by 200%, and built platforms that reshape how Fortune 500 organizations operate.
+I am an AI & Digital Transformation Executive who turns emerging technology into measurable enterprise growth. Over the past 17 years, I've led large-scale transformations that generated $400M+ in new revenue, scaled GenAI to 27,000+ users, accelerated cloud adoption by 200%, and built platforms that reshape how Fortune 500 organizations operate.
 
-At JPMorgan Chase, I currently lead AI strategy for client servicing and onboarding, building scalable, future-ready platforms that modernize financial services and enhance client experience. My leadership has also included deploying the first LLM-powered AI Assistant in a Fortune 500 payments organization, architecting IoT solutions that save $20M annually, and securing a $400M, 10-year engagement at EY to design and build an AI-powered fraud detection engine for a Fortune 50 insurance client.
+At JPMorgan Chase, I currently lead AI strategy for client servicing and onboarding, building scalable, modern, AI-ready platforms that modernize financial services and enhance client experience. My leadership has also included deploying the first LLM-powered AI Assistant in a Fortune 500 payments organization, architecting IoT solutions that save $20M annually, and securing a $400M, 10-year engagement at EY to design and build an AI-powered fraud detection engine for a Fortune 50 insurance client.
 
 I specialize in building and leading high-performing organizations that connect cutting-edge AI and emerging technologies to real business challenges. My expertise includes:
 • Enterprise AI/ML strategy and execution at scale
@@ -39,17 +39,21 @@ Philosophy: Technology should make organizations smarter, faster, and more resil
 Drive enterprise AI strategy and implementation across payments operations, leading organization-wide transformation initiatives that enhance operational efficiency and customer experience. Oversee AI product development lifecycle from strategy through deployment and scaling.
 
 **Key Achievements:**
+- Owned end-to-end AI portfolio for the entire JPMorgan Chase Payments business — strategy through delivery — including merchant services, client onboarding, servicing operations, and call centers
+- Architected reusable AI platform with shared building blocks (APIs, services, prompt/agent patterns, playbooks, evaluation harnesses) for production-grade reliability and observability
 - Architected comprehensive AI strategy resulting in 30% efficiency gains and 20% workforce optimization across payments operations
-- Pioneered first-of-its-kind AI Assistant (LLM) scaling to 27,000+ users across the Payments organization—marking the largest LLM deployment in the payments sector
+- Pioneered first-of-its-kind AI Assistant (LLM) scaling to 27,000+ users across the Payments organization
+- Designed human-in-the-loop (HITL) review workflows for high-stakes AI-assisted decisions in regulated payments operations
+- Established LLM evaluation harnesses and AIOps (LLMOps) practice ensuring continuous improvement across the AI delivery lifecycle (experiment → production → operations)
 - Deployed intelligent automation handling 40% of customer inquiries while reducing handle time by 300%
-- Led strategic AI governance initiatives ensuring responsible AI deployment across multiple business units
+- Established Responsible AI by design — embedded governance, model risk frameworks, and audit/compliance partnership across multiple business units
 
 ## Career History
 
-### Senior Director, Intelligent Industry GTM & Solution Leader - Capgemini
+### Senior Director, Head of AI/IoT & Emerging Technology Practice - Capgemini
 **January 2022 - February 2024 (2 years 2 months) | Dallas, Texas**
 
-Directed go-to-market strategy and solution development for emerging AI technologies, leading cross-functional teams of product managers, solution architects, and sales professionals. Responsible for market penetration strategies and revenue growth in intelligent industry solutions.
+Headed the AI/IoT and Emerging Technology Practice, directing go-to-market strategy and solution development for emerging AI technologies. Led cross-functional teams of product managers, solution architects, and sales professionals across market penetration and revenue growth in intelligent industry solutions.
 
 **Key Achievements:**
 - Orchestrated go-to-market strategy for NextGen insurance solutions, achieving a 34% market share increase
@@ -95,7 +99,7 @@ Led global infrastructure transformation initiatives, driving quality improvemen
 **Key Achievements:**
 - Architected global telemetry platform increasing environment stability and uptime to 98% across worldwide operations
 - Evangelized DevOps transformation program accelerating cloud enablement by 200% through CI/CD pipeline implementation and a microservices architecture
-- Drove modernization initiatives across legacy infrastructure stacks, establishing world-class performance standards
+- Drove modernization initiatives across legacy infrastructure stacks, establishing enterprise-standard performance standards
 
 ### Risk Analytics Leader, Auto Finance & Home Loans - Capital One
 **July 2016 - November 2017 (1 year 5 months) | Plano, Texas**
@@ -146,7 +150,7 @@ Pioneered the largest LLM deployment in the financial services payments sector a
 Led breakthrough IoT innovation at Southwest Airlines delivering 250% ROI within six months, generating $20M+ in annual savings through fuel optimization, baggage handling improvements, and de-icing automation across airports nationwide.
 
 ### 30,000+ User Analytics Platform
-Established Capital One's enterprise Tableau platform—the world's largest evangelical analytics community—scaling to 30,000+ users and delivering an 80% boost in organizational data capabilities through comprehensive governance frameworks and best practices.
+Established Capital One's enterprise Tableau platform — a 30,000+ user analytics community of practice — delivering an 80% boost in organizational data capabilities through comprehensive governance frameworks and best practices.
 
 ### 200% Cloud Acceleration
 Evangelized DevOps transformation at Citigroup, accelerating cloud enablement by 200% through CI/CD pipeline implementation, microservices architecture, and comprehensive telemetry platforms that achieved 98% uptime across global operations.
@@ -199,7 +203,7 @@ Evangelized DevOps transformation at Citigroup, accelerating cloud enablement by
 - Stakeholder Management
 
 ### Analytics & BI Platforms
-- Tableau (World's largest community expertise - 30,000+ users)
+- Tableau (Enterprise analytics community of practice — 30,000+ users)
 - Alteryx
 - Power BI
 - Looker

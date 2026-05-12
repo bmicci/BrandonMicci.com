@@ -341,14 +341,7 @@ const CompanyExpertise: React.FC = () => {
       <div className="expertise-section mx-auto w-full max-w-6xl px-4 md:px-8 overflow-x-clip">
         <div className="expertise-container">
           <div className="expertise-header">
-            <h2 className="expertise-title">Proven Track Record Across</h2>
-            <h3 className="expertise-subtitle">
-              Big Four & Fortune 500 Organizations
-            </h3>
-            <p className="expertise-context">
-              Delivering transformation where it matters most—across the
-              world&apos;s most complex, regulated enterprise environments
-            </p>
+            <h2 className="expertise-title">Where I&apos;ve delivered</h2>
           </div>
 
           <div className="companies-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 max-w-full">

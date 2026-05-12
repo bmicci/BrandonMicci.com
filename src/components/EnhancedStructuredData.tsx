@@ -14,7 +14,6 @@ const DESCRIPTION =
 const LOGO = `${SITE_URL}/android-chrome-192x192.png`; // ok to keep; you just generated these
 const IMAGE = `${SITE_URL}/headshot.webp`;
 const EMAIL = 'brandon@brandonmicci.com';
-const PHONE = '+14697088925'; // Google Voice for recruiter contact
 
 // Toggle extras without editing schema objects:
 const INCLUDE_FAQ = true;
@@ -81,7 +80,6 @@ function buildJsonLd() {
         '@type': 'ContactPoint',
         contactType: 'Recruiting / executive search',
         email: EMAIL,
-        telephone: PHONE,
         areaServed: 'US',
         availableLanguage: ['en'],
       },
@@ -99,9 +97,15 @@ function buildJsonLd() {
       'Deep Learning',
       'Predictive Analytics',
       'AI Product Management',
+      'Responsible AI',
+      'Responsible AI & Governance',
       'AI Governance',
       'AI Ethics',
       'Model Governance',
+      'Human-in-the-Loop Review',
+      'LLM Evaluation Harnesses',
+      'AIOps',
+      'AI Delivery Lifecycle',
       
       // Digital Transformation
       'Digital Transformation',
@@ -301,7 +305,15 @@ function buildJsonLd() {
         name: 'What technical skills does Brandon bring to AI leadership roles?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has built and led 50+ FTE technical organizations with $30M+ P&L responsibility at Capgemini and $15M+ direct P&L ownership at JPMorgan Chase.',
+          text: 'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has built and led 50+ FTE technical organizations with $30M+ P&L responsibility at Capgemini and ownership of the $15M+ annual AI portfolio at JPMorgan Chase — from strategy and investment through delivery.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: "What is Brandon's approach to Responsible AI in regulated environments?",
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Brandon architects AI systems with embedded governance from day one — model risk management, LLM evaluation harnesses, human-in-the-loop review for high-stakes decisions, and AIOps for continuous monitoring and improvement. In financial services, this means partnering with risk, compliance, and audit functions across the AI delivery lifecycle (experiment → production → operations) to ensure deployments meet regulatory expectations while delivering measurable business outcomes.',
         },
       },
       {
@@ -374,13 +386,15 @@ function buildJsonLd() {
       'Generative AI',
       'LLM Deployment',
       'Digital Transformation Leadership',
-      'AI Governance',
+      'Responsible AI & Governance',
+      'Human-in-the-Loop Review',
+      'LLM Evaluation Harnesses / AIOps',
       'Data Platforms',
       'Executive Advisory',
     ],
     responsibilities: [
       'Define and scale enterprise AI product portfolios',
-      'Develop responsible AI governance frameworks',
+      'Architect Responsible AI by design — embedded governance, model risk frameworks, evaluation harnesses, and AIOps from day one',
       'Deliver measurable ROI across data and digital initiatives',
       'Lead AI Center of Excellence operations and adoption programs',
     ],
@@ -412,7 +426,6 @@ function buildJsonLd() {
       },
     ],
     priceRange: 'Enterprise',
-    telephone: PHONE,
     email: EMAIL,
     url: SITE_URL,
     image: IMAGE,

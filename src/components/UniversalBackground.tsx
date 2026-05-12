@@ -311,9 +311,12 @@ const UniversalBackground: React.FC = () => {
             if (isSmall) className += ' small';
             if (isLarge) className += ' large';
 
-            // Random positioning
-            const top = Math.random() * 100;
-            const left = Math.random() * 100;
+            // Deterministic positions from index so SSR matches client
+            // (avoids hydration mismatch from Math.random during render)
+            const top = ((i * 73 + 17) % 100);
+            const left = ((i * 131 + 41) % 100);
+            const delay = ((i * 53) % 150) / 10;
+            const duration = 6 + ((i * 37) % 60) / 10;
 
             return (
               <div
@@ -322,8 +325,8 @@ const UniversalBackground: React.FC = () => {
                 style={{
                   top: `${top}%`,
                   left: `${left}%`,
-                  animationDelay: `${Math.random() * 15}s`,
-                  animationDuration: `${6 + Math.random() * 6}s`,
+                  animationDelay: `${delay}s`,
+                  animationDuration: `${duration}s`,
                 }}
               />
             );

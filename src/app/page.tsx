@@ -73,8 +73,8 @@ export default function Home() {
         <div className="relative z-10 w-full">
           <StrategicAdvantageHeader />
           <StrategicIntroCard />
-          <CompanyExpertise />
           <StrategicDifferentiators />
+          <CompanyExpertise />
         </div>
       </section>
 

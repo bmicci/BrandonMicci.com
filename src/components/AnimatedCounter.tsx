@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 type Props = {
   // final numeric value to animate to
@@ -19,35 +19,66 @@ export default function AnimatedCounter({
   duration = 1200,
   format,
 }: Props) {
-  const el = useRef<HTMLSpanElement>(null);
+  const finalText = `${format ? format(value) : value}${suffix}`;
+  const [display, setDisplay] = useState(finalText);
+  const elRef = useRef<HTMLSpanElement>(null);
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
-    if (!el.current) return;
+    if (hasAnimated.current) return;
     if (typeof window === 'undefined') return;
+    const el = elRef.current;
+    if (!el) return;
 
     const prefersReduced = window.matchMedia?.(
       '(prefers-reduced-motion: reduce)'
     ).matches;
     if (prefersReduced) {
-      el.current.textContent = `${format ? format(value) : value}${suffix}`;
+      hasAnimated.current = true;
       return;
     }
 
-    let start: number | null = null;
-    const startVal = 0;
-    const diff = value - startVal;
+    const rect = el.getBoundingClientRect();
+    const inViewOnLoad = rect.top < window.innerHeight && rect.bottom > 0;
+    if (inViewOnLoad) {
+      // Above the fold on first paint — skip animation to avoid 0-flash / LCP hit
+      hasAnimated.current = true;
+      return;
+    }
 
-    const step = (t: number) => {
-      if (start === null) start = t;
-      const p = Math.min(1, (t - start) / duration);
-      const current = Math.round(startVal + diff * p);
-      el.current!.textContent = `${format ? format(current) : current}${suffix}`;
-      if (p < 1) requestAnimationFrame(step);
+    const animate = () => {
+      if (hasAnimated.current) return;
+      hasAnimated.current = true;
+      let start: number | null = null;
+      const step = (t: number) => {
+        if (start === null) start = t;
+        const p = Math.min(1, (t - start) / duration);
+        const current = Math.round(value * p);
+        setDisplay(`${format ? format(current) : current}${suffix}`);
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
     };
 
-    const id = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(id);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            animate();
+            observer.disconnect();
+            break;
+          }
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, [value, suffix, duration, format]);
 
-  return <span ref={el} aria-hidden="true" />;
+  return (
+    <span ref={elRef} aria-hidden="true">
+      {display}
+    </span>
+  );
 }
