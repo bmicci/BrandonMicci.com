@@ -70,6 +70,11 @@ function buildJsonLd() {
       'https://twitter.com/brandonmicci',
       'https://link.v1ce.co/brandon.micci',
     ],
+    worksFor: {
+      '@type': 'Organization',
+      name: 'JPMorgan Chase',
+      url: 'https://www.jpmorganchase.com',
+    },
     contactPoint: [
       {
         '@type': 'ContactPoint',

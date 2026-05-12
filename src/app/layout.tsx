@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     template: '%s | Brandon Micci',
   },
   description:
-    'Dallas, TX-based AI Strategy & Business Transformation Executive. 17+ years delivering $400M+ in enterprise impact — $22M+ AI-driven savings, 27K+ AI users enabled, 30K+ analytics users scaled. Expert in Generative AI, Agentic AI, LLM deployment, and enterprise data strategy.',
+    'Dallas, TX-based AI Strategy & Business Transformation Executive at JPMorgan Chase. 17+ years delivering $400M+ in enterprise impact — $22M+ AI-driven savings, 27K+ AI users enabled, 30K+ analytics users scaled. Expert in Generative AI, Agentic AI, LLM deployment, and enterprise data strategy.',
   keywords: [
     // Executive Roles
     'Enterprise AI Executive',
@@ -138,7 +138,7 @@ export const metadata: Metadata = {
     url: 'https://brandonmicci.com',
     title: 'Brandon Micci | Head of AI Strategy & Business Transformation',
     description:
-      'Dallas-based AI Strategy & Business Transformation Executive. $400M+ enterprise impact, $22M+ AI-driven savings, 27K+ AI users enabled. Expert in Generative AI, Agentic AI, LLM deployment, and enterprise data strategy.',
+      'Dallas-based AI Strategy & Business Transformation Executive at JPMorgan Chase. $400M+ enterprise impact, $22M+ AI-driven savings, 27K+ AI users enabled. Expert in Generative AI, Agentic AI, LLM deployment, and enterprise data strategy.',
     images: [
       {
         url: '/opengraph-image',
@@ -152,7 +152,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Brandon Micci | Head of AI Strategy & Business Transformation',
     description:
-      'Dallas-based AI Strategy & Business Transformation Executive. $400M+ enterprise impact, $22M+ AI-driven savings, 27K+ AI users. Expert in Generative AI, Agentic AI, LLM deployment, Fortune 500 transformation.',
+      'Dallas-based AI Strategy & Business Transformation Executive at JPMorgan Chase. $400M+ enterprise impact, $22M+ AI-driven savings, 27K+ AI users. Expert in Generative AI, Agentic AI, LLM deployment, Fortune 500 transformation.',
     images: ['/opengraph-image'],
     creator: '@brandonmicci',
   },

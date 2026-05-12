@@ -55,13 +55,13 @@ type Role = {
 
 const ROLES: Role[] = [
   {
-    dates: '2024 - April 2026',
+    dates: '2024 - PRESENT',
     role: 'Head of AI Strategy & Business Transformation',
     company: 'JPMorgan Chase',
     location: 'Dallas, TX',
     icon: <Brain className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
-      'Led AI strategy and business transformation across JPMorgan Payments Operations, spanning Client Service, Onboarding, Merchant Services, and call center operations. Owned end-to-end AI product delivery, $15M+ P&L, governance, and enterprise scaling.',
+      'Lead AI strategy and business transformation across JPMorgan Payments Operations, spanning Client Service, Onboarding, Merchant Services, and call center operations. Own end-to-end AI product delivery, $15M+ P&L, governance, and enterprise scaling.',
     skills: [
       'AI Strategy',
       'LLM / RAG Deployment',
