@@ -61,7 +61,7 @@ Headed the AI/IoT and Emerging Technology Practice, directing go-to-market strat
 - Launched Industry 4.0 IoT Platform integrating telematics, smart building monitoring, wearables, and industrial equipment under a unified ecosystem with real-time AI analytics and detection
 - Established innovation practice from the ground up, creating new service offerings and commercializing Industry 4.0, NextGen and AI solutions that expanded market reach across the insurance sector
 
-### Senior Manager, Forensic Technology and Forensic Data Analytics - Ernst & Young (EY)
+### Senior Manager, AI/ML Forensic Analytics & Technology - Ernst & Young (EY)
 **February 2021 - February 2022 (1 year 1 month) | Dallas, Texas**
 
 Spearheaded AI/ML strategy and capability development within Ernst & Young's Forensics Practice, serving as Regional Leader and subject matter expert for complex analytics engagements across Financial Services, Life Sciences, and Energy sectors.
@@ -81,7 +81,7 @@ Promoted to newly created role after identifying advanced operational data needs
 - Led comprehensive innovation transformation implementing IoT capabilities across 3 Fuel Farms, 7 Baggage Handling Systems, and 8 De-Icing Stations while architecting AWS-based platform for enhanced resiliency and reliability
 - Migrated 10+ legacy applications to the cloud in 6 months, reducing annual technology spend by $3.2M
 
-### Data Enablement & Analytics COE Lead - Southwest Airlines
+### Manager, Data Enablement & Analytics COE - Southwest Airlines
 **February 2019 - August 2019 (7 months) | Dallas, Texas**
 
 Recruited to replicate Capital One's world-record Tableau success. Built comprehensive data community and center of excellence across enterprise analytics platforms.
@@ -91,7 +91,7 @@ Recruited to replicate Capital One's world-record Tableau success. Built compreh
 - Built a Data Analyst Community scaling to 2500+ users with 40% adoption increase of Tableau & Alteryx
 - Architected Tier 1 Production Data Environment achieving 100% availability for critical real-time Ops Data
 
-### Vice President, Global Digital and Cloud Transformation Leader - Citigroup
+### Vice President, Global Infrastructure Transformation - Citigroup
 **November 2017 - February 2019 (1 year 4 months) | Irving, Texas**
 
 Led global infrastructure transformation initiatives, driving quality improvement and performance optimization across Citigroup's worldwide technology ecosystem. Responsible for strategic technology modernization and cloud enablement programs.
@@ -101,7 +101,7 @@ Led global infrastructure transformation initiatives, driving quality improvemen
 - Evangelized DevOps transformation program accelerating cloud enablement by 200% through CI/CD pipeline implementation and a microservices architecture
 - Drove modernization initiatives across legacy infrastructure stacks, establishing enterprise-standard performance standards
 
-### Risk Analytics Leader, Auto Finance & Home Loans - Capital One
+### Enterprise Risk Analytics Leader - Capital One
 **July 2016 - November 2017 (1 year 5 months) | Plano, Texas**
 
 Built and led the first Risk & Analytics Reporting Team for Capital One's Auto Finance & Home Loans division. Architected comprehensive data warehouse and analytics platform within 2 months.
@@ -110,7 +110,7 @@ Built and led the first Risk & Analytics Reporting Team for Capital One's Auto F
 - Built and led team of 7 analysts and data engineers, architecting the first dedicated Tableau environment for Auto Finance
 - Implemented automated compliance testing with advanced NLP solutions to digest customer complaints and real-time OCR scanning for regulatory requirements, creating automated controls to detect emerging high-risk blind spots
 
-### Enterprise Analytics Leader - Enterprise Risk & Compliance - Capital One
+### Enterprise Analytics Leader, Compliance - Capital One
 **January 2016 - July 2016 (7 months) | Richmond, Virginia**
 
 Led development of large-scale Tableau Dashboard efforts cross-functionally as internal consultant. Managed team of 10 on-shore Data Engineers and Data Analysts across enterprise risk and compliance initiatives.
@@ -119,7 +119,7 @@ Led development of large-scale Tableau Dashboard efforts cross-functionally as i
 - Achieved 200% team output increase with 10 Data Engineers/Analysts, delivering 15+ enterprise risk dashboards
 - Established enterprise gold standard for Data Quality, including comprehensive data governance frameworks, lineage automation, and validation processes that enhanced organizational capability by 80%
 
-### Center of Excellence Leader, Tableau, BI & Big Data Platforms - Capital One
+### Big Data, Analytics, and Platforms COE Leader - Capital One
 **January 2015 - January 2016 (1 year 1 month) | McLean, Virginia**
 
 Established and drove Tableau & Big Data Center of Excellence across Capital One Enterprise. Led comprehensive platform transformation and legacy system modernization initiatives.
