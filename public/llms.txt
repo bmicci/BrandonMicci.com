@@ -11,7 +11,7 @@ At JPMorgan Chase, I currently lead AI strategy for client servicing and onboard
 I specialize in building and leading high-performing organizations that connect cutting-edge AI and emerging technologies to real business challenges. My expertise includes:
 • Enterprise AI/ML strategy and execution at scale
 • Digital transformation across Fortune 500 organizations
-• Cloud modernization and DevOps acceleration (200% adoption improvement)
+• Cloud modernization and DevOps acceleration (200% faster cloud adoption)
 • Building and leading data science & analytics teams (50+ FTEs)
 • Go-to-market strategy for emerging technologies
 
@@ -57,7 +57,7 @@ Headed the AI/IoT and Emerging Technology Practice, directing go-to-market strat
 
 **Key Achievements:**
 - Orchestrated go-to-market strategy for NextGen insurance solutions, achieving a 34% market share increase
-- Architected telematics solutions for Fortune 50 insurance providers, delivering 60% improvement in loss mitigation
+- Architected telematics solutions for Fortune 50 insurance providers, delivering significant improvement in loss mitigation through real-time predictive analytics
 - Launched Industry 4.0 IoT Platform integrating telematics, smart building monitoring, wearables, and industrial equipment under a unified ecosystem with real-time AI analytics and detection
 - Established innovation practice from the ground up, creating new service offerings and commercializing Industry 4.0, NextGen and AI solutions that expanded market reach across the insurance sector
 
@@ -116,8 +116,8 @@ Built and led the first Risk & Analytics Reporting Team for Capital One's Auto F
 Led development of large-scale Tableau Dashboard efforts cross-functionally as internal consultant. Managed team of 10 on-shore Data Engineers and Data Analysts across enterprise risk and compliance initiatives.
 
 **Key Achievements:**
-- Achieved 200% team output increase with 10 Data Engineers/Analysts, delivering 15+ enterprise risk dashboards
-- Established enterprise gold standard for Data Quality, including comprehensive data governance frameworks, lineage automation, and validation processes that enhanced organizational capability by 80%
+- Led a team of 10 data engineers and analysts delivering 15+ enterprise risk dashboards across risk and compliance functions
+- Established the enterprise gold standard for data quality — governance frameworks, automated lineage, and validation processes
 
 ### Big Data, Analytics, and Platforms COE Leader - Capital One
 **January 2015 - January 2016 (1 year 1 month) | McLean, Virginia**
