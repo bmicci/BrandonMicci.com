@@ -38,12 +38,12 @@ const caseStudies: CaseStudy[] = [
     challenge:
       'A global payments organization needed to democratize access to institutional knowledge across 7,500+ policy and procedure documents while maintaining strict governance, security, and compliance standards required in financial services.',
     solution:
-      'Led the industry-first deployment of a multi-tenant, guardrailed Large Language Model platform that evolved from a policy search tool into a comprehensive enterprise knowledge assistant. Built a reusable AI platform with shared building blocks — APIs, services, prompt/agent patterns, evaluation harnesses, playbooks — for production-grade reliability and observability. Expanded from initial policy documents to 10+ integrated data sources across the Payments division. Scope spanned the full JPMorgan Chase Payments business — merchant services, client onboarding, servicing operations, and call centers.',
+      'Led the deployment of a multi-tenant, guardrailed Large Language Model platform that evolved from a policy search tool into a comprehensive enterprise knowledge assistant. Built a reusable AI platform with shared building blocks — APIs, services, prompt/agent patterns, evaluation harnesses, playbooks — for production-grade reliability and observability. Expanded from initial policy documents to 10+ integrated data sources across the Payments division. Scope spanned the full JPMorgan Chase Payments business — merchant services, client servicing, client onboarding, and global call centers.',
     results: [
       'Scaled from 7,500 policy documents to 10+ integrated data sources',
-      'Deployed the largest enterprise LLM implementation in financial services',
+      'Deployed an enterprise-scale LLM implementation in financial services',
       'Onboarded 27,000+ active users across the Payments organization',
-      'Designed human-in-the-loop review workflows for high-stakes interactions in regulated payments operations',
+      'Designed human-in-the-loop review workflows for high-stakes interactions in regulated payments environments',
       'Established LLM evaluation harnesses and AIOps practice for continuous improvement across the AI delivery lifecycle',
       'Established governance model now replicated across other divisions',
     ],

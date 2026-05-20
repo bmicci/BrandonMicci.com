@@ -55,13 +55,13 @@ type Role = {
 
 const ROLES: Role[] = [
   {
-    dates: '2024 - PRESENT',
+    dates: 'Feb 2024 – Present',
     role: 'Head of AI Strategy & Business Transformation',
     company: 'JPMorgan Chase',
     location: 'Dallas, TX',
     icon: <Brain className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
-      'Lead AI strategy and business transformation across JPMorgan Payments Operations, spanning Client Service, Onboarding, Merchant Services, and call center operations. Own end-to-end AI product delivery, $15M+ P&L, governance, and enterprise scaling.',
+      'Lead AI strategy and business transformation across JPMorgan Chase Payments, spanning merchant services, client servicing, client onboarding, and global call centers. Own end-to-end AI product delivery, a $15M+ annual AI portfolio, governance, and enterprise scaling.',
     skills: [
       'AI Strategy',
       'LLM / RAG Deployment',
@@ -75,7 +75,7 @@ const ROLES: Role[] = [
       },
       {
         title: '$22M+ Annualized Savings',
-        text: 'Delivered $22M+ in annualized savings through LLM-powered workflow automation, intelligent routing, and accelerated knowledge retrieval across Payments Operations.',
+        text: 'Delivered $22M+ in annualized savings through LLM-powered workflow automation, intelligent routing, and accelerated knowledge retrieval across the Payments business.',
       },
       {
         title: 'Reusable AI Platform at Scale',
@@ -83,7 +83,7 @@ const ROLES: Role[] = [
       },
       {
         title: 'Human-in-the-Loop Review',
-        text: 'Designed human-in-the-loop review workflows for high-stakes AI-assisted decisions in regulated payments operations.',
+        text: 'Designed human-in-the-loop review workflows for high-stakes AI-assisted decisions in regulated payments environments.',
       },
       {
         title: 'LLM Evaluation & AIOps',
@@ -96,7 +96,7 @@ const ROLES: Role[] = [
     ],
   },
   {
-    dates: '2022 - 2024',
+    dates: 'Jan 2022 – Feb 2024',
     role: 'Senior Director, Head of AI/IoT & Emerging Technology Practice',
     company: 'Capgemini',
     location: 'Dallas, TX',
@@ -120,7 +120,7 @@ const ROLES: Role[] = [
     ],
   },
   {
-    dates: '2021 - 2022',
+    dates: 'Feb 2021 – Feb 2022',
     role: 'Senior Manager, AI/ML Forensic Analytics & Technology',
     company: 'Ernst & Young',
     location: 'Dallas, TX',
@@ -149,8 +149,8 @@ const ROLES: Role[] = [
     ],
   },
   {
-    dates: '2019 - 2020',
-    role: 'Head of Digital Innovation & IoT (Promoted Aug 2019)',
+    dates: 'Aug 2019 – Dec 2020',
+    role: 'Head of Digital Innovation & IoT',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
     icon: <Plane className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
@@ -188,7 +188,7 @@ const ROLES: Role[] = [
       },
       {
         title: 'Community Building',
-        text: 'Created evangelical Data Analyst Community growing to several thousand users, driving cultural shift toward data-driven decision-making.',
+        text: 'Created a Data Analyst Community growing to several thousand users, driving cultural shift toward data-driven decision-making.',
       },
       {
         title: 'Operational Excellence',
@@ -197,7 +197,7 @@ const ROLES: Role[] = [
     ],
   },
   {
-    dates: '2017 - 2019',
+    dates: 'Nov 2017 – Feb 2019',
     role: 'Vice President, Global Infrastructure Transformation',
     company: 'Citigroup',
     location: 'Irving, TX',
@@ -221,23 +221,77 @@ const ROLES: Role[] = [
     ],
   },
   {
-    dates: '2015 - 2017',
-    role: 'Manager, Big Data & Analytics COE',
+    dates: 'Jul 2016 – Nov 2017',
+    role: 'Enterprise Risk Analytics Leader',
     company: 'Capital One',
-    location: 'Richmond / Plano',
+    location: 'Plano, TX',
     icon: <BarChart className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
-      "Established and led Capital One's Tableau & Big Data Center of Excellence—one of the most successful enterprise analytics transformations in financial services. Built Risk & Analytics organization for Auto Finance & Home Loans.",
+      "Built and led the first dedicated Risk & Analytics Reporting organization for Capital One's Auto Finance & Home Loans division, architecting a comprehensive data warehouse and analytics platform from the ground up.",
+    skills: [
+      'Risk Analytics',
+      'Tableau',
+      'NLP/OCR Automation',
+      'Compliance',
+    ],
+    achievements: [
+      {
+        title: 'First Risk Analytics Team',
+        text: "Built and scaled a team of 10 data engineers and analysts, architecting the division's first dedicated Tableau environment within 2 months.",
+      },
+      {
+        title: 'Automated Compliance Testing',
+        text: 'Pioneered automated compliance testing using NLP to analyze customer complaints and real-time OCR for regulatory requirements, increasing control coverage by 80%.',
+      },
+      {
+        title: 'Executive Risk Dashboards',
+        text: 'Delivered executive-facing risk dashboards and real-time monitoring across Auto Finance and Home Loans operations.',
+      },
+    ],
+  },
+  {
+    dates: 'Jan 2016 – Jul 2016',
+    role: 'Enterprise Analytics Leader, Compliance',
+    company: 'Capital One',
+    location: 'Richmond, VA',
+    icon: <BarChart className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    description:
+      "Led enterprise-wide Tableau dashboard development as an internal strategic consultant across Capital One's Risk and Compliance functions, managing a cross-functional team of 10.",
+    skills: [
+      'Tableau',
+      'Data Governance',
+      'Risk & Compliance',
+      'Data Quality',
+    ],
+    achievements: [
+      {
+        title: 'Analytics Standardization',
+        text: 'Drove enterprise-wide analytics standardization across Risk and Compliance, reducing reporting cycle times by 40% through automated, self-service dashboards.',
+      },
+      {
+        title: 'Data Quality Gold Standard',
+        text: 'Established the enterprise gold standard for data quality — governance frameworks, automated lineage, and validation gates — improving data capability by 80%.',
+      },
+    ],
+  },
+  {
+    dates: 'Jan 2015 – Jan 2016',
+    role: 'Big Data, Analytics, and Platforms COE Leader',
+    company: 'Capital One',
+    location: 'McLean, VA',
+    icon: <BarChart className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    description:
+      "Established and led Capital One's Tableau & Big Data Center of Excellence, defining the enterprise data strategy and analytics operating model adopted across multiple business lines.",
     skills: [
       'Tableau COE',
       'Big Data',
-      'Risk Analytics',
+      'Enterprise Strategy',
       'Executive Dashboards',
     ],
     achievements: [
       {
         title: 'Enterprise Analytics Community of Practice',
-        text: 'Built an enterprise evangelical Tableau community of practice, scaling adoption from zero to 30,000+ enterprise users.',
+        text: 'Built the largest enterprise analytics community of practice globally (confirmed by Tableau at the time), scaling from zero to 30,000+ users.',
       },
       {
         title: 'CEO Dashboard Architect',
@@ -245,16 +299,12 @@ const ROLES: Role[] = [
       },
       {
         title: '$8M Cost Savings',
-        text: 'Led enterprise-wide platform rationalization, decommissioning 2,000+ legacy dashboards and reports, delivering $8M annual savings.',
-      },
-      {
-        title: 'NLP/OCR Innovation',
-        text: 'Pioneered NLP/OCR automation scanning official regulatory changes from government sources, auto-generating compliance testing scripts and increasing control coverage by 80%.',
+        text: 'Led enterprise-wide platform rationalization, decommissioning 2,000+ legacy BI applications across Business Objects, Cognos, and legacy platforms, delivering $8M in annual savings.',
       },
     ],
   },
   {
-    dates: '2013 - 2015',
+    dates: 'Oct 2013 – Jan 2015',
     role: 'Senior Consultant, Lead Data Analyst',
     company: 'Booz Allen Hamilton',
     location: 'McLean, VA',
@@ -276,7 +326,7 @@ const ROLES: Role[] = [
     ],
   },
   {
-    dates: '2009 - 2013',
+    dates: 'Aug 2009 – Oct 2013',
     role: 'Global Operations and Strategy Associate',
     company: 'PricewaterhouseCoopers',
     location: 'McLean, VA',
