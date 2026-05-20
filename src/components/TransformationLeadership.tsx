@@ -31,9 +31,9 @@ const primaryProjects: Project[] = [
     title: 'Enterprise Knowledge Assistant',
     icon: Bot,
     description:
-      'Industry-first LLM platform that evolved from 7,500+ policy documents to 10+ integrated data sources, representing the largest enterprise LLM deployment in financial services.',
+      'Enterprise LLM platform that evolved from 7,500+ policy documents to 10+ integrated data sources, scaled to 27,000+ users across financial services.',
     mobileDescription:
-      'Largest LLM deployment in financial services with 27K+ users.',
+      'Enterprise LLM deployment serving 27K+ users in financial services.',
     metrics: [
       { value: '27,000+', label: 'Active Users' },
       { value: '10+', label: 'Data Sources' },

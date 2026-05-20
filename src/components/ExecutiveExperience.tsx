@@ -61,7 +61,7 @@ const ROLES: Role[] = [
     location: 'Dallas, TX',
     icon: <Brain className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
     description:
-      'Lead AI strategy and business transformation across JPMorgan Payments Operations, spanning Client Service, Onboarding, Merchant Services, and call center operations. Own end-to-end AI product delivery, $15M+ P&L, governance, and enterprise scaling.',
+      'Lead AI strategy and business transformation across JPMorgan Chase Payments, spanning merchant services, client servicing, client onboarding, and global call centers. Own end-to-end AI product delivery, a $15M+ annual AI portfolio, governance, and enterprise scaling.',
     skills: [
       'AI Strategy',
       'LLM / RAG Deployment',
@@ -75,7 +75,7 @@ const ROLES: Role[] = [
       },
       {
         title: '$22M+ Annualized Savings',
-        text: 'Delivered $22M+ in annualized savings through LLM-powered workflow automation, intelligent routing, and accelerated knowledge retrieval across Payments Operations.',
+        text: 'Delivered $22M+ in annualized savings through LLM-powered workflow automation, intelligent routing, and accelerated knowledge retrieval across the Payments business.',
       },
       {
         title: 'Reusable AI Platform at Scale',
@@ -83,7 +83,7 @@ const ROLES: Role[] = [
       },
       {
         title: 'Human-in-the-Loop Review',
-        text: 'Designed human-in-the-loop review workflows for high-stakes AI-assisted decisions in regulated payments operations.',
+        text: 'Designed human-in-the-loop review workflows for high-stakes AI-assisted decisions in regulated payments environments.',
       },
       {
         title: 'LLM Evaluation & AIOps',
@@ -188,7 +188,7 @@ const ROLES: Role[] = [
       },
       {
         title: 'Community Building',
-        text: 'Created evangelical Data Analyst Community growing to several thousand users, driving cultural shift toward data-driven decision-making.',
+        text: 'Created a Data Analyst Community growing to several thousand users, driving cultural shift toward data-driven decision-making.',
       },
       {
         title: 'Operational Excellence',
@@ -237,7 +237,7 @@ const ROLES: Role[] = [
     achievements: [
       {
         title: 'Enterprise Analytics Community of Practice',
-        text: 'Built an enterprise evangelical Tableau community of practice, scaling adoption from zero to 30,000+ enterprise users.',
+        text: 'Built the largest enterprise analytics community of practice globally (confirmed by Tableau at the time), scaling from zero to 30,000+ users.',
       },
       {
         title: 'CEO Dashboard Architect',

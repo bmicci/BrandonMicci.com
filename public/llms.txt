@@ -33,19 +33,19 @@ Philosophy: Technology should make organizations smarter, faster, and more resil
 
 ## Current Role
 
-### VP, Head of NextGen AI/ML Solutions - JPMorgan Chase
-**February 2024 - Present | Plano, Texas**
+### Head of AI Strategy & Business Transformation - JPMorgan Chase
+**February 2024 - Present | Dallas, Texas**
 
-Drive enterprise AI strategy and implementation across payments operations, leading organization-wide transformation initiatives that enhance operational efficiency and customer experience. Oversee AI product development lifecycle from strategy through deployment and scaling.
+Drive enterprise AI strategy and implementation across JPMorgan Chase Payments, leading organization-wide transformation initiatives that enhance operational efficiency and customer experience. Oversee AI product development lifecycle from strategy through deployment and scaling.
 
 **Key Achievements:**
-- Owned end-to-end AI portfolio for the entire JPMorgan Chase Payments business — strategy through delivery — including merchant services, client onboarding, servicing operations, and call centers
+- Owned end-to-end AI portfolio for the entire JPMorgan Chase Payments business — strategy through delivery — including merchant services, client servicing, client onboarding, and global call centers
 - Architected reusable AI platform with shared building blocks (APIs, services, prompt/agent patterns, playbooks, evaluation harnesses) for production-grade reliability and observability
-- Architected comprehensive AI strategy resulting in 30% efficiency gains and 20% workforce optimization across payments operations
-- Pioneered first-of-its-kind AI Assistant (LLM) scaling to 27,000+ users across the Payments organization
-- Designed human-in-the-loop (HITL) review workflows for high-stakes AI-assisted decisions in regulated payments operations
+- Architected comprehensive AI strategy driving operational efficiency and workforce optimization across the Payments business
+- Scaled an enterprise AI Assistant (LLM) to 27,000+ users across the Payments organization
+- Designed human-in-the-loop (HITL) review workflows for high-stakes AI-assisted decisions in regulated payments environments
 - Established LLM evaluation harnesses and AIOps (LLMOps) practice ensuring continuous improvement across the AI delivery lifecycle (experiment → production → operations)
-- Deployed intelligent automation handling 40% of customer inquiries while reducing handle time by 300%
+- Deployed intelligent automation that reduced average handle time by up to ~40% in targeted servicing workflows
 - Established Responsible AI by design — embedded governance, model risk frameworks, and audit/compliance partnership across multiple business units
 
 ## Career History
@@ -88,7 +88,7 @@ Recruited to replicate Capital One's world-record Tableau success. Built compreh
 
 **Key Achievements:**
 - Decommissioned hundreds of legacy dashboards across 5 legacy BI platforms, reducing annual support costs by $5M
-- Built evangelical Data Analyst Community scaling to 2500+ users with 40% adoption increase of Tableau & Alteryx
+- Built a Data Analyst Community scaling to 2500+ users with 40% adoption increase of Tableau & Alteryx
 - Architected Tier 1 Production Data Environment achieving 100% availability for critical real-time Ops Data
 
 ### Vice President, Global Digital and Cloud Transformation Leader - Citigroup
@@ -125,7 +125,7 @@ Led development of large-scale Tableau Dashboard efforts cross-functionally as i
 Established and drove Tableau & Big Data Center of Excellence across Capital One Enterprise. Led comprehensive platform transformation and legacy system modernization initiatives.
 
 **Key Achievements:**
-- Established enterprise Tableau COE driving adoption to 30,000+ users—largest evangelical Tableau community worldwide
+- Established enterprise Tableau COE driving adoption to 30,000+ users—the largest enterprise analytics community of practice globally (confirmed by Tableau at the time)
 - Appointed to lead development of top-of-house Tableau mobile dashboards for Capital One's CEO, Rich Fairbanks
 
 ### Senior Consultant, Lead Data Analyst - Booz Allen Hamilton
@@ -144,7 +144,7 @@ As Lead Analyst to the COO of Global Delivery, I was the sole provider of perfor
 Secured and delivered a $400M, 10-year strategic engagement at Ernst & Young with a Fortune 50 global insurance leader, building an AI-powered fraud detection and analytics platform that processes millions of real-time transactions with 99.9% accuracy.
 
 ### 27,000+ AI Users Enabled
-Pioneered the largest LLM deployment in the financial services payments sector at JPMorgan Chase, scaling an AI Assistant to 27,000+ users. This industry-first implementation handles 40% of customer inquiries with 300% reduction in handle time.
+Scaled an enterprise AI Assistant (LLM) to 27,000+ users at JPMorgan Chase, reducing average handle time by up to ~40% in targeted servicing workflows.
 
 ### 250% Peak Program ROI
 Led breakthrough IoT innovation at Southwest Airlines delivering 250% ROI within six months, generating $20M+ in annual savings through fuel optimization, baggage handling improvements, and de-icing automation across airports nationwide.
@@ -256,7 +256,7 @@ Evangelized DevOps transformation at Citigroup, accelerating cloud enablement by
 ## Industry Experience
 
 ### Financial Services
-- **JPMorgan Chase:** AI strategy for payments operations, LLM deployment at scale
+- **JPMorgan Chase:** AI strategy for the Payments business, LLM deployment at scale
 - **Capital One:** Enterprise analytics, risk management, data governance (30,000+ users)
 - **Citigroup:** Global infrastructure transformation, cloud migration, DevOps
 
