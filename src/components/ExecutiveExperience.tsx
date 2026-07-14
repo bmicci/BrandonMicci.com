@@ -532,11 +532,11 @@ const ExecutiveExperience = memo(() => {
 
       <div className="relative z-10 font-sans">
         <div className="px-2 py-6 md:px-8 md:py-12 text-center">
-          <h2 className="section-header-title">
+          <h1 className="section-header-title">
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               Executive Experience
             </span>
-          </h2>
+          </h1>
           <p className="mx-auto mt-3 max-w-4xl text-sm md:text-xl leading-relaxed text-slate-200 px-2 font-semibold">
             17+ years of{' '}
             <Link

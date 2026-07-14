@@ -10,9 +10,10 @@ function makeNonce() {
 export function proxy(req: NextRequest) {
   const nonce = makeNonce();
 
-  // Forward nonce to server components (layout can read it)
+  // Forward nonce and pathname to server components (layout can read them)
   const requestHeaders = new Headers(req.headers);
   requestHeaders.set('x-csp-nonce', nonce);
+  requestHeaders.set('x-pathname', req.nextUrl.pathname);
 
   const res = NextResponse.next({ request: { headers: requestHeaders } });
 

@@ -19,17 +19,14 @@ const EMAIL = 'brandon@brandonmicci.com';
 const INCLUDE_FAQ = true;
 const INCLUDE_JOB_POSTING = false; // Disabled: JobPosting is for employers hiring candidates, not for being hired
 
-function buildJsonLd() {
+function buildJsonLd(pathname: string) {
+  const isHome = pathname === '/';
+
   const website = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Brandon Micci — AI & Digital Transformation',
     url: SITE_URL,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${SITE_URL}/?q={search_term_string}`,
-      'query-input': 'required name=search_term_string',
-    },
   };
 
   const organization = {
@@ -165,12 +162,6 @@ function buildJsonLd() {
     alumniOf: [
       { '@type': 'CollegeOrUniversity', name: 'The George Washington University' },
     ],
-    award: [
-      'Led $400M+ enterprise value creation via AI & data transformation',
-      'Scaled LLM deployment to 27,000+ users at JPMorgan Chase',
-      'Delivered $22M+ annualized savings through AI-led business transformation',
-      'Launched $20M IoT-AI optimization program in aviation sector',
-    ],
   };
 
   const profilePage = {
@@ -184,60 +175,6 @@ function buildJsonLd() {
       url: SITE_URL,
     },
     mainEntityOfPage: SITE_URL,
-  };
-
-  const breadcrumbs = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Strategic Advantage',
-        item: `${SITE_URL}/#strategic-advantage`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: 'Executive Experience',
-        item: `${SITE_URL}/#executive-experience`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: 'Transformation Leadership',
-        item: `${SITE_URL}/#transformation-leadership`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 5,
-        name: 'Professional Impact',
-        item: `${SITE_URL}/#professional-impact`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 6,
-        name: 'Contact',
-        item: `${SITE_URL}/contact`,
-      },
-    ],
-  };
-
-  const contactPage = {
-    '@context': 'https://schema.org',
-    '@type': 'ContactPage',
-    url: SITE_URL,
-    mainEntityOfPage: SITE_URL,
-    about: { '@type': 'Person', name: NAME },
-    contactPoint: [
-      {
-        '@type': 'ContactPoint',
-        contactType: 'Executive inquiries',
-        email: EMAIL,
-        availableLanguage: ['en'],
-      },
-    ],
   };
 
   const faq = {
@@ -398,7 +335,7 @@ function buildJsonLd() {
   const professionalService = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'Brandon Micci - AI & Digital Transformation Advisory',
+    name: 'Brandon Micci Digital Strategy',
     description: 'Enterprise AI Strategy & Digital Transformation Executive Services for Fortune 500 organizations. Expert in LLM deployment, data platforms, and measurable ROI delivery.',
     address: {
       '@type': 'PostalAddress',
@@ -416,7 +353,6 @@ function buildJsonLd() {
         name: 'Remote',
       },
     ],
-    priceRange: 'Enterprise',
     email: EMAIL,
     url: SITE_URL,
     image: IMAGE,
@@ -460,21 +396,30 @@ function buildJsonLd() {
     website,
     organization,
     person,
-    profilePage,
-    contactPage,
     roleExperience,
     professionalService,
-    breadcrumbs,
   ];
 
-  if (INCLUDE_FAQ) payload.push(faq);
+  // ProfilePage and FAQPage describe homepage content — rendering them on every
+  // page (including /privacy) is a structured-data guideline violation, since
+  // the markup wouldn't reflect what's actually on the page.
+  if (isHome) {
+    payload.push(profilePage);
+    if (INCLUDE_FAQ) payload.push(faq);
+  }
   if (INCLUDE_JOB_POSTING) payload.push(jobPosting);
 
   return payload;
 }
 
-export default function EnhancedStructuredData({ nonce }: { nonce?: string }) {
-  const data = buildJsonLd();
+export default function EnhancedStructuredData({
+  nonce,
+  pathname,
+}: {
+  nonce?: string;
+  pathname?: string;
+}) {
+  const data = buildJsonLd(pathname || '/');
   return (
     <script
       id="structured-data"

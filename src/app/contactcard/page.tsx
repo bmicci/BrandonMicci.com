@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import ContactCard from '@/components/ContactCard';
 
 export const metadata: Metadata = {
-  title: 'Connect with Brandon Micci | Digital Business Card',
+  title: { absolute: 'Connect with Brandon Micci | Digital Business Card' },
   description: 'Enterprise AI & Digital Transformation Executive. Connect instantly via LinkedIn, email, or save my contact info.',
+  alternates: { canonical: '/contactcard' },
   openGraph: {
     title: 'Connect with Brandon Micci',
     description: 'Enterprise AI & Digital Transformation Executive. 27K+ LLM users deployed, $400M+ enterprise value.',

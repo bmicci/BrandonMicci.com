@@ -3,9 +3,9 @@ import Link from 'next/link';
 import ExecutiveExperience from '@/components/ExecutiveExperience';
 
 export const metadata: Metadata = {
-  title: 'Executive Experience | AI Leadership & Digital Transformation',
+  title: 'Executive Experience',
   description:
-    'Explore Brandon Micci\'s 17+ year executive career spanning Fortune 500 banks, Big Four consulting, and leading enterprises. Head of AI Strategy & Business Transformation at JPMorgan Chase, delivering $400M+ enterprise value through AI strategy and digital transformation.',
+    "Brandon Micci's 17+ year executive career across Fortune 500 banks, Big Four consulting, and global enterprises — $400M+ in delivered value.",
   keywords: [
     'AI executive experience',
     'enterprise AI leadership',

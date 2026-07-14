@@ -505,6 +505,15 @@ const Navigation = () => {
             </li>
             <li className="nav-item">
               <Link
+                href="/contact"
+                className={`nav-link ${pathname === '/contact' ? 'active' : ''}`}
+                onClick={() => handleLinkClick('')}
+              >
+                Contact
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
                 href="/#connectwithme"
                 className="cta-button"
                 onClick={(e) => handleSmoothScroll(e, 'connectwithme')}

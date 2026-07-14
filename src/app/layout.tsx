@@ -9,6 +9,7 @@ import EnhancedStructuredData from '@/components/EnhancedStructuredData';
 import DevLayoutShiftLogger from '@/components/DevLayoutShiftLogger';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import FloatingCTA from '@/components/FloatingCTA';
+import Footer from '@/components/Footer';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 
@@ -29,11 +30,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Brandon Micci | Head of AI Strategy & Business Transformation | Fortune 500 AI Executive',
+    default: 'Brandon Micci | Enterprise AI Strategy Executive',
     template: '%s | Brandon Micci',
   },
   description:
-    'Dallas, TX-based AI Strategy & Business Transformation Executive at JPMorgan Chase. 17+ years delivering $400M+ in enterprise impact — $22M+ AI-driven savings, 27K+ AI users enabled, 30K+ analytics users scaled. Expert in Generative AI, Agentic AI, LLM deployment, and enterprise data strategy.',
+    'AI Strategy & Business Transformation Executive at JPMorgan Chase. 17+ years, $400M+ enterprise impact, 27K+ AI users enabled. Dallas, TX.',
   keywords: [
     // Executive Roles
     'Enterprise AI Executive',
@@ -121,6 +122,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://brandonmicci.com',
+    locale: 'en_US',
     title: 'Brandon Micci | Head of AI Strategy & Business Transformation',
     description:
       'Dallas-based AI Strategy & Business Transformation Executive at JPMorgan Chase. $400M+ enterprise impact, $22M+ AI-driven savings, 27K+ AI users enabled. Expert in Generative AI, Agentic AI, LLM deployment, and enterprise data strategy.',
@@ -167,9 +169,10 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  // Read nonce from middleware
+  // Read nonce and current path from the proxy
   const headersList = await headers();
   const nonce = headersList.get('x-csp-nonce') || undefined;
+  const pathname = headersList.get('x-pathname') || '/';
 
   // Only load analytics on Vercel (production deployment), not local builds
   const isVercel = process.env.VERCEL === '1';
@@ -193,7 +196,7 @@ export default async function RootLayout({
         className={`${geistSans.variable} antialiased`}
       >
         {/* Structured Data with nonce */}
-        <EnhancedStructuredData nonce={nonce} />
+        <EnhancedStructuredData nonce={nonce} pathname={pathname} />
 
         {process.env.NODE_ENV === 'development' && <DevLayoutShiftLogger />}
         <Navigation />
@@ -203,6 +206,7 @@ export default async function RootLayout({
         <main id="main" className="mt-8 md:mt-14">
           {children}
         </main>
+        <Footer />
 
         {/* Vercel Analytics */}
         {isVercel && <SpeedInsights />}
