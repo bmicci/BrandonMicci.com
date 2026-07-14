@@ -4,7 +4,7 @@
       "numberOfRuns": 1,
       "url": ["http://localhost:3000/"],
       "startServerCommand": "npm run start",
-      "startServerReadyPattern": "started server on"
+      "startServerReadyPattern": "Ready in"
     },
     "upload": {
       "target": "temporary-public-storage"

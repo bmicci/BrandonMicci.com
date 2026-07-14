@@ -7,7 +7,7 @@ function makeNonce() {
   return Buffer.from(bytes).toString('base64');
 }
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const nonce = makeNonce();
 
   // Forward nonce to server components (layout can read it)
@@ -28,8 +28,8 @@ export function middleware(req: NextRequest) {
       "default-src 'self'",
       `script-src 'self' 'nonce-${nonce}'${process.env.NODE_ENV === 'development' ? " 'unsafe-eval'" : ''} https://vercel.live https://*.vercel-insights.com https://*.vercel-analytics.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com`,
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: https:",
-      "font-src 'self' data: https:",
+      "img-src 'self' data:",
+      "font-src 'self' data:",
       "connect-src 'self' https://vercel.live https://*.vercel-insights.com https://*.vercel-analytics.com https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://vitals.vercel-insights.com",
       "object-src 'none'",
       "frame-ancestors 'none'",
@@ -60,8 +60,9 @@ export function middleware(req: NextRequest) {
     'camera=(), microphone=(), geolocation=(), interest-cohort=()'
   );
 
-  // XSS protection (legacy but still useful)
-  res.headers.set('X-XSS-Protection', '1; mode=block');
+  // Legacy XSS auditor — modern guidance is to disable it (it introduced its own
+  // XS-Leaks in old browsers); CSP above is the real protection.
+  res.headers.set('X-XSS-Protection', '0');
 
   return res;
 }

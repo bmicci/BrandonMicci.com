@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist } from 'next/font/google';
 import { headers } from 'next/headers';
 import Script from 'next/script';
 import './globals.css';
@@ -19,21 +19,6 @@ const geistSans = Geist({
   preload: true,
   adjustFontFallback: true,
   fallback: ['system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-  display: 'swap',
-  preload: true,
-  adjustFontFallback: true,
-  fallback: [
-    'ui-monospace',
-    'SFMono-Regular',
-    'Menlo',
-    'Consolas',
-    'monospace',
-  ],
 });
 
 export const viewport: Viewport = {
@@ -198,17 +183,14 @@ export default async function RootLayout({
             A manual preload of the source file fetches the full-size image
             in parallel — wasted bandwidth and a small LCP regression. */}
 
-        {/* Performance: DNS prefetch and preconnect for external resources */}
+        {/* Performance: DNS prefetch and preconnect for external resources actually used in production */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://vercel-insights.com" />
-        <link rel="dns-prefetch" href="https://vercel-analytics.com" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://vercel.live" crossOrigin="anonymous" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} antialiased`}
       >
         {/* Structured Data with nonce */}
         <EnhancedStructuredData nonce={nonce} />
