@@ -1,15 +1,33 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useLockBodyScroll } from '@/hooks/useLockBodyScroll';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState(''); // Empty initial to avoid hydration mismatch
   const pathname = usePathname();
+  const mobileToggleRef = useRef<HTMLButtonElement>(null);
+
+  // Lock background scroll while the mobile menu is open
+  useLockBodyScroll(isMobileMenuOpen);
+
+  // Close on Escape and return focus to the toggle button
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMobileMenuOpen(false);
+        mobileToggleRef.current?.focus();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isMobileMenuOpen]);
 
   // Handle scroll effect
   useEffect(() => {
@@ -441,7 +459,10 @@ const Navigation = () => {
             </div>
           </Link>
 
-          <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+          <ul
+            id="primary-nav-menu"
+            className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}
+          >
             <li className="nav-item">
               <Link
                 href="/"
@@ -526,9 +547,12 @@ const Navigation = () => {
           </ul>
 
           <button
+            ref={mobileToggleRef}
             className={`mobile-toggle ${isMobileMenuOpen ? 'active' : ''}`}
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="primary-nav-menu"
           >
             <div className="toggle-line"></div>
             <div className="toggle-line"></div>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main className="mx-auto max-w-3xl px-6 pt-24 pb-16">
+    <div className="mx-auto max-w-3xl px-6 pt-24 pb-16">
       <section className="rounded-3xl border border-white/10 bg-gradient-to-b from-[rgba(15,23,42,0.92)] to-[rgba(10,14,30,0.92)] p-8 md:p-12 shadow-2xl backdrop-blur-md text-center">
         <p className="text-sm font-semibold tracking-[0.2em] text-cyan-400">
           404
@@ -42,6 +42,6 @@ export default function NotFound() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

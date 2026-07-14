@@ -116,13 +116,19 @@ const FAQSection = () => {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          width: 100%;
           padding: 1.5rem;
           cursor: pointer;
           user-select: none;
           gap: 1rem;
+          background: none;
+          border: none;
+          font: inherit;
+          text-align: left;
+          color: inherit;
         }
 
-        .faq-question h3 {
+        .faq-question-text {
           font-size: 1.125rem;
           font-weight: 600;
           margin: 0;
@@ -147,7 +153,10 @@ const FAQSection = () => {
         }
 
         .faq-answer.open {
-          max-height: 500px;
+          /* Generously large rather than a tight fit to content: a tight
+             max-height clips longer answers on narrow viewports since this
+             property can't animate to "auto". */
+          max-height: 60rem;
           padding: 0 1.5rem 1.5rem;
         }
 
@@ -175,7 +184,7 @@ const FAQSection = () => {
             padding: 1.25rem;
           }
 
-          .faq-question h3 {
+          .faq-question-text {
             font-size: 1rem;
           }
 
@@ -185,12 +194,7 @@ const FAQSection = () => {
         }
       `}</style>
 
-      <section
-        id="faq"
-        className="faq-section"
-        itemScope
-        itemType="https://schema.org/FAQPage"
-      >
+      <section className="faq-section">
         <div className="faq-header">
           <h2>Frequently Asked Questions</h2>
           <p>
@@ -201,39 +205,31 @@ const FAQSection = () => {
 
         <div className="faq-container">
           {FAQ_DATA.map((faq, index) => (
-            <div
-              key={index}
-              className="faq-item"
-              itemScope
-              itemProp="mainEntity"
-              itemType="https://schema.org/Question"
-            >
+            <div key={index} className="faq-item">
+              <h3>
+                <button
+                  type="button"
+                  className="faq-question"
+                  onClick={() => toggleFAQ(index)}
+                  aria-expanded={openIndex === index}
+                  aria-controls={`faq-answer-${index}`}
+                  id={`faq-question-${index}`}
+                >
+                  <span className="faq-question-text">{faq.question}</span>
+                  <ChevronDown
+                    className={`faq-icon ${openIndex === index ? 'open' : ''}`}
+                    size={24}
+                    aria-hidden="true"
+                  />
+                </button>
+              </h3>
               <div
-                className="faq-question"
-                onClick={() => toggleFAQ(index)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    toggleFAQ(index);
-                  }
-                }}
-                aria-expanded={openIndex === index}
-              >
-                <h3 itemProp="name">{faq.question}</h3>
-                <ChevronDown
-                  className={`faq-icon ${openIndex === index ? 'open' : ''}`}
-                  size={24}
-                />
-              </div>
-              <div
+                id={`faq-answer-${index}`}
+                role="region"
+                aria-labelledby={`faq-question-${index}`}
                 className={`faq-answer ${openIndex === index ? 'open' : ''}`}
-                itemScope
-                itemProp="acceptedAnswer"
-                itemType="https://schema.org/Answer"
               >
-                <p itemProp="text">{faq.answer}</p>
+                <p>{faq.answer}</p>
               </div>
             </div>
           ))}

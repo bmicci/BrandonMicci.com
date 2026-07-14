@@ -356,10 +356,17 @@ const ExecutiveExperience = memo(() => {
   );
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Set initial expanded state and handle resize
+  // Set initial expanded state, and re-apply only when crossing the
+  // desktop/mobile boundary -- not on every resize event. Mobile browsers
+  // fire resize when the URL bar shows/hides on scroll; re-running this on
+  // every one of those would silently collapse a card a mobile user just
+  // opened.
+  const wasDesktopRef = useRef<boolean | null>(null);
   useEffect(() => {
     const applyExpandedState = () => {
       const isDesktop = window.innerWidth >= 768;
+      if (wasDesktopRef.current === isDesktop) return;
+      wasDesktopRef.current = isDesktop;
       setExpanded(isDesktop ? new Set(DESKTOP_EXPANDED) : new Set());
     };
 
@@ -693,21 +700,24 @@ const ExecutiveExperience = memo(() => {
                         type="button"
                         onClick={() => toggle(index)}
                         aria-expanded={isExpanded}
+                        aria-controls={`achievements-panel-${index}`}
                         className="mb-2 block w-3/4 mx-auto rounded-md border border-cyan-500/40 bg-cyan-500/20 py-1.5 px-2 text-xs font-semibold text-cyan-400 transition-all duration-300 hover:bg-cyan-500/30 md:hidden"
                       >
                         {isExpanded ? 'Hide Achievements' : 'View Achievements'}
                         <span
                           className={`ml-2 inline-block transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+                          aria-hidden="true"
                         >
                           ▼
                         </span>
                       </button>
 
                       <div
-                        className={`space-y-4 overflow-hidden transition-all duration-300 md:max-h-screen md:opacity-100 ${
+                        id={`achievements-panel-${index}`}
+                        className={`space-y-4 overflow-hidden transition-all duration-300 md:max-h-screen md:opacity-100 md:visible ${
                           isExpanded
-                            ? 'max-h-screen opacity-100'
-                            : 'max-h-0 opacity-0 md:max-h-screen md:opacity-100'
+                            ? 'max-h-screen opacity-100 visible'
+                            : 'invisible max-h-0 opacity-0 md:max-h-screen md:opacity-100 md:visible'
                         }`}
                       >
                         {role.achievements.map((achievement) => (

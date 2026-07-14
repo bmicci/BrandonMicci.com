@@ -98,7 +98,7 @@ export default function ContactCardPage() {
         }
       `}</style>
 
-      <main className="contactcard-page">
+      <div className="contactcard-page">
         {/* Background layers */}
         <div className="contactcard-bg" />
         <div className="contactcard-glow" />
@@ -114,7 +114,7 @@ export default function ContactCardPage() {
         <div className="contactcard-content">
           <ContactCard />
         </div>
-      </main>
+      </div>
     </>
   );
 }
