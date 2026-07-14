@@ -66,7 +66,7 @@ const ROLES: Role[] = [
       'AI Strategy',
       'LLM / RAG Deployment',
       'Responsible AI & Governance',
-      'P&L Ownership',
+      '$15M+ AI Portfolio Ownership',
     ],
     achievements: [
       {

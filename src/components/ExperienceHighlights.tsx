@@ -45,7 +45,7 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
       'Built the AI/IoT and Emerging Tech practice from inception. Drove $9.8M in new revenue and 34% market share gain.',
   },
   {
-    dates: 'Feb 2021 - Jan 2022',
+    dates: 'Feb 2021 - Feb 2022',
     role: 'Senior Manager, AI/ML Forensic Analytics & Technology',
     companyType: 'Big Four Consulting',
     icon: (
