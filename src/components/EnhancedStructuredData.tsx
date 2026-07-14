@@ -372,15 +372,6 @@ function buildJsonLd() {
       '@type': 'Place',
       name: 'Dallas, Texas, USA',
     },
-    estimatedSalary: {
-      '@type': 'MonetaryAmount',
-      currency: 'USD',
-      value: {
-        '@type': 'QuantitativeValue',
-        value: '300000',
-        unitText: 'YEAR',
-      },
-    },
     skills: [
       'Enterprise AI Strategy',
       'Generative AI',
