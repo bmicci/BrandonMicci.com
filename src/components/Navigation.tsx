@@ -300,7 +300,7 @@ const Navigation = () => {
 
         .nav-item :global(a.cta-button) {
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
-          color: white !important;
+          color: #07101d !important;
           padding: 0.4rem 0.8rem;
           border: none;
           border-radius: 6px;

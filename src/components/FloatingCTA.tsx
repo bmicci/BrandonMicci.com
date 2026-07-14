@@ -76,7 +76,7 @@ const FloatingCTA = () => {
           align-items: center;
           gap: 0.5rem;
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
-          color: white;
+          color: #07101d;
           padding: 0.75rem 1.25rem;
           border-radius: 50px;
           font-weight: 700;

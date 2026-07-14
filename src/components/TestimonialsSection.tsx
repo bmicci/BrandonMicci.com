@@ -1,9 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { Pause, Play } from 'lucide-react';
 
 const TestimonialsSection: React.FC = () => {
+  const [isPaused, setIsPaused] = useState(false);
+
   return (
     <>
       <style jsx>{`
@@ -92,6 +95,33 @@ const TestimonialsSection: React.FC = () => {
           align-items: center;
           animation: scroll 80s linear infinite;
           width: calc(450px * 12 + 2rem * 11);
+        }
+
+        .testimonials-track.paused {
+          animation-play-state: paused;
+        }
+
+        .marquee-toggle {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          margin: 0.5rem auto 0;
+          padding: 0.4rem 0.9rem;
+          border-radius: 999px;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          background: rgba(255, 255, 255, 0.05);
+          color: rgba(255, 255, 255, 0.75);
+          font-size: 0.8rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .marquee-toggle:hover,
+        .marquee-toggle:focus-visible {
+          color: #ffffff;
+          border-color: rgba(0, 212, 255, 0.4);
+          background: rgba(0, 212, 255, 0.1);
         }
 
         @keyframes scroll {
@@ -340,13 +370,34 @@ const TestimonialsSection: React.FC = () => {
           }
         }
 
-        /* Respect reduced motion preferences */
+        /* Respect reduced motion preferences.
+           The track's animation isn't just decorative -- it's the only way
+           cards past the visible viewport become reachable. Simply killing
+           the animation (animation: none) reverts the track to translateX(0)
+           and permanently strands the later cards off-screen with no way to
+           reach them. Instead, stop the automatic motion but let people
+           scroll/swipe through the full set natively. */
         @media (prefers-reduced-motion: reduce) {
-          .testimonials-track,
           .testimonials-grid-bg,
           .testimonial-card,
           .border-glow {
             animation: none !important;
+          }
+
+          .testimonials-banner {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+          }
+
+          .testimonials-track {
+            animation: none !important;
+            transform: none !important;
+            width: max-content;
+          }
+
+          .marquee-toggle {
+            display: none;
           }
         }
       `}</style>
@@ -366,12 +417,21 @@ const TestimonialsSection: React.FC = () => {
           </Link>
           {' '}say about working with me and the impact I&apos;ve delivered
         </p>
+        <button
+          type="button"
+          className="marquee-toggle"
+          onClick={() => setIsPaused((prev) => !prev)}
+          aria-pressed={isPaused}
+        >
+          {isPaused ? <Play size={14} aria-hidden="true" /> : <Pause size={14} aria-hidden="true" />}
+          {isPaused ? 'Play testimonials' : 'Pause testimonials'}
+        </button>
       </div>
 
       {/* TESTIMONIALS BANNER */}
       <div className="testimonials-container">
         <div className="testimonials-banner">
-          <div className="testimonials-track">
+          <div className={`testimonials-track${isPaused ? ' paused' : ''}`}>
             {/* Testimonial 1 */}
             <div className="testimonial-card">
               <div className="quote-icon">&quot;</div>
@@ -570,7 +630,10 @@ const TestimonialsSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Duplicate for seamless loop */}
+            {/* Duplicate set for the seamless loop -- visual only, hidden from
+                assistive tech so screen reader users don't hear every
+                testimonial announced twice. */}
+            <div aria-hidden="true" style={{ display: 'contents' }}>
             <div className="testimonial-card">
               <div className="quote-icon">&quot;</div>
               <div className="testimonial-content">
@@ -759,6 +822,7 @@ const TestimonialsSection: React.FC = () => {
                   </a>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>

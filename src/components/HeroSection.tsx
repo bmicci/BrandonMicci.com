@@ -27,12 +27,13 @@ const HeroSection = () => {
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-        @media (prefers-reduced-motion: reduce) {
-          * {
-            animation: none !important;
-            transition: none !important;
-          }
-        }
+        /* Reduced-motion handling is centralized in globals.css, which shrinks
+           animation-duration to near-zero rather than setting animation:none.
+           That distinction matters: elements like StrategicDifferentiators'
+           .diff-card start at opacity:0 and rely on the animation's forwards
+           fill-mode to reach opacity:1. animation:none cancels the fill along
+           with the animation, stranding them invisible for reduced-motion
+           users. Do not reintroduce a local override here. */
         /* iPad Pro: ensure hero section doesn't enforce screen-height causing gap */
         @media (min-width: 1024px) and (max-width: 1279px) {
           .hero-section {

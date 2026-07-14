@@ -331,7 +331,7 @@ const TransformationLeadership = () => {
           align-items: center;
           gap: 0.5rem;
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
-          color: white;
+          color: #07101d;
           padding: 1rem 2rem;
           border-radius: 12px;
           font-weight: 600;

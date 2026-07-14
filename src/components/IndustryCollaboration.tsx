@@ -483,7 +483,7 @@ const IndustryCollaboration: React.FC = () => {
 
         .bm-btn-primary {
           background: linear-gradient(135deg, #00d4ff, #1e90ff);
-          color: #fff;
+          color: #07101d;
           border: none;
           box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
         }

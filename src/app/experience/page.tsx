@@ -67,9 +67,10 @@ export default function ExperiencePage() {
       <div className="mx-auto max-w-6xl px-4 pb-16 text-center">
         <Link
           href="/#connectwithme"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
           style={{
             background: 'linear-gradient(135deg, #00d4ff, #1e90ff)',
+            color: '#07101d',
             boxShadow: '0 8px 24px rgba(0, 212, 255, 0.3)',
           }}
         >

@@ -462,7 +462,7 @@ export default function CaseStudiesContent() {
           align-items: center;
           gap: 0.5rem;
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
-          color: white;
+          color: #07101d;
           padding: 0.875rem 2rem;
           border-radius: 8px;
           font-weight: 600;
