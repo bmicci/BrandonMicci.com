@@ -103,14 +103,14 @@ function buildJsonLd(pathname: string) {
       'LLM Evaluation Harnesses',
       'AIOps',
       'AI Delivery Lifecycle',
-      
+
       // Digital Transformation
       'Digital Transformation',
       'Industry 4.0',
       'IoT Platforms',
       'Digital Twins',
       'Change Management',
-      
+
       // Cloud & Infrastructure
       'AWS',
       'Azure',
@@ -126,7 +126,7 @@ function buildJsonLd(pathname: string) {
       'Kubernetes',
       'Docker',
       'Microservices',
-      
+
       // Data & Analytics
       'Data Platforms',
       'Data Governance',
@@ -136,7 +136,7 @@ function buildJsonLd(pathname: string) {
       'Python',
       'SQL',
       'Data Science',
-      
+
       // Leadership & Strategy
       'Executive Leadership',
       'P&L Management',
@@ -160,7 +160,10 @@ function buildJsonLd(pathname: string) {
       },
     ],
     alumniOf: [
-      { '@type': 'CollegeOrUniversity', name: 'The George Washington University' },
+      {
+        '@type': 'CollegeOrUniversity',
+        name: 'The George Washington University',
+      },
     ],
   };
 
@@ -275,7 +278,8 @@ function buildJsonLd(pathname: string) {
   const jobPosting = {
     '@context': 'https://schema.org',
     '@type': 'JobPosting',
-    title: 'Chief AI Officer / Head of AI Strategy & Business Transformation (Executive Leadership)',
+    title:
+      'Chief AI Officer / Head of AI Strategy & Business Transformation (Executive Leadership)',
     description:
       'Open to executive opportunities leading enterprise AI, data transformation, and generative AI strategy for Fortune 500 organizations.',
     datePosted: '2024-09-01',
@@ -336,7 +340,8 @@ function buildJsonLd(pathname: string) {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: 'Brandon Micci Digital Strategy',
-    description: 'Enterprise AI Strategy & Digital Transformation Executive Services for Fortune 500 organizations. Expert in LLM deployment, data platforms, and measurable ROI delivery.',
+    description:
+      'Enterprise AI Strategy & Digital Transformation Executive Services for Fortune 500 organizations. Expert in LLM deployment, data platforms, and measurable ROI delivery.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Dallas',
@@ -369,7 +374,8 @@ function buildJsonLd(pathname: string) {
           itemOffered: {
             '@type': 'Service',
             name: 'Executive AI Strategy',
-            description: 'Enterprise AI transformation and strategy consulting for C-suite executives and Fortune 500 organizations.',
+            description:
+              'Enterprise AI transformation and strategy consulting for C-suite executives and Fortune 500 organizations.',
           },
         },
         {
@@ -377,7 +383,8 @@ function buildJsonLd(pathname: string) {
           itemOffered: {
             '@type': 'Service',
             name: 'Digital Transformation Leadership',
-            description: 'Full-scale digital transformation programs including LLM deployment, data modernization, and cloud strategy.',
+            description:
+              'Full-scale digital transformation programs including LLM deployment, data modernization, and cloud strategy.',
           },
         },
         {
@@ -385,7 +392,8 @@ function buildJsonLd(pathname: string) {
           itemOffered: {
             '@type': 'Service',
             name: 'Executive Advisory & Speaking',
-            description: 'Board workshops, executive briefings, keynote speaking, and strategic advisory on AI and digital innovation.',
+            description:
+              'Board workshops, executive briefings, keynote speaking, and strategic advisory on AI and digital innovation.',
           },
         },
       ],

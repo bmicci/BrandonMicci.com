@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     'Chief AI Officer',
     'Head of AI',
     'Digital Innovation Leader',
-    
+
     // Core AI/ML Skills
     'LLM Deployment',
     'Generative AI',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     'Computer Vision',
     'Deep Learning',
     'AI Governance',
-    
+
     // Cloud & Data
     'AWS',
     'Azure',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     'Data Lakes',
     'Big Data',
     'Data Governance',
-    
+
     // Enterprise & Leadership
     'Fortune 500 AI Transformation',
     'Enterprise Data Platform',
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     'C-Suite Engagement',
     'Strategic Planning',
     'ROI Analysis',
-    
+
     // Transformation
     'Digital Transformation',
     'Industry 4.0',
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
     'Kubernetes',
     'Docker',
     'Microservices',
-    
+
     // Analytics
     'Tableau',
     'Power BI',
@@ -189,12 +189,18 @@ export default async function RootLayout({
         {/* Performance: DNS prefetch and preconnect for external resources actually used in production */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://www.googletagmanager.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://www.google-analytics.com"
+          crossOrigin="anonymous"
+        />
       </head>
-      <body
-        className={`${geistSans.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} antialiased`}>
         {/* Structured Data with nonce */}
         <EnhancedStructuredData nonce={nonce} pathname={pathname} />
 

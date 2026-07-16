@@ -59,7 +59,12 @@ const ROLES: Role[] = [
     role: 'Head of AI Strategy & Business Transformation',
     company: 'JPMorgan Chase',
     location: 'Dallas, TX',
-    icon: <Brain className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: (
+      <Brain
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
       'Lead AI strategy and business transformation across JPMorgan Chase Payments, spanning merchant services, client servicing, client onboarding, and global call centers. Own end-to-end AI product delivery, a $15M+ annual AI portfolio, governance, and enterprise scaling.',
     skills: [
@@ -100,10 +105,20 @@ const ROLES: Role[] = [
     role: 'Senior Director, Head of AI/IoT & Emerging Technology Practice',
     company: 'Capgemini',
     location: 'Dallas, TX',
-    icon: <Rocket className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: (
+      <Rocket
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
       'Directed AI and emerging technology commercialization across the Intelligent Industry portfolio. Built and scaled a new practice focused on digital transformation and real-time AI analytics for Fortune 50 clients.',
-    skills: ['P&L Ownership ($30M)', 'AI/IoT Strategy', 'Fortune 50 Client Delivery', 'Practice Leadership'],
+    skills: [
+      'P&L Ownership ($30M)',
+      'AI/IoT Strategy',
+      'Fortune 50 Client Delivery',
+      'Practice Leadership',
+    ],
     achievements: [
       {
         title: '$30M P&L Built from Zero',
@@ -124,9 +139,14 @@ const ROLES: Role[] = [
     role: 'Senior Manager, AI/ML Forensic Analytics & Technology',
     company: 'Ernst & Young',
     location: 'Dallas, TX',
-    icon: <Search className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: (
+      <Search
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
-      "Scaled AI/ML & Data Science strategy within Forensics Practice. Regional Leader and SME advising engagements across Financial Services, Life Sciences, and Energy sectors.",
+      'Scaled AI/ML & Data Science strategy within Forensics Practice. Regional Leader and SME advising engagements across Financial Services, Life Sciences, and Energy sectors.',
     skills: [
       'Fraud Analytics',
       'AI/ML',
@@ -153,10 +173,20 @@ const ROLES: Role[] = [
     role: 'Head of Digital Innovation & IoT',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: <Plane className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: (
+      <Plane
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
       'Promoted to newly created role reporting directly to CIO. Built and led Digital Innovation & IoT organization driving digital transformation across critical airline operations. Managed $25M annual technology budget and cross-functional team of 20+.',
-    skills: ['IoT Strategy', 'Digital Innovation', '$25M Technology Budget', 'CIO Reporting'],
+    skills: [
+      'IoT Strategy',
+      'Digital Innovation',
+      '$25M Technology Budget',
+      'CIO Reporting',
+    ],
     achievements: [
       {
         title: '250% ROI in 6 Months',
@@ -177,7 +207,12 @@ const ROLES: Role[] = [
     role: 'Manager, Data Enablement & Analytics COE',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: <Database className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: (
+      <Database
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
       "Built Southwest's first Data Enablement & Analytics COE, driving 40% adoption increase in Tableau/Alteryx across 2,500+ users.",
     skills: ['Data Analytics', 'COE Leadership', 'Tableau', 'Alteryx'],
@@ -201,10 +236,20 @@ const ROLES: Role[] = [
     role: 'Vice President, Global Infrastructure Transformation',
     company: 'Citigroup',
     location: 'Irving, TX',
-    icon: <Cloud className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: (
+      <Cloud
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
       'Led global infrastructure transformation and service quality programs across LATAM, NAM, EMEA, and APAC, matrixed across global CTOs while indirectly managing 500+ engineers worldwide. Drove platform modernization, cloud acceleration, and DevOps transformation across mission-critical banking systems.',
-    skills: ['Global Infrastructure', 'DevOps Transformation', 'Cloud Acceleration', 'CI/CD'],
+    skills: [
+      'Global Infrastructure',
+      'DevOps Transformation',
+      'Cloud Acceleration',
+      'CI/CD',
+    ],
     achievements: [
       {
         title: '98% Uptime Worldwide',
@@ -225,15 +270,15 @@ const ROLES: Role[] = [
     role: 'Enterprise Risk Analytics Leader',
     company: 'Capital One',
     location: 'Plano, TX',
-    icon: <BarChart className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: (
+      <BarChart
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
       "Built and led the first dedicated Risk & Analytics Reporting organization for Capital One's Auto Finance & Home Loans division, architecting a comprehensive data warehouse and analytics platform from the ground up.",
-    skills: [
-      'Risk Analytics',
-      'Tableau',
-      'NLP/OCR Automation',
-      'Compliance',
-    ],
+    skills: ['Risk Analytics', 'Tableau', 'NLP/OCR Automation', 'Compliance'],
     achievements: [
       {
         title: 'First Risk Analytics Team',
@@ -254,15 +299,15 @@ const ROLES: Role[] = [
     role: 'Enterprise Analytics Leader, Compliance',
     company: 'Capital One',
     location: 'Richmond, VA',
-    icon: <BarChart className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: (
+      <BarChart
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
       "Led enterprise-wide Tableau dashboard development as an internal strategic consultant across Capital One's Risk and Compliance functions, managing a cross-functional team of 10.",
-    skills: [
-      'Tableau',
-      'Data Governance',
-      'Risk & Compliance',
-      'Data Quality',
-    ],
+    skills: ['Tableau', 'Data Governance', 'Risk & Compliance', 'Data Quality'],
     achievements: [
       {
         title: 'Analytics Standardization',
@@ -279,7 +324,12 @@ const ROLES: Role[] = [
     role: 'Big Data, Analytics, and Platforms COE Leader',
     company: 'Capital One',
     location: 'McLean, VA',
-    icon: <BarChart className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: (
+      <BarChart
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
       "Established and led Capital One's Tableau & Big Data Center of Excellence, defining the enterprise data strategy and analytics operating model adopted across multiple business lines.",
     skills: [
@@ -309,10 +359,13 @@ const ROLES: Role[] = [
     company: 'Booz Allen Hamilton',
     location: 'McLean, VA',
     icon: (
-      <TrendingUp className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />
+      <TrendingUp
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
     ),
     description:
-      "Pioneered Tableau Enterprise deployments, establishing data analytics infrastructure for fraud detection, compliance, and C-suite reporting.",
+      'Pioneered Tableau Enterprise deployments, establishing data analytics infrastructure for fraud detection, compliance, and C-suite reporting.',
     skills: ['Data Analytics', 'Fraud Detection', 'Predictive Analytics', 'ML'],
     achievements: [
       {
@@ -330,7 +383,12 @@ const ROLES: Role[] = [
     role: 'Global Operations and Strategy Associate',
     company: 'PricewaterhouseCoopers',
     location: 'McLean, VA',
-    icon: <Globe className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: (
+      <Globe
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
       "Served as strategic analyst and performance metrics lead for global delivery operations, pioneering the firm's first business intelligence implementations and executive dashboard automation initiatives.",
     skills: ['Strategy', 'Operations', 'Executive Analytics'],
@@ -570,7 +628,8 @@ const ExecutiveExperience = memo(() => {
               style={{
                 width: '2px',
                 backgroundColor: 'rgba(0, 212, 255, 0.8)',
-                background: 'linear-gradient(to bottom, rgba(0, 212, 255, 0.8) 0%, rgba(0, 212, 255, 0.9) 15%, rgba(0, 212, 255, 0.9) 85%, rgba(0, 212, 255, 0.8) 100%)',
+                background:
+                  'linear-gradient(to bottom, rgba(0, 212, 255, 0.8) 0%, rgba(0, 212, 255, 0.9) 15%, rgba(0, 212, 255, 0.9) 85%, rgba(0, 212, 255, 0.8) 100%)',
                 boxShadow:
                   '0 0 8px rgba(0, 212, 255, 0.6), 0 0 16px rgba(0, 212, 255, 0.3)',
                 transform: 'translateX(-50%)',
@@ -649,12 +708,13 @@ const ExecutiveExperience = memo(() => {
                     />
 
                     <div className="relative z-10">
-                      <span 
+                      <span
                         className="mb-2 inline-block rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white"
                         style={{
-                          background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.25), rgba(30, 144, 255, 0.3))',
+                          background:
+                            'linear-gradient(135deg, rgba(0, 212, 255, 0.25), rgba(30, 144, 255, 0.3))',
                           border: '1px solid rgba(0, 212, 255, 0.5)',
-                          boxShadow: '0 0 15px rgba(0, 212, 255, 0.3)'
+                          boxShadow: '0 0 15px rgba(0, 212, 255, 0.3)',
                         }}
                       >
                         {role.dates}
@@ -664,9 +724,11 @@ const ExecutiveExperience = memo(() => {
                         {role.role}
                       </h3>
                       <div className="mb-2 text-xs font-medium md:text-base">
-                        <span 
+                        <span
                           className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400"
-                          style={{ textShadow: '0 0 20px rgba(0, 212, 255, 0.4)' }}
+                          style={{
+                            textShadow: '0 0 20px rgba(0, 212, 255, 0.4)',
+                          }}
                         >
                           {role.company}
                         </span>
@@ -675,7 +737,10 @@ const ExecutiveExperience = memo(() => {
                         </span>
                       </div>
 
-                      <p className="mb-2 text-sm leading-relaxed text-slate-100 md:text-base desc-tight" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
+                      <p
+                        className="mb-2 text-sm leading-relaxed text-slate-100 md:text-base desc-tight"
+                        style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}
+                      >
                         {role.description}
                       </p>
 
@@ -688,7 +753,7 @@ const ExecutiveExperience = memo(() => {
                               border: '1px solid rgba(0, 212, 255, 0.7)',
                               background: 'rgba(0, 212, 255, 0.25)',
                               boxShadow: '0 0 8px rgba(0, 212, 255, 0.3)',
-                              fontWeight: 600
+                              fontWeight: 600,
                             }}
                           >
                             {skill}
@@ -727,7 +792,7 @@ const ExecutiveExperience = memo(() => {
                             style={{
                               borderLeft: '4px solid rgba(0, 212, 255, 0.6)',
                               background: 'rgba(0, 212, 255, 0.1)',
-                              boxShadow: '-2px 0 8px rgba(0, 212, 255, 0.2)'
+                              boxShadow: '-2px 0 8px rgba(0, 212, 255, 0.2)',
                             }}
                           >
                             <div className="flex items-start gap-3">
@@ -738,7 +803,12 @@ const ExecutiveExperience = memo(() => {
                                 <div className="mb-1 text-sm font-semibold text-cyan-400 stroke-2 md:text-base md:mb-2">
                                   {achievement.title}
                                 </div>
-                                <p className="text-sm leading-relaxed text-slate-100 md:text-base" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
+                                <p
+                                  className="text-sm leading-relaxed text-slate-100 md:text-base"
+                                  style={{
+                                    textShadow: '0 1px 2px rgba(0,0,0,0.3)',
+                                  }}
+                                >
                                   {achievement.text}
                                 </p>
                               </div>

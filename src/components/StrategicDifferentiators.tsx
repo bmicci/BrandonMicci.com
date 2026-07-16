@@ -240,9 +240,9 @@ const StrategicDifferentiators: React.FC = () => {
                   Regulated-Industry Native
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-100 text-left font-medium">
-                  AI delivered in payments, financial services, insurance,
-                  and aviation. Production systems that meet compliance,
-                  audit, and risk standards. Not lab demos.
+                  AI delivered in payments, financial services, insurance, and
+                  aviation. Production systems that meet compliance, audit, and
+                  risk standards. Not lab demos.
                 </p>
               </div>
             </div>
@@ -261,8 +261,8 @@ const StrategicDifferentiators: React.FC = () => {
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-100 text-left font-medium">
                   I own the full lifecycle: strategy, executive buy-in,
-                  investment, delivery, and operations. Roadmaps that ship,
-                  not slideware.
+                  investment, delivery, and operations. Roadmaps that ship, not
+                  slideware.
                 </p>
               </div>
             </div>
@@ -280,9 +280,9 @@ const StrategicDifferentiators: React.FC = () => {
                   Operator + Advisor
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-100 text-left font-medium">
-                  17+ years blending Fortune 500 operating roles with Big
-                  Four advisory. I&apos;ve sat on both sides of the
-                  buyer/seller table.
+                  17+ years blending Fortune 500 operating roles with Big Four
+                  advisory. I&apos;ve sat on both sides of the buyer/seller
+                  table.
                 </p>
               </div>
             </div>
@@ -301,8 +301,8 @@ const StrategicDifferentiators: React.FC = () => {
                 </h3>
                 <p className="diff-description mt-1 text-sm text-slate-100 text-left font-medium">
                   Real adoption at scale, driven by change leadership not
-                  mandates. Backed by a 27,000+ user LLM platform and
-                  30,000+ analytics community of practice.
+                  mandates. Backed by a 27,000+ user LLM platform and 30,000+
+                  analytics community of practice.
                 </p>
               </div>
             </div>

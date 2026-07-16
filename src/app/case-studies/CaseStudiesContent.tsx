@@ -51,7 +51,14 @@ const caseStudies: CaseStudy[] = [
       { value: '27,000+', label: 'Active Users' },
       { value: '10+', label: 'Data Sources' },
     ],
-    technologies: ['LLM', 'NLP', 'Enterprise AI', 'Responsible AI & Governance', 'AIOps', 'Human-in-the-Loop'],
+    technologies: [
+      'LLM',
+      'NLP',
+      'Enterprise AI',
+      'Responsible AI & Governance',
+      'AIOps',
+      'Human-in-the-Loop',
+    ],
   },
   {
     id: 'iot-innovation',
@@ -91,21 +98,19 @@ const caseStudies: CaseStudy[] = [
       'Processing millions of transactions in real-time',
       'Reduced false positives by 60% compared to legacy systems',
     ],
-    metrics: [
-      { value: '$400M', label: 'Contract Value' },
-    ],
+    metrics: [{ value: '$400M', label: 'Contract Value' }],
     technologies: ['ML', 'Fraud Detection', 'Real-time Processing', 'Python'],
   },
   {
     id: 'analytics-community',
-    title: "Enterprise Analytics Community of Practice",
+    title: 'Enterprise Analytics Community of Practice',
     icon: Users,
     company: 'Top 10 U.S. Bank',
     industry: 'Financial Services',
     challenge:
       'A top 10 U.S. bank needed to democratize data analytics across a large, distributed organization while maintaining governance and driving a culture of data-driven decision making.',
     solution:
-      "Established the enterprise Tableau Center of Excellence, building a 30,000+ user analytics community of practice. Created training programs, governance frameworks, and self-service capabilities that empowered business users.",
+      'Established the enterprise Tableau Center of Excellence, building a 30,000+ user analytics community of practice. Created training programs, governance frameworks, and self-service capabilities that empowered business users.',
     results: [
       'Built an enterprise Tableau analytics community of practice',
       'Onboarded 30,000+ platform users',
@@ -178,9 +183,7 @@ const caseStudies: CaseStudy[] = [
       'Enabled real-time event-based marketing triggers',
       'Reduced campaign deployment time from weeks to hours',
     ],
-    metrics: [
-      { value: '10M+', label: 'Customers Reached' },
-    ],
+    metrics: [{ value: '10M+', label: 'Customers Reached' }],
     technologies: ['Hadoop', 'Real-time', 'Big Data', 'Marketing Tech'],
   },
   {
@@ -199,9 +202,7 @@ const caseStudies: CaseStudy[] = [
       'Standardized analytics patterns for Risk, Compliance, and Fraud detection at enterprise scale',
       'Reduced client implementation time through reusable platform components',
     ],
-    metrics: [
-      { value: '$25MM+', label: 'Annual Recurring Revenue' },
-    ],
+    metrics: [{ value: '$25MM+', label: 'Annual Recurring Revenue' }],
     technologies: ['SaaS', 'Analytics', 'Platform', 'Risk & Compliance'],
   },
 ];
@@ -538,7 +539,11 @@ export default function CaseStudiesContent() {
             {caseStudies.map((study) => {
               const IconComponent = study.icon;
               return (
-                <article key={study.id} id={study.id} className="case-study-card">
+                <article
+                  key={study.id}
+                  id={study.id}
+                  className="case-study-card"
+                >
                   <div className="card-header">
                     <div className="card-icon">
                       <IconComponent size={36} />

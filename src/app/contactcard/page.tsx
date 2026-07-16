@@ -3,11 +3,13 @@ import ContactCard from '@/components/ContactCard';
 
 export const metadata: Metadata = {
   title: { absolute: 'Connect with Brandon Micci | Digital Business Card' },
-  description: 'Enterprise AI & Digital Transformation Executive. Connect instantly via LinkedIn, email, or save my contact info.',
+  description:
+    'Enterprise AI & Digital Transformation Executive. Connect instantly via LinkedIn, email, or save my contact info.',
   alternates: { canonical: '/contactcard' },
   openGraph: {
     title: 'Connect with Brandon Micci',
-    description: 'Enterprise AI & Digital Transformation Executive. 27K+ LLM users deployed, $400M+ enterprise value.',
+    description:
+      'Enterprise AI & Digital Transformation Executive. 27K+ LLM users deployed, $400M+ enterprise value.',
     type: 'profile',
   },
 };
@@ -102,7 +104,7 @@ export default function ContactCardPage() {
         {/* Background layers */}
         <div className="contactcard-bg" />
         <div className="contactcard-glow" />
-        
+
         {/* Floating particles */}
         <div className="particle" />
         <div className="particle" />

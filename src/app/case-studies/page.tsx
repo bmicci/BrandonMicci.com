@@ -20,7 +20,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: '/case-studies' },
   openGraph: {
-    title: 'Case Studies | Brandon Micci — Enterprise AI & Digital Transformation',
+    title:
+      'Case Studies | Brandon Micci — Enterprise AI & Digital Transformation',
     description:
       '$400M+ enterprise value delivered. 8 case studies covering LLM deployment, IoT platforms, fraud detection, analytics communities, and cloud transformation across Fortune 500 firms.',
     url: 'https://brandonmicci.com/case-studies',

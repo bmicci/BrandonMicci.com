@@ -11,47 +11,61 @@ interface FAQItem {
 const FAQ_DATA: FAQItem[] = [
   {
     question: 'What executive roles does Brandon Micci specialize in?',
-    answer: 'Brandon Micci is a Senior AI and Digital Transformation Executive specializing in Chief Data & AI Officer, Head of AI Strategy, and Enterprise AI Transformation roles. He leads large-scale AI initiatives across Fortune 500 organizations—transforming data, analytics, and technology strategy into measurable ROI.',
+    answer:
+      'Brandon Micci is a Senior AI and Digital Transformation Executive specializing in Chief Data & AI Officer, Head of AI Strategy, and Enterprise AI Transformation roles. He leads large-scale AI initiatives across Fortune 500 organizations—transforming data, analytics, and technology strategy into measurable ROI.',
   },
   {
-    question: 'What measurable outcomes has Brandon achieved through AI leadership?',
-    answer: 'Brandon has delivered $400M+ in measurable business value through AI and digital transformation. His initiatives include deploying an enterprise LLM assistant to 27,000 users at JPMorgan Chase, delivering $22M+ in annualized efficiency gains, and launching a $20M IoT-AI optimization program in aviation.',
+    question:
+      'What measurable outcomes has Brandon achieved through AI leadership?',
+    answer:
+      'Brandon has delivered $400M+ in measurable business value through AI and digital transformation. His initiatives include deploying an enterprise LLM assistant to 27,000 users at JPMorgan Chase, delivering $22M+ in annualized efficiency gains, and launching a $20M IoT-AI optimization program in aviation.',
   },
   {
     question: 'In what industries has Brandon led transformation programs?',
-    answer: 'Financial services, aviation, insurance, and consulting. Brandon has implemented AI-powered fraud analytics at global insurers, IoT modernization at major airlines, and AI governance frameworks for top financial institutions.',
+    answer:
+      'Financial services, aviation, insurance, and consulting. Brandon has implemented AI-powered fraud analytics at global insurers, IoT modernization at major airlines, and AI governance frameworks for top financial institutions.',
   },
   {
     question: "What are Brandon Micci's primary areas of expertise?",
-    answer: 'Enterprise AI strategy, large language model deployment, AI governance, data modernization, and ROI-driven transformation. Brandon focuses on creating scalable AI platforms, governance models, and executive operating frameworks that accelerate adoption and measurable value.',
+    answer:
+      'Enterprise AI strategy, large language model deployment, AI governance, data modernization, and ROI-driven transformation. Brandon focuses on creating scalable AI platforms, governance models, and executive operating frameworks that accelerate adoption and measurable value.',
   },
   {
     question: 'Does Brandon provide speaking or advisory services?',
-    answer: 'Yes. Brandon provides executive briefings, board workshops, and private advisory sessions focused on enterprise AI strategy, scaling LLMs, and digital transformation operating models. Engagements include 60–120 minute board sessions, 2–4 week ROI sprints, and keynote speaking.',
+    answer:
+      'Yes. Brandon provides executive briefings, board workshops, and private advisory sessions focused on enterprise AI strategy, scaling LLMs, and digital transformation operating models. Engagements include 60–120 minute board sessions, 2–4 week ROI sprints, and keynote speaking.',
   },
   {
     question: 'How can recruiters or organizations contact Brandon Micci?',
-    answer: 'Email brandon@brandonmicci.com or connect via LinkedIn at linkedin.com/in/brandonmicci for executive search, advisory, or speaking engagements.',
+    answer:
+      'Email brandon@brandonmicci.com or connect via LinkedIn at linkedin.com/in/brandonmicci for executive search, advisory, or speaking engagements.',
   },
   {
     question: 'What Fortune 500 companies has Brandon worked with?',
-    answer: 'Brandon has led enterprise AI and digital transformation initiatives at JPMorgan Chase, Capital One, Citigroup, Southwest Airlines, and delivered advisory engagements through Ernst & Young (EY), PwC, Capgemini, and Booz Allen Hamilton for Fortune 50 insurance and financial services clients.',
+    answer:
+      'Brandon has led enterprise AI and digital transformation initiatives at JPMorgan Chase, Capital One, Citigroup, Southwest Airlines, and delivered advisory engagements through Ernst & Young (EY), PwC, Capgemini, and Booz Allen Hamilton for Fortune 50 insurance and financial services clients.',
   },
   {
-    question: 'What technical skills does Brandon bring to AI leadership roles?',
-    answer: 'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has built and led 50+ FTE technical organizations with $30M+ P&L responsibility at Capgemini and ownership of the $15M+ annual AI portfolio at JPMorgan Chase — from strategy and investment through delivery.',
+    question:
+      'What technical skills does Brandon bring to AI leadership roles?',
+    answer:
+      'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has built and led 50+ FTE technical organizations with $30M+ P&L responsibility at Capgemini and ownership of the $15M+ annual AI portfolio at JPMorgan Chase — from strategy and investment through delivery.',
   },
   {
-    question: "What is Brandon's approach to Responsible AI in regulated environments?",
-    answer: 'Brandon architects AI systems with embedded governance from day one — model risk management, LLM evaluation harnesses, human-in-the-loop review for high-stakes decisions, and AIOps for continuous monitoring and improvement. In financial services, this means partnering with risk, compliance, and audit functions across the AI delivery lifecycle (experiment → production → operations) to ensure deployments meet regulatory expectations while delivering measurable business outcomes.',
+    question:
+      "What is Brandon's approach to Responsible AI in regulated environments?",
+    answer:
+      'Brandon architects AI systems with embedded governance from day one — model risk management, LLM evaluation harnesses, human-in-the-loop review for high-stakes decisions, and AIOps for continuous monitoring and improvement. In financial services, this means partnering with risk, compliance, and audit functions across the AI delivery lifecycle (experiment → production → operations) to ensure deployments meet regulatory expectations while delivering measurable business outcomes.',
   },
   {
     question: 'What size organizations and budgets has Brandon managed?',
-    answer: 'Brandon has led cross-functional teams of 50+ full-time employees with direct P&L oversight of $30M+ technology portfolios. His programs have generated $400M+ in measurable enterprise value across Fortune 500 organizations.',
+    answer:
+      'Brandon has led cross-functional teams of 50+ full-time employees with direct P&L oversight of $30M+ technology portfolios. His programs have generated $400M+ in measurable enterprise value across Fortune 500 organizations.',
   },
   {
     question: 'Is Brandon open to relocation for executive roles?',
-    answer: 'Brandon is based in Dallas, Texas and open to hybrid, remote, or relocation opportunities for the right executive role. He has successfully led distributed global teams and is available for Chief Data & AI Officer, Head of AI Strategy, and VP AI & Digital Transformation positions.',
+    answer:
+      'Brandon is based in Dallas, Texas and open to hybrid, remote, or relocation opportunities for the right executive role. He has successfully led distributed global teams and is available for Chief Data & AI Officer, Head of AI Strategy, and VP AI & Digital Transformation positions.',
   },
 ];
 
@@ -149,7 +163,9 @@ const FAQSection = () => {
         .faq-answer {
           max-height: 0;
           overflow: hidden;
-          transition: max-height 0.3s ease, padding 0.3s ease;
+          transition:
+            max-height 0.3s ease,
+            padding 0.3s ease;
         }
 
         .faq-answer.open {
@@ -240,4 +256,3 @@ const FAQSection = () => {
 };
 
 export default FAQSection;
-
