@@ -716,7 +716,7 @@ const IndustryCollaboration: React.FC = () => {
                   <a
                     className="bm-btn bm-btn-secondary bm-btn-compact"
                     id="bm-brief"
-                    href="/Brandon_Micci_AI_Executive_Brief.pdf"
+                    href="/executive-brief.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Download Brandon Micci Executive Brief (PDF)"
