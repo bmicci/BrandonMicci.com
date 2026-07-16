@@ -19,17 +19,14 @@ const EMAIL = 'brandon@brandonmicci.com';
 const INCLUDE_FAQ = true;
 const INCLUDE_JOB_POSTING = false; // Disabled: JobPosting is for employers hiring candidates, not for being hired
 
-function buildJsonLd() {
+function buildJsonLd(pathname: string) {
+  const isHome = pathname === '/';
+
   const website = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Brandon Micci — AI & Digital Transformation',
     url: SITE_URL,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${SITE_URL}/?q={search_term_string}`,
-      'query-input': 'required name=search_term_string',
-    },
   };
 
   const organization = {
@@ -106,14 +103,14 @@ function buildJsonLd() {
       'LLM Evaluation Harnesses',
       'AIOps',
       'AI Delivery Lifecycle',
-      
+
       // Digital Transformation
       'Digital Transformation',
       'Industry 4.0',
       'IoT Platforms',
       'Digital Twins',
       'Change Management',
-      
+
       // Cloud & Infrastructure
       'AWS',
       'Azure',
@@ -129,7 +126,7 @@ function buildJsonLd() {
       'Kubernetes',
       'Docker',
       'Microservices',
-      
+
       // Data & Analytics
       'Data Platforms',
       'Data Governance',
@@ -139,7 +136,7 @@ function buildJsonLd() {
       'Python',
       'SQL',
       'Data Science',
-      
+
       // Leadership & Strategy
       'Executive Leadership',
       'P&L Management',
@@ -163,13 +160,10 @@ function buildJsonLd() {
       },
     ],
     alumniOf: [
-      { '@type': 'CollegeOrUniversity', name: 'The George Washington University' },
-    ],
-    award: [
-      'Led $400M+ enterprise value creation via AI & data transformation',
-      'Scaled LLM deployment to 27,000+ users at JPMorgan Chase',
-      'Delivered $22M+ annualized savings through AI-led business transformation',
-      'Launched $20M IoT-AI optimization program in aviation sector',
+      {
+        '@type': 'CollegeOrUniversity',
+        name: 'The George Washington University',
+      },
     ],
   };
 
@@ -184,60 +178,6 @@ function buildJsonLd() {
       url: SITE_URL,
     },
     mainEntityOfPage: SITE_URL,
-  };
-
-  const breadcrumbs = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Strategic Advantage',
-        item: `${SITE_URL}/#strategic-advantage`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: 'Executive Experience',
-        item: `${SITE_URL}/#executive-experience`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: 'Transformation Leadership',
-        item: `${SITE_URL}/#transformation-leadership`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 5,
-        name: 'Professional Impact',
-        item: `${SITE_URL}/#professional-impact`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 6,
-        name: 'Contact',
-        item: `${SITE_URL}/contact`,
-      },
-    ],
-  };
-
-  const contactPage = {
-    '@context': 'https://schema.org',
-    '@type': 'ContactPage',
-    url: SITE_URL,
-    mainEntityOfPage: SITE_URL,
-    about: { '@type': 'Person', name: NAME },
-    contactPoint: [
-      {
-        '@type': 'ContactPoint',
-        contactType: 'Executive inquiries',
-        email: EMAIL,
-        availableLanguage: ['en'],
-      },
-    ],
   };
 
   const faq = {
@@ -338,7 +278,8 @@ function buildJsonLd() {
   const jobPosting = {
     '@context': 'https://schema.org',
     '@type': 'JobPosting',
-    title: 'Chief AI Officer / Head of AI Strategy & Business Transformation (Executive Leadership)',
+    title:
+      'Chief AI Officer / Head of AI Strategy & Business Transformation (Executive Leadership)',
     description:
       'Open to executive opportunities leading enterprise AI, data transformation, and generative AI strategy for Fortune 500 organizations.',
     datePosted: '2024-09-01',
@@ -398,8 +339,9 @@ function buildJsonLd() {
   const professionalService = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'Brandon Micci - AI & Digital Transformation Advisory',
-    description: 'Enterprise AI Strategy & Digital Transformation Executive Services for Fortune 500 organizations. Expert in LLM deployment, data platforms, and measurable ROI delivery.',
+    name: 'Brandon Micci Digital Strategy',
+    description:
+      'Enterprise AI Strategy & Digital Transformation Executive Services for Fortune 500 organizations. Expert in LLM deployment, data platforms, and measurable ROI delivery.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Dallas',
@@ -416,7 +358,6 @@ function buildJsonLd() {
         name: 'Remote',
       },
     ],
-    priceRange: 'Enterprise',
     email: EMAIL,
     url: SITE_URL,
     image: IMAGE,
@@ -433,7 +374,8 @@ function buildJsonLd() {
           itemOffered: {
             '@type': 'Service',
             name: 'Executive AI Strategy',
-            description: 'Enterprise AI transformation and strategy consulting for C-suite executives and Fortune 500 organizations.',
+            description:
+              'Enterprise AI transformation and strategy consulting for C-suite executives and Fortune 500 organizations.',
           },
         },
         {
@@ -441,7 +383,8 @@ function buildJsonLd() {
           itemOffered: {
             '@type': 'Service',
             name: 'Digital Transformation Leadership',
-            description: 'Full-scale digital transformation programs including LLM deployment, data modernization, and cloud strategy.',
+            description:
+              'Full-scale digital transformation programs including LLM deployment, data modernization, and cloud strategy.',
           },
         },
         {
@@ -449,7 +392,8 @@ function buildJsonLd() {
           itemOffered: {
             '@type': 'Service',
             name: 'Executive Advisory & Speaking',
-            description: 'Board workshops, executive briefings, keynote speaking, and strategic advisory on AI and digital innovation.',
+            description:
+              'Board workshops, executive briefings, keynote speaking, and strategic advisory on AI and digital innovation.',
           },
         },
       ],
@@ -460,21 +404,30 @@ function buildJsonLd() {
     website,
     organization,
     person,
-    profilePage,
-    contactPage,
     roleExperience,
     professionalService,
-    breadcrumbs,
   ];
 
-  if (INCLUDE_FAQ) payload.push(faq);
+  // ProfilePage and FAQPage describe homepage content — rendering them on every
+  // page (including /privacy) is a structured-data guideline violation, since
+  // the markup wouldn't reflect what's actually on the page.
+  if (isHome) {
+    payload.push(profilePage);
+    if (INCLUDE_FAQ) payload.push(faq);
+  }
   if (INCLUDE_JOB_POSTING) payload.push(jobPosting);
 
   return payload;
 }
 
-export default function EnhancedStructuredData({ nonce }: { nonce?: string }) {
-  const data = buildJsonLd();
+export default function EnhancedStructuredData({
+  nonce,
+  pathname,
+}: {
+  nonce?: string;
+  pathname?: string;
+}) {
+  const data = buildJsonLd(pathname || '/');
   return (
     <script
       id="structured-data"

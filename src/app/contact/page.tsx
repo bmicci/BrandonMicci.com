@@ -78,18 +78,17 @@ export default function ContactPage() {
   );
 
   return (
-    <main className="mx-auto max-w-4xl px-6 pt-24 pb-16">
+    <div className="mx-auto max-w-4xl px-6 pt-24 pb-16">
       <ContactJsonLd />
-      <section
-        className="rounded-3xl border border-white/10 bg-gradient-to-b from-[rgba(15,23,42,0.92)] to-[rgba(10,14,30,0.92)] p-8 md:p-12 shadow-2xl backdrop-blur-md"
-      >
+      <section className="rounded-3xl border border-white/10 bg-gradient-to-b from-[rgba(15,23,42,0.92)] to-[rgba(10,14,30,0.92)] p-8 md:p-12 shadow-2xl backdrop-blur-md">
         <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
           Contact
         </h1>
         <p className="mt-4 text-white/90 leading-relaxed">
           For <strong className="text-white">executive search</strong>,{' '}
           <strong className="text-white">advisory</strong>, or{' '}
-          <strong className="text-white">speaking</strong> inquiries, email me directly:
+          <strong className="text-white">speaking</strong> inquiries, email me
+          directly:
         </p>
 
         <div className="mt-8 flex flex-col gap-3">
@@ -126,6 +125,6 @@ export default function ContactPage() {
           requests.
         </p>
       </section>
-    </main>
+    </div>
   );
 }

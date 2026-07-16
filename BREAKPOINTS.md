@@ -7,18 +7,19 @@ This document defines the standardized breakpoint strategy for BrandonMicci.com 
 ## Standard Breakpoints
 
 ### Mobile First Approach
+
 All styles are written mobile-first, with progressive enhancement for larger screens.
 
 ### Breakpoint Definitions
 
-| Breakpoint Name | Min Width | Max Width | Target Devices | Usage |
-|----------------|-----------|-----------|----------------|-------|
-| **Mobile** | - | 640px | iPhone SE, iPhone 12/13/14 | Base styles (mobile-first) |
-| **Small Tablet** | 641px | 768px | iPad Mini portrait | Intermediate sizing |
-| **Tablet** | 769px | 1023px | iPad Air, standard tablets | Medium layouts |
-| **iPad Pro** | 1024px | 1279px | iPad Pro 11"/12.9" | Large tablet optimization |
-| **Desktop** | 1280px | 1440px | Standard desktops | Full desktop experience |
-| **Large Desktop** | 1441px+ | - | Large monitors, 4K | Maximum spacing and sizing |
+| Breakpoint Name   | Min Width | Max Width | Target Devices             | Usage                      |
+| ----------------- | --------- | --------- | -------------------------- | -------------------------- |
+| **Mobile**        | -         | 640px     | iPhone SE, iPhone 12/13/14 | Base styles (mobile-first) |
+| **Small Tablet**  | 641px     | 768px     | iPad Mini portrait         | Intermediate sizing        |
+| **Tablet**        | 769px     | 1023px    | iPad Air, standard tablets | Medium layouts             |
+| **iPad Pro**      | 1024px    | 1279px    | iPad Pro 11"/12.9"         | Large tablet optimization  |
+| **Desktop**       | 1280px    | 1440px    | Standard desktops          | Full desktop experience    |
+| **Large Desktop** | 1441px+   | -         | Large monitors, 4K         | Maximum spacing and sizing |
 
 ## Implementation Guidelines
 
@@ -69,6 +70,7 @@ All styles are written mobile-first, with progressive enhancement for larger scr
 ### Mobile Menu Breakpoint
 
 The mobile hamburger navigation menu is active up to **1279px max-width**, which includes:
+
 - All mobile devices
 - All tablets (including iPad Mini and iPad Air)
 - iPad Pro (11" and 12.9")
@@ -98,14 +100,15 @@ Desktop navigation bar appears at **1280px and above**.
 
 ### Section Headers
 
-| Breakpoint | Font Size | Line Height |
-|------------|-----------|-------------|
-| Mobile (< 768px) | 2.0rem | 1.2 |
-| Tablet (769-1023px) | 2.4-2.6rem | 1.2 |
-| iPad Pro (1024-1279px) | 2.4rem | 1.2 |
-| Desktop (1280px+) | 2.8rem | 1.2 |
+| Breakpoint             | Font Size  | Line Height |
+| ---------------------- | ---------- | ----------- |
+| Mobile (< 768px)       | 2.0rem     | 1.2         |
+| Tablet (769-1023px)    | 2.4-2.6rem | 1.2         |
+| iPad Pro (1024-1279px) | 2.4rem     | 1.2         |
+| Desktop (1280px+)      | 2.8rem     | 1.2         |
 
 All section headers maintain consistent sizing across:
+
 - Strategic Advantage Header (`.strategic-title`)
 - Executive Experience (`.section-header-title`)
 - Transformation Leadership (`.portfolio-title`)
@@ -174,12 +177,12 @@ section {
 
 ### Responsive Font Sizing
 
-| Element | Mobile | Tablet | Desktop |
-|---------|--------|--------|---------|
-| H1 (Hero) | 1.6rem | 2.2-2.4rem | 2.8rem |
-| H2 (Sections) | 2.0rem | 2.4-2.6rem | 2.8rem |
-| Body (Hero subtitle) | 1.1rem | 1.2rem | 1.35rem |
-| CTA Buttons | 0.95rem | 0.85rem | 1.0rem |
+| Element              | Mobile  | Tablet     | Desktop |
+| -------------------- | ------- | ---------- | ------- |
+| H1 (Hero)            | 1.6rem  | 2.2-2.4rem | 2.8rem  |
+| H2 (Sections)        | 2.0rem  | 2.4-2.6rem | 2.8rem  |
+| Body (Hero subtitle) | 1.1rem  | 1.2rem     | 1.35rem |
+| CTA Buttons          | 0.95rem | 0.85rem    | 1.0rem  |
 
 ## Accessibility Considerations
 
@@ -201,10 +204,12 @@ All animations respect user preferences:
 ### Touch Target Sizing
 
 Minimum touch target size maintained across all breakpoints:
+
 - **Minimum**: 44x44px (iOS guidelines)
 - **Optimal**: 48x48px (Material Design)
 
 CTA buttons maintain adequate padding:
+
 ```css
 .btn {
   padding: 0.9rem 1.1rem; /* Exceeds minimum touch target */
@@ -216,7 +221,8 @@ CTA buttons maintain adequate padding:
 ### Hero Image (HeroImage.tsx)
 
 ```typescript
-sizes="(min-width:1280px) 460px, (min-width:1024px) 34vw, (min-width:769px) 32vw, 70vw"
+sizes =
+  '(min-width:1280px) 460px, (min-width:1024px) 34vw, (min-width:769px) 32vw, 70vw';
 ```
 
 ### Breakpoint-specific sizing:
@@ -231,16 +237,23 @@ sizes="(min-width:1280px) 460px, (min-width:1024px) 34vw, (min-width:769px) 32vw
 ### DO ✅
 
 1. **Use min-width for progressive enhancement**
+
    ```css
-   @media (min-width: 1280px) { /* Desktop styles */ }
+   @media (min-width: 1280px) {
+     /* Desktop styles */
+   }
    ```
 
 2. **Use specific ranges for tablet/iPad overrides**
+
    ```css
-   @media (min-width: 1024px) and (max-width: 1279px) { /* iPad Pro */ }
+   @media (min-width: 1024px) and (max-width: 1279px) {
+     /* iPad Pro */
+   }
    ```
 
 3. **Use clamp() for fluid typography**
+
    ```css
    font-size: clamp(1rem, 2vw, 1.5rem);
    ```
@@ -256,15 +269,19 @@ sizes="(min-width:1280px) 460px, (min-width:1024px) 34vw, (min-width:769px) 32vw
 ### DON'T ❌
 
 1. **Don't use arbitrary breakpoints**
+
    ```css
    /* ❌ Avoid */
-   @media (max-width: 999px) { }
+   @media (max-width: 999px) {
+   }
    ```
 
 2. **Don't use max-width for desktop styles**
+
    ```css
    /* ❌ Avoid - use min-width instead */
-   @media (max-width: 1920px) { }
+   @media (max-width: 1920px) {
+   }
    ```
 
 3. **Don't mix breakpoint strategies in the same component**
@@ -307,4 +324,3 @@ When implementing responsive styles, test on:
 - `src/components/Navigation.tsx` - Mobile menu implementation
 - `src/components/HeroSection.tsx` - Hero responsive layout
 - `README.md` - General project documentation
-

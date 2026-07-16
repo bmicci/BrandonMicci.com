@@ -280,7 +280,7 @@ const UniversalBackground: React.FC = () => {
           .universal-circle {
             transform: scale(0.5);
           }
-          
+
           /* Hide even more particles on small screens */
           .universal-particle:nth-child(n + 4) {
             display: none;
@@ -313,8 +313,8 @@ const UniversalBackground: React.FC = () => {
 
             // Deterministic positions from index so SSR matches client
             // (avoids hydration mismatch from Math.random during render)
-            const top = ((i * 73 + 17) % 100);
-            const left = ((i * 131 + 41) % 100);
+            const top = (i * 73 + 17) % 100;
+            const left = (i * 131 + 41) % 100;
             const delay = ((i * 53) % 150) / 10;
             const duration = 6 + ((i * 37) % 60) / 10;
 

@@ -58,18 +58,16 @@ const primaryProjects: Project[] = [
     description:
       'Real-time fraud analytics platform for global insurance leader processing millions of transactions with advanced ML algorithms.',
     mobileDescription: 'Real-time ML fraud detection at massive scale.',
-    metrics: [
-      { value: '$400M', label: 'Contract Value' },
-    ],
+    metrics: [{ value: '$400M', label: 'Contract Value' }],
     tags: ['ML', 'Fraud Detection', 'Real-time'],
   },
   {
-    title: "Enterprise Analytics Community of Practice",
+    title: 'Enterprise Analytics Community of Practice',
     icon: Users,
     description:
-      "Established enterprise Tableau platform at a top 10 U.S. bank — a 30,000+ user analytics community of practice.",
+      'Established enterprise Tableau platform at a top 10 U.S. bank — a 30,000+ user analytics community of practice.',
     mobileDescription:
-      "30,000+ user platform — enterprise analytics community of practice.",
+      '30,000+ user platform — enterprise analytics community of practice.',
     metrics: [
       { value: '30,000+', label: 'Platform Users' },
       { value: '$8M', label: 'Annual Savings' },
@@ -84,7 +82,8 @@ const secondaryProjects: Project[] = [
     icon: Factory,
     description:
       'Comprehensive platform integrating thousands of devices across telematics, smart buildings, and wearables with unified AI analytics.',
-    mobileDescription: 'Connected thousands of devices for Fortune 50 insurers.',
+    mobileDescription:
+      'Connected thousands of devices for Fortune 50 insurers.',
     metrics: [
       { value: '1000+', label: 'Connected Devices' },
       { value: 'Significant', label: 'Loss Mitigation' },
@@ -108,10 +107,9 @@ const secondaryProjects: Project[] = [
     icon: Target,
     description:
       'Real-time Hadoop-powered engine at a global financial institution reaching millions with data-driven targeted campaigns.',
-    mobileDescription: 'Reached 10M+ customers with data-driven targeted campaigns.',
-    metrics: [
-      { value: '10M+', label: 'Customers Reached' },
-    ],
+    mobileDescription:
+      'Reached 10M+ customers with data-driven targeted campaigns.',
+    metrics: [{ value: '10M+', label: 'Customers Reached' }],
     tags: ['Hadoop', 'Real-time', 'Big Data'],
   },
   {
@@ -120,9 +118,7 @@ const secondaryProjects: Project[] = [
     description:
       'Repeatable analytics framework for Risk, Compliance, and Fraud detection deployed across multiple Fortune 100 client engagements at a Big 4 consulting firm—generating $25MM+ in annual recurring revenue.',
     mobileDescription: 'SaaS platform generating $25MM+ annual revenue.',
-    metrics: [
-      { value: '$25MM+', label: 'Annual Recurring Revenue' },
-    ],
+    metrics: [{ value: '$25MM+', label: 'Annual Recurring Revenue' }],
     tags: ['SaaS', 'Analytics', 'Platform'],
   },
 ];
@@ -331,7 +327,7 @@ const TransformationLeadership = () => {
           align-items: center;
           gap: 0.5rem;
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
-          color: white;
+          color: #07101d;
           padding: 1rem 2rem;
           border-radius: 12px;
           font-weight: 600;
@@ -419,7 +415,9 @@ const TransformationLeadership = () => {
           transform: translateY(-8px) scale(1.02);
           background: rgba(255, 255, 255, 0.08);
           border-color: rgba(0, 212, 255, 0.2);
-          box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+          box-shadow:
+            0 20px 40px rgba(0, 212, 255, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
         .project-image {
@@ -492,7 +490,7 @@ const TransformationLeadership = () => {
         .project-description {
           color: rgba(255, 255, 255, 1);
           font-weight: 500;
-          text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
           line-height: 1.5;
           margin-bottom: 1.2rem;
           font-size: 0.9rem;
@@ -742,8 +740,8 @@ const TransformationLeadership = () => {
             className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
           >
             proven expertise
-          </Link>
-          {' '}and{' '}
+          </Link>{' '}
+          and{' '}
           <Link
             href="/#executive-experience"
             className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
@@ -757,8 +755,8 @@ const TransformationLeadership = () => {
             className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
           >
             AI solutions
-          </Link>
-          {' '}driving{' '}
+          </Link>{' '}
+          driving{' '}
           <Link
             href="/#executive-experience"
             className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
@@ -773,10 +771,7 @@ const TransformationLeadership = () => {
           {primaryProjects.map((project) => {
             const IconComponent = project.icon;
             return (
-              <div
-                key={project.title}
-                className="project-card"
-              >
+              <div key={project.title} className="project-card">
                 <div className="project-image">
                   <IconComponent size={56} className="project-icon" />
                 </div>
@@ -827,10 +822,7 @@ const TransformationLeadership = () => {
           {secondaryProjects.map((project) => {
             const IconComponent = project.icon;
             return (
-              <div
-                key={project.title}
-                className="project-card"
-              >
+              <div key={project.title} className="project-card">
                 <div className="project-image">
                   <IconComponent size={56} className="project-icon" />
                 </div>
@@ -893,4 +885,3 @@ const TransformationLeadership = () => {
 };
 
 export default TransformationLeadership;
-

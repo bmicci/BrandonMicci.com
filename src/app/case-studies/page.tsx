@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import CaseStudiesContent from './CaseStudiesContent';
 
 export const metadata: Metadata = {
-  title: 'Case Studies | Enterprise AI & Digital Transformation Results',
+  title: 'Case Studies',
   description:
-    'Deep dives into 8 transformative AI and digital initiatives by Brandon Micci — $400M+ enterprise value, 27K+ AI users enabled, $25M+ ARR built, 250% ROI delivered across Fortune 500 financial services, insurance, and aviation companies.',
+    'Eight case studies covering enterprise LLM deployment, IoT platforms, and fraud analytics across Fortune 500 financial services and aviation, led by Brandon Micci.',
   keywords: [
     'AI transformation case studies',
     'enterprise AI results',
@@ -20,7 +20,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: '/case-studies' },
   openGraph: {
-    title: 'Case Studies | Brandon Micci — Enterprise AI & Digital Transformation',
+    title:
+      'Case Studies | Brandon Micci — Enterprise AI & Digital Transformation',
     description:
       '$400M+ enterprise value delivered. 8 case studies covering LLM deployment, IoT platforms, fraud detection, analytics communities, and cloud transformation across Fortune 500 firms.',
     url: 'https://brandonmicci.com/case-studies',

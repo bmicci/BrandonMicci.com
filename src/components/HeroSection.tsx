@@ -27,12 +27,13 @@ const HeroSection = () => {
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-        @media (prefers-reduced-motion: reduce) {
-          * {
-            animation: none !important;
-            transition: none !important;
-          }
-        }
+        /* Reduced-motion handling is centralized in globals.css, which shrinks
+           animation-duration to near-zero rather than setting animation:none.
+           That distinction matters: elements like StrategicDifferentiators'
+           .diff-card start at opacity:0 and rely on the animation's forwards
+           fill-mode to reach opacity:1. animation:none cancels the fill along
+           with the animation, stranding them invisible for reduced-motion
+           users. Do not reintroduce a local override here. */
         /* iPad Pro: ensure hero section doesn't enforce screen-height causing gap */
         @media (min-width: 1024px) and (max-width: 1279px) {
           .hero-section {
@@ -1093,9 +1094,14 @@ const HeroSection = () => {
                hero stack so the numbers land before the user scrolls past the
                fold (mirrors desktop placement). Hidden on desktop via
                .kpi-mobile-only above. */}
-            <div className="kpi-grid kpi-mobile-only" style={{ marginTop: '1.25rem' }}>
+            <div
+              className="kpi-grid kpi-mobile-only"
+              style={{ marginTop: '1.25rem' }}
+            >
               <div className="kpi-box">
-                <span className="sr-only">$400M+ Enterprise Business Impact</span>
+                <span className="sr-only">
+                  $400M+ Enterprise Business Impact
+                </span>
                 <span className="stat-number">
                   <AnimatedCounter
                     value={METRICS.valueDeliveredM}
@@ -1141,9 +1147,7 @@ const HeroSection = () => {
         <div className="diff-wrap" style={{ marginTop: '2.5rem' }}>
           <div className="diff-glass">
             <div className="diff-header">
-              <span className="diff-title">
-                Executive Capabilities
-              </span>
+              <span className="diff-title">Executive Capabilities</span>
             </div>
 
             <div className="diff-grid">
@@ -1181,8 +1185,8 @@ const HeroSection = () => {
                       Scale & Delivery
                     </div>
                     <p>
-                      I scale AI from pilot to enterprise capability. Built
-                      for Fortune 500 reliability and adoption in regulated
+                      I scale AI from pilot to enterprise capability. Built for
+                      Fortune 500 reliability and adoption in regulated
                       environments.
                     </p>
                   </div>
@@ -1203,8 +1207,8 @@ const HeroSection = () => {
                     </div>
                     <p>
                       I translate complex AI into board-level decisions.
-                      Business cases, ROI, and executive storytelling that
-                      move investment.
+                      Business cases, ROI, and executive storytelling that move
+                      investment.
                     </p>
                   </div>
                 </div>
@@ -1240,11 +1244,11 @@ const HeroSection = () => {
           style={{ marginTop: '3.5rem', marginBottom: '3rem' }}
         >
           <p className="philosophy-text">
-            I architect AI strategies that become business strategies.
-            AI-first operating models where intelligence drives every
-            decision and outcome. I balance innovation velocity with
-            governance discipline, scaling transformation across regulated
-            global operations. The result: $400M+ in enterprise value.
+            I architect AI strategies that become business strategies. AI-first
+            operating models where intelligence drives every decision and
+            outcome. I balance innovation velocity with governance discipline,
+            scaling transformation across regulated global operations. The
+            result: $400M+ in enterprise value.
           </p>
         </div>
 

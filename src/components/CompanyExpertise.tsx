@@ -193,9 +193,8 @@ const CompanyExpertise: React.FC = () => {
         .company-name {
           font-size: 1rem;
           font-weight: 700;
-          color: white;
+          color: #07101d;
           margin: 0;
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
           position: relative;
           z-index: 2;
         }

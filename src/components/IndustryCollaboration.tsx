@@ -483,7 +483,7 @@ const IndustryCollaboration: React.FC = () => {
 
         .bm-btn-primary {
           background: linear-gradient(135deg, #00d4ff, #1e90ff);
-          color: #fff;
+          color: #07101d;
           border: none;
           box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
         }
@@ -716,7 +716,7 @@ const IndustryCollaboration: React.FC = () => {
                   <a
                     className="bm-btn bm-btn-secondary bm-btn-compact"
                     id="bm-brief"
-                    href="/Brandon_Micci_AI_Executive_Brief.pdf"
+                    href="/executive-brief.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Download Brandon Micci Executive Brief (PDF)"

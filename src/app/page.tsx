@@ -27,10 +27,9 @@ const TestimonialsSection = dynamic(
   { ssr: true }
 );
 
-const FAQSection = dynamic(
-  () => import('@/components/FAQSection'),
-  { ssr: true }
-);
+const FAQSection = dynamic(() => import('@/components/FAQSection'), {
+  ssr: true,
+});
 
 const IndustryCollaboration = dynamic(
   () => import('@/components/IndustryCollaboration'),
@@ -104,10 +103,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section
-        id="faq"
-        className="relative scroll-mt-[var(--header-h,4.5rem)]"
-      >
+      <section id="faq" className="relative scroll-mt-[var(--header-h,4.5rem)]">
         <FAQSection />
       </section>
 

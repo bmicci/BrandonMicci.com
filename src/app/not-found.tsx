@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main className="mx-auto max-w-3xl px-6 pt-24 pb-16">
+    <div className="mx-auto max-w-3xl px-6 pt-24 pb-16">
       <section className="rounded-3xl border border-white/10 bg-gradient-to-b from-[rgba(15,23,42,0.92)] to-[rgba(10,14,30,0.92)] p-8 md:p-12 shadow-2xl backdrop-blur-md text-center">
         <p className="text-sm font-semibold tracking-[0.2em] text-cyan-400">
           404
@@ -17,8 +17,8 @@ export default function NotFound() {
           Page not found
         </h1>
         <p className="mt-4 text-white/85 leading-relaxed">
-          The page you&apos;re looking for doesn&apos;t exist or has moved.
-          Try one of these instead:
+          The page you&apos;re looking for doesn&apos;t exist or has moved. Try
+          one of these instead:
         </p>
 
         <div className="mt-8 flex flex-col gap-3 max-w-md mx-auto">
@@ -42,6 +42,6 @@ export default function NotFound() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

@@ -20,14 +20,27 @@ const BREADCRUMB_PATHS: Record<string, BreadcrumbItem[]> = {
     { name: 'Home', href: '/' },
     { name: 'Privacy Policy', href: '/privacy' },
   ],
+  '/experience': [
+    { name: 'Home', href: '/' },
+    { name: 'Executive Experience', href: '/experience' },
+  ],
+  '/case-studies': [
+    { name: 'Home', href: '/' },
+    { name: 'Case Studies', href: '/case-studies' },
+  ],
+  '/contactcard': [
+    { name: 'Home', href: '/' },
+    { name: 'Digital Business Card', href: '/contactcard' },
+  ],
 };
 
 const Breadcrumbs = () => {
   const pathname = usePathname();
-  const breadcrumbs = BREADCRUMB_PATHS[pathname] || [{ name: 'Home', href: '/' }];
+  const breadcrumbs = BREADCRUMB_PATHS[pathname];
 
-  // Don't show breadcrumbs on homepage
-  if (pathname === '/') {
+  // Don't show breadcrumbs on the homepage, or on unmapped routes (e.g. 404) —
+  // a lone "Home" crumb marked as the current page would misdescribe those.
+  if (pathname === '/' || !breadcrumbs) {
     return null;
   }
 
@@ -149,4 +162,3 @@ const Breadcrumbs = () => {
 };
 
 export default Breadcrumbs;
-
