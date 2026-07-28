@@ -18,7 +18,7 @@ const FAQ_DATA: FAQItem[] = [
     question:
       'What measurable outcomes has Brandon achieved through AI leadership?',
     answer:
-      'Brandon has delivered $400M+ in measurable business value through AI and digital transformation. His initiatives include deploying an enterprise LLM assistant to 27,000 users at JPMorgan Chase, delivering $22M+ in annualized efficiency gains, and launching a $20M IoT-AI optimization program in aviation.',
+      'Brandon has delivered $50M+ in documented savings and efficiency gains through AI and digital transformation. His initiatives include deploying an enterprise LLM assistant to 27,000 users at JPMorgan Chase, delivering $22M+ in annualized efficiency gains, and launching a $20M IoT-AI optimization program in aviation.',
   },
   {
     question: 'In what industries has Brandon led transformation programs?',
@@ -49,7 +49,7 @@ const FAQ_DATA: FAQItem[] = [
     question:
       'What technical skills does Brandon bring to AI leadership roles?',
     answer:
-      'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has built and led 50+ FTE technical organizations with $30M+ P&L responsibility at Capgemini and ownership of the $15M+ annual AI portfolio at JPMorgan Chase — from strategy and investment through delivery.',
+      'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has led matrixed delivery organizations across global engagements and owned the $15M+ annual AI portfolio at JPMorgan Chase, from strategy and investment through delivery.',
   },
   {
     question:
@@ -60,7 +60,7 @@ const FAQ_DATA: FAQItem[] = [
   {
     question: 'What size organizations and budgets has Brandon managed?',
     answer:
-      'Brandon has led cross-functional teams of 50+ full-time employees with direct P&L oversight of $30M+ technology portfolios. His programs have generated $400M+ in measurable enterprise value across Fortune 500 organizations.',
+      'Brandon has led cross-functional and matrixed teams across global organizations, including a $15M+ annual AI portfolio at JPMorgan Chase and a $25M technology budget at Southwest Airlines. His programs have delivered $50M+ in documented savings and efficiency gains.',
   },
   {
     question: 'Is Brandon open to relocation for executive roles?',

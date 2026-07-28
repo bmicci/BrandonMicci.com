@@ -9,19 +9,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${base}/`,
-      lastModified: '2026-07-14',
+      lastModified: '2026-07-28',
       changeFrequency: 'monthly',
       priority: 1.0,
     },
     {
       url: `${base}/experience`,
-      lastModified: '2026-07-14',
+      lastModified: '2026-07-28',
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${base}/case-studies`,
-      lastModified: '2026-05-20',
+      lastModified: '2026-07-28',
       changeFrequency: 'monthly',
       priority: 0.8,
     },
@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${base}/contactcard`,
-      lastModified: '2026-07-14',
+      lastModified: '2026-07-28',
       changeFrequency: 'monthly',
       priority: 0.6,
     },

@@ -93,7 +93,7 @@ const caseStudies: CaseStudy[] = [
     solution:
       'Designed and implemented a real-time fraud analytics platform leveraging advanced machine learning algorithms. Built scalable infrastructure to handle massive transaction volumes with sub-second response times.',
     results: [
-      'Secured $400M contract value based on platform capabilities',
+      'Helped win $400MM contract value based on platform capabilities',
       'Designed real-time AI-powered fraud analytics engine',
       'Processing millions of transactions in real-time',
       'Reduced false positives by 60% compared to legacy systems',
@@ -156,15 +156,12 @@ const caseStudies: CaseStudy[] = [
     solution:
       'Led worldwide infrastructure modernization initiative, architecting new telemetry platforms and implementing DevOps practices that transformed the reliability and scalability of critical systems.',
     results: [
-      'Eliminated weekly Sev1 outages, achieving 98% uptime',
+      'Eliminated recurring Sev1 outages across worldwide operations',
       'Accelerated cloud migration by 200%',
       'Standardized telemetry across global infrastructure',
       'Reduced mean time to recovery (MTTR) by 70%',
     ],
-    metrics: [
-      { value: '98%', label: 'Uptime' },
-      { value: '200%', label: 'Cloud Acceleration' },
-    ],
+    metrics: [{ value: '200%', label: 'Cloud Acceleration' }],
     technologies: ['DevOps', 'Cloud', 'Global Scale', 'Telemetry'],
   },
   {

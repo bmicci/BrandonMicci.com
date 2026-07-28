@@ -9,7 +9,7 @@ const SITE_URL = 'https://brandonmicci.com';
 const NAME = 'Brandon Micci';
 const JOB_TITLE = 'Head of AI Strategy & Business Transformation';
 const DESCRIPTION =
-  'Enterprise AI Transformation leader with 17+ years of experience delivering $400M+ in value and scaling LLM deployments to 27K+ users across Fortune 500 companies.';
+  'Enterprise AI Transformation leader with 17+ years of experience delivering $50M+ in documented savings and scaling LLM deployments to 27K+ users across Fortune 500 companies.';
 
 const LOGO = `${SITE_URL}/android-chrome-192x192.png`; // ok to keep; you just generated these
 const IMAGE = `${SITE_URL}/headshot.webp`;
@@ -67,11 +67,6 @@ function buildJsonLd(pathname: string) {
       'https://twitter.com/brandonmicci',
       'https://link.v1ce.co/brandon.micci',
     ],
-    worksFor: {
-      '@type': 'Organization',
-      name: 'JPMorgan Chase',
-      url: 'https://www.jpmorganchase.com',
-    },
     contactPoint: [
       {
         '@type': 'ContactPoint',
@@ -139,7 +134,6 @@ function buildJsonLd(pathname: string) {
 
       // Leadership & Strategy
       'Executive Leadership',
-      'P&L Management',
       'C-Suite Engagement',
       'Strategic Planning',
       'ROI Analysis',
@@ -197,7 +191,7 @@ function buildJsonLd(pathname: string) {
         name: 'What measurable outcomes has Brandon achieved through AI leadership?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Brandon has delivered $400M+ in measurable business value through AI and digital transformation. His initiatives include deploying an enterprise LLM assistant to 27,000 users at JPMorgan Chase, delivering $22M+ in annualized efficiency gains, and launching a $20M IoT-AI optimization program in aviation.',
+          text: 'Brandon has delivered $50M+ in documented savings and efficiency gains through AI and digital transformation. His initiatives include deploying an enterprise LLM assistant to 27,000 users at JPMorgan Chase, delivering $22M+ in annualized efficiency gains, and launching a $20M IoT-AI optimization program in aviation.',
         },
       },
       {
@@ -245,7 +239,7 @@ function buildJsonLd(pathname: string) {
         name: 'What technical skills does Brandon bring to AI leadership roles?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has built and led 50+ FTE technical organizations with $30M+ P&L responsibility at Capgemini and ownership of the $15M+ annual AI portfolio at JPMorgan Chase — from strategy and investment through delivery.',
+          text: 'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has led matrixed delivery organizations across global engagements and owned the $15M+ annual AI portfolio at JPMorgan Chase, from strategy and investment through delivery.',
         },
       },
       {
@@ -261,7 +255,7 @@ function buildJsonLd(pathname: string) {
         name: 'What size organizations and budgets has Brandon managed?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Brandon has led cross-functional teams of 50+ full-time employees with direct P&L oversight of $30M+ technology portfolios. His programs have generated $400M+ in measurable enterprise value across Fortune 500 organizations.',
+          text: 'Brandon has led cross-functional and matrixed teams across global organizations, including a $15M+ annual AI portfolio at JPMorgan Chase and a $25M technology budget at Southwest Airlines. His programs have delivered $50M+ in documented savings and efficiency gains.',
         },
       },
       {

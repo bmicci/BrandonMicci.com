@@ -30,11 +30,12 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Brandon Micci | Enterprise AI Strategy Executive',
+    default:
+      'Brandon Micci | Enterprise AI & Business Transformation Executive',
     template: '%s | Brandon Micci',
   },
   description:
-    'AI Strategy & Business Transformation Executive at JPMorgan Chase. 17+ years, $400M+ enterprise impact, 27K+ AI users enabled. Dallas, TX.',
+    'Enterprise AI & Business Transformation Executive. Formerly JPMorgan Chase, Citi, Capital One, PwC. 17+ years, $50M+ documented savings, 27K+ AI users enabled.',
   keywords: [
     // Executive Roles
     'Enterprise AI Executive',
@@ -72,7 +73,6 @@ export const metadata: Metadata = {
     // Enterprise & Leadership
     'Fortune 500 AI Transformation',
     'Enterprise Data Platform',
-    'P&L Management',
     'Executive Leadership',
     'C-Suite Engagement',
     'Strategic Planning',
@@ -123,9 +123,9 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://brandonmicci.com',
     locale: 'en_US',
-    title: 'Brandon Micci | Head of AI Strategy & Business Transformation',
+    title: 'Brandon Micci | Enterprise AI & Business Transformation Executive',
     description:
-      'Dallas-based AI Strategy & Business Transformation Executive at JPMorgan Chase. $400M+ enterprise impact, $22M+ AI-driven savings, 27K+ AI users enabled. Expert in Generative AI, Agentic AI, LLM deployment, and enterprise data strategy.',
+      'Dallas-based Enterprise AI & Business Transformation Executive. $50M+ documented savings, $22M+ AI-driven savings, 27K+ AI users enabled.',
     images: [
       {
         url: '/opengraph-image',
@@ -137,9 +137,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Brandon Micci | Head of AI Strategy & Business Transformation',
+    title: 'Brandon Micci | Enterprise AI & Business Transformation Executive',
     description:
-      'Dallas-based AI Strategy & Business Transformation Executive at JPMorgan Chase. $400M+ enterprise impact, $22M+ AI-driven savings, 27K+ AI users. Expert in Generative AI, Agentic AI, LLM deployment, Fortune 500 transformation.',
+      'Dallas-based Enterprise AI & Business Transformation Executive. $50M+ documented savings, $22M+ AI-driven savings, 27K+ AI users enabled.',
     images: ['/opengraph-image'],
     creator: '@brandonmicci',
   },

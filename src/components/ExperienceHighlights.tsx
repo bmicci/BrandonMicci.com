@@ -15,7 +15,7 @@ type HighlightRole = {
 
 const HIGHLIGHT_ROLES: HighlightRole[] = [
   {
-    dates: 'Feb 2024 - Present',
+    dates: 'Feb 2024 – Mar 2026',
     role: 'Head of AI Strategy & Business Transformation',
     companyType: 'Fortune 50 Bank (Payments)',
     icon: (
@@ -30,7 +30,7 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
       "Scaled the Payments LLM Assistant to 27,000+ users and established the firm's AI delivery lifecycle — evaluation, AIOps, and production governance.",
   },
   {
-    dates: 'Jan 2022 - Feb 2024',
+    dates: 'Jan 2022 – Jun 2022',
     role: 'Senior Director, Head of AI/IoT & Emerging Technology Practice',
     companyType: 'Global Consulting Firm',
     icon: (
@@ -40,12 +40,12 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
       />
     ),
     keyMetric: '$30M',
-    metricLabel: 'P&L Ownership',
+    metricLabel: 'Revenue Target',
     achievement:
-      'Built the AI/IoT and Emerging Tech practice from inception. Drove $9.8M in new revenue and 34% market share gain.',
+      'Built the AI/IoT and Emerging Tech practice from inception. Generated $9.8M in qualified pipeline through go-to-market execution and solution commercialization.',
   },
   {
-    dates: 'Feb 2021 - Feb 2022',
+    dates: 'Feb 2021 – Jan 2022',
     role: 'Senior Manager, AI/ML Forensic Analytics & Technology',
     companyType: 'Big Four Consulting',
     icon: (

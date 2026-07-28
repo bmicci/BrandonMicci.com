@@ -904,9 +904,9 @@ const HeroSection = () => {
                 </Link>
                 , and measurable <span className="gradient">ROI</span>—with{' '}
                 <span className="gradient">17+ years</span> delivering{' '}
-                <span className="gradient">$400M+ value</span> across{' '}
-                <span className="gradient">Fortune 500 companies</span> and at{' '}
-                <span className="gradient">Big Four</span> firms.
+                <span className="gradient">enterprise transformation</span>{' '}
+                across <span className="gradient">Fortune 500 companies</span>{' '}
+                and at <span className="gradient">Big Four</span> firms.
               </p>
 
               <div className="cta-row cta-3up-xl">
@@ -950,9 +950,7 @@ const HeroSection = () => {
               <div className="kpi-grid" style={{ marginBottom: '2.5rem' }}>
                 {/* Value Delivered */}
                 <div className="kpi-box">
-                  <span className="sr-only">
-                    $400M+ Enterprise Business Impact
-                  </span>
+                  <span className="sr-only">$50M+ Documented Savings</span>
                   <span className="stat-number">
                     <AnimatedCounter
                       value={METRICS.valueDeliveredM}
@@ -960,7 +958,7 @@ const HeroSection = () => {
                       format={(n) => `$${n}`}
                     />
                   </span>
-                  <span className="stat-label">Enterprise Business Impact</span>
+                  <span className="stat-label">Documented Savings</span>
                 </div>
 
                 {/* AI Users */}
@@ -1046,7 +1044,7 @@ const HeroSection = () => {
                   className="gradient"
                   style={{ WebkitTextFillColor: 'transparent' }}
                 >
-                  $400M+ value
+                  enterprise transformation
                 </span>{' '}
                 across{' '}
                 <span
@@ -1099,9 +1097,7 @@ const HeroSection = () => {
               style={{ marginTop: '1.25rem' }}
             >
               <div className="kpi-box">
-                <span className="sr-only">
-                  $400M+ Enterprise Business Impact
-                </span>
+                <span className="sr-only">$50M+ Documented Savings</span>
                 <span className="stat-number">
                   <AnimatedCounter
                     value={METRICS.valueDeliveredM}
@@ -1109,7 +1105,7 @@ const HeroSection = () => {
                     format={(n) => `$${n}`}
                   />
                 </span>
-                <span className="stat-label">Enterprise Business Impact</span>
+                <span className="stat-label">Documented Savings</span>
               </div>
 
               <div className="kpi-box">
@@ -1248,7 +1244,7 @@ const HeroSection = () => {
             operating models where intelligence drives every decision and
             outcome. I balance innovation velocity with governance discipline,
             scaling transformation across regulated global operations. The
-            result: $400M+ in enterprise value.
+            result: measurable outcomes the business can see.
           </p>
         </div>
 

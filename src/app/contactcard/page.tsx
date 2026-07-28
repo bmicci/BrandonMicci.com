@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Connect with Brandon Micci',
     description:
-      'Enterprise AI & Digital Transformation Executive. 27K+ LLM users deployed, $400M+ enterprise value.',
+      'Enterprise AI & Digital Transformation Executive. 27K+ LLM users deployed, $50M+ documented savings.',
     type: 'profile',
   },
 };

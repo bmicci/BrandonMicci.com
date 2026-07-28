@@ -55,10 +55,10 @@ type Role = {
 
 const ROLES: Role[] = [
   {
-    dates: 'Feb 2024 – Present',
+    dates: 'Feb 2024 – Mar 2026',
     role: 'Head of AI Strategy & Business Transformation',
     company: 'JPMorgan Chase',
-    location: 'Dallas, TX',
+    location: 'Plano, TX',
     icon: (
       <Brain
         className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
@@ -66,7 +66,7 @@ const ROLES: Role[] = [
       />
     ),
     description:
-      'Lead AI strategy and business transformation across JPMorgan Chase Payments, spanning merchant services, client servicing, client onboarding, and global call centers. Own end-to-end AI product delivery, a $15M+ annual AI portfolio, governance, and enterprise scaling.',
+      'Led AI strategy and business transformation across JPMorgan Chase Payments, spanning merchant services, client servicing, client onboarding, and global call centers. Owned end-to-end AI product delivery, a $15M+ annual AI portfolio, governance, and enterprise scaling.',
     skills: [
       'AI Strategy',
       'LLM / RAG Deployment',
@@ -101,7 +101,7 @@ const ROLES: Role[] = [
     ],
   },
   {
-    dates: 'Jan 2022 – Feb 2024',
+    dates: 'Jan 2022 – Jun 2022',
     role: 'Senior Director, Head of AI/IoT & Emerging Technology Practice',
     company: 'Capgemini',
     location: 'Dallas, TX',
@@ -114,15 +114,15 @@ const ROLES: Role[] = [
     description:
       'Directed AI and emerging technology commercialization across the Intelligent Industry portfolio. Built and scaled a new practice focused on digital transformation and real-time AI analytics for Fortune 50 clients.',
     skills: [
-      'P&L Ownership ($30M)',
+      'AI/IoT Practice Build-Out',
       'AI/IoT Strategy',
       'Fortune 50 Client Delivery',
       'Practice Leadership',
     ],
     achievements: [
       {
-        title: '$30M P&L Built from Zero',
-        text: 'Owned $30M P&L for AI/IoT practice, leading 30+ architects, data scientists, and product leaders across pricing, margin optimization, and revenue targets.',
+        title: 'Practice Build-Out',
+        text: "Built the practice's go-to-market strategy and business plan targeting $30M in revenue, defining service offerings, pricing, and positioning across insurance and industrial verticals.",
       },
       {
         title: 'Fortune 50 AI Transformation',
@@ -135,7 +135,7 @@ const ROLES: Role[] = [
     ],
   },
   {
-    dates: 'Feb 2021 – Feb 2022',
+    dates: 'Feb 2021 – Jan 2022',
     role: 'Senior Manager, AI/ML Forensic Analytics & Technology',
     company: 'Ernst & Young',
     location: 'Dallas, TX',
@@ -156,7 +156,7 @@ const ROLES: Role[] = [
     achievements: [
       {
         title: 'Mega-Deal Success',
-        text: 'Procured $400MM, 10-year strategic engagement with Top-5 national health insurer for real-time AI-powered fraud analytics engine.',
+        text: 'Helped win a $400MM, 10-year strategic engagement with a Top-5 national health insurer for real-time AI-powered fraud analytics engine.',
       },
       {
         title: 'Revenue Generation',
@@ -227,7 +227,7 @@ const ROLES: Role[] = [
       },
       {
         title: 'Operational Excellence',
-        text: 'Architected Tier 1 Production Data Environment achieving 100% availability and disaster recovery for critical real-time operations, implementing secure data isolation and access controls.',
+        text: 'Architected Tier 1 Production Data Environment meeting Tier-1 availability and disaster-recovery targets for critical real-time operations, implementing secure data isolation and access controls.',
       },
     ],
   },
@@ -252,8 +252,8 @@ const ROLES: Role[] = [
     ],
     achievements: [
       {
-        title: '98% Uptime Worldwide',
-        text: 'Architected global telemetry platform and service improvement program eliminating weekly Sev1 outages, achieving 98% uptime across worldwide operations.',
+        title: 'Global Service Stability',
+        text: 'Architected global telemetry platform and service improvement program that eliminated recurring Sev1 outages across worldwide operations.',
       },
       {
         title: '200% Cloud Acceleration',
@@ -311,11 +311,11 @@ const ROLES: Role[] = [
     achievements: [
       {
         title: 'Analytics Standardization',
-        text: 'Drove enterprise-wide analytics standardization across Risk and Compliance, reducing reporting cycle times by 40% through automated, self-service dashboards.',
+        text: 'Drove enterprise-wide analytics standardization across Risk and Compliance through automated, self-service dashboards.',
       },
       {
         title: 'Data Quality Gold Standard',
-        text: 'Established the enterprise gold standard for data quality — governance frameworks, automated lineage, and validation gates — improving data capability by 80%.',
+        text: 'Established the enterprise gold standard for data quality — governance frameworks, automated lineage, and validation gates.',
       },
     ],
   },
@@ -341,7 +341,7 @@ const ROLES: Role[] = [
     achievements: [
       {
         title: 'Enterprise Analytics Community of Practice',
-        text: 'Built the largest enterprise analytics community of practice globally (confirmed by Tableau at the time), scaling from zero to 30,000+ users.',
+        text: 'Built an enterprise analytics community of practice, scaling enterprise adoption past 30,000 users.',
       },
       {
         title: 'CEO Dashboard Architect',
@@ -370,7 +370,7 @@ const ROLES: Role[] = [
     achievements: [
       {
         title: 'Fraud Detection',
-        text: 'Architected predictive analytics platform using ML, increasing fraud detection anomalies by 150%.',
+        text: 'Architected predictive analytics platform using ML, increasing anomaly detection rates 150% over manual review.',
       },
       {
         title: 'Governance Framework',

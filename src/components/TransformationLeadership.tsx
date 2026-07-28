@@ -95,11 +95,8 @@ const secondaryProjects: Project[] = [
     icon: Network,
     description:
       'Worldwide infrastructure modernization at a global financial institution, architecting telemetry platforms that eliminated weekly Sev1 outages.',
-    mobileDescription: 'Achieved 98% uptime from weekly outages.',
-    metrics: [
-      { value: '98%', label: 'Uptime' },
-      { value: '200%', label: 'Cloud Acceleration' },
-    ],
+    mobileDescription: 'Eliminated recurring Sev1 outages worldwide.',
+    metrics: [{ value: '200%', label: 'Cloud Acceleration' }],
     tags: ['DevOps', 'Cloud', 'Global Scale'],
   },
   {
