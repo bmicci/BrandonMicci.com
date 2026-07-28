@@ -253,7 +253,6 @@ const ContactCard: React.FC = () => {
           <p className="subtitle">
             Head of AI Strategy & Business Transformation
           </p>
-          <p className="company">JPMorgan Chase</p>
 
           {/* Tagline */}
           <p className="tagline">
@@ -267,7 +266,8 @@ const ContactCard: React.FC = () => {
               <span className="highlight">27K+ users</span>
             </li>
             <li className="achievement-item">
-              Delivered <span className="highlight">$400M+</span> ROI
+              Delivered <span className="highlight">$50M+</span> documented
+              savings
             </li>
             <li className="achievement-item">
               <span className="highlight">17+ years</span> expertise across

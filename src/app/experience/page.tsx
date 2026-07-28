@@ -5,7 +5,7 @@ import ExecutiveExperience from '@/components/ExecutiveExperience';
 export const metadata: Metadata = {
   title: 'Executive Experience',
   description:
-    "Brandon Micci's 17+ year executive career across Fortune 500 banks, Big Four consulting, and global enterprises — $400M+ in delivered value.",
+    "Brandon Micci's 17+ year executive career across Fortune 500 banks, Big Four consulting, and global enterprises.",
   keywords: [
     'AI executive experience',
     'enterprise AI leadership',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Executive Experience | Brandon Micci',
     description:
-      '17+ years leading AI strategy and digital transformation across Fortune 500 organizations. $400M+ enterprise value delivered.',
+      '17+ years leading AI strategy and digital transformation across Fortune 500 organizations.',
     url: 'https://brandonmicci.com/experience',
     type: 'profile',
   },

@@ -16,20 +16,20 @@ export const metadata: Metadata = {
     'fraud detection AI',
     'analytics center of excellence',
     'Brandon Micci case studies',
-    '$400M enterprise impact',
+    '$50M documented savings',
   ],
   alternates: { canonical: '/case-studies' },
   openGraph: {
     title:
       'Case Studies | Brandon Micci — Enterprise AI & Digital Transformation',
     description:
-      '$400M+ enterprise value delivered. 8 case studies covering LLM deployment, IoT platforms, fraud detection, analytics communities, and cloud transformation across Fortune 500 firms.',
+      '$50M+ in documented savings. 8 case studies covering LLM deployment, IoT platforms, fraud detection, analytics communities, and cloud transformation across Fortune 500 firms.',
     url: 'https://brandonmicci.com/case-studies',
   },
   twitter: {
     title: 'Case Studies | Brandon Micci — Enterprise AI Results',
     description:
-      '$400M+ enterprise value. 8 case studies: LLM for 27K users, $20M IoT savings, $25M ARR analytics SaaS, and more.',
+      '$50M+ in documented savings. 8 case studies: LLM for 27K users, $20M IoT savings, $25M ARR analytics SaaS, and more.',
   },
 };
 

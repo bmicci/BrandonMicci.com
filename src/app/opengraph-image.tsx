@@ -6,7 +6,8 @@ export const runtime = 'edge';
 
 const NAME = 'Brandon Micci';
 const HEADLINE = 'AI & Digital Transformation Executive';
-const SUBLINE = 'Enterprise AI Transformation • 27K+ LLM users • $400M+ impact';
+const SUBLINE =
+  'Enterprise AI Transformation • 27K+ LLM users • $50M+ documented savings';
 
 export default async function OpengraphImage() {
   return new ImageResponse(
