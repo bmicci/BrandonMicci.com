@@ -526,6 +526,15 @@ const Navigation = () => {
             </li>
             <li className="nav-item">
               <Link
+                href="/articles"
+                className={`nav-link ${pathname?.startsWith('/articles') ? 'active' : ''}`}
+                onClick={() => handleLinkClick('')}
+              >
+                Articles
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
                 href="/contact"
                 className={`nav-link ${pathname === '/contact' ? 'active' : ''}`}
                 onClick={() => handleLinkClick('')}

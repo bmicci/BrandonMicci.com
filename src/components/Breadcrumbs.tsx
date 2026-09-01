@@ -32,6 +32,15 @@ const BREADCRUMB_PATHS: Record<string, BreadcrumbItem[]> = {
     { name: 'Home', href: '/' },
     { name: 'Digital Business Card', href: '/contactcard' },
   ],
+  '/articles': [
+    { name: 'Home', href: '/' },
+    { name: 'Articles', href: '/articles' },
+  ],
+  '/articles/ai-operating-model': [
+    { name: 'Home', href: '/' },
+    { name: 'Articles', href: '/articles' },
+    { name: 'The AI Operating Model', href: '/articles/ai-operating-model' },
+  ],
 };
 
 const Breadcrumbs = () => {

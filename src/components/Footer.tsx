@@ -61,6 +61,9 @@ const Footer = () => {
           <Link href="/experience" className="footer-link">
             Executive Experience
           </Link>
+          <Link href="/articles" className="footer-link">
+            Articles
+          </Link>
           <Link href="/case-studies" className="footer-link">
             Case Studies
           </Link>
