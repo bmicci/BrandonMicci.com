@@ -465,7 +465,7 @@ export default function ArticleContent() {
             institution, where he designed the AI operating model, established
             the AI Center of Excellence and model risk framework, and directed
             the platform that scaled an enterprise LLM assistant to 27,000+
-            employees. He is a co-founder and board member of the DFW CTO Club.{' '}
+            employees. He is a board member of the DFW CTO Club.{' '}
             <Link href="/contact">Get in touch</Link>.
           </div>
         </div>
