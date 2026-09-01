@@ -244,6 +244,7 @@ const Navigation = () => {
           color: rgba(255, 255, 255, 0.8);
           font-weight: 500;
           font-size: 0.85rem;
+          white-space: nowrap;
           letter-spacing: 0.3px;
           transition: all 0.3s ease;
           position: relative;
@@ -325,6 +326,7 @@ const Navigation = () => {
           text-decoration: none;
           font-weight: 600;
           font-size: 0.8rem;
+          white-space: nowrap;
           transition: all 0.3s ease;
           position: relative;
           overflow: hidden;
@@ -357,6 +359,20 @@ const Navigation = () => {
         .nav-item :global(a.cta-button):hover {
           transform: translateY(-2px);
           box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+        }
+
+        /* Tight desktop band: with nowrap labels, give the row breathing room
+           just above the hamburger breakpoint so all items fit on one line. */
+        @media (min-width: 1280px) and (max-width: 1439px) {
+          .nav-item :global(a.nav-link) {
+            padding: 0.4rem 0.55rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.1px;
+          }
+          .nav-item :global(a.cta-button) {
+            padding: 0.4rem 0.65rem;
+            font-size: 0.76rem;
+          }
         }
 
         /* Mobile Responsiveness - Extended to include all iPads */
@@ -531,15 +547,6 @@ const Navigation = () => {
                 onClick={() => handleLinkClick('')}
               >
                 Articles
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                href="/contact"
-                className={`nav-link ${pathname === '/contact' ? 'active' : ''}`}
-                onClick={() => handleLinkClick('')}
-              >
-                Contact
               </Link>
             </li>
             <li className="nav-item">
