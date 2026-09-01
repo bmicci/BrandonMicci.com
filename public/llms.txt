@@ -304,6 +304,7 @@ Graduated: 2009
 - **[Home](https://brandonmicci.com):** Complete professional portfolio and executive summary
 - **[Executive Experience](https://brandonmicci.com/experience):** Full 17+ year career timeline with detailed role descriptions and achievements for all 11 roles
 - **[Case Studies](https://brandonmicci.com/case-studies):** Eight detailed AI and transformation case studies with measurable outcomes
+- **[Articles & Frameworks](https://brandonmicci.com/articles):** Practical frameworks on AI operating models, governance, delivery, and adoption at enterprise scale. First article: "Your AI Strategy Isn't the Problem. Your Operating Model Is." (https://brandonmicci.com/articles/ai-operating-model) — the five components of an enterprise AI operating model (people, process, technology, data, controls) and the three mechanics that make them real (role decomposition, decision rights, handoffs), including why model risk management is an advantage rather than a drag in regulated industries
 - **[Strategic Advantage](https://brandonmicci.com/#strategic-advantage):** What sets me apart - proven Fortune 500 execution and Big Four advisory experience
 - **[Transformation Leadership](https://brandonmicci.com/#transformation-leadership):** Major project portfolio including LLM deployments, IoT innovation, and platform transformations
 - **[Professional Impact](https://brandonmicci.com/#professional-impact):** Case studies and measurable business outcomes

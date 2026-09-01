@@ -22,6 +22,10 @@ const ProfessionalImpact = dynamic(
   { ssr: true }
 );
 
+const LatestInsights = dynamic(() => import('@/components/LatestInsights'), {
+  ssr: true,
+});
+
 const TestimonialsSection = dynamic(
   () => import('@/components/TestimonialsSection'),
   { ssr: true }
@@ -92,6 +96,14 @@ export default function Home() {
       >
         {/* Content */}
         <ProfessionalImpact />
+      </section>
+
+      {/* Latest Articles & Frameworks */}
+      <section
+        id="latest-insights"
+        className="relative scroll-mt-[var(--header-h,4.5rem)]"
+      >
+        <LatestInsights />
       </section>
 
       {/* Testimonials Section */}
