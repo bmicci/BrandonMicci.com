@@ -37,7 +37,7 @@
     "typescript": "^5"
   },
   "engines": {
-    "node": ">=20.9.0"
+    "node": "22.x"
   },
   "browserslist": {
     "production": [
@@ -49,5 +49,10 @@
       "last 1 chrome version",
       "last 1 firefox version"
     ]
+  },
+  "allowScripts": {
+    "sharp@0.34.5": true,
+    "@vercel/speed-insights@1.2.0": true,
+    "unrs-resolver@1.11.1": true
   }
 }

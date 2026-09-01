@@ -10,6 +10,7 @@ import DevLayoutShiftLogger from '@/components/DevLayoutShiftLogger';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import FloatingCTA from '@/components/FloatingCTA';
 import Footer from '@/components/Footer';
+import StyledJsxRegistry from '@/components/StyledJsxRegistry';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 
@@ -205,14 +206,16 @@ export default async function RootLayout({
         <EnhancedStructuredData nonce={nonce} pathname={pathname} />
 
         {process.env.NODE_ENV === 'development' && <DevLayoutShiftLogger />}
-        <Navigation />
-        <Breadcrumbs />
-        <BackgroundRoot />
-        <FloatingCTA />
-        <main id="main" className="mt-8 md:mt-14">
-          {children}
-        </main>
-        <Footer />
+        <StyledJsxRegistry>
+          <Navigation />
+          <Breadcrumbs />
+          <BackgroundRoot />
+          <FloatingCTA />
+          <main id="main" className="mt-8 md:mt-14">
+            {children}
+          </main>
+          <Footer />
+        </StyledJsxRegistry>
 
         {/* Vercel Analytics */}
         {isVercel && <SpeedInsights />}
