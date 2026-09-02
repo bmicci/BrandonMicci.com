@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     type: 'article',
   },
   twitter: {
+    card: 'summary_large_image',
     title: "Your AI Strategy Isn't the Problem. Your Operating Model Is.",
     description:
       'A framework for running AI at enterprise scale, learned inside a Fortune-50 financial institution.',

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     url: 'https://brandonmicci.com/articles',
   },
   twitter: {
+    card: 'summary_large_image',
     title: 'Articles & Frameworks | Brandon Micci',
     description:
       'Practical frameworks on AI operating models, governance, delivery, and adoption at enterprise scale.',
