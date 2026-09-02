@@ -8,18 +8,13 @@ export const metadata: Metadata = {
   alternates: { canonical: '/privacy' },
 };
 
+const POLICY_LAST_UPDATED = 'May 10, 2026';
+
 export default function PrivacyPage() {
   return (
-    <main className="mx-auto max-w-3xl px-6 py-12 prose prose-invert">
+    <div className="mx-auto max-w-3xl px-6 py-12 prose prose-invert">
       <h1>Privacy Policy</h1>
-      <p>
-        Last updated:{' '}
-        {new Date().toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        })}
-      </p>
+      <p>Last updated: {POLICY_LAST_UPDATED}</p>
 
       <h2>Overview</h2>
       <p>
@@ -51,6 +46,6 @@ export default function PrivacyPage() {
         Questions? Email{' '}
         <a href="mailto:brandon@brandonmicci.com">brandon@brandonmicci.com</a>.
       </p>
-    </main>
+    </div>
   );
 }

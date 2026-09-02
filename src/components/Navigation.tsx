@@ -1,13 +1,33 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useLockBodyScroll } from '@/hooks/useLockBodyScroll';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState(''); // Empty initial to avoid hydration mismatch
+  const pathname = usePathname();
+  const mobileToggleRef = useRef<HTMLButtonElement>(null);
+
+  // Lock background scroll while the mobile menu is open
+  useLockBodyScroll(isMobileMenuOpen);
+
+  // Close on Escape and return focus to the toggle button
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMobileMenuOpen(false);
+        mobileToggleRef.current?.focus();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isMobileMenuOpen]);
 
   // Handle scroll effect
   useEffect(() => {
@@ -22,7 +42,7 @@ const Navigation = () => {
   // Sync active link with hash on mount and hash changes
   useEffect(() => {
     const syncHash = () => {
-      const hash = window.location.hash.slice(1) || 'home';
+      const hash = window.location.hash.slice(1) || 'hero';
       setActiveLink(hash);
     };
     syncHash();
@@ -88,14 +108,7 @@ const Navigation = () => {
           top: 0;
         }
 
-        /* Reset for Wix compatibility */
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-
-        .wix-header {
+        .site-header {
           font-family:
             'Inter',
             -apple-system,
@@ -109,16 +122,16 @@ const Navigation = () => {
           right: 0 !important;
           width: 100% !important;
           z-index: 999999 !important;
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          background: rgba(10, 10, 10, 0.85) !important;
+          backdrop-filter: blur(24px) saturate(140%);
+          -webkit-backdrop-filter: blur(24px) saturate(140%);
+          background: rgba(10, 15, 30, 0.92) !important;
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           transition: all 0.3s ease;
         }
 
-        .wix-header.scrolled {
-          background: rgba(10, 10, 10, 0.95) !important;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        .site-header.scrolled {
+          background: rgba(10, 15, 30, 0.97) !important;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
 
         .nav-container {
@@ -165,28 +178,27 @@ const Navigation = () => {
 
         .logo-text {
           display: flex;
-          flex-direction: column;
+          align-items: center;
           line-height: 1.2;
         }
 
         .logo-name {
-          font-size: 0.95rem;
+          font-size: 1.05rem;
           font-weight: 700;
           color: white;
           white-space: nowrap;
           text-decoration: none;
           transition: all 0.3s ease;
           margin: 0;
+          letter-spacing: -0.01em;
         }
 
-        .logo-title {
-          font-size: 0.6rem;
-          color: rgba(255, 255, 255, 0.7);
-          font-weight: 400;
-          letter-spacing: 0.3px;
-          white-space: nowrap;
-          transition: all 0.3s ease;
-          margin: 0;
+        /* Hide the name text on mobile — logo mark alone keeps the nav clean
+           and prevents overflow against the hamburger menu. */
+        @media (max-width: 768px) {
+          .logo-name {
+            display: none;
+          }
         }
 
         .nav-menu {
@@ -209,10 +221,7 @@ const Navigation = () => {
             height: 46px;
           }
           .logo-name {
-            font-size: 0.9rem;
-          }
-          .logo-title {
-            font-size: 0.55rem;
+            font-size: 0.95rem;
           }
           .nav-item :global(a.nav-link) {
             padding: 0.35rem 0.7rem;
@@ -235,6 +244,7 @@ const Navigation = () => {
           color: rgba(255, 255, 255, 0.8);
           font-weight: 500;
           font-size: 0.85rem;
+          white-space: nowrap;
           letter-spacing: 0.3px;
           transition: all 0.3s ease;
           position: relative;
@@ -309,13 +319,14 @@ const Navigation = () => {
 
         .nav-item :global(a.cta-button) {
           background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
-          color: white !important;
+          color: #07101d !important;
           padding: 0.4rem 0.8rem;
           border: none;
           border-radius: 6px;
           text-decoration: none;
           font-weight: 600;
           font-size: 0.8rem;
+          white-space: nowrap;
           transition: all 0.3s ease;
           position: relative;
           overflow: hidden;
@@ -350,6 +361,20 @@ const Navigation = () => {
           box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
         }
 
+        /* Tight desktop band: with nowrap labels, give the row breathing room
+           just above the hamburger breakpoint so all items fit on one line. */
+        @media (min-width: 1280px) and (max-width: 1439px) {
+          .nav-item :global(a.nav-link) {
+            padding: 0.4rem 0.55rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.1px;
+          }
+          .nav-item :global(a.cta-button) {
+            padding: 0.4rem 0.65rem;
+            font-size: 0.76rem;
+          }
+        }
+
         /* Mobile Responsiveness - Extended to include all iPads */
         @media (max-width: 1279px) {
           .mobile-toggle {
@@ -361,9 +386,9 @@ const Navigation = () => {
             top: 100%;
             left: 0;
             right: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(10, 15, 30, 0.97);
+            backdrop-filter: blur(24px) saturate(140%);
+            -webkit-backdrop-filter: blur(24px) saturate(140%);
             flex-direction: column;
             padding: 0.4rem 0 1rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -399,14 +424,6 @@ const Navigation = () => {
             height: 42px;
           }
 
-          .logo-name {
-            font-size: 1.2rem;
-          }
-
-          .logo-title {
-            font-size: 0.7rem;
-          }
-
           .nav-container {
             padding: 0.6rem 1rem;
             min-height: 64px;
@@ -423,14 +440,6 @@ const Navigation = () => {
             width: 38px;
             height: 38px;
           }
-
-          .logo-name {
-            font-size: 1.05rem;
-          }
-
-          .logo-title {
-            display: none;
-          }
         }
       `}</style>
 
@@ -438,9 +447,20 @@ const Navigation = () => {
         Skip to content
       </a>
 
-      <header className={`wix-header ${isScrolled ? 'scrolled' : ''}`}>
+      <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
         <nav className="nav-container" aria-label="Primary">
-          <div className="logo" onClick={() => handleLinkClick('home')}>
+          <Link
+            href="/"
+            className="logo"
+            onClick={(e) => {
+              handleLinkClick('hero');
+              if (pathname === '/') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+            aria-label="Brandon Micci, home"
+          >
             <div className="logo-bm">
               <Image
                 src="/logo-bm-tight.webp"
@@ -452,16 +472,18 @@ const Navigation = () => {
             </div>
             <div className="logo-text">
               <div className="logo-name">Brandon Micci</div>
-              <div className="logo-title">AI & Digital Transformation</div>
             </div>
-          </div>
+          </Link>
 
-          <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+          <ul
+            id="primary-nav-menu"
+            className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}
+          >
             <li className="nav-item">
               <Link
-                href="/#home"
-                className={`nav-link ${activeLink === 'home' ? 'active' : ''}`}
-                onClick={(e) => handleSmoothScroll(e, 'home')}
+                href="/"
+                className={`nav-link ${activeLink === 'hero' ? 'active' : ''}`}
+                onClick={(e) => handleSmoothScroll(e, 'hero')}
                 scroll={false}
               >
                 Home
@@ -511,6 +533,24 @@ const Navigation = () => {
             </li>
             <li className="nav-item">
               <Link
+                href="/case-studies"
+                className={`nav-link ${pathname === '/case-studies' ? 'active' : ''}`}
+                onClick={() => handleLinkClick('')}
+              >
+                Case Studies
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                href="/articles"
+                className={`nav-link ${pathname?.startsWith('/articles') ? 'active' : ''}`}
+                onClick={() => handleLinkClick('')}
+              >
+                Articles
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
                 href="/#connectwithme"
                 className="cta-button"
                 onClick={(e) => handleSmoothScroll(e, 'connectwithme')}
@@ -523,9 +563,12 @@ const Navigation = () => {
           </ul>
 
           <button
+            ref={mobileToggleRef}
             className={`mobile-toggle ${isMobileMenuOpen ? 'active' : ''}`}
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="primary-nav-menu"
           >
             <div className="toggle-line"></div>
             <div className="toggle-line"></div>

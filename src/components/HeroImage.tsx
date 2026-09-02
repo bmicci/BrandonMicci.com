@@ -137,13 +137,15 @@ const HeroImage = () => {
             sizes="(min-width:1280px) 460px, (min-width:1024px) 34vw, (min-width:769px) 32vw, 70vw"
             priority
             fetchPriority="high"
-            quality={92}
+            quality={82}
           />
         </div>
 
         <div className="hi-caption">
           <p className="hi-name">Brandon Micci</p>
-          <p className="hi-title">Head of AI Strategy & Business Transformation</p>
+          <p className="hi-title">
+            Head of AI Strategy & Business Transformation
+          </p>
         </div>
       </div>
     </>

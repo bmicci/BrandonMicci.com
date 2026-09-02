@@ -2,12 +2,10 @@ import { ImageResponse } from 'next/og';
 
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
+export const alt = 'Articles & Frameworks — Brandon Micci';
 
-const NAME = 'Brandon Micci';
-const HEADLINE = 'AI & Digital Transformation Executive';
-const SUBLINE =
-  'Enterprise AI Transformation • 27K+ LLM users • $50M+ documented savings';
-
+// Social share card for the articles index. Same brand system as the root
+// opengraph-image: dark navy gradient, cyan headline, Inter stack.
 export default async function OpengraphImage() {
   return new ImageResponse(
     <div
@@ -27,12 +25,11 @@ export default async function OpengraphImage() {
         style={{
           display: 'flex',
           flexDirection: 'column',
-          gap: 18,
-          maxWidth: 980,
+          gap: 20,
+          maxWidth: 1000,
           paddingLeft: 88,
         }}
       >
-        {/* Name */}
         <div
           style={{
             fontSize: 28,
@@ -41,33 +38,32 @@ export default async function OpengraphImage() {
             letterSpacing: '-0.02em',
           }}
         >
-          {NAME}
+          Brandon Micci
         </div>
 
-        {/* Headline - solid cyan color (no SVG) */}
         <div
           style={{
-            fontSize: 86,
+            fontSize: 92,
             fontWeight: 800,
             lineHeight: 1.05,
             letterSpacing: '-0.02em',
-            color: '#00D4FF', // solid cyan
+            color: '#00D4FF',
           }}
         >
-          {HEADLINE}
+          Articles &amp; Frameworks
         </div>
 
-        {/* Subline - bright white with cyan glow effect */}
         <div
           style={{
-            fontSize: 32,
+            fontSize: 30,
             fontWeight: 500,
             letterSpacing: '-0.01em',
             color: '#F6FAFF',
             textShadow: '0 0 12px rgba(0, 212, 255, 0.35)',
           }}
         >
-          {SUBLINE}
+          AI operating models, governance, delivery, and adoption at enterprise
+          scale
         </div>
       </div>
     </div>,

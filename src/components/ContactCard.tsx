@@ -7,8 +7,9 @@ import { track } from '@vercel/analytics';
 const ContactCard: React.FC = () => {
   const linkedInUrl = 'https://linkedin.com/in/brandonmicci';
   const emailAddress = 'brandon@brandonmicci.com';
-  const trackAction = (action: string) => track('contact_card_action', { action });
-  
+  const trackAction = (action: string) =>
+    track('contact_card_action', { action });
+
   return (
     <>
       <style jsx>{`
@@ -55,9 +56,10 @@ const ContactCard: React.FC = () => {
           inset: -1.5px;
           border-radius: 50%;
           border: 1.5px solid transparent;
-          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%) border-box;
-          -webkit-mask: 
-            linear-gradient(#fff 0 0) padding-box, 
+          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%)
+            border-box;
+          -webkit-mask:
+            linear-gradient(#fff 0 0) padding-box,
             linear-gradient(#fff 0 0);
           -webkit-mask-composite: xor;
           mask-composite: exclude;
@@ -248,42 +250,57 @@ const ContactCard: React.FC = () => {
 
           {/* Name & Title */}
           <h1 className="name">Brandon Micci</h1>
-          <p className="subtitle">Head of AI Strategy & Business Transformation</p>
-          <p className="company">JPMorgan Chase</p>
+          <p className="subtitle">
+            Head of AI Strategy & Business Transformation
+          </p>
 
           {/* Tagline */}
-          <p className="tagline">Enterprise AI at scale. Strategy to execution.</p>
+          <p className="tagline">
+            Enterprise AI at scale. Strategy to execution.
+          </p>
 
           {/* Achievements */}
           <ul className="achievements">
             <li className="achievement-item">
-              Scaled enterprise LLM to <span className="highlight">27K+ users</span>
+              Scaled enterprise LLM to{' '}
+              <span className="highlight">27K+ users</span>
             </li>
             <li className="achievement-item">
-              Delivered <span className="highlight">$400M+</span> ROI
+              Delivered <span className="highlight">$50M+</span> documented
+              savings
             </li>
             <li className="achievement-item">
-              <span className="highlight">16 years</span> expertise across
-              <div className="achievement-sub">Big 4, Fortune 500, Financial Services</div>
+              <span className="highlight">17+ years</span> expertise across
+              <div className="achievement-sub">
+                Big 4, Fortune 500, Financial Services
+              </div>
             </li>
           </ul>
 
           {/* Action Buttons */}
           <div className="action-buttons">
-            <a 
-              href="https://brandonmicci.com" 
+            <a
+              href="https://brandonmicci.com"
               className="btn btn-primary"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackAction('view_ai_portfolio')}
             >
-              <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              <svg
+                className="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
               </svg>
               View AI Portfolio
             </a>
-            <a 
+            <a
               href={linkedInUrl}
               className="btn btn-secondary"
               target="_blank"
@@ -291,29 +308,45 @@ const ContactCard: React.FC = () => {
               onClick={() => trackAction('linkedin')}
             >
               <svg className="icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
               </svg>
               LinkedIn
             </a>
-            <a 
+            <a
               href={`mailto:${emailAddress}`}
               className="btn btn-secondary"
               onClick={() => trackAction('email')}
             >
-              <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="4" width="20" height="16" rx="2"/>
-                <path d="M22 6l-10 7L2 6"/>
+              <svg
+                className="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="M22 6l-10 7L2 6" />
               </svg>
               Email
             </a>
-            <a 
+            <a
               href="/brandon-micci.vcf"
               className="btn btn-secondary"
               download
               onClick={() => trackAction('save_contact')}
             >
-              <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+              <svg
+                className="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
               </svg>
               Save Contact
             </a>

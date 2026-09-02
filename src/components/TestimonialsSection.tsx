@@ -1,9 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { Pause, Play } from 'lucide-react';
 
 const TestimonialsSection: React.FC = () => {
+  const [isPaused, setIsPaused] = useState(false);
+
   return (
     <>
       <style jsx>{`
@@ -92,6 +95,33 @@ const TestimonialsSection: React.FC = () => {
           align-items: center;
           animation: scroll 80s linear infinite;
           width: calc(450px * 12 + 2rem * 11);
+        }
+
+        .testimonials-track.paused {
+          animation-play-state: paused;
+        }
+
+        .marquee-toggle {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          margin: 0.5rem auto 0;
+          padding: 0.4rem 0.9rem;
+          border-radius: 999px;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          background: rgba(255, 255, 255, 0.05);
+          color: rgba(255, 255, 255, 0.75);
+          font-size: 0.8rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+
+        .marquee-toggle:hover,
+        .marquee-toggle:focus-visible {
+          color: #ffffff;
+          border-color: rgba(0, 212, 255, 0.4);
+          background: rgba(0, 212, 255, 0.1);
         }
 
         @keyframes scroll {
@@ -340,13 +370,34 @@ const TestimonialsSection: React.FC = () => {
           }
         }
 
-        /* Respect reduced motion preferences */
+        /* Respect reduced motion preferences.
+           The track's animation isn't just decorative -- it's the only way
+           cards past the visible viewport become reachable. Simply killing
+           the animation (animation: none) reverts the track to translateX(0)
+           and permanently strands the later cards off-screen with no way to
+           reach them. Instead, stop the automatic motion but let people
+           scroll/swipe through the full set natively. */
         @media (prefers-reduced-motion: reduce) {
-          .testimonials-track,
           .testimonials-grid-bg,
           .testimonial-card,
           .border-glow {
             animation: none !important;
+          }
+
+          .testimonials-banner {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+          }
+
+          .testimonials-track {
+            animation: none !important;
+            transform: none !important;
+            width: max-content;
+          }
+
+          .marquee-toggle {
+            display: none;
           }
         }
       `}</style>
@@ -363,15 +414,28 @@ const TestimonialsSection: React.FC = () => {
             className="text-cyan-400 hover:text-cyan-300 transition-colors border-b border-cyan-400/30 hover:border-cyan-400/80"
           >
             colleagues and executives
-          </Link>
-          {' '}say about working with me and the impact I&apos;ve delivered
+          </Link>{' '}
+          say about working with me and the impact I&apos;ve delivered
         </p>
+        <button
+          type="button"
+          className="marquee-toggle"
+          onClick={() => setIsPaused((prev) => !prev)}
+          aria-pressed={isPaused}
+        >
+          {isPaused ? (
+            <Play size={14} aria-hidden="true" />
+          ) : (
+            <Pause size={14} aria-hidden="true" />
+          )}
+          {isPaused ? 'Play testimonials' : 'Pause testimonials'}
+        </button>
       </div>
 
       {/* TESTIMONIALS BANNER */}
       <div className="testimonials-container">
         <div className="testimonials-banner">
-          <div className="testimonials-track">
+          <div className={`testimonials-track${isPaused ? ' paused' : ''}`}>
             {/* Testimonial 1 */}
             <div className="testimonial-card">
               <div className="quote-icon">&quot;</div>
@@ -391,7 +455,14 @@ const TestimonialsSection: React.FC = () => {
                     <div className="author-title">Technology Analyst</div>
                     <div className="author-company">Direct Report</div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
@@ -419,7 +490,14 @@ const TestimonialsSection: React.FC = () => {
                       Tableau, a Salesforce Company
                     </div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
@@ -444,7 +522,14 @@ const TestimonialsSection: React.FC = () => {
                     <div className="author-title">Global Account Director</div>
                     <div className="author-company">Alteryx</div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
@@ -468,7 +553,14 @@ const TestimonialsSection: React.FC = () => {
                     <div className="author-title">Sales Director</div>
                     <div className="author-company">Snowflake</div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
@@ -495,7 +587,14 @@ const TestimonialsSection: React.FC = () => {
                       SAP Ariba Cloud Integration
                     </div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
@@ -521,158 +620,213 @@ const TestimonialsSection: React.FC = () => {
                     </div>
                     <div className="author-company">Southwest Airlines</div>
                   </div>
-                  <a href="#" className="linkedin-link">
+                  <a
+                    href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                    aria-label="View recommendation on LinkedIn"
+                    title="View on LinkedIn"
+                  >
                     in
                   </a>
                 </div>
               </div>
             </div>
 
-            {/* Duplicate for seamless loop */}
-            <div className="testimonial-card">
-              <div className="quote-icon">&quot;</div>
-              <div className="testimonial-content">
-                <p className="testimonial-text">
-                  &quot;Brandon has an unwavering desire for his team to be the
-                  absolute best! He is the epitome of a servant leader that
-                  leads by example. One of Brandon&apos;s best qualities is his
-                  ability to always push the needle.&quot;
-                </p>
-                <div className="testimonial-author">
-                  <div className="author-avatar">DC</div>
-                  <div className="author-info">
-                    <div className="author-name">Devin Carter, MBA</div>
-                    <div className="author-title">Technology Analyst</div>
-                    <div className="author-company">Direct Report</div>
-                  </div>
-                  <a href="#" className="linkedin-link">
-                    in
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="testimonial-card">
-              <div className="quote-icon">&quot;</div>
-              <div className="testimonial-content">
-                <p className="testimonial-text">
-                  &quot;With Brandon, you get a rare combination of business
-                  background, process expertise, technical aptitude and
-                  leadership. He&apos;s a Leader with an agenda to accelerate
-                  change and drive innovation.&quot;
-                </p>
-                <div className="testimonial-author">
-                  <div className="author-avatar">DK</div>
-                  <div className="author-info">
-                    <div className="author-name">Dawn E Kosinski</div>
-                    <div className="author-title">Global Account Director</div>
-                    <div className="author-company">
-                      Tableau, a Salesforce Company
+            {/* Duplicate set for the seamless loop -- visual only, hidden from
+                assistive tech so screen reader users don't hear every
+                testimonial announced twice. */}
+            <div aria-hidden="true" style={{ display: 'contents' }}>
+              <div className="testimonial-card">
+                <div className="quote-icon">&quot;</div>
+                <div className="testimonial-content">
+                  <p className="testimonial-text">
+                    &quot;Brandon has an unwavering desire for his team to be
+                    the absolute best! He is the epitome of a servant leader
+                    that leads by example. One of Brandon&apos;s best qualities
+                    is his ability to always push the needle.&quot;
+                  </p>
+                  <div className="testimonial-author">
+                    <div className="author-avatar">DC</div>
+                    <div className="author-info">
+                      <div className="author-name">Devin Carter, MBA</div>
+                      <div className="author-title">Technology Analyst</div>
+                      <div className="author-company">Direct Report</div>
                     </div>
+                    <a
+                      href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="linkedin-link"
+                      aria-label="View recommendation on LinkedIn"
+                      title="View on LinkedIn"
+                    >
+                      in
+                    </a>
                   </div>
-                  <a href="#" className="linkedin-link">
-                    in
-                  </a>
                 </div>
               </div>
-            </div>
 
-            <div className="testimonial-card">
-              <div className="quote-icon">&quot;</div>
-              <div className="testimonial-content">
-                <p className="testimonial-text">
-                  &quot;Brandon LIVES and embodies &apos;Get it done in
-                  IT.&apos; A no-nonsense, go get it, problem solver is who
-                  Brandon is. He is the guy who can get the room to both
-                  understand and act.&quot;
-                </p>
-                <div className="testimonial-author">
-                  <div className="author-avatar">JJ</div>
-                  <div className="author-info">
-                    <div className="author-name">John Jensen</div>
-                    <div className="author-title">Analytics Specialist</div>
-                    <div className="author-company">
-                      Tableau, a Salesforce Company
+              <div className="testimonial-card">
+                <div className="quote-icon">&quot;</div>
+                <div className="testimonial-content">
+                  <p className="testimonial-text">
+                    &quot;With Brandon, you get a rare combination of business
+                    background, process expertise, technical aptitude and
+                    leadership. He&apos;s a Leader with an agenda to accelerate
+                    change and drive innovation.&quot;
+                  </p>
+                  <div className="testimonial-author">
+                    <div className="author-avatar">DK</div>
+                    <div className="author-info">
+                      <div className="author-name">Dawn E Kosinski</div>
+                      <div className="author-title">
+                        Global Account Director
+                      </div>
+                      <div className="author-company">
+                        Tableau, a Salesforce Company
+                      </div>
                     </div>
+                    <a
+                      href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="linkedin-link"
+                      aria-label="View recommendation on LinkedIn"
+                      title="View on LinkedIn"
+                    >
+                      in
+                    </a>
                   </div>
-                  <a href="#" className="linkedin-link">
-                    in
-                  </a>
                 </div>
               </div>
-            </div>
 
-            <div className="testimonial-card">
-              <div className="quote-icon">&quot;</div>
-              <div className="testimonial-content">
-                <p className="testimonial-text">
-                  &quot;Brandon not only excels at managing a technology team
-                  and portfolio, but also pioneers key IoT initiatives, mentors
-                  younger professionals, and drives innovative technology
-                  change.&quot;
-                </p>
-                <div className="testimonial-author">
-                  <div className="author-avatar">BD</div>
-                  <div className="author-info">
-                    <div className="author-name">Barrett Drew</div>
-                    <div className="author-title">Sales Director</div>
-                    <div className="author-company">Snowflake</div>
+              <div className="testimonial-card">
+                <div className="quote-icon">&quot;</div>
+                <div className="testimonial-content">
+                  <p className="testimonial-text">
+                    &quot;Brandon LIVES and embodies &apos;Get it done in
+                    IT.&apos; A no-nonsense, go get it, problem solver is who
+                    Brandon is. He is the guy who can get the room to both
+                    understand and act.&quot;
+                  </p>
+                  <div className="testimonial-author">
+                    <div className="author-avatar">JJ</div>
+                    <div className="author-info">
+                      <div className="author-name">John Jensen</div>
+                      <div className="author-title">Analytics Specialist</div>
+                      <div className="author-company">
+                        Tableau, a Salesforce Company
+                      </div>
+                    </div>
+                    <a
+                      href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="linkedin-link"
+                      aria-label="View recommendation on LinkedIn"
+                      title="View on LinkedIn"
+                    >
+                      in
+                    </a>
                   </div>
-                  <a href="#" className="linkedin-link">
-                    in
-                  </a>
                 </div>
               </div>
-            </div>
 
-            <div className="testimonial-card">
-              <div className="quote-icon">&quot;</div>
-              <div className="testimonial-content">
-                <p className="testimonial-text">
-                  &quot;Brandon is an analytic, responsive and intelligent
-                  risk-taking manager. He is innovative, creative and ambitious.
-                  His willingness to learn and take on new responsibilities is
-                  something to be desired.&quot;
-                </p>
-                <div className="testimonial-author">
-                  <div className="author-avatar">JK</div>
-                  <div className="author-info">
-                    <div className="author-name">Juzer Kanchwala</div>
-                    <div className="author-title">
-                      SupplyChain Integration Lead
+              <div className="testimonial-card">
+                <div className="quote-icon">&quot;</div>
+                <div className="testimonial-content">
+                  <p className="testimonial-text">
+                    &quot;Brandon not only excels at managing a technology team
+                    and portfolio, but also pioneers key IoT initiatives,
+                    mentors younger professionals, and drives innovative
+                    technology change.&quot;
+                  </p>
+                  <div className="testimonial-author">
+                    <div className="author-avatar">BD</div>
+                    <div className="author-info">
+                      <div className="author-name">Barrett Drew</div>
+                      <div className="author-title">Sales Director</div>
+                      <div className="author-company">Snowflake</div>
                     </div>
-                    <div className="author-company">
-                      SAP Ariba Cloud Integration
-                    </div>
+                    <a
+                      href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="linkedin-link"
+                      aria-label="View recommendation on LinkedIn"
+                      title="View on LinkedIn"
+                    >
+                      in
+                    </a>
                   </div>
-                  <a href="#" className="linkedin-link">
-                    in
-                  </a>
                 </div>
               </div>
-            </div>
 
-            <div className="testimonial-card">
-              <div className="quote-icon">&quot;</div>
-              <div className="testimonial-content">
-                <p className="testimonial-text">
-                  &quot;Brandon is a highly motivated and passionate IT
-                  professional who brings serious game to the Data & Analytics
-                  arena. Whether architecting an IoT solution or developing
-                  Tableau visualizations.&quot;
-                </p>
-                <div className="testimonial-author">
-                  <div className="author-avatar">EH</div>
-                  <div className="author-info">
-                    <div className="author-name">Ed Haas</div>
-                    <div className="author-title">
-                      Technology Category Manager
+              <div className="testimonial-card">
+                <div className="quote-icon">&quot;</div>
+                <div className="testimonial-content">
+                  <p className="testimonial-text">
+                    &quot;Brandon is an analytic, responsive and intelligent
+                    risk-taking manager. He is innovative, creative and
+                    ambitious. His willingness to learn and take on new
+                    responsibilities is something to be desired.&quot;
+                  </p>
+                  <div className="testimonial-author">
+                    <div className="author-avatar">JK</div>
+                    <div className="author-info">
+                      <div className="author-name">Juzer Kanchwala</div>
+                      <div className="author-title">
+                        SupplyChain Integration Lead
+                      </div>
+                      <div className="author-company">
+                        SAP Ariba Cloud Integration
+                      </div>
                     </div>
-                    <div className="author-company">Southwest Airlines</div>
+                    <a
+                      href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="linkedin-link"
+                      aria-label="View recommendation on LinkedIn"
+                      title="View on LinkedIn"
+                    >
+                      in
+                    </a>
                   </div>
-                  <a href="#" className="linkedin-link">
-                    in
-                  </a>
+                </div>
+              </div>
+
+              <div className="testimonial-card">
+                <div className="quote-icon">&quot;</div>
+                <div className="testimonial-content">
+                  <p className="testimonial-text">
+                    &quot;Brandon is a highly motivated and passionate IT
+                    professional who brings serious game to the Data & Analytics
+                    arena. Whether architecting an IoT solution or developing
+                    Tableau visualizations.&quot;
+                  </p>
+                  <div className="testimonial-author">
+                    <div className="author-avatar">EH</div>
+                    <div className="author-info">
+                      <div className="author-name">Ed Haas</div>
+                      <div className="author-title">
+                        Technology Category Manager
+                      </div>
+                      <div className="author-company">Southwest Airlines</div>
+                    </div>
+                    <a
+                      href="https://www.linkedin.com/in/brandonmicci/details/recommendations/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="linkedin-link"
+                      aria-label="View recommendation on LinkedIn"
+                      title="View on LinkedIn"
+                    >
+                      in
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

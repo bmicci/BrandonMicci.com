@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist } from 'next/font/google';
 import { headers } from 'next/headers';
 import Script from 'next/script';
 import './globals.css';
@@ -8,6 +8,9 @@ import BackgroundRoot from '@/components/BackgroundRoot';
 import EnhancedStructuredData from '@/components/EnhancedStructuredData';
 import DevLayoutShiftLogger from '@/components/DevLayoutShiftLogger';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import FloatingCTA from '@/components/FloatingCTA';
+import Footer from '@/components/Footer';
+import StyledJsxRegistry from '@/components/StyledJsxRegistry';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 
@@ -20,21 +23,6 @@ const geistSans = Geist({
   fallback: ['system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-  display: 'swap',
-  preload: true,
-  adjustFontFallback: true,
-  fallback: [
-    'ui-monospace',
-    'SFMono-Regular',
-    'Menlo',
-    'Consolas',
-    'monospace',
-  ],
-});
-
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -43,11 +31,12 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Brandon Micci | Head of AI Strategy & Business Transformation | Fortune 500 AI Executive',
+    default:
+      'Brandon Micci | Enterprise AI & Business Transformation Executive',
     template: '%s | Brandon Micci',
   },
   description:
-    'Dallas, TX-based AI Strategy & Business Transformation Executive at JPMorgan Chase. 17+ years delivering $400M+ in enterprise impact — $22M+ AI-driven savings, 27K+ AI users enabled, 30K+ analytics users scaled. Expert in Generative AI, Agentic AI, LLM deployment, and enterprise data strategy.',
+    'Enterprise AI & Business Transformation Executive. Formerly JPMorgan Chase, Citi, Capital One, PwC. 17+ years, $50M+ documented savings, 27K+ AI users enabled.',
   keywords: [
     // Executive Roles
     'Enterprise AI Executive',
@@ -59,7 +48,7 @@ export const metadata: Metadata = {
     'Chief AI Officer',
     'Head of AI',
     'Digital Innovation Leader',
-    
+
     // Core AI/ML Skills
     'LLM Deployment',
     'Generative AI',
@@ -70,7 +59,7 @@ export const metadata: Metadata = {
     'Computer Vision',
     'Deep Learning',
     'AI Governance',
-    
+
     // Cloud & Data
     'AWS',
     'Azure',
@@ -81,16 +70,15 @@ export const metadata: Metadata = {
     'Data Lakes',
     'Big Data',
     'Data Governance',
-    
+
     // Enterprise & Leadership
     'Fortune 500 AI Transformation',
     'Enterprise Data Platform',
-    'P&L Management',
     'Executive Leadership',
     'C-Suite Engagement',
     'Strategic Planning',
     'ROI Analysis',
-    
+
     // Transformation
     'Digital Transformation',
     'Industry 4.0',
@@ -99,7 +87,7 @@ export const metadata: Metadata = {
     'Kubernetes',
     'Docker',
     'Microservices',
-    
+
     // Analytics
     'Tableau',
     'Power BI',
@@ -135,9 +123,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://brandonmicci.com',
-    title: 'Brandon Micci | Enterprise AI & Digital Transformation Executive',
+    locale: 'en_US',
+    title: 'Brandon Micci | Enterprise AI & Business Transformation Executive',
     description:
-      'Dallas-based AI & Digital Transformation Executive at JPMorgan Chase delivering measurable ROI at Fortune 500 scale. $400M+ enterprise revenue, 27K+ AI users enabled, 250% peak ROI. Expert in AI strategy, LLM deployment, data platforms.',
+      'Dallas-based Enterprise AI & Business Transformation Executive. $50M+ documented savings, $22M+ AI-driven savings, 27K+ AI users enabled.',
     images: [
       {
         url: '/opengraph-image',
@@ -149,9 +138,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Brandon Micci | Enterprise AI & Digital Transformation Executive',
+    title: 'Brandon Micci | Enterprise AI & Business Transformation Executive',
     description:
-      'Dallas-based AI & Digital Transformation Executive at JPMorgan Chase. $400M+ enterprise revenue, 27K+ AI users, 250% peak ROI. Expert in AI strategy, LLM deployment, Fortune 500 transformation.',
+      'Dallas-based Enterprise AI & Business Transformation Executive. $50M+ documented savings, $22M+ AI-driven savings, 27K+ AI users enabled.',
     images: ['/opengraph-image'],
     creator: '@brandonmicci',
   },
@@ -181,9 +170,10 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  // Read nonce from middleware
+  // Read nonce and current path from the proxy
   const headersList = await headers();
   const nonce = headersList.get('x-csp-nonce') || undefined;
+  const pathname = headersList.get('x-pathname') || '/';
 
   // Only load analytics on Vercel (production deployment), not local builds
   const isVercel = process.env.VERCEL === '1';
@@ -192,32 +182,40 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Performance: Preload critical above-fold assets */}
-        <link rel="preload" href="/logo-bm-tight.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/headshot.webp" as="image" type="image/webp" />
-        
-        {/* Performance: DNS prefetch and preconnect for external resources */}
+        {/* Note: do not manually preload logo-bm-tight.webp or headshot.webp here.
+            Next.js <Image priority /> already preloads the optimized variant.
+            A manual preload of the source file fetches the full-size image
+            in parallel — wasted bandwidth and a small LCP regression. */}
+
+        {/* Performance: DNS prefetch and preconnect for external resources actually used in production */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://vercel-insights.com" />
-        <link rel="dns-prefetch" href="https://vercel-analytics.com" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://vercel.live" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://www.googletagmanager.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://www.google-analytics.com"
+          crossOrigin="anonymous"
+        />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} antialiased`}>
         {/* Structured Data with nonce */}
-        <EnhancedStructuredData nonce={nonce} />
+        <EnhancedStructuredData nonce={nonce} pathname={pathname} />
 
         {process.env.NODE_ENV === 'development' && <DevLayoutShiftLogger />}
-        <Navigation />
-        <Breadcrumbs />
-        <BackgroundRoot />
-        <main id="main" className="mt-8 md:mt-14">
-          {children}
-        </main>
+        <StyledJsxRegistry>
+          <Navigation />
+          <Breadcrumbs />
+          <BackgroundRoot />
+          <FloatingCTA />
+          <main id="main" className="mt-8 md:mt-14">
+            {children}
+          </main>
+          <Footer />
+        </StyledJsxRegistry>
 
         {/* Vercel Analytics */}
         {isVercel && <SpeedInsights />}

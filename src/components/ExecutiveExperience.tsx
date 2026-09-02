@@ -9,8 +9,6 @@ import {
   Plane,
   Database,
   Cloud,
-  Shield,
-  Building2,
   BarChart,
   TrendingUp,
   Globe,
@@ -57,74 +55,98 @@ type Role = {
 
 const ROLES: Role[] = [
   {
-    dates: '2024 - PRESENT',
+    dates: 'Feb 2024 – Mar 2026',
     role: 'Head of AI Strategy & Business Transformation',
     company: 'JPMorgan Chase',
-    location: 'Dallas, TX',
-    icon: <Brain className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    location: 'Plano, TX',
+    icon: (
+      <Brain
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
-      'Lead AI strategy, automation, and LLM transformation across Payments Operations. Own end-to-end AI product delivery, $15M+ P&L, governance, and enterprise scaling for call centers, client servicing, and knowledge systems.',
+      'Led AI strategy and business transformation across JPMorgan Chase Payments, spanning merchant services, client servicing, client onboarding, and global call centers. Owned end-to-end AI product delivery, a $15M+ annual AI portfolio, governance, and enterprise scaling.',
     skills: [
       'AI Strategy',
-      'LLM Deployment',
-      'P&L Management',
-      'AI Governance',
+      'LLM / RAG Deployment',
+      'Responsible AI & Governance',
+      '$15M+ AI Portfolio Ownership',
     ],
     achievements: [
       {
+        title: 'End-to-End AI Portfolio Ownership',
+        text: 'Owned end-to-end AI portfolio for the entire JPMorgan Chase Payments business — strategy through delivery — including merchant services, client onboarding, servicing operations, and call centers.',
+      },
+      {
         title: '$22M+ Annualized Savings',
-        text: 'Delivered $22M+ annualized savings through LLM-powered workflow automation, intelligent routing, and accelerated knowledge retrieval.',
+        text: 'Delivered $22M+ in annualized savings through LLM-powered workflow automation, intelligent routing, and accelerated knowledge retrieval across the Payments business.',
       },
       {
-        title: 'Industry-Leading AI Deployment',
-        text: 'Architected multi-repository RAG system spanning 12+ knowledge sources, scaling enterprise LLM Assistant to 27,000+ employees—one of the largest LLM deployments in Commercial Payments.',
+        title: 'Reusable AI Platform at Scale',
+        text: 'Architected reusable AI platform with shared building blocks — APIs, services, prompt/agent patterns, playbooks, evaluation harnesses — for production-grade reliability and observability. Scaled the enterprise knowledge assistant to 27,000+ employees.',
       },
       {
-        title: 'Operational Excellence',
-        text: 'Automated 38% of Tier-1 inquiries and reduced handle times by 55%, improving SLA performance and operational throughput.',
+        title: 'Human-in-the-Loop Review',
+        text: 'Designed human-in-the-loop review workflows for high-stakes AI-assisted decisions in regulated payments environments.',
       },
       {
-        title: 'AI Governance',
-        text: 'Established AI governance framework and model risk management standards, ensuring regulatory compliance across 30+ AI/ML use cases.',
+        title: 'LLM Evaluation & AIOps',
+        text: 'Established LLM evaluation harnesses and AIOps practice ensuring continuous improvement and model reliability across the AI delivery lifecycle (experiment → production → operations).',
+      },
+      {
+        title: 'Responsible AI by Design',
+        text: 'Established Responsible AI framework and model risk management standards ensuring regulatory compliance across 30+ production AI/ML models.',
       },
     ],
   },
   {
-    dates: '2022 - 2024',
+    dates: 'Jan 2022 – Jun 2022',
     role: 'Senior Director, Head of AI/IoT & Emerging Technology Practice',
     company: 'Capgemini',
     location: 'Dallas, TX',
-    icon: <Rocket className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: (
+      <Rocket
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
-      'Directed AI and emerging technology commercialization across Intelligent Industry portfolio. Built and scaled new practice focused on digital transformation and real-time AI analytics for Fortune 50 clients.',
-    skills: ['P&L Management', 'AI/IoT Solutions', 'GTM Strategy', 'Team Leadership'],
+      'Directed AI and emerging technology commercialization across the Intelligent Industry portfolio. Built and scaled a new practice focused on digital transformation and real-time AI analytics for Fortune 50 clients.',
+    skills: [
+      'AI/IoT Practice Build-Out',
+      'AI/IoT Strategy',
+      'Fortune 50 Client Delivery',
+      'Practice Leadership',
+    ],
     achievements: [
       {
-        title: '$30M P&L Ownership',
-        text: 'Owned $30M P&L for AI/IoT practice, leading 30+ architects, data scientists, and product leaders across pricing, margin optimization, and revenue targets.',
+        title: 'Practice Build-Out',
+        text: "Built the practice's go-to-market strategy and business plan targeting $30M in revenue, defining service offerings, pricing, and positioning across insurance and industrial verticals.",
       },
       {
-        title: '$9.8M Revenue Growth',
-        text: 'Drove $9.8M in new revenue through GTM execution and solution commercialization, achieving 34% market penetration in new insurance technology vertical.',
+        title: 'Fortune 50 AI Transformation',
+        text: 'Architected AI/IoT solutions for Fortune 50 clients, delivering telematics platforms and real-time analytics driving measurable loss mitigation and operational efficiency.',
       },
       {
-        title: 'Fortune 50 Impact',
-        text: 'Architected telematics and AI-driven risk platforms for Fortune 50 insurers, delivering significant improvements in loss mitigation through real-time predictive analytics.',
-      },
-      {
-        title: 'Industry 4.0 Platform',
-        text: 'Launched Industry 4.0 IoT Platform connecting thousands of devices across telematics, smart buildings, wearables, and industrial equipment with unified AI analytics.',
+        title: 'Industry 4.0 Platform Launch',
+        text: 'Launched Industry 4.0 IoT Platform integrating telematics, smart building monitoring, and wearables into a unified ecosystem for enterprise clients.',
       },
     ],
   },
   {
-    dates: '2021 - 2022',
+    dates: 'Feb 2021 – Jan 2022',
     role: 'Senior Manager, AI/ML Forensic Analytics & Technology',
     company: 'Ernst & Young',
     location: 'Dallas, TX',
-    icon: <Search className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: (
+      <Search
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
-      "Scaled AI/ML & Data Science strategy within Forensics Practice. Regional Leader and SME advising engagements across Financial Services, Life Sciences, and Energy sectors.",
+      'Scaled AI/ML & Data Science strategy within Forensics Practice. Regional Leader and SME advising engagements across Financial Services, Life Sciences, and Energy sectors.',
     skills: [
       'Fraud Analytics',
       'AI/ML',
@@ -134,7 +156,7 @@ const ROLES: Role[] = [
     achievements: [
       {
         title: 'Mega-Deal Success',
-        text: 'Procured $400MM, 10-year strategic engagement with global insurance firm for real-time AI-powered fraud analytics engine.',
+        text: 'Helped win a $400MM, 10-year strategic engagement with a Top-5 national health insurer for real-time AI-powered fraud analytics engine.',
       },
       {
         title: 'Revenue Generation',
@@ -147,31 +169,50 @@ const ROLES: Role[] = [
     ],
   },
   {
-    dates: '2019 - 2020',
-    role: 'Head of Digital Innovation & IoT (Promoted 2020)',
+    dates: 'Aug 2019 – Dec 2020',
+    role: 'Head of Digital Innovation & IoT',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: <Plane className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: (
+      <Plane
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
-      'Promoted to newly created role reporting directly to CIO. Built and led Innovation Team driving digital transformation leveraging IoT, AI, and Edge Computing. Managed $25M technology budget and cross-functional team of 20+.',
-    skills: ['IoT Architecture', 'Edge Computing', 'Digital Transformation', 'Budget Management'],
+      'Promoted to newly created role reporting directly to CIO. Built and led Digital Innovation & IoT organization driving digital transformation across critical airline operations. Managed $25M annual technology budget and cross-functional team of 20+.',
+    skills: [
+      'IoT Strategy',
+      'Digital Innovation',
+      '$25M Technology Budget',
+      'CIO Reporting',
+    ],
     achievements: [
       {
-        title: 'Breakthrough ROI',
-        text: 'Pioneered IoT Fuel Savings initiative delivering 250% ROI in 6 months; scaled to 20 stations generating $20M+ annual savings.',
+        title: '250% ROI in 6 Months',
+        text: 'Pioneered IoT Fuel Savings initiative delivering 250% ROI in 6 months; scaled to 20 stations generating $20M+ in annual savings.',
       },
       {
-        title: 'Comprehensive IoT Transformation',
-        text: 'Led comprehensive IoT transformation across 3 Fuel Farms, 7 Baggage Handling Systems, and 8 De-Icing Stations on AWS-based platform.',
+        title: 'Multi-Year Technology Roadmap',
+        text: 'Developed multi-year technology roadmap for IoT and digital innovation, aligning emerging technologies with operational needs and CIO priorities.',
+      },
+      {
+        title: 'Infrastructure Modernization',
+        text: 'Implemented IoT capabilities across Fuel Farms, Baggage Handling Systems, and De-Icing Stations — transforming real-time operational visibility.',
       },
     ],
   },
   {
-    dates: '2019 - 2020',
+    dates: 'Feb 2019 – Aug 2019',
     role: 'Manager, Data Enablement & Analytics COE',
     company: 'Southwest Airlines',
     location: 'Dallas, TX',
-    icon: <Database className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: (
+      <Database
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
       "Built Southwest's first Data Enablement & Analytics COE, driving 40% adoption increase in Tableau/Alteryx across 2,500+ users.",
     skills: ['Data Analytics', 'COE Leadership', 'Tableau', 'Alteryx'],
@@ -182,56 +223,125 @@ const ROLES: Role[] = [
       },
       {
         title: 'Community Building',
-        text: 'Created evangelical Data Analyst Community growing to several thousand users, driving cultural shift toward data-driven decision-making.',
+        text: 'Created a Data Analyst Community growing to several thousand users, driving cultural shift toward data-driven decision-making.',
       },
       {
         title: 'Operational Excellence',
-        text: 'Architected Tier 1 Production Data Environment achieving 100% availability and disaster recovery for critical real-time operations, implementing secure data isolation and access controls.',
+        text: 'Architected Tier 1 Production Data Environment meeting Tier-1 availability and disaster-recovery targets for critical real-time operations, implementing secure data isolation and access controls.',
       },
     ],
   },
   {
-    dates: '2017 - 2019',
+    dates: 'Nov 2017 – Feb 2019',
     role: 'Vice President, Global Infrastructure Transformation',
     company: 'Citigroup',
     location: 'Irving, TX',
-    icon: <Cloud className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: (
+      <Cloud
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
-      'Led global infrastructure transformation and service quality programs across LATAM, NAM, EMEA, and APAC regions, matrixed across global CTOs while indirectly managing 500+ engineers worldwide. Drove platform modernization, cloud acceleration, and DevOps transformation across mission-critical banking systems.',
-    skills: ['Global Programs', 'DevOps', 'Cloud Architecture', 'CI/CD'],
+      'Led global infrastructure transformation and service quality programs across LATAM, NAM, EMEA, and APAC, matrixed across global CTOs while indirectly managing 500+ engineers worldwide. Drove platform modernization, cloud acceleration, and DevOps transformation across mission-critical banking systems.',
+    skills: [
+      'Global Infrastructure',
+      'DevOps Transformation',
+      'Cloud Acceleration',
+      'CI/CD',
+    ],
     achievements: [
       {
-        title: 'Global Platform',
-        text: 'Architected global telemetry platform and service improvement program eliminating weekly Sev1 outages, accelerating cloud adoption by 200%, achieving 98% uptime worldwide.',
+        title: 'Global Service Stability',
+        text: 'Architected global telemetry platform and service improvement program that eliminated recurring Sev1 outages across worldwide operations.',
       },
       {
-        title: 'Marketing Engine',
+        title: '200% Cloud Acceleration',
+        text: 'Drove DevOps transformation accelerating cloud adoption by 200% through CI/CD pipeline implementation and enterprise-standard engineering practices across 500+ engineers.',
+      },
+      {
+        title: 'Data-Driven Marketing at Scale',
         text: 'Built event-based marketing engine leveraging Hadoop/Cloudera reaching 10M+ customers through data-driven targeted campaigns.',
-      },
-      {
-        title: 'DevOps Transformation',
-        text: 'Led organizational change management for DevOps transformation across 500+ engineers, establishing world-class CI/CD practices.',
       },
     ],
   },
   {
-    dates: '2015 - 2017',
-    role: 'Manager, Big Data & Analytics COE',
+    dates: 'Jul 2016 – Nov 2017',
+    role: 'Enterprise Risk Analytics Leader',
     company: 'Capital One',
-    location: 'Richmond / Plano',
-    icon: <BarChart className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    location: 'Plano, TX',
+    icon: (
+      <BarChart
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
-      "Established and led Capital One's Tableau & Big Data Center of Excellence—one of the most successful enterprise analytics transformations in financial services. Built Risk & Analytics organization for Auto Finance & Home Loans.",
+      "Built and led the first dedicated Risk & Analytics Reporting organization for Capital One's Auto Finance & Home Loans division, architecting a comprehensive data warehouse and analytics platform from the ground up.",
+    skills: ['Risk Analytics', 'Tableau', 'NLP/OCR Automation', 'Compliance'],
+    achievements: [
+      {
+        title: 'First Risk Analytics Team',
+        text: "Built and scaled a team of 10 data engineers and analysts, architecting the division's first dedicated Tableau environment within 2 months.",
+      },
+      {
+        title: 'Automated Compliance Testing',
+        text: 'Pioneered automated compliance testing using NLP to analyze customer complaints and real-time OCR for regulatory requirements, increasing control coverage by 80%.',
+      },
+      {
+        title: 'Executive Risk Dashboards',
+        text: 'Delivered executive-facing risk dashboards and real-time monitoring across Auto Finance and Home Loans operations.',
+      },
+    ],
+  },
+  {
+    dates: 'Jan 2016 – Jul 2016',
+    role: 'Enterprise Analytics Leader, Compliance',
+    company: 'Capital One',
+    location: 'Richmond, VA',
+    icon: (
+      <BarChart
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
+    description:
+      "Led enterprise-wide Tableau dashboard development as an internal strategic consultant across Capital One's Risk and Compliance functions, managing a cross-functional team of 10.",
+    skills: ['Tableau', 'Data Governance', 'Risk & Compliance', 'Data Quality'],
+    achievements: [
+      {
+        title: 'Analytics Standardization',
+        text: 'Drove enterprise-wide analytics standardization across Risk and Compliance through automated, self-service dashboards.',
+      },
+      {
+        title: 'Data Quality Gold Standard',
+        text: 'Established the enterprise gold standard for data quality — governance frameworks, automated lineage, and validation gates.',
+      },
+    ],
+  },
+  {
+    dates: 'Jan 2015 – Jan 2016',
+    role: 'Big Data, Analytics, and Platforms COE Leader',
+    company: 'Capital One',
+    location: 'McLean, VA',
+    icon: (
+      <BarChart
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
+    description:
+      "Established and led Capital One's Tableau & Big Data Center of Excellence, defining the enterprise data strategy and analytics operating model adopted across multiple business lines.",
     skills: [
       'Tableau COE',
       'Big Data',
-      'Risk Analytics',
+      'Enterprise Strategy',
       'Executive Dashboards',
     ],
     achievements: [
       {
-        title: 'World-Class Analytics Community',
-        text: 'Built largest evangelical Tableau community globally, scaling adoption from zero to 30,000+ enterprise users.',
+        title: 'Enterprise Analytics Community of Practice',
+        text: 'Built an enterprise analytics community of practice, scaling enterprise adoption past 30,000 users.',
       },
       {
         title: 'CEO Dashboard Architect',
@@ -239,29 +349,28 @@ const ROLES: Role[] = [
       },
       {
         title: '$8M Cost Savings',
-        text: 'Led enterprise-wide platform rationalization, decommissioning 2,000+ legacy dashboards and reports, delivering $8M annual savings.',
-      },
-      {
-        title: 'NLP/OCR Innovation',
-        text: 'Pioneered NLP/OCR automation scanning official regulatory changes from government sources, auto-generating compliance testing scripts and increasing control coverage by 80%.',
+        text: 'Led enterprise-wide platform rationalization, decommissioning 2,000+ legacy BI applications across Business Objects, Cognos, and legacy platforms, delivering $8M in annual savings.',
       },
     ],
   },
   {
-    dates: '2013 - 2015',
+    dates: 'Oct 2013 – Jan 2015',
     role: 'Senior Consultant, Lead Data Analyst',
     company: 'Booz Allen Hamilton',
     location: 'McLean, VA',
     icon: (
-      <TrendingUp className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />
+      <TrendingUp
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
     ),
     description:
-      "Pioneered Tableau Enterprise deployments, establishing data analytics infrastructure for fraud detection, compliance, and C-suite reporting.",
+      'Pioneered Tableau Enterprise deployments, establishing data analytics infrastructure for fraud detection, compliance, and C-suite reporting.',
     skills: ['Data Analytics', 'Fraud Detection', 'Predictive Analytics', 'ML'],
     achievements: [
       {
         title: 'Fraud Detection',
-        text: 'Architected predictive analytics platform using ML, increasing fraud detection anomalies by 150%.',
+        text: 'Architected predictive analytics platform using ML, increasing anomaly detection rates 150% over manual review.',
       },
       {
         title: 'Governance Framework',
@@ -270,11 +379,16 @@ const ROLES: Role[] = [
     ],
   },
   {
-    dates: '2009 - 2013',
+    dates: 'Aug 2009 – Oct 2013',
     role: 'Global Operations and Strategy Associate',
     company: 'PricewaterhouseCoopers',
     location: 'McLean, VA',
-    icon: <Globe className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]" style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }} />,
+    icon: (
+      <Globe
+        className="w-4 h-4 md:w-6 md:h-6 text-white stroke-[2.5]"
+        style={{ filter: 'drop-shadow(0 0 6px rgba(0, 212, 255, 0.8))' }}
+      />
+    ),
     description:
       "Served as strategic analyst and performance metrics lead for global delivery operations, pioneering the firm's first business intelligence implementations and executive dashboard automation initiatives.",
     skills: ['Strategy', 'Operations', 'Executive Analytics'],
@@ -300,10 +414,17 @@ const ExecutiveExperience = memo(() => {
   );
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Set initial expanded state and handle resize
+  // Set initial expanded state, and re-apply only when crossing the
+  // desktop/mobile boundary -- not on every resize event. Mobile browsers
+  // fire resize when the URL bar shows/hides on scroll; re-running this on
+  // every one of those would silently collapse a card a mobile user just
+  // opened.
+  const wasDesktopRef = useRef<boolean | null>(null);
   useEffect(() => {
     const applyExpandedState = () => {
       const isDesktop = window.innerWidth >= 768;
+      if (wasDesktopRef.current === isDesktop) return;
+      wasDesktopRef.current = isDesktop;
       setExpanded(isDesktop ? new Set(DESKTOP_EXPANDED) : new Set());
     };
 
@@ -476,11 +597,11 @@ const ExecutiveExperience = memo(() => {
 
       <div className="relative z-10 font-sans">
         <div className="px-2 py-6 md:px-8 md:py-12 text-center">
-          <h2 className="section-header-title">
+          <h1 className="section-header-title">
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               Executive Experience
             </span>
-          </h2>
+          </h1>
           <p className="mx-auto mt-3 max-w-4xl text-sm md:text-xl leading-relaxed text-slate-200 px-2 font-semibold">
             17+ years of{' '}
             <Link
@@ -507,7 +628,8 @@ const ExecutiveExperience = memo(() => {
               style={{
                 width: '2px',
                 backgroundColor: 'rgba(0, 212, 255, 0.8)',
-                background: 'linear-gradient(to bottom, rgba(0, 212, 255, 0.8) 0%, rgba(0, 212, 255, 0.9) 15%, rgba(0, 212, 255, 0.9) 85%, rgba(0, 212, 255, 0.8) 100%)',
+                background:
+                  'linear-gradient(to bottom, rgba(0, 212, 255, 0.8) 0%, rgba(0, 212, 255, 0.9) 15%, rgba(0, 212, 255, 0.9) 85%, rgba(0, 212, 255, 0.8) 100%)',
                 boxShadow:
                   '0 0 8px rgba(0, 212, 255, 0.6), 0 0 16px rgba(0, 212, 255, 0.3)',
                 transform: 'translateX(-50%)',
@@ -586,12 +708,13 @@ const ExecutiveExperience = memo(() => {
                     />
 
                     <div className="relative z-10">
-                      <span 
+                      <span
                         className="mb-2 inline-block rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white"
                         style={{
-                          background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.25), rgba(30, 144, 255, 0.3))',
+                          background:
+                            'linear-gradient(135deg, rgba(0, 212, 255, 0.25), rgba(30, 144, 255, 0.3))',
                           border: '1px solid rgba(0, 212, 255, 0.5)',
-                          boxShadow: '0 0 15px rgba(0, 212, 255, 0.3)'
+                          boxShadow: '0 0 15px rgba(0, 212, 255, 0.3)',
                         }}
                       >
                         {role.dates}
@@ -601,9 +724,11 @@ const ExecutiveExperience = memo(() => {
                         {role.role}
                       </h3>
                       <div className="mb-2 text-xs font-medium md:text-base">
-                        <span 
+                        <span
                           className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400"
-                          style={{ textShadow: '0 0 20px rgba(0, 212, 255, 0.4)' }}
+                          style={{
+                            textShadow: '0 0 20px rgba(0, 212, 255, 0.4)',
+                          }}
                         >
                           {role.company}
                         </span>
@@ -612,7 +737,10 @@ const ExecutiveExperience = memo(() => {
                         </span>
                       </div>
 
-                      <p className="mb-2 text-sm leading-relaxed text-slate-100 md:text-base desc-tight" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
+                      <p
+                        className="mb-2 text-sm leading-relaxed text-slate-100 md:text-base desc-tight"
+                        style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}
+                      >
                         {role.description}
                       </p>
 
@@ -625,7 +753,7 @@ const ExecutiveExperience = memo(() => {
                               border: '1px solid rgba(0, 212, 255, 0.7)',
                               background: 'rgba(0, 212, 255, 0.25)',
                               boxShadow: '0 0 8px rgba(0, 212, 255, 0.3)',
-                              fontWeight: 600
+                              fontWeight: 600,
                             }}
                           >
                             {skill}
@@ -637,21 +765,24 @@ const ExecutiveExperience = memo(() => {
                         type="button"
                         onClick={() => toggle(index)}
                         aria-expanded={isExpanded}
+                        aria-controls={`achievements-panel-${index}`}
                         className="mb-2 block w-3/4 mx-auto rounded-md border border-cyan-500/40 bg-cyan-500/20 py-1.5 px-2 text-xs font-semibold text-cyan-400 transition-all duration-300 hover:bg-cyan-500/30 md:hidden"
                       >
                         {isExpanded ? 'Hide Achievements' : 'View Achievements'}
                         <span
                           className={`ml-2 inline-block transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+                          aria-hidden="true"
                         >
                           ▼
                         </span>
                       </button>
 
                       <div
-                        className={`space-y-4 overflow-hidden transition-all duration-300 md:max-h-screen md:opacity-100 ${
+                        id={`achievements-panel-${index}`}
+                        className={`space-y-4 overflow-hidden transition-all duration-300 md:max-h-screen md:opacity-100 md:visible ${
                           isExpanded
-                            ? 'max-h-screen opacity-100'
-                            : 'max-h-0 opacity-0 md:max-h-screen md:opacity-100'
+                            ? 'max-h-screen opacity-100 visible'
+                            : 'invisible max-h-0 opacity-0 md:max-h-screen md:opacity-100 md:visible'
                         }`}
                       >
                         {role.achievements.map((achievement) => (
@@ -661,7 +792,7 @@ const ExecutiveExperience = memo(() => {
                             style={{
                               borderLeft: '4px solid rgba(0, 212, 255, 0.6)',
                               background: 'rgba(0, 212, 255, 0.1)',
-                              boxShadow: '-2px 0 8px rgba(0, 212, 255, 0.2)'
+                              boxShadow: '-2px 0 8px rgba(0, 212, 255, 0.2)',
                             }}
                           >
                             <div className="flex items-start gap-3">
@@ -672,7 +803,12 @@ const ExecutiveExperience = memo(() => {
                                 <div className="mb-1 text-sm font-semibold text-cyan-400 stroke-2 md:text-base md:mb-2">
                                   {achievement.title}
                                 </div>
-                                <p className="text-sm leading-relaxed text-slate-100 md:text-base" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
+                                <p
+                                  className="text-sm leading-relaxed text-slate-100 md:text-base"
+                                  style={{
+                                    textShadow: '0 1px 2px rgba(0,0,0,0.3)',
+                                  }}
+                                >
                                   {achievement.text}
                                 </p>
                               </div>

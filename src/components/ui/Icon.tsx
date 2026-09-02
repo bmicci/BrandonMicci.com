@@ -16,7 +16,6 @@ type Name =
   | 'file'
   | 'download'
   | 'external-link'
-  | 'file-text'
   | 'briefcase'
   | 'presentation'
   | 'clipboard-list'
@@ -41,7 +40,6 @@ const MAP: Record<Name, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
   file: L.FileText,
   download: L.Download,
   'external-link': L.ExternalLink,
-  'file-text': L.FileText,
   briefcase: L.Briefcase,
   presentation: L.Presentation,
   'clipboard-list': L.ClipboardList,
@@ -71,7 +69,7 @@ export const Icon = memo(
     stroke = 2,
   }: IconProps) => {
     const Cmp = MAP[name];
-    const paint = gradient ? 'text-cyan-400' : 'text-cyan-400';
+    const paint = gradient ? 'text-cyan-400' : 'text-white';
     return (
       <Cmp
         className={`${sizeCN[size]} ${paint} ${className}`}

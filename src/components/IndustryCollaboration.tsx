@@ -20,7 +20,7 @@ const IndustryCollaboration: React.FC = () => {
     if (brief) {
       const url = brief.getAttribute('data-brief-url');
       brief.addEventListener('click', (e: Event) => {
-        if (!url || url.indexOf('YOUR-DOMAIN') !== -1) return; // ignore until set
+        if (!url) return;
         e.preventDefault();
         const a = document.createElement('a');
         a.href = url;
@@ -37,7 +37,7 @@ const IndustryCollaboration: React.FC = () => {
     if (resume) {
       const url = resume.getAttribute('data-resume-url');
       resume.addEventListener('click', (e: Event) => {
-        if (!url || url.indexOf('YOUR-DOMAIN') !== -1) return; // ignore until set
+        if (!url) return;
         e.preventDefault();
         const a = document.createElement('a');
         a.href = url;
@@ -483,7 +483,7 @@ const IndustryCollaboration: React.FC = () => {
 
         .bm-btn-primary {
           background: linear-gradient(135deg, #00d4ff, #1e90ff);
-          color: #fff;
+          color: #07101d;
           border: none;
           box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
         }
@@ -698,8 +698,10 @@ const IndustryCollaboration: React.FC = () => {
                   <a
                     className="bm-btn bm-btn-secondary bm-btn-compact"
                     id="bm-resume"
-                    data-resume-url="/BrandonMicciResume.pdf"
-                    href="#"
+                    href="/BrandonMicciResume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Download Brandon Micci Resume (PDF)"
                   >
                     <svg
                       width="16"
@@ -714,8 +716,10 @@ const IndustryCollaboration: React.FC = () => {
                   <a
                     className="bm-btn bm-btn-secondary bm-btn-compact"
                     id="bm-brief"
-                    data-brief-url="/executive-brief.pdf"
-                    href="#"
+                    href="/executive-brief.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Download Brandon Micci Executive Brief (PDF)"
                   >
                     <svg
                       width="16"
@@ -754,7 +758,7 @@ const IndustryCollaboration: React.FC = () => {
                     className="bm-btn bm-btn-secondary bm-btn-compact"
                     href="/brandon-micci.vcf"
                     download
-                    aria-label="Download vCard for Brandon Micci"
+                    aria-label="Save Contact (vCard) for Brandon Micci"
                   >
                     <svg
                       width="16"

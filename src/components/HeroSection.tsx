@@ -27,12 +27,13 @@ const HeroSection = () => {
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
-        @media (prefers-reduced-motion: reduce) {
-          * {
-            animation: none !important;
-            transition: none !important;
-          }
-        }
+        /* Reduced-motion handling is centralized in globals.css, which shrinks
+           animation-duration to near-zero rather than setting animation:none.
+           That distinction matters: elements like StrategicDifferentiators'
+           .diff-card start at opacity:0 and rely on the animation's forwards
+           fill-mode to reach opacity:1. animation:none cancels the fill along
+           with the animation, stranding them invisible for reduced-motion
+           users. Do not reintroduce a local override here. */
         /* iPad Pro: ensure hero section doesn't enforce screen-height causing gap */
         @media (min-width: 1024px) and (max-width: 1279px) {
           .hero-section {
@@ -902,10 +903,10 @@ const HeroSection = () => {
                   <span className="gradient">digital innovation</span>
                 </Link>
                 , and measurable <span className="gradient">ROI</span>—with{' '}
-                <span className="gradient">16+ years</span> delivering{' '}
-                <span className="gradient">$400M+ value</span> across{' '}
-                <span className="gradient">Fortune 500 companies</span> and at{' '}
-                <span className="gradient">Big Four</span> firms.
+                <span className="gradient">17+ years</span> delivering{' '}
+                <span className="gradient">enterprise transformation</span>{' '}
+                across <span className="gradient">Fortune 500 companies</span>{' '}
+                and at <span className="gradient">Big Four</span> firms.
               </p>
 
               <div className="cta-row cta-3up-xl">
@@ -949,9 +950,7 @@ const HeroSection = () => {
               <div className="kpi-grid" style={{ marginBottom: '2.5rem' }}>
                 {/* Value Delivered */}
                 <div className="kpi-box">
-                  <span className="sr-only">
-                    $400M+ Enterprise Business Impact
-                  </span>
+                  <span className="sr-only">$50M+ Documented Savings</span>
                   <span className="stat-number">
                     <AnimatedCounter
                       value={METRICS.valueDeliveredM}
@@ -959,7 +958,7 @@ const HeroSection = () => {
                       format={(n) => `$${n}`}
                     />
                   </span>
-                  <span className="stat-label">Enterprise Business Impact</span>
+                  <span className="stat-label">Documented Savings</span>
                 </div>
 
                 {/* AI Users */}
@@ -1038,14 +1037,14 @@ const HeroSection = () => {
                   className="gradient"
                   style={{ WebkitTextFillColor: 'transparent' }}
                 >
-                  16+ years
+                  17+ years
                 </span>{' '}
                 delivering{' '}
                 <span
                   className="gradient"
                   style={{ WebkitTextFillColor: 'transparent' }}
                 >
-                  $400M+ value
+                  enterprise transformation
                 </span>{' '}
                 across{' '}
                 <span
@@ -1088,6 +1087,55 @@ const HeroSection = () => {
                 Download Resume
               </a>
             </div>
+
+            {/* Mobile KPI Grid — sits directly under the CTAs in the mobile
+               hero stack so the numbers land before the user scrolls past the
+               fold (mirrors desktop placement). Hidden on desktop via
+               .kpi-mobile-only above. */}
+            <div
+              className="kpi-grid kpi-mobile-only"
+              style={{ marginTop: '1.25rem' }}
+            >
+              <div className="kpi-box">
+                <span className="sr-only">$50M+ Documented Savings</span>
+                <span className="stat-number">
+                  <AnimatedCounter
+                    value={METRICS.valueDeliveredM}
+                    suffix="M+"
+                    format={(n) => `$${n}`}
+                  />
+                </span>
+                <span className="stat-label">Documented Savings</span>
+              </div>
+
+              <div className="kpi-box">
+                <span className="sr-only">27K+ Employees Transformed</span>
+                <span className="stat-number">
+                  <AnimatedCounter value={METRICS.aiUsersK} suffix="K+" />
+                </span>
+                <span className="stat-label">Employees Transformed</span>
+              </div>
+
+              <div className="kpi-box">
+                <span className="sr-only">
+                  {METRICS.typicalROI}% Peak Program ROI
+                </span>
+                <span className="stat-number">
+                  <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
+                </span>
+                <span className="stat-label">Peak Program ROI</span>
+              </div>
+
+              <div className="kpi-box">
+                <span className="sr-only">
+                  {METRICS.yearsLeading}+ Years Executive Leadership
+                </span>
+                <span className="stat-number">
+                  <AnimatedCounter value={METRICS.yearsLeading} suffix="+" />
+                </span>
+                <span className="stat-label">Years Executive Leadership</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1095,9 +1143,7 @@ const HeroSection = () => {
         <div className="diff-wrap" style={{ marginTop: '2.5rem' }}>
           <div className="diff-glass">
             <div className="diff-header">
-              <span className="diff-title">
-                Strategic Leadership Capabilities
-              </span>
+              <span className="diff-title">Executive Capabilities</span>
             </div>
 
             <div className="diff-grid">
@@ -1114,9 +1160,9 @@ const HeroSection = () => {
                       AI Strategy & Vision
                     </div>
                     <p>
-                      I define enterprise AI strategy that aligns C-suite
-                      priorities with actionable investment roadmaps—delivering
-                      measurable P&L impact and competitive differentiation.
+                      I define enterprise AI strategy aligned to C-suite
+                      priorities. Investment roadmaps with measurable P&L
+                      impact.
                     </p>
                   </div>
                 </div>
@@ -1135,9 +1181,9 @@ const HeroSection = () => {
                       Scale & Delivery
                     </div>
                     <p>
-                      I deliver enterprise AI solutions and data products at
-                      Fortune 500 scale—architected for reliability, security,
-                      and sustained adoption in highly regulated environments.
+                      I scale AI from pilot to enterprise capability. Built for
+                      Fortune 500 reliability and adoption in regulated
+                      environments.
                     </p>
                   </div>
                 </div>
@@ -1156,9 +1202,9 @@ const HeroSection = () => {
                       C-Suite Impact
                     </div>
                     <p>
-                      I translate complex AI/ML capabilities into clear business
-                      cases, investment budgets, and ROI outcomes that drive
-                      executive decision-making.
+                      I translate complex AI into board-level decisions.
+                      Business cases, ROI, and executive storytelling that move
+                      investment.
                     </p>
                   </div>
                 </div>
@@ -1174,13 +1220,12 @@ const HeroSection = () => {
                   />
                   <div className="w-full">
                     <div className="text-base md:text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-center">
-                      Governance & Innovation
+                      Responsible AI & Governance
                     </div>
                     <p>
-                      I establish AI governance frameworks that balance
-                      innovation velocity with risk management—ensuring
-                      compliance, transparency, and sustainable competitive
-                      advantage.
+                      I embed governance from day one: risk frameworks,
+                      evaluation, and AIOps. Built for regulated environments
+                      where compliance is non-negotiable.
                     </p>
                   </div>
                 </div>
@@ -1195,67 +1240,15 @@ const HeroSection = () => {
           style={{ marginTop: '3.5rem', marginBottom: '3rem' }}
         >
           <p className="philosophy-text">
-            I architect AI strategies that become business
-            strategies—transforming how organizations compete and create value
-            through AI-first operating models where intelligence drives every
-            decision and competitive advantage. I balance innovation velocity
-            with governance discipline, scaling transformation across global
-            operations while managing regulatory risk—consistently delivering
-            $400M+ in enterprise value.
+            I architect AI strategies that become business strategies. AI-first
+            operating models where intelligence drives every decision and
+            outcome. I balance innovation velocity with governance discipline,
+            scaling transformation across regulated global operations. The
+            result: measurable outcomes the business can see.
           </p>
         </div>
 
         <div style={{ marginBottom: '2.5rem' }}></div>
-
-        {/* Mobile KPI Grid (mobile-only) */}
-        <div
-          className="kpi-grid kpi-mobile-only"
-          style={{ marginTop: '1.25rem' }}
-        >
-          {/* Value Delivered */}
-          <div className="kpi-box">
-            <span className="sr-only">$400M+ Enterprise Business Impact</span>
-            <span className="stat-number">
-              <AnimatedCounter
-                value={METRICS.valueDeliveredM}
-                suffix="M+"
-                format={(n) => `$${n}`}
-              />
-            </span>
-            <span className="stat-label">Enterprise Business Impact</span>
-          </div>
-
-          {/* AI Users */}
-          <div className="kpi-box">
-            <span className="sr-only">27K+ Employees Transformed</span>
-            <span className="stat-number">
-              <AnimatedCounter value={METRICS.aiUsersK} suffix="K+" />
-            </span>
-            <span className="stat-label">Employees Transformed</span>
-          </div>
-
-          {/* Typical ROI */}
-          <div className="kpi-box">
-            <span className="sr-only">
-              {METRICS.typicalROI}% Peak Program ROI
-            </span>
-            <span className="stat-number">
-              <AnimatedCounter value={METRICS.typicalROI} suffix="%" />
-            </span>
-            <span className="stat-label">Peak Program ROI</span>
-          </div>
-
-          {/* Years Leading */}
-          <div className="kpi-box">
-            <span className="sr-only">
-              {METRICS.yearsLeading}+ Years Executive Leadership
-            </span>
-            <span className="stat-number">
-              <AnimatedCounter value={METRICS.yearsLeading} suffix="+" />
-            </span>
-            <span className="stat-label">Years Executive Leadership</span>
-          </div>
-        </div>
       </div>
     </>
   );

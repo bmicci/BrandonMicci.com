@@ -3,9 +3,9 @@ import Link from 'next/link';
 import ExecutiveExperience from '@/components/ExecutiveExperience';
 
 export const metadata: Metadata = {
-  title: 'Executive Experience | AI Leadership & Digital Transformation',
+  title: 'Executive Experience',
   description:
-    'Explore Brandon Micci\'s 16+ year executive career spanning Fortune 500 banks, Big Four consulting, and leading enterprises. Head of AI Strategy & Business Transformation at JPMorgan Chase, delivering $400M+ enterprise value through AI strategy and digital transformation.',
+    "Brandon Micci's 17+ year executive career across Fortune 500 banks, Big Four consulting, and global enterprises.",
   keywords: [
     'AI executive experience',
     'enterprise AI leadership',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Executive Experience | Brandon Micci',
     description:
-      '16+ years leading AI strategy and digital transformation across Fortune 500 organizations. $400M+ enterprise value delivered.',
+      '17+ years leading AI strategy and digital transformation across Fortune 500 organizations.',
     url: 'https://brandonmicci.com/experience',
     type: 'profile',
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Executive Experience | Brandon Micci',
     description:
-      '16+ years leading AI strategy and digital transformation across Fortune 500 organizations.',
+      '17+ years leading AI strategy and digital transformation across Fortune 500 organizations.',
   },
   alternates: {
     canonical: '/experience',
@@ -67,9 +67,10 @@ export default function ExperiencePage() {
       <div className="mx-auto max-w-6xl px-4 pb-16 text-center">
         <Link
           href="/#connectwithme"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
           style={{
             background: 'linear-gradient(135deg, #00d4ff, #1e90ff)',
+            color: '#07101d',
             boxShadow: '0 8px 24px rgba(0, 212, 255, 0.3)',
           }}
         >

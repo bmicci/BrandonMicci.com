@@ -22,15 +22,18 @@ const ProfessionalImpact = dynamic(
   { ssr: true }
 );
 
+const LatestInsights = dynamic(() => import('@/components/LatestInsights'), {
+  ssr: true,
+});
+
 const TestimonialsSection = dynamic(
   () => import('@/components/TestimonialsSection'),
   { ssr: true }
 );
 
-const FAQSection = dynamic(
-  () => import('@/components/FAQSection'),
-  { ssr: true }
-);
+const FAQSection = dynamic(() => import('@/components/FAQSection'), {
+  ssr: true,
+});
 
 const IndustryCollaboration = dynamic(
   () => import('@/components/IndustryCollaboration'),
@@ -73,8 +76,8 @@ export default function Home() {
         <div className="relative z-10 w-full">
           <StrategicAdvantageHeader />
           <StrategicIntroCard />
-          <CompanyExpertise />
           <StrategicDifferentiators />
+          <CompanyExpertise />
         </div>
       </section>
 
@@ -95,7 +98,15 @@ export default function Home() {
         <ProfessionalImpact />
       </section>
 
-      {/* Professional Impact Section */}
+      {/* Latest Articles & Frameworks */}
+      <section
+        id="latest-insights"
+        className="relative scroll-mt-[var(--header-h,4.5rem)]"
+      >
+        <LatestInsights />
+      </section>
+
+      {/* Testimonials Section */}
       <section
         id="professional-impact"
         className="relative scroll-mt-[var(--header-h,4.5rem)]"
@@ -104,10 +115,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section
-        id="faq"
-        className="relative scroll-mt-[var(--header-h,4.5rem)]"
-      >
+      <section id="faq" className="relative scroll-mt-[var(--header-h,4.5rem)]">
         <FAQSection />
       </section>
 

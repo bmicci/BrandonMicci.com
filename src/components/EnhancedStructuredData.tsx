@@ -9,28 +9,24 @@ const SITE_URL = 'https://brandonmicci.com';
 const NAME = 'Brandon Micci';
 const JOB_TITLE = 'Head of AI Strategy & Business Transformation';
 const DESCRIPTION =
-  'Enterprise AI Transformation leader with 16+ years of experience delivering $400M+ in value and scaling LLM deployments to 27K+ users across Fortune 500 companies.';
+  'Enterprise AI Transformation leader with 17+ years of experience delivering $50M+ in documented savings and scaling LLM deployments to 27K+ users across Fortune 500 companies.';
 
 const LOGO = `${SITE_URL}/android-chrome-192x192.png`; // ok to keep; you just generated these
 const IMAGE = `${SITE_URL}/headshot.webp`;
 const EMAIL = 'brandon@brandonmicci.com';
-const PHONE = '+14697088925'; // Google Voice for recruiter contact
 
 // Toggle extras without editing schema objects:
 const INCLUDE_FAQ = true;
 const INCLUDE_JOB_POSTING = false; // Disabled: JobPosting is for employers hiring candidates, not for being hired
 
-function buildJsonLd() {
+function buildJsonLd(pathname: string) {
+  const isHome = pathname === '/';
+
   const website = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Brandon Micci — AI & Digital Transformation',
     url: SITE_URL,
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${SITE_URL}/?q={search_term_string}`,
-      'query-input': 'required name=search_term_string',
-    },
   };
 
   const organization = {
@@ -71,17 +67,11 @@ function buildJsonLd() {
       'https://twitter.com/brandonmicci',
       'https://link.v1ce.co/brandon.micci',
     ],
-    worksFor: {
-      '@type': 'Organization',
-      name: 'JPMorgan Chase',
-      url: 'https://www.jpmorganchase.com',
-    },
     contactPoint: [
       {
         '@type': 'ContactPoint',
         contactType: 'Recruiting / executive search',
         email: EMAIL,
-        telephone: PHONE,
         areaServed: 'US',
         availableLanguage: ['en'],
       },
@@ -99,17 +89,23 @@ function buildJsonLd() {
       'Deep Learning',
       'Predictive Analytics',
       'AI Product Management',
+      'Responsible AI',
+      'Responsible AI & Governance',
       'AI Governance',
       'AI Ethics',
       'Model Governance',
-      
+      'Human-in-the-Loop Review',
+      'LLM Evaluation Harnesses',
+      'AIOps',
+      'AI Delivery Lifecycle',
+
       // Digital Transformation
       'Digital Transformation',
       'Industry 4.0',
       'IoT Platforms',
       'Digital Twins',
       'Change Management',
-      
+
       // Cloud & Infrastructure
       'AWS',
       'Azure',
@@ -125,7 +121,7 @@ function buildJsonLd() {
       'Kubernetes',
       'Docker',
       'Microservices',
-      
+
       // Data & Analytics
       'Data Platforms',
       'Data Governance',
@@ -135,10 +131,9 @@ function buildJsonLd() {
       'Python',
       'SQL',
       'Data Science',
-      
+
       // Leadership & Strategy
       'Executive Leadership',
-      'P&L Management',
       'C-Suite Engagement',
       'Strategic Planning',
       'ROI Analysis',
@@ -159,13 +154,10 @@ function buildJsonLd() {
       },
     ],
     alumniOf: [
-      { '@type': 'CollegeOrUniversity', name: 'The George Washington University' },
-    ],
-    award: [
-      'Led $400M+ enterprise value creation via AI & data transformation',
-      'Scaled LLM deployment to 27,000+ users at JPMorgan Chase',
-      'Delivered $22M+ annualized savings through AI-led business transformation',
-      'Launched $20M IoT-AI optimization program in aviation sector',
+      {
+        '@type': 'CollegeOrUniversity',
+        name: 'The George Washington University',
+      },
     ],
   };
 
@@ -180,60 +172,6 @@ function buildJsonLd() {
       url: SITE_URL,
     },
     mainEntityOfPage: SITE_URL,
-  };
-
-  const breadcrumbs = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Strategic Advantage',
-        item: `${SITE_URL}/#strategic-advantage`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: 'Executive Experience',
-        item: `${SITE_URL}/#executive-experience`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        name: 'Transformation Leadership',
-        item: `${SITE_URL}/#transformation-leadership`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 5,
-        name: 'Professional Impact',
-        item: `${SITE_URL}/#professional-impact`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 6,
-        name: 'Contact',
-        item: `${SITE_URL}/contact`,
-      },
-    ],
-  };
-
-  const contactPage = {
-    '@context': 'https://schema.org',
-    '@type': 'ContactPage',
-    url: SITE_URL,
-    mainEntityOfPage: SITE_URL,
-    about: { '@type': 'Person', name: NAME },
-    contactPoint: [
-      {
-        '@type': 'ContactPoint',
-        contactType: 'Executive inquiries',
-        email: EMAIL,
-        availableLanguage: ['en'],
-      },
-    ],
   };
 
   const faq = {
@@ -253,7 +191,7 @@ function buildJsonLd() {
         name: 'What measurable outcomes has Brandon achieved through AI leadership?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Brandon has delivered $400M+ in measurable business value through AI and digital transformation. His initiatives include deploying an enterprise LLM assistant to 27,000 users at JPMorgan Chase, delivering $22M+ in annualized efficiency gains, and launching a $20M IoT-AI optimization program in aviation.',
+          text: 'Brandon has delivered $50M+ in documented savings and efficiency gains through AI and digital transformation. His initiatives include deploying an enterprise LLM assistant to 27,000 users at JPMorgan Chase, delivering $22M+ in annualized efficiency gains, and launching a $20M IoT-AI optimization program in aviation.',
         },
       },
       {
@@ -301,7 +239,15 @@ function buildJsonLd() {
         name: 'What technical skills does Brandon bring to AI leadership roles?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has built and led 50+ FTE technical organizations with $30M+ P&L responsibility at Capgemini and $15M+ direct P&L ownership at JPMorgan Chase.',
+          text: 'Brandon combines executive leadership with deep technical expertise in: LLM deployment (MLOps/LLMOps), cloud architecture (AWS, Azure, Snowflake, Databricks), enterprise data platforms (Spark, Kafka, Data Lakes), DevOps/Kubernetes, analytics platforms (Tableau, Power BI), and AI governance frameworks. He has led matrixed delivery organizations across global engagements and owned the $15M+ annual AI portfolio at JPMorgan Chase, from strategy and investment through delivery.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: "What is Brandon's approach to Responsible AI in regulated environments?",
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Brandon architects AI systems with embedded governance from day one — model risk management, LLM evaluation harnesses, human-in-the-loop review for high-stakes decisions, and AIOps for continuous monitoring and improvement. In financial services, this means partnering with risk, compliance, and audit functions across the AI delivery lifecycle (experiment → production → operations) to ensure deployments meet regulatory expectations while delivering measurable business outcomes.',
         },
       },
       {
@@ -309,7 +255,7 @@ function buildJsonLd() {
         name: 'What size organizations and budgets has Brandon managed?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Brandon has led cross-functional teams of 50+ full-time employees with direct P&L oversight of $30M+ technology portfolios. His programs have generated $400M+ in measurable enterprise value across Fortune 500 organizations.',
+          text: 'Brandon has led cross-functional and matrixed teams across global organizations, including a $15M+ annual AI portfolio at JPMorgan Chase and a $25M technology budget at Southwest Airlines. His programs have delivered $50M+ in documented savings and efficiency gains.',
         },
       },
       {
@@ -326,7 +272,8 @@ function buildJsonLd() {
   const jobPosting = {
     '@context': 'https://schema.org',
     '@type': 'JobPosting',
-    title: 'Head of AI Strategy & Business Transformation (Executive Leadership)',
+    title:
+      'Chief AI Officer / Head of AI Strategy & Business Transformation (Executive Leadership)',
     description:
       'Open to executive opportunities leading enterprise AI, data transformation, and generative AI strategy for Fortune 500 organizations.',
     datePosted: '2024-09-01',
@@ -360,27 +307,20 @@ function buildJsonLd() {
       '@type': 'Place',
       name: 'Dallas, Texas, USA',
     },
-    estimatedSalary: {
-      '@type': 'MonetaryAmount',
-      currency: 'USD',
-      value: {
-        '@type': 'QuantitativeValue',
-        value: '300000',
-        unitText: 'YEAR',
-      },
-    },
     skills: [
       'Enterprise AI Strategy',
       'Generative AI',
       'LLM Deployment',
       'Digital Transformation Leadership',
-      'AI Governance',
+      'Responsible AI & Governance',
+      'Human-in-the-Loop Review',
+      'LLM Evaluation Harnesses / AIOps',
       'Data Platforms',
       'Executive Advisory',
     ],
     responsibilities: [
       'Define and scale enterprise AI product portfolios',
-      'Develop responsible AI governance frameworks',
+      'Architect Responsible AI by design — embedded governance, model risk frameworks, evaluation harnesses, and AIOps from day one',
       'Deliver measurable ROI across data and digital initiatives',
       'Lead AI Center of Excellence operations and adoption programs',
     ],
@@ -393,8 +333,9 @@ function buildJsonLd() {
   const professionalService = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'Brandon Micci - AI & Digital Transformation Advisory',
-    description: 'Enterprise AI Strategy & Digital Transformation Executive Services for Fortune 500 organizations. Expert in LLM deployment, data platforms, and measurable ROI delivery.',
+    name: 'Brandon Micci Digital Strategy',
+    description:
+      'Enterprise AI Strategy & Digital Transformation Executive Services for Fortune 500 organizations. Expert in LLM deployment, data platforms, and measurable ROI delivery.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Dallas',
@@ -411,8 +352,6 @@ function buildJsonLd() {
         name: 'Remote',
       },
     ],
-    priceRange: 'Enterprise',
-    telephone: PHONE,
     email: EMAIL,
     url: SITE_URL,
     image: IMAGE,
@@ -429,7 +368,8 @@ function buildJsonLd() {
           itemOffered: {
             '@type': 'Service',
             name: 'Executive AI Strategy',
-            description: 'Enterprise AI transformation and strategy consulting for C-suite executives and Fortune 500 organizations.',
+            description:
+              'Enterprise AI transformation and strategy consulting for C-suite executives and Fortune 500 organizations.',
           },
         },
         {
@@ -437,7 +377,8 @@ function buildJsonLd() {
           itemOffered: {
             '@type': 'Service',
             name: 'Digital Transformation Leadership',
-            description: 'Full-scale digital transformation programs including LLM deployment, data modernization, and cloud strategy.',
+            description:
+              'Full-scale digital transformation programs including LLM deployment, data modernization, and cloud strategy.',
           },
         },
         {
@@ -445,7 +386,8 @@ function buildJsonLd() {
           itemOffered: {
             '@type': 'Service',
             name: 'Executive Advisory & Speaking',
-            description: 'Board workshops, executive briefings, keynote speaking, and strategic advisory on AI and digital innovation.',
+            description:
+              'Board workshops, executive briefings, keynote speaking, and strategic advisory on AI and digital innovation.',
           },
         },
       ],
@@ -456,21 +398,30 @@ function buildJsonLd() {
     website,
     organization,
     person,
-    profilePage,
-    contactPage,
     roleExperience,
     professionalService,
-    breadcrumbs,
   ];
 
-  if (INCLUDE_FAQ) payload.push(faq);
+  // ProfilePage and FAQPage describe homepage content — rendering them on every
+  // page (including /privacy) is a structured-data guideline violation, since
+  // the markup wouldn't reflect what's actually on the page.
+  if (isHome) {
+    payload.push(profilePage);
+    if (INCLUDE_FAQ) payload.push(faq);
+  }
   if (INCLUDE_JOB_POSTING) payload.push(jobPosting);
 
   return payload;
 }
 
-export default function EnhancedStructuredData({ nonce }: { nonce?: string }) {
-  const data = buildJsonLd();
+export default function EnhancedStructuredData({
+  nonce,
+  pathname,
+}: {
+  nonce?: string;
+  pathname?: string;
+}) {
+  const data = buildJsonLd(pathname || '/');
   return (
     <script
       id="structured-data"

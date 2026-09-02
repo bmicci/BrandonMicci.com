@@ -15,7 +15,7 @@ type HighlightRole = {
 
 const HIGHLIGHT_ROLES: HighlightRole[] = [
   {
-    dates: 'Feb 2024 - Present',
+    dates: 'Feb 2024 – Mar 2026',
     role: 'Head of AI Strategy & Business Transformation',
     companyType: 'Fortune 50 Bank (Payments)',
     icon: (
@@ -27,11 +27,11 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
     keyMetric: '$22M+',
     metricLabel: 'Annualized Savings',
     achievement:
-      'Scaled enterprise LLM Assistant to 27,000+ users—largest deployment in payments industry',
+      "Scaled the Payments LLM Assistant to 27,000+ users and established the firm's AI delivery lifecycle — evaluation, AIOps, and production governance.",
   },
   {
-    dates: 'Jan 2022 - Feb 2024',
-    role: 'Senior Director, Intelligent Industry & Emerging Technology',
+    dates: 'Jan 2022 – Jun 2022',
+    role: 'Senior Director, Head of AI/IoT & Emerging Technology Practice',
     companyType: 'Global Consulting Firm',
     icon: (
       <Rocket
@@ -40,13 +40,13 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
       />
     ),
     keyMetric: '$30M',
-    metricLabel: 'P&L Ownership',
+    metricLabel: 'Revenue Target',
     achievement:
-      'Built AI/IoT practice from ground up; drove $9.8M new revenue with 34% market share increase',
+      'Built the AI/IoT and Emerging Tech practice from inception. Generated $9.8M in qualified pipeline through go-to-market execution and solution commercialization.',
   },
   {
-    dates: 'Feb 2021 - Jan 2022',
-    role: 'Senior Manager, Forensic Technology & Data Analytics',
+    dates: 'Feb 2021 – Jan 2022',
+    role: 'Senior Manager, AI/ML Forensic Analytics & Technology',
     companyType: 'Big Four Consulting',
     icon: (
       <Search
@@ -57,12 +57,12 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
     keyMetric: '$400M',
     metricLabel: '10-Year Deal',
     achievement:
-      'Procured strategic engagement for real-time AI-powered fraud analytics engine',
+      'Captured a strategic engagement to build a real-time, AI-powered fraud analytics engine for a Top-5 health insurer.',
   },
   {
-    dates: '2015 - 2019',
+    dates: '2015 - 2020',
     role: 'Analytics COE Leader & Digital Innovation',
-    companyType: 'Fortune 100 Bank + Major Airline',
+    companyType: 'Fortune 100 Banks + Major Airline',
     icon: (
       <BarChart
         className="w-6 h-6 text-cyan-400"
@@ -72,7 +72,7 @@ const HIGHLIGHT_ROLES: HighlightRole[] = [
     keyMetric: '30,000+',
     metricLabel: 'Platform Users',
     achievement:
-      'Built world-class analytics community; delivered 250% ROI IoT pilot scaled to $20M+ annual',
+      'Established a 30,000+ user analytics community of practice at a top-10 bank. Delivered a 250% ROI IoT pilot scaled to $20M+ in annual value at a major airline.',
   },
 ];
 
@@ -91,7 +91,7 @@ const ExperienceHighlights = () => {
             </span>
           </h2>
           <p className="text-lg text-slate-200 max-w-3xl mx-auto font-medium">
-            16+ years leading AI strategy, digital transformation, and data
+            17+ years leading AI strategy, digital transformation, and data
             innovation across Fortune 500 organizations
           </p>
         </div>
@@ -182,9 +182,10 @@ const ExperienceHighlights = () => {
         <div className="mt-10 md:mt-12 text-center">
           <Link
             href="/experience"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
             style={{
               background: 'linear-gradient(135deg, #00d4ff, #1e90ff)',
+              color: '#07101d',
               boxShadow: '0 8px 24px rgba(0, 212, 255, 0.3)',
             }}
           >

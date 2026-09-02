@@ -139,18 +139,15 @@ const StrategicIntroCard: React.FC = () => {
 
       <div className="intro-card">
         <p className="intro-text">
-          My track record demonstrates consistent delivery across the
-          world&apos;s most demanding{' '}
+          I deliver AI where it&apos;s hardest:{' '}
           <Link href="/#transformation-leadership" className="internal-link">
-            <strong>enterprise environments</strong>
+            <strong>regulated industries</strong>
           </Link>
-          —transforming{' '}
+          , Fortune 500 scale, and high-stakes board scrutiny.{' '}
           <Link href="/#executive-experience" className="internal-link">
-            <strong>AI strategy</strong>
-          </Link>{' '}
-          into measurable business impact where{' '}
-          <strong>complexity, regulation, and stakeholder expectations</strong>{' '}
-          are highest.
+            <strong>Strategy that becomes operations</strong>
+          </Link>
+          , not slideware.
         </p>
       </div>
     </>
