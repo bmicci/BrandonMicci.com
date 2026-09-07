@@ -2,14 +2,16 @@
 // user-agent list. Keep the bot list here so it can grow without touching
 // route logic.
 
+// The "brandonmicci-web" Supabase project — website + ad-hoc side projects,
+// kept separate from the standalone micci-os app.
 export const SIG_SUPABASE_URL =
-  process.env.SIG_SUPABASE_URL ?? 'https://ptrcyxqybzqwwkridvze.supabase.co';
+  process.env.SIG_SUPABASE_URL ?? 'https://updxevgdetmsoznzbkqh.supabase.co';
 
 // Publishable key — safe to ship in code. Row-level security limits it to
 // reading active sig_links and inserting sig_clicks.
 export const SIG_SUPABASE_PUBLISHABLE_KEY =
   process.env.SIG_SUPABASE_PUBLISHABLE_KEY ??
-  'sb_publishable_bBd2t8suh63RkjR94k7ZIA_Tnan3U4-';
+  'sb_publishable_2uKeJQ5ABjcuZYIPMe0Zlw_qNGENRgk';
 
 // Email-client image proxies, corporate link scanners, and social preview
 // bots. Matched case-insensitively against the User-Agent; hits still get

@@ -1,5 +1,5 @@
 -- Smart signature Phase 2: link registry + click tracking.
--- Applied to the micci-os Supabase project (ptrcyxqybzqwwkridvze) on 2026-09-07.
+-- Applied to the brandonmicci-web Supabase project (updxevgdetmsoznzbkqh) on 2026-09-07.
 
 create table if not exists sig_links (
   slug text primary key,
