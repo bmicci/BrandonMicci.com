@@ -60,9 +60,15 @@ export async function GET(
     if (res.ok) {
       const rows: { destination: string }[] = await res.json();
       destination = rows[0]?.destination ?? null;
+      if (!destination) console.warn(`sig: no active link for "${slug}"`);
+    } else {
+      console.error(
+        `sig: link lookup failed ${res.status}: ${(await res.text()).slice(0, 300)}`
+      );
     }
-  } catch {
+  } catch (err) {
     // Supabase unreachable → fall through to homepage.
+    console.error('sig: link lookup threw', err);
   }
 
   // RLS only exposes active links, so missing and inactive both land here.
