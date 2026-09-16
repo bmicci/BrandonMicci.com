@@ -21,7 +21,7 @@ async function loadLinks(secretKey: string): Promise<SigLink[]> {
   const res = await fetch(
     `${SIG_SUPABASE_URL}/rest/v1/sig_links?select=*&order=slug`,
     {
-      headers: { apikey: secretKey, Authorization: `Bearer ${secretKey}` },
+      headers: { apikey: secretKey },
       cache: 'no-store',
     }
   );

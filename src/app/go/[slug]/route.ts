@@ -7,9 +7,10 @@ import {
   deviceFromUserAgent,
 } from '@/lib/sig/config';
 
+// New-style sb_publishable_* keys are opaque (not JWTs): they go in the
+// apikey header only — a Bearer Authorization header would be rejected.
 const SUPABASE_HEADERS = {
   apikey: SIG_SUPABASE_PUBLISHABLE_KEY,
-  Authorization: `Bearer ${SIG_SUPABASE_PUBLISHABLE_KEY}`,
 };
 
 function redirect(location: string) {

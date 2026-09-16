@@ -25,9 +25,9 @@ export async function updateSigLink(formData: FormData) {
     `${SIG_SUPABASE_URL}/rest/v1/sig_links?slug=eq.${slug}`,
     {
       method: 'PATCH',
+      // sb_secret_* keys are opaque: apikey header only, no Bearer.
       headers: {
         apikey: secretKey,
-        Authorization: `Bearer ${secretKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
