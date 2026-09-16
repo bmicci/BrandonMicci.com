@@ -5,6 +5,12 @@
   "installCommand": "npm ci",
   "devCommand": "npm run dev",
   "github": { "silent": false },
+  "crons": [
+    {
+      "path": "/go/site",
+      "schedule": "0 9 * * *"
+    }
+  ],
   "redirects": [
     {
       "source": "/:path*",

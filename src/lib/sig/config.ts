@@ -34,6 +34,8 @@ const BOT_UA_PATTERNS: RegExp[] = [
   /Discordbot/i,
   /SkypeUriPreview/i,
   /Barracuda|Mimecast|Proofpoint|MessageLabs|Symantec/i,
+  /vercel-cron/i, // daily keep-alive ping (vercel.json crons) — reads the DB so the free-tier Supabase project never auto-pauses
+
   /bot|crawler|spider|scanner|preview|monitor|curl\/|wget\//i,
 ];
 
