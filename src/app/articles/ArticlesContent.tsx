@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowLeft, ChevronRight, Layers } from 'lucide-react';
+import { ArrowLeft, ChevronRight, Layers, Workflow } from 'lucide-react';
 
 type Article = {
   slug: string;
@@ -14,6 +14,21 @@ type Article = {
 };
 
 const articles: Article[] = [
+  {
+    slug: 'ai-delivery-lifecycle',
+    title: "Your AI Pilot Didn't Fail. It Was Never Designed to Ship.",
+    icon: Workflow,
+    date: 'September 2026',
+    readTime: '9 min read',
+    excerpt:
+      'A pilot is built to prove value. A production system has to prove trust. The delivery lifecycle is the designed path between them: experiments with kill criteria, a production gate that runs on evidence, and operations built for systems that break quietly.',
+    topics: [
+      'Delivery Lifecycle',
+      'Evaluation Harnesses',
+      'AIOps',
+      'Human-in-the-Loop',
+    ],
+  },
   {
     slug: 'ai-operating-model',
     title: "Your AI Strategy Isn't the Problem. Your Operating Model Is.",
