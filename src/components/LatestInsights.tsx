@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Layers } from 'lucide-react';
+import { ArrowRight, Workflow } from 'lucide-react';
 
 // Compact homepage strip surfacing the most recent article. Content is
 // duplicated from src/app/articles/ArticlesContent.tsx by design — update
@@ -156,24 +156,23 @@ const LatestInsights = () => {
           </p>
         </div>
 
-        <Link href="/articles/ai-operating-model" className="insight-card">
+        <Link href="/articles/ai-delivery-lifecycle" className="insight-card">
           <div className="card-top">
             <div className="card-icon">
-              <Layers size={26} />
+              <Workflow size={26} />
             </div>
             <div>
               <h3 className="card-title">
-                Your AI Strategy Isn&rsquo;t the Problem. Your Operating Model
-                Is.
+                Your AI Pilot Didn&rsquo;t Fail. It Was Never Designed to Ship.
               </h3>
-              <div className="card-meta">September 2026 · 10 min read</div>
+              <div className="card-meta">September 2026 · 9 min read</div>
             </div>
           </div>
           <p className="card-excerpt">
-            What it actually takes to run AI at enterprise scale: the five
-            components you have to design on purpose, the three mechanics that
-            make them real, and why building inside model risk management turned
-            out to be an advantage.
+            A pilot is built to prove value. A production system has to prove
+            trust. The delivery lifecycle is the designed path between them:
+            experiments with kill criteria, a production gate that runs on
+            evidence, and operations built for systems that break quietly.
           </p>
           <span className="card-cta">
             Read the article
