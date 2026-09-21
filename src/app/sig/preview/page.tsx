@@ -89,6 +89,13 @@ export default function SignaturePreviewPage() {
       </p>
       <MockEmail dark html={localHtml} />
 
+      <h2 className="text-lg font-semibold mt-8 mb-2">
+        Phone width (Gmail iOS ≈ 360px content area)
+      </h2>
+      <div style={{ maxWidth: 360 }}>
+        <MockEmail dark html={localHtml} />
+      </div>
+
       <h2 className="text-lg font-semibold mt-8 mb-2">Images blocked</h2>
       <MockEmail
         dark={false}
