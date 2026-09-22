@@ -1,15 +1,15 @@
 <!--
-  Smart email signature — Phase 1
+  Smart email signature — mobile-friendly revision
   Paste the rendered content of this file into Gmail: Settings → See all settings → Signature.
-  (Open /sig/preview, or open this file in a browser, select all, copy, paste into the Gmail
-  signature editor. Do not paste this source code as text.)
+  (Open /sig/preview, select the signature card, copy, paste into the Gmail signature editor.)
 
-  All links route through https://brandonmicci.com/go/<slug> (live in Phase 2) and the
-  headshot is served from https://brandonmicci.com/sig/headshot.png, so destinations and
-  the photo can change later without re-pasting the signature.
+  All links route through https://brandonmicci.com/go/<slug> and the headshot is served
+  from https://brandonmicci.com/sig/headshot.png, so destinations and the photo can
+  change later without re-pasting the signature. Layout changes DO require a re-paste.
 
-  The navy card uses a CSS gradient with a solid background-color fallback for clients
-  (Outlook desktop) that ignore gradients; border-radius degrades to square corners there.
+  Gmail strips <style> blocks, so there are no media queries: this one fixed layout is
+  sized to fit a ~360px phone viewport without the photo cell being squeezed (which
+  ovaled the headshot) or links wrapping mid-word.
 -->
 <table
   cellpadding="0"
@@ -34,7 +34,7 @@
           #0f2744 100%
         );
         border-radius: 14px;
-        padding: 20px 24px;
+        padding: 16px 18px;
       "
     >
       <table
@@ -49,7 +49,15 @@
         "
       >
         <tr>
-          <td style="vertical-align: middle; padding: 0 16px 0 0">
+          <td
+            width="72"
+            style="
+              width: 72px;
+              min-width: 72px;
+              vertical-align: middle;
+              padding: 0 12px 0 0;
+            "
+          >
             <a
               href="https://brandonmicci.com/go/site"
               target="_blank"
@@ -57,13 +65,14 @@
             >
               <img
                 src="https://brandonmicci.com/sig/headshot.png"
-                width="96"
-                height="96"
+                width="72"
+                height="72"
                 alt="Brandon Micci"
                 style="
                   display: block;
-                  width: 96px;
-                  height: 96px;
+                  width: 72px;
+                  height: 72px;
+                  max-width: 72px;
                   border-radius: 50%;
                   border: 0;
                 "
@@ -81,7 +90,7 @@
           >
             &nbsp;
           </td>
-          <td style="vertical-align: middle; padding: 0 0 0 16px">
+          <td style="vertical-align: middle; padding: 0 0 0 12px">
             <table
               cellpadding="0"
               cellspacing="0"
@@ -97,8 +106,8 @@
               <tr>
                 <td
                   style="
-                    font-size: 16px;
-                    line-height: 22px;
+                    font-size: 15px;
+                    line-height: 20px;
                     font-weight: bold;
                     color: #ffffff;
                     letter-spacing: 0.2px;
@@ -110,8 +119,8 @@
               <tr>
                 <td
                   style="
-                    font-size: 13px;
-                    line-height: 19px;
+                    font-size: 12px;
+                    line-height: 17px;
                     color: #cbd5e1;
                     padding-top: 1px;
                   "
@@ -122,10 +131,10 @@
               <tr>
                 <td
                   style="
-                    font-size: 12px;
-                    line-height: 18px;
+                    font-size: 11.5px;
+                    line-height: 16px;
                     color: #8fa3bd;
-                    padding-top: 6px;
+                    padding-top: 5px;
                     font-style: italic;
                   "
                 >
@@ -134,32 +143,44 @@
               </tr>
               <tr>
                 <td
-                  style="font-size: 12.5px; line-height: 19px; padding-top: 8px"
+                  style="font-size: 12px; line-height: 19px; padding-top: 7px"
                 >
                   <a
                     href="https://brandonmicci.com/go/phone"
-                    style="color: #00d4ff; text-decoration: none"
+                    style="
+                      color: #00d4ff;
+                      text-decoration: none;
+                      white-space: nowrap;
+                    "
                     >+1&nbsp;610-310-0066</a
                   >
                   <span style="color: #475569">&nbsp;&middot;&nbsp;</span>
                   <a
                     href="https://brandonmicci.com/go/site"
                     target="_blank"
-                    style="color: #00d4ff; text-decoration: none"
+                    style="
+                      color: #00d4ff;
+                      text-decoration: none;
+                      white-space: nowrap;
+                    "
                     >brandonmicci.com</a
                   >
                   <span style="color: #475569">&nbsp;&middot;&nbsp;</span>
                   <a
                     href="https://brandonmicci.com/go/linkedin"
                     target="_blank"
-                    style="color: #00d4ff; text-decoration: none"
+                    style="
+                      color: #00d4ff;
+                      text-decoration: none;
+                      white-space: nowrap;
+                    "
                     >LinkedIn</a
                   >
                 </td>
               </tr>
               <tr>
                 <td
-                  style="font-size: 12px; line-height: 18px; padding-top: 7px"
+                  style="font-size: 11.5px; line-height: 16px; padding-top: 6px"
                 >
                   <span style="color: #00d4ff">&#9656;</span>&nbsp;<a
                     href="https://brandonmicci.com/go/featured"
