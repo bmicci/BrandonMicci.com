@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description:
     'Enterprise AI & Digital Transformation Executive. Connect instantly via LinkedIn, email, or save my contact info.',
   alternates: { canonical: '/contactcard' },
+  // Reached via NFC business-card tap and email signature, not site navigation,
+  // so keep it out of search results and SEO audits.
+  robots: { index: false, follow: true },
   openGraph: {
     title: 'Connect with Brandon Micci',
     description:

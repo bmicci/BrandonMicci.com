@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 
 const EMAIL = 'brandon@brandonmicci.com';
 const SITE_URL = 'https://brandonmicci.com';
@@ -114,12 +113,6 @@ export default function ContactPage() {
           >
             <span className="mr-2">📇</span> Download vCard (Brandon Micci)
           </a>
-          <Link
-            href="/contactcard"
-            className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-white hover:bg-white/[0.08] hover:border-white/15 transition"
-          >
-            <span className="mr-2">🪪</span> View digital business card
-          </Link>
         </div>
 
         <hr className="my-8 border-white/10" />

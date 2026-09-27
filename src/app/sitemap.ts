@@ -44,12 +44,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${base}/contactcard`,
-      lastModified: '2026-07-28',
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
       url: `${base}/privacy`,
       lastModified: '2026-05-10',
       changeFrequency: 'yearly',
