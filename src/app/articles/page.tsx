@@ -4,7 +4,7 @@ import ArticlesContent from './ArticlesContent';
 export const metadata: Metadata = {
   title: 'Articles & Frameworks',
   description:
-    'Practical frameworks on AI operating models, governance, delivery, and adoption at enterprise scale, written by Brandon Micci from experience inside Fortune 500 financial services.',
+    "Practical frameworks on AI operating models, governance, delivery, and adoption at enterprise scale, from Brandon Micci's work inside Fortune 500 banks.",
   keywords: [
     'AI operating model',
     'AI governance framework',
@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     description:
       'Practical frameworks on AI operating models, governance, delivery, and adoption at enterprise scale.',
     url: 'https://brandonmicci.com/articles',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',

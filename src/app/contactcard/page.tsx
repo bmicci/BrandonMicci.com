@@ -10,7 +10,16 @@ export const metadata: Metadata = {
     title: 'Connect with Brandon Micci',
     description:
       'Enterprise AI & Digital Transformation Executive. 27K+ LLM users deployed, $50M+ documented savings.',
+    url: 'https://brandonmicci.com/contactcard',
     type: 'profile',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Brandon Micci - Enterprise AI & Digital Transformation Executive',
+      },
+    ],
   },
 };
 
