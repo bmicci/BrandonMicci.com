@@ -7,7 +7,39 @@ function makeNonce() {
   return Buffer.from(bytes).toString('base64');
 }
 
+function isAuthorized(req: NextRequest, password: string) {
+  const auth = req.headers.get('authorization') ?? '';
+  if (!auth.startsWith('Basic ')) return false;
+  try {
+    const decoded = Buffer.from(auth.slice(6), 'base64').toString('utf8');
+    const supplied = decoded.slice(decoded.indexOf(':') + 1);
+    const a = Buffer.from(supplied);
+    const b = Buffer.from(password);
+    // Length-equalized XOR compare to avoid a timing oracle.
+    let diff = a.length ^ b.length;
+    for (let i = 0; i < Math.max(a.length, b.length); i++) {
+      diff |= (a[i % a.length] ?? 0) ^ (b[i % b.length] ?? 0);
+    }
+    return diff === 0;
+  } catch {
+    return false;
+  }
+}
+
 export function proxy(req: NextRequest) {
+  // Signature admin/stats pages sit behind basic auth (any username,
+  // password = SIG_ADMIN_PASSWORD). No password configured → locked shut.
+  const { pathname } = req.nextUrl;
+  if (pathname.startsWith('/sig/admin') || pathname.startsWith('/sig/stats')) {
+    const password = process.env.SIG_ADMIN_PASSWORD;
+    if (!password || !isAuthorized(req, password)) {
+      return new NextResponse('Authentication required', {
+        status: 401,
+        headers: { 'WWW-Authenticate': 'Basic realm="signature-admin"' },
+      });
+    }
+  }
+
   const nonce = makeNonce();
 
   // Forward nonce and pathname to server components (layout can read them)

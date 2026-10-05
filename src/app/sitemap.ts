@@ -27,13 +27,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${base}/articles`,
-      lastModified: '2026-09-01',
+      lastModified: '2026-09-17',
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${base}/articles/ai-operating-model`,
       lastModified: '2026-09-01',
+      changeFrequency: 'yearly',
+      priority: 0.7,
+    },
+    {
+      url: `${base}/articles/ai-delivery-lifecycle`,
+      lastModified: '2026-09-17',
       changeFrequency: 'yearly',
       priority: 0.7,
     },
