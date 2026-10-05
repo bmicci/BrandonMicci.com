@@ -6,6 +6,21 @@ export const metadata: Metadata = {
     'Privacy policy for BrandonMicci.com describing what limited information is collected and how it is used.',
   robots: { index: true, follow: true },
   alternates: { canonical: '/privacy' },
+  openGraph: {
+    title: 'Privacy Policy | Brandon Micci',
+    description:
+      'What limited information BrandonMicci.com collects and how it is used.',
+    url: 'https://brandonmicci.com/privacy',
+    type: 'website',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Brandon Micci - Enterprise AI & Digital Transformation Executive',
+      },
+    ],
+  },
 };
 
 const POLICY_LAST_UPDATED = 'May 10, 2026';

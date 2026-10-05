@@ -6,9 +6,24 @@ const SITE_URL = 'https://brandonmicci.com';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Contact Brandon Micci for executive search, advisory, and speaking inquiries.',
+    'Contact Brandon Micci, Enterprise AI & Business Transformation Executive, for executive search, board advisory, keynote speaking, and workshop inquiries.',
   robots: { index: true, follow: true },
   alternates: { canonical: '/contact' },
+  openGraph: {
+    title: 'Contact | Brandon Micci',
+    description:
+      'Executive search, advisory, and speaking inquiries for Brandon Micci.',
+    url: 'https://brandonmicci.com/contact',
+    type: 'website',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Brandon Micci - Enterprise AI & Digital Transformation Executive',
+      },
+    ],
+  },
 };
 
 function ContactJsonLd() {
@@ -24,15 +39,6 @@ function ContactJsonLd() {
         name: 'Brandon Micci',
         url: SITE_URL,
       },
-      contactPoint: [
-        {
-          '@type': 'ContactPoint',
-          contactType: 'Executive inquiries',
-          email: `mailto:${EMAIL}`,
-          availableLanguage: ['en'],
-          areaServed: 'US',
-        },
-      ],
     },
     // ContactPoint on Person for redundancy/graph linking
     {
@@ -40,18 +46,18 @@ function ContactJsonLd() {
       '@type': 'Person',
       name: 'Brandon Micci',
       url: SITE_URL,
-      email: `mailto:${EMAIL}`,
+      email: EMAIL,
       contactPoint: [
         {
           '@type': 'ContactPoint',
           contactType: 'Recruiting / executive search',
-          email: `mailto:${EMAIL}`,
+          email: EMAIL,
           availableLanguage: ['en'],
         },
         {
           '@type': 'ContactPoint',
           contactType: 'Speaking & advisory',
-          email: `mailto:${EMAIL}`,
+          email: EMAIL,
           availableLanguage: ['en'],
         },
       ],

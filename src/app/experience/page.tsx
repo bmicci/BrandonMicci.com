@@ -22,12 +22,21 @@ export const metadata: Metadata = {
       '17+ years leading AI strategy and digital transformation across Fortune 500 organizations.',
     url: 'https://brandonmicci.com/experience',
     type: 'profile',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Brandon Micci - Enterprise AI & Digital Transformation Executive',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Executive Experience | Brandon Micci',
     description:
       '17+ years leading AI strategy and digital transformation across Fortune 500 organizations.',
+    images: ['/opengraph-image'],
   },
   alternates: {
     canonical: '/experience',

@@ -4,7 +4,7 @@ import CaseStudiesContent from './CaseStudiesContent';
 export const metadata: Metadata = {
   title: 'Case Studies',
   description:
-    'Eight case studies covering enterprise LLM deployment, IoT platforms, and fraud analytics across Fortune 500 financial services and aviation, led by Brandon Micci.',
+    'Eight case studies on enterprise LLM deployment, IoT platforms, and fraud analytics across Fortune 500 financial services and aviation, by Brandon Micci.',
   keywords: [
     'AI transformation case studies',
     'enterprise AI results',
@@ -25,11 +25,22 @@ export const metadata: Metadata = {
     description:
       '$50M+ in documented savings. 8 case studies covering LLM deployment, IoT platforms, fraud detection, analytics communities, and cloud transformation across Fortune 500 firms.',
     url: 'https://brandonmicci.com/case-studies',
+    type: 'website',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Brandon Micci - Enterprise AI & Digital Transformation Executive',
+      },
+    ],
   },
   twitter: {
+    card: 'summary_large_image',
     title: 'Case Studies | Brandon Micci — Enterprise AI Results',
     description:
       '$50M+ in documented savings. 8 case studies: LLM for 27K users, $20M IoT savings, $25M ARR analytics SaaS, and more.',
+    images: ['/opengraph-image'],
   },
 };
 
