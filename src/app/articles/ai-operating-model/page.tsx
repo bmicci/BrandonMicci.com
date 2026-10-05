@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import ArticleContent from './ArticleContent';
 
 export const metadata: Metadata = {
-  title: "Your AI Strategy Isn't the Problem. Your Operating Model Is.",
+  title: {
+    absolute: "Your AI Strategy Isn't the Problem. Your Operating Model Is.",
+  },
   description:
     'What it takes to run AI at enterprise scale: five components to design on purpose, three mechanics that make them real, and why model risk is an advantage.',
   keywords: [

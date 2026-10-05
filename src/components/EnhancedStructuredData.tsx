@@ -304,7 +304,7 @@ function buildJsonLd(pathname: string) {
     description:
       'Leads enterprise AI transformation initiatives across Fortune 500 organizations — delivering measurable ROI through applied Generative AI, data modernization, and large language model deployment.',
     occupationLocation: {
-      '@type': 'Place',
+      '@type': 'City',
       name: 'Dallas, Texas, USA',
     },
     skills: [

@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import ArticleContent from './ArticleContent';
 
 export const metadata: Metadata = {
-  title: "Your AI Pilot Didn't Fail. It Was Never Designed to Ship.",
+  title: {
+    absolute: "Your AI Pilot Didn't Fail. It Was Never Designed to Ship.",
+  },
   description:
     'The missing discipline between the demo that wowed the steering committee and a system the business depends on: a delivery lifecycle designed for AI.',
   keywords: [
