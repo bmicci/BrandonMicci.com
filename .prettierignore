@@ -1,3 +1,7 @@
 # Print artifact: the executive brief's HTML source is rendered to PDF with
 # exact spacing; reformatting it can shift the one-page print layout.
 docs/executive-brief.html
+
+# Vendored Claude Code skills (third-party; managed by `npx skills`)
+.claude/
+skills-lock.json
