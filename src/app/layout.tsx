@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Geist } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { headers } from 'next/headers';
 import Script from 'next/script';
 import './globals.css';
@@ -14,8 +14,9 @@ import StyledJsxRegistry from '@/components/StyledJsxRegistry';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+// Self-hosted by next/font, so it loads under the strict font-src CSP.
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
   display: 'swap',
   preload: true,
@@ -180,7 +181,7 @@ export default async function RootLayout({
   const GA_ID = process.env.NEXT_PUBLIC_GA_ID; // set in Vercel env
 
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <head>
         {/* Note: do not manually preload logo-bm-tight.webp or headshot.webp here.
             Next.js <Image priority /> already preloads the optimized variant.
@@ -201,7 +202,7 @@ export default async function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className={`${geistSans.variable} antialiased`}>
+      <body className="antialiased">
         {/* Structured Data with nonce */}
         <EnhancedStructuredData nonce={nonce} pathname={pathname} />
 

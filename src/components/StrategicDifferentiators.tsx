@@ -30,7 +30,7 @@ const StrategicDifferentiators: React.FC = () => {
       <style jsx>{`
         .differentiators-container {
           font-family:
-            'Inter',
+            var(--font-inter),
             -apple-system,
             BlinkMacSystemFont,
             'Segoe UI',

@@ -110,7 +110,7 @@ const Navigation = () => {
 
         .site-header {
           font-family:
-            'Inter',
+            var(--font-inter),
             -apple-system,
             BlinkMacSystemFont,
             'Segoe UI',
@@ -122,15 +122,12 @@ const Navigation = () => {
           right: 0 !important;
           width: 100% !important;
           z-index: 999999 !important;
-          backdrop-filter: blur(24px) saturate(140%);
-          -webkit-backdrop-filter: blur(24px) saturate(140%);
-          background: rgba(10, 15, 30, 0.92) !important;
+          background: rgb(10, 15, 30) !important;
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           transition: all 0.3s ease;
         }
 
         .site-header.scrolled {
-          background: rgba(10, 15, 30, 0.97) !important;
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
 

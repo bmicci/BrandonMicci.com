@@ -9,7 +9,7 @@ const StrategicIntroCard: React.FC = () => {
       <style jsx>{`
         .intro-card {
           font-family:
-            'Inter',
+            var(--font-inter),
             -apple-system,
             BlinkMacSystemFont,
             'Segoe UI',

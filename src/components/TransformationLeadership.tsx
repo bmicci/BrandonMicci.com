@@ -126,7 +126,7 @@ const TransformationLeadership = () => {
       <style jsx>{`
         .transformation-section {
           font-family:
-            'Inter',
+            var(--font-inter),
             -apple-system,
             BlinkMacSystemFont,
             'Segoe UI',

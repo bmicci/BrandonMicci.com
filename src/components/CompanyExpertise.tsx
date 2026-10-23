@@ -9,7 +9,7 @@ const CompanyExpertise: React.FC = () => {
         /* Company Expertise Section */
         .expertise-section {
           font-family:
-            'Inter',
+            var(--font-inter),
             -apple-system,
             BlinkMacSystemFont,
             'Segoe UI',
