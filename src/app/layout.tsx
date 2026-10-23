@@ -23,6 +23,14 @@ const geistSans = Geist({
   fallback: ['system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial'],
 });
 
+// Only the production deployment of the brandonmicci.com project is indexed.
+// Test and preview deployments (e.g. the redesign test project) are noindex.
+const INDEXABLE =
+  process.env.VERCEL_ENV === 'production' &&
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ?? '').includes(
+    'brandonmicci.com'
+  );
+
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -103,11 +111,11 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   robots: {
-    index: true,
-    follow: true,
+    index: INDEXABLE,
+    follow: INDEXABLE,
     googleBot: {
-      index: true,
-      follow: true,
+      index: INDEXABLE,
+      follow: INDEXABLE,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
@@ -174,6 +182,7 @@ export default async function RootLayout({
   const headersList = await headers();
   const nonce = headersList.get('x-csp-nonce') || undefined;
   const pathname = headersList.get('x-pathname') || '/';
+  const isHome = pathname === '/';
 
   // Only load analytics on Vercel (production deployment), not local builds
   const isVercel = process.env.VERCEL === '1';
@@ -207,14 +216,21 @@ export default async function RootLayout({
 
         {process.env.NODE_ENV === 'development' && <DevLayoutShiftLogger />}
         <StyledJsxRegistry>
-          <Navigation />
-          <Breadcrumbs />
-          <BackgroundRoot />
-          <FloatingCTA />
-          <main id="main" className="mt-8 md:mt-14">
-            {children}
-          </main>
-          <Footer />
+          {/* The homepage (Direction B) draws its own top bar and footer */}
+          {isHome ? (
+            <main id="main">{children}</main>
+          ) : (
+            <>
+              <Navigation />
+              <Breadcrumbs />
+              <BackgroundRoot />
+              <FloatingCTA />
+              <main id="main" className="mt-8 md:mt-14">
+                {children}
+              </main>
+              <Footer />
+            </>
+          )}
         </StyledJsxRegistry>
 
         {/* Vercel Analytics */}
