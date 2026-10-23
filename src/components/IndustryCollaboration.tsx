@@ -58,7 +58,7 @@ const IndustryCollaboration: React.FC = () => {
         #industry-collab * {
           box-sizing: border-box;
           font-family:
-            'Inter',
+            var(--font-inter),
             -apple-system,
             BlinkMacSystemFont,
             'Segoe UI',

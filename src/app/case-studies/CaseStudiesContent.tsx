@@ -210,7 +210,7 @@ export default function CaseStudiesContent() {
       <style jsx>{`
         .case-studies-page {
           font-family:
-            'Inter',
+            var(--font-inter),
             -apple-system,
             BlinkMacSystemFont,
             'Segoe UI',

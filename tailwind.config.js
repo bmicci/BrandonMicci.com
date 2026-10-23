@@ -10,6 +10,16 @@ module.exports = {
           blue: '#3B82F6',
         },
       },
+      fontFamily: {
+        sans: [
+          'var(--font-inter)',
+          'system-ui',
+          '-apple-system',
+          'Segoe UI',
+          'Roboto',
+          'sans-serif',
+        ],
+      },
       fontVariantNumeric: { tabular: 'tabular-nums' },
     },
   },

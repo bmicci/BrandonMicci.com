@@ -12,7 +12,7 @@ const LatestInsights = () => {
       <style jsx>{`
         .insights-section {
           font-family:
-            'Inter',
+            var(--font-inter),
             -apple-system,
             BlinkMacSystemFont,
             'Segoe UI',

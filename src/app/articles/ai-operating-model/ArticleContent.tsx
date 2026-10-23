@@ -9,7 +9,7 @@ export default function ArticleContent() {
       <style jsx>{`
         .article-page {
           font-family:
-            'Inter',
+            var(--font-inter),
             -apple-system,
             BlinkMacSystemFont,
             'Segoe UI',
