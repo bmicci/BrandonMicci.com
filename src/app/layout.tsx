@@ -3,13 +3,10 @@ import { Geist } from 'next/font/google';
 import { headers } from 'next/headers';
 import Script from 'next/script';
 import './globals.css';
-import Navigation from '@/components/Navigation';
-import BackgroundRoot from '@/components/BackgroundRoot';
 import EnhancedStructuredData from '@/components/EnhancedStructuredData';
 import DevLayoutShiftLogger from '@/components/DevLayoutShiftLogger';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import FloatingCTA from '@/components/FloatingCTA';
 import Footer from '@/components/Footer';
+import SiteFrame from '@/components/SiteFrame';
 import StyledJsxRegistry from '@/components/StyledJsxRegistry';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
@@ -189,8 +186,17 @@ export default async function RootLayout({
   const GA_ID = process.env.NEXT_PUBLIC_GA_ID; // set in Vercel env
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Homepage theme: apply the saved or system choice before first paint */}
+        {isHome && (
+          <script
+            nonce={nonce}
+            dangerouslySetInnerHTML={{
+              __html: `try{var t=localStorage.getItem('bm-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}`,
+            }}
+          />
+        )}
         {/* Note: do not manually preload logo-bm-tight.webp or headshot.webp here.
             Next.js <Image priority /> already preloads the optimized variant.
             A manual preload of the source file fetches the full-size image
@@ -216,21 +222,7 @@ export default async function RootLayout({
 
         {process.env.NODE_ENV === 'development' && <DevLayoutShiftLogger />}
         <StyledJsxRegistry>
-          {/* The homepage (Direction B) draws its own top bar and footer */}
-          {isHome ? (
-            <main id="main">{children}</main>
-          ) : (
-            <>
-              <Navigation />
-              <Breadcrumbs />
-              <BackgroundRoot />
-              <FloatingCTA />
-              <main id="main" className="mt-8 md:mt-14">
-                {children}
-              </main>
-              <Footer />
-            </>
-          )}
+          <SiteFrame footer={<Footer />}>{children}</SiteFrame>
         </StyledJsxRegistry>
 
         {/* Vercel Analytics */}
