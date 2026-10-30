@@ -300,3 +300,13 @@ html.dark .bm .quotes figure:hover { border-top-color: var(--accent); }
 /* page background outside the wrapper (overscroll) follows the theme */
 body:has(.bm) { background: #ffffff; }
 html.dark body:has(.bm) { background: #07101d; }
+
+/* phone: one full-width primary button, then the two downloads side by side */
+@media (max-width: 600px) {
+  .bm .hero .lead { font-size: 18px; margin: 24px 0 32px; }
+  .bm .hero .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .bm .hero .actions .btn { grid-column: 1 / -1; justify-content: center; margin-bottom: 8px; }
+  .bm .hero .actions .dl { justify-content: center; border-bottom: 0; padding: 16px 8px; font-size: 15px; }
+  .bm .hero .actions .dl + .dl { border-left: 1px solid var(--rule); }
+  .bm .hero .actions .dl:first-of-type { border-left: 0; }
+}
