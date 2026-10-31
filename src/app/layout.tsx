@@ -10,6 +10,7 @@ import SiteFrame from '@/components/SiteFrame';
 import StyledJsxRegistry from '@/components/StyledJsxRegistry';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
+import { BM_ROUTES } from '@/components/bm/routes';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -179,7 +180,7 @@ export default async function RootLayout({
   const headersList = await headers();
   const nonce = headersList.get('x-csp-nonce') || undefined;
   const pathname = headersList.get('x-pathname') || '/';
-  const isHome = pathname === '/';
+  const isPortfolio = BM_ROUTES.includes(pathname);
 
   // Only load analytics on Vercel (production deployment), not local builds
   const isVercel = process.env.VERCEL === '1';
@@ -188,8 +189,8 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Homepage theme: apply the saved or system choice before first paint */}
-        {isHome && (
+        {/* Portfolio pages theme: apply the saved or system choice before first paint */}
+        {isPortfolio && (
           <script
             nonce={nonce}
             dangerouslySetInnerHTML={{

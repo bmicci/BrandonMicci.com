@@ -2,10 +2,10 @@
 
 import { useEffect } from 'react';
 
-// Progressive enhancement for the homepage: theme toggle, phone menu and the
+// Progressive enhancement for the portfolio pages: theme toggle, phone menu and the
 // scroll motion. The page is complete without it; with reduced motion the
 // animations are skipped.
-export default function HomeEnhancements() {
+export default function BmEnhancements() {
   useEffect(() => {
     const root = document.documentElement;
     const page = document.querySelector<HTMLElement>('.bm');
@@ -90,7 +90,7 @@ export default function HomeEnhancements() {
       cleanups.push(() => root.classList.remove('m'));
       page
         .querySelectorAll(
-          '.sec-head, .sec-body > p, .quad > div, .roles li, .firms li, .about .sig, .quotes figure, .art, .topics li, .formats, .contact .l, .contact .r, .hero .copy > *'
+          '.sec-head, .sec-body > p, .emp, .cs-item, .page-hero .copy > *, .quad > div, .roles li, .firms li, .about .sig, .quotes figure, .art, .topics li, .formats, .contact .l, .contact .r, .hero .copy > *'
         )
         .forEach((el) => el.classList.add('rv'));
       const count = (el: HTMLElement | null) => {
