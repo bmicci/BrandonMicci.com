@@ -303,16 +303,6 @@ export default function Home() {
                 <i></i>
               </div>
               <ol className="roles">
-                <li className="now">
-                  <span className="y">2026–</span>
-                  <div>
-                    <h3>
-                      <span className="todo">[Your title]</span>
-                    </h3>
-                    <div className="co">Charles Schwab</div>
-                  </div>
-                  <span className="met"></span>
-                </li>
                 <li>
                   <span className="y">2024–2026</span>
                   <div>
@@ -800,7 +790,7 @@ export default function Home() {
           </nav>
           <p className="disc">
             Views expressed on this site are my own and do not represent those
-            of Charles Schwab.
+            of any current or former employer.
           </p>
         </div>
       </footer>
