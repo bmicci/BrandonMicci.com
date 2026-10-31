@@ -462,7 +462,7 @@ export default function Home() {
                 get the room to both understand and act.”
               </blockquote>
               <figcaption>
-                <b>John Jensen</b>Global Account Director, Alteryx
+                <b>John Jensen</b>Analytics Specialist, Tableau
               </figcaption>
             </figure>
             <figure>

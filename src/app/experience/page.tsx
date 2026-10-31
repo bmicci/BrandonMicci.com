@@ -278,7 +278,7 @@ const QUOTES = [
   {
     q: 'Brandon LIVES and embodies ‘Get it done in IT.’ A no-nonsense, go get it, problem solver is who Brandon is. He is the guy who can get the room to both understand and act.',
     who: 'John Jensen',
-    role: 'Global Account Director, Alteryx',
+    role: 'Analytics Specialist, Tableau',
   },
   {
     q: 'Brandon not only excels at managing a technology team and portfolio, but also pioneers key IoT initiatives, mentors younger professionals, and drives innovative technology change. This rare mix of productivity, leadership, vision, and ambition sets a great example.',
