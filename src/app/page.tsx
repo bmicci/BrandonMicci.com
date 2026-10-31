@@ -203,10 +203,10 @@ export default function Home() {
               <div className="fig">
                 <div className="n">$400M</div>
                 <div className="d">
-                  ten-year AI fraud analytics program, helped win and led
-                  delivery
+                  ten-year digital transformation and AI fraud analytics
+                  engagement, helped win
                 </div>
-                <div className="s">EY, major U.S. insurer</div>
+                <div className="s">EY, Top-5 national health insurer</div>
               </div>
               <div className="fig">
                 <div className="n">250%</div>
@@ -342,8 +342,9 @@ export default function Home() {
                     </h3>
                     <div className="co">EY</div>
                     <p>
-                      Won and led a real-time, AI-powered fraud analytics engine
-                      for a major U.S. health insurer.
+                      Helped win a ten-year digital transformation engagement
+                      for a Top-5 national health insurer, from legacy platform
+                      modernization to AI/ML-powered fraud analytics.
                     </p>
                   </div>
                   <span className="met">
@@ -356,8 +357,8 @@ export default function Home() {
                     <h3>Head of Digital Innovation &amp; IoT</h3>
                     <div className="co">Southwest Airlines</div>
                     <p>
-                      Took an IoT pilot to $20M+ in annual value across fuel,
-                      baggage and de-icing operations.
+                      Scaled an IoT pilot to 20 stations and $20M+ in annual
+                      savings across fuel, baggage and de-icing operations.
                     </p>
                   </div>
                   <span className="met">
@@ -373,7 +374,7 @@ export default function Home() {
                     <div className="co">Citi</div>
                     <p>
                       Led DevOps transformation across global infrastructure and
-                      removed recurring Sev1 outages.
+                      eliminated weekly Sev1 outages.
                     </p>
                   </div>
                   <span className="met">
@@ -411,16 +412,16 @@ export default function Home() {
                 <div>
                   <div className="idx">01 / 05</div>
                   <div className="n">27,000+</div>
-                  <div className="u">active users · 10+ data sources</div>
+                  <div className="u">active users · 12+ knowledge sources</div>
                 </div>
                 <div>
                   <h3>Enterprise knowledge assistant</h3>
                   <div className="w">JPMorgan Chase Payments · 2024–2026</div>
                   <p>
                     An enterprise LLM platform that grew from 7,500 policy
-                    documents to ten integrated data sources, with human review
-                    on high-stakes decisions and an evaluation harness behind
-                    every release.
+                    documents to 12+ knowledge sources, with human review on
+                    high-stakes decisions and an evaluation harness behind every
+                    release.
                   </p>
                   <div className="tags">
                     <span>LLM</span>
@@ -436,13 +437,14 @@ export default function Home() {
                   <div className="u">ten-year engagement</div>
                 </div>
                 <div>
-                  <h3>Real-time fraud analytics</h3>
+                  <h3>Fraud analytics transformation</h3>
                   <div className="w">
-                    EY · Major U.S. health insurer · 2021–2022
+                    EY · Top-5 national health insurer · 2021–2022
                   </div>
                   <p>
-                    A machine learning fraud detection platform processing
-                    millions of transactions in real time.
+                    Helped win the engagement and designed the phased roadmap,
+                    from legacy platform modernization through an enterprise
+                    data platform to AI/ML-powered fraud analytics.
                   </p>
                   <div className="tags">
                     <span>Machine learning</span>
@@ -462,7 +464,7 @@ export default function Home() {
                   <div className="w">Southwest Airlines · 2019–2020</div>
                   <p>
                     Edge computing and AI analytics across fuel, baggage and
-                    de-icing operations at airports nationwide.
+                    de-icing operations, scaled to 20 stations.
                   </p>
                   <div className="tags">
                     <span>IoT</span>
@@ -479,10 +481,11 @@ export default function Home() {
                 </div>
                 <div>
                   <h3>Enterprise analytics community</h3>
-                  <div className="w">Top-10 U.S. bank · 2015–2019</div>
+                  <div className="w">Capital One · 2015–2016</div>
                   <p>
-                    An enterprise analytics platform and community of practice
-                    that put self-service data in the hands of 30,000 employees.
+                    Founded the Tableau and Big Data center of excellence and
+                    grew a 30,000+ user community of practice, retiring 2,000+
+                    legacy dashboards and reports for $8M in annual savings.
                   </p>
                   <div className="tags">
                     <span>Analytics</span>
@@ -502,7 +505,7 @@ export default function Home() {
                   <div className="w">Citi · 2017–2019</div>
                   <p>
                     CI/CD, microservices and telemetry across global
-                    infrastructure, removing recurring Sev1 outages.
+                    infrastructure, eliminating weekly Sev1 outages.
                   </p>
                   <div className="tags">
                     <span>DevOps</span>
@@ -770,7 +773,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Executive brief <span>PDF, two pages</span>
+                Executive brief <span>PDF, one page</span>
               </a>
             </div>
           </div>
