@@ -9,25 +9,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${base}/`,
-      lastModified: '2026-07-28',
+      lastModified: '2026-11-01',
       changeFrequency: 'monthly',
       priority: 1.0,
     },
     {
       url: `${base}/experience`,
-      lastModified: '2026-07-28',
+      lastModified: '2026-11-01',
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${base}/case-studies`,
-      lastModified: '2026-07-28',
+      lastModified: '2026-11-01',
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${base}/articles`,
-      lastModified: '2026-09-17',
+      lastModified: '2026-11-01',
       changeFrequency: 'monthly',
       priority: 0.8,
     },
@@ -45,13 +45,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${base}/contact`,
-      lastModified: '2026-05-12',
+      lastModified: '2026-11-01',
       changeFrequency: 'yearly',
       priority: 0.5,
     },
     {
       url: `${base}/privacy`,
-      lastModified: '2026-05-10',
+      lastModified: '2026-11-01',
       changeFrequency: 'yearly',
       priority: 0.3,
     },

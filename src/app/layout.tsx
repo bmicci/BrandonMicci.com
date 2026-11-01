@@ -42,64 +42,21 @@ export const metadata: Metadata = {
     template: '%s | Brandon Micci',
   },
   description:
-    'Enterprise AI & Business Transformation Executive. Formerly JPMorgan Chase, Citi, Capital One, PwC. 17+ years, $50M+ documented savings, 27K+ AI users enabled.',
+    'Brandon Micci leads enterprise AI, data and transformation programs: 17+ years at JPMorgan Chase, Citi, Southwest Airlines and EY, with $50M+ in documented savings.',
   keywords: [
-    // Executive Roles
-    'Enterprise AI Executive',
-    'Digital Transformation Executive',
-    'AI Strategy Director',
-    'Data Strategy Executive',
-    'Senior Director AI',
-    'VP AI Products',
-    'Chief AI Officer',
-    'Head of AI',
-    'Digital Innovation Leader',
-
-    // Core AI/ML Skills
-    'LLM Deployment',
-    'Generative AI',
-    'MLOps',
-    'LLMOps',
-    'Machine Learning',
-    'Natural Language Processing',
-    'Computer Vision',
-    'Deep Learning',
-    'AI Governance',
-
-    // Cloud & Data
-    'AWS',
-    'Azure',
-    'Snowflake',
-    'Databricks',
-    'Apache Spark',
-    'Kafka',
-    'Data Lakes',
-    'Big Data',
-    'Data Governance',
-
-    // Enterprise & Leadership
-    'Fortune 500 AI Transformation',
-    'Enterprise Data Platform',
-    'Executive Leadership',
-    'C-Suite Engagement',
-    'Strategic Planning',
-    'ROI Analysis',
-
-    // Transformation
-    'Digital Transformation',
-    'Industry 4.0',
-    'IoT Platforms',
-    'DevOps',
-    'Kubernetes',
-    'Docker',
-    'Microservices',
-
-    // Analytics
-    'Tableau',
-    'Power BI',
-    'Python',
-    'SQL',
-    'Data Science',
+    'Brandon Micci',
+    'enterprise AI strategy',
+    'AI operating model',
+    'AI governance',
+    'Responsible AI',
+    'LLM deployment',
+    'generative AI in financial services',
+    'AI delivery lifecycle',
+    'business transformation',
+    'data strategy',
+    'analytics center of excellence',
+    'digital transformation',
+    'Dallas',
   ],
   authors: [{ name: 'Brandon Micci', url: 'https://brandonmicci.com' }],
   creator: 'Brandon Micci',
@@ -132,13 +89,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'Brandon Micci | Enterprise AI & Business Transformation Executive',
     description:
-      'Dallas-based Enterprise AI & Business Transformation Executive. $50M+ documented savings, $22M+ AI-driven savings, 27K+ AI users enabled.',
+      'Seventeen years leading enterprise AI, data and transformation programs in regulated companies. Case studies, career history and writing.',
     images: [
       {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Brandon Micci - Enterprise AI & Digital Transformation Executive',
+        alt: 'Brandon Micci, enterprise AI and business transformation executive',
       },
     ],
   },
@@ -146,7 +103,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Brandon Micci | Enterprise AI & Business Transformation Executive',
     description:
-      'Dallas-based Enterprise AI & Business Transformation Executive. $50M+ documented savings, $22M+ AI-driven savings, 27K+ AI users enabled.',
+      'Seventeen years leading enterprise AI, data and transformation programs in regulated companies. Case studies, career history and writing.',
     images: ['/opengraph-image'],
     creator: '@brandonmicci',
   },

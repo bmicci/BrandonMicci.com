@@ -77,7 +77,7 @@ const ROUTES = [
 
 export default function ContactPage() {
   return (
-    <BmShell nav={SITE_NAV} current="#contact">
+    <BmShell nav={SITE_NAV} current="/contact">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

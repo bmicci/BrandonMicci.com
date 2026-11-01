@@ -20,7 +20,7 @@ export const SITE_NAV: BmNavItem[] = [
   { href: '/experience', label: 'Experience' },
   { href: '/case-studies', label: 'Case studies' },
   { href: '/articles', label: 'Writing' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 function NavLink({
@@ -143,7 +143,7 @@ export default function BmShell({
           ))}
         </ol>
         <div className="foot">
-          <a className="btn" href="#contact">
+          <a className="btn" href={home ? '#contact' : '/contact'}>
             Get in touch <span className="arrow"></span>
           </a>
           <span>brandon@brandonmicci.com · Dallas, Texas</span>
