@@ -1,7 +1,5 @@
+// Pages render on the server quickly; show nothing rather than a spinner that
+// would flash over the page between navigations.
 export default function Loading() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-      <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
-    </div>
-  );
+  return null;
 }
