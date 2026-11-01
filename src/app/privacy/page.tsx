@@ -5,7 +5,6 @@ export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
     'Privacy policy for BrandonMicci.com describing what limited information is collected and how it is used.',
-  robots: { index: true, follow: true },
   alternates: { canonical: '/privacy' },
   openGraph: {
     title: 'Privacy Policy | Brandon Micci',

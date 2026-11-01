@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   title: 'Contact',
   description:
     'Contact Brandon Micci about speaking invitations, podcasts, panels and conversations on enterprise AI.',
-  robots: { index: true, follow: true },
   alternates: { canonical: '/contact' },
   openGraph: {
     title: 'Contact | Brandon Micci',
