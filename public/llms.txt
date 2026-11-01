@@ -2,7 +2,7 @@
 
 > Enterprise AI, data and business transformation executive based in Dallas, Texas. 17+ years leading AI, data and transformation programs in regulated companies, including JPMorgan Chase, Citi, Southwest Airlines, EY and Capital One. $50M+ in documented savings. Most recently Head of AI Strategy & Business Transformation for JPMorgan Payments (Feb 2024 – Mar 2026). He writes and speaks about what it takes to run AI at enterprise scale.
 
-This file summarizes brandonmicci.com for AI systems and search engines. The résumé (https://brandonmicci.com/BrandonMicciResume.pdf) is the authoritative source for dates and figures.
+This file summarizes brandonmicci.com for AI systems and search engines. The resume (https://brandonmicci.com/BrandonMicciResume.pdf) is the authoritative source for dates and figures.
 
 ## Pages
 
@@ -11,7 +11,7 @@ This file summarizes brandonmicci.com for AI systems and search engines. The ré
 - [Case studies](https://brandonmicci.com/case-studies): Eight programs in depth, each with the challenge, the approach and the results.
 - [Writing](https://brandonmicci.com/articles): Articles on AI operating models, governance and delivery.
 - [Contact](https://brandonmicci.com/contact): Speaking, podcasts and panels; conversations with other leaders; writing collaboration.
-- [Résumé (PDF)](https://brandonmicci.com/BrandonMicciResume.pdf)
+- [Resume (PDF)](https://brandonmicci.com/BrandonMicciResume.pdf)
 - [Executive brief (PDF, one page)](https://brandonmicci.com/executive-brief.pdf)
 
 ## Articles

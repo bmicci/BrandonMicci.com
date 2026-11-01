@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import BmShell, { BmContact, SITE_NAV } from '@/components/bm/BmShell';
 
-// Full career history. Wording follows the résumé; details that appear only on
-// the earlier site, and that the résumé does not contradict, are kept.
+// Full career history. Wording follows the resume; details that appear only on
+// the earlier site, and that the resume does not contradict, are kept.
 
 export const metadata: Metadata = {
   title: 'Experience',
@@ -320,7 +320,7 @@ export default function ExperiencePage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Résumé <small>PDF</small>
+                Resume <small>PDF</small>
               </a>
               <a
                 className="dl"

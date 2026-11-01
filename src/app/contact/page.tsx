@@ -131,7 +131,7 @@ export default function ContactPage() {
           <div className="l">
             <div className="label onNavy">Elsewhere</div>
             <h2>Save my details.</h2>
-            <p>LinkedIn, a contact card for your phone, and my résumé.</p>
+            <p>LinkedIn, a contact card for your phone, and my resume.</p>
           </div>
           <div className="r">
             <a
@@ -149,7 +149,7 @@ export default function ContactPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Résumé <span>PDF</span>
+              Resume <span>PDF</span>
             </a>
             <a
               href="/executive-brief.pdf"

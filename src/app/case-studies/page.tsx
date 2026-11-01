@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import BmShell, { BmContact, SITE_NAV } from '@/components/bm/BmShell';
 
-// Eight programs in depth. Figures follow the résumé; results that only the
-// earlier site claimed, and the résumé does not support, were left out.
+// Eight programs in depth. Figures follow the resume; results that only the
+// earlier site claimed, and the resume does not support, were left out.
 
 export const metadata: Metadata = {
   title: 'Case Studies',

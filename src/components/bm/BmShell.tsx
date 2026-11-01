@@ -204,7 +204,7 @@ export function BmContact({ intro }: { intro?: string }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Résumé <span>PDF</span>
+            Resume <span>PDF</span>
           </a>
           <a
             href="/executive-brief.pdf"

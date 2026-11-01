@@ -28,7 +28,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Résumé <small>PDF</small>
+                Resume <small>PDF</small>
               </a>
               <a
                 className="dl"
