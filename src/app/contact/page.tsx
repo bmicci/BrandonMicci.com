@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import BmShell, { SITE_NAV } from '@/components/bm/BmShell';
 
 const EMAIL = 'brandon@brandonmicci.com';
 const SITE_URL = 'https://brandonmicci.com';
@@ -6,13 +7,12 @@ const SITE_URL = 'https://brandonmicci.com';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Contact Brandon Micci, Enterprise AI & Business Transformation Executive, for executive search, board advisory, keynote speaking, and workshop inquiries.',
-  robots: { index: true, follow: true },
+    'Contact Brandon Micci about speaking invitations, podcasts, panels and conversations on enterprise AI.',
   alternates: { canonical: '/contact' },
   openGraph: {
     title: 'Contact | Brandon Micci',
     description:
-      'Executive search, advisory, and speaking inquiries for Brandon Micci.',
+      'Speaking invitations, podcasts, panels and conversations on enterprise AI.',
     url: 'https://brandonmicci.com/contact',
     type: 'website',
     images: [
@@ -20,117 +20,146 @@ export const metadata: Metadata = {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Brandon Micci - Enterprise AI & Digital Transformation Executive',
+        alt: 'Brandon Micci, enterprise AI and transformation executive',
       },
     ],
   },
 };
 
-function ContactJsonLd() {
-  const data = [
-    // ContactPage for the page itself
-    {
-      '@context': 'https://schema.org',
-      '@type': 'ContactPage',
-      url: `${SITE_URL}/contact`,
-      mainEntityOfPage: `${SITE_URL}/contact`,
-      about: {
-        '@type': 'Person',
-        name: 'Brandon Micci',
-        url: SITE_URL,
-      },
-    },
-    // ContactPoint on Person for redundancy/graph linking
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Person',
-      name: 'Brandon Micci',
-      url: SITE_URL,
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  url: `${SITE_URL}/contact`,
+  about: {
+    '@type': 'Person',
+    name: 'Brandon Micci',
+    url: SITE_URL,
+    email: EMAIL,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Speaking and collaboration',
       email: EMAIL,
-      contactPoint: [
-        {
-          '@type': 'ContactPoint',
-          contactType: 'Recruiting / executive search',
-          email: EMAIL,
-          availableLanguage: ['en'],
-        },
-        {
-          '@type': 'ContactPoint',
-          contactType: 'Speaking & advisory',
-          email: EMAIL,
-          availableLanguage: ['en'],
-        },
-      ],
+      availableLanguage: ['en'],
     },
-  ];
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
-  );
-}
+  },
+};
+
+const mail = (subject: string, body: string) =>
+  `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+const ROUTES = [
+  {
+    k: '01',
+    title: 'Speaking, podcasts and panels',
+    text: 'Keynotes, fireside chats and panels on enterprise AI, operating models and delivery.',
+    href: mail(
+      'Speaking invitation',
+      'Hi Brandon,\n\nEvent or show:\nAudience:\nDate:\nTopic:\nFormat (keynote, panel, podcast):\n\nThanks,'
+    ),
+    cta: 'Send an invitation',
+  },
+  {
+    k: '02',
+    title: 'Conversations with other leaders',
+    text: 'Comparing notes on running AI in a large, regulated company: what worked, what didn’t.',
+    href: mail('Comparing notes', 'Hi Brandon,\n\n'),
+    cta: 'Write to me',
+  },
+  {
+    k: '03',
+    title: 'Writing and collaboration',
+    text: 'Guest articles, research and joint pieces on enterprise AI.',
+    href: mail('Writing collaboration', 'Hi Brandon,\n\n'),
+    cta: 'Suggest an idea',
+  },
+];
 
 export default function ContactPage() {
-  const subjectExec = encodeURIComponent('Executive Inquiry: Brandon Micci');
-  const bodyExec = encodeURIComponent(
-    "Hi Brandon,\n\nI'm reaching out about an executive opportunity.\n\nCompany:\nRole/Title:\nLocation (or Remote):\nTimeline:\nNotes:\n\nThanks!"
-  );
-  const subjectSpeak = encodeURIComponent(
-    'Speaking / Advisory Inquiry: Brandon Micci'
-  );
-  const bodySpeak = encodeURIComponent(
-    "Hi Brandon,\n\nI'm reaching out about a speaking/advisory engagement.\n\nEvent/Org:\nAudience:\nDate(s):\nTopic(s):\nFormat (keynote, workshop):\n\nThanks!"
-  );
-
   return (
-    <div className="mx-auto max-w-4xl px-6 pt-24 pb-16">
-      <ContactJsonLd />
-      <section className="rounded-3xl border border-white/10 bg-gradient-to-b from-[rgba(15,23,42,0.92)] to-[rgba(10,14,30,0.92)] p-8 md:p-12 shadow-2xl backdrop-blur-md">
-        <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-          Contact
-        </h1>
-        <p className="mt-4 text-white/90 leading-relaxed">
-          For <strong className="text-white">executive search</strong>,{' '}
-          <strong className="text-white">advisory</strong>, or{' '}
-          <strong className="text-white">speaking</strong> inquiries, email me
-          directly:
-        </p>
-
-        <div className="mt-8 flex flex-col gap-3">
-          <a
-            href={`mailto:${EMAIL}?subject=${subjectExec}&body=${bodyExec}`}
-            className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-white hover:bg-white/[0.08] hover:border-white/15 transition"
-            aria-label="Email Brandon for executive inquiries"
-          >
-            <span className="mr-2">✉️</span> Executive inquiries — {EMAIL}
-          </a>
-          <a
-            href={`mailto:${EMAIL}?subject=${subjectSpeak}&body=${bodySpeak}`}
-            className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-white hover:bg-white/[0.08] hover:border-white/15 transition"
-            aria-label="Email Brandon for speaking and advisory inquiries"
-          >
-            <span className="mr-2">🎤</span> Speaking & advisory — {EMAIL}
-          </a>
-          <a
-            href="/brandon-micci.vcf"
-            className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-r from-[#0E1B33] to-[#0A0F1F] px-5 py-3 text-sm font-medium text-white hover:from-[#14274d] hover:to-[#0f1a2f] transition"
-            aria-label="Download Brandon's vCard"
-          >
-            <span className="mr-2">📇</span> Download vCard (Brandon Micci)
-          </a>
+    <BmShell nav={SITE_NAV} current="/contact">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <section className="page-hero">
+        <div className="wrap grid">
+          <div className="copy">
+            <div className="label">Contact</div>
+            <h1>Let’s compare notes.</h1>
+            <p className="lead">
+              Email is the quickest way to reach me. I usually reply within a
+              business day.
+            </p>
+            <div className="actions">
+              <a className="btn" href={`mailto:${EMAIL}`}>
+                {EMAIL} <span className="arrow"></span>
+              </a>
+            </div>
+          </div>
         </div>
-
-        <hr className="my-8 border-white/10" />
-
-        <h2 className="text-2xl font-semibold text-white tracking-tight">
-          Response Time
-        </h2>
-        <p className="mt-3 text-white/90 leading-relaxed">
-          I aim to respond within one business day to executive search and event
-          requests.
-        </p>
       </section>
-    </div>
+
+      <section className="speak" id="contact">
+        <div className="wrap grid">
+          <div className="sec-head">
+            <div className="label">Ways to connect</div>
+          </div>
+          <div className="sec-body">
+            <ol className="topics">
+              {ROUTES.map((r) => (
+                <li key={r.k}>
+                  <span className="k">{r.k}</span>
+                  <div>
+                    <h3>{r.title}</h3>
+                    <p>{r.text}</p>
+                    <p className="go">
+                      <a className="link arrow" href={r.href}>
+                        {r.cta}{' '}
+                      </a>
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section className="contact">
+        <div className="wrap grid">
+          <div className="l">
+            <div className="label onNavy">Elsewhere</div>
+            <h2>Save my details.</h2>
+            <p>LinkedIn, a contact card for your phone, and my resume.</p>
+          </div>
+          <div className="r">
+            <a
+              href="https://www.linkedin.com/in/brandonmicci"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              linkedin.com/in/brandonmicci <span>LinkedIn</span>
+            </a>
+            <a href="/brandon-micci.vcf">
+              Contact card <span>vCard</span>
+            </a>
+            <a
+              href="/BrandonMicciResume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume <span>PDF</span>
+            </a>
+            <a
+              href="/executive-brief.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Executive brief <span>PDF, one page</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </BmShell>
   );
 }

@@ -3,16 +3,14 @@ import { Geist } from 'next/font/google';
 import { headers } from 'next/headers';
 import Script from 'next/script';
 import './globals.css';
-import Navigation from '@/components/Navigation';
-import BackgroundRoot from '@/components/BackgroundRoot';
 import EnhancedStructuredData from '@/components/EnhancedStructuredData';
 import DevLayoutShiftLogger from '@/components/DevLayoutShiftLogger';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import FloatingCTA from '@/components/FloatingCTA';
 import Footer from '@/components/Footer';
+import SiteFrame from '@/components/SiteFrame';
 import StyledJsxRegistry from '@/components/StyledJsxRegistry';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
+import { isPortfolioPath } from '@/components/bm/routes';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -22,6 +20,14 @@ const geistSans = Geist({
   adjustFontFallback: true,
   fallback: ['system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial'],
 });
+
+// Only the production deployment of the brandonmicci.com project is indexed.
+// Test and preview deployments (e.g. the redesign test project) are noindex.
+const INDEXABLE =
+  process.env.VERCEL_ENV === 'production' &&
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ?? '').includes(
+    'brandonmicci.com'
+  );
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -36,64 +42,21 @@ export const metadata: Metadata = {
     template: '%s | Brandon Micci',
   },
   description:
-    'Enterprise AI & Business Transformation Executive. Formerly JPMorgan Chase, Citi, Capital One, PwC. 17+ years, $50M+ documented savings, 27K+ AI users enabled.',
+    'Brandon Micci leads enterprise AI, data and transformation programs: 17+ years at JPMorgan Chase, Citi, Southwest Airlines and EY, with $50M+ in documented savings.',
   keywords: [
-    // Executive Roles
-    'Enterprise AI Executive',
-    'Digital Transformation Executive',
-    'AI Strategy Director',
-    'Data Strategy Executive',
-    'Senior Director AI',
-    'VP AI Products',
-    'Chief AI Officer',
-    'Head of AI',
-    'Digital Innovation Leader',
-
-    // Core AI/ML Skills
-    'LLM Deployment',
-    'Generative AI',
-    'MLOps',
-    'LLMOps',
-    'Machine Learning',
-    'Natural Language Processing',
-    'Computer Vision',
-    'Deep Learning',
-    'AI Governance',
-
-    // Cloud & Data
-    'AWS',
-    'Azure',
-    'Snowflake',
-    'Databricks',
-    'Apache Spark',
-    'Kafka',
-    'Data Lakes',
-    'Big Data',
-    'Data Governance',
-
-    // Enterprise & Leadership
-    'Fortune 500 AI Transformation',
-    'Enterprise Data Platform',
-    'Executive Leadership',
-    'C-Suite Engagement',
-    'Strategic Planning',
-    'ROI Analysis',
-
-    // Transformation
-    'Digital Transformation',
-    'Industry 4.0',
-    'IoT Platforms',
-    'DevOps',
-    'Kubernetes',
-    'Docker',
-    'Microservices',
-
-    // Analytics
-    'Tableau',
-    'Power BI',
-    'Python',
-    'SQL',
-    'Data Science',
+    'Brandon Micci',
+    'enterprise AI strategy',
+    'AI operating model',
+    'AI governance',
+    'Responsible AI',
+    'LLM deployment',
+    'generative AI in financial services',
+    'AI delivery lifecycle',
+    'business transformation',
+    'data strategy',
+    'analytics center of excellence',
+    'digital transformation',
+    'Dallas',
   ],
   authors: [{ name: 'Brandon Micci', url: 'https://brandonmicci.com' }],
   creator: 'Brandon Micci',
@@ -103,11 +66,11 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   robots: {
-    index: true,
-    follow: true,
+    index: INDEXABLE,
+    follow: INDEXABLE,
     googleBot: {
-      index: true,
-      follow: true,
+      index: INDEXABLE,
+      follow: INDEXABLE,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
@@ -126,13 +89,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'Brandon Micci | Enterprise AI & Business Transformation Executive',
     description:
-      'Dallas-based Enterprise AI & Business Transformation Executive. $50M+ documented savings, $22M+ AI-driven savings, 27K+ AI users enabled.',
+      'Seventeen years leading enterprise AI, data and transformation programs in regulated companies. Case studies, career history and writing.',
     images: [
       {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Brandon Micci - Enterprise AI & Digital Transformation Executive',
+        alt: 'Brandon Micci, enterprise AI and business transformation executive',
       },
     ],
   },
@@ -140,7 +103,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Brandon Micci | Enterprise AI & Business Transformation Executive',
     description:
-      'Dallas-based Enterprise AI & Business Transformation Executive. $50M+ documented savings, $22M+ AI-driven savings, 27K+ AI users enabled.',
+      'Seventeen years leading enterprise AI, data and transformation programs in regulated companies. Case studies, career history and writing.',
     images: ['/opengraph-image'],
     creator: '@brandonmicci',
   },
@@ -174,14 +137,24 @@ export default async function RootLayout({
   const headersList = await headers();
   const nonce = headersList.get('x-csp-nonce') || undefined;
   const pathname = headersList.get('x-pathname') || '/';
+  const isPortfolio = isPortfolioPath(pathname);
 
   // Only load analytics on Vercel (production deployment), not local builds
   const isVercel = process.env.VERCEL === '1';
   const GA_ID = process.env.NEXT_PUBLIC_GA_ID; // set in Vercel env
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Portfolio pages theme: apply the saved or system choice before first paint */}
+        {isPortfolio && (
+          <script
+            nonce={nonce}
+            dangerouslySetInnerHTML={{
+              __html: `try{var t=localStorage.getItem('bm-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';if(t==='dark')document.documentElement.classList.add('dark')}catch(e){}`,
+            }}
+          />
+        )}
         {/* Note: do not manually preload logo-bm-tight.webp or headshot.webp here.
             Next.js <Image priority /> already preloads the optimized variant.
             A manual preload of the source file fetches the full-size image
@@ -207,14 +180,7 @@ export default async function RootLayout({
 
         {process.env.NODE_ENV === 'development' && <DevLayoutShiftLogger />}
         <StyledJsxRegistry>
-          <Navigation />
-          <Breadcrumbs />
-          <BackgroundRoot />
-          <FloatingCTA />
-          <main id="main" className="mt-8 md:mt-14">
-            {children}
-          </main>
-          <Footer />
+          <SiteFrame footer={<Footer />}>{children}</SiteFrame>
         </StyledJsxRegistry>
 
         {/* Vercel Analytics */}

@@ -1,145 +1,27 @@
-'use client';
-
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import BmShell, { BmContact, SITE_NAV } from '@/components/bm/BmShell';
 
 export default function ArticleContent() {
   return (
-    <>
-      <style jsx>{`
-        .article-page {
-          font-family:
-            'Inter',
-            -apple-system,
-            BlinkMacSystemFont,
-            'Segoe UI',
-            Roboto,
-            sans-serif;
-          color: white;
-          padding: 6rem 0 4rem;
-          min-height: 100vh;
-        }
-
-        .article-container {
-          max-width: 760px;
-          margin: 0 auto;
-          padding: 0 2rem;
-        }
-
-        .back-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          color: rgba(255, 255, 255, 0.7);
-          text-decoration: none;
-          font-size: 0.9rem;
-          margin-bottom: 2.5rem;
-          transition: color 0.3s ease;
-        }
-
-        .back-link:hover {
-          color: #00d4ff;
-        }
-
-        .article-title {
-          font-size: 2.5rem;
-          font-weight: 800;
-          line-height: 1.2;
-          margin-bottom: 1rem;
-          background: linear-gradient(135deg, #00d4ff 0%, #1e90ff 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        .article-subtitle {
-          font-size: 1.2rem;
-          color: rgba(255, 255, 255, 0.75);
-          line-height: 1.6;
-          font-style: italic;
-          margin-bottom: 1.5rem;
-        }
-
-        .article-meta {
-          font-size: 0.9rem;
-          color: rgba(255, 255, 255, 0.55);
-          padding-bottom: 2rem;
-          border-bottom: 1px solid rgba(0, 212, 255, 0.15);
-          margin-bottom: 2.5rem;
-        }
-
-        .article-body :global(p) {
-          font-size: 1.05rem;
-          line-height: 1.8;
-          color: rgba(255, 255, 255, 0.85);
-          margin-bottom: 1.5rem;
-        }
-
-        .article-body :global(h2) {
-          font-size: 1.7rem;
-          font-weight: 700;
-          color: white;
-          margin: 2.75rem 0 1.25rem;
-          line-height: 1.3;
-        }
-
-        .article-body :global(h3) {
-          font-size: 1.25rem;
-          font-weight: 700;
-          color: #00d4ff;
-          margin: 2.25rem 0 1rem;
-        }
-
-        .article-body :global(strong) {
-          color: white;
-        }
-
-        .article-bio {
-          margin-top: 3rem;
-          padding: 1.75rem 2rem;
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid rgba(0, 212, 255, 0.15);
-          border-radius: 16px;
-          font-size: 0.95rem;
-          line-height: 1.7;
-          color: rgba(255, 255, 255, 0.75);
-        }
-
-        .article-bio :global(a) {
-          color: #00d4ff;
-          text-decoration: none;
-        }
-
-        @media (max-width: 640px) {
-          .article-title {
-            font-size: 1.85rem;
-          }
-
-          .article-subtitle {
-            font-size: 1.05rem;
-          }
-        }
-      `}</style>
-
-      <div className="article-page">
-        <div className="article-container">
-          <Link href="/articles" className="back-link">
-            <ArrowLeft size={16} />
-            All Articles
-          </Link>
-
-          <h1 className="article-title">
-            Your AI Strategy Isn&rsquo;t the Problem. Your Operating Model Is.
-          </h1>
-          <p className="article-subtitle">
-            What it actually takes to run AI at enterprise scale, learned the
-            hard way inside a Fortune-50 financial institution.
-          </p>
-          <div className="article-meta">
-            By Brandon Micci · September 2026 · 10 min read
-          </div>
-
-          <div className="article-body">
+    <BmShell nav={SITE_NAV} current="/articles">
+      <article className="post">
+        <div className="wrap">
+          <header className="post-head">
+            <Link className="label back" href="/articles">
+              Writing
+            </Link>
+            <h1>
+              Your AI Strategy Isn&rsquo;t the Problem. Your Operating Model Is.
+            </h1>
+            <p className="dek">
+              What it actually takes to run AI at enterprise scale, learned the
+              hard way inside a Fortune-50 financial institution.
+            </p>
+            <div className="meta">
+              By Brandon Micci · September 2026 · 10 min read
+            </div>
+          </header>
+          <div className="post-body">
             <p>
               Every large company I talk to has an AI strategy. Most of them
               have a deck, a steering committee, a budget line, and a backlog of
@@ -199,15 +81,15 @@ export default function ArticleContent() {
               together, because a decision in one constrains the others.
             </p>
             <p>
-              <strong>People.</strong> This is not &ldquo;hire more AI
-              talent.&rdquo; It is deciding which roles exist, what each one is
-              accountable for, and how they relate to each other. In a regulated
-              environment you need, at minimum, clear ownership for the business
-              outcome, for the technical build, for the data, for model
-              validation, and for ongoing operations. Those are five different
-              accountabilities. In most companies today they are either
-              collapsed into one overworked team or scattered across so many
-              groups that no single person can say yes.
+              <strong>People.</strong> This is not “hire more AI talent.” It is
+              deciding which roles exist, what each one is accountable for, and
+              how they relate to each other. In a regulated environment you
+              need, at minimum, clear ownership for the business outcome, for
+              the technical build, for the data, for model validation, and for
+              ongoing operations. Those are five different accountabilities. In
+              most companies today they are either collapsed into one overworked
+              team or scattered across so many groups that no single person can
+              say yes.
             </p>
             <p>
               <strong>Process.</strong> How does a use case move from an idea to
@@ -456,8 +338,7 @@ export default function ArticleContent() {
               land.
             </p>
           </div>
-
-          <div className="article-bio">
+          <aside className="post-bio">
             Brandon Micci is a Dallas-based AI strategy and business
             transformation executive with 17+ years across financial services,
             consulting, and aviation. Most recently he led AI strategy and
@@ -465,11 +346,17 @@ export default function ArticleContent() {
             institution, where he designed the AI operating model, established
             the AI Center of Excellence and model risk framework, and directed
             the platform that scaled an enterprise LLM assistant to 27,000+
-            employees. He serves on the board of the Dallas CTO Club.{' '}
+            employees. He serves on the board of the DFW CTO Club.{' '}
             <Link href="/contact">Get in touch</Link>.
-          </div>
+          </aside>
+          <p className="post-next">
+            <Link className="link arrow" href="/articles">
+              All writing{' '}
+            </Link>
+          </p>
         </div>
-      </div>
-    </>
+      </article>
+      <BmContact />
+    </BmShell>
   );
 }

@@ -1,6 +1,9 @@
 'use client';
 
 import { useEffect } from 'react';
+import Link from 'next/link';
+import { bmFontVars } from '@/components/bm/fonts';
+import '@/components/bm/bm.css';
 
 export default function Error({
   error,
@@ -10,21 +13,30 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
-    // Log the error to an error reporting service
     console.error(error);
   }, [error]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-      <div className="text-center">
-        <h2 className="text-2xl font-bold mb-4">Something went wrong!</h2>
-        <button
-          onClick={() => reset()}
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-        >
-          Try again
-        </button>
-      </div>
+    <div className={`bm ${bmFontVars}`}>
+      <section className="page-hero tall">
+        <div className="wrap grid">
+          <div className="copy">
+            <div className="label">Error</div>
+            <h1>Something went wrong.</h1>
+            <p className="lead">
+              The page didn’t load. Try again, or go back to the homepage.
+            </p>
+            <div className="actions">
+              <button className="btn" type="button" onClick={() => reset()}>
+                Try again
+              </button>
+              <Link className="dl" href="/">
+                Home
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
