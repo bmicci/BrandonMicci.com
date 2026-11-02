@@ -1,18 +1,20 @@
 import Image from 'next/image';
 import BmShell, { BmContact, HOME_NAV } from '@/components/bm/BmShell';
 
-type Firm = { name: string; logo?: string };
+// h: display height in px, tuned per mark so wide wordmarks and compact
+// monograms read at a similar visual weight.
+type Firm = { name: string; logo?: string; h?: number };
 
 // Official artwork goes in public/logos/ and is named here. A firm without a
 // file shows its name in the same soft grey until the artwork is added.
 const FIRMS: Firm[] = [
-  { name: 'JPMorgan Chase' },
-  { name: 'Citi' },
-  { name: 'Capital One' },
-  { name: 'Southwest Airlines' },
-  { name: 'EY' },
-  { name: 'PwC' },
-  { name: 'Capgemini' },
+  { name: 'JPMorgan Chase', logo: '/logos/jpmorganchase.svg', h: 20 },
+  { name: 'Citi', logo: '/logos/citi.svg', h: 26 },
+  { name: 'Capital One', logo: '/logos/capital-one.svg', h: 30 },
+  { name: 'Southwest Airlines', logo: '/logos/southwest.svg', h: 20 },
+  { name: 'EY', logo: '/logos/ey.svg', h: 28 },
+  { name: 'PwC', logo: '/logos/pwc.svg', h: 32 },
+  { name: 'Capgemini', logo: '/logos/capgemini.svg', h: 26 },
   { name: 'Booz Allen Hamilton' },
 ];
 
@@ -21,7 +23,12 @@ function FirmItem({ firm, hidden }: { firm: Firm; hidden?: boolean }) {
     <li aria-hidden={hidden || undefined}>
       {firm.logo ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={firm.logo} alt={hidden ? '' : firm.name} height={28} />
+        <img
+          src={firm.logo}
+          alt={hidden ? '' : firm.name}
+          height={firm.h ?? 28}
+          style={{ height: firm.h ?? 28 }}
+        />
       ) : (
         <span>{firm.name}</span>
       )}
