@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next';
-import { Geist } from 'next/font/google';
 import { headers } from 'next/headers';
 import Script from 'next/script';
 import './globals.css';
@@ -11,15 +10,6 @@ import StyledJsxRegistry from '@/components/StyledJsxRegistry';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 import { isPortfolioPath } from '@/components/bm/routes';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-  display: 'swap',
-  preload: true,
-  adjustFontFallback: true,
-  fallback: ['system-ui', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial'],
-});
 
 // Only the production deployment of the brandonmicci.com project is indexed.
 // Test and preview deployments (e.g. the redesign test project) are noindex.
@@ -174,7 +164,7 @@ export default async function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className={`${geistSans.variable} antialiased`}>
+      <body className="antialiased">
         {/* Structured Data with nonce */}
         <EnhancedStructuredData nonce={nonce} pathname={pathname} />
 
