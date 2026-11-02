@@ -13,12 +13,12 @@ const FIRMS: Firm[] = [
   { name: 'Capital One', logo: '/logos/capital-one.svg', h: 30 },
   { name: 'Southwest Airlines', logo: '/logos/southwest.svg', h: 20 },
   { name: 'EY', logo: '/logos/ey.svg', h: 28 },
-  { name: 'PwC', logo: '/logos/pwc.svg', h: 32 },
+  { name: 'PwC', logo: '/logos/pwc.svg', h: 24 },
   { name: 'Capgemini', logo: '/logos/capgemini.svg', h: 26 },
   {
     name: 'Booz Allen Hamilton',
     logo: '/logos/booz-allen-hamilton.svg',
-    h: 20,
+    h: 18,
   },
 ];
 
