@@ -1,6 +1,34 @@
 import Image from 'next/image';
 import BmShell, { BmContact, HOME_NAV } from '@/components/bm/BmShell';
 
+type Firm = { name: string; logo?: string };
+
+// Official artwork goes in public/logos/ and is named here. A firm without a
+// file shows its name in the same soft grey until the artwork is added.
+const FIRMS: Firm[] = [
+  { name: 'JPMorgan Chase' },
+  { name: 'Citi' },
+  { name: 'Capital One' },
+  { name: 'Southwest Airlines' },
+  { name: 'EY' },
+  { name: 'PwC' },
+  { name: 'Capgemini' },
+  { name: 'Booz Allen Hamilton' },
+];
+
+function FirmItem({ firm, hidden }: { firm: Firm; hidden?: boolean }) {
+  return (
+    <li aria-hidden={hidden || undefined}>
+      {firm.logo ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={firm.logo} alt={hidden ? '' : firm.name} height={28} />
+      ) : (
+        <span>{firm.name}</span>
+      )}
+    </li>
+  );
+}
+
 // Homepage: the executive portfolio. BmShell draws the header, menu and
 // footer; layout.tsx skips the site-wide chrome on the portfolio pages.
 
@@ -47,7 +75,7 @@ export default function Home() {
               width={400}
               height={500}
               priority
-              sizes="(max-width: 900px) 320px, 360px"
+              sizes="(max-width: 900px) 128px, 360px"
             />
             <figcaption>Dallas, Texas · Board member, DFW CTO Club</figcaption>
           </figure>
@@ -91,16 +119,24 @@ export default function Home() {
       <section className="firms" aria-label="Organizations">
         <div className="wrap">
           <div className="label">Where I’ve delivered</div>
-          <ul>
-            <li>JPMorgan Chase</li>
-            <li>Citi</li>
-            <li>Capital One</li>
-            <li>Southwest Airlines</li>
-            <li>EY</li>
-            <li>PwC</li>
-            <li>Capgemini</li>
-            <li>Booz Allen Hamilton</li>
+        </div>
+        <div className="ticker">
+          <ul className="track">
+            {FIRMS.map((f) => (
+              <FirmItem key={f.name} firm={f} />
+            ))}
+            {/* second copy makes the loop seamless; hidden from assistive tech */}
+            {FIRMS.map((f) => (
+              <FirmItem key={`${f.name}-2`} firm={f} hidden />
+            ))}
           </ul>
+        </div>
+        <div className="wrap">
+          <p className="tm">
+            Company names and logos are trademarks of their owners, shown only
+            to indicate where I have worked. No affiliation or endorsement is
+            implied.
+          </p>
         </div>
       </section>
 
