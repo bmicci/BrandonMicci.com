@@ -1032,7 +1032,7 @@ html.dark .bm .quotes figure:hover {
   display: block;
   height: 28px;
   width: auto;
-  max-width: 160px;
+  max-width: 200px;
   /* any artwork becomes a flat soft-grey mark */
   filter: brightness(0) opacity(0.45);
 }

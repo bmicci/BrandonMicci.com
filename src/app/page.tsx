@@ -15,7 +15,11 @@ const FIRMS: Firm[] = [
   { name: 'EY', logo: '/logos/ey.svg', h: 28 },
   { name: 'PwC', logo: '/logos/pwc.svg', h: 32 },
   { name: 'Capgemini', logo: '/logos/capgemini.svg', h: 26 },
-  { name: 'Booz Allen Hamilton' },
+  {
+    name: 'Booz Allen Hamilton',
+    logo: '/logos/booz-allen-hamilton.svg',
+    h: 20,
+  },
 ];
 
 function FirmItem({ firm, hidden }: { firm: Firm; hidden?: boolean }) {
