@@ -485,9 +485,22 @@ html.dark .bm {
   .bm .hero .copy {
     padding-bottom: 40px;
   }
+  /* phone and tablet: the face leads, small, so it is on screen at load */
   .bm .hero figure {
-    max-width: 320px;
-    margin-bottom: 48px;
+    order: -1;
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    max-width: none;
+    margin: 0 0 28px;
+  }
+  .bm .hero figure img {
+    flex: none;
+    width: 128px;
+  }
+  .bm .hero figcaption {
+    padding: 0;
+    font-size: 12px;
   }
   .bm .figures .row {
     grid-template-columns: 1fr 1fr;
@@ -980,33 +993,76 @@ html.dark .bm .quotes figure:hover {
   }
 }
 .bm .firms {
-  padding: 40px 0;
+  padding: 40px 0 32px;
   border-bottom: 1px solid var(--rule);
-}
-.bm .firms .wrap {
-  display: flex;
-  align-items: baseline;
-  gap: 40px;
 }
 .bm .firms .label {
   color: var(--muted);
   white-space: nowrap;
 }
-.bm .firms ul {
+.bm .firms .ticker {
+  overflow: hidden;
+  margin-top: 24px;
+}
+.bm .firms .track {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 var(--margin);
   display: flex;
+  align-items: center;
+  gap: 24px 56px;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px 24px;
-  flex: 1;
+}
+/* the repeated copy only exists to loop the ticker */
+.bm .firms .track li[aria-hidden='true'] {
+  display: none;
 }
 .bm .firms li {
-  font: 500 16px var(--display);
-  color: var(--ink);
+  flex: none;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  font: 500 17px var(--display);
   letter-spacing: -0.01em;
+  color: var(--muted);
+  opacity: 0.75;
   white-space: nowrap;
+}
+.bm .firms li img {
+  display: block;
+  height: 28px;
+  width: auto;
+  max-width: 160px;
+  /* any artwork becomes a flat soft-grey mark */
+  filter: brightness(0) opacity(0.45);
+}
+html.dark .bm .firms li img {
+  filter: brightness(0) invert(1) opacity(0.5);
+}
+.bm .firms .tm {
+  margin: 24px 0 0;
+  font: 400 12px/1.5 var(--sans);
+  color: var(--muted);
+  max-width: 52em;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bm .firms .track {
+    flex-wrap: nowrap;
+    width: max-content;
+    padding: 0 28px 0 0;
+    animation: bm-ticker 60s linear infinite;
+  }
+  .bm .firms .track li[aria-hidden='true'] {
+    display: flex;
+  }
+  .bm .firms .ticker:hover .track {
+    animation-play-state: paused;
+  }
+}
+@keyframes bm-ticker {
+  to {
+    transform: translateX(-50%);
+  }
 }
 .bm .quad {
   display: grid;
@@ -1101,14 +1157,6 @@ html.dark .bm .quotes figure:hover {
   border-left: 2px solid var(--accent);
 }
 @media (max-width: 900px) {
-  .bm .firms .wrap {
-    flex-direction: column;
-    gap: 16px;
-  }
-  .bm .firms ul {
-    justify-content: flex-start;
-    gap: 8px 20px;
-  }
   .bm .firms li {
     font-size: 15px;
   }
