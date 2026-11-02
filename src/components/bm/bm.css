@@ -81,7 +81,9 @@ html.dark .bm {
 .bm .grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: 32px;
+  /* 32px from 800px up; narrower below so the eleven gaps never force the
+     grid wider than a small phone (11 x 32px alone is 352px) */
+  column-gap: min(32px, 4vw);
 }
 .bm .label {
   font: 500 13px/1.3 var(--mono);
@@ -204,6 +206,10 @@ html.dark .bm {
   color: var(--muted);
   padding: 14px 0 32px;
   line-height: 1.45;
+}
+/* place and role on their own lines, a byline beside or under the photo */
+.bm .hero figcaption span {
+  display: block;
 }
 .bm .figures {
   background: var(--tint);
@@ -463,7 +469,8 @@ html.dark .bm {
 }
 .bm footer nav {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 8px 24px;
 }
 .bm footer a {
   text-decoration: none;
@@ -489,8 +496,8 @@ html.dark .bm {
   .bm .hero figure {
     order: -1;
     display: flex;
-    align-items: flex-end;
-    gap: 16px;
+    align-items: center;
+    gap: 20px;
     max-width: none;
     margin: 0 0 28px;
   }
@@ -500,7 +507,8 @@ html.dark .bm {
   }
   .bm .hero figcaption {
     padding: 0;
-    font-size: 12px;
+    font-size: 13px;
+    line-height: 1.6;
   }
   .bm .figures .row {
     grid-template-columns: 1fr 1fr;

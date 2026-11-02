@@ -88,7 +88,10 @@ export default function Home() {
               priority
               sizes="(max-width: 900px) 128px, 360px"
             />
-            <figcaption>Dallas, Texas · Board member, DFW CTO Club</figcaption>
+            <figcaption>
+              <span>Dallas, Texas</span>
+              <span>Board member, DFW CTO Club</span>
+            </figcaption>
           </figure>
         </div>
       </section>
@@ -509,7 +512,7 @@ export default function Home() {
                 get the room to both understand and act.”
               </blockquote>
               <figcaption>
-                <b>John Jensen</b>Analytics Specialist, Tableau
+                <b>John Jensen</b>Regional Vice President, Tableau
               </figcaption>
             </figure>
             <figure>
