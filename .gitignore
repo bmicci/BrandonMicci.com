@@ -42,3 +42,6 @@ next-env.d.ts
 
 # Lighthouse CI
 .lighthouseci/
+
+# design-taste-frontend working files (inspector screenshots/reports)
+.taste-skill/
