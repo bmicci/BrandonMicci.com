@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: '%s | Brandon Micci',
   },
   description:
-    'Brandon Micci leads enterprise AI, data and transformation programs: 17+ years at JPMorgan Chase, Citi, Southwest Airlines and EY, with $50M+ in documented savings.',
+    'Brandon Micci leads enterprise AI, data and transformation: 17+ years at JPMorgan Chase, Citi, Southwest Airlines and EY, with $50M+ in documented savings.',
   keywords: [
     'Brandon Micci',
     'enterprise AI strategy',
