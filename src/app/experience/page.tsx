@@ -8,7 +8,7 @@ import BmShell, { BmContact, SITE_NAV } from '@/components/bm/BmShell';
 export const metadata: Metadata = {
   title: 'Experience',
   description:
-    'Brandon Micci’s career in enterprise AI, data and transformation leadership: JPMorgan Chase, Capgemini, EY, Southwest Airlines, Citi, Capital One, Booz Allen Hamilton and PwC.',
+    'Brandon Micci’s AI, data and transformation career: JPMorgan Chase, Capgemini, EY, Southwest Airlines, Citi, Capital One, Booz Allen Hamilton and PwC.',
   keywords: [
     'enterprise AI leadership',
     'AI strategy and business transformation',

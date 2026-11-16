@@ -1,8 +1,10 @@
 // src/components/EnhancedStructuredData.tsx
-// One JSON-LD payload: WebSite and Person on every page, plus ProfilePage on
-// the homepage. This is a personal portfolio, so there is no Organization,
-// ProfessionalService, JobPosting or FAQ markup: none of it describes what the
-// pages actually show.
+// One JSON-LD payload: WebSite, Organization and Person on every page, plus
+// ProfilePage on the homepage. The Organization node describes the site itself
+// (the "Brandon Micci" name, logo and profiles) so crawlers that expect
+// publisher/brand markup find a complete one. It is deliberately not a
+// ProfessionalService or business: this is a personal portfolio, so there is
+// no service, JobPosting or FAQ markup.
 
 import React from 'react';
 
@@ -12,6 +14,7 @@ const DESCRIPTION =
   'Enterprise AI, data and business transformation executive. 17+ years in regulated companies including JPMorgan Chase, Citi, Southwest Airlines, EY and Capital One, with $50M+ in documented savings.';
 const IMAGE = `${SITE_URL}/headshot.webp`;
 const EMAIL = 'brandon@brandonmicci.com';
+const LOGO = `${SITE_URL}/android-chrome-512x512.png`;
 const SAME_AS = [
   'https://www.linkedin.com/in/brandonmicci',
   'https://github.com/bmicci',
@@ -25,6 +28,34 @@ function buildJsonLd(pathname: string) {
     name: NAME,
     url: SITE_URL,
     publisher: { '@id': `${SITE_URL}/#person` },
+  };
+
+  const organization = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
+    name: NAME,
+    url: SITE_URL,
+    logo: {
+      '@type': 'ImageObject',
+      '@id': `${SITE_URL}/#logo`,
+      url: LOGO,
+      contentUrl: LOGO,
+      width: 512,
+      height: 512,
+      caption: NAME,
+    },
+    image: { '@id': `${SITE_URL}/#logo` },
+    description: `Professional portfolio and writing of ${NAME}.`,
+    email: EMAIL,
+    sameAs: SAME_AS,
+    founder: { '@id': `${SITE_URL}/#person` },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Dallas',
+      addressRegion: 'TX',
+      addressCountry: 'US',
+    },
   };
 
   const person = {
@@ -61,7 +92,7 @@ function buildJsonLd(pathname: string) {
     ],
   };
 
-  const payload: Record<string, unknown>[] = [website, person];
+  const payload: Record<string, unknown>[] = [website, organization, person];
 
   if (pathname === '/') {
     payload.push({
