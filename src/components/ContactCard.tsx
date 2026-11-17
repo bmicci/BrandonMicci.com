@@ -14,7 +14,7 @@ export default function ContactCard() {
     <div className="card">
       <Image
         className="card-photo"
-        src="/headshot.webp"
+        src="/headshot-square.webp"
         alt="Brandon Micci"
         width={96}
         height={96}

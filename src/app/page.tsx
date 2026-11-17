@@ -478,7 +478,12 @@ export default function Home() {
               </div>
             </div>
             <div className="sig">
-              <Image src="/headshot.webp" alt="" width={56} height={56} />
+              <Image
+                src="/headshot-square.webp"
+                alt=""
+                width={56}
+                height={56}
+              />
               <div>
                 <b>Brandon Micci</b>
                 <span>Dallas, Texas · Board member, DFW CTO Club</span>
