@@ -22,6 +22,10 @@ const FIRMS: Firm[] = [
   },
 ];
 
+// One set of logos is about 1,150px wide. Four sets per group keeps the strip
+// filled edge to edge on screens up to about 4,500px wide.
+const TICKER_REPEAT = 4;
+
 function FirmItem({ firm, hidden }: { firm: Firm; hidden?: boolean }) {
   return (
     <li aria-hidden={hidden || undefined}>
@@ -135,15 +139,27 @@ export default function Home() {
           <div className="label">Where I’ve delivered</div>
         </div>
         <div className="ticker">
-          <ul className="track">
-            {FIRMS.map((f) => (
-              <FirmItem key={f.name} firm={f} />
-            ))}
-            {/* second copy makes the loop seamless; hidden from assistive tech */}
-            {FIRMS.map((f) => (
-              <FirmItem key={`${f.name}-2`} firm={f} hidden />
-            ))}
-          </ul>
+          {/* Two identical groups slide left by exactly one group width, so
+              the loop has no seam. Each group repeats the firms enough times
+              to be wider than any screen. Only the very first set is read by
+              assistive tech and shown when motion is reduced. */}
+          {[0, 1].map((group) => (
+            <ul
+              className="track"
+              key={group}
+              aria-hidden={group > 0 || undefined}
+            >
+              {Array.from({ length: TICKER_REPEAT }).flatMap((_, rep) =>
+                FIRMS.map((f) => (
+                  <FirmItem
+                    key={`${f.name}-${rep}`}
+                    firm={f}
+                    hidden={group > 0 || rep > 0}
+                  />
+                ))
+              )}
+            </ul>
+          ))}
         </div>
         <div className="wrap">
           <p className="tm">

@@ -1021,7 +1021,8 @@ html.dark .bm .quotes figure:hover {
   gap: 24px 56px;
   flex-wrap: wrap;
 }
-/* the repeated copy only exists to loop the ticker */
+/* the repeated copies only exist to loop the ticker */
+.bm .firms .track[aria-hidden='true'],
 .bm .firms .track li[aria-hidden='true'] {
   display: none;
 }
@@ -1054,11 +1055,20 @@ html.dark .bm .firms li img {
   max-width: 52em;
 }
 @media (prefers-reduced-motion: no-preference) {
+  .bm .firms .ticker {
+    display: flex;
+  }
+  /* trailing padding equals the gap, so one group's width is exactly one
+     loop period and the second group lands where the first began */
   .bm .firms .track {
+    flex: none;
     flex-wrap: nowrap;
     width: max-content;
-    padding: 0 28px 0 0;
-    animation: bm-ticker 60s linear infinite;
+    padding: 0 56px 0 0;
+    animation: bm-ticker 240s linear infinite;
+  }
+  .bm .firms .track[aria-hidden='true'] {
+    display: flex;
   }
   .bm .firms .track li[aria-hidden='true'] {
     display: flex;
@@ -1069,7 +1079,7 @@ html.dark .bm .firms li img {
 }
 @keyframes bm-ticker {
   to {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 .bm .quad {
