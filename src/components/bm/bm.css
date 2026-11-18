@@ -492,23 +492,20 @@ html.dark .bm {
   .bm .hero .copy {
     padding-bottom: 40px;
   }
-  /* phone and tablet: the face leads, small, so it is on screen at load */
+  /* phone and tablet: the photo leads at full width. The place and role
+     caption is dropped here; the same byline appears lower on the page. */
   .bm .hero figure {
     order: -1;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    max-width: none;
-    margin: 0 0 28px;
+    max-width: 440px;
+    margin: 0 0 32px;
   }
   .bm .hero figure img {
-    flex: none;
-    width: 128px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-position: 50% 20%;
   }
   .bm .hero figcaption {
-    padding: 0;
-    font-size: 13px;
-    line-height: 1.6;
+    display: none;
   }
   .bm .figures .row {
     grid-template-columns: 1fr 1fr;
