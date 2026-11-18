@@ -90,7 +90,7 @@ export default function Home() {
               width={400}
               height={500}
               priority
-              sizes="(max-width: 900px) 128px, 360px"
+              sizes="(max-width: 900px) 100vw, 360px"
             />
             <figcaption>
               <span>Dallas, Texas</span>
