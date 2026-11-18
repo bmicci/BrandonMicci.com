@@ -492,21 +492,6 @@ html.dark .bm {
   .bm .hero .copy {
     padding-bottom: 40px;
   }
-  /* phone and tablet: the photo leads at full width. The place and role
-     caption is dropped here; the same byline appears lower on the page. */
-  .bm .hero figure {
-    order: -1;
-    max-width: 440px;
-    margin: 0 0 32px;
-  }
-  .bm .hero figure img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-position: 50% 20%;
-  }
-  .bm .hero figcaption {
-    display: none;
-  }
   .bm .figures .row {
     grid-template-columns: 1fr 1fr;
   }
@@ -1884,5 +1869,91 @@ html.dark body:has(.bm) {
   .bm .post-body h2 {
     font-size: 24px;
     margin-top: 44px;
+  }
+}
+
+/* ---------- phone and tablet hero ----------
+   Label and headline first, then the photo, then the lead and actions, all
+   sized to fit one screen below the 65px phone header. The copy wrapper is
+   flattened (display: contents) so its children and the photo share one
+   column; the photo takes whatever height is left (min 180px, max 480px).
+   The place and role caption is dropped here; the same byline appears
+   lower on the page. */
+@media (max-width: 900px) {
+  .bm .hero {
+    padding: 16px 0 0;
+  }
+  .bm .hero .wrap.grid {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100svh - 65px - 16px);
+    max-height: 1000px;
+  }
+  .bm .hero .copy {
+    display: contents;
+  }
+  .bm .hero .label {
+    order: 1;
+  }
+  .bm .hero h1 {
+    order: 2;
+    margin: 8px 0 0;
+  }
+  .bm .hero figure {
+    order: 3;
+    flex: 1 1 0;
+    align-self: stretch;
+    min-height: 180px;
+    max-height: 480px;
+    margin: 14px 0;
+  }
+  .bm .hero figure img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-position: 50% 22%;
+  }
+  .bm .hero figcaption {
+    display: none;
+  }
+  .bm .hero .lead {
+    order: 4;
+    margin: 0 0 14px;
+  }
+  .bm .hero .actions {
+    order: 5;
+    padding-bottom: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .bm .hero h1 {
+    font-size: clamp(28px, 7.6vw, 34px);
+  }
+  .bm .hero .lead {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  .bm .hero .actions .dl {
+    padding: 12px 8px;
+  }
+}
+/* tablet: plenty of height, so a fixed photo height and natural spacing */
+@media (min-width: 601px) and (max-width: 900px) {
+  .bm .hero {
+    padding-top: 40px;
+  }
+  .bm .hero .wrap.grid {
+    min-height: 0;
+  }
+  .bm .hero figure {
+    flex: none;
+    height: 440px;
+    margin: 24px 0;
+  }
+  .bm .hero .lead {
+    margin-bottom: 28px;
+  }
+  .bm .hero .actions {
+    padding-bottom: 56px;
   }
 }
